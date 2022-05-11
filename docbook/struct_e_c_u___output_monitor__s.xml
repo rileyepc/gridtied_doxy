@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_c_u___output_monitor__s" xml:lang="en-US">
+<title>ECU_OutputMonitor_s Struct Reference</title>
+<indexterm><primary>ECU_OutputMonitor_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_monitor__s_1aabe5ff0fa220f8329a2ead03969df6c9">fvLocal</link> [3U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_monitor__s_1a9515c7d915f6aaaac6d2c37ffb1c0b21">mIg</link> [4U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_monitor__s_1a3e3e0f3f2dc1e1f8a89394c5f8ac455f">mPg</link> [4U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_monitor__s_1a79ce2ddc6bc6684395e66df33be3e436">scI</link> [4U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_monitor__s_1a5f7f5d0efac544fbf92949956d8288ba">scV</link> [2U]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_c_u___output_monitor__s_1aabe5ff0fa220f8329a2ead03969df6c9"/><section>
+    <title>fvLocal</title>
+<indexterm><primary>fvLocal</primary><secondary>ECU_OutputMonitor_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputMonitor_s</primary><secondary>fvLocal</secondary></indexterm>
+<para><computeroutput>double ECU_OutputMonitor_s::fvLocal[3U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_monitor__s_1a9515c7d915f6aaaac6d2c37ffb1c0b21"/><section>
+    <title>mIg</title>
+<indexterm><primary>mIg</primary><secondary>ECU_OutputMonitor_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputMonitor_s</primary><secondary>mIg</secondary></indexterm>
+<para><computeroutput>double ECU_OutputMonitor_s::mIg[4U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_monitor__s_1a3e3e0f3f2dc1e1f8a89394c5f8ac455f"/><section>
+    <title>mPg</title>
+<indexterm><primary>mPg</primary><secondary>ECU_OutputMonitor_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputMonitor_s</primary><secondary>mPg</secondary></indexterm>
+<para><computeroutput>double ECU_OutputMonitor_s::mPg[4U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_monitor__s_1a79ce2ddc6bc6684395e66df33be3e436"/><section>
+    <title>scI</title>
+<indexterm><primary>scI</primary><secondary>ECU_OutputMonitor_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputMonitor_s</primary><secondary>scI</secondary></indexterm>
+<para><computeroutput>double ECU_OutputMonitor_s::scI[4U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_monitor__s_1a5f7f5d0efac544fbf92949956d8288ba"/><section>
+    <title>scV</title>
+<indexterm><primary>scV</primary><secondary>ECU_OutputMonitor_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputMonitor_s</primary><secondary>scV</secondary></indexterm>
+<para><computeroutput>double ECU_OutputMonitor_s::scV[2U]</computeroutput></para></section>
+</section>
+</section>

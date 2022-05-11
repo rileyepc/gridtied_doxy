@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="revision_info_8h" kind="file" language="C++">
+    <compoundname>revisionInfo.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="application_8c" local="yes">application.c</includedby>
+    <includedby refid="can_interface_8c" local="yes">interface/canInterface.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>interface/revisionInfo.h</label>
+        <link refid="revision_info_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>application.c</label>
+        <link refid="application_8c"/>
+      </node>
+      <node id="3">
+        <label>interface/canInterface.c</label>
+        <link refid="can_interface_8c"/>
+      </node>
+      <node id="1">
+        <label>interface/revisionInfo.h</label>
+        <link refid="revision_info_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_build_info" prot="public">BuildInfo</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="revision_info_8h_1ac0d4a508a23307d71108dfdf63d64200" prot="public" static="no">
+        <type>struct <ref refid="struct_build_info" kindref="compound">BuildInfo</ref></type>
+        <definition>typedef struct BuildInfo BuildInfo</definition>
+        <argsstring></argsstring>
+        <name>BuildInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/revisionInfo.h" line="15" column="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_build_info" kindref="compound">BuildInfo</ref></type>
+        <definition>BuildInfo buildInfo</definition>
+        <argsstring></argsstring>
+        <name>buildInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/revisionInfo.h" line="17" column="18" declfile="interface/revisionInfo.h" declline="17" declcolumn="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>REVISION_INFO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REVISION_INFO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="struct_build_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_build_info" kindref="compound">BuildInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="8" refid="struct_build_info_1a86c527649d9f37ea332a388a6bf4da16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_build_info_1a86c527649d9f37ea332a388a6bf4da16" kindref="member">year</ref>;</highlight></codeline>
+<codeline lineno="9" refid="struct_build_info_1a1795aa29fcdbcf3e7d08c8f883e79bdb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_build_info_1a1795aa29fcdbcf3e7d08c8f883e79bdb" kindref="member">month</ref>;</highlight></codeline>
+<codeline lineno="10" refid="struct_build_info_1a9382e8b62b78c80d87c15b67056a7cfc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_build_info_1a9382e8b62b78c80d87c15b67056a7cfc" kindref="member">day</ref>;</highlight></codeline>
+<codeline lineno="11" refid="struct_build_info_1a273531526928ad7161a97e75e1a61724" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_build_info_1a273531526928ad7161a97e75e1a61724" kindref="member">hour</ref>;</highlight></codeline>
+<codeline lineno="12" refid="struct_build_info_1a26b670ec78a246194393cbe979b75cea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_build_info_1a26b670ec78a246194393cbe979b75cea" kindref="member">minute</ref>;</highlight></codeline>
+<codeline lineno="13" refid="struct_build_info_1a485771dfeb15f4135f11cbfb1a665a44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_build_info_1a485771dfeb15f4135f11cbfb1a665a44" kindref="member">formattedIntegerTime</ref>;</highlight></codeline>
+<codeline lineno="14" refid="struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad" kindref="member">hash</ref>;</highlight></codeline>
+<codeline lineno="15" refid="revision_info_8h_1ac0d4a508a23307d71108dfdf63d64200" refkind="member"><highlight class="normal">}<sp/><ref refid="revision_info_8h_1ac0d4a508a23307d71108dfdf63d64200" kindref="member">BuildInfo</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="struct_build_info" kindref="compound">BuildInfo</ref><sp/><ref refid="revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655" kindref="member">buildInfo</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>REVISION_INFO_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="interface/revisionInfo.h"/>
+  </compounddef>
+</doxygen>

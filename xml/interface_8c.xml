@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="interface_8c" kind="file" language="C++">
+    <compoundname>interface.c</compoundname>
+    <includes refid="interface_8h" local="yes">interface.h</includes>
+    <includes local="yes">sunspec.h</includes>
+    <includes local="yes">canHandler.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>interface/interface.c</label>
+        <link refid="interface_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>IEEE1547.h</label>
+      </node>
+      <node id="8">
+        <label>authorization.h</label>
+      </node>
+      <node id="9">
+        <label>canHandler.h</label>
+      </node>
+      <node id="4">
+        <label>canInterfaceEnums.h</label>
+      </node>
+      <node id="6">
+        <label>meta.h</label>
+      </node>
+      <node id="3">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>sunspec.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="interface_8c_1a4b4d547f1291c2b0839837d1263cecd8" prot="public" static="no" mutable="no">
+        <type>CAN_Enum_AccessLevel</type>
+        <definition>CAN_Enum_AccessLevel metaMinimumAccessLevel[Meta_Count]</definition>
+        <argsstring>[Meta_Count]</argsstring>
+        <name>metaMinimumAccessLevel</name>
+        <initializer>= {
+    [Meta_Value]            = CAN_Enum_AccessLevel_Service_Tech,
+    [Meta_UserDefault]      = CAN_Enum_AccessLevel_Service_Tech,
+    [Meta_FactoryDefault]   = CAN_Enum_AccessLevel_EPC_Eng,
+    [Meta_Min]              = CAN_Enum_AccessLevel_EPC_Eng,
+    [Meta_Max]              = CAN_Enum_AccessLevel_EPC_Eng,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.c" line="6" column="22" bodyfile="interface/interface.c" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="interface_8c_1a1456a3e6d18b4b338ca7d542de34ed6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sunssf</type>
+        <definition>sunssf itemNetScaleFactor</definition>
+        <argsstring>(InterfaceItemCommon const *const item)</argsstring>
+        <name>itemNetScaleFactor</name>
+        <param>
+          <type><ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref> const *const</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.c" line="16" column="8" bodyfile="interface/interface.c" bodystart="16" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="interface_8h" kindref="compound">interface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sunspec.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;canHandler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">CAN_Enum_AccessLevel<sp/><ref refid="interface_8c_1a4b4d547f1291c2b0839837d1263cecd8" kindref="member">metaMinimumAccessLevel</ref>[Meta_Count]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>[Meta_Value]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CAN_Enum_AccessLevel_Service_Tech,</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>[Meta_UserDefault]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CAN_Enum_AccessLevel_Service_Tech,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>[Meta_FactoryDefault]<sp/><sp/><sp/>=<sp/>CAN_Enum_AccessLevel_EPC_Eng,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>[Meta_Min]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CAN_Enum_AccessLevel_EPC_Eng,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>[Meta_Max]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CAN_Enum_AccessLevel_EPC_Eng,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#TODO:<sp/><sp/><sp/>sunssf?<sp/><sp/>how<sp/>to<sp/>support<sp/>both<sp/>SunSpec<sp/>and<sp/>existing<sp/>CAN?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">sunssf<sp/><ref refid="interface_8c_1a1456a3e6d18b4b338ca7d542de34ed6c" kindref="member">itemNetScaleFactor</ref>(<ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>item)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>sunssf<sp/>factor<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_interface_item_common_1a25f5a5b30d8acd1d952b77b38e0e7634" kindref="member">scaleFactorUpdater</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_interface_item_common_1a25f5a5b30d8acd1d952b77b38e0e7634" kindref="member">scaleFactorUpdater</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_interface_item_common_1a64a25e3785726ebedc4a2e92af71e49f" kindref="member">sunspecScaleFactor</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>factor<sp/>+=<sp/>*item-&gt;<ref refid="struct_interface_item_common_1a64a25e3785726ebedc4a2e92af71e49f" kindref="member">sunspecScaleFactor</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>factor<sp/>+=<sp/>item-&gt;<ref refid="struct_interface_item_common_1a0d2e5de29b3efe5a2acee7258c9c8e55" kindref="member">internalScaleFactor</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>factor;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="interface/interface.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_p_w_m___config__s" kind="struct" language="C++" prot="public">
+    <compoundname>EPWM_Config_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1ab68fc07d12b76492d0d0a3cfa58033f8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_Config_s::beAverage</definition>
+        <argsstring></argsstring>
+        <name>beAverage</name>
+        <qualifiedname>EPWM_Config_s::beAverage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="156" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a7c5ef3f7b6148dd86bb7c157beb0ec98" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_Config_s::isFixedRate</definition>
+        <argsstring></argsstring>
+        <name>isFixedRate</name>
+        <qualifiedname>EPWM_Config_s::isFixedRate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="157" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a31b92c7cfccbae86ca3240a70d05b9bc" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EPWM_Config_s::nrChannels</definition>
+        <argsstring></argsstring>
+        <name>nrChannels</name>
+        <qualifiedname>EPWM_Config_s::nrChannels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="158" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a01017f77a447406b21000a541bece471" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Config_s::fClock</definition>
+        <argsstring></argsstring>
+        <name>fClock</name>
+        <qualifiedname>EPWM_Config_s::fClock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="159" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a70a1d517102a9c564188036955ecc4f4" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Config_s::tDead</definition>
+        <argsstring></argsstring>
+        <name>tDead</name>
+        <qualifiedname>EPWM_Config_s::tDead</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="160" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a6c30cb78a15dc1b41669a093171207a8" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a15e691f63b2bbe8eed6aed6041a2aa5c" kindref="member">EPWM_DutyLimits_t</ref></type>
+        <definition>EPWM_DutyLimits_t EPWM_Config_s::dutyLimits</definition>
+        <argsstring></argsstring>
+        <name>dutyLimits</name>
+        <qualifiedname>EPWM_Config_s::dutyLimits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="161" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a37ca428671558a5952b504f8335081ab" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a6db68d8f0a63b2abb77e37cb926dbcec" kindref="member">EPWM_ShadowBehaviour_t</ref></type>
+        <definition>EPWM_ShadowBehaviour_t EPWM_Config_s::shadowPeriod</definition>
+        <argsstring></argsstring>
+        <name>shadowPeriod</name>
+        <qualifiedname>EPWM_Config_s::shadowPeriod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="162" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1af26134d7fe9723737d1b9b8a5b617b2a" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1af0d00671afab18edf5b3ac6ffae39999" kindref="member">EPWM_ShadowZones_t</ref></type>
+        <definition>EPWM_ShadowZones_t EPWM_Config_s::shadowZones</definition>
+        <argsstring></argsstring>
+        <name>shadowZones</name>
+        <qualifiedname>EPWM_Config_s::shadowZones</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="163" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a3d04897ca727b1104cf317747a1d532d" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1ae4013020997b9290fe302e56a3b108eb" kindref="member">EPWM_SatThreshold_t</ref></type>
+        <definition>EPWM_SatThreshold_t EPWM_Config_s::satThresh</definition>
+        <argsstring></argsstring>
+        <name>satThresh</name>
+        <qualifiedname>EPWM_Config_s::satThresh</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="164" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a9bf833cc01ed1140c8376f9b7c115c6f" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a6970546fd658c502859704dce216b503" kindref="member">EPWM_AqActionZones_t</ref></type>
+        <definition>EPWM_AqActionZones_t EPWM_Config_s::actionZones</definition>
+        <argsstring></argsstring>
+        <name>actionZones</name>
+        <qualifiedname>EPWM_Config_s::actionZones</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="165" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1ab81185e16986034b9a7f635c345f9a7e" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Config_s::tHiMin</definition>
+        <argsstring></argsstring>
+        <name>tHiMin</name>
+        <qualifiedname>EPWM_Config_s::tHiMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="166" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1af480c1c6adc57f8fd2c72b0f23bb32ad" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Config_s::tLoMin</definition>
+        <argsstring></argsstring>
+        <name>tLoMin</name>
+        <qualifiedname>EPWM_Config_s::tLoMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="167" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a744ea87151d45a053df70af768929011" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Config_s::tCswMin</definition>
+        <argsstring></argsstring>
+        <name>tCswMin</name>
+        <qualifiedname>EPWM_Config_s::tCswMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="168" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a887115e72d83986bbc79c0ed305ee9be" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_Config_s::tCswCheck[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tCswCheck</name>
+        <qualifiedname>EPWM_Config_s::tCswCheck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="169" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1ad95054fd3afa99de9c70c3d13ee07baf" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a5ca83038074430b3815c96c95ed0b3bc" kindref="member">EPWM_AqEventSource_t</ref></type>
+        <definition>EPWM_AqEventSource_t EPWM_Config_s::intSource[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>intSource</name>
+        <qualifiedname>EPWM_Config_s::intSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="170" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___config__s_1a35beef2fb9af99c5744a00f3f2159952" prot="public" static="no" mutable="no">
+        <type>PWMD_HwRegisters_t</type>
+        <definition>PWMD_HwRegisters_t EPWM_Config_s::priChannel</definition>
+        <argsstring></argsstring>
+        <name>priChannel</name>
+        <qualifiedname>EPWM_Config_s::priChannel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="172" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>EPWM_AqActionZones_s</label>
+        <link refid="struct_e_p_w_m___aq_action_zones__s"/>
+      </node>
+      <node id="1">
+        <label>EPWM_Config_s</label>
+        <link refid="struct_e_p_w_m___config__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>dutyLimits</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>shadowZones</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>satThresh</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>actionZones</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>EPWM_DutyLimits_s</label>
+        <link refid="struct_e_p_w_m___duty_limits__s"/>
+      </node>
+      <node id="4">
+        <label>EPWM_SatThreshold_s</label>
+        <link refid="struct_e_p_w_m___sat_threshold__s"/>
+      </node>
+      <node id="3">
+        <label>EPWM_ShadowZones_s</label>
+        <link refid="struct_e_p_w_m___shadow_zones__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="sil/emu/epwm_emu.c" line="155" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="155" bodyend="174"/>
+    <listofallmembers>
+      <member refid="struct_e_p_w_m___config__s_1a9bf833cc01ed1140c8376f9b7c115c6f" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>actionZones</name></member>
+      <member refid="struct_e_p_w_m___config__s_1ab68fc07d12b76492d0d0a3cfa58033f8" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>beAverage</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a6c30cb78a15dc1b41669a093171207a8" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>dutyLimits</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a01017f77a447406b21000a541bece471" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>fClock</name></member>
+      <member refid="struct_e_p_w_m___config__s_1ad95054fd3afa99de9c70c3d13ee07baf" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>intSource</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a7c5ef3f7b6148dd86bb7c157beb0ec98" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>isFixedRate</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a31b92c7cfccbae86ca3240a70d05b9bc" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>nrChannels</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a35beef2fb9af99c5744a00f3f2159952" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>priChannel</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a3d04897ca727b1104cf317747a1d532d" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>satThresh</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a37ca428671558a5952b504f8335081ab" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>shadowPeriod</name></member>
+      <member refid="struct_e_p_w_m___config__s_1af26134d7fe9723737d1b9b8a5b617b2a" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>shadowZones</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a887115e72d83986bbc79c0ed305ee9be" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>tCswCheck</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a744ea87151d45a053df70af768929011" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>tCswMin</name></member>
+      <member refid="struct_e_p_w_m___config__s_1a70a1d517102a9c564188036955ecc4f4" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>tDead</name></member>
+      <member refid="struct_e_p_w_m___config__s_1ab81185e16986034b9a7f635c345f9a7e" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>tHiMin</name></member>
+      <member refid="struct_e_p_w_m___config__s_1af480c1c6adc57f8fd2c72b0f23bb32ad" prot="public" virt="non-virtual"><scope>EPWM_Config_s</scope><name>tLoMin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

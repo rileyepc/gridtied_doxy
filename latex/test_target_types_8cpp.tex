@@ -1,0 +1,57 @@
+\hypertarget{test_target_types_8cpp}{}\doxysection{sil/emu/test/test\+Target\+Types.cpp File Reference}
+\label{test_target_types_8cpp}\index{sil/emu/test/testTargetTypes.cpp@{sil/emu/test/testTargetTypes.cpp}}
+{\ttfamily \#include \char`\"{}Cpp\+UTest/\+Test\+Harness.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test_target_types_8cpp_af83f4fb65b4546178bf4a8bd9830eb9e}{TYPE\+\_\+\+BITS}}(x)~(sizeof(x) $\ast$ CHAR\+\_\+\+BIT)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{test_target_types_8cpp_a11e2adda84be90741d9dffc672f7e718}{TEST\+\_\+\+GROUP}} (target\+Types)
+\item 
+\mbox{\hyperlink{test_target_types_8cpp_aa9c04988ccd775ec5161ab97058f324a}{TEST}} (target\+Types, sign\+Type)
+\item 
+\mbox{\hyperlink{test_target_types_8cpp_aee6d0d5f77305b0a42e8292fb553272c}{TEST}} (target\+Types, lengths)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test_target_types_8cpp_af83f4fb65b4546178bf4a8bd9830eb9e}\label{test_target_types_8cpp_af83f4fb65b4546178bf4a8bd9830eb9e}} 
+\index{testTargetTypes.cpp@{testTargetTypes.cpp}!TYPE\_BITS@{TYPE\_BITS}}
+\index{TYPE\_BITS@{TYPE\_BITS}!testTargetTypes.cpp@{testTargetTypes.cpp}}
+\doxysubsubsection{\texorpdfstring{TYPE\_BITS}{TYPE\_BITS}}
+{\footnotesize\ttfamily \#define TYPE\+\_\+\+BITS(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(sizeof(x) $\ast$ CHAR\+\_\+\+BIT)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test_target_types_8cpp_aee6d0d5f77305b0a42e8292fb553272c}\label{test_target_types_8cpp_aee6d0d5f77305b0a42e8292fb553272c}} 
+\index{testTargetTypes.cpp@{testTargetTypes.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!testTargetTypes.cpp@{testTargetTypes.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{target\+Types}]{,  }\item[{lengths}]{ }\end{DoxyParamCaption})}
+
+
+
+check that host bitlengths are normal for a modern PC 
+
+\mbox{\Hypertarget{test_target_types_8cpp_aa9c04988ccd775ec5161ab97058f324a}\label{test_target_types_8cpp_aa9c04988ccd775ec5161ab97058f324a}} 
+\index{testTargetTypes.cpp@{testTargetTypes.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!testTargetTypes.cpp@{testTargetTypes.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{target\+Types}]{,  }\item[{sign\+Type}]{ }\end{DoxyParamCaption})}
+
+
+
+ensure host platform uses twos complement 
+
+\mbox{\Hypertarget{test_target_types_8cpp_a11e2adda84be90741d9dffc672f7e718}\label{test_target_types_8cpp_a11e2adda84be90741d9dffc672f7e718}} 
+\index{testTargetTypes.cpp@{testTargetTypes.cpp}!TEST\_GROUP@{TEST\_GROUP}}
+\index{TEST\_GROUP@{TEST\_GROUP}!testTargetTypes.cpp@{testTargetTypes.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_GROUP()}{TEST\_GROUP()}}
+{\footnotesize\ttfamily TEST\+\_\+\+GROUP (\begin{DoxyParamCaption}\item[{target\+Types}]{ }\end{DoxyParamCaption})}
+

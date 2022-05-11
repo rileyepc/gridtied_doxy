@@ -1,0 +1,491 @@
+\hypertarget{lib_epc_control_8c}{}\doxysection{sil/lib\+Epc\+Control.c File Reference}
+\label{lib_epc_control_8c}\index{sil/libEpcControl.c@{sil/libEpcControl.c}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lib\+Epc\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lib\+Epc\+Control\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}channel\+Mapping\+Manager\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}top\+Level\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}top\+Level\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+Conversion\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Config\+Detect\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filter\+Observer\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Pll.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}auxiliary\+Pll\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}island\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protected\+Bus\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Current\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}adaptive\+Harmonic\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reference\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}afe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Shared\+Data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}modulator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scheduler\+\_\+emu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grid\+Monitor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protections\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}device\+Thermal\+Model.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}measurementd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}epwm\+\_\+emu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hardware\+Scales.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}supervisor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protections.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}external\+Inhibit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interface\+Accessors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Config\+Detect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthetic\+Inertia.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_i_l___task_handler__s}{SIL\+\_\+\+Task\+Handler\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_s_i_l___task_group__s}{SIL\+\_\+\+Task\+Group\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_ae782abdb390d65528ebd622389c5a5d4}{SIL\+\_\+\+EPSILON}}~( 0.\+1e-\/9L )
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_aec2b58cf1ed4b2c1886e3da72fa549fe}{SIL\+\_\+\+SNAPSHOT\+\_\+\+FILENAME}}~\char`\"{}snapshot\+\_\+data\char`\"{}
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_ada32dc3ec0f400058499e4580e8eea2b}{SIL\+\_\+\+SNAPSHOT\+\_\+\+FILE\+\_\+\+EXTENSION}}~\char`\"{}.dat\char`\"{}
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_a1f3c42a620f7679b0c31c42950b36100}{SIL\+\_\+\+TASK\+\_\+\+HANDLER\+\_\+\+DEFAULTS}}(m\+Cbk)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_ad19e0c4362119d2f90556e7b53730929}{SIL\+\_\+\+TASK\+\_\+\+HANDLERS\+\_\+\+DEFAULTS}}(m\+Grp)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_aff35d265592c728e66c7510c82902233}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\+DEFAULTS}}(m\+Grp,  m\+Per)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_a9af98f89d7f7d97e6b61ff6d29435844}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\+DEFAULT}}(m\+Grp,  m\+Per)~    \mbox{[}SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\#\#m\+Grp\mbox{]}     = \mbox{\hyperlink{lib_epc_control_8c_aff35d265592c728e66c7510c82902233}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\+DEFAULTS}}(m\+Grp, m\+Per)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_a73217f13108e9859b06c1082d832d5fb}{SIL\+\_\+\+TASK\+\_\+\+GROUPS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8c_af27efe74bbbc92dd505ed6feb632c2f4}{SIL\+\_\+\+UPDATE\+\_\+\+TOGGLE}}(m\+Grp)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0}{SIL\+\_\+\+Task\+Context\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8c_a3210e1f49d48170d6b757cb502986256}{SIL\+\_\+e\+Task\+Context\+\_\+t}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_8c_ae6f17a342abe900c59d650833838087c}{SIL\+\_\+f\+Task\+Callback\+\_\+t}}) (double t\+Now)
+\item 
+typedef struct \mbox{\hyperlink{struct_s_i_l___task_handler__s}{SIL\+\_\+\+Task\+Handler\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8c_ae89a63ad9fd5e364d8b48eb25eef9757}{SIL\+\_\+s\+Task\+Handler\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_i_l___task_group__s}{SIL\+\_\+\+Task\+Group\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8c_a7ed97dea947336ca74b74780fb21e48b}{SIL\+\_\+s\+Task\+Group\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0}{SIL\+\_\+\+Task\+Context\+\_\+e}} \{ \mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0a29f3a1246607f135de9c112ae2258e8a}{SIL\+\_\+\+TASK\+\_\+\+CONTEXT\+\_\+\+OUTPUT}}
+, \mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0abeaa7ea1b3e75063a32888ba135cac51}{SIL\+\_\+\+TASK\+\_\+\+CONTEXT\+\_\+\+STATE}}
+, \mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0aabf0e2f1d319c42f4eb74f8795897373}{SIL\+\_\+\+TASK\+\_\+\+CONTEXT\+\_\+\+CNT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_af0fe4affddb768264dd9a710510f3bc8}{system\+\_\+main}} (void)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_ad9bda3cab726f79b7c06a60441554998}{AD1\+D\+\_\+\+SIL\+\_\+write\+Snapshot}} (FILE $\ast$snapshot\+File)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_aceb6ad89b9571df43544631e548e0228}{AD1\+D\+\_\+\+SIL\+\_\+read\+Snapshot}} (FILE $\ast$snapshot\+File)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a366bea37699901e8e0f83572c121e5d0}{AD2\+D\+\_\+\+SIL\+\_\+write\+Snapshot}} (FILE $\ast$snapshot\+File)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a1e14b3d0dc196f803eddbdaf9694e990}{AD2\+D\+\_\+\+SIL\+\_\+read\+Snapshot}} (FILE $\ast$snapshot\+File)
+\item 
+bool \mbox{\hyperlink{lib_epc_control_8c_ab81a90ab6353010bbcbfbe378b6c133b}{SIL\+\_\+initialize\+Library}} (double t\+Step, \mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}} solver\+Type, \mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}} mdl\+Intent, char $\ast$pmvs\+Path)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_ace37954380efd0cc545d686525f44253}{SIL\+\_\+terminate\+Library}} (double t\+Now)
+\item 
+double \mbox{\hyperlink{lib_epc_control_8c_ae7faa4e53156bb74ada32b2980fdc965}{SIL\+\_\+get\+Next\+Sample\+Hit}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a4516f98eb48b67f3cfac58f6f506395b}{SIL\+\_\+update\+Output}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_ac996ef11ecaea694174e16c084e34121}{SIL\+\_\+update\+Output\+\_\+ts}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a0ee7728e508048a3431cbe5591a6fe6e}{SIL\+\_\+update\+Output\+\_\+200us}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a75ff58ce3d5d4580e490ef7a69007e21}{SIL\+\_\+update\+Output\+\_\+1ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_ae7e96e5405835166c40c25a724ec7439}{SIL\+\_\+update\+Output\+\_\+10ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a6fa1fbbfa14569f4bd41950a860eb75a}{SIL\+\_\+update\+Output\+\_\+100ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a01c7e531ea48b2b39560b8232dadb472}{SIL\+\_\+update\+Output\+\_\+1s}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a4bba7ed7d059aaea97ea7739d4a8aadf}{SIL\+\_\+update\+State}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a2825be5948559ec4590c28ede64e4450}{SIL\+\_\+update\+State\+\_\+ts}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a59eac95bc7334b0a03715fe1cfbbcca1}{SIL\+\_\+update\+State\+\_\+200us}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a771f5694ced82f12c455c9aa7b09e8a4}{SIL\+\_\+update\+State\+\_\+1ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_ad4d3c47eb9a2d78a7c7042067d358d94}{SIL\+\_\+update\+State\+\_\+10ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a06036b1f582360534fabe0accf99ddcc}{SIL\+\_\+update\+State\+\_\+100ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a2838f5346d7b4916cd601c41594fc05c}{SIL\+\_\+update\+State\+\_\+1s}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a3f337ca55a1e439329bc2b11fabbd673}{SIL\+\_\+\+SIL\+\_\+write\+Snapshot}} (FILE $\ast$snapshot\+File)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_aeab96a996fe49fffa8e45559025012b9}{SIL\+\_\+\+SIL\+\_\+read\+Snapshot}} (FILE $\ast$snapshot\+File)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a5509b491627e5f7ee27c25815ac07c48}{SIL\+\_\+write\+Snapshot}} (double t\+Now, uint16\+\_\+t instance\+Number, char $\ast$temp\+Path)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_a296ff2009cd74a2c451a2bcded01dff7}{SIL\+\_\+read\+Snapshot}} (uint16\+\_\+t instance\+Number, char $\ast$temp\+Path)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8c_ad56504ca7eecddc4addf6b342e0d6370}{SIL\+\_\+diag\+Printf}} (const char $\ast$msg,...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lib_epc_control_8h_a6c0dfafedd208ad225a68a634c9ea8c7}{SIL\+\_\+s\+Param\+\_\+t}} \mbox{\hyperlink{lib_epc_control_8c_ab657a19b95f6cfab5a555d5d503c0b3e}{SIL\+\_\+\+Parameters}} \mbox{[}$\,$\mbox{]} = \mbox{\hyperlink{lib_epc_control_8h_a7c2f4c041f12cff2bdc76a124fac163a}{SIL\+\_\+\+PARAMETERS\+\_\+\+DEFAULTS}}()
+\item 
+\mbox{\hyperlink{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}{SIL\+\_\+s\+Ports\+\_\+t}} \mbox{\hyperlink{lib_epc_control_8c_aa8c520d7306f12a6098f3cb4fdd3d1ea}{SIL\+\_\+\+Ports}} = \mbox{\hyperlink{lib_epc_control_8h_a18cd38012e645a9dc030b596eef8d6e7}{SIL\+\_\+\+PORTS\+\_\+\+DEFAULTS}}()
+\item 
+FILE $\ast$ \mbox{\hyperlink{lib_epc_control_8c_a842a505ccbf33200790bee3a49ea14e4}{SIL\+\_\+\+Snapshot\+File}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lib_epc_control_8c_ae782abdb390d65528ebd622389c5a5d4}\label{lib_epc_control_8c_ae782abdb390d65528ebd622389c5a5d4}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_EPSILON@{SIL\_EPSILON}}
+\index{SIL\_EPSILON@{SIL\_EPSILON}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_EPSILON}{SIL\_EPSILON}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+EPSILON~( 0.\+1e-\/9L )}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ada32dc3ec0f400058499e4580e8eea2b}\label{lib_epc_control_8c_ada32dc3ec0f400058499e4580e8eea2b}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_SNAPSHOT\_FILE\_EXTENSION@{SIL\_SNAPSHOT\_FILE\_EXTENSION}}
+\index{SIL\_SNAPSHOT\_FILE\_EXTENSION@{SIL\_SNAPSHOT\_FILE\_EXTENSION}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_SNAPSHOT\_FILE\_EXTENSION}{SIL\_SNAPSHOT\_FILE\_EXTENSION}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+SNAPSHOT\+\_\+\+FILE\+\_\+\+EXTENSION~\char`\"{}.dat\char`\"{}}
+
+\mbox{\Hypertarget{lib_epc_control_8c_aec2b58cf1ed4b2c1886e3da72fa549fe}\label{lib_epc_control_8c_aec2b58cf1ed4b2c1886e3da72fa549fe}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_SNAPSHOT\_FILENAME@{SIL\_SNAPSHOT\_FILENAME}}
+\index{SIL\_SNAPSHOT\_FILENAME@{SIL\_SNAPSHOT\_FILENAME}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_SNAPSHOT\_FILENAME}{SIL\_SNAPSHOT\_FILENAME}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+SNAPSHOT\+\_\+\+FILENAME~\char`\"{}snapshot\+\_\+data\char`\"{}}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a9af98f89d7f7d97e6b61ff6d29435844}\label{lib_epc_control_8c_a9af98f89d7f7d97e6b61ff6d29435844}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_TASK\_GROUP\_DEFAULT@{SIL\_TASK\_GROUP\_DEFAULT}}
+\index{SIL\_TASK\_GROUP\_DEFAULT@{SIL\_TASK\_GROUP\_DEFAULT}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_TASK\_GROUP\_DEFAULT}{SIL\_TASK\_GROUP\_DEFAULT}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\+DEFAULT(\begin{DoxyParamCaption}\item[{}]{m\+Grp,  }\item[{}]{m\+Per }\end{DoxyParamCaption})~    \mbox{[}SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\#\#m\+Grp\mbox{]}     = \mbox{\hyperlink{lib_epc_control_8c_aff35d265592c728e66c7510c82902233}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\+DEFAULTS}}(m\+Grp, m\+Per)}
+
+\mbox{\Hypertarget{lib_epc_control_8c_aff35d265592c728e66c7510c82902233}\label{lib_epc_control_8c_aff35d265592c728e66c7510c82902233}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_TASK\_GROUP\_DEFAULTS@{SIL\_TASK\_GROUP\_DEFAULTS}}
+\index{SIL\_TASK\_GROUP\_DEFAULTS@{SIL\_TASK\_GROUP\_DEFAULTS}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_TASK\_GROUP\_DEFAULTS}{SIL\_TASK\_GROUP\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{m\+Grp,  }\item[{}]{m\+Per }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                           \(\backslash\)}
+\DoxyCodeLine{    .tPeriod                    = mPer,                                                                 \(\backslash\)}
+\DoxyCodeLine{    .nHandlers                  = 2U,                                                                   \(\backslash\)}
+\DoxyCodeLine{    .taskHandlers               = \mbox{\hyperlink{lib_epc_control_8c_ad19e0c4362119d2f90556e7b53730929}{SIL\_TASK\_HANDLERS\_DEFAULTS}}(mGrp)                                      \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{lib_epc_control_8c_a73217f13108e9859b06c1082d832d5fb}\label{lib_epc_control_8c_a73217f13108e9859b06c1082d832d5fb}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_TASK\_GROUPS\_DEFAULTS@{SIL\_TASK\_GROUPS\_DEFAULTS}}
+\index{SIL\_TASK\_GROUPS\_DEFAULTS@{SIL\_TASK\_GROUPS\_DEFAULTS}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_TASK\_GROUPS\_DEFAULTS}{SIL\_TASK\_GROUPS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+TASK\+\_\+\+GROUPS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                                 \(\backslash\)}
+\DoxyCodeLine{    SIL\_TASK\_GROUP\_DEFAULT(ts,     150e-\/6),                                                             \(\backslash\)}
+\DoxyCodeLine{    SIL\_TASK\_GROUP\_DEFAULT(200us,  200e-\/6),                                                             \(\backslash\)}
+\DoxyCodeLine{    SIL\_TASK\_GROUP\_DEFAULT(1ms,    1.0e-\/3),                                                             \(\backslash\)}
+\DoxyCodeLine{    SIL\_TASK\_GROUP\_DEFAULT(10ms,   10.0e-\/3),                                                            \(\backslash\)}
+\DoxyCodeLine{    SIL\_TASK\_GROUP\_DEFAULT(100ms,  100.0e-\/3),                                                           \(\backslash\)}
+\DoxyCodeLine{    SIL\_TASK\_GROUP\_DEFAULT(1s,     1000.0e-\/3),                                                          \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                                                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{lib_epc_control_8c_a1f3c42a620f7679b0c31c42950b36100}\label{lib_epc_control_8c_a1f3c42a620f7679b0c31c42950b36100}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_TASK\_HANDLER\_DEFAULTS@{SIL\_TASK\_HANDLER\_DEFAULTS}}
+\index{SIL\_TASK\_HANDLER\_DEFAULTS@{SIL\_TASK\_HANDLER\_DEFAULTS}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_TASK\_HANDLER\_DEFAULTS}{SIL\_TASK\_HANDLER\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+TASK\+\_\+\+HANDLER\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{m\+Cbk }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                               \(\backslash\)}
+\DoxyCodeLine{    .tCallLast                  = -\/1.0,                                                                 \(\backslash\)}
+\DoxyCodeLine{    .taskCallback               = mCbk                                                                  \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{lib_epc_control_8c_ad19e0c4362119d2f90556e7b53730929}\label{lib_epc_control_8c_ad19e0c4362119d2f90556e7b53730929}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_TASK\_HANDLERS\_DEFAULTS@{SIL\_TASK\_HANDLERS\_DEFAULTS}}
+\index{SIL\_TASK\_HANDLERS\_DEFAULTS@{SIL\_TASK\_HANDLERS\_DEFAULTS}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_TASK\_HANDLERS\_DEFAULTS}{SIL\_TASK\_HANDLERS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+TASK\+\_\+\+HANDLERS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{m\+Grp }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                              \(\backslash\)}
+\DoxyCodeLine{    [\mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0a29f3a1246607f135de9c112ae2258e8a}{SIL\_TASK\_CONTEXT\_OUTPUT}}]   = \mbox{\hyperlink{lib_epc_control_8c_a1f3c42a620f7679b0c31c42950b36100}{SIL\_TASK\_HANDLER\_DEFAULTS}}(SIL\_updateOutput\_\#\#mGrp),                   \(\backslash\)}
+\DoxyCodeLine{    [\mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0abeaa7ea1b3e75063a32888ba135cac51}{SIL\_TASK\_CONTEXT\_STATE}}]    = \mbox{\hyperlink{lib_epc_control_8c_a1f3c42a620f7679b0c31c42950b36100}{SIL\_TASK\_HANDLER\_DEFAULTS}}(SIL\_updateState\_\#\#mGrp)                     \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{lib_epc_control_8c_af27efe74bbbc92dd505ed6feb632c2f4}\label{lib_epc_control_8c_af27efe74bbbc92dd505ed6feb632c2f4}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_UPDATE\_TOGGLE@{SIL\_UPDATE\_TOGGLE}}
+\index{SIL\_UPDATE\_TOGGLE@{SIL\_UPDATE\_TOGGLE}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_UPDATE\_TOGGLE}{SIL\_UPDATE\_TOGGLE}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+UPDATE\+\_\+\+TOGGLE(\begin{DoxyParamCaption}\item[{}]{m\+Grp }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{static} \textcolor{keywordtype}{bool} updateToggle = \textcolor{keyword}{true};                                                                    \mbox{\hyperlink{lib_epc_control_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}{\(\backslash\)}}}
+\DoxyCodeLine{\mbox{\hyperlink{lib_epc_control_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}{                                                                                                        \(\backslash\)}}}
+\DoxyCodeLine{\mbox{\hyperlink{lib_epc_control_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}{    SIL\_PORT\_OUT}}(\mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e}{SIL\_OUT\_CTL\_CDIR}}, mGrp)    =  updateToggle;                                            \(\backslash\)}
+\DoxyCodeLine{    updateToggle                            = !updateToggle}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{lib_epc_control_8c_a3210e1f49d48170d6b757cb502986256}\label{lib_epc_control_8c_a3210e1f49d48170d6b757cb502986256}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_eTaskContext\_t@{SIL\_eTaskContext\_t}}
+\index{SIL\_eTaskContext\_t@{SIL\_eTaskContext\_t}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_eTaskContext\_t}{SIL\_eTaskContext\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0}{SIL\+\_\+\+Task\+Context\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8c_a3210e1f49d48170d6b757cb502986256}{SIL\+\_\+e\+Task\+Context\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ae6f17a342abe900c59d650833838087c}\label{lib_epc_control_8c_ae6f17a342abe900c59d650833838087c}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_fTaskCallback\_t@{SIL\_fTaskCallback\_t}}
+\index{SIL\_fTaskCallback\_t@{SIL\_fTaskCallback\_t}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_fTaskCallback\_t}{SIL\_fTaskCallback\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ SIL\+\_\+f\+Task\+Callback\+\_\+t) (double t\+Now)}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a7ed97dea947336ca74b74780fb21e48b}\label{lib_epc_control_8c_a7ed97dea947336ca74b74780fb21e48b}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_sTaskGroup\_t@{SIL\_sTaskGroup\_t}}
+\index{SIL\_sTaskGroup\_t@{SIL\_sTaskGroup\_t}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_sTaskGroup\_t}{SIL\_sTaskGroup\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_i_l___task_group__s}{SIL\+\_\+\+Task\+Group\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8c_a7ed97dea947336ca74b74780fb21e48b}{SIL\+\_\+s\+Task\+Group\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ae89a63ad9fd5e364d8b48eb25eef9757}\label{lib_epc_control_8c_ae89a63ad9fd5e364d8b48eb25eef9757}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_sTaskHandler\_t@{SIL\_sTaskHandler\_t}}
+\index{SIL\_sTaskHandler\_t@{SIL\_sTaskHandler\_t}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_sTaskHandler\_t}{SIL\_sTaskHandler\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_i_l___task_handler__s}{SIL\+\_\+\+Task\+Handler\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8c_ae89a63ad9fd5e364d8b48eb25eef9757}{SIL\+\_\+s\+Task\+Handler\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0}\label{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_TaskContext\_e@{SIL\_TaskContext\_e}}
+\index{SIL\_TaskContext\_e@{SIL\_TaskContext\_e}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_TaskContext\_e}{SIL\_TaskContext\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0}{SIL\+\_\+\+Task\+Context\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_CONTEXT\_OUTPUT@{SIL\_TASK\_CONTEXT\_OUTPUT}!libEpcControl.c@{libEpcControl.c}}\index{libEpcControl.c@{libEpcControl.c}!SIL\_TASK\_CONTEXT\_OUTPUT@{SIL\_TASK\_CONTEXT\_OUTPUT}}}\mbox{\Hypertarget{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0a29f3a1246607f135de9c112ae2258e8a}\label{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0a29f3a1246607f135de9c112ae2258e8a}} 
+SIL\+\_\+\+TASK\+\_\+\+CONTEXT\+\_\+\+OUTPUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_CONTEXT\_STATE@{SIL\_TASK\_CONTEXT\_STATE}!libEpcControl.c@{libEpcControl.c}}\index{libEpcControl.c@{libEpcControl.c}!SIL\_TASK\_CONTEXT\_STATE@{SIL\_TASK\_CONTEXT\_STATE}}}\mbox{\Hypertarget{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0abeaa7ea1b3e75063a32888ba135cac51}\label{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0abeaa7ea1b3e75063a32888ba135cac51}} 
+SIL\+\_\+\+TASK\+\_\+\+CONTEXT\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_CONTEXT\_CNT@{SIL\_TASK\_CONTEXT\_CNT}!libEpcControl.c@{libEpcControl.c}}\index{libEpcControl.c@{libEpcControl.c}!SIL\_TASK\_CONTEXT\_CNT@{SIL\_TASK\_CONTEXT\_CNT}}}\mbox{\Hypertarget{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0aabf0e2f1d319c42f4eb74f8795897373}\label{lib_epc_control_8c_a69f2cbfe0627771bb7a8a35e626491d0aabf0e2f1d319c42f4eb74f8795897373}} 
+SIL\+\_\+\+TASK\+\_\+\+CONTEXT\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lib_epc_control_8c_aceb6ad89b9571df43544631e548e0228}\label{lib_epc_control_8c_aceb6ad89b9571df43544631e548e0228}} 
+\index{libEpcControl.c@{libEpcControl.c}!AD1D\_SIL\_readSnapshot@{AD1D\_SIL\_readSnapshot}}
+\index{AD1D\_SIL\_readSnapshot@{AD1D\_SIL\_readSnapshot}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_SIL\_readSnapshot()}{AD1D\_SIL\_readSnapshot()}}
+{\footnotesize\ttfamily void AD1\+D\+\_\+\+SIL\+\_\+read\+Snapshot (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{snapshot\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ad9bda3cab726f79b7c06a60441554998}\label{lib_epc_control_8c_ad9bda3cab726f79b7c06a60441554998}} 
+\index{libEpcControl.c@{libEpcControl.c}!AD1D\_SIL\_writeSnapshot@{AD1D\_SIL\_writeSnapshot}}
+\index{AD1D\_SIL\_writeSnapshot@{AD1D\_SIL\_writeSnapshot}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_SIL\_writeSnapshot()}{AD1D\_SIL\_writeSnapshot()}}
+{\footnotesize\ttfamily void AD1\+D\+\_\+\+SIL\+\_\+write\+Snapshot (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{snapshot\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a1e14b3d0dc196f803eddbdaf9694e990}\label{lib_epc_control_8c_a1e14b3d0dc196f803eddbdaf9694e990}} 
+\index{libEpcControl.c@{libEpcControl.c}!AD2D\_SIL\_readSnapshot@{AD2D\_SIL\_readSnapshot}}
+\index{AD2D\_SIL\_readSnapshot@{AD2D\_SIL\_readSnapshot}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_SIL\_readSnapshot()}{AD2D\_SIL\_readSnapshot()}}
+{\footnotesize\ttfamily void AD2\+D\+\_\+\+SIL\+\_\+read\+Snapshot (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{snapshot\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a366bea37699901e8e0f83572c121e5d0}\label{lib_epc_control_8c_a366bea37699901e8e0f83572c121e5d0}} 
+\index{libEpcControl.c@{libEpcControl.c}!AD2D\_SIL\_writeSnapshot@{AD2D\_SIL\_writeSnapshot}}
+\index{AD2D\_SIL\_writeSnapshot@{AD2D\_SIL\_writeSnapshot}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_SIL\_writeSnapshot()}{AD2D\_SIL\_writeSnapshot()}}
+{\footnotesize\ttfamily void AD2\+D\+\_\+\+SIL\+\_\+write\+Snapshot (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{snapshot\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ad56504ca7eecddc4addf6b342e0d6370}\label{lib_epc_control_8c_ad56504ca7eecddc4addf6b342e0d6370}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_diagPrintf@{SIL\_diagPrintf}}
+\index{SIL\_diagPrintf@{SIL\_diagPrintf}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_diagPrintf()}{SIL\_diagPrintf()}}
+{\footnotesize\ttfamily void SIL\+\_\+diag\+Printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ae7faa4e53156bb74ada32b2980fdc965}\label{lib_epc_control_8c_ae7faa4e53156bb74ada32b2980fdc965}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_getNextSampleHit@{SIL\_getNextSampleHit}}
+\index{SIL\_getNextSampleHit@{SIL\_getNextSampleHit}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_getNextSampleHit()}{SIL\_getNextSampleHit()}}
+{\footnotesize\ttfamily double SIL\+\_\+get\+Next\+Sample\+Hit (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ab81a90ab6353010bbcbfbe378b6c133b}\label{lib_epc_control_8c_ab81a90ab6353010bbcbfbe378b6c133b}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_initializeLibrary@{SIL\_initializeLibrary}}
+\index{SIL\_initializeLibrary@{SIL\_initializeLibrary}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_initializeLibrary()}{SIL\_initializeLibrary()}}
+{\footnotesize\ttfamily bool SIL\+\_\+initialize\+Library (\begin{DoxyParamCaption}\item[{double}]{t\+Step,  }\item[{\mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}}}]{solver\+Type,  }\item[{\mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}}}]{mdl\+Intent,  }\item[{char $\ast$}]{pmvs\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a296ff2009cd74a2c451a2bcded01dff7}\label{lib_epc_control_8c_a296ff2009cd74a2c451a2bcded01dff7}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_readSnapshot@{SIL\_readSnapshot}}
+\index{SIL\_readSnapshot@{SIL\_readSnapshot}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_readSnapshot()}{SIL\_readSnapshot()}}
+{\footnotesize\ttfamily void SIL\+\_\+read\+Snapshot (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{instance\+Number,  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_aeab96a996fe49fffa8e45559025012b9}\label{lib_epc_control_8c_aeab96a996fe49fffa8e45559025012b9}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_SIL\_readSnapshot@{SIL\_SIL\_readSnapshot}}
+\index{SIL\_SIL\_readSnapshot@{SIL\_SIL\_readSnapshot}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_SIL\_readSnapshot()}{SIL\_SIL\_readSnapshot()}}
+{\footnotesize\ttfamily void SIL\+\_\+\+SIL\+\_\+read\+Snapshot (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{snapshot\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a3f337ca55a1e439329bc2b11fabbd673}\label{lib_epc_control_8c_a3f337ca55a1e439329bc2b11fabbd673}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_SIL\_writeSnapshot@{SIL\_SIL\_writeSnapshot}}
+\index{SIL\_SIL\_writeSnapshot@{SIL\_SIL\_writeSnapshot}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_SIL\_writeSnapshot()}{SIL\_SIL\_writeSnapshot()}}
+{\footnotesize\ttfamily void SIL\+\_\+\+SIL\+\_\+write\+Snapshot (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{snapshot\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ace37954380efd0cc545d686525f44253}\label{lib_epc_control_8c_ace37954380efd0cc545d686525f44253}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_terminateLibrary@{SIL\_terminateLibrary}}
+\index{SIL\_terminateLibrary@{SIL\_terminateLibrary}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_terminateLibrary()}{SIL\_terminateLibrary()}}
+{\footnotesize\ttfamily void SIL\+\_\+terminate\+Library (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a4516f98eb48b67f3cfac58f6f506395b}\label{lib_epc_control_8c_a4516f98eb48b67f3cfac58f6f506395b}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateOutput@{SIL\_updateOutput}}
+\index{SIL\_updateOutput@{SIL\_updateOutput}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput()}{SIL\_updateOutput()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a6fa1fbbfa14569f4bd41950a860eb75a}\label{lib_epc_control_8c_a6fa1fbbfa14569f4bd41950a860eb75a}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateOutput\_100ms@{SIL\_updateOutput\_100ms}}
+\index{SIL\_updateOutput\_100ms@{SIL\_updateOutput\_100ms}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_100ms()}{SIL\_updateOutput\_100ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+100ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ae7e96e5405835166c40c25a724ec7439}\label{lib_epc_control_8c_ae7e96e5405835166c40c25a724ec7439}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateOutput\_10ms@{SIL\_updateOutput\_10ms}}
+\index{SIL\_updateOutput\_10ms@{SIL\_updateOutput\_10ms}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_10ms()}{SIL\_updateOutput\_10ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+10ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a75ff58ce3d5d4580e490ef7a69007e21}\label{lib_epc_control_8c_a75ff58ce3d5d4580e490ef7a69007e21}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateOutput\_1ms@{SIL\_updateOutput\_1ms}}
+\index{SIL\_updateOutput\_1ms@{SIL\_updateOutput\_1ms}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_1ms()}{SIL\_updateOutput\_1ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+1ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a01c7e531ea48b2b39560b8232dadb472}\label{lib_epc_control_8c_a01c7e531ea48b2b39560b8232dadb472}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateOutput\_1s@{SIL\_updateOutput\_1s}}
+\index{SIL\_updateOutput\_1s@{SIL\_updateOutput\_1s}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_1s()}{SIL\_updateOutput\_1s()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+1s (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a0ee7728e508048a3431cbe5591a6fe6e}\label{lib_epc_control_8c_a0ee7728e508048a3431cbe5591a6fe6e}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateOutput\_200us@{SIL\_updateOutput\_200us}}
+\index{SIL\_updateOutput\_200us@{SIL\_updateOutput\_200us}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_200us()}{SIL\_updateOutput\_200us()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+200us (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ac996ef11ecaea694174e16c084e34121}\label{lib_epc_control_8c_ac996ef11ecaea694174e16c084e34121}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateOutput\_ts@{SIL\_updateOutput\_ts}}
+\index{SIL\_updateOutput\_ts@{SIL\_updateOutput\_ts}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_ts()}{SIL\_updateOutput\_ts()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+ts (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a4bba7ed7d059aaea97ea7739d4a8aadf}\label{lib_epc_control_8c_a4bba7ed7d059aaea97ea7739d4a8aadf}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateState@{SIL\_updateState}}
+\index{SIL\_updateState@{SIL\_updateState}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState()}{SIL\_updateState()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a06036b1f582360534fabe0accf99ddcc}\label{lib_epc_control_8c_a06036b1f582360534fabe0accf99ddcc}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateState\_100ms@{SIL\_updateState\_100ms}}
+\index{SIL\_updateState\_100ms@{SIL\_updateState\_100ms}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_100ms()}{SIL\_updateState\_100ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+100ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_ad4d3c47eb9a2d78a7c7042067d358d94}\label{lib_epc_control_8c_ad4d3c47eb9a2d78a7c7042067d358d94}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateState\_10ms@{SIL\_updateState\_10ms}}
+\index{SIL\_updateState\_10ms@{SIL\_updateState\_10ms}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_10ms()}{SIL\_updateState\_10ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+10ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a771f5694ced82f12c455c9aa7b09e8a4}\label{lib_epc_control_8c_a771f5694ced82f12c455c9aa7b09e8a4}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateState\_1ms@{SIL\_updateState\_1ms}}
+\index{SIL\_updateState\_1ms@{SIL\_updateState\_1ms}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_1ms()}{SIL\_updateState\_1ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+1ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a2838f5346d7b4916cd601c41594fc05c}\label{lib_epc_control_8c_a2838f5346d7b4916cd601c41594fc05c}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateState\_1s@{SIL\_updateState\_1s}}
+\index{SIL\_updateState\_1s@{SIL\_updateState\_1s}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_1s()}{SIL\_updateState\_1s()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+1s (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a59eac95bc7334b0a03715fe1cfbbcca1}\label{lib_epc_control_8c_a59eac95bc7334b0a03715fe1cfbbcca1}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateState\_200us@{SIL\_updateState\_200us}}
+\index{SIL\_updateState\_200us@{SIL\_updateState\_200us}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_200us()}{SIL\_updateState\_200us()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+200us (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a2825be5948559ec4590c28ede64e4450}\label{lib_epc_control_8c_a2825be5948559ec4590c28ede64e4450}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_updateState\_ts@{SIL\_updateState\_ts}}
+\index{SIL\_updateState\_ts@{SIL\_updateState\_ts}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_ts()}{SIL\_updateState\_ts()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+ts (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a5509b491627e5f7ee27c25815ac07c48}\label{lib_epc_control_8c_a5509b491627e5f7ee27c25815ac07c48}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_writeSnapshot@{SIL\_writeSnapshot}}
+\index{SIL\_writeSnapshot@{SIL\_writeSnapshot}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_writeSnapshot()}{SIL\_writeSnapshot()}}
+{\footnotesize\ttfamily void SIL\+\_\+write\+Snapshot (\begin{DoxyParamCaption}\item[{double}]{t\+Now,  }\item[{uint16\+\_\+t}]{instance\+Number,  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8c_af0fe4affddb768264dd9a710510f3bc8}\label{lib_epc_control_8c_af0fe4affddb768264dd9a710510f3bc8}} 
+\index{libEpcControl.c@{libEpcControl.c}!system\_main@{system\_main}}
+\index{system\_main@{system\_main}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{system\_main()}{system\_main()}}
+{\footnotesize\ttfamily void system\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{lib_epc_control_8c_ab657a19b95f6cfab5a555d5d503c0b3e}\label{lib_epc_control_8c_ab657a19b95f6cfab5a555d5d503c0b3e}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_Parameters@{SIL\_Parameters}}
+\index{SIL\_Parameters@{SIL\_Parameters}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_Parameters}{SIL\_Parameters}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lib_epc_control_8h_a6c0dfafedd208ad225a68a634c9ea8c7}{SIL\+\_\+s\+Param\+\_\+t}} SIL\+\_\+\+Parameters\mbox{[}$\,$\mbox{]} = \mbox{\hyperlink{lib_epc_control_8h_a7c2f4c041f12cff2bdc76a124fac163a}{SIL\+\_\+\+PARAMETERS\+\_\+\+DEFAULTS}}()}
+
+\mbox{\Hypertarget{lib_epc_control_8c_aa8c520d7306f12a6098f3cb4fdd3d1ea}\label{lib_epc_control_8c_aa8c520d7306f12a6098f3cb4fdd3d1ea}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_Ports@{SIL\_Ports}}
+\index{SIL\_Ports@{SIL\_Ports}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_Ports}{SIL\_Ports}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}{SIL\+\_\+s\+Ports\+\_\+t}} SIL\+\_\+\+Ports = \mbox{\hyperlink{lib_epc_control_8h_a18cd38012e645a9dc030b596eef8d6e7}{SIL\+\_\+\+PORTS\+\_\+\+DEFAULTS}}()}
+
+\mbox{\Hypertarget{lib_epc_control_8c_a842a505ccbf33200790bee3a49ea14e4}\label{lib_epc_control_8c_a842a505ccbf33200790bee3a49ea14e4}} 
+\index{libEpcControl.c@{libEpcControl.c}!SIL\_SnapshotFile@{SIL\_SnapshotFile}}
+\index{SIL\_SnapshotFile@{SIL\_SnapshotFile}!libEpcControl.c@{libEpcControl.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_SnapshotFile}{SIL\_SnapshotFile}}
+{\footnotesize\ttfamily FILE$\ast$ SIL\+\_\+\+Snapshot\+File}
+

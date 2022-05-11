@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="namespacegridtied_1_1ccstudiodss" kind="namespace" language="Python">
+    <compoundname>gridtied::ccstudiodss</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacegridtied_1_1ccstudiodss_1a3425cc9892d644a13c857360b0aa76f2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>gridtied::ccstudiodss.build_command</definition>
+        <argsstring></argsstring>
+        <name>build_command</name>
+        <qualifiedname>gridtied.ccstudiodss.build_command</qualifiedname>
+        <initializer>=  ccstudiodss.cli.create_build_command(
+    default_targets=[gridtied.default_target],
+    project_root=gridtied.project_root,
+    project_name=gridtied.project_name,
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gridtied/ccstudiodss.py" line="8" column="1" bodyfile="src/gridtied/ccstudiodss.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegridtied_1_1ccstudiodss_1a43d6347acaf78217c1dc724edbbc3e63" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>gridtied::ccstudiodss.list_targets_command</definition>
+        <argsstring></argsstring>
+        <name>list_targets_command</name>
+        <qualifiedname>gridtied.ccstudiodss.list_targets_command</qualifiedname>
+        <initializer>=  ccstudiodss.cli.create_list_targets_command(
+    project_name=gridtied.project_name,
+    default_project_root=gridtied.project_root,
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gridtied/ccstudiodss.py" line="15" column="1" bodyfile="src/gridtied/ccstudiodss.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gridtied/ccstudiodss.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

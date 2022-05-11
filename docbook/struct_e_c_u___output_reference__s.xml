@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_c_u___output_reference__s" xml:lang="en-US">
+<title>ECU_OutputReference_s Struct Reference</title>
+<indexterm><primary>ECU_OutputReference_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_reference__s_1afd2cac0933eeed660a7463ff3809aa8b">rf_ref</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_reference__s_1afab1c97b00be2b75effbcade675485bf">rv_ref</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_reference__s_1a502aaacad7d9a03df5d2070b37bb6b4b">rId</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_reference__s_1a0c21bb3a69c71b258f20700db40cb2c8">rIq</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_c_u___output_reference__s_1afd2cac0933eeed660a7463ff3809aa8b"/><section>
+    <title>rf_ref</title>
+<indexterm><primary>rf_ref</primary><secondary>ECU_OutputReference_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputReference_s</primary><secondary>rf_ref</secondary></indexterm>
+<para><computeroutput>double ECU_OutputReference_s::rf_ref</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_reference__s_1a502aaacad7d9a03df5d2070b37bb6b4b"/><section>
+    <title>rId</title>
+<indexterm><primary>rId</primary><secondary>ECU_OutputReference_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputReference_s</primary><secondary>rId</secondary></indexterm>
+<para><computeroutput>double ECU_OutputReference_s::rId</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_reference__s_1a0c21bb3a69c71b258f20700db40cb2c8"/><section>
+    <title>rIq</title>
+<indexterm><primary>rIq</primary><secondary>ECU_OutputReference_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputReference_s</primary><secondary>rIq</secondary></indexterm>
+<para><computeroutput>double ECU_OutputReference_s::rIq</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_reference__s_1afab1c97b00be2b75effbcade675485bf"/><section>
+    <title>rv_ref</title>
+<indexterm><primary>rv_ref</primary><secondary>ECU_OutputReference_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputReference_s</primary><secondary>rv_ref</secondary></indexterm>
+<para><computeroutput>double ECU_OutputReference_s::rv_ref</computeroutput></para></section>
+</section>
+</section>

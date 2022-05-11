@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_s_i_l___port_spec__s" kind="struct" language="C++" prot="public">
+    <compoundname>SIL_PortSpec_s</compoundname>
+    <includes refid="lib_epc_control_8h" local="no">libEpcControl.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_i_l___port_spec__s_1a79751280ee24342b33b8bd7d7c7d8f5a" prot="public" static="no" mutable="no">
+        <type>double *</type>
+        <definition>double* SIL_PortSpec_s::portPointer</definition>
+        <argsstring></argsstring>
+        <name>portPointer</name>
+        <qualifiedname>SIL_PortSpec_s::portPointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControl.h" line="251" column="32" bodyfile="sil/libEpcControl.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_i_l___port_spec__s_1ab69e675b9188fef7b87df0f8b6388dbc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SIL_PortSpec_s::portWidth</definition>
+        <argsstring></argsstring>
+        <name>portWidth</name>
+        <qualifiedname>SIL_PortSpec_s::portWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControl.h" line="252" column="33" bodyfile="sil/libEpcControl.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/libEpcControl.h" line="250" column="1" bodyfile="sil/libEpcControl.h" bodystart="250" bodyend="253"/>
+    <listofallmembers>
+      <member refid="struct_s_i_l___port_spec__s_1a79751280ee24342b33b8bd7d7c7d8f5a" prot="public" virt="non-virtual"><scope>SIL_PortSpec_s</scope><name>portPointer</name></member>
+      <member refid="struct_s_i_l___port_spec__s_1ab69e675b9188fef7b87df0f8b6388dbc" prot="public" virt="non-virtual"><scope>SIL_PortSpec_s</scope><name>portWidth</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

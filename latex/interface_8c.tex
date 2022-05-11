@@ -1,0 +1,44 @@
+\hypertarget{interface_8c}{}\doxysection{interface/interface.c File Reference}
+\label{interface_8c}\index{interface/interface.c@{interface/interface.c}}
+{\ttfamily \#include \char`\"{}interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sunspec.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}can\+Handler.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sunssf \mbox{\hyperlink{interface_8c_a1456a3e6d18b4b338ca7d542de34ed6c}{item\+Net\+Scale\+Factor}} (\mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} const $\ast$const item)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+CAN\+\_\+\+Enum\+\_\+\+Access\+Level \mbox{\hyperlink{interface_8c_a4b4d547f1291c2b0839837d1263cecd8}{meta\+Minimum\+Access\+Level}} \mbox{[}Meta\+\_\+\+Count\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interface_8c_a1456a3e6d18b4b338ca7d542de34ed6c}\label{interface_8c_a1456a3e6d18b4b338ca7d542de34ed6c}} 
+\index{interface.c@{interface.c}!itemNetScaleFactor@{itemNetScaleFactor}}
+\index{itemNetScaleFactor@{itemNetScaleFactor}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{itemNetScaleFactor()}{itemNetScaleFactor()}}
+{\footnotesize\ttfamily sunssf item\+Net\+Scale\+Factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} const $\ast$const}]{item }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{interface_8c_a4b4d547f1291c2b0839837d1263cecd8}\label{interface_8c_a4b4d547f1291c2b0839837d1263cecd8}} 
+\index{interface.c@{interface.c}!metaMinimumAccessLevel@{metaMinimumAccessLevel}}
+\index{metaMinimumAccessLevel@{metaMinimumAccessLevel}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{metaMinimumAccessLevel}{metaMinimumAccessLevel}}
+{\footnotesize\ttfamily CAN\+\_\+\+Enum\+\_\+\+Access\+Level meta\+Minimum\+Access\+Level\mbox{[}Meta\+\_\+\+Count\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    [Meta\_Value]            = CAN\_Enum\_AccessLevel\_Service\_Tech,}
+\DoxyCodeLine{    [Meta\_UserDefault]      = CAN\_Enum\_AccessLevel\_Service\_Tech,}
+\DoxyCodeLine{    [Meta\_FactoryDefault]   = CAN\_Enum\_AccessLevel\_EPC\_Eng,}
+\DoxyCodeLine{    [Meta\_Min]              = CAN\_Enum\_AccessLevel\_EPC\_Eng,}
+\DoxyCodeLine{    [Meta\_Max]              = CAN\_Enum\_AccessLevel\_EPC\_Eng,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

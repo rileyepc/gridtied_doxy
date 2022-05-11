@@ -1,0 +1,39 @@
+\hypertarget{can_interface_8h_source}{}\doxysection{can\+Interface.\+h}
+\label{can_interface_8h_source}\index{interface/canInterface.h@{interface/canInterface.h}}
+\mbox{\hyperlink{can_interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{ifndef} \textcolor{preprocessor}{\_\_CANINTERFACE\_H\_\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_CANINTERFACE\_H\_\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}cand.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \mbox{\hyperlink{interface_8h}{"{}interface.h"{}}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{//standard libraries}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{stdbool}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{stdint}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{TEMP\_DELTA\_SCALE} \textcolor{preprocessor}{(}10.0f\textcolor{preprocessor}{)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{TEMP\_DELTA\_TIME\_SCALE} \textcolor{preprocessor}{(}0.01f\textcolor{preprocessor}{)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SOFTSTART\_INC\_SCALE} \textcolor{preprocessor}{(}10000.0f\textcolor{preprocessor}{)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{VOUT\_GAIN\_SCALE} \textcolor{preprocessor}{(}1000.0f\textcolor{preprocessor}{)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{IGBT\_THERMAL\_IMPEDANCE\_SCALE} \textcolor{preprocessor}{(}1000000.0f\textcolor{preprocessor}{)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{FBK\_SCALING\_SCALE} \textcolor{preprocessor}{(}100000.0f\textcolor{preprocessor}{)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{POWER\_SCALE} \textcolor{preprocessor}{(}10.0f\textcolor{preprocessor}{/}1000.0f\textcolor{preprocessor}{)} \textcolor{comment}{//scale from 0.1kW to W}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{TEMPERATURE\_SCALE} \textcolor{preprocessor}{(}10.0f\textcolor{preprocessor}{)}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{//public functions}}
+\DoxyCodeLine{21 \textcolor{keywordtype}{void} \mbox{\hyperlink{can_interface_8h_a1c41607124c2a3edfba4aca78b93e253}{canInterfaceInit}}(\textcolor{keywordtype}{int} canID, \textcolor{keywordtype}{int} SA\_mask, CAN\_BAUDRATE baud, uint32\_t buildTime, uint32\_t buildGitRev);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} (*\mbox{\hyperlink{can_interface_8h_a78f073adbefd90c277a7962d8d383996}{ParameterGetterSetter}})(}
+\DoxyCodeLine{24     Meta\_Enum meta\_index,}
+\DoxyCodeLine{25     \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{InterfaceItem\_void}} \textcolor{keyword}{const} * \textcolor{keyword}{const} * \textcolor{keyword}{const} items,}
+\DoxyCodeLine{26     uint16\_t items\_count}
+\DoxyCodeLine{27 );}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keywordtype}{void} \mbox{\hyperlink{can_interface_8h_aa05e7dbca4ce3c6efc8800cd471a26cd}{updateProcessToInverter}}(\textcolor{keywordtype}{bool} valid);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{can_interface_8h_a39a21ea844fd21be0c1ac875ba3231d1}{canInterface\_itemNetMultiplier}}(\mbox{\hyperlink{struct_interface_item_common}{InterfaceItemCommon}} \textcolor{keyword}{const} * \textcolor{keyword}{const} item);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+
+\end{DoxyCode}

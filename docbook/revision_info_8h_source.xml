@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_revision_info_8h_source" xml:lang="en-US">
+<title>revisionInfo.h</title>
+<indexterm><primary>interface/revisionInfo.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">REVISION_INFO_H</emphasis>
+2 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">REVISION_INFO_H</emphasis>
+3 
+4 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdint</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+5 
+6 
+7 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_build_info">BuildInfo</link>&#32;{
+8 &#32;&#32;&#32;&#32;<link linkend="_struct_build_info_1a86c527649d9f37ea332a388a6bf4da16">uint16_t</link>&#32;<link linkend="_struct_build_info_1a86c527649d9f37ea332a388a6bf4da16">year</link>;
+9 &#32;&#32;&#32;&#32;<link linkend="_struct_build_info_1a1795aa29fcdbcf3e7d08c8f883e79bdb">uint16_t</link>&#32;<link linkend="_struct_build_info_1a1795aa29fcdbcf3e7d08c8f883e79bdb">month</link>;
+10 &#32;&#32;&#32;&#32;<link linkend="_struct_build_info_1a9382e8b62b78c80d87c15b67056a7cfc">uint16_t</link>&#32;<link linkend="_struct_build_info_1a9382e8b62b78c80d87c15b67056a7cfc">day</link>;
+11 &#32;&#32;&#32;&#32;<link linkend="_struct_build_info_1a273531526928ad7161a97e75e1a61724">uint16_t</link>&#32;<link linkend="_struct_build_info_1a273531526928ad7161a97e75e1a61724">hour</link>;
+12 &#32;&#32;&#32;&#32;<link linkend="_struct_build_info_1a26b670ec78a246194393cbe979b75cea">uint16_t</link>&#32;<link linkend="_struct_build_info_1a26b670ec78a246194393cbe979b75cea">minute</link>;
+13 &#32;&#32;&#32;&#32;<link linkend="_struct_build_info_1a485771dfeb15f4135f11cbfb1a665a44">uint32_t</link>&#32;<link linkend="_struct_build_info_1a485771dfeb15f4135f11cbfb1a665a44">formattedIntegerTime</link>;
+14 &#32;&#32;&#32;&#32;<link linkend="_struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad">uint32_t</link>&#32;<link linkend="_struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad">hash</link>;
+15 }&#32;BuildInfo;
+16 
+17 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_struct_build_info">BuildInfo</link>&#32;<link linkend="_revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655">buildInfo</link>;
+18 
+19 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>&#32;<emphasis role="comment">//&#32;REVISION_INFO_H</emphasis>
+</programlisting></section>

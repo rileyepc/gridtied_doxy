@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_i_n_t_f___command_flags" xml:lang="en-US">
+<title>INTF_CommandFlags Struct Reference</title>
+<indexterm><primary>INTF_CommandFlags</primary></indexterm>
+<para>
+<computeroutput>#include &lt;interfaceAccessors.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_struct_i_n_t_f___command_flags_1a061f5a9482d5eac586d05fbbc5278515">enable</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_i_n_t_f___command_flags_1a726f8801e06bf917e43d95c4c1a976d8">clearFaults</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_i_n_t_f___command_flags_1a7a3579235e0e2a5efece0fbc2c1aba55">clearWarnings</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_i_n_t_f___command_flags_1a0704ebf6a2d9622d12dd3713aacca9ac">islandReconnect</link></para>
+</listitem>
+            <listitem><para>PBC_ConnectSequence_t <link linkend="_struct_i_n_t_f___command_flags_1aa61fde7144c23f119a393104c9c81df1">protBusSeq</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_i_n_t_f___command_flags_1a726f8801e06bf917e43d95c4c1a976d8"/><section>
+    <title>clearFaults</title>
+<indexterm><primary>clearFaults</primary><secondary>INTF_CommandFlags</secondary></indexterm>
+<indexterm><primary>INTF_CommandFlags</primary><secondary>clearFaults</secondary></indexterm>
+<para><computeroutput>bool INTF_CommandFlags::clearFaults</computeroutput></para><para>
+
+<para>clear fault reuquest </para>
+</para>
+</section>
+<anchor xml:id="_struct_i_n_t_f___command_flags_1a7a3579235e0e2a5efece0fbc2c1aba55"/><section>
+    <title>clearWarnings</title>
+<indexterm><primary>clearWarnings</primary><secondary>INTF_CommandFlags</secondary></indexterm>
+<indexterm><primary>INTF_CommandFlags</primary><secondary>clearWarnings</secondary></indexterm>
+<para><computeroutput>bool INTF_CommandFlags::clearWarnings</computeroutput></para><para>
+
+<para>clear warnings </para>
+</para>
+</section>
+<anchor xml:id="_struct_i_n_t_f___command_flags_1a061f5a9482d5eac586d05fbbc5278515"/><section>
+    <title>enable</title>
+<indexterm><primary>enable</primary><secondary>INTF_CommandFlags</secondary></indexterm>
+<indexterm><primary>INTF_CommandFlags</primary><secondary>enable</secondary></indexterm>
+<para><computeroutput>uint16_t INTF_CommandFlags::enable</computeroutput></para><para>
+
+<para>run enable request, uint16_t to allow the out of range values of 2 and 3 </para>
+</para>
+</section>
+<anchor xml:id="_struct_i_n_t_f___command_flags_1a0704ebf6a2d9622d12dd3713aacca9ac"/><section>
+    <title>islandReconnect</title>
+<indexterm><primary>islandReconnect</primary><secondary>INTF_CommandFlags</secondary></indexterm>
+<indexterm><primary>INTF_CommandFlags</primary><secondary>islandReconnect</secondary></indexterm>
+<para><computeroutput>bool INTF_CommandFlags::islandReconnect</computeroutput></para></section>
+<anchor xml:id="_struct_i_n_t_f___command_flags_1aa61fde7144c23f119a393104c9c81df1"/><section>
+    <title>protBusSeq</title>
+<indexterm><primary>protBusSeq</primary><secondary>INTF_CommandFlags</secondary></indexterm>
+<indexterm><primary>INTF_CommandFlags</primary><secondary>protBusSeq</secondary></indexterm>
+<para><computeroutput>PBC_ConnectSequence_t INTF_CommandFlags::protBusSeq</computeroutput></para></section>
+</section>
+</section>

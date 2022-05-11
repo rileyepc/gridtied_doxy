@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_a_d2_d___data__s" xml:lang="en-US">
+<title>AD2D_Data_s Struct Reference</title>
+<indexterm><primary>AD2D_Data_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_ad2d__emu_8c_1ac6c98544c59d6e06532cbbde0e2a9157">AD2D_MeasChannel_t</link> <link linkend="_struct_a_d2_d___data__s_1a416a9ec8e1dff9bc6ed2e06c580e35f7">measChannels</link> [<link linkend="_ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b">AD2D_SEQUENCER_CHANNELS</link>]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7">channelCount</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7"/><section>
+    <title>channelCount</title>
+<indexterm><primary>channelCount</primary><secondary>AD2D_Data_s</secondary></indexterm>
+<indexterm><primary>AD2D_Data_s</primary><secondary>channelCount</secondary></indexterm>
+<para><computeroutput>uint16_t AD2D_Data_s::channelCount</computeroutput></para></section>
+<anchor xml:id="_struct_a_d2_d___data__s_1a416a9ec8e1dff9bc6ed2e06c580e35f7"/><section>
+    <title>measChannels</title>
+<indexterm><primary>measChannels</primary><secondary>AD2D_Data_s</secondary></indexterm>
+<indexterm><primary>AD2D_Data_s</primary><secondary>measChannels</secondary></indexterm>
+<para><computeroutput><link linkend="_ad2d__emu_8c_1ac6c98544c59d6e06532cbbde0e2a9157">AD2D_MeasChannel_t</link> AD2D_Data_s::measChannels[<link linkend="_ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b">AD2D_SEQUENCER_CHANNELS</link>]</computeroutput></para></section>
+</section>
+</section>

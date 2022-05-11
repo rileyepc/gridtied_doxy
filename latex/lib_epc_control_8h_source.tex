@@ -1,0 +1,787 @@
+\hypertarget{lib_epc_control_8h_source}{}\doxysection{lib\+Epc\+Control.\+h}
+\label{lib_epc_control_8h_source}\index{sil/libEpcControl.h@{sil/libEpcControl.h}}
+\mbox{\hyperlink{lib_epc_control_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{ifndef} \textcolor{preprocessor}{\_\_EPC\_SIL\_LIBRARY\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_EPC\_SIL\_LIBRARY\_H\_}}
+\DoxyCodeLine{3 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{4 \textcolor{comment}{*}}
+\DoxyCodeLine{5 \textcolor{comment}{*   \#\#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#   \#\#\#\#\#\#\#\#      \#\#\#\#\#\#\#    \#\#     \#\#     \#\#   \#\#\#\#\#\#\#\#\#   \#\#\#\#\#\#\#}}
+\DoxyCodeLine{6 \textcolor{comment}{*  \#         \#  \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#       \#\# \#\#}}
+\DoxyCodeLine{7 \textcolor{comment}{*  \# \#\#\#\#\#\#\#\#   \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#\#\#\#\#\#\#\#\#  \#\#}}
+\DoxyCodeLine{8 \textcolor{comment}{*  \#            \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#          \#\#}}
+\DoxyCodeLine{9 \textcolor{comment}{*   \#\#\#\#\#\#\#\#\#   \# \#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#  \#\# \#\#\#\#\#\#      \#\#\#\#\#\#\#     \#\#\#\#\#\#  \#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#  \#\#}}
+\DoxyCodeLine{10 \textcolor{comment}{*               \#                        \#\#}}
+\DoxyCodeLine{11 \textcolor{comment}{*               \#                         \#}}
+\DoxyCodeLine{12 \textcolor{comment}{*}}
+\DoxyCodeLine{13 \textcolor{comment}{*                                         COMPANY CONFIDENTIAL}}
+\DoxyCodeLine{14 \textcolor{comment}{*                         This document contains information proprietary to EPC Power.}}
+\DoxyCodeLine{15 \textcolor{comment}{*             This is an unpublished work subject to trade secret and copyright protection.}}
+\DoxyCodeLine{16 \textcolor{comment}{*                   In addition, the information may be the subject of patent applications}}
+\DoxyCodeLine{17 \textcolor{comment}{*                           in the United States and foreign countries.}}
+\DoxyCodeLine{18 \textcolor{comment}{*}}
+\DoxyCodeLine{19 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{22 \textcolor{comment}{ * M O D U L E    D E S C R I P T I O N}}
+\DoxyCodeLine{23 \textcolor{comment}{ *}}
+\DoxyCodeLine{24 \textcolor{comment}{ * Filename     : libEpcControl.h}}
+\DoxyCodeLine{25 \textcolor{comment}{ * Full Name    : Package::SubPackage::..::Class}}
+\DoxyCodeLine{26 \textcolor{comment}{ * Prefix       : SIL\_}}
+\DoxyCodeLine{27 \textcolor{comment}{ * Description  : EPC SIL Library interface -\/ this header declares the data interfaces (parameters,}}
+\DoxyCodeLine{28 \textcolor{comment}{ *                  inputs, and outputs) and the library methods intended to be called by a dynamic}}
+\DoxyCodeLine{29 \textcolor{comment}{ *                  simulation solver-\/-\/either directly or through a simulation-\/environment specific}}
+\DoxyCodeLine{30 \textcolor{comment}{ *                  wrapper.}}
+\DoxyCodeLine{31 \textcolor{comment}{ * Author       : D. Michaud}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ * History      :}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Date         Name            Description}}
+\DoxyCodeLine{35 \textcolor{comment}{ * 14.01.2019   D. Michaud      Initial Version}}
+\DoxyCodeLine{36 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\_\_cplusplus\textcolor{preprocessor}{)}}
+\DoxyCodeLine{39 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{43 \textcolor{comment}{ * Include Files}}
+\DoxyCodeLine{44 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{stdlib}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}                 \textcolor{comment}{/* For NULL */}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{stdint}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}                 \textcolor{comment}{/* For fixed-\/width types */}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{/* stdbool.h is available starting from Visual Studio 2013 (\_MSC\_VER equals to 1800) */}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{(}\textcolor{preprocessor}{!}\textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\_MSC\_VER\textcolor{preprocessor}{)}\textcolor{preprocessor}{)} \textcolor{preprocessor}{||} \textcolor{preprocessor}{(}\textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\_MSC\_VER\textcolor{preprocessor}{)} \textcolor{preprocessor}{\&\&} \textcolor{preprocessor}{(}\_MSC\_VER \textcolor{preprocessor}{>=} 1800\textcolor{preprocessor}{)}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{stdbool}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}                \textcolor{comment}{/* For Boolean type */}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{55 \textcolor{comment}{ * Constant Defines}}
+\DoxyCodeLine{56 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PARSPEC\_DEFAULTS}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mWidth}\textcolor{preprocessor}{,} \textcolor{preprocessor}{mTunable}\textcolor{preprocessor}{)} \textcolor{preprocessor}{\{}}
+\DoxyCodeLine{58     \textcolor{preprocessor}{.}\textcolor{preprocessor}{parPointer}                 \textcolor{preprocessor}{=} \textcolor{preprocessor}{NULL}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{59     \textcolor{preprocessor}{.}\textcolor{preprocessor}{parWidth}                   \textcolor{preprocessor}{=} \textcolor{preprocessor}{mWidth}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{60     \textcolor{preprocessor}{.}\textcolor{preprocessor}{parTunable}                 \textcolor{preprocessor}{=} \textcolor{preprocessor}{mTunable}                                                              \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PARAMETERS\_DEFAULTS}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)} \textcolor{preprocessor}{\{}}
+\DoxyCodeLine{64     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_PAR\_PMVSPATH} \textcolor{preprocessor}{]}        \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_aa1eb80e8e9cca94572df89842779e134}{SIL\_PARSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}1\textcolor{preprocessor}{,} \textcolor{keyword}{false}\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{65     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_PAR\_INTENT} \textcolor{preprocessor}{]}          \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_aa1eb80e8e9cca94572df89842779e134}{SIL\_PARSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}1\textcolor{preprocessor}{,} \textcolor{keyword}{false}\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{66     \textcolor{preprocessor}{\#\#}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}                                                                                       \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORTSPEC\_DEFAULTS}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mWidth}\textcolor{preprocessor}{)} \textcolor{preprocessor}{\{}}
+\DoxyCodeLine{70     \textcolor{preprocessor}{.}\textcolor{preprocessor}{portPointer}                \textcolor{preprocessor}{=} \textcolor{preprocessor}{NULL}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{71     \textcolor{preprocessor}{.}\textcolor{preprocessor}{portWidth}                  \textcolor{preprocessor}{=} \textcolor{preprocessor}{mWidth}                                                                \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_INPUTS\_DEFAULTS}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)} \textcolor{preprocessor}{\{}}
+\DoxyCodeLine{75     \textcolor{comment}{/* Control */}}
+\DoxyCodeLine{76     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_CTL\_RUN} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}1\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{77     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_CTL\_PBC} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}1\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{78     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_CTL\_CLR} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}1\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{79     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_CTL\_ISL} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}1\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{/* References */}}
+\DoxyCodeLine{82     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_REF\_FVR} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{83     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_REF\_RIG} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}4\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{84     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_REF\_RPG} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{/* Feedbacks */}}
+\DoxyCodeLine{87     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_FBK\_DCV} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{88     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_FBK\_PIC} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}6\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{89     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_FBK\_PVL} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{90     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_FBK\_PVR} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{91     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_FBK\_DINP} \textcolor{preprocessor}{]}        \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}5\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{/* Debug */}}
+\DoxyCodeLine{94     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_DBG\_1} \textcolor{preprocessor}{]}           \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{95     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_DBG\_2} \textcolor{preprocessor}{]}           \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{96     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_DBG\_3} \textcolor{preprocessor}{]}           \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{97     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_DBG\_4} \textcolor{preprocessor}{]}           \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{98     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_DBG\_5} \textcolor{preprocessor}{]}           \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{/* Customer */}}
+\DoxyCodeLine{101     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_INP\_CUST} \textcolor{preprocessor}{]}            \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}6\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{preprocessor}{\#\#}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}                                                                                       \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_OUTPUTS\_DEFAULTS}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)} \textcolor{preprocessor}{\{}}
+\DoxyCodeLine{107     \textcolor{comment}{/* Status */}}
+\DoxyCodeLine{108     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_STA\_CTL} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{109     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_STA\_PBC} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}1\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{110     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_STA\_GMR} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{111     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_STA\_GML} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{comment}{/* Monitor */}}
+\DoxyCodeLine{114     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_MON\_FVR} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{115     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_MON\_FVL} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{116     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_MON\_RIG} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}4\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{117     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_MON\_RPG} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}4\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{118     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_MON\_SCI} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}4\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{119     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_MON\_SCV} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{120     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_MON\_DCVI} \textcolor{preprocessor}{]}        \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}4\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{comment}{/* Feedbacks */}}
+\DoxyCodeLine{123     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_FBK\_PIC} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}6\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{124     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_FBK\_PVL} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{125     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_FBK\_PVR} \textcolor{preprocessor}{]}         \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{comment}{/* Control */}}
+\DoxyCodeLine{128     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_CTL\_DOUT} \textcolor{preprocessor}{]}        \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}5\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{129     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_CTL\_RLAY} \textcolor{preprocessor}{]}        \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}4\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{130     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_CTL\_GATE} \textcolor{preprocessor}{]}        \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}6\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{131     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_CTL\_CDIR} \textcolor{preprocessor}{]}        \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_TASK\_GROUP\_CNT}\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{/* Debug */}}
+\DoxyCodeLine{134     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_DBG} \textcolor{preprocessor}{]}             \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}32\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{comment}{/* References */}}
+\DoxyCodeLine{137     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_REF} \textcolor{preprocessor}{]}             \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}4\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{/* Customer */}}
+\DoxyCodeLine{140     \textcolor{preprocessor}{[} \textcolor{preprocessor}{SIL\_OUT\_CUST} \textcolor{preprocessor}{]}            \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\_PORTSPEC\_DEFAULTS}}\textcolor{preprocessor}{(}21\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{preprocessor}{\#\#}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}                                                                                       \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORTS\_DEFAULTS}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)} \textcolor{preprocessor}{\{}}
+\DoxyCodeLine{146     \textcolor{preprocessor}{.}\textcolor{preprocessor}{inpPort}                    \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_a23890ceaa9fbba57e73f562671e3a4b7}{SIL\_INPUTS\_DEFAULTS}}\textcolor{preprocessor}{(}\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{147     \textcolor{preprocessor}{.}\textcolor{preprocessor}{outPort}                    \textcolor{preprocessor}{=} \mbox{\hyperlink{lib_epc_control_8h_ae3523c495ef0f14dc59ffef0168128e4}{SIL\_OUTPUTS\_DEFAULTS}}\textcolor{preprocessor}{(}\textcolor{preprocessor}{)}\textcolor{preprocessor}{,}}
+\DoxyCodeLine{148     \textcolor{preprocessor}{\#\#}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}                                                                                       \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{153 \textcolor{comment}{ * Macro Defines}}
+\DoxyCodeLine{154 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PARAM\_P}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}                      \textcolor{preprocessor}{SIL\_Parameters}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{]}\textcolor{preprocessor}{.}\textcolor{preprocessor}{parPointer}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PARAM\_W}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}                      \textcolor{preprocessor}{SIL\_Parameters}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{]}\textcolor{preprocessor}{.}\textcolor{preprocessor}{parWidth}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PARAM\_T}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}                      \textcolor{preprocessor}{SIL\_Parameters}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{]}\textcolor{preprocessor}{.}\textcolor{preprocessor}{parTunable}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PARAM}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{,} \textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{,} \textcolor{preprocessor}{mTyp}\textcolor{preprocessor}{)}            \textcolor{preprocessor}{(}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mTyp} \textcolor{preprocessor}{*}\textcolor{preprocessor}{)}\mbox{\hyperlink{lib_epc_control_8h_a976ad84e491da31be2745a282f83966a}{SIL\_PARAM\_P}}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}\textcolor{preprocessor}{)}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{]}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORT\_INP\_P}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}                   \textcolor{preprocessor}{SIL\_Ports}\textcolor{preprocessor}{.}\textcolor{preprocessor}{inpPort}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{]}\textcolor{preprocessor}{.}\textcolor{preprocessor}{portPointer}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORT\_INP\_W}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}                   \textcolor{preprocessor}{SIL\_Ports}\textcolor{preprocessor}{.}\textcolor{preprocessor}{inpPort}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{]}\textcolor{preprocessor}{.}\textcolor{preprocessor}{portWidth}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORT\_INP}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{,} \textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{)}               \mbox{\hyperlink{lib_epc_control_8h_ab566304af8c7c3ef931ddfa8c9e69eec}{SIL\_PORT\_INP\_P}}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{]}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORT\_OUT\_P}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}                   \textcolor{preprocessor}{SIL\_Ports}\textcolor{preprocessor}{.}\textcolor{preprocessor}{outPort}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{]}\textcolor{preprocessor}{.}\textcolor{preprocessor}{portPointer}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORT\_OUT\_W}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}                   \textcolor{preprocessor}{SIL\_Ports}\textcolor{preprocessor}{.}\textcolor{preprocessor}{outPort}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{]}\textcolor{preprocessor}{.}\textcolor{preprocessor}{portWidth}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORT\_OUT}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{,} \textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{)}               \mbox{\hyperlink{lib_epc_control_8h_a5d14177846563842aefcce3d2d442c15}{SIL\_PORT\_OUT\_P}}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{)}\textcolor{preprocessor}{[}\textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{]}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166  \textcolor{comment}{/* Boolean type is available starting from Visual Studio 2013 (\_MSC\_VER equals to 1800).}}
+\DoxyCodeLine{167 \textcolor{comment}{    In older Visual Studio we need to define bool by ourselves. */}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\_MSC\_VER\textcolor{preprocessor}{)} \textcolor{preprocessor}{\&\&} \textcolor{preprocessor}{(}\_MSC\_VER \textcolor{preprocessor}{<} 1800\textcolor{preprocessor}{)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{bool}    \textcolor{preprocessor}{int}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{174 \textcolor{comment}{ * Type Definitions}}
+\DoxyCodeLine{175 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{comment}{/* Model Intents -\/ For indication of desired Model Fidelity³:}}
+\DoxyCodeLine{178 \textcolor{comment}{ * Select a "{}switched"{} model intent for accurate modelling of switching-\/frequency sideband harmonics at}}
+\DoxyCodeLine{179 \textcolor{comment}{ * the expense of increased simulation time. Conversely, the "{}averaged"{} models converter states that are}}
+\DoxyCodeLine{180 \textcolor{comment}{ * averaged over each switching half-\/period such that switching-\/frequency effects are ignored for increased}}
+\DoxyCodeLine{181 \textcolor{comment}{ * simulation speed. */}}
+\DoxyCodeLine{182 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562b}{SIL\_ModelIntent\_e}} \{}
+\DoxyCodeLine{183     \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba2df8b4b3304c6d0e365e0fd460ab3780}{SIL\_MODEL\_INTENT\_SWITCHED}},}
+\DoxyCodeLine{184     \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba6580cbabc0e59966d19d62a57017ed8f}{SIL\_MODEL\_INTENT\_AVERAGED}},}
+\DoxyCodeLine{185     \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba08583372439a329f9ca27216797d96c3}{SIL\_MODEL\_INTENT\_CNT}}}
+\DoxyCodeLine{186 \} SIL\_eModelIntent\_t;}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{comment}{/* Solver Type -\/ For indication of Solver Capabilities:}}
+\DoxyCodeLine{189 \textcolor{comment}{ * Select the option best describing the used solver sampling capabilities. Some environments are capable}}
+\DoxyCodeLine{190 \textcolor{comment}{ * of supporting multiple sample-\/rate tasks, others only offer a single sample rate. Further, some}}
+\DoxyCodeLine{191 \textcolor{comment}{ * environments support dynamically variable sample rate specification. Presently only "{}Variable Multi-\/}}
+\DoxyCodeLine{192 \textcolor{comment}{ * Rate"{} and "{}Fixed Single-\/Rate"{} solver types are supported. */}}
+\DoxyCodeLine{193 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6}{SIL\_SolverType\_e}} \{}
+\DoxyCodeLine{194     \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80}{SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE}},}
+\DoxyCodeLine{195     \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6afc670ce0c6f762e1e84d79fd2b41f183}{SIL\_SOLVER\_TYPE\_VARIABLE}},}
+\DoxyCodeLine{196     \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6ae3685caa4ef65143b616476ec57e3d2b}{SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE}},}
+\DoxyCodeLine{197     \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a3366082b4a36688431436954ae6908ab}{SIL\_SOLVER\_TYPE\_FIXED}},}
+\DoxyCodeLine{198     \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6aa1743274adbab534b35c524d2a529938}{SIL\_SOLVER\_TYPE\_CNT}}}
+\DoxyCodeLine{199 \} SIL\_eSolverType\_t;}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 \textcolor{comment}{/* Library Internal Task Groups:}}
+\DoxyCodeLine{202 \textcolor{comment}{ * The EPC Control system is in fact a multi-\/rate system with a variable time-\/step task for the realtime}}
+\DoxyCodeLine{203 \textcolor{comment}{ * (highest priority) control context. This enumeration may be used by the solver-\/interface if the solver}}
+\DoxyCodeLine{204 \textcolor{comment}{ * will manage invocation of the individual sampling tasks. */}}
+\DoxyCodeLine{205 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdc}{SIL\_TaskGroup\_e}} \{}
+\DoxyCodeLine{206     \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdca6752bdea6ba25e1c866793d9de9fddc2}{SIL\_TASK\_GROUP\_ts}},}
+\DoxyCodeLine{207     \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcad252ac161a55166b4499529360ce87c8}{SIL\_TASK\_GROUP\_200us}},}
+\DoxyCodeLine{208     \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcaf0d955c1cb8c3b7dd9a510ea3bf6dbd0}{SIL\_TASK\_GROUP\_1ms}},}
+\DoxyCodeLine{209     \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcabd3a3af76eaf8f536a2eeca2aee82f11}{SIL\_TASK\_GROUP\_10ms}},}
+\DoxyCodeLine{210     \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdca52ea4ad9e046ceb4545a1bf27689be6a}{SIL\_TASK\_GROUP\_100ms}},}
+\DoxyCodeLine{211     \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcac3d16ad5a1cedf24b10ea359023f034c}{SIL\_TASK\_GROUP\_1s}},}
+\DoxyCodeLine{212     \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcaa9e4d7626ae66406a51f13ef77cca768}{SIL\_TASK\_GROUP\_CNT}}}
+\DoxyCodeLine{213 \} SIL\_eTaskGroup\_t;}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{comment}{/* Control Modes:}}
+\DoxyCodeLine{216 \textcolor{comment}{ * Request operation using the following enumerated modes (via SIL\_INP\_CTL\_RUN) */}}
+\DoxyCodeLine{217 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649}{SIL\_ControlMode\_e}} \{}
+\DoxyCodeLine{218     \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a6cb07d8d85a5e8971fef51c675588304}{SIL\_CONTROL\_MODE\_INACTIVE}},}
+\DoxyCodeLine{219     \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649adccd557e1aab5f27d67e94ed78824b94}{SIL\_CONTROL\_MODE\_POWER}},}
+\DoxyCodeLine{220     \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a70c434e6626cb8b803cf6acd6a37b7f4}{SIL\_CONTROL\_MODE\_CURRENT}},}
+\DoxyCodeLine{221     \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a93c1a8587bc8b6a6b597585ab077535f}{SIL\_CONTROL\_MODE\_VOLTAGE}},}
+\DoxyCodeLine{222     \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a47926c1001ad9f5a01e613500336ee24}{SIL\_CONTROL\_MODE\_CNT}}}
+\DoxyCodeLine{223 \} SIL\_eControlMode\_t;}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{comment}{/* Parameter Specification: */}}
+\DoxyCodeLine{226 \textcolor{keyword}{typedef} \textcolor{keyword}{struct} \mbox{\hyperlink{struct_s_i_l___param__s}{SIL\_Param\_s}} \{}
+\DoxyCodeLine{227     \textcolor{keywordtype}{void}                       *\mbox{\hyperlink{struct_s_i_l___param__s_a6017cc21f2c40c71e4761eef2ad7d981}{parPointer}};}
+\DoxyCodeLine{228     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct_s_i_l___param__s_acdecd843bb35947c19bf7cac29f65cf5}{parWidth}};}
+\DoxyCodeLine{229     \textcolor{keywordtype}{bool}                        \mbox{\hyperlink{struct_s_i_l___param__s_a99dc8a0a74d81cf38bb649fa055e3074}{parTunable}};}
+\DoxyCodeLine{230 \} SIL\_sParam\_t;}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654}{SIL\_Parameters\_e}} \{}
+\DoxyCodeLine{233     \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651}{SIL\_PAR\_PMVSPATH}},           \textcolor{comment}{/* Path to PMVS file */}}
+\DoxyCodeLine{234     \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460}{SIL\_PAR\_INTENT}},             \textcolor{comment}{/* Model Intent (scalar): One of the enumerated values SIL\_ModelIntent\_e. */}}
+\DoxyCodeLine{235     \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c}{SIL\_PAR\_CNT}}}
+\DoxyCodeLine{236 \} SIL\_eParameters\_t;}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \textcolor{comment}{/* Input/Output Port Specification:}}
+\DoxyCodeLine{239 \textcolor{comment}{ * Input and output ports are the process data interfaces to the EPC Control in the SIL environment.}}
+\DoxyCodeLine{240 \textcolor{comment}{ * Ports may be scalar or vectorial (arrays). Vectorial ports are used to group (roughly) like data.}}
+\DoxyCodeLine{241 \textcolor{comment}{ * In some ways and cases, the groupings may represent similar groupings as exposed in the real control}}
+\DoxyCodeLine{242 \textcolor{comment}{ * interfaces (Multiplexed CAN messages or Modbus register groups), but not necessarily equivalent in}}
+\DoxyCodeLine{243 \textcolor{comment}{ * the interest of offering groupings more relevant to the SIL Library use case. Ports are exposed by}}
+\DoxyCodeLine{244 \textcolor{comment}{ * reference (pointer). Pointers must be configured to valid memory locations by the host simulation}}
+\DoxyCodeLine{245 \textcolor{comment}{ * environment by the time SIL\_initializeLibrary() method is called. Vectorial ports are required to}}
+\DoxyCodeLine{246 \textcolor{comment}{ * occupy contiguous memory locations. Please refer to SIL\_INPUTS\_DEFAULTS() and SIL\_OUTPUTS\_DEFAULTS()}}
+\DoxyCodeLine{247 \textcolor{comment}{ * macros above for reference to the expected array sizes of each port. Typically the simulation}}
+\DoxyCodeLine{248 \textcolor{comment}{ * environment will iterate over the array elements of inpPort and outPort respectively to allocate}}
+\DoxyCodeLine{249 \textcolor{comment}{ * memory and assign pointers for use by the SIL Library. */}}
+\DoxyCodeLine{250 \textcolor{keyword}{typedef} \textcolor{keyword}{struct} \mbox{\hyperlink{struct_s_i_l___port_spec__s}{SIL\_PortSpec\_s}} \{}
+\DoxyCodeLine{251     \textcolor{keywordtype}{double}                     *\mbox{\hyperlink{struct_s_i_l___port_spec__s_a79751280ee24342b33b8bd7d7c7d8f5a}{portPointer}};}
+\DoxyCodeLine{252     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct_s_i_l___port_spec__s_ab69e675b9188fef7b87df0f8b6388dbc}{portWidth}};}
+\DoxyCodeLine{253 \} SIL\_sPortSpec\_t;}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885e}{SIL\_InputPorts\_e}} \{}
+\DoxyCodeLine{256     \textcolor{comment}{/* Control */}}
+\DoxyCodeLine{257     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea7166aff228702dc13caf5967626efaa1}{SIL\_INP\_CTL\_RUN}},            \textcolor{comment}{/* Run Request (scalar): 0 -\/ Stop, 1 -\/ Power Control, 2 -\/ Current Control, 3 -\/ Voltage Control */}}
+\DoxyCodeLine{258     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eab56fa4beec171b6c60e78e2f3d191927}{SIL\_INP\_CTL\_PBC}},            \textcolor{comment}{/* Protected Bus Control Request (scalar) */}}
+\DoxyCodeLine{259     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1bfba5df17c55efeeda1f2edc61446a7}{SIL\_INP\_CTL\_CLR}},            \textcolor{comment}{/* Fault Clear Request (scalar) */}}
+\DoxyCodeLine{260     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eab52eb214021b655a4cccafe0c3f2dd7d}{SIL\_INP\_CTL\_ISL}},            \textcolor{comment}{/* Island Reconnect Request (scalar) */}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262     \textcolor{comment}{/* References */}}
+\DoxyCodeLine{263     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea921d239e668458b03bc16a5a66dd5454}{SIL\_INP\_REF\_FVR}},            \textcolor{comment}{/* Frequency/Voltage Reference (vector):}}
+\DoxyCodeLine{264 \textcolor{comment}{                                    [0] Reference Frequency [Hz];}}
+\DoxyCodeLine{265 \textcolor{comment}{                                    [1] Reference Voltage [Vl,rms]. */}}
+\DoxyCodeLine{266     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea6a0fca72779f012fff2c8ea0e5c00986}{SIL\_INP\_REF\_RIG}},            \textcolor{comment}{/* Synchronous Grid Current Reference (vector):}}
+\DoxyCodeLine{267 \textcolor{comment}{                                    [0] Dominant-\/Sequence Real Current [A,rms];}}
+\DoxyCodeLine{268 \textcolor{comment}{                                    [1] Dominant-\/Sequence Reactive Current [A,rms].}}
+\DoxyCodeLine{269 \textcolor{comment}{                                    [2] Opposing-\/Sequence Real Current [A,rms];}}
+\DoxyCodeLine{270 \textcolor{comment}{                                    [3] Opposing-\/Sequence Reactive Current [A,rms]. */}}
+\DoxyCodeLine{271     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea82acb03b55e5ebb711dfa1dfccb49590}{SIL\_INP\_REF\_RPG}},            \textcolor{comment}{/* Synchronous Grid Power Reference (vector):}}
+\DoxyCodeLine{272 \textcolor{comment}{                                    [0] Real Power [W];}}
+\DoxyCodeLine{273 \textcolor{comment}{                                    [1] Reactive Power [VAr] */}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     \textcolor{comment}{/* Feedbacks */}}
+\DoxyCodeLine{276     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eaf980954a2cd4c2dcbb47c83e74c8a88e}{SIL\_INP\_FBK\_DCV}},            \textcolor{comment}{/* DC Voltage Feedback (vector):}}
+\DoxyCodeLine{277 \textcolor{comment}{                                    [0] 2L: Total DC Bus Voltage [V], 3L: Upper Half-\/Bus Voltage [V];}}
+\DoxyCodeLine{278 \textcolor{comment}{                                    [1] 2L: Total DC Bus Voltage [V], 3L: Lower Half-\/Bus Voltage [V]. */}}
+\DoxyCodeLine{279     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea163346ac2bfd0c2ebf7efb9e67fd4c64}{SIL\_INP\_FBK\_PIC}},            \textcolor{comment}{/* Converter-\/Side Current Feedback (vector) †:}}
+\DoxyCodeLine{280 \textcolor{comment}{                                    [0 \& 3] Phase U/A/X/1 Instantaneous Current [A];}}
+\DoxyCodeLine{281 \textcolor{comment}{                                    [1 \& 4] Phase V/B/Y/2 Instantaneous Current [A];}}
+\DoxyCodeLine{282 \textcolor{comment}{                                    [2 \& 5] Phase W/C/Z/3 Instantaneous Current [A]. */}}
+\DoxyCodeLine{283     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951}{SIL\_INP\_FBK\_PVL}},            \textcolor{comment}{/* "{}Local"{}¹ Phase Voltage Measurement (vector) †:}}
+\DoxyCodeLine{284 \textcolor{comment}{                                    [0] Phase U/A/X/1 Instantaneous Phase Voltage [V];}}
+\DoxyCodeLine{285 \textcolor{comment}{                                    [1] Phase V/B/Y/2 Instantaneous Phase Voltage [V];}}
+\DoxyCodeLine{286 \textcolor{comment}{                                    [2] Phase W/C/Z/3 Instantaneous Phase Voltage [V]. */}}
+\DoxyCodeLine{287     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048}{SIL\_INP\_FBK\_PVR}},            \textcolor{comment}{/* "{}Remote"{}² Line Voltage Measurement (vector) †:}}
+\DoxyCodeLine{288 \textcolor{comment}{                                    [0] Phase UV/AB/XY/12 Instantaneous Line Voltage [V];}}
+\DoxyCodeLine{289 \textcolor{comment}{                                    [1] Phase VW/BC/YZ/23 Instantaneous Line Voltage [V];}}
+\DoxyCodeLine{290 \textcolor{comment}{                                    [2] Phase WU/CA/ZX/31 Instantaneous Line Voltage [V]. */}}
+\DoxyCodeLine{291     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea0a0b4399368e0fcf003c42071414641a}{SIL\_INP\_FBK\_DINP}},           \textcolor{comment}{/* Digital Logic Inputs (vector) ‡:}}
+\DoxyCodeLine{292 \textcolor{comment}{                                    [0] E-\/Stop/Hardware Enable;}}
+\DoxyCodeLine{293 \textcolor{comment}{                                    [1] Input Filter Thermal Trip;}}
+\DoxyCodeLine{294 \textcolor{comment}{                                    [2] Liquid Cooling Pump Failure;}}
+\DoxyCodeLine{295 \textcolor{comment}{                                    [3] Liquid Cooling Pump Running;}}
+\DoxyCodeLine{296 \textcolor{comment}{                                    [4] Module Cooling Fan OK. */}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298     \textcolor{comment}{/* Debug */}}
+\DoxyCodeLine{299     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea42fce498cf11ac467138926a04766cde}{SIL\_INP\_DBG\_1}},              \textcolor{comment}{/* EPC Development Use⁵. */}}
+\DoxyCodeLine{300     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea4f1c23acb5372636efd8d6b9c40ec81a}{SIL\_INP\_DBG\_2}},              \textcolor{comment}{/* EPC Development Use⁵. */}}
+\DoxyCodeLine{301     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eac8774fd40be37428590c7828a6c9b008}{SIL\_INP\_DBG\_3}},              \textcolor{comment}{/* EPC Development Use⁵. */}}
+\DoxyCodeLine{302     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eaf287e955c686ec86338a7c739c298eb9}{SIL\_INP\_DBG\_4}},              \textcolor{comment}{/* EPC Development Use⁵. */}}
+\DoxyCodeLine{303     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eabe2411b715f2b31aa5e19aa5dd1c58a1}{SIL\_INP\_DBG\_5}},              \textcolor{comment}{/* EPC Development Use⁵. */}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     \textcolor{comment}{/* Customer */}}
+\DoxyCodeLine{306     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea7b3c68ecc26512f1ed539c4ea88cc773}{SIL\_INP\_CUST}},}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308     \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa}{SIL\_INP\_CNT}}                 \textcolor{comment}{/* Input Port Count, Not an Actual Port. */}}
+\DoxyCodeLine{309 \} SIL\_eInputPorts\_t;}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3}{SIL\_OutputPorts\_e}} \{}
+\DoxyCodeLine{312     \textcolor{comment}{/* Status */}}
+\DoxyCodeLine{313     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aa32730ef97c9a8eb5e1328ffa03f734f}{SIL\_OUT\_STA\_CTL}},            \textcolor{comment}{/* Control Status Outputs (vector):}}
+\DoxyCodeLine{314 \textcolor{comment}{                                    [0] Control State;}}
+\DoxyCodeLine{315 \textcolor{comment}{                                    [1] Warning Word;}}
+\DoxyCodeLine{316 \textcolor{comment}{                                    [2] Fault Word. */}}
+\DoxyCodeLine{317     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ac64960cc7a9d2805f2cd7b61ab6beae9}{SIL\_OUT\_STA\_PBC}},            \textcolor{comment}{/* Protected Bus Control Status (scalar) */}}
+\DoxyCodeLine{318     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a20b7ec65a59c24bee8ab459a98b49fc1}{SIL\_OUT\_STA\_GMR}},            \textcolor{comment}{/* Grid Monitor Status, Remote (vector): see next. */}}
+\DoxyCodeLine{319     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a461b753bc509a9ea390811f4099022da}{SIL\_OUT\_STA\_GML}},            \textcolor{comment}{/* Grid Monitor Status, Local (vector):}}
+\DoxyCodeLine{320 \textcolor{comment}{                                    [0] Grid/Network Status: 0 -\/ Dead, 1 -\/ Live, 2 -\/ Nominal;}}
+\DoxyCodeLine{321 \textcolor{comment}{                                    [1] Detected Phase Sequence: 0 -\/ Negative, 1 -\/ Positive, 2 -\/ Invalid;}}
+\DoxyCodeLine{322 \textcolor{comment}{                                    [2] Detected Phase Displacement: 0 -\/ 120deg, 1 -\/ 180deg, 2 -\/ 0deg, 3 -\/ Manual, 4 -\/ Invalid. */}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324     \textcolor{comment}{/* Monitor */}}
+\DoxyCodeLine{325     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a3dc6e86c00cc451033a22a0f29c23f44}{SIL\_OUT\_MON\_FVR}},            \textcolor{comment}{/* Frequency/Voltage Monitor, Remote (vector): see next. */}}
+\DoxyCodeLine{326     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a3877128ecc7c07bbdfc485ffec628694}{SIL\_OUT\_MON\_FVL}},            \textcolor{comment}{/* Frequency/Voltage Monitor, Local (vector):}}
+\DoxyCodeLine{327 \textcolor{comment}{                                    [0] Actual Network Frequency [Hz];}}
+\DoxyCodeLine{328 \textcolor{comment}{                                    [1] Average Phase Voltage [V,rms];}}
+\DoxyCodeLine{329 \textcolor{comment}{                                    [2] Average Line Voltage [V,rms]. */}}
+\DoxyCodeLine{330     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ac30210d0a725f78ec7f8f096a308f202}{SIL\_OUT\_MON\_RIG}},            \textcolor{comment}{/* Actual Grid Current Monitor (vector):}}
+\DoxyCodeLine{331 \textcolor{comment}{                                    [0] Real Current [A,rms];}}
+\DoxyCodeLine{332 \textcolor{comment}{                                    [1] Reactive Current [A,rms];}}
+\DoxyCodeLine{333 \textcolor{comment}{                                    [2] Apparent Current/Current Magnitude [A,rms];}}
+\DoxyCodeLine{334 \textcolor{comment}{                                    [3] DC/Zero Current [A] (four-\/wire only). */}}
+\DoxyCodeLine{335     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ad935533f629e631c69c2a102637f8671}{SIL\_OUT\_MON\_RPG}},            \textcolor{comment}{/* Actual Grid Power Monitor (vector):}}
+\DoxyCodeLine{336 \textcolor{comment}{                                    [0] Real Power [W];}}
+\DoxyCodeLine{337 \textcolor{comment}{                                    [1] Reactive Power [VAr];}}
+\DoxyCodeLine{338 \textcolor{comment}{                                    [2] Apparent Power  [VA];}}
+\DoxyCodeLine{339 \textcolor{comment}{                                    [3] DC/Zero Power [W] (four-\/wire only). */}}
+\DoxyCodeLine{340     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a145b61c2dd3b1a19587ca4cd45dffb85}{SIL\_OUT\_MON\_SCI}},            \textcolor{comment}{/* Actual Grid Symmetrical Currents:}}
+\DoxyCodeLine{341 \textcolor{comment}{                                    [0] Positive-\/Sequence Direct-\/Axis Component;}}
+\DoxyCodeLine{342 \textcolor{comment}{                                    [1] Positive-\/Sequence Quadrature-\/Axis Component;}}
+\DoxyCodeLine{343 \textcolor{comment}{                                    [2] Negative-\/Sequence Direct-\/Axis Component;}}
+\DoxyCodeLine{344 \textcolor{comment}{                                    [3] Negative-\/Sequence Quadrature-\/Axis Component. */}}
+\DoxyCodeLine{345     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3af7453ef1bbe00b123147f93e1cb8dba5}{SIL\_OUT\_MON\_SCV}},            \textcolor{comment}{/* Actual Grid Symmetrical Voltages:}}
+\DoxyCodeLine{346 \textcolor{comment}{                                    [0] Positive-\/Sequence Component;}}
+\DoxyCodeLine{347 \textcolor{comment}{                                    [1] Negative-\/Sequence Component. */}}
+\DoxyCodeLine{348     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a9fdb763a801f238b3dc4d5f875aa6f3f}{SIL\_OUT\_MON\_DCVI}},           \textcolor{comment}{/* DC Link Voltage/Current Monitor (vector):}}
+\DoxyCodeLine{349 \textcolor{comment}{                                    [0] Total DC Link Voltage (2L and 3L) [V];}}
+\DoxyCodeLine{350 \textcolor{comment}{                                    [1] 2L: Total DC Link Voltage, 3L: Upper DC Link Voltage [V];}}
+\DoxyCodeLine{351 \textcolor{comment}{                                    [2] 2L: Total DC Link Voltage, 3L: Lower DC Link Voltage [V];}}
+\DoxyCodeLine{352 \textcolor{comment}{                                    [3] DC Link Current Estimate [A]. */}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354     \textcolor{comment}{/* Feedbacks */}}
+\DoxyCodeLine{355     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a0f8ae69e9b83f36442d4c1b6556f752f}{SIL\_OUT\_FBK\_PIC}},            \textcolor{comment}{/* Synchronously-\/Sampled Converter Currents: same definition as SIL\_INP\_FBK\_PIC. */}}
+\DoxyCodeLine{356     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a9e0b5933f169819ce830970348b6f0e6}{SIL\_OUT\_FBK\_PVL}},            \textcolor{comment}{/* Synchronously-\/Sampled Local Voltages: same definition as SIL\_INP\_FBK\_PVL. */}}
+\DoxyCodeLine{357     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ad2d8ec2934bfb655769114ac9a3b8c08}{SIL\_OUT\_FBK\_PVR}},            \textcolor{comment}{/* Synchronously-\/Sampled Remote Voltages: same definition as SIL\_INP\_FBK\_PVR. */}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359     \textcolor{comment}{/* Control */}}
+\DoxyCodeLine{360     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a1378b5b19189a7a44ec85a3d4b520a98}{SIL\_OUT\_CTL\_DOUT}},           \textcolor{comment}{/* Digital Logic Outputs (vector) ‡:}}
+\DoxyCodeLine{361 \textcolor{comment}{                                    [0] Liquid-\/Air Heat Exchanger Fan Control;}}
+\DoxyCodeLine{362 \textcolor{comment}{                                    [1] Cabinet Cooling Fan Control;}}
+\DoxyCodeLine{363 \textcolor{comment}{                                    [2] Liquid Cooling Pump Run;}}
+\DoxyCodeLine{364 \textcolor{comment}{                                    [3] Liquid Cooling Pump Fault Reset Request;}}
+\DoxyCodeLine{365 \textcolor{comment}{                                    [4] Module Cooling Fan Control. */}}
+\DoxyCodeLine{366     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a415d9ba9009591e374d6585c28309f6a}{SIL\_OUT\_CTL\_RLAY}},           \textcolor{comment}{/* Contactor/Relay Control (vector):}}
+\DoxyCodeLine{367 \textcolor{comment}{                                    [0] MX (Main Contactor): between LCL and Grid/Network;}}
+\DoxyCodeLine{368 \textcolor{comment}{                                    [1] SX (Secondary Contactor): between remote and local network (Protected Bus, Sync XFer, etc);}}
+\DoxyCodeLine{369 \textcolor{comment}{                                    [2] PC (Pre-\/Charge Relay): DC Precharge control;}}
+\DoxyCodeLine{370 \textcolor{comment}{                                    [3] DC (DC Main Contactor): DC-\/Link post-\/precharge control. */}}
+\DoxyCodeLine{371     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53}{SIL\_OUT\_CTL\_GATE}},           \textcolor{comment}{/* Non-\/Complementary Switching States (vector) ³:}}
+\DoxyCodeLine{372 \textcolor{comment}{                                    For Switched Model Intent, Two-\/Level Topology:}}
+\DoxyCodeLine{373 \textcolor{comment}{                                        DG Controls Variant ⁴:}}
+\DoxyCodeLine{374 \textcolor{comment}{                                            [0] "{}Upper"{} Half-\/Bridge Switch State, Phase U/A/X/1;}}
+\DoxyCodeLine{375 \textcolor{comment}{                                            [1] "{}Upper"{} Half-\/Bridge Switch State, Phase V/B/Y/2;}}
+\DoxyCodeLine{376 \textcolor{comment}{                                            [2] "{}Upper"{} Half-\/Bridge Switch State, Phase W/C/Z/3;}}
+\DoxyCodeLine{377 \textcolor{comment}{                                        MG3 Controls Variant, above plus:}}
+\DoxyCodeLine{378 \textcolor{comment}{                                            [4] "{}Upper"{} Half-\/Bridge Switch State, DC/DC Leg 1;}}
+\DoxyCodeLine{379 \textcolor{comment}{                                            [5] "{}Upper"{} Half-\/Bridge Switch State, DC/DC Leg 2;}}
+\DoxyCodeLine{380 \textcolor{comment}{                                        MG4 Controls Variant, above plus:}}
+\DoxyCodeLine{381 \textcolor{comment}{                                            [3] "{}Upper"{} Half-\/Bridge Switch State, AC Neutral.}}
+\DoxyCodeLine{382 \textcolor{comment}{                                        DC Controls Variant:}}
+\DoxyCodeLine{383 \textcolor{comment}{                                            [0-\/2] Buck Interleaved Leg Switch States;}}
+\DoxyCodeLine{384 \textcolor{comment}{                                            [3-\/5] Boost Interleaved Leg Switch States.}}
+\DoxyCodeLine{385 \textcolor{comment}{                                    For Switched Model Intent, Three-\/Level Topology:}}
+\DoxyCodeLine{386 \textcolor{comment}{                                        DG Controls Variant ⁴:}}
+\DoxyCodeLine{387 \textcolor{comment}{                                            [0] "{}Outer Upper"{} Half-\/Bridge Switch State (Q1), Phase Leg U/A/X/1;}}
+\DoxyCodeLine{388 \textcolor{comment}{                                            [1] "{}Inner Upper"{} Half-\/Bridge Switch State (Q2), Phase Leg U/A/X/1;}}
+\DoxyCodeLine{389 \textcolor{comment}{                                            [2] "{}Outer Upper"{} Half-\/Bridge Switch State (Q1), Phase Leg V/B/Y/2;}}
+\DoxyCodeLine{390 \textcolor{comment}{                                            [3] "{}Inner Upper"{} Half-\/Bridge Switch State (Q2), Phase Leg V/B/Y/2;}}
+\DoxyCodeLine{391 \textcolor{comment}{                                            [4] "{}Outer Upper"{} Half-\/Bridge Switch State (Q1), Phase Leg W/C/Z/3;}}
+\DoxyCodeLine{392 \textcolor{comment}{                                            [5] "{}Inner Upper"{} Half-\/Bridge Switch State (Q2), Phase Leg W/C/Z/3.}}
+\DoxyCodeLine{393 \textcolor{comment}{                                    For Averaged Model Intent, Two-\/ or Three-\/Level Topology ³:}}
+\DoxyCodeLine{394 \textcolor{comment}{                                        DG Controls Variant ⁴:}}
+\DoxyCodeLine{395 \textcolor{comment}{                                            [0] Bipolar Normalized DC-\/Relative Voltage Reference, Phase U/A/X/1;}}
+\DoxyCodeLine{396 \textcolor{comment}{                                            [1] Bipolar Normalized DC-\/Relative Voltage Reference, Phase V/B/Y/2;}}
+\DoxyCodeLine{397 \textcolor{comment}{                                            [2] Bipolar Normalized DC-\/Relative Voltage Reference, Phase W/C/Z/3.}}
+\DoxyCodeLine{398 \textcolor{comment}{                                        MG3 Controls Variant: DC Control Group not yet supported in averaged intent.}}
+\DoxyCodeLine{399 \textcolor{comment}{                                        MG4 Controls Variant, above plus:}}
+\DoxyCodeLine{400 \textcolor{comment}{                                            [3] Bipolar Normalized DC-\/Relative Voltage Reference, AC Neutral.}}
+\DoxyCodeLine{401 \textcolor{comment}{                                        DC Controls Variant: Dc Control Groups not yet supported in averaged intent. */}}
+\DoxyCodeLine{402     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e}{SIL\_OUT\_CTL\_CDIR}},           \textcolor{comment}{/* Carrier Counter Direction/Synchronous Sample/Control Trigger (scalar) */}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404     \textcolor{comment}{/* Debug */}}
+\DoxyCodeLine{405     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afdd819a0cd9386ad7a3d0ca3441d6594}{SIL\_OUT\_DBG}},                \textcolor{comment}{/* EPC Development Use⁵. */}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a4ed5ea8358d221bdd61b784200486398}{SIL\_OUT\_REF}},                \textcolor{comment}{/* Final references to the controllers:}}
+\DoxyCodeLine{408 \textcolor{comment}{                                    [0] Frequency reference,  Phase U/A/X/1 [Hz];}}
+\DoxyCodeLine{409 \textcolor{comment}{                                    [1] AC voltage reference, Phase U/A/X/1 [V];}}
+\DoxyCodeLine{410 \textcolor{comment}{                                    [2] Id current reference, Phase U/A/X/1 [A];}}
+\DoxyCodeLine{411 \textcolor{comment}{                                    [3] Iq current reference, Phase U/A/X/1 [A]. */}}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413     \textcolor{comment}{/* Customer */}}
+\DoxyCodeLine{414     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a23fc413006a1ead7f31a5e6d4bb1bba1}{SIL\_OUT\_CUST}},}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416     \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee}{SIL\_OUT\_CNT}}                 \textcolor{comment}{/* Output Port Count, Not an Actual Port. */}}
+\DoxyCodeLine{417 \} SIL\_eOutputPorts\_t;}
+\DoxyCodeLine{418 }
+\DoxyCodeLine{419 \textcolor{keyword}{typedef} \textcolor{keyword}{struct} \mbox{\hyperlink{struct_s_i_l___ports__s}{SIL\_Ports\_s}} \{}
+\DoxyCodeLine{420     SIL\_sPortSpec\_t             \mbox{\hyperlink{struct_s_i_l___ports__s_a59d3b5a45df34ec671bb2e672714591e}{inpPort}}[\mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa}{SIL\_INP\_CNT}}];}
+\DoxyCodeLine{421     SIL\_sPortSpec\_t             \mbox{\hyperlink{struct_s_i_l___ports__s_aaf3477f1b1edd8dcc8ca4751760b849b}{outPort}}[\mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee}{SIL\_OUT\_CNT}}];}
+\DoxyCodeLine{422 \} SIL\_sPorts\_t;}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424 \textcolor{comment}{/* Remarks:}}
+\DoxyCodeLine{425 \textcolor{comment}{ * †    Typical assignment for AC-\/only Controls Variants. Topology+Control Variant dependent in general.}}
+\DoxyCodeLine{426 \textcolor{comment}{ *}}
+\DoxyCodeLine{427 \textcolor{comment}{ * ‡    Presently, Digital Inputs and Outputs may be left disconnected as they are faked out in Library.}}
+\DoxyCodeLine{428 \textcolor{comment}{ *}}
+\DoxyCodeLine{429 \textcolor{comment}{ * ¹    "{}Local"{} voltage measured on network/grid-\/side of the main contactor.}}
+\DoxyCodeLine{430 \textcolor{comment}{ *}}
+\DoxyCodeLine{431 \textcolor{comment}{ * ²    "{}Remote"{} voltage measured typically at PCC for power control at that point, or on a protected bus}}
+\DoxyCodeLine{432 \textcolor{comment}{ *      for UPS operation, synchronous transfer, etc. when so configured/desired.}}
+\DoxyCodeLine{433 \textcolor{comment}{ *}}
+\DoxyCodeLine{434 \textcolor{comment}{ * ³    For the switched model intent, the "{}Gate"{} outputs are the instantaneous switching states of the}}
+\DoxyCodeLine{435 \textcolor{comment}{ *      non-\/complimentary switching devices comprising the power stage. Complementary-\/device gate signal}}
+\DoxyCodeLine{436 \textcolor{comment}{ *      expansion, active logic level selection, and optional cross-\/conduction dead-\/band time insertion}}
+\DoxyCodeLine{437 \textcolor{comment}{ *      must be treated externally. For the averaged model intent, the "{}Gate"{} outputs are normalized}}
+\DoxyCodeLine{438 \textcolor{comment}{ *      values on the bounded real interval [-\/1, 1].}}
+\DoxyCodeLine{439 \textcolor{comment}{ *}}
+\DoxyCodeLine{440 \textcolor{comment}{ * ⁴    DG (Distributed Generation) is the default grid-\/interactive Controls Variant.}}
+\DoxyCodeLine{441 \textcolor{comment}{ *}}
+\DoxyCodeLine{442 \textcolor{comment}{ * ⁵    All ports must be assigned valid pointers (in contiguous memory for vectorial ports), whether the}}
+\DoxyCodeLine{443 \textcolor{comment}{ *      port is used/desired or not. The user may declare a dummy array for assigning pointers to unused}}
+\DoxyCodeLine{444 \textcolor{comment}{ *      input or output ports.}}
+\DoxyCodeLine{445 \textcolor{comment}{ */}}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{449 \textcolor{comment}{ * Exported Variable Declarations}}
+\DoxyCodeLine{450 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{451 \textcolor{keyword}{extern} SIL\_sParam\_t             \mbox{\hyperlink{lib_epc_control_8c_ab657a19b95f6cfab5a555d5d503c0b3e}{SIL\_Parameters}}[\mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c}{SIL\_PAR\_CNT}}];}
+\DoxyCodeLine{452 \textcolor{keyword}{extern} SIL\_sPorts\_t             \mbox{\hyperlink{lib_epc_control_8c_aa8c520d7306f12a6098f3cb4fdd3d1ea}{SIL\_Ports}};}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{456 \textcolor{comment}{ * Exported Function Prototypes}}
+\DoxyCodeLine{457 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{460 \textcolor{comment}{ Function     : SIL\_initializeLibrary}}
+\DoxyCodeLine{461 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.initializeLibrary}}
+\DoxyCodeLine{462 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{463 \textcolor{comment}{}}
+\DoxyCodeLine{464 \textcolor{comment}{ In           : tStep       -\/ requested simulation timestep [s],}}
+\DoxyCodeLine{465 \textcolor{comment}{                solverType  -\/ enumerated selection indicating solver capabilities [-\/],}}
+\DoxyCodeLine{466 \textcolor{comment}{                mdlIntent   -\/ enumerated selection indicating model intent [-\/],}}
+\DoxyCodeLine{467 \textcolor{comment}{                bridgeType  -\/ enumerated selection indicating EPC Power Bridge type [-\/],}}
+\DoxyCodeLine{468 \textcolor{comment}{                pmvsPath    -\/ path to PMVS file.}}
+\DoxyCodeLine{469 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{470 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{471 \textcolor{comment}{ Returns      : True on success; False otherwise.}}
+\DoxyCodeLine{472 \textcolor{comment}{ Description  : Configures the SIL library according to the dynamic simulation environment's capabilities}}
+\DoxyCodeLine{473 \textcolor{comment}{                and modeling objectives. This method is to be called once prior to progression into the}}
+\DoxyCodeLine{474 \textcolor{comment}{                simulation loop phase. For fixed-\/rate solvers, tStep shall indicate the discretization}}
+\DoxyCodeLine{475 \textcolor{comment}{                time step. For solvers capable of supporting variable rates, tStep is ignored.}}
+\DoxyCodeLine{476 \textcolor{comment}{                NB! The selected fixed sample rate must be an integral submultiple of all sample times}}
+\DoxyCodeLine{477 \textcolor{comment}{                required by the library: ts, 200μs, 1ms, 10ms, 100ms, and 1000ms. Presently for fixed-\/rate}}
+\DoxyCodeLine{478 \textcolor{comment}{                solver selection, the "{}ts"{} (realtime) control task is fixed at 150μs for a switching}}
+\DoxyCodeLine{479 \textcolor{comment}{                frequency of 3333Hz, but this will be expanded in the future to support a configurable}}
+\DoxyCodeLine{480 \textcolor{comment}{                switching frequency subject to validation given the sample step time. For now, the sample}}
+\DoxyCodeLine{481 \textcolor{comment}{                rate should be the greatest common divisor of these internal sample rates, or 50μs.}}
+\DoxyCodeLine{482 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{483 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{lib_epc_control_8c_ab81a90ab6353010bbcbfbe378b6c133b}{SIL\_initializeLibrary}}(\textcolor{keywordtype}{double} tStep, SIL\_eSolverType\_t solverType, SIL\_eModelIntent\_t mdlIntent,}
+\DoxyCodeLine{484                               \textcolor{keywordtype}{char} *pmvsPath);}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{487 \textcolor{comment}{ Function     : SIL\_terminateLibrary}}
+\DoxyCodeLine{488 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.terminateLibrary}}
+\DoxyCodeLine{489 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{490 \textcolor{comment}{}}
+\DoxyCodeLine{491 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{492 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{493 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{494 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{495 \textcolor{comment}{ Description  : Performs library cleanup procedures. To be called once at the end of the simulation phase.}}
+\DoxyCodeLine{496 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{497 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_ace37954380efd0cc545d686525f44253}{SIL\_terminateLibrary}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 }
+\DoxyCodeLine{500 }
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{503 \textcolor{comment}{ Function     : SIL\_getNextSampleHit}}
+\DoxyCodeLine{504 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.getNextSampleHit}}
+\DoxyCodeLine{505 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{506 \textcolor{comment}{}}
+\DoxyCodeLine{507 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{508 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{509 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{510 \textcolor{comment}{ Returns      : Absolute simulation time at which the solver must next evaluate the variable-\/rate task.}}
+\DoxyCodeLine{511 \textcolor{comment}{ Description  : For solvers capable of supporting variable sample time tasks, this method shall be called}}
+\DoxyCodeLine{512 \textcolor{comment}{                as the first step in the simulation loop (prior to Output and State update) to obtain the}}
+\DoxyCodeLine{513 \textcolor{comment}{                future time instant at which the variable-\/rate task is to be next evaluated. Fixed-\/rate}}
+\DoxyCodeLine{514 \textcolor{comment}{                solvers are not to call this method.}}
+\DoxyCodeLine{515 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{516 \textcolor{keywordtype}{double}  \mbox{\hyperlink{lib_epc_control_8c_ae7faa4e53156bb74ada32b2980fdc965}{SIL\_getNextSampleHit}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{522 \textcolor{comment}{ Function     : SIL\_updateOutput}}
+\DoxyCodeLine{523 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateOutput}}
+\DoxyCodeLine{524 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{525 \textcolor{comment}{}}
+\DoxyCodeLine{526 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{527 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{528 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{529 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{530 \textcolor{comment}{ Description  : Composite library outputs update method to be called only by solvers *not* supporting}}
+\DoxyCodeLine{531 \textcolor{comment}{                multiple sample rates (SIL\_SOLVER\_TYPE\_VARIABLE or SIL\_SOLVER\_TYPE\_FIXED). This method}}
+\DoxyCodeLine{532 \textcolor{comment}{                computes the library's outputs for each of the respective internal task rates at the}}
+\DoxyCodeLine{533 \textcolor{comment}{                appropriate time according to an internal scheduler.}}
+\DoxyCodeLine{534 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{535 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a4516f98eb48b67f3cfac58f6f506395b}{SIL\_updateOutput}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{536 }
+\DoxyCodeLine{537 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{538 \textcolor{comment}{ Function     : SIL\_updateOutput\_ts}}
+\DoxyCodeLine{539 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateOutput\_ts}}
+\DoxyCodeLine{540 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{541 \textcolor{comment}{}}
+\DoxyCodeLine{542 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{543 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{544 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{545 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{546 \textcolor{comment}{ Description  : Realtime-\/context outputs update method. To be called only by solvers supporting multiple}}
+\DoxyCodeLine{547 \textcolor{comment}{                sample rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{548 \textcolor{comment}{                This method computes and writes the outputs attributed to the realtime context.}}
+\DoxyCodeLine{549 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{550 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_ac996ef11ecaea694174e16c084e34121}{SIL\_updateOutput\_ts}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{553 \textcolor{comment}{ Function     : SIL\_updateOutput\_200us}}
+\DoxyCodeLine{554 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateOutput\_200us}}
+\DoxyCodeLine{555 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{556 \textcolor{comment}{}}
+\DoxyCodeLine{557 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{558 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{559 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{560 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{561 \textcolor{comment}{ Description  : 200μs-\/context outputs update method. To be called only by solvers supporting multiple}}
+\DoxyCodeLine{562 \textcolor{comment}{                sample rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{563 \textcolor{comment}{                This method computes and writes the outputs attributed to the 200μs context.}}
+\DoxyCodeLine{564 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{565 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a0ee7728e508048a3431cbe5591a6fe6e}{SIL\_updateOutput\_200us}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{568 \textcolor{comment}{ Function     : SIL\_updateOutput\_1ms}}
+\DoxyCodeLine{569 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateOutput\_1ms}}
+\DoxyCodeLine{570 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{571 \textcolor{comment}{}}
+\DoxyCodeLine{572 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{573 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{574 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{575 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{576 \textcolor{comment}{ Description  : 1ms-\/context outputs update method. To be called only by solvers supporting multiple}}
+\DoxyCodeLine{577 \textcolor{comment}{                sample rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{578 \textcolor{comment}{                This method computes and writes the outputs attributed to the 1ms context.}}
+\DoxyCodeLine{579 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{580 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a75ff58ce3d5d4580e490ef7a69007e21}{SIL\_updateOutput\_1ms}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{583 \textcolor{comment}{ Function     : SIL\_updateOutput\_10ms}}
+\DoxyCodeLine{584 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateOutput\_10ms}}
+\DoxyCodeLine{585 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{586 \textcolor{comment}{}}
+\DoxyCodeLine{587 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{588 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{589 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{590 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{591 \textcolor{comment}{ Description  : 10ms-\/context outputs update method. To be called only by solvers supporting multiple}}
+\DoxyCodeLine{592 \textcolor{comment}{                sample rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{593 \textcolor{comment}{                This method computes and writes the outputs attributed to the 10ms context.}}
+\DoxyCodeLine{594 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{595 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_ae7e96e5405835166c40c25a724ec7439}{SIL\_updateOutput\_10ms}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{596 }
+\DoxyCodeLine{597 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{598 \textcolor{comment}{ Function     : SIL\_updateOutput\_100ms}}
+\DoxyCodeLine{599 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateOutput\_100ms}}
+\DoxyCodeLine{600 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{601 \textcolor{comment}{}}
+\DoxyCodeLine{602 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{603 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{604 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{605 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{606 \textcolor{comment}{ Description  : 100ms-\/context outputs update method. To be called only by solvers supporting multiple}}
+\DoxyCodeLine{607 \textcolor{comment}{                sample rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{608 \textcolor{comment}{                This method computes and writes the outputs attributed to the 100ms context.}}
+\DoxyCodeLine{609 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{610 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a6fa1fbbfa14569f4bd41950a860eb75a}{SIL\_updateOutput\_100ms}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{613 \textcolor{comment}{ Function     : SIL\_updateOutput\_1s}}
+\DoxyCodeLine{614 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateOutput\_1s}}
+\DoxyCodeLine{615 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{616 \textcolor{comment}{}}
+\DoxyCodeLine{617 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{618 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{619 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{620 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{621 \textcolor{comment}{ Description  : 1s-\/context outputs update method. To be called only by solvers supporting multiple}}
+\DoxyCodeLine{622 \textcolor{comment}{                sample rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{623 \textcolor{comment}{                This method computes and writes the outputs attributed to the 1s context.}}
+\DoxyCodeLine{624 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{625 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a01c7e531ea48b2b39560b8232dadb472}{SIL\_updateOutput\_1s}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627 }
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629 }
+\DoxyCodeLine{630 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{631 \textcolor{comment}{ Function     : SIL\_updateState}}
+\DoxyCodeLine{632 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateState}}
+\DoxyCodeLine{633 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{634 \textcolor{comment}{}}
+\DoxyCodeLine{635 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{636 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{637 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{638 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{639 \textcolor{comment}{ Description  : Composite library state update method to be called only by solvers *not* supporting}}
+\DoxyCodeLine{640 \textcolor{comment}{                multiple sample rates (SIL\_SOLVER\_TYPE\_VARIABLE or SIL\_SOLVER\_TYPE\_FIXED). This method}}
+\DoxyCodeLine{641 \textcolor{comment}{                reads inputs and updates the internal state for each of the respective internal task rates}}
+\DoxyCodeLine{642 \textcolor{comment}{                at the appropriate time according to an internal scheduler. NB. Generally, state updates}}
+\DoxyCodeLine{643 \textcolor{comment}{                are to occur after output updates in a discrete model.}}
+\DoxyCodeLine{644 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{645 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a4bba7ed7d059aaea97ea7739d4a8aadf}{SIL\_updateState}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{648 \textcolor{comment}{ Function     : SIL\_updateState\_ts}}
+\DoxyCodeLine{649 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateState\_ts}}
+\DoxyCodeLine{650 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{651 \textcolor{comment}{}}
+\DoxyCodeLine{652 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{653 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{654 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{655 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{656 \textcolor{comment}{ Description  : Realtime-\/context input and state update method. To be called only by solvers supporting}}
+\DoxyCodeLine{657 \textcolor{comment}{                multiple rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{658 \textcolor{comment}{                This method reads the inputs and updates the internal states attributed to the realtime}}
+\DoxyCodeLine{659 \textcolor{comment}{                context.}}
+\DoxyCodeLine{660 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{661 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a2825be5948559ec4590c28ede64e4450}{SIL\_updateState\_ts}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{662 }
+\DoxyCodeLine{663 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{664 \textcolor{comment}{ Function     : SIL\_updateState\_200us}}
+\DoxyCodeLine{665 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateState\_200us}}
+\DoxyCodeLine{666 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{667 \textcolor{comment}{}}
+\DoxyCodeLine{668 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{669 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{670 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{671 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{672 \textcolor{comment}{ Description  : 200μs-\/context input and state update method. To be called only by solvers supporting}}
+\DoxyCodeLine{673 \textcolor{comment}{                multiple rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{674 \textcolor{comment}{                This method reads the inputs and updates the internal states attributed to the 200μs}}
+\DoxyCodeLine{675 \textcolor{comment}{                context.}}
+\DoxyCodeLine{676 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{677 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a59eac95bc7334b0a03715fe1cfbbcca1}{SIL\_updateState\_200us}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{680 \textcolor{comment}{ Function     : SIL\_updateState\_1ms}}
+\DoxyCodeLine{681 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateState\_1ms}}
+\DoxyCodeLine{682 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{683 \textcolor{comment}{}}
+\DoxyCodeLine{684 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{685 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{686 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{687 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{688 \textcolor{comment}{ Description  : 1ms-\/context input and state update method. To be called only by solvers supporting}}
+\DoxyCodeLine{689 \textcolor{comment}{                multiple rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{690 \textcolor{comment}{                This method reads the inputs and updates the internal states attributed to the 1ms}}
+\DoxyCodeLine{691 \textcolor{comment}{                context.}}
+\DoxyCodeLine{692 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{693 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a771f5694ced82f12c455c9aa7b09e8a4}{SIL\_updateState\_1ms}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{694 }
+\DoxyCodeLine{695 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{696 \textcolor{comment}{ Function     : SIL\_updateState\_10ms}}
+\DoxyCodeLine{697 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateState\_10ms}}
+\DoxyCodeLine{698 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{699 \textcolor{comment}{}}
+\DoxyCodeLine{700 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{701 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{702 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{703 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{704 \textcolor{comment}{ Description  : 10ms-\/context input and state update method. To be called only by solvers supporting}}
+\DoxyCodeLine{705 \textcolor{comment}{                multiple rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{706 \textcolor{comment}{                This method reads the inputs and updates the internal states attributed to the 10ms}}
+\DoxyCodeLine{707 \textcolor{comment}{                context.}}
+\DoxyCodeLine{708 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{709 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_ad4d3c47eb9a2d78a7c7042067d358d94}{SIL\_updateState\_10ms}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{710 }
+\DoxyCodeLine{711 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{712 \textcolor{comment}{ Function     : SIL\_updateState\_100ms}}
+\DoxyCodeLine{713 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateState\_100ms}}
+\DoxyCodeLine{714 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{715 \textcolor{comment}{}}
+\DoxyCodeLine{716 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{717 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{718 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{719 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{720 \textcolor{comment}{ Description  : 100ms-\/context input and state update method. To be called only by solvers supporting}}
+\DoxyCodeLine{721 \textcolor{comment}{                multiple rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{722 \textcolor{comment}{                This method reads the inputs and updates the internal states attributed to the 100ms}}
+\DoxyCodeLine{723 \textcolor{comment}{                context.}}
+\DoxyCodeLine{724 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{725 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a06036b1f582360534fabe0accf99ddcc}{SIL\_updateState\_100ms}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{726 }
+\DoxyCodeLine{727 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{728 \textcolor{comment}{ Function     : SIL\_updateState\_1s}}
+\DoxyCodeLine{729 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.updateState\_1s}}
+\DoxyCodeLine{730 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{731 \textcolor{comment}{}}
+\DoxyCodeLine{732 \textcolor{comment}{ In           : tNow    -\/ absolute simulation time at instant of call [s].}}
+\DoxyCodeLine{733 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{734 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{735 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{736 \textcolor{comment}{ Description  : 1s-\/context input and state update method. To be called only by solvers supporting}}
+\DoxyCodeLine{737 \textcolor{comment}{                multiple rates (SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE or SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE).}}
+\DoxyCodeLine{738 \textcolor{comment}{                This method reads the inputs and updates the internal states attributed to the 1s context.}}
+\DoxyCodeLine{739 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{740 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8c_a2838f5346d7b4916cd601c41594fc05c}{SIL\_updateState\_1s}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{741 }
+\DoxyCodeLine{742 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{743 \textcolor{comment}{ Function     : SIL\_writeSnapshot}}
+\DoxyCodeLine{744 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.writeSnapshot}}
+\DoxyCodeLine{745 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{746 \textcolor{comment}{}}
+\DoxyCodeLine{747 \textcolor{comment}{ In           : tNow            -\/ absolute simulation time at instant of call [s]}}
+\DoxyCodeLine{748 \textcolor{comment}{                instanceNumber  -\/ Instance number, the first instance has a number of 1}}
+\DoxyCodeLine{749 \textcolor{comment}{                tempPath        -\/ Path to a temporary folder where snapshot files will be written}}
+\DoxyCodeLine{750 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{751 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{752 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{753 \textcolor{comment}{ Description  : Generates a SIL library snapshot data file and calls each source code module to}}
+\DoxyCodeLine{754 \textcolor{comment}{                write their own variables into that file.}}
+\DoxyCodeLine{755 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{756 \textcolor{keywordtype}{void}    \mbox{\hyperlink{lib_epc_control_8h_a5509b491627e5f7ee27c25815ac07c48}{SIL\_writeSnapshot}}(\textcolor{keywordtype}{double} tNow, uint16\_t instanceNumber, \textcolor{keywordtype}{char} *tempPath);}
+\DoxyCodeLine{757 }
+\DoxyCodeLine{758 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{759 \textcolor{comment}{ Function     : SIL\_readSnapshot}}
+\DoxyCodeLine{760 \textcolor{comment}{ Full Name    : Grid-\/Tied::EpcSilLibrary.readSnapshot}}
+\DoxyCodeLine{761 \textcolor{comment}{ Visibility   : Public}}
+\DoxyCodeLine{762 \textcolor{comment}{}}
+\DoxyCodeLine{763 \textcolor{comment}{ In           : instanceNumber  -\/ Instance number, the first instance has a number of 1}}
+\DoxyCodeLine{764 \textcolor{comment}{                tempPath        -\/ Path to a temporary folder where snapshot files are located}}
+\DoxyCodeLine{765 \textcolor{comment}{ InOut        : None}}
+\DoxyCodeLine{766 \textcolor{comment}{ Out          : None}}
+\DoxyCodeLine{767 \textcolor{comment}{ Returns      : None}}
+\DoxyCodeLine{768 \textcolor{comment}{ Description  : Opens a SIL library snapshot data file and calls each source code module to}}
+\DoxyCodeLine{769 \textcolor{comment}{                read their own variables from that file.}}
+\DoxyCodeLine{770 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{771 \textcolor{keywordtype}{void} \mbox{\hyperlink{lib_epc_control_8h_a296ff2009cd74a2c451a2bcded01dff7}{SIL\_readSnapshot}}(uint16\_t instanceNumber, \textcolor{keywordtype}{char} *tempPath);}
+\DoxyCodeLine{772 }
+\DoxyCodeLine{773 }
+\DoxyCodeLine{774 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{775 \textcolor{comment}{ * Inline Function Definitions :-\/(}}
+\DoxyCodeLine{776 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{777 }
+\DoxyCodeLine{778 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\_\_cplusplus\textcolor{preprocessor}{)}}
+\DoxyCodeLine{779 \}}
+\DoxyCodeLine{780 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif} \textcolor{comment}{// extern "{}C"{}}}
+\DoxyCodeLine{781 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif} \textcolor{comment}{//\_EPC\_SIL\_LIBRARY\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,96 @@
+\hypertarget{sil_wrapper_8h}{}\doxysection{sil/sil\+Wrapper.h File Reference}
+\label{sil_wrapper_8h}\index{sil/silWrapper.h@{sil/silWrapper.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_aaac393258b46cdcc2da9818c3408aa70}{\+\_\+\+STRINGIFY}}(s)~\#s
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_a4689212d5a549893cabb9d7782eecfb6}{STRINGIFY}}(s)~\mbox{\hyperlink{sil_wrapper_8h_aaac393258b46cdcc2da9818c3408aa70}{\+\_\+\+STRINGIFY}}(s)
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_ab437589e9e94c01c02ba99450e313752}{SIL\+\_\+\+WARNING}}(...)
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_ac87af9dc4e1a2b96a73588443fd36aa1}{SIL\+\_\+\+ERROR}}(...)
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_a0ae9eb531a183bee8efa5ecd248c4120}{SIL\+\_\+\+DIAG}}(...)
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}{SIL\+\_\+\+PORT\+\_\+\+OUT}}(m\+Port,  m\+Idx)
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_a785efee4fbf0d28247f2570f245fd735}{SIL\+\_\+\+PORT\+\_\+\+INP}}(m\+Port,  m\+Idx)
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_a352a935588c5e0f47f299592854f205a}{SIL\+\_\+\+PARAM}}(m\+Port,  m\+Idx)
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_a26bc6a0cf2461f895aa1588b077d5981}{SIL\+\_\+\+DEBUG}}(...)
+\item 
+\#define \mbox{\hyperlink{sil_wrapper_8h_a88edd2aa4feabff4af21a997d5d8aa23}{DEBUG\+\_\+\+PRINT}}(...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{sil_wrapper_8h_aaac393258b46cdcc2da9818c3408aa70}\label{sil_wrapper_8h_aaac393258b46cdcc2da9818c3408aa70}} 
+\index{silWrapper.h@{silWrapper.h}!\_STRINGIFY@{\_STRINGIFY}}
+\index{\_STRINGIFY@{\_STRINGIFY}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{\_STRINGIFY}{\_STRINGIFY}}
+{\footnotesize\ttfamily \#define \+\_\+\+STRINGIFY(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~\#s}
+
+\mbox{\Hypertarget{sil_wrapper_8h_a88edd2aa4feabff4af21a997d5d8aa23}\label{sil_wrapper_8h_a88edd2aa4feabff4af21a997d5d8aa23}} 
+\index{silWrapper.h@{silWrapper.h}!DEBUG\_PRINT@{DEBUG\_PRINT}}
+\index{DEBUG\_PRINT@{DEBUG\_PRINT}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT}{DEBUG\_PRINT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sil_wrapper_8h_a26bc6a0cf2461f895aa1588b077d5981}\label{sil_wrapper_8h_a26bc6a0cf2461f895aa1588b077d5981}} 
+\index{silWrapper.h@{silWrapper.h}!SIL\_DEBUG@{SIL\_DEBUG}}
+\index{SIL\_DEBUG@{SIL\_DEBUG}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_DEBUG}{SIL\_DEBUG}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+DEBUG(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{    SIL\_DIAG(\textcolor{stringliteral}{"{}\%s Line \%d: "{}}, \_\_FILE\_\_, \_\_LINE\_\_); \(\backslash\)}
+\DoxyCodeLine{    SIL\_DIAG(\_\_VA\_ARGS\_\_);                        \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sil_wrapper_8h_a0ae9eb531a183bee8efa5ecd248c4120}\label{sil_wrapper_8h_a0ae9eb531a183bee8efa5ecd248c4120}} 
+\index{silWrapper.h@{silWrapper.h}!SIL\_DIAG@{SIL\_DIAG}}
+\index{SIL\_DIAG@{SIL\_DIAG}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_DIAG}{SIL\_DIAG}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+DIAG(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sil_wrapper_8h_ac87af9dc4e1a2b96a73588443fd36aa1}\label{sil_wrapper_8h_ac87af9dc4e1a2b96a73588443fd36aa1}} 
+\index{silWrapper.h@{silWrapper.h}!SIL\_ERROR@{SIL\_ERROR}}
+\index{SIL\_ERROR@{SIL\_ERROR}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_ERROR}{SIL\_ERROR}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sil_wrapper_8h_a352a935588c5e0f47f299592854f205a}\label{sil_wrapper_8h_a352a935588c5e0f47f299592854f205a}} 
+\index{silWrapper.h@{silWrapper.h}!SIL\_PARAM@{SIL\_PARAM}}
+\index{SIL\_PARAM@{SIL\_PARAM}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PARAM}{SIL\_PARAM}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PARAM(\begin{DoxyParamCaption}\item[{}]{m\+Port,  }\item[{}]{m\+Idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sil_wrapper_8h_a785efee4fbf0d28247f2570f245fd735}\label{sil_wrapper_8h_a785efee4fbf0d28247f2570f245fd735}} 
+\index{silWrapper.h@{silWrapper.h}!SIL\_PORT\_INP@{SIL\_PORT\_INP}}
+\index{SIL\_PORT\_INP@{SIL\_PORT\_INP}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORT\_INP}{SIL\_PORT\_INP}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORT\+\_\+\+INP(\begin{DoxyParamCaption}\item[{}]{m\+Port,  }\item[{}]{m\+Idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sil_wrapper_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}\label{sil_wrapper_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}} 
+\index{silWrapper.h@{silWrapper.h}!SIL\_PORT\_OUT@{SIL\_PORT\_OUT}}
+\index{SIL\_PORT\_OUT@{SIL\_PORT\_OUT}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORT\_OUT}{SIL\_PORT\_OUT}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORT\+\_\+\+OUT(\begin{DoxyParamCaption}\item[{}]{m\+Port,  }\item[{}]{m\+Idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sil_wrapper_8h_ab437589e9e94c01c02ba99450e313752}\label{sil_wrapper_8h_ab437589e9e94c01c02ba99450e313752}} 
+\index{silWrapper.h@{silWrapper.h}!SIL\_WARNING@{SIL\_WARNING}}
+\index{SIL\_WARNING@{SIL\_WARNING}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_WARNING}{SIL\_WARNING}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sil_wrapper_8h_a4689212d5a549893cabb9d7782eecfb6}\label{sil_wrapper_8h_a4689212d5a549893cabb9d7782eecfb6}} 
+\index{silWrapper.h@{silWrapper.h}!STRINGIFY@{STRINGIFY}}
+\index{STRINGIFY@{STRINGIFY}!silWrapper.h@{silWrapper.h}}
+\doxysubsubsection{\texorpdfstring{STRINGIFY}{STRINGIFY}}
+{\footnotesize\ttfamily \#define STRINGIFY(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~\mbox{\hyperlink{sil_wrapper_8h_aaac393258b46cdcc2da9818c3408aa70}{\+\_\+\+STRINGIFY}}(s)}
+

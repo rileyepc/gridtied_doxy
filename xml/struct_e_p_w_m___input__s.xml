@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_p_w_m___input__s" kind="struct" language="C++" prot="public">
+    <compoundname>EPWM_Input_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_p_w_m___input__s_1a2bc949b88ec50d62370f890828c404b0" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EPWM_Input_s::tbHalfPeriod</definition>
+        <argsstring></argsstring>
+        <name>tbHalfPeriod</name>
+        <qualifiedname>EPWM_Input_s::tbHalfPeriod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="177" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___input__s_1ae200c33bfdb6b9e40bce487ba7c2396e" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EPWM_Input_s::tbCompare[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tbCompare</name>
+        <qualifiedname>EPWM_Input_s::tbCompare</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="178" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/emu/epwm_emu.c" line="176" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="176" bodyend="179"/>
+    <listofallmembers>
+      <member refid="struct_e_p_w_m___input__s_1ae200c33bfdb6b9e40bce487ba7c2396e" prot="public" virt="non-virtual"><scope>EPWM_Input_s</scope><name>tbCompare</name></member>
+      <member refid="struct_e_p_w_m___input__s_1a2bc949b88ec50d62370f890828c404b0" prot="public" virt="non-virtual"><scope>EPWM_Input_s</scope><name>tbHalfPeriod</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

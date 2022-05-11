@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__dsp_intr__emu_8c" xml:lang="en-US">
+<title>sil/emu/DspIntr_emu.c File Reference</title>
+<indexterm><primary>sil/emu/DspIntr_emu.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdint.h&gt;
+</programlisting><simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>cregister volatile unsigned int <link linkend="__dsp_intr__emu_8c_1a1790c0117f7106f597b3540ba57df515">IFR</link></para>
+</listitem>
+            <listitem><para>cregister volatile unsigned int <link linkend="__dsp_intr__emu_8c_1a8d912c89db0fb8d197e5856f05ce4907">IER</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__dsp_intr__emu_8c_1a8d912c89db0fb8d197e5856f05ce4907"/><section>
+    <title>IER</title>
+<indexterm><primary>IER</primary><secondary>DspIntr_emu.c</secondary></indexterm>
+<indexterm><primary>DspIntr_emu.c</primary><secondary>IER</secondary></indexterm>
+<para><computeroutput>cregister volatile unsigned int IER</computeroutput></para></section>
+<anchor xml:id="__dsp_intr__emu_8c_1a1790c0117f7106f597b3540ba57df515"/><section>
+    <title>IFR</title>
+<indexterm><primary>IFR</primary><secondary>DspIntr_emu.c</secondary></indexterm>
+<indexterm><primary>DspIntr_emu.c</primary><secondary>IFR</secondary></indexterm>
+<para><computeroutput>cregister volatile unsigned int IFR</computeroutput></para></section>
+</section>
+</section>

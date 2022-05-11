@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_p_w_m___sat_threshold__s" xml:lang="en-US">
+<title>EPWM_SatThreshold_s Struct Reference</title>
+<indexterm><primary>EPWM_SatThreshold_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_struct_e_p_w_m___sat_threshold__s_1a07196715a9e8d595395b247b9e2fb2ad">upper</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_e_p_w_m___sat_threshold__s_1aa9160878a06c12b67aa08d8b03397abb">lower</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_p_w_m___sat_threshold__s_1aa9160878a06c12b67aa08d8b03397abb"/><section>
+    <title>lower</title>
+<indexterm><primary>lower</primary><secondary>EPWM_SatThreshold_s</secondary></indexterm>
+<indexterm><primary>EPWM_SatThreshold_s</primary><secondary>lower</secondary></indexterm>
+<para><computeroutput>uint16_t EPWM_SatThreshold_s::lower</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___sat_threshold__s_1a07196715a9e8d595395b247b9e2fb2ad"/><section>
+    <title>upper</title>
+<indexterm><primary>upper</primary><secondary>EPWM_SatThreshold_s</secondary></indexterm>
+<indexterm><primary>EPWM_SatThreshold_s</primary><secondary>upper</secondary></indexterm>
+<para><computeroutput>uint16_t EPWM_SatThreshold_s::upper</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,786 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_epc_control_8h_source" xml:lang="en-US">
+<title>libEpcControl.h</title>
+<indexterm><primary>sil/libEpcControl.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">__EPC_SIL_LIBRARY_H_</emphasis>
+2 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__EPC_SIL_LIBRARY_H_</emphasis>
+3 <emphasis role="comment">/********************************************************************************************************</emphasis>
+4 <emphasis role="comment">*</emphasis>
+5 <emphasis role="comment">*&#32;&#32;&#32;#########&#32;&#32;&#32;&#32;#########&#32;&#32;&#32;&#32;#########&#32;&#32;&#32;########&#32;&#32;&#32;&#32;&#32;&#32;#######&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;#########&#32;&#32;&#32;#######</emphasis>
+6 <emphasis role="comment">*&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;##</emphasis>
+7 <emphasis role="comment">*&#32;&#32;#&#32;########&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##########&#32;&#32;##</emphasis>
+8 <emphasis role="comment">*&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##</emphasis>
+9 <emphasis role="comment">*&#32;&#32;&#32;#########&#32;&#32;&#32;#&#32;########&#32;&#32;&#32;&#32;#########&#32;&#32;##&#32;######&#32;&#32;&#32;&#32;&#32;&#32;#######&#32;&#32;&#32;&#32;&#32;######&#32;&#32;######&#32;&#32;&#32;&#32;#########&#32;&#32;##</emphasis>
+10 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##</emphasis>
+11 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#</emphasis>
+12 <emphasis role="comment">*</emphasis>
+13 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;COMPANY&#32;CONFIDENTIAL</emphasis>
+14 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;document&#32;contains&#32;information&#32;proprietary&#32;to&#32;EPC&#32;Power.</emphasis>
+15 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;is&#32;an&#32;unpublished&#32;work&#32;subject&#32;to&#32;trade&#32;secret&#32;and&#32;copyright&#32;protection.</emphasis>
+16 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;In&#32;addition,&#32;the&#32;information&#32;may&#32;be&#32;the&#32;subject&#32;of&#32;patent&#32;applications</emphasis>
+17 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;in&#32;the&#32;United&#32;States&#32;and&#32;foreign&#32;countries.</emphasis>
+18 <emphasis role="comment">*</emphasis>
+19 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+20 
+21 <emphasis role="comment">/********************************************************************************************************</emphasis>
+22 <emphasis role="comment">&#32;*&#32;M&#32;O&#32;D&#32;U&#32;L&#32;E&#32;&#32;&#32;&#32;D&#32;E&#32;S&#32;C&#32;R&#32;I&#32;P&#32;T&#32;I&#32;O&#32;N</emphasis>
+23 <emphasis role="comment">&#32;*</emphasis>
+24 <emphasis role="comment">&#32;*&#32;Filename&#32;&#32;&#32;&#32;&#32;:&#32;libEpcControl.h</emphasis>
+25 <emphasis role="comment">&#32;*&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Package::SubPackage::..::Class</emphasis>
+26 <emphasis role="comment">&#32;*&#32;Prefix&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;SIL_</emphasis>
+27 <emphasis role="comment">&#32;*&#32;Description&#32;&#32;:&#32;EPC&#32;SIL&#32;Library&#32;interface&#32;-&#32;this&#32;header&#32;declares&#32;the&#32;data&#32;interfaces&#32;(parameters,</emphasis>
+28 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputs,&#32;and&#32;outputs)&#32;and&#32;the&#32;library&#32;methods&#32;intended&#32;to&#32;be&#32;called&#32;by&#32;a&#32;dynamic</emphasis>
+29 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;simulation&#32;solver--either&#32;directly&#32;or&#32;through&#32;a&#32;simulation-environment&#32;specific</emphasis>
+30 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;wrapper.</emphasis>
+31 <emphasis role="comment">&#32;*&#32;Author&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;D.&#32;Michaud</emphasis>
+32 <emphasis role="comment">&#32;*</emphasis>
+33 <emphasis role="comment">&#32;*&#32;History&#32;&#32;&#32;&#32;&#32;&#32;:</emphasis>
+34 <emphasis role="comment">&#32;*&#32;Date&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Name&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Description</emphasis>
+35 <emphasis role="comment">&#32;*&#32;14.01.2019&#32;&#32;&#32;D.&#32;Michaud&#32;&#32;&#32;&#32;&#32;&#32;Initial&#32;Version</emphasis>
+36 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+37 
+38 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis>__cplusplus<emphasis role="preprocessor">)</emphasis>
+39 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+40 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+41 
+42 <emphasis role="comment">/********************************************************************************************************</emphasis>
+43 <emphasis role="comment">&#32;*&#32;Include&#32;Files</emphasis>
+44 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+45 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdlib</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;For&#32;NULL&#32;*/</emphasis>
+46 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdint</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;For&#32;fixed-width&#32;types&#32;*/</emphasis>
+47 
+48 <emphasis role="comment">/*&#32;stdbool.h&#32;is&#32;available&#32;starting&#32;from&#32;Visual&#32;Studio&#32;2013&#32;(_MSC_VER&#32;equals&#32;to&#32;1800)&#32;*/</emphasis>
+49 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">!</emphasis><emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis>_MSC_VER<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis>_MSC_VER<emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">&amp;&amp;</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>_MSC_VER&#32;<emphasis role="preprocessor">&gt;=</emphasis>&#32;1800<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">)</emphasis>
+50 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdbool</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;For&#32;Boolean&#32;type&#32;*/</emphasis>
+51 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+52 
+53 
+54 <emphasis role="comment">/********************************************************************************************************</emphasis>
+55 <emphasis role="comment">&#32;*&#32;Constant&#32;Defines</emphasis>
+56 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+57 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PARSPEC_DEFAULTS</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mWidth</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">mTunable</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">{</emphasis>
+58 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">parPointer</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="preprocessor">NULL</emphasis><emphasis role="preprocessor">,</emphasis>
+59 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">parWidth</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="preprocessor">mWidth</emphasis><emphasis role="preprocessor">,</emphasis>
+60 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">parTunable</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="preprocessor">mTunable</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">\</emphasis>
+61 <emphasis role="preprocessor">}</emphasis>
+62 
+63 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PARAMETERS_DEFAULTS</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">{</emphasis>
+64 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_PAR_PMVSPATH</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1aa1eb80e8e9cca94572df89842779e134">SIL_PARSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>1<emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="keyword">false</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+65 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_PAR_INTENT</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1aa1eb80e8e9cca94572df89842779e134">SIL_PARSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>1<emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="keyword">false</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+66 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">##</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">\</emphasis>
+67 <emphasis role="preprocessor">}</emphasis>
+68 
+69 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORTSPEC_DEFAULTS</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mWidth</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">{</emphasis>
+70 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">portPointer</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="preprocessor">NULL</emphasis><emphasis role="preprocessor">,</emphasis>
+71 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">portWidth</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="preprocessor">mWidth</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">\</emphasis>
+72 <emphasis role="preprocessor">}</emphasis>
+73 
+74 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_INPUTS_DEFAULTS</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">{</emphasis>
+75 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Control&#32;*/</emphasis>
+76 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_CTL_RUN</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>1<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+77 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_CTL_PBC</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>1<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+78 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_CTL_CLR</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>1<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+79 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_CTL_ISL</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>1<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;References&#32;*/</emphasis>
+82 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_REF_FVR</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+83 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_REF_RIG</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>4<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+84 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_REF_RPG</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+85 
+86 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Feedbacks&#32;*/</emphasis>
+87 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_FBK_DCV</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+88 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_FBK_PIC</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>6<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+89 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_FBK_PVL</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+90 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_FBK_PVR</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+91 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_FBK_DINP</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>5<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+92 
+93 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Debug&#32;*/</emphasis>
+94 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_DBG_1</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+95 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_DBG_2</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+96 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_DBG_3</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+97 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_DBG_4</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+98 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_DBG_5</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+99 
+100 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Customer&#32;*/</emphasis>
+101 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_INP_CUST</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>6<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+102 
+103 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">##</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">\</emphasis>
+104 <emphasis role="preprocessor">}</emphasis>
+105 
+106 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_OUTPUTS_DEFAULTS</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">{</emphasis>
+107 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Status&#32;*/</emphasis>
+108 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_STA_CTL</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+109 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_STA_PBC</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>1<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+110 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_STA_GMR</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+111 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_STA_GML</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+112 
+113 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Monitor&#32;*/</emphasis>
+114 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_MON_FVR</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+115 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_MON_FVL</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+116 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_MON_RIG</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>4<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+117 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_MON_RPG</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>4<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+118 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_MON_SCI</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>4<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+119 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_MON_SCV</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>2<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+120 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_MON_DCVI</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>4<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+121 
+122 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Feedbacks&#32;*/</emphasis>
+123 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_FBK_PIC</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>6<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+124 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_FBK_PVL</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+125 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_FBK_PVR</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>3<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+126 
+127 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Control&#32;*/</emphasis>
+128 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_CTL_DOUT</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>5<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+129 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_CTL_RLAY</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>4<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+130 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_CTL_GATE</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>6<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+131 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_CTL_CDIR</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">SIL_TASK_GROUP_CNT</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+132 
+133 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Debug&#32;*/</emphasis>
+134 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_DBG</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>32<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+135 
+136 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;References&#32;*/</emphasis>
+137 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_REF</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>4<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+138 
+139 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Customer&#32;*/</emphasis>
+140 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">[</emphasis>&#32;<emphasis role="preprocessor">SIL_OUT_CUST</emphasis>&#32;<emphasis role="preprocessor">]</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link><emphasis role="preprocessor">(</emphasis>21<emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+141 
+142 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">##</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">\</emphasis>
+143 <emphasis role="preprocessor">}</emphasis>
+144 
+145 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORTS_DEFAULTS</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">{</emphasis>
+146 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">inpPort</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a23890ceaa9fbba57e73f562671e3a4b7">SIL_INPUTS_DEFAULTS</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+147 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">outPort</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">=</emphasis>&#32;<link linkend="_lib_epc_control_8h_1ae3523c495ef0f14dc59ffef0168128e4">SIL_OUTPUTS_DEFAULTS</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">,</emphasis>
+148 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">##</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">\</emphasis>
+149 <emphasis role="preprocessor">}</emphasis>
+150 
+151 
+152 <emphasis role="comment">/********************************************************************************************************</emphasis>
+153 <emphasis role="comment">&#32;*&#32;Macro&#32;Defines</emphasis>
+154 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+155 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PARAM_P</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">SIL_Parameters</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">]</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">parPointer</emphasis>
+156 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PARAM_W</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">SIL_Parameters</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">]</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">parWidth</emphasis>
+157 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PARAM_T</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">SIL_Parameters</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">]</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">parTunable</emphasis>
+158 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PARAM</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">mTyp</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mTyp</emphasis>&#32;<emphasis role="preprocessor">*</emphasis><emphasis role="preprocessor">)</emphasis><link linkend="_lib_epc_control_8h_1a976ad84e491da31be2745a282f83966a">SIL_PARAM_P</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">]</emphasis>
+159 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORT_INP_P</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">SIL_Ports</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">inpPort</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">]</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">portPointer</emphasis>
+160 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORT_INP_W</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">SIL_Ports</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">inpPort</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">]</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">portWidth</emphasis>
+161 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORT_INP</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1ab566304af8c7c3ef931ddfa8c9e69eec">SIL_PORT_INP_P</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">]</emphasis>
+162 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORT_OUT_P</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">SIL_Ports</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">outPort</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">]</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">portPointer</emphasis>
+163 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORT_OUT_W</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">SIL_Ports</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">outPort</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">]</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">portWidth</emphasis>
+164 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORT_OUT</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a5d14177846563842aefcce3d2d442c15">SIL_PORT_OUT_P</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">[</emphasis><emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">]</emphasis>
+165 
+166 &#32;<emphasis role="comment">/*&#32;Boolean&#32;type&#32;is&#32;available&#32;starting&#32;from&#32;Visual&#32;Studio&#32;2013&#32;(_MSC_VER&#32;equals&#32;to&#32;1800).</emphasis>
+167 <emphasis role="comment">&#32;&#32;&#32;&#32;In&#32;older&#32;Visual&#32;Studio&#32;we&#32;need&#32;to&#32;define&#32;bool&#32;by&#32;ourselves.&#32;*/</emphasis>
+168 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis>_MSC_VER<emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">&amp;&amp;</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>_MSC_VER&#32;<emphasis role="preprocessor">&lt;</emphasis>&#32;1800<emphasis role="preprocessor">)</emphasis>
+169 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">bool</emphasis>&#32;&#32;&#32;&#32;<emphasis role="preprocessor">int</emphasis>
+170 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+171 
+172 
+173 <emphasis role="comment">/********************************************************************************************************</emphasis>
+174 <emphasis role="comment">&#32;*&#32;Type&#32;Definitions</emphasis>
+175 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+176 
+177 <emphasis role="comment">/*&#32;Model&#32;Intents&#32;-&#32;For&#32;indication&#32;of&#32;desired&#32;Model&#32;Fidelity³:</emphasis>
+178 <emphasis role="comment">&#32;*&#32;Select&#32;a&#32;&quot;switched&quot;&#32;model&#32;intent&#32;for&#32;accurate&#32;modelling&#32;of&#32;switching-frequency&#32;sideband&#32;harmonics&#32;at</emphasis>
+179 <emphasis role="comment">&#32;*&#32;the&#32;expense&#32;of&#32;increased&#32;simulation&#32;time.&#32;Conversely,&#32;the&#32;&quot;averaged&quot;&#32;models&#32;converter&#32;states&#32;that&#32;are</emphasis>
+180 <emphasis role="comment">&#32;*&#32;averaged&#32;over&#32;each&#32;switching&#32;half-period&#32;such&#32;that&#32;switching-frequency&#32;effects&#32;are&#32;ignored&#32;for&#32;increased</emphasis>
+181 <emphasis role="comment">&#32;*&#32;simulation&#32;speed.&#32;*/</emphasis>
+182 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562b">SIL_ModelIntent_e</link>&#32;{
+183 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba2df8b4b3304c6d0e365e0fd460ab3780">SIL_MODEL_INTENT_SWITCHED</link>,
+184 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba6580cbabc0e59966d19d62a57017ed8f">SIL_MODEL_INTENT_AVERAGED</link>,
+185 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba08583372439a329f9ca27216797d96c3">SIL_MODEL_INTENT_CNT</link>
+186 }&#32;SIL_eModelIntent_t;
+187 
+188 <emphasis role="comment">/*&#32;Solver&#32;Type&#32;-&#32;For&#32;indication&#32;of&#32;Solver&#32;Capabilities:</emphasis>
+189 <emphasis role="comment">&#32;*&#32;Select&#32;the&#32;option&#32;best&#32;describing&#32;the&#32;used&#32;solver&#32;sampling&#32;capabilities.&#32;Some&#32;environments&#32;are&#32;capable</emphasis>
+190 <emphasis role="comment">&#32;*&#32;of&#32;supporting&#32;multiple&#32;sample-rate&#32;tasks,&#32;others&#32;only&#32;offer&#32;a&#32;single&#32;sample&#32;rate.&#32;Further,&#32;some</emphasis>
+191 <emphasis role="comment">&#32;*&#32;environments&#32;support&#32;dynamically&#32;variable&#32;sample&#32;rate&#32;specification.&#32;Presently&#32;only&#32;&quot;Variable&#32;Multi-</emphasis>
+192 <emphasis role="comment">&#32;*&#32;Rate&quot;&#32;and&#32;&quot;Fixed&#32;Single-Rate&quot;&#32;solver&#32;types&#32;are&#32;supported.&#32;*/</emphasis>
+193 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6">SIL_SolverType_e</link>&#32;{
+194 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80">SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</link>,
+195 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6afc670ce0c6f762e1e84d79fd2b41f183">SIL_SOLVER_TYPE_VARIABLE</link>,
+196 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6ae3685caa4ef65143b616476ec57e3d2b">SIL_SOLVER_TYPE_FIXED_MULTIRATE</link>,
+197 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a3366082b4a36688431436954ae6908ab">SIL_SOLVER_TYPE_FIXED</link>,
+198 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6aa1743274adbab534b35c524d2a529938">SIL_SOLVER_TYPE_CNT</link>
+199 }&#32;SIL_eSolverType_t;
+200 
+201 <emphasis role="comment">/*&#32;Library&#32;Internal&#32;Task&#32;Groups:</emphasis>
+202 <emphasis role="comment">&#32;*&#32;The&#32;EPC&#32;Control&#32;system&#32;is&#32;in&#32;fact&#32;a&#32;multi-rate&#32;system&#32;with&#32;a&#32;variable&#32;time-step&#32;task&#32;for&#32;the&#32;realtime</emphasis>
+203 <emphasis role="comment">&#32;*&#32;(highest&#32;priority)&#32;control&#32;context.&#32;This&#32;enumeration&#32;may&#32;be&#32;used&#32;by&#32;the&#32;solver-interface&#32;if&#32;the&#32;solver</emphasis>
+204 <emphasis role="comment">&#32;*&#32;will&#32;manage&#32;invocation&#32;of&#32;the&#32;individual&#32;sampling&#32;tasks.&#32;*/</emphasis>
+205 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdc">SIL_TaskGroup_e</link>&#32;{
+206 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdca6752bdea6ba25e1c866793d9de9fddc2">SIL_TASK_GROUP_ts</link>,
+207 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcad252ac161a55166b4499529360ce87c8">SIL_TASK_GROUP_200us</link>,
+208 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcaf0d955c1cb8c3b7dd9a510ea3bf6dbd0">SIL_TASK_GROUP_1ms</link>,
+209 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcabd3a3af76eaf8f536a2eeca2aee82f11">SIL_TASK_GROUP_10ms</link>,
+210 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdca52ea4ad9e046ceb4545a1bf27689be6a">SIL_TASK_GROUP_100ms</link>,
+211 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcac3d16ad5a1cedf24b10ea359023f034c">SIL_TASK_GROUP_1s</link>,
+212 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcaa9e4d7626ae66406a51f13ef77cca768">SIL_TASK_GROUP_CNT</link>
+213 }&#32;SIL_eTaskGroup_t;
+214 
+215 <emphasis role="comment">/*&#32;Control&#32;Modes:</emphasis>
+216 <emphasis role="comment">&#32;*&#32;Request&#32;operation&#32;using&#32;the&#32;following&#32;enumerated&#32;modes&#32;(via&#32;SIL_INP_CTL_RUN)&#32;*/</emphasis>
+217 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649">SIL_ControlMode_e</link>&#32;{
+218 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a6cb07d8d85a5e8971fef51c675588304">SIL_CONTROL_MODE_INACTIVE</link>,
+219 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649adccd557e1aab5f27d67e94ed78824b94">SIL_CONTROL_MODE_POWER</link>,
+220 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a70c434e6626cb8b803cf6acd6a37b7f4">SIL_CONTROL_MODE_CURRENT</link>,
+221 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a93c1a8587bc8b6a6b597585ab077535f">SIL_CONTROL_MODE_VOLTAGE</link>,
+222 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a47926c1001ad9f5a01e613500336ee24">SIL_CONTROL_MODE_CNT</link>
+223 }&#32;SIL_eControlMode_t;
+224 
+225 <emphasis role="comment">/*&#32;Parameter&#32;Specification:&#32;*/</emphasis>
+226 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_s_i_l___param__s">SIL_Param_s</link>&#32;{
+227 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_struct_s_i_l___param__s_1a6017cc21f2c40c71e4761eef2ad7d981">parPointer</link>;
+228 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_i_l___param__s_1acdecd843bb35947c19bf7cac29f65cf5">parWidth</link>;
+229 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_i_l___param__s_1a99dc8a0a74d81cf38bb649fa055e3074">parTunable</link>;
+230 }&#32;SIL_sParam_t;
+231 
+232 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654">SIL_Parameters_e</link>&#32;{
+233 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651">SIL_PAR_PMVSPATH</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Path&#32;to&#32;PMVS&#32;file&#32;*/</emphasis>
+234 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460">SIL_PAR_INTENT</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Model&#32;Intent&#32;(scalar):&#32;One&#32;of&#32;the&#32;enumerated&#32;values&#32;SIL_ModelIntent_e.&#32;*/</emphasis>
+235 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c">SIL_PAR_CNT</link>
+236 }&#32;SIL_eParameters_t;
+237 
+238 <emphasis role="comment">/*&#32;Input/Output&#32;Port&#32;Specification:</emphasis>
+239 <emphasis role="comment">&#32;*&#32;Input&#32;and&#32;output&#32;ports&#32;are&#32;the&#32;process&#32;data&#32;interfaces&#32;to&#32;the&#32;EPC&#32;Control&#32;in&#32;the&#32;SIL&#32;environment.</emphasis>
+240 <emphasis role="comment">&#32;*&#32;Ports&#32;may&#32;be&#32;scalar&#32;or&#32;vectorial&#32;(arrays).&#32;Vectorial&#32;ports&#32;are&#32;used&#32;to&#32;group&#32;(roughly)&#32;like&#32;data.</emphasis>
+241 <emphasis role="comment">&#32;*&#32;In&#32;some&#32;ways&#32;and&#32;cases,&#32;the&#32;groupings&#32;may&#32;represent&#32;similar&#32;groupings&#32;as&#32;exposed&#32;in&#32;the&#32;real&#32;control</emphasis>
+242 <emphasis role="comment">&#32;*&#32;interfaces&#32;(Multiplexed&#32;CAN&#32;messages&#32;or&#32;Modbus&#32;register&#32;groups),&#32;but&#32;not&#32;necessarily&#32;equivalent&#32;in</emphasis>
+243 <emphasis role="comment">&#32;*&#32;the&#32;interest&#32;of&#32;offering&#32;groupings&#32;more&#32;relevant&#32;to&#32;the&#32;SIL&#32;Library&#32;use&#32;case.&#32;Ports&#32;are&#32;exposed&#32;by</emphasis>
+244 <emphasis role="comment">&#32;*&#32;reference&#32;(pointer).&#32;Pointers&#32;must&#32;be&#32;configured&#32;to&#32;valid&#32;memory&#32;locations&#32;by&#32;the&#32;host&#32;simulation</emphasis>
+245 <emphasis role="comment">&#32;*&#32;environment&#32;by&#32;the&#32;time&#32;SIL_initializeLibrary()&#32;method&#32;is&#32;called.&#32;Vectorial&#32;ports&#32;are&#32;required&#32;to</emphasis>
+246 <emphasis role="comment">&#32;*&#32;occupy&#32;contiguous&#32;memory&#32;locations.&#32;Please&#32;refer&#32;to&#32;SIL_INPUTS_DEFAULTS()&#32;and&#32;SIL_OUTPUTS_DEFAULTS()</emphasis>
+247 <emphasis role="comment">&#32;*&#32;macros&#32;above&#32;for&#32;reference&#32;to&#32;the&#32;expected&#32;array&#32;sizes&#32;of&#32;each&#32;port.&#32;Typically&#32;the&#32;simulation</emphasis>
+248 <emphasis role="comment">&#32;*&#32;environment&#32;will&#32;iterate&#32;over&#32;the&#32;array&#32;elements&#32;of&#32;inpPort&#32;and&#32;outPort&#32;respectively&#32;to&#32;allocate</emphasis>
+249 <emphasis role="comment">&#32;*&#32;memory&#32;and&#32;assign&#32;pointers&#32;for&#32;use&#32;by&#32;the&#32;SIL&#32;Library.&#32;*/</emphasis>
+250 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_s_i_l___port_spec__s">SIL_PortSpec_s</link>&#32;{
+251 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_struct_s_i_l___port_spec__s_1a79751280ee24342b33b8bd7d7c7d8f5a">portPointer</link>;
+252 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_i_l___port_spec__s_1ab69e675b9188fef7b87df0f8b6388dbc">portWidth</link>;
+253 }&#32;SIL_sPortSpec_t;
+254 
+255 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885e">SIL_InputPorts_e</link>&#32;{
+256 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Control&#32;*/</emphasis>
+257 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea7166aff228702dc13caf5967626efaa1">SIL_INP_CTL_RUN</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Run&#32;Request&#32;(scalar):&#32;0&#32;-&#32;Stop,&#32;1&#32;-&#32;Power&#32;Control,&#32;2&#32;-&#32;Current&#32;Control,&#32;3&#32;-&#32;Voltage&#32;Control&#32;*/</emphasis>
+258 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eab56fa4beec171b6c60e78e2f3d191927">SIL_INP_CTL_PBC</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Protected&#32;Bus&#32;Control&#32;Request&#32;(scalar)&#32;*/</emphasis>
+259 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1bfba5df17c55efeeda1f2edc61446a7">SIL_INP_CTL_CLR</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Fault&#32;Clear&#32;Request&#32;(scalar)&#32;*/</emphasis>
+260 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eab52eb214021b655a4cccafe0c3f2dd7d">SIL_INP_CTL_ISL</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Island&#32;Reconnect&#32;Request&#32;(scalar)&#32;*/</emphasis>
+261 
+262 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;References&#32;*/</emphasis>
+263 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea921d239e668458b03bc16a5a66dd5454">SIL_INP_REF_FVR</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Frequency/Voltage&#32;Reference&#32;(vector):</emphasis>
+264 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Reference&#32;Frequency&#32;[Hz];</emphasis>
+265 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Reference&#32;Voltage&#32;[Vl,rms].&#32;*/</emphasis>
+266 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea6a0fca72779f012fff2c8ea0e5c00986">SIL_INP_REF_RIG</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Synchronous&#32;Grid&#32;Current&#32;Reference&#32;(vector):</emphasis>
+267 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Dominant-Sequence&#32;Real&#32;Current&#32;[A,rms];</emphasis>
+268 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Dominant-Sequence&#32;Reactive&#32;Current&#32;[A,rms].</emphasis>
+269 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Opposing-Sequence&#32;Real&#32;Current&#32;[A,rms];</emphasis>
+270 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;Opposing-Sequence&#32;Reactive&#32;Current&#32;[A,rms].&#32;*/</emphasis>
+271 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea82acb03b55e5ebb711dfa1dfccb49590">SIL_INP_REF_RPG</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Synchronous&#32;Grid&#32;Power&#32;Reference&#32;(vector):</emphasis>
+272 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Real&#32;Power&#32;[W];</emphasis>
+273 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Reactive&#32;Power&#32;[VAr]&#32;*/</emphasis>
+274 
+275 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Feedbacks&#32;*/</emphasis>
+276 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eaf980954a2cd4c2dcbb47c83e74c8a88e">SIL_INP_FBK_DCV</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;DC&#32;Voltage&#32;Feedback&#32;(vector):</emphasis>
+277 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;2L:&#32;Total&#32;DC&#32;Bus&#32;Voltage&#32;[V],&#32;3L:&#32;Upper&#32;Half-Bus&#32;Voltage&#32;[V];</emphasis>
+278 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;2L:&#32;Total&#32;DC&#32;Bus&#32;Voltage&#32;[V],&#32;3L:&#32;Lower&#32;Half-Bus&#32;Voltage&#32;[V].&#32;*/</emphasis>
+279 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea163346ac2bfd0c2ebf7efb9e67fd4c64">SIL_INP_FBK_PIC</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Converter-Side&#32;Current&#32;Feedback&#32;(vector)&#32;†:</emphasis>
+280 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0&#32;&amp;&#32;3]&#32;Phase&#32;U/A/X/1&#32;Instantaneous&#32;Current&#32;[A];</emphasis>
+281 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1&#32;&amp;&#32;4]&#32;Phase&#32;V/B/Y/2&#32;Instantaneous&#32;Current&#32;[A];</emphasis>
+282 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2&#32;&amp;&#32;5]&#32;Phase&#32;W/C/Z/3&#32;Instantaneous&#32;Current&#32;[A].&#32;*/</emphasis>
+283 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951">SIL_INP_FBK_PVL</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;&quot;Local&quot;¹&#32;Phase&#32;Voltage&#32;Measurement&#32;(vector)&#32;†:</emphasis>
+284 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Phase&#32;U/A/X/1&#32;Instantaneous&#32;Phase&#32;Voltage&#32;[V];</emphasis>
+285 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Phase&#32;V/B/Y/2&#32;Instantaneous&#32;Phase&#32;Voltage&#32;[V];</emphasis>
+286 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Phase&#32;W/C/Z/3&#32;Instantaneous&#32;Phase&#32;Voltage&#32;[V].&#32;*/</emphasis>
+287 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048">SIL_INP_FBK_PVR</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;&quot;Remote&quot;²&#32;Line&#32;Voltage&#32;Measurement&#32;(vector)&#32;†:</emphasis>
+288 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Phase&#32;UV/AB/XY/12&#32;Instantaneous&#32;Line&#32;Voltage&#32;[V];</emphasis>
+289 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Phase&#32;VW/BC/YZ/23&#32;Instantaneous&#32;Line&#32;Voltage&#32;[V];</emphasis>
+290 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Phase&#32;WU/CA/ZX/31&#32;Instantaneous&#32;Line&#32;Voltage&#32;[V].&#32;*/</emphasis>
+291 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea0a0b4399368e0fcf003c42071414641a">SIL_INP_FBK_DINP</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Digital&#32;Logic&#32;Inputs&#32;(vector)&#32;‡:</emphasis>
+292 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;E-Stop/Hardware&#32;Enable;</emphasis>
+293 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Input&#32;Filter&#32;Thermal&#32;Trip;</emphasis>
+294 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Liquid&#32;Cooling&#32;Pump&#32;Failure;</emphasis>
+295 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;Liquid&#32;Cooling&#32;Pump&#32;Running;</emphasis>
+296 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[4]&#32;Module&#32;Cooling&#32;Fan&#32;OK.&#32;*/</emphasis>
+297 
+298 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Debug&#32;*/</emphasis>
+299 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea42fce498cf11ac467138926a04766cde">SIL_INP_DBG_1</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;EPC&#32;Development&#32;Use⁵.&#32;*/</emphasis>
+300 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea4f1c23acb5372636efd8d6b9c40ec81a">SIL_INP_DBG_2</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;EPC&#32;Development&#32;Use⁵.&#32;*/</emphasis>
+301 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eac8774fd40be37428590c7828a6c9b008">SIL_INP_DBG_3</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;EPC&#32;Development&#32;Use⁵.&#32;*/</emphasis>
+302 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eaf287e955c686ec86338a7c739c298eb9">SIL_INP_DBG_4</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;EPC&#32;Development&#32;Use⁵.&#32;*/</emphasis>
+303 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eabe2411b715f2b31aa5e19aa5dd1c58a1">SIL_INP_DBG_5</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;EPC&#32;Development&#32;Use⁵.&#32;*/</emphasis>
+304 
+305 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Customer&#32;*/</emphasis>
+306 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea7b3c68ecc26512f1ed539c4ea88cc773">SIL_INP_CUST</link>,
+307 
+308 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa">SIL_INP_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Input&#32;Port&#32;Count,&#32;Not&#32;an&#32;Actual&#32;Port.&#32;*/</emphasis>
+309 }&#32;SIL_eInputPorts_t;
+310 
+311 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3">SIL_OutputPorts_e</link>&#32;{
+312 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Status&#32;*/</emphasis>
+313 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aa32730ef97c9a8eb5e1328ffa03f734f">SIL_OUT_STA_CTL</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Control&#32;Status&#32;Outputs&#32;(vector):</emphasis>
+314 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Control&#32;State;</emphasis>
+315 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Warning&#32;Word;</emphasis>
+316 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Fault&#32;Word.&#32;*/</emphasis>
+317 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ac64960cc7a9d2805f2cd7b61ab6beae9">SIL_OUT_STA_PBC</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Protected&#32;Bus&#32;Control&#32;Status&#32;(scalar)&#32;*/</emphasis>
+318 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a20b7ec65a59c24bee8ab459a98b49fc1">SIL_OUT_STA_GMR</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Grid&#32;Monitor&#32;Status,&#32;Remote&#32;(vector):&#32;see&#32;next.&#32;*/</emphasis>
+319 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a461b753bc509a9ea390811f4099022da">SIL_OUT_STA_GML</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Grid&#32;Monitor&#32;Status,&#32;Local&#32;(vector):</emphasis>
+320 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Grid/Network&#32;Status:&#32;0&#32;-&#32;Dead,&#32;1&#32;-&#32;Live,&#32;2&#32;-&#32;Nominal;</emphasis>
+321 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Detected&#32;Phase&#32;Sequence:&#32;0&#32;-&#32;Negative,&#32;1&#32;-&#32;Positive,&#32;2&#32;-&#32;Invalid;</emphasis>
+322 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Detected&#32;Phase&#32;Displacement:&#32;0&#32;-&#32;120deg,&#32;1&#32;-&#32;180deg,&#32;2&#32;-&#32;0deg,&#32;3&#32;-&#32;Manual,&#32;4&#32;-&#32;Invalid.&#32;*/</emphasis>
+323 
+324 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Monitor&#32;*/</emphasis>
+325 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a3dc6e86c00cc451033a22a0f29c23f44">SIL_OUT_MON_FVR</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Frequency/Voltage&#32;Monitor,&#32;Remote&#32;(vector):&#32;see&#32;next.&#32;*/</emphasis>
+326 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a3877128ecc7c07bbdfc485ffec628694">SIL_OUT_MON_FVL</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Frequency/Voltage&#32;Monitor,&#32;Local&#32;(vector):</emphasis>
+327 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Actual&#32;Network&#32;Frequency&#32;[Hz];</emphasis>
+328 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Average&#32;Phase&#32;Voltage&#32;[V,rms];</emphasis>
+329 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Average&#32;Line&#32;Voltage&#32;[V,rms].&#32;*/</emphasis>
+330 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ac30210d0a725f78ec7f8f096a308f202">SIL_OUT_MON_RIG</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Actual&#32;Grid&#32;Current&#32;Monitor&#32;(vector):</emphasis>
+331 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Real&#32;Current&#32;[A,rms];</emphasis>
+332 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Reactive&#32;Current&#32;[A,rms];</emphasis>
+333 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Apparent&#32;Current/Current&#32;Magnitude&#32;[A,rms];</emphasis>
+334 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;DC/Zero&#32;Current&#32;[A]&#32;(four-wire&#32;only).&#32;*/</emphasis>
+335 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ad935533f629e631c69c2a102637f8671">SIL_OUT_MON_RPG</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Actual&#32;Grid&#32;Power&#32;Monitor&#32;(vector):</emphasis>
+336 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Real&#32;Power&#32;[W];</emphasis>
+337 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Reactive&#32;Power&#32;[VAr];</emphasis>
+338 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Apparent&#32;Power&#32;&#32;[VA];</emphasis>
+339 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;DC/Zero&#32;Power&#32;[W]&#32;(four-wire&#32;only).&#32;*/</emphasis>
+340 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a145b61c2dd3b1a19587ca4cd45dffb85">SIL_OUT_MON_SCI</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Actual&#32;Grid&#32;Symmetrical&#32;Currents:</emphasis>
+341 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Positive-Sequence&#32;Direct-Axis&#32;Component;</emphasis>
+342 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Positive-Sequence&#32;Quadrature-Axis&#32;Component;</emphasis>
+343 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Negative-Sequence&#32;Direct-Axis&#32;Component;</emphasis>
+344 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;Negative-Sequence&#32;Quadrature-Axis&#32;Component.&#32;*/</emphasis>
+345 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3af7453ef1bbe00b123147f93e1cb8dba5">SIL_OUT_MON_SCV</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Actual&#32;Grid&#32;Symmetrical&#32;Voltages:</emphasis>
+346 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Positive-Sequence&#32;Component;</emphasis>
+347 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Negative-Sequence&#32;Component.&#32;*/</emphasis>
+348 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a9fdb763a801f238b3dc4d5f875aa6f3f">SIL_OUT_MON_DCVI</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;DC&#32;Link&#32;Voltage/Current&#32;Monitor&#32;(vector):</emphasis>
+349 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Total&#32;DC&#32;Link&#32;Voltage&#32;(2L&#32;and&#32;3L)&#32;[V];</emphasis>
+350 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;2L:&#32;Total&#32;DC&#32;Link&#32;Voltage,&#32;3L:&#32;Upper&#32;DC&#32;Link&#32;Voltage&#32;[V];</emphasis>
+351 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;2L:&#32;Total&#32;DC&#32;Link&#32;Voltage,&#32;3L:&#32;Lower&#32;DC&#32;Link&#32;Voltage&#32;[V];</emphasis>
+352 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;DC&#32;Link&#32;Current&#32;Estimate&#32;[A].&#32;*/</emphasis>
+353 
+354 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Feedbacks&#32;*/</emphasis>
+355 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a0f8ae69e9b83f36442d4c1b6556f752f">SIL_OUT_FBK_PIC</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Synchronously-Sampled&#32;Converter&#32;Currents:&#32;same&#32;definition&#32;as&#32;SIL_INP_FBK_PIC.&#32;*/</emphasis>
+356 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a9e0b5933f169819ce830970348b6f0e6">SIL_OUT_FBK_PVL</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Synchronously-Sampled&#32;Local&#32;Voltages:&#32;same&#32;definition&#32;as&#32;SIL_INP_FBK_PVL.&#32;*/</emphasis>
+357 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ad2d8ec2934bfb655769114ac9a3b8c08">SIL_OUT_FBK_PVR</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Synchronously-Sampled&#32;Remote&#32;Voltages:&#32;same&#32;definition&#32;as&#32;SIL_INP_FBK_PVR.&#32;*/</emphasis>
+358 
+359 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Control&#32;*/</emphasis>
+360 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a1378b5b19189a7a44ec85a3d4b520a98">SIL_OUT_CTL_DOUT</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Digital&#32;Logic&#32;Outputs&#32;(vector)&#32;‡:</emphasis>
+361 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Liquid-Air&#32;Heat&#32;Exchanger&#32;Fan&#32;Control;</emphasis>
+362 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Cabinet&#32;Cooling&#32;Fan&#32;Control;</emphasis>
+363 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Liquid&#32;Cooling&#32;Pump&#32;Run;</emphasis>
+364 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;Liquid&#32;Cooling&#32;Pump&#32;Fault&#32;Reset&#32;Request;</emphasis>
+365 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[4]&#32;Module&#32;Cooling&#32;Fan&#32;Control.&#32;*/</emphasis>
+366 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a415d9ba9009591e374d6585c28309f6a">SIL_OUT_CTL_RLAY</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Contactor/Relay&#32;Control&#32;(vector):</emphasis>
+367 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;MX&#32;(Main&#32;Contactor):&#32;between&#32;LCL&#32;and&#32;Grid/Network;</emphasis>
+368 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;SX&#32;(Secondary&#32;Contactor):&#32;between&#32;remote&#32;and&#32;local&#32;network&#32;(Protected&#32;Bus,&#32;Sync&#32;XFer,&#32;etc);</emphasis>
+369 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;PC&#32;(Pre-Charge&#32;Relay):&#32;DC&#32;Precharge&#32;control;</emphasis>
+370 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;DC&#32;(DC&#32;Main&#32;Contactor):&#32;DC-Link&#32;post-precharge&#32;control.&#32;*/</emphasis>
+371 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53">SIL_OUT_CTL_GATE</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Non-Complementary&#32;Switching&#32;States&#32;(vector)&#32;³:</emphasis>
+372 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;For&#32;Switched&#32;Model&#32;Intent,&#32;Two-Level&#32;Topology:</emphasis>
+373 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DG&#32;Controls&#32;Variant&#32;⁴:</emphasis>
+374 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;&quot;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State,&#32;Phase&#32;U/A/X/1;</emphasis>
+375 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;&quot;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State,&#32;Phase&#32;V/B/Y/2;</emphasis>
+376 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;&quot;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State,&#32;Phase&#32;W/C/Z/3;</emphasis>
+377 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MG3&#32;Controls&#32;Variant,&#32;above&#32;plus:</emphasis>
+378 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[4]&#32;&quot;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State,&#32;DC/DC&#32;Leg&#32;1;</emphasis>
+379 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[5]&#32;&quot;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State,&#32;DC/DC&#32;Leg&#32;2;</emphasis>
+380 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MG4&#32;Controls&#32;Variant,&#32;above&#32;plus:</emphasis>
+381 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;&quot;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State,&#32;AC&#32;Neutral.</emphasis>
+382 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DC&#32;Controls&#32;Variant:</emphasis>
+383 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0-2]&#32;Buck&#32;Interleaved&#32;Leg&#32;Switch&#32;States;</emphasis>
+384 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3-5]&#32;Boost&#32;Interleaved&#32;Leg&#32;Switch&#32;States.</emphasis>
+385 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;For&#32;Switched&#32;Model&#32;Intent,&#32;Three-Level&#32;Topology:</emphasis>
+386 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DG&#32;Controls&#32;Variant&#32;⁴:</emphasis>
+387 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;&quot;Outer&#32;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State&#32;(Q1),&#32;Phase&#32;Leg&#32;U/A/X/1;</emphasis>
+388 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;&quot;Inner&#32;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State&#32;(Q2),&#32;Phase&#32;Leg&#32;U/A/X/1;</emphasis>
+389 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;&quot;Outer&#32;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State&#32;(Q1),&#32;Phase&#32;Leg&#32;V/B/Y/2;</emphasis>
+390 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;&quot;Inner&#32;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State&#32;(Q2),&#32;Phase&#32;Leg&#32;V/B/Y/2;</emphasis>
+391 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[4]&#32;&quot;Outer&#32;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State&#32;(Q1),&#32;Phase&#32;Leg&#32;W/C/Z/3;</emphasis>
+392 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[5]&#32;&quot;Inner&#32;Upper&quot;&#32;Half-Bridge&#32;Switch&#32;State&#32;(Q2),&#32;Phase&#32;Leg&#32;W/C/Z/3.</emphasis>
+393 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;For&#32;Averaged&#32;Model&#32;Intent,&#32;Two-&#32;or&#32;Three-Level&#32;Topology&#32;³:</emphasis>
+394 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DG&#32;Controls&#32;Variant&#32;⁴:</emphasis>
+395 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Bipolar&#32;Normalized&#32;DC-Relative&#32;Voltage&#32;Reference,&#32;Phase&#32;U/A/X/1;</emphasis>
+396 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;Bipolar&#32;Normalized&#32;DC-Relative&#32;Voltage&#32;Reference,&#32;Phase&#32;V/B/Y/2;</emphasis>
+397 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Bipolar&#32;Normalized&#32;DC-Relative&#32;Voltage&#32;Reference,&#32;Phase&#32;W/C/Z/3.</emphasis>
+398 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MG3&#32;Controls&#32;Variant:&#32;DC&#32;Control&#32;Group&#32;not&#32;yet&#32;supported&#32;in&#32;averaged&#32;intent.</emphasis>
+399 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MG4&#32;Controls&#32;Variant,&#32;above&#32;plus:</emphasis>
+400 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;Bipolar&#32;Normalized&#32;DC-Relative&#32;Voltage&#32;Reference,&#32;AC&#32;Neutral.</emphasis>
+401 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DC&#32;Controls&#32;Variant:&#32;Dc&#32;Control&#32;Groups&#32;not&#32;yet&#32;supported&#32;in&#32;averaged&#32;intent.&#32;*/</emphasis>
+402 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e">SIL_OUT_CTL_CDIR</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Carrier&#32;Counter&#32;Direction/Synchronous&#32;Sample/Control&#32;Trigger&#32;(scalar)&#32;*/</emphasis>
+403 
+404 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Debug&#32;*/</emphasis>
+405 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afdd819a0cd9386ad7a3d0ca3441d6594">SIL_OUT_DBG</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;EPC&#32;Development&#32;Use⁵.&#32;*/</emphasis>
+406 
+407 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a4ed5ea8358d221bdd61b784200486398">SIL_OUT_REF</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Final&#32;references&#32;to&#32;the&#32;controllers:</emphasis>
+408 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;Frequency&#32;reference,&#32;&#32;Phase&#32;U/A/X/1&#32;[Hz];</emphasis>
+409 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[1]&#32;AC&#32;voltage&#32;reference,&#32;Phase&#32;U/A/X/1&#32;[V];</emphasis>
+410 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[2]&#32;Id&#32;current&#32;reference,&#32;Phase&#32;U/A/X/1&#32;[A];</emphasis>
+411 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[3]&#32;Iq&#32;current&#32;reference,&#32;Phase&#32;U/A/X/1&#32;[A].&#32;*/</emphasis>
+412 
+413 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Customer&#32;*/</emphasis>
+414 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a23fc413006a1ead7f31a5e6d4bb1bba1">SIL_OUT_CUST</link>,
+415 
+416 &#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee">SIL_OUT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Output&#32;Port&#32;Count,&#32;Not&#32;an&#32;Actual&#32;Port.&#32;*/</emphasis>
+417 }&#32;SIL_eOutputPorts_t;
+418 
+419 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_s_i_l___ports__s">SIL_Ports_s</link>&#32;{
+420 &#32;&#32;&#32;&#32;SIL_sPortSpec_t&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_i_l___ports__s_1a59d3b5a45df34ec671bb2e672714591e">inpPort</link>[<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa">SIL_INP_CNT</link>];
+421 &#32;&#32;&#32;&#32;SIL_sPortSpec_t&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_i_l___ports__s_1aaf3477f1b1edd8dcc8ca4751760b849b">outPort</link>[<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee">SIL_OUT_CNT</link>];
+422 }&#32;SIL_sPorts_t;
+423 
+424 <emphasis role="comment">/*&#32;Remarks:</emphasis>
+425 <emphasis role="comment">&#32;*&#32;†&#32;&#32;&#32;&#32;Typical&#32;assignment&#32;for&#32;AC-only&#32;Controls&#32;Variants.&#32;Topology+Control&#32;Variant&#32;dependent&#32;in&#32;general.</emphasis>
+426 <emphasis role="comment">&#32;*</emphasis>
+427 <emphasis role="comment">&#32;*&#32;‡&#32;&#32;&#32;&#32;Presently,&#32;Digital&#32;Inputs&#32;and&#32;Outputs&#32;may&#32;be&#32;left&#32;disconnected&#32;as&#32;they&#32;are&#32;faked&#32;out&#32;in&#32;Library.</emphasis>
+428 <emphasis role="comment">&#32;*</emphasis>
+429 <emphasis role="comment">&#32;*&#32;¹&#32;&#32;&#32;&#32;&quot;Local&quot;&#32;voltage&#32;measured&#32;on&#32;network/grid-side&#32;of&#32;the&#32;main&#32;contactor.</emphasis>
+430 <emphasis role="comment">&#32;*</emphasis>
+431 <emphasis role="comment">&#32;*&#32;²&#32;&#32;&#32;&#32;&quot;Remote&quot;&#32;voltage&#32;measured&#32;typically&#32;at&#32;PCC&#32;for&#32;power&#32;control&#32;at&#32;that&#32;point,&#32;or&#32;on&#32;a&#32;protected&#32;bus</emphasis>
+432 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;for&#32;UPS&#32;operation,&#32;synchronous&#32;transfer,&#32;etc.&#32;when&#32;so&#32;configured/desired.</emphasis>
+433 <emphasis role="comment">&#32;*</emphasis>
+434 <emphasis role="comment">&#32;*&#32;³&#32;&#32;&#32;&#32;For&#32;the&#32;switched&#32;model&#32;intent,&#32;the&#32;&quot;Gate&quot;&#32;outputs&#32;are&#32;the&#32;instantaneous&#32;switching&#32;states&#32;of&#32;the</emphasis>
+435 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;non-complimentary&#32;switching&#32;devices&#32;comprising&#32;the&#32;power&#32;stage.&#32;Complementary-device&#32;gate&#32;signal</emphasis>
+436 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;expansion,&#32;active&#32;logic&#32;level&#32;selection,&#32;and&#32;optional&#32;cross-conduction&#32;dead-band&#32;time&#32;insertion</emphasis>
+437 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;must&#32;be&#32;treated&#32;externally.&#32;For&#32;the&#32;averaged&#32;model&#32;intent,&#32;the&#32;&quot;Gate&quot;&#32;outputs&#32;are&#32;normalized</emphasis>
+438 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;values&#32;on&#32;the&#32;bounded&#32;real&#32;interval&#32;[-1,&#32;1].</emphasis>
+439 <emphasis role="comment">&#32;*</emphasis>
+440 <emphasis role="comment">&#32;*&#32;⁴&#32;&#32;&#32;&#32;DG&#32;(Distributed&#32;Generation)&#32;is&#32;the&#32;default&#32;grid-interactive&#32;Controls&#32;Variant.</emphasis>
+441 <emphasis role="comment">&#32;*</emphasis>
+442 <emphasis role="comment">&#32;*&#32;⁵&#32;&#32;&#32;&#32;All&#32;ports&#32;must&#32;be&#32;assigned&#32;valid&#32;pointers&#32;(in&#32;contiguous&#32;memory&#32;for&#32;vectorial&#32;ports),&#32;whether&#32;the</emphasis>
+443 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;port&#32;is&#32;used/desired&#32;or&#32;not.&#32;The&#32;user&#32;may&#32;declare&#32;a&#32;dummy&#32;array&#32;for&#32;assigning&#32;pointers&#32;to&#32;unused</emphasis>
+444 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;input&#32;or&#32;output&#32;ports.</emphasis>
+445 <emphasis role="comment">&#32;*/</emphasis>
+446 
+447 
+448 <emphasis role="comment">/********************************************************************************************************</emphasis>
+449 <emphasis role="comment">&#32;*&#32;Exported&#32;Variable&#32;Declarations</emphasis>
+450 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+451 <emphasis role="keyword">extern</emphasis>&#32;SIL_sParam_t&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1ab657a19b95f6cfab5a555d5d503c0b3e">SIL_Parameters</link>[<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c">SIL_PAR_CNT</link>];
+452 <emphasis role="keyword">extern</emphasis>&#32;SIL_sPorts_t&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1aa8c520d7306f12a6098f3cb4fdd3d1ea">SIL_Ports</link>;
+453 
+454 
+455 <emphasis role="comment">/********************************************************************************************************</emphasis>
+456 <emphasis role="comment">&#32;*&#32;Exported&#32;Function&#32;Prototypes</emphasis>
+457 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+458 
+459 <emphasis role="comment">/********************************************************************************************************</emphasis>
+460 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_initializeLibrary</emphasis>
+461 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.initializeLibrary</emphasis>
+462 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+463 <emphasis role="comment"></emphasis>
+464 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tStep&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&#32;requested&#32;simulation&#32;timestep&#32;[s],</emphasis>
+465 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;solverType&#32;&#32;-&#32;enumerated&#32;selection&#32;indicating&#32;solver&#32;capabilities&#32;[-],</emphasis>
+466 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mdlIntent&#32;&#32;&#32;-&#32;enumerated&#32;selection&#32;indicating&#32;model&#32;intent&#32;[-],</emphasis>
+467 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bridgeType&#32;&#32;-&#32;enumerated&#32;selection&#32;indicating&#32;EPC&#32;Power&#32;Bridge&#32;type&#32;[-],</emphasis>
+468 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pmvsPath&#32;&#32;&#32;&#32;-&#32;path&#32;to&#32;PMVS&#32;file.</emphasis>
+469 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+470 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+471 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;True&#32;on&#32;success;&#32;False&#32;otherwise.</emphasis>
+472 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;Configures&#32;the&#32;SIL&#32;library&#32;according&#32;to&#32;the&#32;dynamic&#32;simulation&#32;environment&apos;s&#32;capabilities</emphasis>
+473 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;and&#32;modeling&#32;objectives.&#32;This&#32;method&#32;is&#32;to&#32;be&#32;called&#32;once&#32;prior&#32;to&#32;progression&#32;into&#32;the</emphasis>
+474 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;simulation&#32;loop&#32;phase.&#32;For&#32;fixed-rate&#32;solvers,&#32;tStep&#32;shall&#32;indicate&#32;the&#32;discretization</emphasis>
+475 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;time&#32;step.&#32;For&#32;solvers&#32;capable&#32;of&#32;supporting&#32;variable&#32;rates,&#32;tStep&#32;is&#32;ignored.</emphasis>
+476 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;NB!&#32;The&#32;selected&#32;fixed&#32;sample&#32;rate&#32;must&#32;be&#32;an&#32;integral&#32;submultiple&#32;of&#32;all&#32;sample&#32;times</emphasis>
+477 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;required&#32;by&#32;the&#32;library:&#32;ts,&#32;200μs,&#32;1ms,&#32;10ms,&#32;100ms,&#32;and&#32;1000ms.&#32;Presently&#32;for&#32;fixed-rate</emphasis>
+478 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;solver&#32;selection,&#32;the&#32;&quot;ts&quot;&#32;(realtime)&#32;control&#32;task&#32;is&#32;fixed&#32;at&#32;150μs&#32;for&#32;a&#32;switching</emphasis>
+479 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;frequency&#32;of&#32;3333Hz,&#32;but&#32;this&#32;will&#32;be&#32;expanded&#32;in&#32;the&#32;future&#32;to&#32;support&#32;a&#32;configurable</emphasis>
+480 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;switching&#32;frequency&#32;subject&#32;to&#32;validation&#32;given&#32;the&#32;sample&#32;step&#32;time.&#32;For&#32;now,&#32;the&#32;sample</emphasis>
+481 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rate&#32;should&#32;be&#32;the&#32;greatest&#32;common&#32;divisor&#32;of&#32;these&#32;internal&#32;sample&#32;rates,&#32;or&#32;50μs.</emphasis>
+482 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+483 <emphasis role="keywordtype">bool</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1ab81a90ab6353010bbcbfbe378b6c133b">SIL_initializeLibrary</link>(<emphasis role="keywordtype">double</emphasis>&#32;tStep,&#32;SIL_eSolverType_t&#32;solverType,&#32;SIL_eModelIntent_t&#32;mdlIntent,
+484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;*pmvsPath);
+485 
+486 <emphasis role="comment">/********************************************************************************************************</emphasis>
+487 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_terminateLibrary</emphasis>
+488 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.terminateLibrary</emphasis>
+489 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+490 <emphasis role="comment"></emphasis>
+491 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+492 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+493 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+494 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+495 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;Performs&#32;library&#32;cleanup&#32;procedures.&#32;To&#32;be&#32;called&#32;once&#32;at&#32;the&#32;end&#32;of&#32;the&#32;simulation&#32;phase.</emphasis>
+496 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+497 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1ace37954380efd0cc545d686525f44253">SIL_terminateLibrary</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+498 
+499 
+500 
+501 
+502 <emphasis role="comment">/********************************************************************************************************</emphasis>
+503 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_getNextSampleHit</emphasis>
+504 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.getNextSampleHit</emphasis>
+505 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+506 <emphasis role="comment"></emphasis>
+507 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+508 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+509 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+510 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;Absolute&#32;simulation&#32;time&#32;at&#32;which&#32;the&#32;solver&#32;must&#32;next&#32;evaluate&#32;the&#32;variable-rate&#32;task.</emphasis>
+511 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;For&#32;solvers&#32;capable&#32;of&#32;supporting&#32;variable&#32;sample&#32;time&#32;tasks,&#32;this&#32;method&#32;shall&#32;be&#32;called</emphasis>
+512 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;as&#32;the&#32;first&#32;step&#32;in&#32;the&#32;simulation&#32;loop&#32;(prior&#32;to&#32;Output&#32;and&#32;State&#32;update)&#32;to&#32;obtain&#32;the</emphasis>
+513 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;future&#32;time&#32;instant&#32;at&#32;which&#32;the&#32;variable-rate&#32;task&#32;is&#32;to&#32;be&#32;next&#32;evaluated.&#32;Fixed-rate</emphasis>
+514 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;solvers&#32;are&#32;not&#32;to&#32;call&#32;this&#32;method.</emphasis>
+515 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+516 <emphasis role="keywordtype">double</emphasis>&#32;&#32;<link linkend="_lib_epc_control_8c_1ae7faa4e53156bb74ada32b2980fdc965">SIL_getNextSampleHit</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+517 
+518 
+519 
+520 
+521 <emphasis role="comment">/********************************************************************************************************</emphasis>
+522 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateOutput</emphasis>
+523 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateOutput</emphasis>
+524 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+525 <emphasis role="comment"></emphasis>
+526 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+527 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+528 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+529 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+530 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;Composite&#32;library&#32;outputs&#32;update&#32;method&#32;to&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;*not*&#32;supporting</emphasis>
+531 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multiple&#32;sample&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE&#32;or&#32;SIL_SOLVER_TYPE_FIXED).&#32;This&#32;method</emphasis>
+532 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;computes&#32;the&#32;library&apos;s&#32;outputs&#32;for&#32;each&#32;of&#32;the&#32;respective&#32;internal&#32;task&#32;rates&#32;at&#32;the</emphasis>
+533 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;appropriate&#32;time&#32;according&#32;to&#32;an&#32;internal&#32;scheduler.</emphasis>
+534 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+535 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a4516f98eb48b67f3cfac58f6f506395b">SIL_updateOutput</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+536 
+537 <emphasis role="comment">/********************************************************************************************************</emphasis>
+538 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateOutput_ts</emphasis>
+539 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateOutput_ts</emphasis>
+540 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+541 <emphasis role="comment"></emphasis>
+542 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+543 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+544 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+545 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+546 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;Realtime-context&#32;outputs&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting&#32;multiple</emphasis>
+547 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sample&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+548 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;computes&#32;and&#32;writes&#32;the&#32;outputs&#32;attributed&#32;to&#32;the&#32;realtime&#32;context.</emphasis>
+549 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+550 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1ac996ef11ecaea694174e16c084e34121">SIL_updateOutput_ts</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+551 
+552 <emphasis role="comment">/********************************************************************************************************</emphasis>
+553 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateOutput_200us</emphasis>
+554 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateOutput_200us</emphasis>
+555 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+556 <emphasis role="comment"></emphasis>
+557 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+558 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+559 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+560 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+561 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;200μs-context&#32;outputs&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting&#32;multiple</emphasis>
+562 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sample&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+563 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;computes&#32;and&#32;writes&#32;the&#32;outputs&#32;attributed&#32;to&#32;the&#32;200μs&#32;context.</emphasis>
+564 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+565 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a0ee7728e508048a3431cbe5591a6fe6e">SIL_updateOutput_200us</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+566 
+567 <emphasis role="comment">/********************************************************************************************************</emphasis>
+568 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateOutput_1ms</emphasis>
+569 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateOutput_1ms</emphasis>
+570 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+571 <emphasis role="comment"></emphasis>
+572 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+573 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+574 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+575 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+576 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;1ms-context&#32;outputs&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting&#32;multiple</emphasis>
+577 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sample&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+578 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;computes&#32;and&#32;writes&#32;the&#32;outputs&#32;attributed&#32;to&#32;the&#32;1ms&#32;context.</emphasis>
+579 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+580 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a75ff58ce3d5d4580e490ef7a69007e21">SIL_updateOutput_1ms</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+581 
+582 <emphasis role="comment">/********************************************************************************************************</emphasis>
+583 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateOutput_10ms</emphasis>
+584 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateOutput_10ms</emphasis>
+585 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+586 <emphasis role="comment"></emphasis>
+587 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+588 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+589 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+590 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+591 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;10ms-context&#32;outputs&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting&#32;multiple</emphasis>
+592 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sample&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+593 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;computes&#32;and&#32;writes&#32;the&#32;outputs&#32;attributed&#32;to&#32;the&#32;10ms&#32;context.</emphasis>
+594 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+595 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1ae7e96e5405835166c40c25a724ec7439">SIL_updateOutput_10ms</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+596 
+597 <emphasis role="comment">/********************************************************************************************************</emphasis>
+598 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateOutput_100ms</emphasis>
+599 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateOutput_100ms</emphasis>
+600 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+601 <emphasis role="comment"></emphasis>
+602 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+603 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+604 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+605 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+606 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;100ms-context&#32;outputs&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting&#32;multiple</emphasis>
+607 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sample&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+608 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;computes&#32;and&#32;writes&#32;the&#32;outputs&#32;attributed&#32;to&#32;the&#32;100ms&#32;context.</emphasis>
+609 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+610 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a6fa1fbbfa14569f4bd41950a860eb75a">SIL_updateOutput_100ms</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+611 
+612 <emphasis role="comment">/********************************************************************************************************</emphasis>
+613 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateOutput_1s</emphasis>
+614 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateOutput_1s</emphasis>
+615 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+616 <emphasis role="comment"></emphasis>
+617 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+618 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+619 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+620 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+621 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;1s-context&#32;outputs&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting&#32;multiple</emphasis>
+622 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sample&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+623 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;computes&#32;and&#32;writes&#32;the&#32;outputs&#32;attributed&#32;to&#32;the&#32;1s&#32;context.</emphasis>
+624 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+625 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a01c7e531ea48b2b39560b8232dadb472">SIL_updateOutput_1s</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+626 
+627 
+628 
+629 
+630 <emphasis role="comment">/********************************************************************************************************</emphasis>
+631 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateState</emphasis>
+632 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateState</emphasis>
+633 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+634 <emphasis role="comment"></emphasis>
+635 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+636 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+637 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+638 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+639 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;Composite&#32;library&#32;state&#32;update&#32;method&#32;to&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;*not*&#32;supporting</emphasis>
+640 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multiple&#32;sample&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE&#32;or&#32;SIL_SOLVER_TYPE_FIXED).&#32;This&#32;method</emphasis>
+641 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reads&#32;inputs&#32;and&#32;updates&#32;the&#32;internal&#32;state&#32;for&#32;each&#32;of&#32;the&#32;respective&#32;internal&#32;task&#32;rates</emphasis>
+642 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;at&#32;the&#32;appropriate&#32;time&#32;according&#32;to&#32;an&#32;internal&#32;scheduler.&#32;NB.&#32;Generally,&#32;state&#32;updates</emphasis>
+643 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;are&#32;to&#32;occur&#32;after&#32;output&#32;updates&#32;in&#32;a&#32;discrete&#32;model.</emphasis>
+644 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+645 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a4bba7ed7d059aaea97ea7739d4a8aadf">SIL_updateState</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+646 
+647 <emphasis role="comment">/********************************************************************************************************</emphasis>
+648 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateState_ts</emphasis>
+649 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateState_ts</emphasis>
+650 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+651 <emphasis role="comment"></emphasis>
+652 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+653 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+654 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+655 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+656 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;Realtime-context&#32;input&#32;and&#32;state&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting</emphasis>
+657 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multiple&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+658 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;reads&#32;the&#32;inputs&#32;and&#32;updates&#32;the&#32;internal&#32;states&#32;attributed&#32;to&#32;the&#32;realtime</emphasis>
+659 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;context.</emphasis>
+660 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+661 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a2825be5948559ec4590c28ede64e4450">SIL_updateState_ts</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+662 
+663 <emphasis role="comment">/********************************************************************************************************</emphasis>
+664 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateState_200us</emphasis>
+665 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateState_200us</emphasis>
+666 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+667 <emphasis role="comment"></emphasis>
+668 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+669 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+670 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+671 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+672 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;200μs-context&#32;input&#32;and&#32;state&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting</emphasis>
+673 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multiple&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+674 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;reads&#32;the&#32;inputs&#32;and&#32;updates&#32;the&#32;internal&#32;states&#32;attributed&#32;to&#32;the&#32;200μs</emphasis>
+675 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;context.</emphasis>
+676 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+677 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a59eac95bc7334b0a03715fe1cfbbcca1">SIL_updateState_200us</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+678 
+679 <emphasis role="comment">/********************************************************************************************************</emphasis>
+680 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateState_1ms</emphasis>
+681 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateState_1ms</emphasis>
+682 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+683 <emphasis role="comment"></emphasis>
+684 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+685 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+686 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+687 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+688 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;1ms-context&#32;input&#32;and&#32;state&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting</emphasis>
+689 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multiple&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+690 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;reads&#32;the&#32;inputs&#32;and&#32;updates&#32;the&#32;internal&#32;states&#32;attributed&#32;to&#32;the&#32;1ms</emphasis>
+691 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;context.</emphasis>
+692 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+693 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a771f5694ced82f12c455c9aa7b09e8a4">SIL_updateState_1ms</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+694 
+695 <emphasis role="comment">/********************************************************************************************************</emphasis>
+696 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateState_10ms</emphasis>
+697 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateState_10ms</emphasis>
+698 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+699 <emphasis role="comment"></emphasis>
+700 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+701 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+702 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+703 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+704 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;10ms-context&#32;input&#32;and&#32;state&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting</emphasis>
+705 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multiple&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+706 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;reads&#32;the&#32;inputs&#32;and&#32;updates&#32;the&#32;internal&#32;states&#32;attributed&#32;to&#32;the&#32;10ms</emphasis>
+707 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;context.</emphasis>
+708 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+709 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1ad4d3c47eb9a2d78a7c7042067d358d94">SIL_updateState_10ms</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+710 
+711 <emphasis role="comment">/********************************************************************************************************</emphasis>
+712 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateState_100ms</emphasis>
+713 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateState_100ms</emphasis>
+714 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+715 <emphasis role="comment"></emphasis>
+716 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+717 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+718 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+719 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+720 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;100ms-context&#32;input&#32;and&#32;state&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting</emphasis>
+721 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multiple&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+722 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;reads&#32;the&#32;inputs&#32;and&#32;updates&#32;the&#32;internal&#32;states&#32;attributed&#32;to&#32;the&#32;100ms</emphasis>
+723 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;context.</emphasis>
+724 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+725 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a06036b1f582360534fabe0accf99ddcc">SIL_updateState_100ms</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+726 
+727 <emphasis role="comment">/********************************************************************************************************</emphasis>
+728 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_updateState_1s</emphasis>
+729 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.updateState_1s</emphasis>
+730 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+731 <emphasis role="comment"></emphasis>
+732 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s].</emphasis>
+733 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+734 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+735 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+736 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;1s-context&#32;input&#32;and&#32;state&#32;update&#32;method.&#32;To&#32;be&#32;called&#32;only&#32;by&#32;solvers&#32;supporting</emphasis>
+737 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multiple&#32;rates&#32;(SIL_SOLVER_TYPE_VARIABLE_MULTIRATE&#32;or&#32;SIL_SOLVER_TYPE_FIXED_MULTIRATE).</emphasis>
+738 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;method&#32;reads&#32;the&#32;inputs&#32;and&#32;updates&#32;the&#32;internal&#32;states&#32;attributed&#32;to&#32;the&#32;1s&#32;context.</emphasis>
+739 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+740 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8c_1a2838f5346d7b4916cd601c41594fc05c">SIL_updateState_1s</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+741 
+742 <emphasis role="comment">/********************************************************************************************************</emphasis>
+743 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_writeSnapshot</emphasis>
+744 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.writeSnapshot</emphasis>
+745 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+746 <emphasis role="comment"></emphasis>
+747 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;tNow&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&#32;absolute&#32;simulation&#32;time&#32;at&#32;instant&#32;of&#32;call&#32;[s]</emphasis>
+748 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;instanceNumber&#32;&#32;-&#32;Instance&#32;number,&#32;the&#32;first&#32;instance&#32;has&#32;a&#32;number&#32;of&#32;1</emphasis>
+749 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempPath&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&#32;Path&#32;to&#32;a&#32;temporary&#32;folder&#32;where&#32;snapshot&#32;files&#32;will&#32;be&#32;written</emphasis>
+750 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+751 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+752 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+753 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;Generates&#32;a&#32;SIL&#32;library&#32;snapshot&#32;data&#32;file&#32;and&#32;calls&#32;each&#32;source&#32;code&#32;module&#32;to</emphasis>
+754 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;write&#32;their&#32;own&#32;variables&#32;into&#32;that&#32;file.</emphasis>
+755 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+756 <emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a5509b491627e5f7ee27c25815ac07c48">SIL_writeSnapshot</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow,&#32;uint16_t&#32;instanceNumber,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*tempPath);
+757 
+758 <emphasis role="comment">/********************************************************************************************************</emphasis>
+759 <emphasis role="comment">&#32;Function&#32;&#32;&#32;&#32;&#32;:&#32;SIL_readSnapshot</emphasis>
+760 <emphasis role="comment">&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Grid-Tied::EpcSilLibrary.readSnapshot</emphasis>
+761 <emphasis role="comment">&#32;Visibility&#32;&#32;&#32;:&#32;Public</emphasis>
+762 <emphasis role="comment"></emphasis>
+763 <emphasis role="comment">&#32;In&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;instanceNumber&#32;&#32;-&#32;Instance&#32;number,&#32;the&#32;first&#32;instance&#32;has&#32;a&#32;number&#32;of&#32;1</emphasis>
+764 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempPath&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&#32;Path&#32;to&#32;a&#32;temporary&#32;folder&#32;where&#32;snapshot&#32;files&#32;are&#32;located</emphasis>
+765 <emphasis role="comment">&#32;InOut&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+766 <emphasis role="comment">&#32;Out&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+767 <emphasis role="comment">&#32;Returns&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+768 <emphasis role="comment">&#32;Description&#32;&#32;:&#32;Opens&#32;a&#32;SIL&#32;library&#32;snapshot&#32;data&#32;file&#32;and&#32;calls&#32;each&#32;source&#32;code&#32;module&#32;to</emphasis>
+769 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;read&#32;their&#32;own&#32;variables&#32;from&#32;that&#32;file.</emphasis>
+770 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+771 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_lib_epc_control_8h_1a296ff2009cd74a2c451a2bcded01dff7">SIL_readSnapshot</link>(uint16_t&#32;instanceNumber,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*tempPath);
+772 
+773 
+774 <emphasis role="comment">/********************************************************************************************************</emphasis>
+775 <emphasis role="comment">&#32;*&#32;Inline&#32;Function&#32;Definitions&#32;:-(</emphasis>
+776 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+777 
+778 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis>__cplusplus<emphasis role="preprocessor">)</emphasis>
+779 }
+780 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>&#32;<emphasis role="comment">//&#32;extern&#32;&quot;C&quot;</emphasis>
+781 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>&#32;<emphasis role="comment">//_EPC_SIL_LIBRARY_H_</emphasis>
+</programlisting></section>

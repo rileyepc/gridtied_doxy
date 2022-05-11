@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_dab23c7465257c2685b497c1ecc257ad" kind="dir">
+    <compoundname>sil/psc</compoundname>
+    <innerdir refid="dir_54afd7af7f3b04a3426581c782b00e57">sil/psc/libEpcControlDev</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/psc/"/>
+  </compounddef>
+</doxygen>

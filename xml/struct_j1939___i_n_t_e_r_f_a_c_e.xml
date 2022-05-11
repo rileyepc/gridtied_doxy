@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_j1939___i_n_t_e_r_f_a_c_e" kind="struct" language="C++" prot="public">
+    <compoundname>J1939_INTERFACE</compoundname>
+    <includes refid="application_8h" local="no">application.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_j1939___i_n_t_e_r_f_a_c_e_1a57e574ff9f1e129568bc68606886ab8e" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char J1939_INTERFACE::nodeID</definition>
+        <argsstring></argsstring>
+        <name>nodeID</name>
+        <qualifiedname>J1939_INTERFACE::nodeID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.h" line="23" column="10" bodyfile="application.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_j1939___i_n_t_e_r_f_a_c_e_1aceac1fd1ebbd90bcda15fa186fdb7e99" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char J1939_INTERFACE::masterAddr</definition>
+        <argsstring></argsstring>
+        <name>masterAddr</name>
+        <qualifiedname>J1939_INTERFACE::masterAddr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.h" line="24" column="10" bodyfile="application.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_j1939___i_n_t_e_r_f_a_c_e_1a4959602aae7830fd547f54e3329b1dd7" prot="public" static="no" mutable="no">
+        <type>CAN_BAUDRATE</type>
+        <definition>CAN_BAUDRATE J1939_INTERFACE::baud</definition>
+        <argsstring></argsstring>
+        <name>baud</name>
+        <qualifiedname>J1939_INTERFACE::baud</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.h" line="25" column="18" bodyfile="application.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_j1939___i_n_t_e_r_f_a_c_e_1aea384cfa02b15a089bff4254fd5cc2df" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t J1939_INTERFACE::timeout</definition>
+        <argsstring></argsstring>
+        <name>timeout</name>
+        <qualifiedname>J1939_INTERFACE::timeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.h" line="26" column="14" bodyfile="application.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="application.h" line="22" column="1" bodyfile="application.h" bodystart="22" bodyend="27"/>
+    <listofallmembers>
+      <member refid="struct_j1939___i_n_t_e_r_f_a_c_e_1a4959602aae7830fd547f54e3329b1dd7" prot="public" virt="non-virtual"><scope>J1939_INTERFACE</scope><name>baud</name></member>
+      <member refid="struct_j1939___i_n_t_e_r_f_a_c_e_1aceac1fd1ebbd90bcda15fa186fdb7e99" prot="public" virt="non-virtual"><scope>J1939_INTERFACE</scope><name>masterAddr</name></member>
+      <member refid="struct_j1939___i_n_t_e_r_f_a_c_e_1a57e574ff9f1e129568bc68606886ab8e" prot="public" virt="non-virtual"><scope>J1939_INTERFACE</scope><name>nodeID</name></member>
+      <member refid="struct_j1939___i_n_t_e_r_f_a_c_e_1aea384cfa02b15a089bff4254fd5cc2df" prot="public" virt="non-virtual"><scope>J1939_INTERFACE</scope><name>timeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

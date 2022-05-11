@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_a_d1_d___data__s" kind="struct" language="C++" prot="public">
+    <compoundname>AD1D_Data_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d1_d___data__s_1a7d67ad93303a0be789f729efd907362c" prot="public" static="no" mutable="no">
+        <type><ref refid="ad1d__emu_8c_1a9d2d4a8ddfc4347d8e3d40f29e749361" kindref="member">AD1D_Sequencer_t</ref></type>
+        <definition>AD1D_Sequencer_t AD1D_Data_s::seqGroups[MESD_SEQUENCE_GROUP_CNT]</definition>
+        <argsstring>[MESD_SEQUENCE_GROUP_CNT]</argsstring>
+        <name>seqGroups</name>
+        <qualifiedname>AD1D_Data_s::seqGroups</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad1d_emu.c" line="200" column="33" bodyfile="sil/emu/ad1d_emu.c" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d1_d___data__s_1ac9936677505151875c3269efb48263bf" prot="public" static="no" mutable="no">
+        <type><ref refid="ad1d__emu_8c_1a22f4d1bdc5efd3498720f6edce2c47ba" kindref="member">AD1D_MuxChannel_t</ref></type>
+        <definition>AD1D_MuxChannel_t AD1D_Data_s::muxChannels[AD1D_MUX_SELECT_CNT *2U]</definition>
+        <argsstring>[AD1D_MUX_SELECT_CNT *2U]</argsstring>
+        <name>muxChannels</name>
+        <qualifiedname>AD1D_Data_s::muxChannels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad1d_emu.c" line="201" column="33" bodyfile="sil/emu/ad1d_emu.c" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d1_d___data__s_1a2c2a3e741362804bce1e1bd6e0b9a914" prot="public" static="no" mutable="no">
+        <type><ref refid="ad1d__emu_8c_1a2d267b8898befbab9d31a60a910cf6e0" kindref="member">AD1D_MuxState_t</ref></type>
+        <definition>AD1D_MuxState_t AD1D_Data_s::muxState</definition>
+        <argsstring></argsstring>
+        <name>muxState</name>
+        <qualifiedname>AD1D_Data_s::muxState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad1d_emu.c" line="202" column="33" bodyfile="sil/emu/ad1d_emu.c" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>AD1D_Data_s</label>
+        <link refid="struct_a_d1_d___data__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>seqGroups</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>muxChannels</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>muxState</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>AD1D_MeasChannel_s</label>
+        <link refid="struct_a_d1_d___meas_channel__s"/>
+      </node>
+      <node id="4">
+        <label>AD1D_MuxChannel_s</label>
+        <link refid="struct_a_d1_d___mux_channel__s"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>nextChannel</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>AD1D_MuxState_s</label>
+        <link refid="struct_a_d1_d___mux_state__s"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>nextChannel</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AD1D_Sequencer_s</label>
+        <link refid="struct_a_d1_d___sequencer__s"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>measChannels</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/emu/ad1d_emu.c" line="199" column="1" bodyfile="sil/emu/ad1d_emu.c" bodystart="199" bodyend="203"/>
+    <listofallmembers>
+      <member refid="struct_a_d1_d___data__s_1ac9936677505151875c3269efb48263bf" prot="public" virt="non-virtual"><scope>AD1D_Data_s</scope><name>muxChannels</name></member>
+      <member refid="struct_a_d1_d___data__s_1a2c2a3e741362804bce1e1bd6e0b9a914" prot="public" virt="non-virtual"><scope>AD1D_Data_s</scope><name>muxState</name></member>
+      <member refid="struct_a_d1_d___data__s_1a7d67ad93303a0be789f729efd907362c" prot="public" virt="non-virtual"><scope>AD1D_Data_s</scope><name>seqGroups</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_p_w_m___output__s" kind="struct" language="C++" prot="public">
+    <compoundname>EPWM_Output_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1abbc545040a19976f86395fd4df186e7b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_Output_s::outState[EPWM_NR_CHANNELS_MAX+1U]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX+1U]</argsstring>
+        <name>outState</name>
+        <qualifiedname>EPWM_Output_s::outState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="212" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1a82b6143e3853c841d43a09f5cddfe641" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Output_s::tSw[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tSw</name>
+        <qualifiedname>EPWM_Output_s::tSw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="213" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1a3aa07c3be82534b1be8b79638e0f1a65" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Output_s::tHi[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tHi</name>
+        <qualifiedname>EPWM_Output_s::tHi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="214" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1aef15a330a494388539bae4cf7e679440" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Output_s::tLo[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tLo</name>
+        <qualifiedname>EPWM_Output_s::tLo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="215" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1a41ac75b9d2897041790a57a38d7804ad" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_Output_s::tCsw</definition>
+        <argsstring></argsstring>
+        <name>tCsw</name>
+        <qualifiedname>EPWM_Output_s::tCsw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="216" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1aacb828caa67ba619f0508bd4c2d63612" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_Output_s::tHiViol[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tHiViol</name>
+        <qualifiedname>EPWM_Output_s::tHiViol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="217" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1a2d1a1fd372c8bf3f2fec059f125b4cf5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_Output_s::tLoViol[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tLoViol</name>
+        <qualifiedname>EPWM_Output_s::tLoViol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="218" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1a8a0700dd3416d2e756d99c0fc3392ec5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_Output_s::tCswViol</definition>
+        <argsstring></argsstring>
+        <name>tCswViol</name>
+        <qualifiedname>EPWM_Output_s::tCswViol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="219" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1afe6b47ab2dc2aa07be68f830ee76bc8e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EPWM_Output_s::tHiViolN[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tHiViolN</name>
+        <qualifiedname>EPWM_Output_s::tHiViolN</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="220" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1a69cf032f231f69e8c62e77d830e61722" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EPWM_Output_s::tLoViolN[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tLoViolN</name>
+        <qualifiedname>EPWM_Output_s::tLoViolN</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="221" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___output__s_1ac951209b6382719e9ee7114a829d65a8" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EPWM_Output_s::tCswViolN</definition>
+        <argsstring></argsstring>
+        <name>tCswViolN</name>
+        <qualifiedname>EPWM_Output_s::tCswViolN</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="222" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/emu/epwm_emu.c" line="211" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="211" bodyend="223"/>
+    <listofallmembers>
+      <member refid="struct_e_p_w_m___output__s_1abbc545040a19976f86395fd4df186e7b" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>outState</name></member>
+      <member refid="struct_e_p_w_m___output__s_1a41ac75b9d2897041790a57a38d7804ad" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tCsw</name></member>
+      <member refid="struct_e_p_w_m___output__s_1a8a0700dd3416d2e756d99c0fc3392ec5" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tCswViol</name></member>
+      <member refid="struct_e_p_w_m___output__s_1ac951209b6382719e9ee7114a829d65a8" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tCswViolN</name></member>
+      <member refid="struct_e_p_w_m___output__s_1a3aa07c3be82534b1be8b79638e0f1a65" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tHi</name></member>
+      <member refid="struct_e_p_w_m___output__s_1aacb828caa67ba619f0508bd4c2d63612" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tHiViol</name></member>
+      <member refid="struct_e_p_w_m___output__s_1afe6b47ab2dc2aa07be68f830ee76bc8e" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tHiViolN</name></member>
+      <member refid="struct_e_p_w_m___output__s_1aef15a330a494388539bae4cf7e679440" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tLo</name></member>
+      <member refid="struct_e_p_w_m___output__s_1a2d1a1fd372c8bf3f2fec059f125b4cf5" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tLoViol</name></member>
+      <member refid="struct_e_p_w_m___output__s_1a69cf032f231f69e8c62e77d830e61722" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tLoViolN</name></member>
+      <member refid="struct_e_p_w_m___output__s_1a82b6143e3853c841d43a09f5cddfe641" prot="public" virt="non-virtual"><scope>EPWM_Output_s</scope><name>tSw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

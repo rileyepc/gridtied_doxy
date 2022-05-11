@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_s_i_l___param__s" kind="struct" language="C++" prot="public">
+    <compoundname>SIL_Param_s</compoundname>
+    <includes refid="lib_epc_control_8h" local="no">libEpcControl.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_i_l___param__s_1a6017cc21f2c40c71e4761eef2ad7d981" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SIL_Param_s::parPointer</definition>
+        <argsstring></argsstring>
+        <name>parPointer</name>
+        <qualifiedname>SIL_Param_s::parPointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControl.h" line="227" column="32" bodyfile="sil/libEpcControl.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_i_l___param__s_1acdecd843bb35947c19bf7cac29f65cf5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SIL_Param_s::parWidth</definition>
+        <argsstring></argsstring>
+        <name>parWidth</name>
+        <qualifiedname>SIL_Param_s::parWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControl.h" line="228" column="33" bodyfile="sil/libEpcControl.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_i_l___param__s_1a99dc8a0a74d81cf38bb649fa055e3074" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SIL_Param_s::parTunable</definition>
+        <argsstring></argsstring>
+        <name>parTunable</name>
+        <qualifiedname>SIL_Param_s::parTunable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControl.h" line="229" column="33" bodyfile="sil/libEpcControl.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/libEpcControl.h" line="226" column="1" bodyfile="sil/libEpcControl.h" bodystart="226" bodyend="230"/>
+    <listofallmembers>
+      <member refid="struct_s_i_l___param__s_1a6017cc21f2c40c71e4761eef2ad7d981" prot="public" virt="non-virtual"><scope>SIL_Param_s</scope><name>parPointer</name></member>
+      <member refid="struct_s_i_l___param__s_1a99dc8a0a74d81cf38bb649fa055e3074" prot="public" virt="non-virtual"><scope>SIL_Param_s</scope><name>parTunable</name></member>
+      <member refid="struct_s_i_l___param__s_1acdecd843bb35947c19bf7cac29f65cf5" prot="public" virt="non-virtual"><scope>SIL_Param_s</scope><name>parWidth</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

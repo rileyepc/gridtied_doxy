@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_can_interface_8h_source" xml:lang="en-US">
+<title>canInterface.h</title>
+<indexterm><primary>interface/canInterface.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">__CANINTERFACE_H__</emphasis>
+2 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__CANINTERFACE_H__</emphasis>
+3 
+4 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;cand.h&quot;</emphasis>
+5 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<link linkend="_interface_8h">&quot;interface.h&quot;</link>
+6 
+7 <emphasis role="comment">//standard&#32;libraries</emphasis>
+8 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdbool</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+9 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdint</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+10 
+11 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">TEMP_DELTA_SCALE</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>10.0f<emphasis role="preprocessor">)</emphasis>
+12 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">TEMP_DELTA_TIME_SCALE</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>0.01f<emphasis role="preprocessor">)</emphasis>
+13 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SOFTSTART_INC_SCALE</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>10000.0f<emphasis role="preprocessor">)</emphasis>
+14 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">VOUT_GAIN_SCALE</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>1000.0f<emphasis role="preprocessor">)</emphasis>
+15 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">IGBT_THERMAL_IMPEDANCE_SCALE</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>1000000.0f<emphasis role="preprocessor">)</emphasis>
+16 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">FBK_SCALING_SCALE</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>100000.0f<emphasis role="preprocessor">)</emphasis>
+17 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">POWER_SCALE</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>10.0f<emphasis role="preprocessor">/</emphasis>1000.0f<emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="comment">//scale&#32;from&#32;0.1kW&#32;to&#32;W</emphasis>
+18 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">TEMPERATURE_SCALE</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>10.0f<emphasis role="preprocessor">)</emphasis>
+19 
+20 <emphasis role="comment">//public&#32;functions</emphasis>
+21 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_can_interface_8h_1a1c41607124c2a3edfba4aca78b93e253">canInterfaceInit</link>(<emphasis role="keywordtype">int</emphasis>&#32;canID,&#32;<emphasis role="keywordtype">int</emphasis>&#32;SA_mask,&#32;CAN_BAUDRATE&#32;baud,&#32;uint32_t&#32;buildTime,&#32;uint32_t&#32;buildGitRev);
+22 
+23 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;(*<link linkend="_can_interface_8h_1a78f073adbefd90c277a7962d8d383996">ParameterGetterSetter</link>)(
+24 &#32;&#32;&#32;&#32;Meta_Enum&#32;meta_index,
+25 &#32;&#32;&#32;&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;items,
+26 &#32;&#32;&#32;&#32;uint16_t&#32;items_count
+27 );
+28 
+29 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_can_interface_8h_1aa05e7dbca4ce3c6efc8800cd471a26cd">updateProcessToInverter</link>(<emphasis role="keywordtype">bool</emphasis>&#32;valid);
+30 
+31 <emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_can_interface_8h_1a39a21ea844fd21be0c1ac875ba3231d1">canInterface_itemNetMultiplier</link>(<link linkend="_struct_interface_item_common">InterfaceItemCommon</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;item);
+32 
+33 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+</programlisting></section>

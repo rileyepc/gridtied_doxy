@@ -1,0 +1,65 @@
+\hypertarget{dll_epc_control_8h}{}\doxysection{sil/psc/lib\+Epc\+Control\+Dev/dll\+Epc\+Control/dll\+Epc\+Control.h File Reference}
+\label{dll_epc_control_8h}\index{sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.h@{sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lib\+Epc\+Control.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}}~\+\_\+\+\_\+declspec(dllexport)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void \mbox{\hyperlink{dll_epc_control_8h_a3061953e757ae035f13df29ba38c1e93}{SIL\+\_\+initialize\+Library\+Dll}} (double t\+Step, \mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}} solver\+Type, \mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}} mdl\+Intent, char $\ast$pmvs\+Path)
+\item 
+\mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void \mbox{\hyperlink{dll_epc_control_8h_acfab1bdc19dfdaf14de941b25a0def42}{SIL\+\_\+update\+Output\+Dll}} (double t\+Now)
+\item 
+\mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void \mbox{\hyperlink{dll_epc_control_8h_a99cba5606dc411a2ca258e735a1b7f4e}{SIL\+\_\+update\+State\+Dll}} (double t\+Now)
+\item 
+\mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void \mbox{\hyperlink{dll_epc_control_8h_a5cfbb854944792b0587874dd4bf93578}{SIL\+\_\+write\+Snapshot\+Dll}} (double t\+Now, uint16\+\_\+t instance\+Number, char $\ast$temp\+Path)
+\item 
+\mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void \mbox{\hyperlink{dll_epc_control_8h_a05952bd1e61b51d0d4ba7e19c28ea50f}{SIL\+\_\+read\+Snapshot\+Dll}} (uint16\+\_\+t instance\+Number, char $\ast$temp\+Path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}\label{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}} 
+\index{dllEpcControl.h@{dllEpcControl.h}!SIL\_LIBRARY\_DLL@{SIL\_LIBRARY\_DLL}}
+\index{SIL\_LIBRARY\_DLL@{SIL\_LIBRARY\_DLL}!dllEpcControl.h@{dllEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_LIBRARY\_DLL}{SIL\_LIBRARY\_DLL}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+LIBRARY\+\_\+\+DLL~\+\_\+\+\_\+declspec(dllexport)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dll_epc_control_8h_a3061953e757ae035f13df29ba38c1e93}\label{dll_epc_control_8h_a3061953e757ae035f13df29ba38c1e93}} 
+\index{dllEpcControl.h@{dllEpcControl.h}!SIL\_initializeLibraryDll@{SIL\_initializeLibraryDll}}
+\index{SIL\_initializeLibraryDll@{SIL\_initializeLibraryDll}!dllEpcControl.h@{dllEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_initializeLibraryDll()}{SIL\_initializeLibraryDll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void SIL\+\_\+initialize\+Library\+Dll (\begin{DoxyParamCaption}\item[{double}]{t\+Step,  }\item[{\mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}}}]{solver\+Type,  }\item[{\mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}}}]{mdl\+Intent,  }\item[{char $\ast$}]{pmvs\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dll_epc_control_8h_a05952bd1e61b51d0d4ba7e19c28ea50f}\label{dll_epc_control_8h_a05952bd1e61b51d0d4ba7e19c28ea50f}} 
+\index{dllEpcControl.h@{dllEpcControl.h}!SIL\_readSnapshotDll@{SIL\_readSnapshotDll}}
+\index{SIL\_readSnapshotDll@{SIL\_readSnapshotDll}!dllEpcControl.h@{dllEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_readSnapshotDll()}{SIL\_readSnapshotDll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void SIL\+\_\+read\+Snapshot\+Dll (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{instance\+Number,  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dll_epc_control_8h_acfab1bdc19dfdaf14de941b25a0def42}\label{dll_epc_control_8h_acfab1bdc19dfdaf14de941b25a0def42}} 
+\index{dllEpcControl.h@{dllEpcControl.h}!SIL\_updateOutputDll@{SIL\_updateOutputDll}}
+\index{SIL\_updateOutputDll@{SIL\_updateOutputDll}!dllEpcControl.h@{dllEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutputDll()}{SIL\_updateOutputDll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void SIL\+\_\+update\+Output\+Dll (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dll_epc_control_8h_a99cba5606dc411a2ca258e735a1b7f4e}\label{dll_epc_control_8h_a99cba5606dc411a2ca258e735a1b7f4e}} 
+\index{dllEpcControl.h@{dllEpcControl.h}!SIL\_updateStateDll@{SIL\_updateStateDll}}
+\index{SIL\_updateStateDll@{SIL\_updateStateDll}!dllEpcControl.h@{dllEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateStateDll()}{SIL\_updateStateDll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void SIL\+\_\+update\+State\+Dll (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dll_epc_control_8h_a5cfbb854944792b0587874dd4bf93578}\label{dll_epc_control_8h_a5cfbb854944792b0587874dd4bf93578}} 
+\index{dllEpcControl.h@{dllEpcControl.h}!SIL\_writeSnapshotDll@{SIL\_writeSnapshotDll}}
+\index{SIL\_writeSnapshotDll@{SIL\_writeSnapshotDll}!dllEpcControl.h@{dllEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_writeSnapshotDll()}{SIL\_writeSnapshotDll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} void SIL\+\_\+write\+Snapshot\+Dll (\begin{DoxyParamCaption}\item[{double}]{t\+Now,  }\item[{uint16\+\_\+t}]{instance\+Number,  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+

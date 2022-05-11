@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="union_variable_pointer__u" kind="union" language="C++" prot="public">
+    <compoundname>VariablePointer_u</compoundname>
+    <includes refid="lib_epc_control_interface_8h" local="no">libEpcControlInterface.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="union_variable_pointer__u_1ab61203efcf48547f23e92a9643fbb3bf" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* VariablePointer_u::float_</definition>
+        <argsstring></argsstring>
+        <name>float_</name>
+        <qualifiedname>VariablePointer_u::float_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="65" column="32" bodyfile="sil/libEpcControlInterface.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_variable_pointer__u_1a520af636ea3bda62abe8453bcf4e66f9" prot="public" static="no" mutable="no">
+        <type>uint64_t *</type>
+        <definition>uint64_t* VariablePointer_u::uint64_t_</definition>
+        <argsstring></argsstring>
+        <name>uint64_t_</name>
+        <qualifiedname>VariablePointer_u::uint64_t_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="66" column="32" bodyfile="sil/libEpcControlInterface.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_variable_pointer__u_1a6c5ab022d441dcd99862ff65ec1cfa83" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* VariablePointer_u::uint32_t_</definition>
+        <argsstring></argsstring>
+        <name>uint32_t_</name>
+        <qualifiedname>VariablePointer_u::uint32_t_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="67" column="32" bodyfile="sil/libEpcControlInterface.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_variable_pointer__u_1ac714fd90ab8b1c754abb9280ef5cd0ca" prot="public" static="no" mutable="no">
+        <type>uint16_t *</type>
+        <definition>uint16_t* VariablePointer_u::uint16_t_</definition>
+        <argsstring></argsstring>
+        <name>uint16_t_</name>
+        <qualifiedname>VariablePointer_u::uint16_t_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="68" column="32" bodyfile="sil/libEpcControlInterface.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_variable_pointer__u_1a56e6a6ce1bb86402b5adf26b97428ca7" prot="public" static="no" mutable="no">
+        <type>int32_t *</type>
+        <definition>int32_t* VariablePointer_u::int32_t_</definition>
+        <argsstring></argsstring>
+        <name>int32_t_</name>
+        <qualifiedname>VariablePointer_u::int32_t_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="69" column="32" bodyfile="sil/libEpcControlInterface.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_variable_pointer__u_1a36a543a52eac597023a4deb363c1fa24" prot="public" static="no" mutable="no">
+        <type>int16_t *</type>
+        <definition>int16_t* VariablePointer_u::int16_t_</definition>
+        <argsstring></argsstring>
+        <name>int16_t_</name>
+        <qualifiedname>VariablePointer_u::int16_t_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="70" column="32" bodyfile="sil/libEpcControlInterface.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_variable_pointer__u_1afc3dca84929f43265b742afb1084a412" prot="public" static="no" mutable="no">
+        <type>size_t *</type>
+        <definition>size_t* VariablePointer_u::size_t_</definition>
+        <argsstring></argsstring>
+        <name>size_t_</name>
+        <qualifiedname>VariablePointer_u::size_t_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="71" column="32" bodyfile="sil/libEpcControlInterface.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_variable_pointer__u_1ab4ff753c3d026640f04e56658ebebb21" prot="public" static="no" mutable="no">
+        <type>bool *</type>
+        <definition>bool* VariablePointer_u::bool_</definition>
+        <argsstring></argsstring>
+        <name>bool_</name>
+        <qualifiedname>VariablePointer_u::bool_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="72" column="32" bodyfile="sil/libEpcControlInterface.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/libEpcControlInterface.h" line="64" column="1" bodyfile="sil/libEpcControlInterface.h" bodystart="64" bodyend="73"/>
+    <listofallmembers>
+      <member refid="union_variable_pointer__u_1ab4ff753c3d026640f04e56658ebebb21" prot="public" virt="non-virtual"><scope>VariablePointer_u</scope><name>bool_</name></member>
+      <member refid="union_variable_pointer__u_1ab61203efcf48547f23e92a9643fbb3bf" prot="public" virt="non-virtual"><scope>VariablePointer_u</scope><name>float_</name></member>
+      <member refid="union_variable_pointer__u_1a36a543a52eac597023a4deb363c1fa24" prot="public" virt="non-virtual"><scope>VariablePointer_u</scope><name>int16_t_</name></member>
+      <member refid="union_variable_pointer__u_1a56e6a6ce1bb86402b5adf26b97428ca7" prot="public" virt="non-virtual"><scope>VariablePointer_u</scope><name>int32_t_</name></member>
+      <member refid="union_variable_pointer__u_1afc3dca84929f43265b742afb1084a412" prot="public" virt="non-virtual"><scope>VariablePointer_u</scope><name>size_t_</name></member>
+      <member refid="union_variable_pointer__u_1ac714fd90ab8b1c754abb9280ef5cd0ca" prot="public" virt="non-virtual"><scope>VariablePointer_u</scope><name>uint16_t_</name></member>
+      <member refid="union_variable_pointer__u_1a6c5ab022d441dcd99862ff65ec1cfa83" prot="public" virt="non-virtual"><scope>VariablePointer_u</scope><name>uint32_t_</name></member>
+      <member refid="union_variable_pointer__u_1a520af636ea3bda62abe8453bcf4e66f9" prot="public" virt="non-virtual"><scope>VariablePointer_u</scope><name>uint64_t_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

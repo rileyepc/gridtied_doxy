@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_c_u___input__s" xml:lang="en-US">
+<title>ECU_Input_s Struct Reference</title>
+<indexterm><primary>ECU_Input_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1aada87f8a06d3f3a98324a837a3693f4d">ECU_InputTlcPdi_t</link> <link linkend="_struct_e_c_u___input__s_1a74ae8fb25e193685bd9051b85c711059">tlcPdi</link></para>
+</listitem>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1aa73356b11bf03ec92bc735a85bca55fc">ECU_sInputControl_t</link> <link linkend="_struct_e_c_u___input__s_1a22397e9b1f74ad4f7362a5e0a9d905b4">control</link></para>
+</listitem>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1a2145616628bd68522f127ea3158a3b31">ECU_sInputReference_t</link> <link linkend="_struct_e_c_u___input__s_1a76dea4d0c8998cfd4d8059fb8262298f">reference</link></para>
+</listitem>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1a8bac538c25083c913ab05a3ce721dd5c">ECU_sInputFeedback_t</link> <link linkend="_struct_e_c_u___input__s_1a53eed7c3bc6df0ff09294aff404750d8">feedback</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_c_u___input__s_1a22397e9b1f74ad4f7362a5e0a9d905b4"/><section>
+    <title>control</title>
+<indexterm><primary>control</primary><secondary>ECU_Input_s</secondary></indexterm>
+<indexterm><primary>ECU_Input_s</primary><secondary>control</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1aa73356b11bf03ec92bc735a85bca55fc">ECU_sInputControl_t</link> ECU_Input_s::control</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___input__s_1a53eed7c3bc6df0ff09294aff404750d8"/><section>
+    <title>feedback</title>
+<indexterm><primary>feedback</primary><secondary>ECU_Input_s</secondary></indexterm>
+<indexterm><primary>ECU_Input_s</primary><secondary>feedback</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1a8bac538c25083c913ab05a3ce721dd5c">ECU_sInputFeedback_t</link> ECU_Input_s::feedback</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___input__s_1a76dea4d0c8998cfd4d8059fb8262298f"/><section>
+    <title>reference</title>
+<indexterm><primary>reference</primary><secondary>ECU_Input_s</secondary></indexterm>
+<indexterm><primary>ECU_Input_s</primary><secondary>reference</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1a2145616628bd68522f127ea3158a3b31">ECU_sInputReference_t</link> ECU_Input_s::reference</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___input__s_1a74ae8fb25e193685bd9051b85c711059"/><section>
+    <title>tlcPdi</title>
+<indexterm><primary>tlcPdi</primary><secondary>ECU_Input_s</secondary></indexterm>
+<indexterm><primary>ECU_Input_s</primary><secondary>tlcPdi</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1aada87f8a06d3f3a98324a837a3693f4d">ECU_InputTlcPdi_t</link> ECU_Input_s::tlcPdi</computeroutput></para></section>
+</section>
+</section>

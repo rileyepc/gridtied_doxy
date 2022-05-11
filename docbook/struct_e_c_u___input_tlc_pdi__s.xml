@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_c_u___input_tlc_pdi__s" xml:lang="en-US">
+<title>ECU_InputTlcPdi_s Struct Reference</title>
+<indexterm><primary>ECU_InputTlcPdi_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_struct_e_c_u___input_tlc_pdi__s_1a9008bd64b8b58241139ada626ffc6842">controlModeRequest</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___input_tlc_pdi__s_1a194be3de7073e508b34d66c24f9cfe06">rIg_ref</link> [2U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___input_tlc_pdi__s_1a8b3c068e762922ebee4745c1a8f3842c">eVg_ref</link> [3U]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_c_u___input_tlc_pdi__s_1a9008bd64b8b58241139ada626ffc6842"/><section>
+    <title>controlModeRequest</title>
+<indexterm><primary>controlModeRequest</primary><secondary>ECU_InputTlcPdi_s</secondary></indexterm>
+<indexterm><primary>ECU_InputTlcPdi_s</primary><secondary>controlModeRequest</secondary></indexterm>
+<para><computeroutput>double ECU_InputTlcPdi_s::controlModeRequest</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___input_tlc_pdi__s_1a8b3c068e762922ebee4745c1a8f3842c"/><section>
+    <title>eVg_ref</title>
+<indexterm><primary>eVg_ref</primary><secondary>ECU_InputTlcPdi_s</secondary></indexterm>
+<indexterm><primary>ECU_InputTlcPdi_s</primary><secondary>eVg_ref</secondary></indexterm>
+<para><computeroutput>double ECU_InputTlcPdi_s::eVg_ref[3U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___input_tlc_pdi__s_1a194be3de7073e508b34d66c24f9cfe06"/><section>
+    <title>rIg_ref</title>
+<indexterm><primary>rIg_ref</primary><secondary>ECU_InputTlcPdi_s</secondary></indexterm>
+<indexterm><primary>ECU_InputTlcPdi_s</primary><secondary>rIg_ref</secondary></indexterm>
+<para><computeroutput>double ECU_InputTlcPdi_s::rIg_ref[2U]</computeroutput></para></section>
+</section>
+</section>

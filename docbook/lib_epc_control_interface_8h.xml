@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_epc_control_interface_8h" xml:lang="en-US">
+<title>sil/libEpcControlInterface.h File Reference</title>
+<indexterm><primary>sil/libEpcControlInterface.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stddef.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;stdbool.h&gt;
+#include &quot;IEEE1547.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>union <link linkend="_union_setter__u">Setter_u</link></para>
+</listitem>
+            <listitem><para>union <link linkend="_union_table_setter__u">TableSetter_u</link></para>
+</listitem>
+            <listitem><para>union <link linkend="_union_variable_pointer__u">VariablePointer_u</link></para>
+</listitem>
+            <listitem><para>union <link linkend="_union_variable__u">Variable_u</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_table_info__s">TableInfo_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_item">Item</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef char <link linkend="_lib_epc_control_interface_8h_1aee34cdd6ca7ac21b86cbe0045b054980">UuidString</link>[37]</para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be">SetterTypes</link> <link linkend="_lib_epc_control_interface_8h_1a6e560b354532ba4468b16b3d7ce1688a">SetterTypes</link></para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a09106c24c55cdf076dbda15144b0e354">SetterPointer_float</link>) (float)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a596cd4e31ef9726668d1dc4e8a97cb4f">SetterPointer_uint64_t</link>) (uint64_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a1570b2c494bfb5466026274977d6f6f6">SetterPointer_uint32_t</link>) (uint32_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a7097888a0ca042480a9b1e720ed6baae">SetterPointer_uint16_t</link>) (uint16_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1aa3c4127315fb090a7562837dc1777fcc">SetterPointer_int32_t</link>) (int32_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a7dbae0918f1a8ce9c4c62eca4dccdbcf">SetterPointer_int16_t</link>) (int16_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1aed09fe87badac6697aeb78de5f8af381">SetterPointer_size_t</link>) (size_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a0bc6b4f4fbd030b047b4851745cf599a">SetterPointer_bool_t</link>) (bool)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1acb402f85b1799476879a05463aded3be">TableSetterPointer_float</link>) (IEEE1547_MonCurveType, size_t, size_t, float)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1ae8b05fc055d4c5d647fe46724fa457fc">TableSetterPointer_uint64_t</link>) (IEEE1547_MonCurveType, size_t, size_t, uint64_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a52e72a12db0e60ade7d4ab13c43794ac">TableSetterPointer_uint32_t</link>) (IEEE1547_MonCurveType, size_t, size_t, uint32_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a08fe91592e98b86b9af4c691c43395e8">TableSetterPointer_uint16_t</link>) (IEEE1547_MonCurveType, size_t, size_t, uint16_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a1be165b29bd37e0c1328e7455392a4ab">TableSetterPointer_int32_t</link>) (IEEE1547_MonCurveType, size_t, size_t, int32_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1af6dff3e8dacb2d94d4a68d04c7fa54df">TableSetterPointer_int16_t</link>) (IEEE1547_MonCurveType, size_t, size_t, int16_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a3705b6364bbb4254479c485e434e8086">TableSetterPointer_size_t</link>) (IEEE1547_MonCurveType, size_t, size_t, size_t)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_interface_8h_1a3fc7297f838d1994209acd17df02310b">TableSetterPointer_bool_t</link>) (IEEE1547_MonCurveType, size_t, size_t, bool)</para>
+</listitem>
+            <listitem><para>typedef union <link linkend="_union_setter__u">Setter_u</link> <link linkend="_lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850">Setter_t</link></para>
+</listitem>
+            <listitem><para>typedef union <link linkend="_union_table_setter__u">TableSetter_u</link> <link linkend="_lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c">TableSetter_t</link></para>
+</listitem>
+            <listitem><para>typedef union <link linkend="_union_variable_pointer__u">VariablePointer_u</link> <link linkend="_lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee">VariablePointer_t</link></para>
+</listitem>
+            <listitem><para>typedef union <link linkend="_union_variable__u">Variable_u</link> <link linkend="_lib_epc_control_interface_8h_1a8dcd954911da542c2eecf6d71bd04a63">Variable_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_table_info__s">TableInfo_s</link> <link linkend="_lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7">TableInfo_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_item">Item</link> <link linkend="_lib_epc_control_interface_8h_1a749adef16b111dddf0ab08f96707a3a0">Item</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be">SetterTypes</link> { 
+<link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf">setter_float</link>
+, <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298">setter_uint64_t</link>
+, <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd">setter_uint32_t</link>
+, <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0">setter_uint16_t</link>
+, 
+<link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92">setter_int32_t</link>
+, <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f">setter_int16_t</link>
+, <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9">setter_size_t</link>
+, <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc">setter_bool</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_lib_epc_control_interface_8h_1a0a34752190321c6d532b08678991cf02">SIL_loadPmvs</link> (char *path, bool const bVerbose, bool const callSetters)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_lib_epc_control_interface_8h_1a749adef16b111dddf0ab08f96707a3a0"/><section>
+    <title>Item</title>
+<indexterm><primary>Item</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>Item</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_item">Item</link> <link linkend="_struct_item">Item</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850"/><section>
+    <title>Setter_t</title>
+<indexterm><primary>Setter_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>Setter_t</secondary></indexterm>
+<para><computeroutput>typedef union <link linkend="_union_setter__u">Setter_u</link> <link linkend="_lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850">Setter_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a0bc6b4f4fbd030b047b4851745cf599a"/><section>
+    <title>SetterPointer_bool_t</title>
+<indexterm><primary>SetterPointer_bool_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterPointer_bool_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SetterPointer_bool_t) (bool)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a09106c24c55cdf076dbda15144b0e354"/><section>
+    <title>SetterPointer_float</title>
+<indexterm><primary>SetterPointer_float</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterPointer_float</secondary></indexterm>
+<para><computeroutput>typedef void(* SetterPointer_float) (float)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a7dbae0918f1a8ce9c4c62eca4dccdbcf"/><section>
+    <title>SetterPointer_int16_t</title>
+<indexterm><primary>SetterPointer_int16_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterPointer_int16_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SetterPointer_int16_t) (int16_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1aa3c4127315fb090a7562837dc1777fcc"/><section>
+    <title>SetterPointer_int32_t</title>
+<indexterm><primary>SetterPointer_int32_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterPointer_int32_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SetterPointer_int32_t) (int32_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1aed09fe87badac6697aeb78de5f8af381"/><section>
+    <title>SetterPointer_size_t</title>
+<indexterm><primary>SetterPointer_size_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterPointer_size_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SetterPointer_size_t) (size_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a7097888a0ca042480a9b1e720ed6baae"/><section>
+    <title>SetterPointer_uint16_t</title>
+<indexterm><primary>SetterPointer_uint16_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterPointer_uint16_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SetterPointer_uint16_t) (uint16_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a1570b2c494bfb5466026274977d6f6f6"/><section>
+    <title>SetterPointer_uint32_t</title>
+<indexterm><primary>SetterPointer_uint32_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterPointer_uint32_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SetterPointer_uint32_t) (uint32_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a596cd4e31ef9726668d1dc4e8a97cb4f"/><section>
+    <title>SetterPointer_uint64_t</title>
+<indexterm><primary>SetterPointer_uint64_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterPointer_uint64_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SetterPointer_uint64_t) (uint64_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a6e560b354532ba4468b16b3d7ce1688a"/><section>
+    <title>SetterTypes</title>
+<indexterm><primary>SetterTypes</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterTypes</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be">SetterTypes</link> <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be">SetterTypes</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7"/><section>
+    <title>TableInfo_t</title>
+<indexterm><primary>TableInfo_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableInfo_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_table_info__s">TableInfo_s</link> <link linkend="_lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7">TableInfo_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c"/><section>
+    <title>TableSetter_t</title>
+<indexterm><primary>TableSetter_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetter_t</secondary></indexterm>
+<para><computeroutput>typedef union <link linkend="_union_table_setter__u">TableSetter_u</link> <link linkend="_lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c">TableSetter_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a3fc7297f838d1994209acd17df02310b"/><section>
+    <title>TableSetterPointer_bool_t</title>
+<indexterm><primary>TableSetterPointer_bool_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetterPointer_bool_t</secondary></indexterm>
+<para><computeroutput>typedef void(* TableSetterPointer_bool_t) (IEEE1547_MonCurveType, size_t, size_t, bool)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1acb402f85b1799476879a05463aded3be"/><section>
+    <title>TableSetterPointer_float</title>
+<indexterm><primary>TableSetterPointer_float</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetterPointer_float</secondary></indexterm>
+<para><computeroutput>typedef void(* TableSetterPointer_float) (IEEE1547_MonCurveType, size_t, size_t, float)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1af6dff3e8dacb2d94d4a68d04c7fa54df"/><section>
+    <title>TableSetterPointer_int16_t</title>
+<indexterm><primary>TableSetterPointer_int16_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetterPointer_int16_t</secondary></indexterm>
+<para><computeroutput>typedef void(* TableSetterPointer_int16_t) (IEEE1547_MonCurveType, size_t, size_t, int16_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a1be165b29bd37e0c1328e7455392a4ab"/><section>
+    <title>TableSetterPointer_int32_t</title>
+<indexterm><primary>TableSetterPointer_int32_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetterPointer_int32_t</secondary></indexterm>
+<para><computeroutput>typedef void(* TableSetterPointer_int32_t) (IEEE1547_MonCurveType, size_t, size_t, int32_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a3705b6364bbb4254479c485e434e8086"/><section>
+    <title>TableSetterPointer_size_t</title>
+<indexterm><primary>TableSetterPointer_size_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetterPointer_size_t</secondary></indexterm>
+<para><computeroutput>typedef void(* TableSetterPointer_size_t) (IEEE1547_MonCurveType, size_t, size_t, size_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a08fe91592e98b86b9af4c691c43395e8"/><section>
+    <title>TableSetterPointer_uint16_t</title>
+<indexterm><primary>TableSetterPointer_uint16_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetterPointer_uint16_t</secondary></indexterm>
+<para><computeroutput>typedef void(* TableSetterPointer_uint16_t) (IEEE1547_MonCurveType, size_t, size_t, uint16_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a52e72a12db0e60ade7d4ab13c43794ac"/><section>
+    <title>TableSetterPointer_uint32_t</title>
+<indexterm><primary>TableSetterPointer_uint32_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetterPointer_uint32_t</secondary></indexterm>
+<para><computeroutput>typedef void(* TableSetterPointer_uint32_t) (IEEE1547_MonCurveType, size_t, size_t, uint32_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1ae8b05fc055d4c5d647fe46724fa457fc"/><section>
+    <title>TableSetterPointer_uint64_t</title>
+<indexterm><primary>TableSetterPointer_uint64_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>TableSetterPointer_uint64_t</secondary></indexterm>
+<para><computeroutput>typedef void(* TableSetterPointer_uint64_t) (IEEE1547_MonCurveType, size_t, size_t, uint64_t)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1aee34cdd6ca7ac21b86cbe0045b054980"/><section>
+    <title>UuidString</title>
+<indexterm><primary>UuidString</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>UuidString</secondary></indexterm>
+<para><computeroutput>typedef char UuidString[37]</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a8dcd954911da542c2eecf6d71bd04a63"/><section>
+    <title>Variable_t</title>
+<indexterm><primary>Variable_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>Variable_t</secondary></indexterm>
+<para><computeroutput>typedef union <link linkend="_union_variable__u">Variable_u</link> <link linkend="_lib_epc_control_interface_8h_1a8dcd954911da542c2eecf6d71bd04a63">Variable_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee"/><section>
+    <title>VariablePointer_t</title>
+<indexterm><primary>VariablePointer_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>VariablePointer_t</secondary></indexterm>
+<para><computeroutput>typedef union <link linkend="_union_variable_pointer__u">VariablePointer_u</link> <link linkend="_lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee">VariablePointer_t</link></computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be"/><section>
+    <title>SetterTypes</title>
+<indexterm><primary>SetterTypes</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SetterTypes</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be">SetterTypes</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>setter_float</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>setter_float</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf"/>setter_float</entry><entry></entry></row><row><entry><indexterm><primary>setter_uint64_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>setter_uint64_t</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298"/>setter_uint64_t</entry><entry></entry></row><row><entry><indexterm><primary>setter_uint32_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>setter_uint32_t</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd"/>setter_uint32_t</entry><entry></entry></row><row><entry><indexterm><primary>setter_uint16_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>setter_uint16_t</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0"/>setter_uint16_t</entry><entry></entry></row><row><entry><indexterm><primary>setter_int32_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>setter_int32_t</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92"/>setter_int32_t</entry><entry></entry></row><row><entry><indexterm><primary>setter_int16_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>setter_int16_t</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f"/>setter_int16_t</entry><entry></entry></row><row><entry><indexterm><primary>setter_size_t</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>setter_size_t</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9"/>setter_size_t</entry><entry></entry></row><row><entry><indexterm><primary>setter_bool</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>setter_bool</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc"/>setter_bool</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_lib_epc_control_interface_8h_1a0a34752190321c6d532b08678991cf02"/><section>
+    <title>SIL_loadPmvs()</title>
+<indexterm><primary>SIL_loadPmvs</primary><secondary>libEpcControlInterface.h</secondary></indexterm>
+<indexterm><primary>libEpcControlInterface.h</primary><secondary>SIL_loadPmvs</secondary></indexterm>
+<para><computeroutput>void SIL_loadPmvs (char * path, bool const bVerbose, bool const callSetters)</computeroutput></para></section>
+</section>
+</section>

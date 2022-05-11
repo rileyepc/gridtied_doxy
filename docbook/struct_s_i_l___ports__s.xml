@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_i_l___ports__s" xml:lang="en-US">
+<title>SIL_Ports_s Struct Reference</title>
+<indexterm><primary>SIL_Ports_s</primary></indexterm>
+<para>
+<computeroutput>#include &lt;libEpcControl.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d">SIL_sPortSpec_t</link> <link linkend="_struct_s_i_l___ports__s_1a59d3b5a45df34ec671bb2e672714591e">inpPort</link> [<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa">SIL_INP_CNT</link>]</para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d">SIL_sPortSpec_t</link> <link linkend="_struct_s_i_l___ports__s_1aaf3477f1b1edd8dcc8ca4751760b849b">outPort</link> [<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee">SIL_OUT_CNT</link>]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_i_l___ports__s_1a59d3b5a45df34ec671bb2e672714591e"/><section>
+    <title>inpPort</title>
+<indexterm><primary>inpPort</primary><secondary>SIL_Ports_s</secondary></indexterm>
+<indexterm><primary>SIL_Ports_s</primary><secondary>inpPort</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d">SIL_sPortSpec_t</link> SIL_Ports_s::inpPort[<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa">SIL_INP_CNT</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_s_i_l___ports__s_1aaf3477f1b1edd8dcc8ca4751760b849b"/><section>
+    <title>outPort</title>
+<indexterm><primary>outPort</primary><secondary>SIL_Ports_s</secondary></indexterm>
+<indexterm><primary>SIL_Ports_s</primary><secondary>outPort</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d">SIL_sPortSpec_t</link> SIL_Ports_s::outPort[<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee">SIL_OUT_CNT</link>]</computeroutput></para></section>
+</section>
+</section>

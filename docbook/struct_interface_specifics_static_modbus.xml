@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_interface_specifics_static_modbus" xml:lang="en-US">
+<title>InterfaceSpecificsStaticModbus Struct Reference</title>
+<indexterm><primary>InterfaceSpecificsStaticModbus</primary></indexterm>
+<para>
+<computeroutput>#include &lt;interface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_interface_8h_1abd123dcb703c202a5cb3e6d04fd03328">ItemGetterStaticModbus</link> const <link linkend="_struct_interface_specifics_static_modbus_1a933c5a85248f20322118b90b485168ae">getter</link></para>
+</listitem>
+            <listitem><para><link linkend="_interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3">ItemSetterStaticModbus</link> const <link linkend="_struct_interface_specifics_static_modbus_1adfff6484b1d46a41ddcde98c3cfb7e8d">setter</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_interface_specifics_static_modbus_1a933c5a85248f20322118b90b485168ae"/><section>
+    <title>getter</title>
+<indexterm><primary>getter</primary><secondary>InterfaceSpecificsStaticModbus</secondary></indexterm>
+<indexterm><primary>InterfaceSpecificsStaticModbus</primary><secondary>getter</secondary></indexterm>
+<para><computeroutput><link linkend="_interface_8h_1abd123dcb703c202a5cb3e6d04fd03328">ItemGetterStaticModbus</link> const InterfaceSpecificsStaticModbus::getter</computeroutput></para></section>
+<anchor xml:id="_struct_interface_specifics_static_modbus_1adfff6484b1d46a41ddcde98c3cfb7e8d"/><section>
+    <title>setter</title>
+<indexterm><primary>setter</primary><secondary>InterfaceSpecificsStaticModbus</secondary></indexterm>
+<indexterm><primary>InterfaceSpecificsStaticModbus</primary><secondary>setter</secondary></indexterm>
+<para><computeroutput><link linkend="_interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3">ItemSetterStaticModbus</link> const InterfaceSpecificsStaticModbus::setter</computeroutput></para></section>
+</section>
+</section>

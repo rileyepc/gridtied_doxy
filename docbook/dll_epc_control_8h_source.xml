@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dll_epc_control_8h_source" xml:lang="en-US">
+<title>dllEpcControl.h</title>
+<indexterm><primary>sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">__EPC_SIL_LIBRARY_DLL_H_</emphasis>
+2 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__EPC_SIL_LIBRARY_DLL_H_</emphasis>
+3 <emphasis role="comment">/********************************************************************************************************</emphasis>
+4 <emphasis role="comment">*</emphasis>
+5 <emphasis role="comment">*&#32;&#32;&#32;#########&#32;&#32;&#32;&#32;#########&#32;&#32;&#32;&#32;#########&#32;&#32;&#32;########&#32;&#32;&#32;&#32;&#32;&#32;#######&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;#########&#32;&#32;&#32;#######</emphasis>
+6 <emphasis role="comment">*&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;##</emphasis>
+7 <emphasis role="comment">*&#32;&#32;#&#32;########&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##########&#32;&#32;##</emphasis>
+8 <emphasis role="comment">*&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##</emphasis>
+9 <emphasis role="comment">*&#32;&#32;&#32;#########&#32;&#32;&#32;#&#32;########&#32;&#32;&#32;&#32;#########&#32;&#32;##&#32;######&#32;&#32;&#32;&#32;&#32;&#32;#######&#32;&#32;&#32;&#32;&#32;######&#32;&#32;######&#32;&#32;&#32;&#32;#########&#32;&#32;##</emphasis>
+10 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##</emphasis>
+11 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#</emphasis>
+12 <emphasis role="comment">*</emphasis>
+13 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;COMPANY&#32;CONFIDENTIAL</emphasis>
+14 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;document&#32;contains&#32;information&#32;proprietary&#32;to&#32;EPC&#32;Power.</emphasis>
+15 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;is&#32;an&#32;unpublished&#32;work&#32;subject&#32;to&#32;trade&#32;secret&#32;and&#32;copyright&#32;protection.</emphasis>
+16 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;In&#32;addition,&#32;the&#32;information&#32;may&#32;be&#32;the&#32;subject&#32;of&#32;patent&#32;applications</emphasis>
+17 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;in&#32;the&#32;United&#32;States&#32;and&#32;foreign&#32;countries.</emphasis>
+18 <emphasis role="comment">*</emphasis>
+19 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+20 
+21 <emphasis role="comment">/********************************************************************************************************</emphasis>
+22 <emphasis role="comment">&#32;*&#32;M&#32;O&#32;D&#32;U&#32;L&#32;E&#32;&#32;&#32;&#32;D&#32;E&#32;S&#32;C&#32;R&#32;I&#32;P&#32;T&#32;I&#32;O&#32;N</emphasis>
+23 <emphasis role="comment">&#32;*</emphasis>
+24 <emphasis role="comment">&#32;*&#32;Filename&#32;&#32;&#32;&#32;&#32;:&#32;dllEpcControl.h</emphasis>
+25 <emphasis role="comment">&#32;*&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Package::SubPackage::..::Class</emphasis>
+26 <emphasis role="comment">&#32;*&#32;Prefix&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;None</emphasis>
+27 <emphasis role="comment">&#32;*&#32;Description&#32;&#32;:&#32;EPC&#32;SIL&#32;Library&#32;DLL&#32;interface.&#32;This&#32;header&#32;declares&#32;data&#32;interface&#32;which&#32;is</emphasis>
+28 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;available&#32;from&#32;the&#32;DLL.&#32;A&#32;program&#32;which&#32;is&#32;calling&#32;the&#32;DLL&#32;must&#32;use&#32;this&#32;interface</emphasis>
+29 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;to&#32;access&#32;selected&#32;variables&#32;and&#32;functions&#32;of&#32;the&#32;SIL&#32;Library.</emphasis>
+30 <emphasis role="comment">&#32;*&#32;Author&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;Janne&#32;Hellberg</emphasis>
+31 <emphasis role="comment">&#32;*</emphasis>
+32 <emphasis role="comment">&#32;*&#32;History&#32;&#32;&#32;&#32;&#32;&#32;:</emphasis>
+33 <emphasis role="comment">&#32;*&#32;Date&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Name&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Description</emphasis>
+34 <emphasis role="comment">&#32;*&#32;05.01.2022&#32;&#32;&#32;J.Hellberg&#32;&#32;&#32;&#32;&#32;&#32;Initial&#32;Version</emphasis>
+35 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+36 
+37 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis>__cplusplus<emphasis role="preprocessor">)</emphasis>
+38 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+39 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+40 
+41 <emphasis role="comment">/********************************************************************************************************</emphasis>
+42 <emphasis role="comment">*&#32;Include&#32;Files</emphasis>
+43 <emphasis role="comment">********************************************************************************************************/</emphasis>
+44 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdint</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;For&#32;Integer&#32;types&#32;*/</emphasis>
+45 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="keywordtype">float</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;For&#32;_isnan*/</emphasis>
+46 
+47 <emphasis role="comment">/*&#32;math.h&#32;is&#32;needed&#32;for&#32;Visual&#32;Studio&#32;versions&#32;prior&#32;to&#32;2013&#32;(_MSC_VER&#32;equals&#32;to&#32;1800&#32;in&#32;VS2013).&#32;*/</emphasis>
+48 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis>_MSC_VER<emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">&amp;&amp;</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>_MSC_VER&#32;<emphasis role="preprocessor">&lt;</emphasis>&#32;1800<emphasis role="preprocessor">)</emphasis>
+49 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">math</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+50 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+51 
+52 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<link linkend="_lib_epc_control_8h">&quot;libEpcControl.h&quot;</link>
+53 
+54 
+55 <emphasis role="comment">/********************************************************************************************************</emphasis>
+56 <emphasis role="comment">*&#32;Constant&#32;Defines</emphasis>
+57 <emphasis role="comment">********************************************************************************************************/</emphasis>
+58 
+59 <emphasis role="comment">/********************************************************************************************************</emphasis>
+60 <emphasis role="comment">*&#32;Macro&#32;Defines</emphasis>
+61 <emphasis role="comment">********************************************************************************************************/</emphasis>
+62 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_LIBRARY_DLL</emphasis>&#32;<emphasis role="keyword">__declspec</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">dllexport</emphasis><emphasis role="preprocessor">)</emphasis>
+63 
+64 
+65 <emphasis role="comment">/********************************************************************************************************</emphasis>
+66 <emphasis role="comment">*&#32;Type&#32;Definitions</emphasis>
+67 <emphasis role="comment">********************************************************************************************************/</emphasis>
+68 
+69 <emphasis role="comment">/********************************************************************************************************</emphasis>
+70 <emphasis role="comment">*&#32;Exported&#32;Variable&#32;Declarations</emphasis>
+71 <emphasis role="comment">********************************************************************************************************/</emphasis>
+72 
+73 <emphasis role="comment">/********************************************************************************************************</emphasis>
+74 <emphasis role="comment">*&#32;Exported&#32;Function&#32;Prototypes</emphasis>
+75 <emphasis role="comment">********************************************************************************************************/</emphasis>
+76 <link linkend="_dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca">SIL_LIBRARY_DLL</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_dll_epc_control_8h_1a3061953e757ae035f13df29ba38c1e93">SIL_initializeLibraryDll</link>(<emphasis role="keywordtype">double</emphasis>&#32;tStep,&#32;SIL_eSolverType_t&#32;solverType,&#32;SIL_eModelIntent_t&#32;mdlIntent,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*pmvsPath);
+77 <link linkend="_dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca">SIL_LIBRARY_DLL</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_dll_epc_control_8h_1acfab1bdc19dfdaf14de941b25a0def42">SIL_updateOutputDll</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+78 <link linkend="_dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca">SIL_LIBRARY_DLL</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_dll_epc_control_8h_1a99cba5606dc411a2ca258e735a1b7f4e">SIL_updateStateDll</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow);
+79 <link linkend="_dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca">SIL_LIBRARY_DLL</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_dll_epc_control_8h_1a5cfbb854944792b0587874dd4bf93578">SIL_writeSnapshotDll</link>(<emphasis role="keywordtype">double</emphasis>&#32;tNow,&#32;uint16_t&#32;instanceNumber,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*tempPath);
+80 <link linkend="_dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca">SIL_LIBRARY_DLL</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;<link linkend="_dll_epc_control_8h_1a05952bd1e61b51d0d4ba7e19c28ea50f">SIL_readSnapshotDll</link>(uint16_t&#32;instanceNumber,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*tempPath);
+81 
+82 
+83 <emphasis role="comment">/********************************************************************************************************</emphasis>
+84 <emphasis role="comment">*&#32;Inline&#32;Function&#32;Definitions&#32;:-(</emphasis>
+85 <emphasis role="comment">********************************************************************************************************/</emphasis>
+86 
+87 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis>__cplusplus<emphasis role="preprocessor">)</emphasis>
+88 }
+89 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>&#32;<emphasis role="comment">//&#32;extern&#32;&quot;C&quot;</emphasis>
+90 
+91 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>&#32;&#32;<emphasis role="comment">//__EPC_SIL_LIBRARY_DLL_H_</emphasis>
+</programlisting></section>

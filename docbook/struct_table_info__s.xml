@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_table_info__s" xml:lang="en-US">
+<title>TableInfo_s Struct Reference</title>
+<indexterm><primary>TableInfo_s</primary></indexterm>
+<para>
+<computeroutput>#include &lt;libEpcControlInterface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>size_t <link linkend="_struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf">zone</link></para>
+</listitem>
+            <listitem><para>size_t <link linkend="_struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352">curve</link></para>
+</listitem>
+            <listitem><para>size_t <link linkend="_struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26">index</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c">TableSetter_t</link> <link linkend="_struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64">setter</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352"/><section>
+    <title>curve</title>
+<indexterm><primary>curve</primary><secondary>TableInfo_s</secondary></indexterm>
+<indexterm><primary>TableInfo_s</primary><secondary>curve</secondary></indexterm>
+<para><computeroutput>size_t TableInfo_s::curve</computeroutput></para></section>
+<anchor xml:id="_struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26"/><section>
+    <title>index</title>
+<indexterm><primary>index</primary><secondary>TableInfo_s</secondary></indexterm>
+<indexterm><primary>TableInfo_s</primary><secondary>index</secondary></indexterm>
+<para><computeroutput>size_t TableInfo_s::index</computeroutput></para></section>
+<anchor xml:id="_struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64"/><section>
+    <title>setter</title>
+<indexterm><primary>setter</primary><secondary>TableInfo_s</secondary></indexterm>
+<indexterm><primary>TableInfo_s</primary><secondary>setter</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c">TableSetter_t</link> TableInfo_s::setter</computeroutput></para></section>
+<anchor xml:id="_struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf"/><section>
+    <title>zone</title>
+<indexterm><primary>zone</primary><secondary>TableInfo_s</secondary></indexterm>
+<indexterm><primary>TableInfo_s</primary><secondary>zone</secondary></indexterm>
+<para><computeroutput>size_t TableInfo_s::zone</computeroutput></para></section>
+</section>
+</section>

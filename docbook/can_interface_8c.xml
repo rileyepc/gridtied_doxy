@@ -1,0 +1,669 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_can_interface_8c" xml:lang="en-US">
+<title>interface/canInterface.c File Reference</title>
+<indexterm><primary>interface/canInterface.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;canInterface.h&quot;
+#include &quot;revisionInfo.h&quot;
+#include &quot;IQmathLib.h&quot;
+#include &quot;dsp.h&quot;
+#include &quot;application.h&quot;
+#include &quot;interface.h&quot;
+#include &quot;canInterfaceGen.h&quot;
+#include &quot;gridConnectionStatus.h&quot;
+#include &quot;system.h&quot;
+#include &quot;scheduler.h&quot;
+#include &quot;faultHandler.h&quot;
+#include &quot;dataLogger.h&quot;
+#include &quot;eepromHandler.h&quot;
+#include &quot;modbusHandler.h&quot;
+#include &quot;sunspecInterfaceGen.h&quot;
+#include &quot;canHandler.h&quot;
+#include &quot;authorization.h&quot;
+#include &quot;deviceThermalModel.h&quot;
+#include &quot;protectionsI.h&quot;
+#include &quot;supervisor.h&quot;
+#include &quot;gridMonitor.h&quot;
+#include &quot;IEEE1547.h&quot;
+#include &quot;fanControl.h&quot;
+#include &quot;topLevelControl.h&quot;
+#include &quot;powerConversionControl.h&quot;
+#include &quot;phaseConfigDetectI.h&quot;
+#include &quot;islandControlI.h&quot;
+#include &quot;phaseCurrentControlI.h&quot;
+#include &quot;adaptiveHarmonicControlI.h&quot;
+#include &quot;phasePllI.h&quot;
+#include &quot;auxiliaryPllI.h&quot;
+#include &quot;protectedBusControlI.h&quot;
+#include &quot;phaseControlI.h&quot;
+#include &quot;filterObserverI.h&quot;
+#include &quot;afe.h&quot;
+#include &quot;dcdcControl.h&quot;
+#include &quot;referenceHandler.h&quot;
+#include &quot;epc2P2Z.h&quot;
+#include &quot;modulatorI.h&quot;
+#include &quot;simulateFeedbackI.h&quot;
+#include &quot;channelMappingManagerI.h&quot;
+#include &quot;utils.h&quot;
+#include &quot;measurementd.h&quot;
+#include &quot;pwmd.h&quot;
+#include &quot;digitalIO.h&quot;
+#include &quot;ccp.h&quot;
+#include &quot;humiditySensor.h&quot;
+#include &quot;MTH_constants.h&quot;
+#include &quot;MTH_scale.h&quot;
+#include &quot;ABB_libPrimaryControl.h&quot;
+#include &quot;sunspec.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_can_interface_8c_1a9498092c6ac20577e2f7ceb794b823da">V_CMD_SCALE</link>   (10.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1a6b57379d32d3533e60eef8f3e395663b">HZ_CMD_SCALE</link>   (100.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1aa37274d148cf019caf08d558bddeb883">SC_STATUS_SCALE</link>   (10.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1a30aff053a671a32c2f04e915cc7b00a2">VDC_SCALE</link>   (10.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1af3331df6db97622344010ba1bf55ef42">CANIF_PROT_PHASE_INSTANT_TRIP</link>(mGrp)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1ad35d743eb8bc1c1c4f077b4e62715dc4">CANIF_PROT_TIMED_OVERLOAD_TRIP</link>(mName)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1ac144efd69d30eaf70f5217bf93ce7415">DATALOGGER_CHUNK_INDEX</link>   (ParameterQuery.Param0.Mux - ParameterQuery_LoggerChunk01)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1a2b93cc14b388bc30f58092613992d8b2">CANIF_MESD_CHANNEL_CALIBRATION</link>(mChan,  mGget,  mGset)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1aa76b32faace09619051cc9848c4d4913">CANIF_MESD_LUT_CALIBRATION</link>(mEnu,  mNam,  mIdx)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1a6cd3fc10889f99cbf41c03644ef81ea3">CANIF_PROT_TEMP_LIMIT_TRIP</link>(mEnumT,  mEnumS,  mTemp,  mState)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8c_1a92f97880f19c821ca76067998268fae5">CANIF_PROT_VOLT_LIMIT_TRIP</link>(mEnumV,  mVolt)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_can_interface_8c_1aa05e7dbca4ce3c6efc8800cd471a26cd">updateProcessToInverter</link> (bool valid)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a9199144a6fe802b4c16090de601b076b">getParam0</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1aee6dd93d939168638c22556f54a69461">getPccConfigParams</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a4cb0b9db2e2d4e8b83e6f7737bba5424">setPccConfigParams</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a468223789e27d85616228fb51b31216f">getPrechargeTimes</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ab73ca43bc1778cb2e7ec352df6bc19de">setPrechargeTimes</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a4aeb685f3138ff377ca5b945befee597">getPrechargeSecondary</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a166df2b7557c436751661104e263036a">setPrechargeSecondary</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a2eea791cce9340f4feb9c7955dcc1506">getProtDcBusInstantTrip</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a76eb3e3b40b81d75dc7edff6cb954eae">setProtDcBusInstantTrip</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a04390bfa764f4fe3c76286aea5ba97aa">setDataloggerConfig</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ad19f56c94e51d8b2a65040a7d7aa548b">getDataloggerConfig</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a28bf5ea74276cf6c228f3391e11753c3">getManageNV</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1aff9e6d01761a25ca3b42366129ed47ef">setManageNV</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1aff4d8f19e8787acc8126c2628bc3d815">getLoggerConf01</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a8fadb47ed46d0e9efb149ad460fbd5f9">setLoggerConf01</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1abe88e5ee2ecd92f9559467be700bcd16">getRealPowerLimits</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a0d33a18bebc3f854bd6bcbe5482f1d01">setRealPowerLimits</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a433fc8ce13f9fb2b684287a2737abb11">getReactivePowerLimits</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a40c630beaa96956b4604bbf71bd72f43">setReactivePowerLimits</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a1aba6e6c12734fa4d15a4104dd8119ef">getRealCurrentLimits</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1acbbd7c4e75df278d8ad6a16a85ad9893">setRealCurrentLimits</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a60b76e8138681685279fb0b34993bef5">getReactiveCurrentLimits</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1aa5c2ab7bc604c48ecd83d23475331d99">setReactiveCurrentLimits</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a18f4e87a6cfdedd8eb8502e74561c190">getMesdGeneralCalibration</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a3c49368e5524c202d323bf627f5aeb6d">setMesdGeneralCalibration</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a099ba9a26750952c8cdea5e8523634bb">setSimAcNetworkPhaseSourceU</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a5e219ca5ed6b5dd5292eee721c6aff01">getSimAcNetworkPhaseSourceU</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ac327c73a34d31a6cf229c924462f641b">setSimAcNetworkPhaseSourceV</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a4e504c8df14077f58812b255a182041e">getSimAcNetworkPhaseSourceV</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ae767960b9dae7d642d15b8926695b75e">setSimAcNetworkPhaseSourceW</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a9debf93b30de3af0309b1fd6af095860">getSimAcNetworkPhaseSourceW</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a9ace797ae2b711673c82fb4d90ae7717">setSimAcNetworkPhaseLoadU</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a9deab59ec06f1110d9cf09aaeec93459">getSimAcNetworkPhaseLoadU</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ac920ca45c9d3f12ffcf94765f7f32c15">setSimAcNetworkPhaseLoadV</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1aa113f33ce427d100a61c6fb97148ba57">getSimAcNetworkPhaseLoadV</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1adde16125808d042f784f6534bffdc150">setSimAcNetworkPhaseLoadW</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1addccb6e61bf93cf24b3eb31c1e54e2f3">getSimAcNetworkPhaseLoadW</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ad4603bcb31061e237822bf91bb33ca3f">getPpcAplCoeffsQSG</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a8b1ade2f290e5dfc06473c88d4760789">setPpcAplCoeffsQSG</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a12a740156e0379be387ac042ce47c60f">getPpcAplCoeffsLFL</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a7cc2a42cf68267f853b14a7425f842b8">setPpcAplCoeffsLFL</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a28313b828d65d67bc6f8af5ab033c31a">getPpcAplLimitsLFL</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a9ac2023f7aa37aa1a6cd2b8f48877fdf">setPpcAplLimitsLFL</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a0815f3e91cb4134a9fee2b4543a19f7a">getPpcAplLockDetect</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a1fb2707449888c61ecaed639a1d0eebb">setPpcAplLockDetect</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1aa68e0bf5034385046a8a968e1813f769">getPpcAplMeasAdjust</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ad562ed2adbbf0401efa0aa76ff7899f9">setPpcAplMeasAdjust</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a187612318fec45f237793a46ca358d0d">setPccMeasurementConfig</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1aa559c7f5ca69d7f356f4de0c3d8dc79c">getPccMeasurementConfig</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a6a4fe470125884df9881615e979428f2">setPccArCoeffsVdc</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a3fecead1b5d660a67d52e7c54c4031aa">getPccArCoeffsVdc</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a500d058a67c7698a0ea10b1be8e83406">getStatusFaults</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a8ba89c16ba44ad7e14981c135c2bd8e5">getStatusFaults2</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ac7554b3bedeba6e81305b3d36a971bf7">getStatusSystemFaults</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a168a8209def14070d92016774b72ef81">getStatusWarnings</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a35d14aae8a00de33809c34ea29020951">getDataloggerStatus</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a9dc159926a02f9570bf4c8934c379bc6">getBuildTime</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a780c49310495e78fa502391f5299a87b">getSoftwareHash</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a84a0f351f2186ce06a6e3a7d1d13ad32">getLoggerStatus01</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a1c41607124c2a3edfba4aca78b93e253">canInterfaceInit</link> (int canID, int SA_mask, CAN_BAUDRATE baud, uint32_t buildTime, uint32_t buildGitRev)</para>
+</listitem>
+            <listitem><para>long double <link linkend="_can_interface_8c_1a39a21ea844fd21be0c1ac875ba3231d1">canInterface_itemNetMultiplier</link> (<link linkend="_struct_interface_item_common">InterfaceItemCommon</link> const *const item)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a6aadaf337d1caee0a760aa9ae127360d">items_getMeta</link> (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1ad509994a37bdba87b40e6407e5523b20">items_setMeta</link> (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a00ca1b7737ba8d9bf03aa228a2186171">table_items_getMeta</link> (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8c_1a176414fba733ccb522284cdd7fbe31ce">table_items_setMeta</link> (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_can_interface_8c_1a2b93cc14b388bc30f58092613992d8b2"/><section>
+    <title>CANIF_MESD_CHANNEL_CALIBRATION</title>
+<indexterm><primary>CANIF_MESD_CHANNEL_CALIBRATION</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>CANIF_MESD_CHANNEL_CALIBRATION</secondary></indexterm>
+<para><computeroutput>#define CANIF_MESD_CHANNEL_CALIBRATION( mChan,  mGget,  mGset)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;getMesdChannelCalibration_##mChan(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.MesdChannelCalibration_##mChan.Offset&#32;&#32;&#32;&#32;=&#32;myround(MESD_ConfigI.offsetGain[MESD_CHANNEL_##mChan].offset&#32;&#32;&#32;&#32;*&#32;10.0e3f);&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.MesdChannelCalibration_##mChan.Gain&#32;&#32;&#32;&#32;&#32;&#32;=&#32;myround(MESD_ConfigI.offsetGain[MESD_CHANNEL_##mChan].gain&#32;&#32;&#32;&#32;&#32;&#32;*&#32;mGget);&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.MesdChannelCalibration_##mChan.OffsetTau&#32;=&#32;myround(MESD_ConfigI.offsetGain[MESD_CHANNEL_##mChan].tau&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;16.0f);&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.MesdChannelCalibration_##mChan.CalPermit&#32;=&#32;MESD_ConfigI.offsetGain[MESD_CHANNEL_##mChan].offsetCalPermit;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;void&#32;setMesdChannelCalibration_##mChan(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MESD_setConfigChannelCalibration(MESD_CHANNEL_##mChan,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.MesdChannelCalibration_##mChan.Offset&#32;&#32;&#32;&#32;*&#32;0.1e-3f,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.MesdChannelCalibration_##mChan.Gain&#32;&#32;&#32;&#32;&#32;&#32;*&#32;mGset,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.MesdChannelCalibration_##mChan.OffsetTau&#32;*&#32;0.0625f,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(MESD_CalibratePermit_t)ParameterQuery.MesdChannelCalibration_##mChan.CalPermit,&#32;<emphasis role="keyword">false</emphasis>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_can_interface_8c_1aa76b32faace09619051cc9848c4d4913"/><section>
+    <title>CANIF_MESD_LUT_CALIBRATION</title>
+<indexterm><primary>CANIF_MESD_LUT_CALIBRATION</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>CANIF_MESD_LUT_CALIBRATION</secondary></indexterm>
+<para><computeroutput>#define CANIF_MESD_LUT_CALIBRATION( mEnu,  mNam,  mIdx)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;getMesdConfigLutCalibration_##mNam##_##mIdx(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.MesdConfigLutCalibration_##mNam##_##mIdx.u&#32;=&#32;myround(MESD_ConfigI.bptLookupTable[mEnu][mIdx&#32;-&#32;1].x&#32;*&#32;20.0e3);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.MesdConfigLutCalibration_##mNam##_##mIdx.y&#32;=&#32;myround(MESD_ConfigI.bptLookupTable[mEnu][mIdx&#32;-&#32;1].y&#32;*&#32;1.0e6);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;void&#32;setMesdConfigLutCalibration_##mNam##_##mIdx(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MESD_ConfigI.bptLookupTable[mEnu][mIdx&#32;-&#32;1].x&#32;&#32;=&#32;(float)ParameterQuery.MesdConfigLutCalibration_##mNam##_##mIdx.u&#32;*&#32;5.0e-5;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MESD_ConfigI.bptLookupTable[mEnu][mIdx&#32;-&#32;1].y&#32;&#32;=&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.MesdConfigLutCalibration_##mNam##_##mIdx.y&#32;*&#32;1.0e-6;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MESD_setConfigLutCalibration(mEnu);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_can_interface_8c_1af3331df6db97622344010ba1bf55ef42"/><section>
+    <title>CANIF_PROT_PHASE_INSTANT_TRIP</title>
+<indexterm><primary>CANIF_PROT_PHASE_INSTANT_TRIP</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>CANIF_PROT_PHASE_INSTANT_TRIP</secondary></indexterm>
+<para><computeroutput>#define CANIF_PROT_PHASE_INSTANT_TRIP( mGrp)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordtype">void</emphasis>&#32;getProtPhaseInstantTrip_##mGrp(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;\
+}&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+void&#32;setProtPhaseInstantTrip_##mGrp(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_can_interface_8c_1a6cd3fc10889f99cbf41c03644ef81ea3"/><section>
+    <title>CANIF_PROT_TEMP_LIMIT_TRIP</title>
+<indexterm><primary>CANIF_PROT_TEMP_LIMIT_TRIP</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>CANIF_PROT_TEMP_LIMIT_TRIP</secondary></indexterm>
+<para><computeroutput>#define CANIF_PROT_TEMP_LIMIT_TRIP( mEnumT,  mEnumS,  mTemp,  mState)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;getProtTemperatureLimitTrip_##mTemp##_##mState(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.ProtTemperatureLimitTrip_##mTemp##_##mState.limUpper&#32;=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myround(PROT_ConfigI.tempTrips.stateNamed.mState.tempNamed.mTemp.boundNamed.upper&#32;*&#32;100.0);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.ProtTemperatureLimitTrip_##mTemp##_##mState.limLower&#32;=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myround(PROT_ConfigI.tempTrips.stateNamed.mState.tempNamed.mTemp.boundNamed.lower&#32;*&#32;100.0);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.ProtTemperatureLimitTrip_##mTemp##_##mState.tripTime&#32;=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myround(PROT_ConfigI.tempTrips.stateNamed.mState.tempNamed.mTemp.boundNamed.tTrip&#32;*&#32;100.0);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;void&#32;setProtTemperatureLimitTrip_##mTemp##_##mState(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PROT_setTemperatureLimitThresholds(mEnumT,&#32;mEnumS,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.ProtTemperatureLimitTrip_##mTemp##_##mState.limUpper&#32;*&#32;0.01,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.ProtTemperatureLimitTrip_##mTemp##_##mState.limLower&#32;*&#32;0.01,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.ProtTemperatureLimitTrip_##mTemp##_##mState.tripTime&#32;*&#32;0.01);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_can_interface_8c_1ad35d743eb8bc1c1c4f077b4e62715dc4"/><section>
+    <title>CANIF_PROT_TIMED_OVERLOAD_TRIP</title>
+<indexterm><primary>CANIF_PROT_TIMED_OVERLOAD_TRIP</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>CANIF_PROT_TIMED_OVERLOAD_TRIP</secondary></indexterm>
+<para><computeroutput>#define CANIF_PROT_TIMED_OVERLOAD_TRIP( mName)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordtype">void</emphasis>&#32;getProtTimedOverloadTrip_##mName(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;\
+}&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+void&#32;setProtTimedOverloadTrip_##mName(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_can_interface_8c_1a92f97880f19c821ca76067998268fae5"/><section>
+    <title>CANIF_PROT_VOLT_LIMIT_TRIP</title>
+<indexterm><primary>CANIF_PROT_VOLT_LIMIT_TRIP</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>CANIF_PROT_VOLT_LIMIT_TRIP</secondary></indexterm>
+<para><computeroutput>#define CANIF_PROT_VOLT_LIMIT_TRIP( mEnumV,  mVolt)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;getProtCtrlVoltageLimitTrip_##mVolt(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.ProtCtrlVoltageLimitTrip_##mVolt.limUpper&#32;=&#32;myround(PROT_ConfigI.ctrlTrips.voltNamed.mVolt.boundNamed.upper&#32;*&#32;1000.0);&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParameterQuery.ProtCtrlVoltageLimitTrip_##mVolt.limLower&#32;=&#32;myround(PROT_ConfigI.ctrlTrips.voltNamed.mVolt.boundNamed.lower&#32;*&#32;1000.0);&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;void&#32;setProtCtrlVoltageLimitTrip_##mVolt(<emphasis role="keywordtype">void</emphasis>)&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;PROT_setControlVoltageLimitThresholds(mEnumV,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.ProtCtrlVoltageLimitTrip_##mVolt.limUpper&#32;*&#32;0.001f,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">float</emphasis>)ParameterQuery.ProtCtrlVoltageLimitTrip_##mVolt.limLower&#32;*&#32;0.001f);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_can_interface_8c_1ac144efd69d30eaf70f5217bf93ce7415"/><section>
+    <title>DATALOGGER_CHUNK_INDEX</title>
+<indexterm><primary>DATALOGGER_CHUNK_INDEX</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>DATALOGGER_CHUNK_INDEX</secondary></indexterm>
+<para><computeroutput>#define DATALOGGER_CHUNK_INDEX   (ParameterQuery.Param0.Mux - ParameterQuery_LoggerChunk01)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a6b57379d32d3533e60eef8f3e395663b"/><section>
+    <title>HZ_CMD_SCALE</title>
+<indexterm><primary>HZ_CMD_SCALE</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>HZ_CMD_SCALE</secondary></indexterm>
+<para><computeroutput>#define HZ_CMD_SCALE   (100.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aa37274d148cf019caf08d558bddeb883"/><section>
+    <title>SC_STATUS_SCALE</title>
+<indexterm><primary>SC_STATUS_SCALE</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>SC_STATUS_SCALE</secondary></indexterm>
+<para><computeroutput>#define SC_STATUS_SCALE   (10.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a9498092c6ac20577e2f7ceb794b823da"/><section>
+    <title>V_CMD_SCALE</title>
+<indexterm><primary>V_CMD_SCALE</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>V_CMD_SCALE</secondary></indexterm>
+<para><computeroutput>#define V_CMD_SCALE   (10.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a30aff053a671a32c2f04e915cc7b00a2"/><section>
+    <title>VDC_SCALE</title>
+<indexterm><primary>VDC_SCALE</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>VDC_SCALE</secondary></indexterm>
+<para><computeroutput>#define VDC_SCALE   (10.0f)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_can_interface_8c_1a39a21ea844fd21be0c1ac875ba3231d1"/><section>
+    <title>canInterface_itemNetMultiplier()</title>
+<indexterm><primary>canInterface_itemNetMultiplier</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>canInterface_itemNetMultiplier</secondary></indexterm>
+<para><computeroutput>long double canInterface_itemNetMultiplier (<link linkend="_struct_interface_item_common">InterfaceItemCommon</link> const *const item)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a1c41607124c2a3edfba4aca78b93e253"/><section>
+    <title>canInterfaceInit()</title>
+<indexterm><primary>canInterfaceInit</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>canInterfaceInit</secondary></indexterm>
+<para><computeroutput>void canInterfaceInit (int canID, int SA_mask, CAN_BAUDRATE baud, uint32_t buildTime, uint32_t buildGitRev)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a9dc159926a02f9570bf4c8934c379bc6"/><section>
+    <title>getBuildTime()</title>
+<indexterm><primary>getBuildTime</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getBuildTime</secondary></indexterm>
+<para><computeroutput>void getBuildTime (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ad19f56c94e51d8b2a65040a7d7aa548b"/><section>
+    <title>getDataloggerConfig()</title>
+<indexterm><primary>getDataloggerConfig</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getDataloggerConfig</secondary></indexterm>
+<para><computeroutput>void getDataloggerConfig (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a35d14aae8a00de33809c34ea29020951"/><section>
+    <title>getDataloggerStatus()</title>
+<indexterm><primary>getDataloggerStatus</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getDataloggerStatus</secondary></indexterm>
+<para><computeroutput>void getDataloggerStatus (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aff4d8f19e8787acc8126c2628bc3d815"/><section>
+    <title>getLoggerConf01()</title>
+<indexterm><primary>getLoggerConf01</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getLoggerConf01</secondary></indexterm>
+<para><computeroutput>void getLoggerConf01 (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a84a0f351f2186ce06a6e3a7d1d13ad32"/><section>
+    <title>getLoggerStatus01()</title>
+<indexterm><primary>getLoggerStatus01</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getLoggerStatus01</secondary></indexterm>
+<para><computeroutput>void getLoggerStatus01 (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a28bf5ea74276cf6c228f3391e11753c3"/><section>
+    <title>getManageNV()</title>
+<indexterm><primary>getManageNV</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getManageNV</secondary></indexterm>
+<para><computeroutput>void getManageNV (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a18f4e87a6cfdedd8eb8502e74561c190"/><section>
+    <title>getMesdGeneralCalibration()</title>
+<indexterm><primary>getMesdGeneralCalibration</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getMesdGeneralCalibration</secondary></indexterm>
+<para><computeroutput>void getMesdGeneralCalibration (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a9199144a6fe802b4c16090de601b076b"/><section>
+    <title>getParam0()</title>
+<indexterm><primary>getParam0</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getParam0</secondary></indexterm>
+<para><computeroutput>void getParam0 (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a3fecead1b5d660a67d52e7c54c4031aa"/><section>
+    <title>getPccArCoeffsVdc()</title>
+<indexterm><primary>getPccArCoeffsVdc</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPccArCoeffsVdc</secondary></indexterm>
+<para><computeroutput>void getPccArCoeffsVdc (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aee6dd93d939168638c22556f54a69461"/><section>
+    <title>getPccConfigParams()</title>
+<indexterm><primary>getPccConfigParams</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPccConfigParams</secondary></indexterm>
+<para><computeroutput>void getPccConfigParams (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aa559c7f5ca69d7f356f4de0c3d8dc79c"/><section>
+    <title>getPccMeasurementConfig()</title>
+<indexterm><primary>getPccMeasurementConfig</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPccMeasurementConfig</secondary></indexterm>
+<para><computeroutput>void getPccMeasurementConfig (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a12a740156e0379be387ac042ce47c60f"/><section>
+    <title>getPpcAplCoeffsLFL()</title>
+<indexterm><primary>getPpcAplCoeffsLFL</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPpcAplCoeffsLFL</secondary></indexterm>
+<para><computeroutput>void getPpcAplCoeffsLFL (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ad4603bcb31061e237822bf91bb33ca3f"/><section>
+    <title>getPpcAplCoeffsQSG()</title>
+<indexterm><primary>getPpcAplCoeffsQSG</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPpcAplCoeffsQSG</secondary></indexterm>
+<para><computeroutput>void getPpcAplCoeffsQSG (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a28313b828d65d67bc6f8af5ab033c31a"/><section>
+    <title>getPpcAplLimitsLFL()</title>
+<indexterm><primary>getPpcAplLimitsLFL</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPpcAplLimitsLFL</secondary></indexterm>
+<para><computeroutput>void getPpcAplLimitsLFL (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a0815f3e91cb4134a9fee2b4543a19f7a"/><section>
+    <title>getPpcAplLockDetect()</title>
+<indexterm><primary>getPpcAplLockDetect</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPpcAplLockDetect</secondary></indexterm>
+<para><computeroutput>void getPpcAplLockDetect (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aa68e0bf5034385046a8a968e1813f769"/><section>
+    <title>getPpcAplMeasAdjust()</title>
+<indexterm><primary>getPpcAplMeasAdjust</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPpcAplMeasAdjust</secondary></indexterm>
+<para><computeroutput>void getPpcAplMeasAdjust (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a4aeb685f3138ff377ca5b945befee597"/><section>
+    <title>getPrechargeSecondary()</title>
+<indexterm><primary>getPrechargeSecondary</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPrechargeSecondary</secondary></indexterm>
+<para><computeroutput>void getPrechargeSecondary (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a468223789e27d85616228fb51b31216f"/><section>
+    <title>getPrechargeTimes()</title>
+<indexterm><primary>getPrechargeTimes</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getPrechargeTimes</secondary></indexterm>
+<para><computeroutput>void getPrechargeTimes (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a2eea791cce9340f4feb9c7955dcc1506"/><section>
+    <title>getProtDcBusInstantTrip()</title>
+<indexterm><primary>getProtDcBusInstantTrip</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getProtDcBusInstantTrip</secondary></indexterm>
+<para><computeroutput>void getProtDcBusInstantTrip (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a60b76e8138681685279fb0b34993bef5"/><section>
+    <title>getReactiveCurrentLimits()</title>
+<indexterm><primary>getReactiveCurrentLimits</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getReactiveCurrentLimits</secondary></indexterm>
+<para><computeroutput>void getReactiveCurrentLimits (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a433fc8ce13f9fb2b684287a2737abb11"/><section>
+    <title>getReactivePowerLimits()</title>
+<indexterm><primary>getReactivePowerLimits</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getReactivePowerLimits</secondary></indexterm>
+<para><computeroutput>void getReactivePowerLimits (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a1aba6e6c12734fa4d15a4104dd8119ef"/><section>
+    <title>getRealCurrentLimits()</title>
+<indexterm><primary>getRealCurrentLimits</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getRealCurrentLimits</secondary></indexterm>
+<para><computeroutput>void getRealCurrentLimits (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1abe88e5ee2ecd92f9559467be700bcd16"/><section>
+    <title>getRealPowerLimits()</title>
+<indexterm><primary>getRealPowerLimits</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getRealPowerLimits</secondary></indexterm>
+<para><computeroutput>void getRealPowerLimits (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a9deab59ec06f1110d9cf09aaeec93459"/><section>
+    <title>getSimAcNetworkPhaseLoadU()</title>
+<indexterm><primary>getSimAcNetworkPhaseLoadU</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getSimAcNetworkPhaseLoadU</secondary></indexterm>
+<para><computeroutput>void getSimAcNetworkPhaseLoadU (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aa113f33ce427d100a61c6fb97148ba57"/><section>
+    <title>getSimAcNetworkPhaseLoadV()</title>
+<indexterm><primary>getSimAcNetworkPhaseLoadV</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getSimAcNetworkPhaseLoadV</secondary></indexterm>
+<para><computeroutput>void getSimAcNetworkPhaseLoadV (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1addccb6e61bf93cf24b3eb31c1e54e2f3"/><section>
+    <title>getSimAcNetworkPhaseLoadW()</title>
+<indexterm><primary>getSimAcNetworkPhaseLoadW</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getSimAcNetworkPhaseLoadW</secondary></indexterm>
+<para><computeroutput>void getSimAcNetworkPhaseLoadW (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a5e219ca5ed6b5dd5292eee721c6aff01"/><section>
+    <title>getSimAcNetworkPhaseSourceU()</title>
+<indexterm><primary>getSimAcNetworkPhaseSourceU</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getSimAcNetworkPhaseSourceU</secondary></indexterm>
+<para><computeroutput>void getSimAcNetworkPhaseSourceU (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a4e504c8df14077f58812b255a182041e"/><section>
+    <title>getSimAcNetworkPhaseSourceV()</title>
+<indexterm><primary>getSimAcNetworkPhaseSourceV</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getSimAcNetworkPhaseSourceV</secondary></indexterm>
+<para><computeroutput>void getSimAcNetworkPhaseSourceV (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a9debf93b30de3af0309b1fd6af095860"/><section>
+    <title>getSimAcNetworkPhaseSourceW()</title>
+<indexterm><primary>getSimAcNetworkPhaseSourceW</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getSimAcNetworkPhaseSourceW</secondary></indexterm>
+<para><computeroutput>void getSimAcNetworkPhaseSourceW (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a780c49310495e78fa502391f5299a87b"/><section>
+    <title>getSoftwareHash()</title>
+<indexterm><primary>getSoftwareHash</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getSoftwareHash</secondary></indexterm>
+<para><computeroutput>void getSoftwareHash (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a500d058a67c7698a0ea10b1be8e83406"/><section>
+    <title>getStatusFaults()</title>
+<indexterm><primary>getStatusFaults</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getStatusFaults</secondary></indexterm>
+<para><computeroutput>void getStatusFaults (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a8ba89c16ba44ad7e14981c135c2bd8e5"/><section>
+    <title>getStatusFaults2()</title>
+<indexterm><primary>getStatusFaults2</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getStatusFaults2</secondary></indexterm>
+<para><computeroutput>void getStatusFaults2 (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ac7554b3bedeba6e81305b3d36a971bf7"/><section>
+    <title>getStatusSystemFaults()</title>
+<indexterm><primary>getStatusSystemFaults</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getStatusSystemFaults</secondary></indexterm>
+<para><computeroutput>void getStatusSystemFaults (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a168a8209def14070d92016774b72ef81"/><section>
+    <title>getStatusWarnings()</title>
+<indexterm><primary>getStatusWarnings</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>getStatusWarnings</secondary></indexterm>
+<para><computeroutput>void getStatusWarnings (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a6aadaf337d1caee0a760aa9ae127360d"/><section>
+    <title>items_getMeta()</title>
+<indexterm><primary>items_getMeta</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>items_getMeta</secondary></indexterm>
+<para><computeroutput>void items_getMeta (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ad509994a37bdba87b40e6407e5523b20"/><section>
+    <title>items_setMeta()</title>
+<indexterm><primary>items_setMeta</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>items_setMeta</secondary></indexterm>
+<para><computeroutput>void items_setMeta (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a04390bfa764f4fe3c76286aea5ba97aa"/><section>
+    <title>setDataloggerConfig()</title>
+<indexterm><primary>setDataloggerConfig</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setDataloggerConfig</secondary></indexterm>
+<para><computeroutput>void setDataloggerConfig (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a8fadb47ed46d0e9efb149ad460fbd5f9"/><section>
+    <title>setLoggerConf01()</title>
+<indexterm><primary>setLoggerConf01</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setLoggerConf01</secondary></indexterm>
+<para><computeroutput>void setLoggerConf01 (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aff9e6d01761a25ca3b42366129ed47ef"/><section>
+    <title>setManageNV()</title>
+<indexterm><primary>setManageNV</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setManageNV</secondary></indexterm>
+<para><computeroutput>void setManageNV (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a3c49368e5524c202d323bf627f5aeb6d"/><section>
+    <title>setMesdGeneralCalibration()</title>
+<indexterm><primary>setMesdGeneralCalibration</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setMesdGeneralCalibration</secondary></indexterm>
+<para><computeroutput>void setMesdGeneralCalibration (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a6a4fe470125884df9881615e979428f2"/><section>
+    <title>setPccArCoeffsVdc()</title>
+<indexterm><primary>setPccArCoeffsVdc</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPccArCoeffsVdc</secondary></indexterm>
+<para><computeroutput>void setPccArCoeffsVdc (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a4cb0b9db2e2d4e8b83e6f7737bba5424"/><section>
+    <title>setPccConfigParams()</title>
+<indexterm><primary>setPccConfigParams</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPccConfigParams</secondary></indexterm>
+<para><computeroutput>void setPccConfigParams (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a187612318fec45f237793a46ca358d0d"/><section>
+    <title>setPccMeasurementConfig()</title>
+<indexterm><primary>setPccMeasurementConfig</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPccMeasurementConfig</secondary></indexterm>
+<para><computeroutput>void setPccMeasurementConfig (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a7cc2a42cf68267f853b14a7425f842b8"/><section>
+    <title>setPpcAplCoeffsLFL()</title>
+<indexterm><primary>setPpcAplCoeffsLFL</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPpcAplCoeffsLFL</secondary></indexterm>
+<para><computeroutput>void setPpcAplCoeffsLFL (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a8b1ade2f290e5dfc06473c88d4760789"/><section>
+    <title>setPpcAplCoeffsQSG()</title>
+<indexterm><primary>setPpcAplCoeffsQSG</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPpcAplCoeffsQSG</secondary></indexterm>
+<para><computeroutput>void setPpcAplCoeffsQSG (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a9ac2023f7aa37aa1a6cd2b8f48877fdf"/><section>
+    <title>setPpcAplLimitsLFL()</title>
+<indexterm><primary>setPpcAplLimitsLFL</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPpcAplLimitsLFL</secondary></indexterm>
+<para><computeroutput>void setPpcAplLimitsLFL (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a1fb2707449888c61ecaed639a1d0eebb"/><section>
+    <title>setPpcAplLockDetect()</title>
+<indexterm><primary>setPpcAplLockDetect</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPpcAplLockDetect</secondary></indexterm>
+<para><computeroutput>void setPpcAplLockDetect (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ad562ed2adbbf0401efa0aa76ff7899f9"/><section>
+    <title>setPpcAplMeasAdjust()</title>
+<indexterm><primary>setPpcAplMeasAdjust</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPpcAplMeasAdjust</secondary></indexterm>
+<para><computeroutput>void setPpcAplMeasAdjust (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a166df2b7557c436751661104e263036a"/><section>
+    <title>setPrechargeSecondary()</title>
+<indexterm><primary>setPrechargeSecondary</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPrechargeSecondary</secondary></indexterm>
+<para><computeroutput>void setPrechargeSecondary (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ab73ca43bc1778cb2e7ec352df6bc19de"/><section>
+    <title>setPrechargeTimes()</title>
+<indexterm><primary>setPrechargeTimes</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setPrechargeTimes</secondary></indexterm>
+<para><computeroutput>void setPrechargeTimes (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a76eb3e3b40b81d75dc7edff6cb954eae"/><section>
+    <title>setProtDcBusInstantTrip()</title>
+<indexterm><primary>setProtDcBusInstantTrip</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setProtDcBusInstantTrip</secondary></indexterm>
+<para><computeroutput>void setProtDcBusInstantTrip (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aa5c2ab7bc604c48ecd83d23475331d99"/><section>
+    <title>setReactiveCurrentLimits()</title>
+<indexterm><primary>setReactiveCurrentLimits</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setReactiveCurrentLimits</secondary></indexterm>
+<para><computeroutput>void setReactiveCurrentLimits (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a40c630beaa96956b4604bbf71bd72f43"/><section>
+    <title>setReactivePowerLimits()</title>
+<indexterm><primary>setReactivePowerLimits</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setReactivePowerLimits</secondary></indexterm>
+<para><computeroutput>void setReactivePowerLimits (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1acbbd7c4e75df278d8ad6a16a85ad9893"/><section>
+    <title>setRealCurrentLimits()</title>
+<indexterm><primary>setRealCurrentLimits</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setRealCurrentLimits</secondary></indexterm>
+<para><computeroutput>void setRealCurrentLimits (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a0d33a18bebc3f854bd6bcbe5482f1d01"/><section>
+    <title>setRealPowerLimits()</title>
+<indexterm><primary>setRealPowerLimits</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setRealPowerLimits</secondary></indexterm>
+<para><computeroutput>void setRealPowerLimits (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a9ace797ae2b711673c82fb4d90ae7717"/><section>
+    <title>setSimAcNetworkPhaseLoadU()</title>
+<indexterm><primary>setSimAcNetworkPhaseLoadU</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setSimAcNetworkPhaseLoadU</secondary></indexterm>
+<para><computeroutput>void setSimAcNetworkPhaseLoadU (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ac920ca45c9d3f12ffcf94765f7f32c15"/><section>
+    <title>setSimAcNetworkPhaseLoadV()</title>
+<indexterm><primary>setSimAcNetworkPhaseLoadV</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setSimAcNetworkPhaseLoadV</secondary></indexterm>
+<para><computeroutput>void setSimAcNetworkPhaseLoadV (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1adde16125808d042f784f6534bffdc150"/><section>
+    <title>setSimAcNetworkPhaseLoadW()</title>
+<indexterm><primary>setSimAcNetworkPhaseLoadW</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setSimAcNetworkPhaseLoadW</secondary></indexterm>
+<para><computeroutput>void setSimAcNetworkPhaseLoadW (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a099ba9a26750952c8cdea5e8523634bb"/><section>
+    <title>setSimAcNetworkPhaseSourceU()</title>
+<indexterm><primary>setSimAcNetworkPhaseSourceU</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setSimAcNetworkPhaseSourceU</secondary></indexterm>
+<para><computeroutput>void setSimAcNetworkPhaseSourceU (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ac327c73a34d31a6cf229c924462f641b"/><section>
+    <title>setSimAcNetworkPhaseSourceV()</title>
+<indexterm><primary>setSimAcNetworkPhaseSourceV</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setSimAcNetworkPhaseSourceV</secondary></indexterm>
+<para><computeroutput>void setSimAcNetworkPhaseSourceV (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1ae767960b9dae7d642d15b8926695b75e"/><section>
+    <title>setSimAcNetworkPhaseSourceW()</title>
+<indexterm><primary>setSimAcNetworkPhaseSourceW</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>setSimAcNetworkPhaseSourceW</secondary></indexterm>
+<para><computeroutput>void setSimAcNetworkPhaseSourceW (void )</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a00ca1b7737ba8d9bf03aa228a2186171"/><section>
+    <title>table_items_getMeta()</title>
+<indexterm><primary>table_items_getMeta</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>table_items_getMeta</secondary></indexterm>
+<para><computeroutput>void table_items_getMeta (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1a176414fba733ccb522284cdd7fbe31ce"/><section>
+    <title>table_items_setMeta()</title>
+<indexterm><primary>table_items_setMeta</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>table_items_setMeta</secondary></indexterm>
+<para><computeroutput>void table_items_setMeta (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8c_1aa05e7dbca4ce3c6efc8800cd471a26cd"/><section>
+    <title>updateProcessToInverter()</title>
+<indexterm><primary>updateProcessToInverter</primary><secondary>canInterface.c</secondary></indexterm>
+<indexterm><primary>canInterface.c</primary><secondary>updateProcessToInverter</secondary></indexterm>
+<para><computeroutput>void updateProcessToInverter (bool valid)</computeroutput></para></section>
+</section>
+</section>

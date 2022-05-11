@@ -1,0 +1,775 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_interface_accessors_8h" xml:lang="en-US">
+<title>interface/interfaceAccessors.h File Reference</title>
+<indexterm><primary>interface/interfaceAccessors.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;adaptiveHarmonicControlI.h&quot;
+#include &quot;authorization_generated.h&quot;
+#include &quot;filterObserverI.h&quot;
+#include &quot;gridMonitor.h&quot;
+#include &quot;hardware.h&quot;
+#include &quot;islandControlI.h&quot;
+#include &quot;modulatorI.h&quot;
+#include &quot;powerConversionControl.h&quot;
+#include &quot;phaseControlI.h&quot;
+#include &quot;phaseConfigDetectI.h&quot;
+#include &quot;phaseCurrentControlI.h&quot;
+#include &quot;phasePllI.h&quot;
+#include &quot;auxiliaryPllI.h&quot;
+#include &quot;syntheticInertiaI.h&quot;
+#include &quot;ABB_libPrimaryControl.h&quot;
+#include &quot;dcdcControlI.h&quot;
+#include &quot;deviceThermalModel.h&quot;
+#include &quot;measurementdI.h&quot;
+#include &quot;protectionsI.h&quot;
+#include &quot;humiditySensor.h&quot;
+#include &quot;mppt.h&quot;
+#include &quot;system.h&quot;
+#include &quot;loader.h&quot;
+#include &quot;fanControl.h&quot;
+#include &quot;environmentControl.h&quot;
+#include &quot;application.h&quot;
+#include &quot;topLevelControl.h&quot;
+#include &quot;engDebug.h&quot;
+#include &quot;afe.h&quot;
+#include &quot;gridSupport.h&quot;
+#include &quot;referenceHandler.h&quot;
+#include &quot;sunspecRefs.h&quot;
+#include &quot;interface.h&quot;
+#include &quot;supervisor.h&quot;
+#include &quot;eepromHandler.h&quot;
+#include &quot;modbusHandler.h&quot;
+#include &quot;fpgaRegs.h&quot;
+#include &quot;externalInhibit.h&quot;
+#include &quot;simulateFeedbackI.h&quot;
+#include &quot;interfaceAccessors_generated.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_i_n_t_f___command_flags">INTF_CommandFlags</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_i_n_t_f___command_flags">INTF_CommandFlags</link> <link linkend="_interface_accessors_8h_1ab88b36a9847433f1b196d7b8dc2f435c">INTF_CommandFlags</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="_interface_accessors_8h_1a1228c2eaf73fb7eca186e9e293102d53">INTF_zero_getter</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a029dd9afdde2d1bff394065deaa065be">INTF_updateHardwareRatings</link> (float unused)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1ad48f6ff174bd5fdf8d3379d3311badf7">INTF_updateCommercialRatings</link> (float unused)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1acdc3e47f8f199fb330ef5dd50cf70002">INTF_updateUserLimits</link> (float unused)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1ac4d66ced4eb860621975532e4c355fbc">INTF_getSunspecScaledGridPositiveP</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1ac855468bdc131df6467def4be0436589">INTF_setSunspecScaledGridPositiveP</link> (float value)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1aa4c881ac0a915733b4f4f8a7bb712003">INTF_getSunspecScaledApparentPower</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a368e3ab89e146aa5d551f2f809f15618">INTF_setSunspecScaledApparentPower</link> (float value)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1abac3ae5fd4e68e0ae5bf12e171e0a02a">INTF_getSunspecScaledRealPowerLimitsMax</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a0ce166744dff63c46e0f51b639bc4ea8">INTF_setSunspecScaledRealPowerLimitsMax</link> (float value)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a757d38299417604ee511c1653683d3eb">INTF_getSunspecScaledApparentPowerLimit</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a58b6b2294b9b81ec20427b64a8ebfff2">INTF_setSunspecScaledApparentPowerLimit</link> (float value)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a006eb78c3747a3132acf3fbfffd8c90e">INTF_setNomV</link> (float vNom)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1af6d7a32e10af877759ff1750646693ad">INTF_setNomF</link> (float fNom)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1ac119e5cc4490d32a5df4b0ed858b1148">INTF_setGridVoltageOffset</link> (float offset)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a2f7aff32e5d90cb76b50bfafef0cc8eb">INTF_getGridVoltageOffset</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a6f387f6273f8a34065a9004b831fbc41">INTF_setAllowForming</link> (bool const allowForming)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a2fc814a80f10d21457a59c2cd1d1cadc">INTF_setAllowFollowing</link> (bool const allowFollowing)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a56d9ef27c5907a892b1ec678cbd77b25">INTF_setIslandResponse</link> (uint16_t const islandResponse)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1ad9bf92610fb7c66ea1757fba181b75f7">INTF_setIslandDetector</link> (uint16_t const islandDetector)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_interface_accessors_8h_1aa4b4b022baea21dd2bbe7d384e658fb4">INTF_getAllowForming</link> (void)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_interface_accessors_8h_1ac887a74446bcbffadcb1c01169c59fc6">INTF_getAllowFollowing</link> (void)</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_interface_accessors_8h_1a4ef6eb3f5734e746da42d0be15db9319">INTF_getIslandResponse</link> (void)</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_interface_accessors_8h_1a213da2d6b3a814f1bf2d91036b1cd982">INTF_getIslandDetector</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1ac1be592dbab02f670ce3c02c1ae5038c">INTF_setConfigRateLimitPgRef_pDelta</link> (float pDelta)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1af40ee9c95a6bb01af3d27e527eee27da">INTF_setConfigRateLimitPgRef_tDelta</link> (float tDelta)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_interface_accessors_8h_1a1cdd34e87e38eafe4bccb1db4f8dd63e">getBridgeAVoltageOk</link> (void)</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_interface_accessors_8h_1a8604f381346ef74eeec9ba0e871bdccb">getBridgeBridgeAFault</link> (void)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_interface_accessors_8h_1ae6afb52e9d3f938c2716a35aae0dc67a">getBridgeBVoltageOk</link> (void)</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_interface_accessors_8h_1a9de3c2162c7d8d5c5edaf1c53e9164a9">getBridgeBridgeBFault</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a33e147c35fdb72a43ca93b641fc31ce6">INTF_setAccessLevel</link> (uint16_t level)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a46b0d089a19f2ed60c19f39bb019cb64">INTF_setAccessPassword</link> (uint16_t password)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1af6b9c83d41c21522601ebca742053813">INTF_setAccessCheckLimits</link> (bool checkLimits)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a4b5476da70ea4532e90764241f9eeea0">INTF_submitAccessLevelRequest</link> (bool request)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a749c4bd4cdd167d1f1c0fd27c0e7aa3b">INTF_accessLevel_onWrite</link> (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a4772b8e3b012a7ecdf4427ec04c5f043">INTF_loggerChunk_onWrite</link> (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a66e723cc746cb0571e5fd38ef3fb5503">INTF_setControlSource</link> (uint16_t src)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a508f2224dc87e11a6b54ddd6fb7ecd87">INTF_setEnable</link> (uint16_t en)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a75bf088a5b5b4f7f90d8c6e143388f02">INTF_enableRejected</link> (uint16_t value, <link linkend="_struct_rejection_reasons">RejectionReasons</link> reasons)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a687afa24dcc6c8ac947a0a601d45b2b3">INTF_clearFaults</link> (bool clearFaults)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a90c974d866763bf6850e4fc591971805">INTF_clearWarnings</link> (bool clearWarnings)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1ab4d95922580fc39df11a9c72b913bf7a">INTF_setIslandStateRequest</link> (bool req)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a5760cc69fac51973d303af38b37de7db">INTF_powerRejected</link> (float value, <link linkend="_struct_rejection_reasons">RejectionReasons</link> reasons)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a874fe2cfea71a6d06db81ef27cc574d9">INTF_currentRejected</link> (float value, <link linkend="_struct_rejection_reasons">RejectionReasons</link> reasons)</para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_accessors_8h_1a17fe067e29ab8eb2bdc1f06e051a9cd3">INTF_dcRefRejected</link> (float value, <link linkend="_struct_rejection_reasons">RejectionReasons</link> reasons)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_interface_accessors_8h_1af6c75b31ca6f45cd628a479eacca434e">INTF_bool_table_false_getter</link> (IEEE1547_MonCurveType zone, size_t curve, size_t index, uint16_t value)</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_interface_accessors_8h_1a05b8955eb1ddf10a8e5a669af82afbba">INTF_getVersMajor</link> (void)</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_interface_accessors_8h_1a1485b9c8a1c1f215edfd99a11a25012c">INTF_getVersMinor</link> (void)</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_interface_accessors_8h_1aa27b07ddc231a81562ab7d3d19578848">INTF_getVersPatch</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a725db5a0fea72547846006b348a8f2e0">INTF_getPos24V</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a744a180aace820f7a870be5a57455362">INTF_getPos15V</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a689c81667a2b236dacbee1dbd7e806ac">INTF_getNeg15V</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a9e62ad9479ba4a7620c31ac22fc4ec6f">INTF_getPos5V</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a7e78a1bdfad85f233e54739ba8683927">INTF_getPos3V</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1af141bf9cc0d9d10b9c1ac60f90f914e3">INTF_getHarmCurrentCh0PhA</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a2ea93777f0f8d8785276ea38dcf1b8af">INTF_getHarmCurrentCh0PhB</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1ab82de2b81f7895b19768db41b81932c6">INTF_getHarmCurrentCh1PhA</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a420f1d1047ca0c73fb4e3be469502cab">INTF_getHarmCurrentCh1PhB</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a8268b411345496f59b756787bb0323a5">INTF_getHarmCurrentCh2PhA</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a42cdd58dab6e3558113b81df6e16839c">INTF_getHarmCurrentCh2PhB</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a958f82000278c76d992da150a55b0a18">INTF_getHarmCurrentCh3PhA</link> (void)</para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a7946fac2f11a44eff7c700907c189bc6">INTF_getHarmCurrentCh3PhB</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_i_n_t_f___command_flags">INTF_CommandFlags</link> <link linkend="_interface_accessors_8h_1a88f562c1031cccffe74fb20b4ca06060">INTF_commandFlags</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a3f54617f49f9242541779331eb124182">INTF_cmdRealPwr</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a79e31bef5a37336542c4f6361506fa02">INTF_cmdReactivePwr</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a4c8db66e9aff805c09de8ef33a33388c">INTF_cmdRealCurrent</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a4b95211c26a962044ea4690e06eb87b3">INTF_cmdReactiveCurrent</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a5538df13b1da6a0aefd3bde487b9a4cb">INTF_cmdInputCurrent</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1aafe89f987c23c36dd842e3a95c4fa2e5">INTF_cmdDcVLim</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1aa28bf8dd3bf1d36d1aecb7c754e0383b">INTF_cmdRealPwrNs</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1aba3e765c9fe3dfe3040ad741ded00f77">INTF_cmdReactivePwrNs</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a27a2166f2c156045cf525468d2f313b9">INTF_cmdRealCurrentNs</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1af9d9bcbabff6b55ae0b251ce94d7ef44">INTF_cmdReactiveCurrentNs</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a6ace3b5f1a80d2fed688ebc10a7765f9">INTF_cmdMpptPwrDcdc</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1ad60b78557c3eb0a494afc3da4bc211b1">INTF_cmdPhAHarmCh0Id</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a257409e80c6c6c3948950bee7bac7468">INTF_cmdPhAHarmCh0Iq</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1ad4d0e1e55f52f153f8ddf02fcdb53127">INTF_cmdPhBHarmCh0Id</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a8627ea41577512343ccd97df985cf8e8">INTF_cmdPhBHarmCh0Iq</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a11c24207ef9ae315b743906a04699725">INTF_cmdPhAHarmCh1Id</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1aa1d4c43a43d0db93a916869e4cd8c6bb">INTF_cmdPhAHarmCh1Iq</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1ae06b06f088104b223512e5b52c139ee1">INTF_cmdPhBHarmCh1Id</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1ac16d5d125f14e01708e4b4136ee62697">INTF_cmdPhBHarmCh1Iq</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a27c2f062b9e1ed74ff613c2718b90980">INTF_cmdPhAHarmCh2Id</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1abb23731cbb6e0ca066fefb7ca8a0e71f">INTF_cmdPhAHarmCh2Iq</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a89baaacf4a6c79627efa601eacd004a1">INTF_cmdPhBHarmCh2Id</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1af10fd01df5b4f8ce44b25e8d9bd0e706">INTF_cmdPhBHarmCh2Iq</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a1017f9aea6d8265abce63ec31eb56db6">INTF_cmdPhAHarmCh3Id</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a5e5100c627d6e798db9361cad6a52c7b">INTF_cmdPhAHarmCh3Iq</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1a0029c5f594b19e6799580e1ece9f87c9">INTF_cmdPhBHarmCh3Id</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_interface_accessors_8h_1ae2d788832709698a110e292aa4e046b3">INTF_cmdPhBHarmCh3Iq</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_interface_accessors_8h_1ab88b36a9847433f1b196d7b8dc2f435c"/><section>
+    <title>INTF_CommandFlags</title>
+<indexterm><primary>INTF_CommandFlags</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_CommandFlags</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_i_n_t_f___command_flags">INTF_CommandFlags</link> <link linkend="_struct_i_n_t_f___command_flags">INTF_CommandFlags</link></computeroutput></para><para>
+
+<para>Volatile Process Data flags. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_interface_accessors_8h_1a1cdd34e87e38eafe4bccb1db4f8dd63e"/><section>
+    <title>getBridgeAVoltageOk()</title>
+<indexterm><primary>getBridgeAVoltageOk</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>getBridgeAVoltageOk</secondary></indexterm>
+<para><computeroutput>bool getBridgeAVoltageOk (void )</computeroutput></para>
+<para><para><link linkend="_todo_1_todo000003">Todo</link> 
+<para><orderedlist>
+<listitem>
+<para>fix the FPGA inverter status registers to match the fault mapping<orderedlist>
+<listitem>
+<para>determine where to put these getters </para>
+</listitem></orderedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</para></para>
+</section>
+<anchor xml:id="_interface_accessors_8h_1a8604f381346ef74eeec9ba0e871bdccb"/><section>
+    <title>getBridgeBridgeAFault()</title>
+<indexterm><primary>getBridgeBridgeAFault</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>getBridgeBridgeAFault</secondary></indexterm>
+<para><computeroutput>uint16_t getBridgeBridgeAFault (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a9de3c2162c7d8d5c5edaf1c53e9164a9"/><section>
+    <title>getBridgeBridgeBFault()</title>
+<indexterm><primary>getBridgeBridgeBFault</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>getBridgeBridgeBFault</secondary></indexterm>
+<para><computeroutput>uint16_t getBridgeBridgeBFault (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ae6afb52e9d3f938c2716a35aae0dc67a"/><section>
+    <title>getBridgeBVoltageOk()</title>
+<indexterm><primary>getBridgeBVoltageOk</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>getBridgeBVoltageOk</secondary></indexterm>
+<para><computeroutput>bool getBridgeBVoltageOk (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a749c4bd4cdd167d1f1c0fd27c0e7aa3b"/><section>
+    <title>INTF_accessLevel_onWrite()</title>
+<indexterm><primary>INTF_accessLevel_onWrite</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_accessLevel_onWrite</secondary></indexterm>
+<para><computeroutput>void INTF_accessLevel_onWrite (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1af6c75b31ca6f45cd628a479eacca434e"/><section>
+    <title>INTF_bool_table_false_getter()</title>
+<indexterm><primary>INTF_bool_table_false_getter</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_bool_table_false_getter</secondary></indexterm>
+<para><computeroutput>bool INTF_bool_table_false_getter (IEEE1547_MonCurveType zone, size_t curve, size_t index, uint16_t value)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a687afa24dcc6c8ac947a0a601d45b2b3"/><section>
+    <title>INTF_clearFaults()</title>
+<indexterm><primary>INTF_clearFaults</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_clearFaults</secondary></indexterm>
+<para><computeroutput>void INTF_clearFaults (bool clearFaults)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a90c974d866763bf6850e4fc591971805"/><section>
+    <title>INTF_clearWarnings()</title>
+<indexterm><primary>INTF_clearWarnings</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_clearWarnings</secondary></indexterm>
+<para><computeroutput>void INTF_clearWarnings (bool clearWarnings)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a874fe2cfea71a6d06db81ef27cc574d9"/><section>
+    <title>INTF_currentRejected()</title>
+<indexterm><primary>INTF_currentRejected</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_currentRejected</secondary></indexterm>
+<para><computeroutput>void INTF_currentRejected (float value, <link linkend="_struct_rejection_reasons">RejectionReasons</link> reasons)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a17fe067e29ab8eb2bdc1f06e051a9cd3"/><section>
+    <title>INTF_dcRefRejected()</title>
+<indexterm><primary>INTF_dcRefRejected</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_dcRefRejected</secondary></indexterm>
+<para><computeroutput>void INTF_dcRefRejected (float value, <link linkend="_struct_rejection_reasons">RejectionReasons</link> reasons)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a75bf088a5b5b4f7f90d8c6e143388f02"/><section>
+    <title>INTF_enableRejected()</title>
+<indexterm><primary>INTF_enableRejected</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_enableRejected</secondary></indexterm>
+<para><computeroutput>void INTF_enableRejected (uint16_t value, <link linkend="_struct_rejection_reasons">RejectionReasons</link> reasons)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>value</entry><entry>
+<para>uint16_t to allow the out of range values of 2 and 3 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_interface_accessors_8h_1ac887a74446bcbffadcb1c01169c59fc6"/><section>
+    <title>INTF_getAllowFollowing()</title>
+<indexterm><primary>INTF_getAllowFollowing</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getAllowFollowing</secondary></indexterm>
+<para><computeroutput>bool INTF_getAllowFollowing (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1aa4b4b022baea21dd2bbe7d384e658fb4"/><section>
+    <title>INTF_getAllowForming()</title>
+<indexterm><primary>INTF_getAllowForming</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getAllowForming</secondary></indexterm>
+<para><computeroutput>bool INTF_getAllowForming (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a2f7aff32e5d90cb76b50bfafef0cc8eb"/><section>
+    <title>INTF_getGridVoltageOffset()</title>
+<indexterm><primary>INTF_getGridVoltageOffset</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getGridVoltageOffset</secondary></indexterm>
+<para><computeroutput>float INTF_getGridVoltageOffset (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1af141bf9cc0d9d10b9c1ac60f90f914e3"/><section>
+    <title>INTF_getHarmCurrentCh0PhA()</title>
+<indexterm><primary>INTF_getHarmCurrentCh0PhA</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getHarmCurrentCh0PhA</secondary></indexterm>
+<para><computeroutput>float INTF_getHarmCurrentCh0PhA (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a2ea93777f0f8d8785276ea38dcf1b8af"/><section>
+    <title>INTF_getHarmCurrentCh0PhB()</title>
+<indexterm><primary>INTF_getHarmCurrentCh0PhB</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getHarmCurrentCh0PhB</secondary></indexterm>
+<para><computeroutput>float INTF_getHarmCurrentCh0PhB (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ab82de2b81f7895b19768db41b81932c6"/><section>
+    <title>INTF_getHarmCurrentCh1PhA()</title>
+<indexterm><primary>INTF_getHarmCurrentCh1PhA</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getHarmCurrentCh1PhA</secondary></indexterm>
+<para><computeroutput>float INTF_getHarmCurrentCh1PhA (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a420f1d1047ca0c73fb4e3be469502cab"/><section>
+    <title>INTF_getHarmCurrentCh1PhB()</title>
+<indexterm><primary>INTF_getHarmCurrentCh1PhB</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getHarmCurrentCh1PhB</secondary></indexterm>
+<para><computeroutput>float INTF_getHarmCurrentCh1PhB (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a8268b411345496f59b756787bb0323a5"/><section>
+    <title>INTF_getHarmCurrentCh2PhA()</title>
+<indexterm><primary>INTF_getHarmCurrentCh2PhA</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getHarmCurrentCh2PhA</secondary></indexterm>
+<para><computeroutput>float INTF_getHarmCurrentCh2PhA (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a42cdd58dab6e3558113b81df6e16839c"/><section>
+    <title>INTF_getHarmCurrentCh2PhB()</title>
+<indexterm><primary>INTF_getHarmCurrentCh2PhB</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getHarmCurrentCh2PhB</secondary></indexterm>
+<para><computeroutput>float INTF_getHarmCurrentCh2PhB (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a958f82000278c76d992da150a55b0a18"/><section>
+    <title>INTF_getHarmCurrentCh3PhA()</title>
+<indexterm><primary>INTF_getHarmCurrentCh3PhA</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getHarmCurrentCh3PhA</secondary></indexterm>
+<para><computeroutput>float INTF_getHarmCurrentCh3PhA (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a7946fac2f11a44eff7c700907c189bc6"/><section>
+    <title>INTF_getHarmCurrentCh3PhB()</title>
+<indexterm><primary>INTF_getHarmCurrentCh3PhB</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getHarmCurrentCh3PhB</secondary></indexterm>
+<para><computeroutput>float INTF_getHarmCurrentCh3PhB (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a213da2d6b3a814f1bf2d91036b1cd982"/><section>
+    <title>INTF_getIslandDetector()</title>
+<indexterm><primary>INTF_getIslandDetector</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getIslandDetector</secondary></indexterm>
+<para><computeroutput>uint16_t INTF_getIslandDetector (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a4ef6eb3f5734e746da42d0be15db9319"/><section>
+    <title>INTF_getIslandResponse()</title>
+<indexterm><primary>INTF_getIslandResponse</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getIslandResponse</secondary></indexterm>
+<para><computeroutput>uint16_t INTF_getIslandResponse (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a689c81667a2b236dacbee1dbd7e806ac"/><section>
+    <title>INTF_getNeg15V()</title>
+<indexterm><primary>INTF_getNeg15V</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getNeg15V</secondary></indexterm>
+<para><computeroutput>float INTF_getNeg15V (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a744a180aace820f7a870be5a57455362"/><section>
+    <title>INTF_getPos15V()</title>
+<indexterm><primary>INTF_getPos15V</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getPos15V</secondary></indexterm>
+<para><computeroutput>float INTF_getPos15V (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a725db5a0fea72547846006b348a8f2e0"/><section>
+    <title>INTF_getPos24V()</title>
+<indexterm><primary>INTF_getPos24V</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getPos24V</secondary></indexterm>
+<para><computeroutput>float INTF_getPos24V (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a7e78a1bdfad85f233e54739ba8683927"/><section>
+    <title>INTF_getPos3V()</title>
+<indexterm><primary>INTF_getPos3V</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getPos3V</secondary></indexterm>
+<para><computeroutput>float INTF_getPos3V (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a9e62ad9479ba4a7620c31ac22fc4ec6f"/><section>
+    <title>INTF_getPos5V()</title>
+<indexterm><primary>INTF_getPos5V</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getPos5V</secondary></indexterm>
+<para><computeroutput>float INTF_getPos5V (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1aa4c881ac0a915733b4f4f8a7bb712003"/><section>
+    <title>INTF_getSunspecScaledApparentPower()</title>
+<indexterm><primary>INTF_getSunspecScaledApparentPower</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getSunspecScaledApparentPower</secondary></indexterm>
+<para><computeroutput>float INTF_getSunspecScaledApparentPower (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a757d38299417604ee511c1653683d3eb"/><section>
+    <title>INTF_getSunspecScaledApparentPowerLimit()</title>
+<indexterm><primary>INTF_getSunspecScaledApparentPowerLimit</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getSunspecScaledApparentPowerLimit</secondary></indexterm>
+<para><computeroutput>float INTF_getSunspecScaledApparentPowerLimit (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ac4d66ced4eb860621975532e4c355fbc"/><section>
+    <title>INTF_getSunspecScaledGridPositiveP()</title>
+<indexterm><primary>INTF_getSunspecScaledGridPositiveP</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getSunspecScaledGridPositiveP</secondary></indexterm>
+<para><computeroutput>float INTF_getSunspecScaledGridPositiveP (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1abac3ae5fd4e68e0ae5bf12e171e0a02a"/><section>
+    <title>INTF_getSunspecScaledRealPowerLimitsMax()</title>
+<indexterm><primary>INTF_getSunspecScaledRealPowerLimitsMax</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getSunspecScaledRealPowerLimitsMax</secondary></indexterm>
+<para><computeroutput>float INTF_getSunspecScaledRealPowerLimitsMax (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a05b8955eb1ddf10a8e5a669af82afbba"/><section>
+    <title>INTF_getVersMajor()</title>
+<indexterm><primary>INTF_getVersMajor</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getVersMajor</secondary></indexterm>
+<para><computeroutput>uint16_t INTF_getVersMajor (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a1485b9c8a1c1f215edfd99a11a25012c"/><section>
+    <title>INTF_getVersMinor()</title>
+<indexterm><primary>INTF_getVersMinor</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getVersMinor</secondary></indexterm>
+<para><computeroutput>uint16_t INTF_getVersMinor (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1aa27b07ddc231a81562ab7d3d19578848"/><section>
+    <title>INTF_getVersPatch()</title>
+<indexterm><primary>INTF_getVersPatch</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_getVersPatch</secondary></indexterm>
+<para><computeroutput>uint16_t INTF_getVersPatch (void )</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a4772b8e3b012a7ecdf4427ec04c5f043"/><section>
+    <title>INTF_loggerChunk_onWrite()</title>
+<indexterm><primary>INTF_loggerChunk_onWrite</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_loggerChunk_onWrite</secondary></indexterm>
+<para><computeroutput>void INTF_loggerChunk_onWrite (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a5760cc69fac51973d303af38b37de7db"/><section>
+    <title>INTF_powerRejected()</title>
+<indexterm><primary>INTF_powerRejected</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_powerRejected</secondary></indexterm>
+<para><computeroutput>void INTF_powerRejected (float value, <link linkend="_struct_rejection_reasons">RejectionReasons</link> reasons)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1af6b9c83d41c21522601ebca742053813"/><section>
+    <title>INTF_setAccessCheckLimits()</title>
+<indexterm><primary>INTF_setAccessCheckLimits</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setAccessCheckLimits</secondary></indexterm>
+<para><computeroutput>void INTF_setAccessCheckLimits (bool checkLimits)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a33e147c35fdb72a43ca93b641fc31ce6"/><section>
+    <title>INTF_setAccessLevel()</title>
+<indexterm><primary>INTF_setAccessLevel</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setAccessLevel</secondary></indexterm>
+<para><computeroutput>void INTF_setAccessLevel (uint16_t level)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a46b0d089a19f2ed60c19f39bb019cb64"/><section>
+    <title>INTF_setAccessPassword()</title>
+<indexterm><primary>INTF_setAccessPassword</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setAccessPassword</secondary></indexterm>
+<para><computeroutput>void INTF_setAccessPassword (uint16_t password)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a2fc814a80f10d21457a59c2cd1d1cadc"/><section>
+    <title>INTF_setAllowFollowing()</title>
+<indexterm><primary>INTF_setAllowFollowing</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setAllowFollowing</secondary></indexterm>
+<para><computeroutput>void INTF_setAllowFollowing (bool const allowFollowing)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a6f387f6273f8a34065a9004b831fbc41"/><section>
+    <title>INTF_setAllowForming()</title>
+<indexterm><primary>INTF_setAllowForming</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setAllowForming</secondary></indexterm>
+<para><computeroutput>void INTF_setAllowForming (bool const allowForming)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ac1be592dbab02f670ce3c02c1ae5038c"/><section>
+    <title>INTF_setConfigRateLimitPgRef_pDelta()</title>
+<indexterm><primary>INTF_setConfigRateLimitPgRef_pDelta</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setConfigRateLimitPgRef_pDelta</secondary></indexterm>
+<para><computeroutput>void INTF_setConfigRateLimitPgRef_pDelta (float pDelta)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1af40ee9c95a6bb01af3d27e527eee27da"/><section>
+    <title>INTF_setConfigRateLimitPgRef_tDelta()</title>
+<indexterm><primary>INTF_setConfigRateLimitPgRef_tDelta</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setConfigRateLimitPgRef_tDelta</secondary></indexterm>
+<para><computeroutput>void INTF_setConfigRateLimitPgRef_tDelta (float tDelta)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a66e723cc746cb0571e5fd38ef3fb5503"/><section>
+    <title>INTF_setControlSource()</title>
+<indexterm><primary>INTF_setControlSource</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setControlSource</secondary></indexterm>
+<para><computeroutput>void INTF_setControlSource (uint16_t src)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a508f2224dc87e11a6b54ddd6fb7ecd87"/><section>
+    <title>INTF_setEnable()</title>
+<indexterm><primary>INTF_setEnable</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setEnable</secondary></indexterm>
+<para><computeroutput>void INTF_setEnable (uint16_t en)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>en</entry><entry>
+<para>uint16_t to allow the out of range values of 2 and 3 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_interface_accessors_8h_1ac119e5cc4490d32a5df4b0ed858b1148"/><section>
+    <title>INTF_setGridVoltageOffset()</title>
+<indexterm><primary>INTF_setGridVoltageOffset</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setGridVoltageOffset</secondary></indexterm>
+<para><computeroutput>void INTF_setGridVoltageOffset (float offset)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ad9bf92610fb7c66ea1757fba181b75f7"/><section>
+    <title>INTF_setIslandDetector()</title>
+<indexterm><primary>INTF_setIslandDetector</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setIslandDetector</secondary></indexterm>
+<para><computeroutput>void INTF_setIslandDetector (uint16_t const islandDetector)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a56d9ef27c5907a892b1ec678cbd77b25"/><section>
+    <title>INTF_setIslandResponse()</title>
+<indexterm><primary>INTF_setIslandResponse</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setIslandResponse</secondary></indexterm>
+<para><computeroutput>void INTF_setIslandResponse (uint16_t const islandResponse)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ab4d95922580fc39df11a9c72b913bf7a"/><section>
+    <title>INTF_setIslandStateRequest()</title>
+<indexterm><primary>INTF_setIslandStateRequest</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setIslandStateRequest</secondary></indexterm>
+<para><computeroutput>void INTF_setIslandStateRequest (bool req)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1af6d7a32e10af877759ff1750646693ad"/><section>
+    <title>INTF_setNomF()</title>
+<indexterm><primary>INTF_setNomF</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setNomF</secondary></indexterm>
+<para><computeroutput>void INTF_setNomF (float fNom)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a006eb78c3747a3132acf3fbfffd8c90e"/><section>
+    <title>INTF_setNomV()</title>
+<indexterm><primary>INTF_setNomV</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setNomV</secondary></indexterm>
+<para><computeroutput>void INTF_setNomV (float vNom)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a368e3ab89e146aa5d551f2f809f15618"/><section>
+    <title>INTF_setSunspecScaledApparentPower()</title>
+<indexterm><primary>INTF_setSunspecScaledApparentPower</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setSunspecScaledApparentPower</secondary></indexterm>
+<para><computeroutput>void INTF_setSunspecScaledApparentPower (float value)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a58b6b2294b9b81ec20427b64a8ebfff2"/><section>
+    <title>INTF_setSunspecScaledApparentPowerLimit()</title>
+<indexterm><primary>INTF_setSunspecScaledApparentPowerLimit</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setSunspecScaledApparentPowerLimit</secondary></indexterm>
+<para><computeroutput>void INTF_setSunspecScaledApparentPowerLimit (float value)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ac855468bdc131df6467def4be0436589"/><section>
+    <title>INTF_setSunspecScaledGridPositiveP()</title>
+<indexterm><primary>INTF_setSunspecScaledGridPositiveP</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setSunspecScaledGridPositiveP</secondary></indexterm>
+<para><computeroutput>void INTF_setSunspecScaledGridPositiveP (float value)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a0ce166744dff63c46e0f51b639bc4ea8"/><section>
+    <title>INTF_setSunspecScaledRealPowerLimitsMax()</title>
+<indexterm><primary>INTF_setSunspecScaledRealPowerLimitsMax</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_setSunspecScaledRealPowerLimitsMax</secondary></indexterm>
+<para><computeroutput>void INTF_setSunspecScaledRealPowerLimitsMax (float value)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a4b5476da70ea4532e90764241f9eeea0"/><section>
+    <title>INTF_submitAccessLevelRequest()</title>
+<indexterm><primary>INTF_submitAccessLevelRequest</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_submitAccessLevelRequest</secondary></indexterm>
+<para><computeroutput>void INTF_submitAccessLevelRequest (bool request)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ad48f6ff174bd5fdf8d3379d3311badf7"/><section>
+    <title>INTF_updateCommercialRatings()</title>
+<indexterm><primary>INTF_updateCommercialRatings</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_updateCommercialRatings</secondary></indexterm>
+<para><computeroutput>void INTF_updateCommercialRatings (float unused)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a029dd9afdde2d1bff394065deaa065be"/><section>
+    <title>INTF_updateHardwareRatings()</title>
+<indexterm><primary>INTF_updateHardwareRatings</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_updateHardwareRatings</secondary></indexterm>
+<para><computeroutput>void INTF_updateHardwareRatings (float unused)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1acdc3e47f8f199fb330ef5dd50cf70002"/><section>
+    <title>INTF_updateUserLimits()</title>
+<indexterm><primary>INTF_updateUserLimits</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_updateUserLimits</secondary></indexterm>
+<para><computeroutput>void INTF_updateUserLimits (float unused)</computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a1228c2eaf73fb7eca186e9e293102d53"/><section>
+    <title>INTF_zero_getter()</title>
+<indexterm><primary>INTF_zero_getter</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_zero_getter</secondary></indexterm>
+<para><computeroutput>uint32_t INTF_zero_getter (void )</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_interface_accessors_8h_1aafe89f987c23c36dd842e3a95c4fa2e5"/><section>
+    <title>INTF_cmdDcVLim</title>
+<indexterm><primary>INTF_cmdDcVLim</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdDcVLim</secondary></indexterm>
+<para><computeroutput>float INTF_cmdDcVLim<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a5538df13b1da6a0aefd3bde487b9a4cb"/><section>
+    <title>INTF_cmdInputCurrent</title>
+<indexterm><primary>INTF_cmdInputCurrent</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdInputCurrent</secondary></indexterm>
+<para><computeroutput>float INTF_cmdInputCurrent<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a6ace3b5f1a80d2fed688ebc10a7765f9"/><section>
+    <title>INTF_cmdMpptPwrDcdc</title>
+<indexterm><primary>INTF_cmdMpptPwrDcdc</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdMpptPwrDcdc</secondary></indexterm>
+<para><computeroutput>float INTF_cmdMpptPwrDcdc<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ad60b78557c3eb0a494afc3da4bc211b1"/><section>
+    <title>INTF_cmdPhAHarmCh0Id</title>
+<indexterm><primary>INTF_cmdPhAHarmCh0Id</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhAHarmCh0Id</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhAHarmCh0Id<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a257409e80c6c6c3948950bee7bac7468"/><section>
+    <title>INTF_cmdPhAHarmCh0Iq</title>
+<indexterm><primary>INTF_cmdPhAHarmCh0Iq</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhAHarmCh0Iq</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhAHarmCh0Iq<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a11c24207ef9ae315b743906a04699725"/><section>
+    <title>INTF_cmdPhAHarmCh1Id</title>
+<indexterm><primary>INTF_cmdPhAHarmCh1Id</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhAHarmCh1Id</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhAHarmCh1Id<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1aa1d4c43a43d0db93a916869e4cd8c6bb"/><section>
+    <title>INTF_cmdPhAHarmCh1Iq</title>
+<indexterm><primary>INTF_cmdPhAHarmCh1Iq</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhAHarmCh1Iq</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhAHarmCh1Iq<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a27c2f062b9e1ed74ff613c2718b90980"/><section>
+    <title>INTF_cmdPhAHarmCh2Id</title>
+<indexterm><primary>INTF_cmdPhAHarmCh2Id</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhAHarmCh2Id</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhAHarmCh2Id<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1abb23731cbb6e0ca066fefb7ca8a0e71f"/><section>
+    <title>INTF_cmdPhAHarmCh2Iq</title>
+<indexterm><primary>INTF_cmdPhAHarmCh2Iq</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhAHarmCh2Iq</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhAHarmCh2Iq<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a1017f9aea6d8265abce63ec31eb56db6"/><section>
+    <title>INTF_cmdPhAHarmCh3Id</title>
+<indexterm><primary>INTF_cmdPhAHarmCh3Id</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhAHarmCh3Id</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhAHarmCh3Id<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a5e5100c627d6e798db9361cad6a52c7b"/><section>
+    <title>INTF_cmdPhAHarmCh3Iq</title>
+<indexterm><primary>INTF_cmdPhAHarmCh3Iq</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhAHarmCh3Iq</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhAHarmCh3Iq<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ad4d0e1e55f52f153f8ddf02fcdb53127"/><section>
+    <title>INTF_cmdPhBHarmCh0Id</title>
+<indexterm><primary>INTF_cmdPhBHarmCh0Id</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhBHarmCh0Id</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhBHarmCh0Id<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a8627ea41577512343ccd97df985cf8e8"/><section>
+    <title>INTF_cmdPhBHarmCh0Iq</title>
+<indexterm><primary>INTF_cmdPhBHarmCh0Iq</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhBHarmCh0Iq</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhBHarmCh0Iq<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ae06b06f088104b223512e5b52c139ee1"/><section>
+    <title>INTF_cmdPhBHarmCh1Id</title>
+<indexterm><primary>INTF_cmdPhBHarmCh1Id</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhBHarmCh1Id</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhBHarmCh1Id<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ac16d5d125f14e01708e4b4136ee62697"/><section>
+    <title>INTF_cmdPhBHarmCh1Iq</title>
+<indexterm><primary>INTF_cmdPhBHarmCh1Iq</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhBHarmCh1Iq</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhBHarmCh1Iq<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a89baaacf4a6c79627efa601eacd004a1"/><section>
+    <title>INTF_cmdPhBHarmCh2Id</title>
+<indexterm><primary>INTF_cmdPhBHarmCh2Id</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhBHarmCh2Id</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhBHarmCh2Id<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1af10fd01df5b4f8ce44b25e8d9bd0e706"/><section>
+    <title>INTF_cmdPhBHarmCh2Iq</title>
+<indexterm><primary>INTF_cmdPhBHarmCh2Iq</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhBHarmCh2Iq</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhBHarmCh2Iq<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a0029c5f594b19e6799580e1ece9f87c9"/><section>
+    <title>INTF_cmdPhBHarmCh3Id</title>
+<indexterm><primary>INTF_cmdPhBHarmCh3Id</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhBHarmCh3Id</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhBHarmCh3Id<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1ae2d788832709698a110e292aa4e046b3"/><section>
+    <title>INTF_cmdPhBHarmCh3Iq</title>
+<indexterm><primary>INTF_cmdPhBHarmCh3Iq</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdPhBHarmCh3Iq</secondary></indexterm>
+<para><computeroutput>float INTF_cmdPhBHarmCh3Iq<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a4b95211c26a962044ea4690e06eb87b3"/><section>
+    <title>INTF_cmdReactiveCurrent</title>
+<indexterm><primary>INTF_cmdReactiveCurrent</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdReactiveCurrent</secondary></indexterm>
+<para><computeroutput>float INTF_cmdReactiveCurrent<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1af9d9bcbabff6b55ae0b251ce94d7ef44"/><section>
+    <title>INTF_cmdReactiveCurrentNs</title>
+<indexterm><primary>INTF_cmdReactiveCurrentNs</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdReactiveCurrentNs</secondary></indexterm>
+<para><computeroutput>float INTF_cmdReactiveCurrentNs<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a79e31bef5a37336542c4f6361506fa02"/><section>
+    <title>INTF_cmdReactivePwr</title>
+<indexterm><primary>INTF_cmdReactivePwr</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdReactivePwr</secondary></indexterm>
+<para><computeroutput>float INTF_cmdReactivePwr<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1aba3e765c9fe3dfe3040ad741ded00f77"/><section>
+    <title>INTF_cmdReactivePwrNs</title>
+<indexterm><primary>INTF_cmdReactivePwrNs</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdReactivePwrNs</secondary></indexterm>
+<para><computeroutput>float INTF_cmdReactivePwrNs<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a4c8db66e9aff805c09de8ef33a33388c"/><section>
+    <title>INTF_cmdRealCurrent</title>
+<indexterm><primary>INTF_cmdRealCurrent</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdRealCurrent</secondary></indexterm>
+<para><computeroutput>float INTF_cmdRealCurrent<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a27a2166f2c156045cf525468d2f313b9"/><section>
+    <title>INTF_cmdRealCurrentNs</title>
+<indexterm><primary>INTF_cmdRealCurrentNs</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdRealCurrentNs</secondary></indexterm>
+<para><computeroutput>float INTF_cmdRealCurrentNs<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a3f54617f49f9242541779331eb124182"/><section>
+    <title>INTF_cmdRealPwr</title>
+<indexterm><primary>INTF_cmdRealPwr</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdRealPwr</secondary></indexterm>
+<para><computeroutput>float INTF_cmdRealPwr<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1aa28bf8dd3bf1d36d1aecb7c754e0383b"/><section>
+    <title>INTF_cmdRealPwrNs</title>
+<indexterm><primary>INTF_cmdRealPwrNs</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_cmdRealPwrNs</secondary></indexterm>
+<para><computeroutput>float INTF_cmdRealPwrNs<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_interface_accessors_8h_1a88f562c1031cccffe74fb20b4ca06060"/><section>
+    <title>INTF_commandFlags</title>
+<indexterm><primary>INTF_commandFlags</primary><secondary>interfaceAccessors.h</secondary></indexterm>
+<indexterm><primary>interfaceAccessors.h</primary><secondary>INTF_commandFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_i_n_t_f___command_flags">INTF_CommandFlags</link> INTF_commandFlags<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

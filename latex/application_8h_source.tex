@@ -1,0 +1,43 @@
+\hypertarget{application_8h_source}{}\doxysection{application.\+h}
+\mbox{\hyperlink{application_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{ifndef} \textcolor{preprocessor}{\_\_APPLICATION\_H\_\_}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_APPLICATION\_H\_\_}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{stdbool}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{/* Hardware */}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}ioHandler.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/* System */}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}faultHandler.h"{}}           \textcolor{comment}{/* not really a handler of anything. */}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}dataLogger.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}authorization.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{/* Drivers */}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}cand.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}digitalIO.h"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{extern} \mbox{\hyperlink{application_8c_aa9c39f99a87f5a9bd9b27fe269b1de04}{FaultConfiguration}} \mbox{\hyperlink{application_8c_aa9c39f99a87f5a9bd9b27fe269b1de04}{appFaultConfiguration}}[FLT\_CFG\_ARRAY\_LENGTH];}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} \textcolor{keyword}{struct} \{}
+\DoxyCodeLine{23     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e_a57e574ff9f1e129568bc68606886ab8e}{nodeID}};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e_aceac1fd1ebbd90bcda15fa186fdb7e99}{masterAddr}};}
+\DoxyCodeLine{25     \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e_a4959602aae7830fd547f54e3329b1dd7}{CAN\_BAUDRATE}} \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e_a4959602aae7830fd547f54e3329b1dd7}{baud}};}
+\DoxyCodeLine{26     \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e_aea384cfa02b15a089bff4254fd5cc2df}{uint16\_t}} \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e_aea384cfa02b15a089bff4254fd5cc2df}{timeout}};}
+\DoxyCodeLine{27 \} J1939\_INTERFACE; \textcolor{comment}{/// \(\backslash\)todo this belongs somewhere else}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{J1939\_INTERFACE\_DEFAULTS}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)} \textcolor{preprocessor}{\{} \textcolor{preprocessor}{.}\textcolor{preprocessor}{nodeID} \textcolor{preprocessor}{=} 0xF7\textcolor{preprocessor}{,} \textcolor{preprocessor}{.}\textcolor{preprocessor}{masterAddr} \textcolor{preprocessor}{=} 0x41\textcolor{preprocessor}{,} \textcolor{preprocessor}{.}\textcolor{preprocessor}{baud} \textcolor{preprocessor}{=} \textcolor{preprocessor}{CAN\_BAUDRATE\_500K}\textcolor{preprocessor}{,} \textcolor{preprocessor}{.}\textcolor{preprocessor}{timeout} \textcolor{preprocessor}{=} 1000\textcolor{preprocessor}{,} \textcolor{preprocessor}{\_\_VA\_ARGS\_\_}\textcolor{preprocessor}{\}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{extern} J1939\_INTERFACE \mbox{\hyperlink{application_8c_aad4f26eabbeb37bd61a3bb2c76195043}{j1939Interface}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} \mbox{\hyperlink{application_8c_a12358381f3cac018871d7c6b73a404ff}{eeHandlerUseDefaults}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} \mbox{\hyperlink{application_8c_aae45035e0712c66641eda8c3b74e64d8}{APP\_setFaultConfig}}(uint16\_t unused);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{extern} \mbox{\hyperlink{application_8c_a52957b0633643716121c30ca8ac20e62}{AUTH\_Nv}} \mbox{\hyperlink{application_8c_a52957b0633643716121c30ca8ac20e62}{authorization\_nv}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif} \textcolor{comment}{//\_\_APPLICATION\_H\_\_}}
+
+\end{DoxyCode}

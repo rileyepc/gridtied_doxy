@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___input_control__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_InputControl_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___input_control__s_1a6f2be2fab0203c66d6bf02a97a8ebd7f" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputControl_s::runRequest</definition>
+        <argsstring></argsstring>
+        <name>runRequest</name>
+        <qualifiedname>ECU_InputControl_s::runRequest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="99" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="98" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="98" bodyend="100"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___input_control__s_1a6f2be2fab0203c66d6bf02a97a8ebd7f" prot="public" virt="non-virtual"><scope>ECU_InputControl_s</scope><name>runRequest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_c_u___output_tlc_pdo__s" xml:lang="en-US">
+<title>ECU_OutputTlcPdo_s Struct Reference</title>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1a6fe88aceeeaa3655c06a3d0e04a38449">appState</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1ad4cfc05bfdbe5279ec567e439623ee38">isFaulted</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1a51a828db845235526793223fc2166901">timeStamp</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1ab27ce7f5fc8055ea55fba42f24f3c243">timeSinceLastComm</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1afac1e275bcba8024d8e9bee544206c50">controlModeAccept</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1a64b540228b0657908ef0f6ef6a005641">acNetworkStatus</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1ad516aca3e35c4938566a4db5c4eeb26c">isIslanded</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1aca567a66a91b7b8fa5550e0f66590354">isPhaseLocked</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1a9312882a15af95c2a5ad8bc4a804391e">xIg_lim</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1afcea6988c57dcd85e9f82262c8973b7f">eVg_act</link> [3U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1ae8a73fb90185604f11520490d2db9cbf">pVg_act</link> [3U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1a7a639bc1912bb2c711d9f6c8297e523e">rIg_est</link> [2U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1af9c85b9748c12209baffbbb56332a233">rPg_est</link> [2U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_tlc_pdo__s_1a05273c9299859264969f490364de9c74">rIg_ref</link> [2U]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1a64b540228b0657908ef0f6ef6a005641"/><section>
+    <title>acNetworkStatus</title>
+<indexterm><primary>acNetworkStatus</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>acNetworkStatus</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::acNetworkStatus</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1a6fe88aceeeaa3655c06a3d0e04a38449"/><section>
+    <title>appState</title>
+<indexterm><primary>appState</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>appState</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::appState</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1afac1e275bcba8024d8e9bee544206c50"/><section>
+    <title>controlModeAccept</title>
+<indexterm><primary>controlModeAccept</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>controlModeAccept</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::controlModeAccept</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1afcea6988c57dcd85e9f82262c8973b7f"/><section>
+    <title>eVg_act</title>
+<indexterm><primary>eVg_act</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>eVg_act</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::eVg_act[3U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1ad4cfc05bfdbe5279ec567e439623ee38"/><section>
+    <title>isFaulted</title>
+<indexterm><primary>isFaulted</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>isFaulted</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::isFaulted</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1ad516aca3e35c4938566a4db5c4eeb26c"/><section>
+    <title>isIslanded</title>
+<indexterm><primary>isIslanded</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>isIslanded</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::isIslanded</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1aca567a66a91b7b8fa5550e0f66590354"/><section>
+    <title>isPhaseLocked</title>
+<indexterm><primary>isPhaseLocked</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>isPhaseLocked</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::isPhaseLocked</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1ae8a73fb90185604f11520490d2db9cbf"/><section>
+    <title>pVg_act</title>
+<indexterm><primary>pVg_act</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>pVg_act</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::pVg_act[3U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1a7a639bc1912bb2c711d9f6c8297e523e"/><section>
+    <title>rIg_est</title>
+<indexterm><primary>rIg_est</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>rIg_est</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::rIg_est[2U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1a05273c9299859264969f490364de9c74"/><section>
+    <title>rIg_ref</title>
+<indexterm><primary>rIg_ref</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>rIg_ref</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::rIg_ref[2U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1af9c85b9748c12209baffbbb56332a233"/><section>
+    <title>rPg_est</title>
+<indexterm><primary>rPg_est</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>rPg_est</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::rPg_est[2U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1ab27ce7f5fc8055ea55fba42f24f3c243"/><section>
+    <title>timeSinceLastComm</title>
+<indexterm><primary>timeSinceLastComm</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>timeSinceLastComm</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::timeSinceLastComm</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1a51a828db845235526793223fc2166901"/><section>
+    <title>timeStamp</title>
+<indexterm><primary>timeStamp</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>timeStamp</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::timeStamp</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_tlc_pdo__s_1a9312882a15af95c2a5ad8bc4a804391e"/><section>
+    <title>xIg_lim</title>
+<indexterm><primary>xIg_lim</primary><secondary>ECU_OutputTlcPdo_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputTlcPdo_s</primary><secondary>xIg_lim</secondary></indexterm>
+<para><computeroutput>double ECU_OutputTlcPdo_s::xIg_lim</computeroutput></para></section>
+</section>
+</section>

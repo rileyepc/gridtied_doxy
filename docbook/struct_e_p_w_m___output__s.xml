@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_p_w_m___output__s" xml:lang="en-US">
+<title>EPWM_Output_s Struct Reference</title>
+<indexterm><primary>EPWM_Output_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_struct_e_p_w_m___output__s_1abbc545040a19976f86395fd4df186e7b">outState</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>+1U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___output__s_1a82b6143e3853c841d43a09f5cddfe641">tSw</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___output__s_1a3aa07c3be82534b1be8b79638e0f1a65">tHi</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___output__s_1aef15a330a494388539bae4cf7e679440">tLo</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___output__s_1a41ac75b9d2897041790a57a38d7804ad">tCsw</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_e_p_w_m___output__s_1aacb828caa67ba619f0508bd4c2d63612">tHiViol</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_e_p_w_m___output__s_1a2d1a1fd372c8bf3f2fec059f125b4cf5">tLoViol</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_e_p_w_m___output__s_1a8a0700dd3416d2e756d99c0fc3392ec5">tCswViol</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_struct_e_p_w_m___output__s_1afe6b47ab2dc2aa07be68f830ee76bc8e">tHiViolN</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_struct_e_p_w_m___output__s_1a69cf032f231f69e8c62e77d830e61722">tLoViolN</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_struct_e_p_w_m___output__s_1ac951209b6382719e9ee7114a829d65a8">tCswViolN</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_p_w_m___output__s_1abbc545040a19976f86395fd4df186e7b"/><section>
+    <title>outState</title>
+<indexterm><primary>outState</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>outState</secondary></indexterm>
+<para><computeroutput>bool EPWM_Output_s::outState[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>+1U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1a41ac75b9d2897041790a57a38d7804ad"/><section>
+    <title>tCsw</title>
+<indexterm><primary>tCsw</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tCsw</secondary></indexterm>
+<para><computeroutput>double EPWM_Output_s::tCsw</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1a8a0700dd3416d2e756d99c0fc3392ec5"/><section>
+    <title>tCswViol</title>
+<indexterm><primary>tCswViol</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tCswViol</secondary></indexterm>
+<para><computeroutput>bool EPWM_Output_s::tCswViol</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1ac951209b6382719e9ee7114a829d65a8"/><section>
+    <title>tCswViolN</title>
+<indexterm><primary>tCswViolN</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tCswViolN</secondary></indexterm>
+<para><computeroutput>uint32_t EPWM_Output_s::tCswViolN</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1a3aa07c3be82534b1be8b79638e0f1a65"/><section>
+    <title>tHi</title>
+<indexterm><primary>tHi</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tHi</secondary></indexterm>
+<para><computeroutput>double EPWM_Output_s::tHi[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1aacb828caa67ba619f0508bd4c2d63612"/><section>
+    <title>tHiViol</title>
+<indexterm><primary>tHiViol</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tHiViol</secondary></indexterm>
+<para><computeroutput>bool EPWM_Output_s::tHiViol[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1afe6b47ab2dc2aa07be68f830ee76bc8e"/><section>
+    <title>tHiViolN</title>
+<indexterm><primary>tHiViolN</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tHiViolN</secondary></indexterm>
+<para><computeroutput>uint32_t EPWM_Output_s::tHiViolN[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1aef15a330a494388539bae4cf7e679440"/><section>
+    <title>tLo</title>
+<indexterm><primary>tLo</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tLo</secondary></indexterm>
+<para><computeroutput>double EPWM_Output_s::tLo[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1a2d1a1fd372c8bf3f2fec059f125b4cf5"/><section>
+    <title>tLoViol</title>
+<indexterm><primary>tLoViol</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tLoViol</secondary></indexterm>
+<para><computeroutput>bool EPWM_Output_s::tLoViol[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1a69cf032f231f69e8c62e77d830e61722"/><section>
+    <title>tLoViolN</title>
+<indexterm><primary>tLoViolN</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tLoViolN</secondary></indexterm>
+<para><computeroutput>uint32_t EPWM_Output_s::tLoViolN[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___output__s_1a82b6143e3853c841d43a09f5cddfe641"/><section>
+    <title>tSw</title>
+<indexterm><primary>tSw</primary><secondary>EPWM_Output_s</secondary></indexterm>
+<indexterm><primary>EPWM_Output_s</primary><secondary>tSw</secondary></indexterm>
+<para><computeroutput>double EPWM_Output_s::tSw[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+</section>
+</section>

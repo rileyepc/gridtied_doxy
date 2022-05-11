@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_p_w_m___data__s" xml:lang="en-US">
+<title>EPWM_Data_s Struct Reference</title>
+<indexterm><primary>EPWM_Data_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_epwm__emu_8c_1a1453b48c7b1fc53c3f9ec7957965c78f">EPWM_Config_t</link> <link linkend="_struct_e_p_w_m___data__s_1a7d83019784519977b05b9bd7333f85e1">config</link></para>
+</listitem>
+            <listitem><para><link linkend="_epwm__emu_8c_1a04bd23471b2a891d8fecdd970441ca9c">EPWM_Input_t</link> <link linkend="_struct_e_p_w_m___data__s_1ae9ad6c51dc11f98c11891dc9398a1452">input</link></para>
+</listitem>
+            <listitem><para><link linkend="_epwm__emu_8c_1a04bd23471b2a891d8fecdd970441ca9c">EPWM_Input_t</link> <link linkend="_struct_e_p_w_m___data__s_1a62e44fe33a6e731a549fb245ce5183c1">shadow</link></para>
+</listitem>
+            <listitem><para><link linkend="_epwm__emu_8c_1a85b9207f97638bb1006416f65acafaa6">EPWM_State_t</link> <link linkend="_struct_e_p_w_m___data__s_1a50e6cd607af1a5b2b35305a24dcc1330">state</link></para>
+</listitem>
+            <listitem><para><link linkend="_epwm__emu_8c_1a939857fadec19bd8bf18e250df150687">EPWM_Output_t</link> <link linkend="_struct_e_p_w_m___data__s_1a973b880ad11968840fcfd91a868c18cc">output</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_p_w_m___data__s_1a7d83019784519977b05b9bd7333f85e1"/><section>
+    <title>config</title>
+<indexterm><primary>config</primary><secondary>EPWM_Data_s</secondary></indexterm>
+<indexterm><primary>EPWM_Data_s</primary><secondary>config</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1a1453b48c7b1fc53c3f9ec7957965c78f">EPWM_Config_t</link> EPWM_Data_s::config</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___data__s_1ae9ad6c51dc11f98c11891dc9398a1452"/><section>
+    <title>input</title>
+<indexterm><primary>input</primary><secondary>EPWM_Data_s</secondary></indexterm>
+<indexterm><primary>EPWM_Data_s</primary><secondary>input</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1a04bd23471b2a891d8fecdd970441ca9c">EPWM_Input_t</link> EPWM_Data_s::input</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___data__s_1a973b880ad11968840fcfd91a868c18cc"/><section>
+    <title>output</title>
+<indexterm><primary>output</primary><secondary>EPWM_Data_s</secondary></indexterm>
+<indexterm><primary>EPWM_Data_s</primary><secondary>output</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1a939857fadec19bd8bf18e250df150687">EPWM_Output_t</link> EPWM_Data_s::output</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___data__s_1a62e44fe33a6e731a549fb245ce5183c1"/><section>
+    <title>shadow</title>
+<indexterm><primary>shadow</primary><secondary>EPWM_Data_s</secondary></indexterm>
+<indexterm><primary>EPWM_Data_s</primary><secondary>shadow</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1a04bd23471b2a891d8fecdd970441ca9c">EPWM_Input_t</link> EPWM_Data_s::shadow</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___data__s_1a50e6cd607af1a5b2b35305a24dcc1330"/><section>
+    <title>state</title>
+<indexterm><primary>state</primary><secondary>EPWM_Data_s</secondary></indexterm>
+<indexterm><primary>EPWM_Data_s</primary><secondary>state</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1a85b9207f97638bb1006416f65acafaa6">EPWM_State_t</link> EPWM_Data_s::state</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_a_d1_d___meas_channel__s" xml:lang="en-US">
+<title>AD1D_MeasChannel_s Struct Reference</title>
+<indexterm><primary>AD1D_MeasChannel_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_ad1d__emu_8c_1ae68c26d3439d1475cd4f8057cd9c6fdd">AD1D_Inputs_t</link> <link linkend="_struct_a_d1_d___meas_channel__s_1a2b96b12864cbbbb444876b3d4573ecb7">adcInput</link></para>
+</listitem>
+            <listitem><para><link linkend="__i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d">_iq31</link> * <link linkend="_struct_a_d1_d___meas_channel__s_1ac170039b83ce7fa83b05c862c4f93009">mesdDest</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_a_d1_d___meas_channel__s_1a2b96b12864cbbbb444876b3d4573ecb7"/><section>
+    <title>adcInput</title>
+<indexterm><primary>adcInput</primary><secondary>AD1D_MeasChannel_s</secondary></indexterm>
+<indexterm><primary>AD1D_MeasChannel_s</primary><secondary>adcInput</secondary></indexterm>
+<para><computeroutput><link linkend="_ad1d__emu_8c_1ae68c26d3439d1475cd4f8057cd9c6fdd">AD1D_Inputs_t</link> AD1D_MeasChannel_s::adcInput</computeroutput></para></section>
+<anchor xml:id="_struct_a_d1_d___meas_channel__s_1ac170039b83ce7fa83b05c862c4f93009"/><section>
+    <title>mesdDest</title>
+<indexterm><primary>mesdDest</primary><secondary>AD1D_MeasChannel_s</secondary></indexterm>
+<indexterm><primary>AD1D_MeasChannel_s</primary><secondary>mesdDest</secondary></indexterm>
+<para><computeroutput><link linkend="__i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d">_iq31</link>* AD1D_MeasChannel_s::mesdDest</computeroutput></para></section>
+</section>
+</section>

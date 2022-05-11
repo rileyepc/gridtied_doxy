@@ -1,0 +1,609 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="lib_epc_control_interface_8c" kind="file" language="C++">
+    <compoundname>libEpcControlInterface.c</compoundname>
+    <includes local="no">math.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes refid="sil_wrapper_8h" local="yes">silWrapper.h</includes>
+    <includes local="yes">json-c/json_object.h</includes>
+    <includes local="yes">json-c/json_tokener.h</includes>
+    <includes local="yes">utils.h</includes>
+    <includes refid="lib_epc_control_interface_8h" local="yes">libEpcControlInterface.h</includes>
+    <includes local="yes">libEpcControlInterfaceGen.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>sil/libEpcControlInterface.c</label>
+        <link refid="lib_epc_control_interface_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>libEpcControlInterface.h</label>
+        <link refid="lib_epc_control_interface_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>silWrapper.h</label>
+        <link refid="sil_wrapper_8h"/>
+      </node>
+      <node id="13">
+        <label>IEEE1547.h</label>
+      </node>
+      <node id="7">
+        <label>json-c/json_object.h</label>
+      </node>
+      <node id="8">
+        <label>json-c/json_tokener.h</label>
+      </node>
+      <node id="14">
+        <label>libEpcControlInterfaceGen.h</label>
+      </node>
+      <node id="2">
+        <label>math.h</label>
+      </node>
+      <node id="12">
+        <label>stdbool.h</label>
+      </node>
+      <node id="11">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="9">
+        <label>utils.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="lib_epc_control_interface_8c_1a45895ce296865f2abdf7414446c607d4" prot="public" static="no">
+        <name>SCALE_FLOAT</name>
+        <param><defname>value</defname></param>
+        <param><defname>power</defname></param>
+        <initializer>((double)(value) * pow(10.0L, (double)(power)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.c" line="17" column="9" bodyfile="sil/libEpcControlInterface.c" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="lib_epc_control_interface_8c_1a4e18acc8f3b4018d713b5f4f64c9332b" prot="public" static="no">
+        <name>SCALE_INT</name>
+        <param><defname>value</defname></param>
+        <param><defname>power</defname></param>
+        <initializer>(round(<ref refid="lib_epc_control_interface_8c_1a45895ce296865f2abdf7414446c607d4" kindref="member">SCALE_FLOAT</ref>(value, power)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.c" line="18" column="9" bodyfile="sil/libEpcControlInterface.c" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="lib_epc_control_interface_8c_1a79bea176d7f6b5e9718f5450a27c77a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>json_object *</type>
+        <definition>json_object * get_json</definition>
+        <argsstring>(char *path)</argsstring>
+        <name>get_json</name>
+        <param>
+          <type>char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.c" line="21" column="14" bodyfile="sil/libEpcControlInterface.c" bodystart="21" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="lib_epc_control_interface_8c_1ae5a56d30a6cda41f97e15a9ae9a37df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>json_object *</type>
+        <definition>json_object * get_json_item</definition>
+        <argsstring>(json_object *root, char *uuid)</argsstring>
+        <name>get_json_item</name>
+        <param>
+          <type>json_object *</type>
+          <declname>root</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.c" line="50" column="14" bodyfile="sil/libEpcControlInterface.c" bodystart="50" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="lib_epc_control_interface_8c_1acf7f4325c6a7da38a297edc498de3a38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void set</definition>
+        <argsstring>(Item *item, json_object *json_item, bool const bVerbose, bool const callSetters)</argsstring>
+        <name>set</name>
+        <param>
+          <type><ref refid="struct_item" kindref="compound">Item</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>json_object *</type>
+          <declname>json_item</declname>
+        </param>
+        <param>
+          <type>bool const</type>
+          <declname>bVerbose</declname>
+        </param>
+        <param>
+          <type>bool const</type>
+          <declname>callSetters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.c" line="107" column="6" bodyfile="sil/libEpcControlInterface.c" bodystart="107" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="lib_epc_control_interface_8c_1a0a34752190321c6d532b08678991cf02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SIL_loadPmvs</definition>
+        <argsstring>(char *path, bool const bVerbose, bool const callSetters)</argsstring>
+        <name>SIL_loadPmvs</name>
+        <param>
+          <type>char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>bool const</type>
+          <declname>bVerbose</declname>
+        </param>
+        <param>
+          <type>bool const</type>
+          <declname>callSetters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.c" line="356" column="6" bodyfile="sil/libEpcControlInterface.c" bodystart="356" bodyend="389"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sil_wrapper_8h" kindref="compound">silWrapper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;json-c/json_object.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;json-c/json_tokener.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;utils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="lib_epc_control_interface_8h" kindref="compound">libEpcControlInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;libEpcControlInterfaceGen.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCALE_FLOAT(value,<sp/>power)<sp/><sp/><sp/>((double)(value)<sp/>*<sp/>pow(10.0L,<sp/>(double)(power)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCALE_INT(value,<sp/>power)<sp/><sp/><sp/><sp/><sp/>(round(SCALE_FLOAT(value,<sp/>power)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">json_object<sp/>*<sp/><ref refid="lib_epc_control_interface_8c_1a79bea176d7f6b5e9718f5450a27c77a1" kindref="member">get_json</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>path)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>buffer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>length;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE<sp/>*<sp/>f<sp/>=<sp/>fopen(path,<sp/></highlight><highlight class="stringliteral">&quot;rb&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(f)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fseek(f,<sp/>0,<sp/>SEEK_END);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>=<sp/>ftell(f);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fseek(f,<sp/>0,<sp/>SEEK_SET);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer<sp/>=<sp/>malloc(length);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buffer)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fread(buffer,<sp/>1,<sp/>length,<sp/>f);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose(f);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buffer)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>json<sp/>=<sp/>json_tokener_parse(buffer);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(buffer);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>json;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">json_object<sp/>*<sp/><ref refid="lib_epc_control_interface_8c_1ae5a56d30a6cda41f97e15a9ae9a37df1" kindref="member">get_json_item</ref>(json_object<sp/>*<sp/>root,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>uuid)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>children<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!json_object_is_type(root,<sp/>json_type_object))<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981" kindref="member">SIL_DEBUG</ref>(</highlight><highlight class="stringliteral">&quot;Wrong<sp/>object<sp/>type:<sp/>%s!\n&quot;</highlight><highlight class="normal">,<sp/>uuid);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>children<sp/>=<sp/>json_object_object_get(root,<sp/></highlight><highlight class="stringliteral">&quot;children&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!json_object_is_type(children,<sp/>json_type_array))<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981" kindref="member">SIL_DEBUG</ref>(</highlight><highlight class="stringliteral">&quot;Wrong<sp/>object<sp/>type:<sp/>%s!\n&quot;</highlight><highlight class="normal">,<sp/>uuid);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>length<sp/>=<sp/>json_object_array_length(children);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>child<sp/>=<sp/>json_object_array_get_idx(children,<sp/>i);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!json_object_is_type(child,<sp/>json_type_object))<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981" kindref="member">SIL_DEBUG</ref>(</highlight><highlight class="stringliteral">&quot;Wrong<sp/>object<sp/>type<sp/>for<sp/>index<sp/>%d!\n&quot;</highlight><highlight class="normal">,<sp/>i);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>uuid_object<sp/>=<sp/>json_object_object_get(child,<sp/></highlight><highlight class="stringliteral">&quot;parameter_uuid&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(uuid_object<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>name_object<sp/>=<sp/>json_object_object_get(child,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(name_object<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/>=<sp/>json_object_get_string(name_object);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981" kindref="member">SIL_DEBUG</ref>(</highlight><highlight class="stringliteral">&quot;No<sp/>uuid<sp/>found<sp/>for<sp/>parameter<sp/>%s<sp/>at<sp/>index<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>i);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!json_object_is_type(uuid_object,<sp/>json_type_string))<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981" kindref="member">SIL_DEBUG</ref>(</highlight><highlight class="stringliteral">&quot;Wrong<sp/>object<sp/>type!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*uuid_json<sp/>=<sp/>json_object_get_string(uuid_object);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(uuid,<sp/>uuid_json)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>child;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8c_1acf7f4325c6a7da38a297edc498de3a38" kindref="member">set</ref>(<ref refid="struct_item" kindref="compound">Item</ref><sp/>*item,<sp/>json_object<sp/>*json_item,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>bVerbose,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>callSetters)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>from_json;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/><ref refid="union_variable__u" kindref="compound">Variable_t</ref><sp/>scaled;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>value_object<sp/>=<sp/>json_object_object_get(json_item,<sp/></highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>name_object<sp/>=<sp/>json_object_object_get(json_item,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>=<sp/>json_object_get_string(name_object);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(item-&gt;<ref refid="struct_item_1abcf7712fe602099f40fbb8664857d381" kindref="member">setterType</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf" kindref="member">setter_float</ref>:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>from_json<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>json_object_get_double(value_object);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a6125d6ae3c32fa6a18d8550675337ae3" kindref="member">float_</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(float)<ref refid="lib_epc_control_interface_8c_1a45895ce296865f2abdf7414446c607d4" kindref="member">SCALE_FLOAT</ref>(from_json,<sp/>item-&gt;<ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bVerbose)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;Parameter:<sp/>%s,<sp/>value:<sp/>%f<sp/>(float)\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>scaled.<ref refid="union_variable__u_1a6125d6ae3c32fa6a18d8550675337ae3" kindref="member">float_</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1ab61203efcf48547f23e92a9643fbb3bf" kindref="member">float_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1ab61203efcf48547f23e92a9643fbb3bf" kindref="member">float_</ref><sp/>=<sp/>scaled.<ref refid="union_variable__u_1a6125d6ae3c32fa6a18d8550675337ae3" kindref="member">float_</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(callSetters<sp/>&amp;&amp;<sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a0f4031b29e64dc28ef278af23519221c" kindref="member">float_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a0f4031b29e64dc28ef278af23519221c" kindref="member">float_</ref>(scaled.<ref refid="union_variable__u_1a6125d6ae3c32fa6a18d8550675337ae3" kindref="member">float_</ref>);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1afd2f53d4c4c42e107f972778baf5ffc5" kindref="member">float_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1afd2f53d4c4c42e107f972778baf5ffc5" kindref="member">float_</ref>(</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a6125d6ae3c32fa6a18d8550675337ae3" kindref="member">float_</ref></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298" kindref="member">setter_uint64_t</ref>:</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>from_json<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>json_object_get_double(value_object);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a3f2d42ad233ad5bbfc411757a5303832" kindref="member">uint64_t_</ref><sp/><sp/><sp/><sp/>=<sp/>(uint64_t)<ref refid="lib_epc_control_interface_8c_1a4e18acc8f3b4018d713b5f4f64c9332b" kindref="member">SCALE_INT</ref>(from_json,<sp/>item-&gt;<ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bVerbose)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;Parameter:<sp/>%s,<sp/>value:<sp/>%llu<sp/>(uint64_t)\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>scaled.<ref refid="union_variable__u_1a3f2d42ad233ad5bbfc411757a5303832" kindref="member">uint64_t_</ref>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1a520af636ea3bda62abe8453bcf4e66f9" kindref="member">uint64_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1a520af636ea3bda62abe8453bcf4e66f9" kindref="member">uint64_t_</ref><sp/>=<sp/>scaled.<ref refid="union_variable__u_1a3f2d42ad233ad5bbfc411757a5303832" kindref="member">uint64_t_</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(callSetters<sp/>&amp;&amp;<sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1ac9472e2c38a5464dbcd46712e31db594" kindref="member">uint64_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1ac9472e2c38a5464dbcd46712e31db594" kindref="member">uint64_t_</ref>(scaled.<ref refid="union_variable__u_1a3f2d42ad233ad5bbfc411757a5303832" kindref="member">uint64_t_</ref>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a67fdb17ef3d71c73070a858c6ba6b387" kindref="member">uint64_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a67fdb17ef3d71c73070a858c6ba6b387" kindref="member">uint64_t_</ref>(</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a3f2d42ad233ad5bbfc411757a5303832" kindref="member">uint64_t_</ref></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd" kindref="member">setter_uint32_t</ref>:</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>from_json<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>json_object_get_double(value_object);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a91222ca191c49df332a800058a84a1e0" kindref="member">uint32_t_</ref><sp/><sp/><sp/><sp/>=<sp/>(uint32_t)<ref refid="lib_epc_control_interface_8c_1a4e18acc8f3b4018d713b5f4f64c9332b" kindref="member">SCALE_INT</ref>(from_json,<sp/>item-&gt;<ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bVerbose)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;Parameter:<sp/>%s,<sp/>value:<sp/>%lu<sp/>(uint32_t)\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>scaled.<ref refid="union_variable__u_1a91222ca191c49df332a800058a84a1e0" kindref="member">uint32_t_</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1a6c5ab022d441dcd99862ff65ec1cfa83" kindref="member">uint32_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1a6c5ab022d441dcd99862ff65ec1cfa83" kindref="member">uint32_t_</ref><sp/>=<sp/>scaled.<ref refid="union_variable__u_1a91222ca191c49df332a800058a84a1e0" kindref="member">uint32_t_</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(callSetters<sp/>&amp;&amp;<sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1ae9903ac35a7a373a9d636f365596ce59" kindref="member">uint32_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1ae9903ac35a7a373a9d636f365596ce59" kindref="member">uint32_t_</ref>(scaled.<ref refid="union_variable__u_1a91222ca191c49df332a800058a84a1e0" kindref="member">uint32_t_</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a5245f3a2f81cc062ef064b7fbc205253" kindref="member">uint32_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a5245f3a2f81cc062ef064b7fbc205253" kindref="member">uint32_t_</ref>(</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a91222ca191c49df332a800058a84a1e0" kindref="member">uint32_t_</ref></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0" kindref="member">setter_uint16_t</ref>:</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>from_json<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>json_object_get_double(value_object);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a28a00627da3703bbd5820bc15487ddcd" kindref="member">uint16_t_</ref><sp/><sp/><sp/><sp/>=<sp/>(uint16_t)<ref refid="lib_epc_control_interface_8c_1a4e18acc8f3b4018d713b5f4f64c9332b" kindref="member">SCALE_INT</ref>(from_json,<sp/>item-&gt;<ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bVerbose)<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;Parameter:<sp/>%s,<sp/>value:<sp/>%u<sp/>(uint16_t)\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>scaled.<ref refid="union_variable__u_1a28a00627da3703bbd5820bc15487ddcd" kindref="member">uint16_t_</ref>);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1ac714fd90ab8b1c754abb9280ef5cd0ca" kindref="member">uint16_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1ac714fd90ab8b1c754abb9280ef5cd0ca" kindref="member">uint16_t_</ref><sp/>=<sp/>scaled.<ref refid="union_variable__u_1a28a00627da3703bbd5820bc15487ddcd" kindref="member">uint16_t_</ref>;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(callSetters<sp/>&amp;&amp;<sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a6a570917051ccf1d79c62de78e1b4427" kindref="member">uint16_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a6a570917051ccf1d79c62de78e1b4427" kindref="member">uint16_t_</ref>(scaled.<ref refid="union_variable__u_1a28a00627da3703bbd5820bc15487ddcd" kindref="member">uint16_t_</ref>);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1ab944ed7d3de88f397500036e6d42aaf8" kindref="member">uint16_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1ab944ed7d3de88f397500036e6d42aaf8" kindref="member">uint16_t_</ref>(</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>,</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>,</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a28a00627da3703bbd5820bc15487ddcd" kindref="member">uint16_t_</ref></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92" kindref="member">setter_int32_t</ref>:</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>from_json<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>json_object_get_double(value_object);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1ad52dba957745a1fe9b3da97d157e582a" kindref="member">int32_t_</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>(int32_t)<ref refid="lib_epc_control_interface_8c_1a4e18acc8f3b4018d713b5f4f64c9332b" kindref="member">SCALE_INT</ref>(from_json,<sp/>item-&gt;<ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bVerbose)<sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;Parameter:<sp/>%s,<sp/>value:<sp/>%ld<sp/>(int32_t)\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>scaled.<ref refid="union_variable__u_1ad52dba957745a1fe9b3da97d157e582a" kindref="member">int32_t_</ref>);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1a56e6a6ce1bb86402b5adf26b97428ca7" kindref="member">int32_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1a56e6a6ce1bb86402b5adf26b97428ca7" kindref="member">int32_t_</ref><sp/>=<sp/>scaled.<ref refid="union_variable__u_1ad52dba957745a1fe9b3da97d157e582a" kindref="member">int32_t_</ref>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(callSetters<sp/>&amp;&amp;<sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a54a9e3a267854a1b766e818d842df907" kindref="member">int32_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a54a9e3a267854a1b766e818d842df907" kindref="member">int32_t_</ref>(scaled.<ref refid="union_variable__u_1ad52dba957745a1fe9b3da97d157e582a" kindref="member">int32_t_</ref>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a3fb814acc447230b6df8aea4a48a0949" kindref="member">int32_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a3fb814acc447230b6df8aea4a48a0949" kindref="member">int32_t_</ref>(</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>,</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>,</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1ad52dba957745a1fe9b3da97d157e582a" kindref="member">int32_t_</ref></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f" kindref="member">setter_int16_t</ref>:</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>from_json<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>json_object_get_double(value_object);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a26221f7986221139ab2ebdbbefe0477d" kindref="member">int16_t_</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>(int16_t)<ref refid="lib_epc_control_interface_8c_1a4e18acc8f3b4018d713b5f4f64c9332b" kindref="member">SCALE_INT</ref>(from_json,<sp/>item-&gt;<ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bVerbose)<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;Parameter:<sp/>%s,<sp/>value:<sp/>%d<sp/>(int16_t)\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>scaled.<ref refid="union_variable__u_1a26221f7986221139ab2ebdbbefe0477d" kindref="member">int16_t_</ref>);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1a36a543a52eac597023a4deb363c1fa24" kindref="member">int16_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1a36a543a52eac597023a4deb363c1fa24" kindref="member">int16_t_</ref><sp/>=<sp/>scaled.<ref refid="union_variable__u_1a26221f7986221139ab2ebdbbefe0477d" kindref="member">int16_t_</ref>;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(callSetters<sp/>&amp;&amp;<sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a16e518308f6e5fde1605d7cb0f19c20a" kindref="member">int16_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a16e518308f6e5fde1605d7cb0f19c20a" kindref="member">int16_t_</ref>(scaled.<ref refid="union_variable__u_1a26221f7986221139ab2ebdbbefe0477d" kindref="member">int16_t_</ref>);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a3ac087b535f62d339e8edab4d67b1eeb" kindref="member">int16_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a3ac087b535f62d339e8edab4d67b1eeb" kindref="member">int16_t_</ref>(</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>,</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>,</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>,</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a26221f7986221139ab2ebdbbefe0477d" kindref="member">int16_t_</ref></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9" kindref="member">setter_size_t</ref>:</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>from_json<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>json_object_get_double(value_object);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a06103e891c2e34f4d715e2c9789184cd" kindref="member">size_t_</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(size_t)<ref refid="lib_epc_control_interface_8c_1a4e18acc8f3b4018d713b5f4f64c9332b" kindref="member">SCALE_INT</ref>(from_json,<sp/>item-&gt;<ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bVerbose)<sp/>{</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;Parameter:<sp/>%s,<sp/>value:<sp/>%d<sp/>(size_t)\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>scaled.<ref refid="union_variable__u_1a06103e891c2e34f4d715e2c9789184cd" kindref="member">size_t_</ref>);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1afc3dca84929f43265b742afb1084a412" kindref="member">size_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1afc3dca84929f43265b742afb1084a412" kindref="member">size_t_</ref><sp/>=<sp/>scaled.<ref refid="union_variable__u_1a06103e891c2e34f4d715e2c9789184cd" kindref="member">size_t_</ref>;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(callSetters<sp/>&amp;&amp;<sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1ab6cfce32cd0b0aba29e8f8eee1e4348b" kindref="member">size_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1ab6cfce32cd0b0aba29e8f8eee1e4348b" kindref="member">size_t_</ref>(scaled.<ref refid="union_variable__u_1a06103e891c2e34f4d715e2c9789184cd" kindref="member">size_t_</ref>);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a7f400d19f8c533e336c7c48c587a2cd9" kindref="member">size_t_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a7f400d19f8c533e336c7c48c587a2cd9" kindref="member">size_t_</ref>(</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>,</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>,</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>,</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a06103e891c2e34f4d715e2c9789184cd" kindref="member">size_t_</ref></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc" kindref="member">setter_bool</ref>:</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>from_json<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>json_object_get_double(value_object);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a32848544a244452595bd36605349e8d9" kindref="member">bool_</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(bool)<ref refid="lib_epc_control_interface_8c_1a4e18acc8f3b4018d713b5f4f64c9332b" kindref="member">SCALE_INT</ref>(from_json,<sp/>item-&gt;<ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bVerbose)<sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;Parameter:<sp/>%s,<sp/>value:<sp/>%d<sp/>(bool)\n&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>scaled.<ref refid="union_variable__u_1a32848544a244452595bd36605349e8d9" kindref="member">bool_</ref>);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1ab4ff753c3d026640f04e56658ebebb21" kindref="member">bool_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*item-&gt;<ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>.<ref refid="union_variable_pointer__u_1ab4ff753c3d026640f04e56658ebebb21" kindref="member">bool_</ref><sp/>=<sp/>scaled.<ref refid="union_variable__u_1a32848544a244452595bd36605349e8d9" kindref="member">bool_</ref>;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(callSetters<sp/>&amp;&amp;<sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a269a30ca16afb2a1e9363b7a04cc0ae5" kindref="member">bool_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>.<ref refid="union_setter__u_1a269a30ca16afb2a1e9363b7a04cc0ae5" kindref="member">bool_</ref>(scaled.<ref refid="union_variable__u_1a32848544a244452595bd36605349e8d9" kindref="member">bool_</ref>);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a6de711fab67ee8285dca8f93293f7ae5" kindref="member">bool_</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>.<ref refid="union_table_setter__u_1a6de711fab67ee8285dca8f93293f7ae5" kindref="member">bool_</ref>(</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>,</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>,</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>.<ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>,</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled.<ref refid="union_variable__u_1a32848544a244452595bd36605349e8d9" kindref="member">bool_</ref></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8c_1a0a34752190321c6d532b08678991cf02" kindref="member">SIL_loadPmvs</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>bVerbose,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>callSetters)<sp/>{</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_item" kindref="compound">Item</ref><sp/>*<sp/>items<sp/>=<sp/>SIL_interfaceItems;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>item_count<sp/>=<sp/>LENGTHOF(SIL_interfaceItems);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>absPath[PATH_MAX];</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(path<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981" kindref="member">SIL_DEBUG</ref>(</highlight><highlight class="stringliteral">&quot;SIL_loadPmvs:<sp/>NULL<sp/>path<sp/>specified,<sp/>doing<sp/>nothing.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*note<sp/>that<sp/>_fullpath<sp/>is<sp/>Windows<sp/>only.<sp/><sp/>realpath<sp/>is<sp/>the<sp/>posix<sp/>&apos;equivalent&apos;,</highlight></codeline>
+<codeline lineno="366"><highlight class="comment"><sp/><sp/><sp/><sp/>though,<sp/>that<sp/>function<sp/>doesn&apos;t<sp/>seem<sp/>to<sp/>handle<sp/>the<sp/>situation<sp/>where<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="367"><highlight class="comment"><sp/><sp/><sp/><sp/>doesn&apos;t<sp/>exist.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>_fullpath(absPath,<sp/>path,<sp/>PATH_MAX);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;SIL_loadPmvs:<sp/>Loading<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>absPath);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>json<sp/>=<sp/><ref refid="lib_epc_control_interface_8c_1a79bea176d7f6b5e9718f5450a27c77a1" kindref="member">get_json</ref>(path);</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(json<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(</highlight><highlight class="stringliteral">&quot;%s<sp/>not<sp/>found!&quot;</highlight><highlight class="normal">,<sp/>absPath);</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/>item_count;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_item" kindref="compound">Item</ref><sp/>*<sp/>item<sp/>=<sp/>&amp;items[i];</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>json_object<sp/>*<sp/>json_item<sp/>=<sp/><ref refid="lib_epc_control_interface_8c_1ae5a56d30a6cda41f97e15a9ae9a37df1" kindref="member">get_json_item</ref>(json,<sp/>item-&gt;<ref refid="struct_item_1a9a33d1eaf53797d7fdea08469e9cc3c0" kindref="member">uuid</ref>);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(json_item<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8c_1acf7f4325c6a7da38a297edc498de3a38" kindref="member">set</ref>(item,<sp/>json_item,<sp/>bVerbose,<sp/>callSetters);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="389"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="sil/libEpcControlInterface.c"/>
+  </compounddef>
+</doxygen>

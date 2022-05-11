@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_p_w_m___state__s" xml:lang="en-US">
+<title>EPWM_State_s Struct Reference</title>
+<indexterm><primary>EPWM_State_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___state__s_1a4024ad128837faa2c0c1d1f18a811d87">tLastSolverHit</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___state__s_1a5346dae0759f032b1778b5b235a35e68">tFullPeriod</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___state__s_1a948a3a15ba9b7676df4d97023669a86e">tHalfPeriod</link></para>
+</listitem>
+            <listitem><para><link linkend="_epwm__emu_8c_1a5580106735fd6104e8f44676a78ca0b9">EPWM_ActionEvent_t</link> <link linkend="_struct_e_p_w_m___state__s_1ac6fe03fd8ca065933beaedea8cda1ecd">eventQueue</link> [<link linkend="_epwm__emu_8c_1ab660d8e73fe04be099cd2dbda7c5f682">EPWM_EVENT_QUEUE_SIZE</link>]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_e_p_w_m___state__s_1a2d97e411b92b2557216f42cc87d21dbc">queueDepth</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_e_p_w_m___state__s_1ac082c603eb33a65374b72b0f1e508f12">queueDepthMax</link></para>
+</listitem>
+            <listitem><para><link linkend="_epwm__emu_8c_1a44ea5baa4c092c9c4ebba71d81f30412">EPWM_SaturationState_t</link> <link linkend="_struct_e_p_w_m___state__s_1acda2b84020dd84d56a798c38835eb5ce">satState</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___state__s_1a3568b181170b58c898058b5728435680">tOn</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___state__s_1a088364075c523b2dcc76a66a5921d210">tOff</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___state__s_1a6e7735be20346d04744e304de58f2148">tCsw</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_e_p_w_m___state__s_1a9f04e7e54a28c5f1f0560091cac41fd8">isHalfPeriodEvent</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___state__s_1a221d4a1d5ab8c41efb061aacdb6f3c07">tHalfPeriodStart</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_struct_e_p_w_m___state__s_1a08e58eef3ce96b2339f544d3d966a2ef">nHalfPeriods</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_e_p_w_m___state__s_1a092e7a0e252417951a1b258f9f62a529">isDisabled</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_p_w_m___state__s_1ac6fe03fd8ca065933beaedea8cda1ecd"/><section>
+    <title>eventQueue</title>
+<indexterm><primary>eventQueue</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>eventQueue</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1a5580106735fd6104e8f44676a78ca0b9">EPWM_ActionEvent_t</link> EPWM_State_s::eventQueue[<link linkend="_epwm__emu_8c_1ab660d8e73fe04be099cd2dbda7c5f682">EPWM_EVENT_QUEUE_SIZE</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a092e7a0e252417951a1b258f9f62a529"/><section>
+    <title>isDisabled</title>
+<indexterm><primary>isDisabled</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>isDisabled</secondary></indexterm>
+<para><computeroutput>bool EPWM_State_s::isDisabled</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a9f04e7e54a28c5f1f0560091cac41fd8"/><section>
+    <title>isHalfPeriodEvent</title>
+<indexterm><primary>isHalfPeriodEvent</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>isHalfPeriodEvent</secondary></indexterm>
+<para><computeroutput>bool EPWM_State_s::isHalfPeriodEvent</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a08e58eef3ce96b2339f544d3d966a2ef"/><section>
+    <title>nHalfPeriods</title>
+<indexterm><primary>nHalfPeriods</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>nHalfPeriods</secondary></indexterm>
+<para><computeroutput>uint32_t EPWM_State_s::nHalfPeriods</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a2d97e411b92b2557216f42cc87d21dbc"/><section>
+    <title>queueDepth</title>
+<indexterm><primary>queueDepth</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>queueDepth</secondary></indexterm>
+<para><computeroutput>uint16_t EPWM_State_s::queueDepth</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1ac082c603eb33a65374b72b0f1e508f12"/><section>
+    <title>queueDepthMax</title>
+<indexterm><primary>queueDepthMax</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>queueDepthMax</secondary></indexterm>
+<para><computeroutput>uint16_t EPWM_State_s::queueDepthMax</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1acda2b84020dd84d56a798c38835eb5ce"/><section>
+    <title>satState</title>
+<indexterm><primary>satState</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>satState</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1a44ea5baa4c092c9c4ebba71d81f30412">EPWM_SaturationState_t</link> EPWM_State_s::satState[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a6e7735be20346d04744e304de58f2148"/><section>
+    <title>tCsw</title>
+<indexterm><primary>tCsw</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>tCsw</secondary></indexterm>
+<para><computeroutput>double EPWM_State_s::tCsw[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a5346dae0759f032b1778b5b235a35e68"/><section>
+    <title>tFullPeriod</title>
+<indexterm><primary>tFullPeriod</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>tFullPeriod</secondary></indexterm>
+<para><computeroutput>double EPWM_State_s::tFullPeriod</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a948a3a15ba9b7676df4d97023669a86e"/><section>
+    <title>tHalfPeriod</title>
+<indexterm><primary>tHalfPeriod</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>tHalfPeriod</secondary></indexterm>
+<para><computeroutput>double EPWM_State_s::tHalfPeriod</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a221d4a1d5ab8c41efb061aacdb6f3c07"/><section>
+    <title>tHalfPeriodStart</title>
+<indexterm><primary>tHalfPeriodStart</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>tHalfPeriodStart</secondary></indexterm>
+<para><computeroutput>double EPWM_State_s::tHalfPeriodStart</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a4024ad128837faa2c0c1d1f18a811d87"/><section>
+    <title>tLastSolverHit</title>
+<indexterm><primary>tLastSolverHit</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>tLastSolverHit</secondary></indexterm>
+<para><computeroutput>double EPWM_State_s::tLastSolverHit</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a088364075c523b2dcc76a66a5921d210"/><section>
+    <title>tOff</title>
+<indexterm><primary>tOff</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>tOff</secondary></indexterm>
+<para><computeroutput>double EPWM_State_s::tOff[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___state__s_1a3568b181170b58c898058b5728435680"/><section>
+    <title>tOn</title>
+<indexterm><primary>tOn</primary><secondary>EPWM_State_s</secondary></indexterm>
+<indexterm><primary>EPWM_State_s</primary><secondary>tOn</secondary></indexterm>
+<para><computeroutput>double EPWM_State_s::tOn[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_interface_item___bitfield" kind="struct" language="C++" prot="public">
+    <compoundname>InterfaceItem_Bitfield</compoundname>
+    <includes refid="interface_8h" local="no">interface.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_interface_item___bitfield_1aa9447ffb0df96c9921c490fd5558a392" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref> const</type>
+        <definition>InterfaceItemCommon const InterfaceItem_Bitfield::common</definition>
+        <argsstring></argsstring>
+        <name>common</name>
+        <qualifiedname>InterfaceItem_Bitfield::common</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="113" column="31" bodyfile="interface/interface.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_interface_item___bitfield_member" kindref="compound">InterfaceItem_BitfieldMember</ref> const  *const</type>
+        <definition>InterfaceItem_BitfieldMember const* const InterfaceItem_Bitfield::staticmodbusMembers</definition>
+        <argsstring></argsstring>
+        <name>staticmodbusMembers</name>
+        <qualifiedname>InterfaceItem_Bitfield::staticmodbusMembers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="114" column="47" bodyfile="interface/interface.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_interface_item___bitfield_1a7163300b7ddf96affbb40cf0eed35093" prot="public" static="no" mutable="no">
+        <type>size_t const</type>
+        <definition>size_t const InterfaceItem_Bitfield::staticmodbusMembersCount</definition>
+        <argsstring></argsstring>
+        <name>staticmodbusMembersCount</name>
+        <qualifiedname>InterfaceItem_Bitfield::staticmodbusMembersCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="115" column="18" bodyfile="interface/interface.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_interface_item___bitfield_1a02709814798eb783b5ac36c6b4521a0b" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_interface_item___bitfield_member" kindref="compound">InterfaceItem_BitfieldMember</ref> const  *const</type>
+        <definition>InterfaceItem_BitfieldMember const* const InterfaceItem_Bitfield::sunspecMembers</definition>
+        <argsstring></argsstring>
+        <name>sunspecMembers</name>
+        <qualifiedname>InterfaceItem_Bitfield::sunspecMembers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="116" column="47" bodyfile="interface/interface.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_interface_item___bitfield_1a99e2439251dfe801a7ca8659f20da309" prot="public" static="no" mutable="no">
+        <type>size_t const</type>
+        <definition>size_t const InterfaceItem_Bitfield::sunspecMembersCount</definition>
+        <argsstring></argsstring>
+        <name>sunspecMembersCount</name>
+        <qualifiedname>InterfaceItem_Bitfield::sunspecMembersCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="117" column="18" bodyfile="interface/interface.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>InterfaceItemCommon</label>
+        <link refid="struct_interface_item_common"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>sunspec</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>can</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>staticmodbus</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>InterfaceItem_Bitfield</label>
+        <link refid="struct_interface_item___bitfield"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>common</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>staticmodbusMembers</edgelabel>
+          <edgelabel>sunspecMembers</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>InterfaceItem_BitfieldMember</label>
+        <link refid="struct_interface_item___bitfield_member"/>
+      </node>
+      <node id="4">
+        <label>InterfaceSpecifics</label>
+        <link refid="struct_interface_specifics"/>
+      </node>
+      <node id="5">
+        <label>InterfaceSpecificsStaticModbus</label>
+        <link refid="struct_interface_specifics_static_modbus"/>
+      </node>
+      <node id="3">
+        <label>InterfaceSpecificsSunSpec</label>
+        <link refid="struct_interface_specifics_sun_spec"/>
+      </node>
+    </collaborationgraph>
+    <location file="interface/interface.h" line="111" column="1" bodyfile="interface/interface.h" bodystart="111" bodyend="118"/>
+    <listofallmembers>
+      <member refid="struct_interface_item___bitfield_1aa9447ffb0df96c9921c490fd5558a392" prot="public" virt="non-virtual"><scope>InterfaceItem_Bitfield</scope><name>common</name></member>
+      <member refid="struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b" prot="public" virt="non-virtual"><scope>InterfaceItem_Bitfield</scope><name>staticmodbusMembers</name></member>
+      <member refid="struct_interface_item___bitfield_1a7163300b7ddf96affbb40cf0eed35093" prot="public" virt="non-virtual"><scope>InterfaceItem_Bitfield</scope><name>staticmodbusMembersCount</name></member>
+      <member refid="struct_interface_item___bitfield_1a02709814798eb783b5ac36c6b4521a0b" prot="public" virt="non-virtual"><scope>InterfaceItem_Bitfield</scope><name>sunspecMembers</name></member>
+      <member refid="struct_interface_item___bitfield_1a99e2439251dfe801a7ca8659f20da309" prot="public" virt="non-virtual"><scope>InterfaceItem_Bitfield</scope><name>sunspecMembersCount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

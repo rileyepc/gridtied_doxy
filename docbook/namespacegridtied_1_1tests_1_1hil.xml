@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacegridtied_1_1tests_1_1hil" xml:lang="en-US">
+<title>gridtied.tests.hil Namespace Reference</title>
+<indexterm><primary>gridtied.tests.hil</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1conftest">conftest</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1pytest__plugin">pytest_plugin</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1test__auth">test_auth</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1test__datalogger">test_datalogger</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1test__example">test_example</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1test__following">test_following</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1test__interface">test_interface</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1test__tlcvariant">test_tlcvariant</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacegridtied_1_1tests_1_1hil_1_1test__watt__power__factor">test_watt_power_factor</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,120 @@
+\hypertarget{struct_e_p_w_m___state__s}{}\doxysection{EPWM\+\_\+\+State\+\_\+s Struct Reference}
+\label{struct_e_p_w_m___state__s}\index{EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{struct_e_p_w_m___state__s_a4024ad128837faa2c0c1d1f18a811d87}{t\+Last\+Solver\+Hit}}
+\item 
+double \mbox{\hyperlink{struct_e_p_w_m___state__s_a5346dae0759f032b1778b5b235a35e68}{t\+Full\+Period}}
+\item 
+double \mbox{\hyperlink{struct_e_p_w_m___state__s_a948a3a15ba9b7676df4d97023669a86e}{t\+Half\+Period}}
+\item 
+\mbox{\hyperlink{epwm__emu_8c_a5580106735fd6104e8f44676a78ca0b9}{EPWM\+\_\+\+Action\+Event\+\_\+t}} \mbox{\hyperlink{struct_e_p_w_m___state__s_ac6fe03fd8ca065933beaedea8cda1ecd}{event\+Queue}} \mbox{[}\mbox{\hyperlink{epwm__emu_8c_ab660d8e73fe04be099cd2dbda7c5f682}{EPWM\+\_\+\+EVENT\+\_\+\+QUEUE\+\_\+\+SIZE}}\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_e_p_w_m___state__s_a2d97e411b92b2557216f42cc87d21dbc}{queue\+Depth}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_e_p_w_m___state__s_ac082c603eb33a65374b72b0f1e508f12}{queue\+Depth\+Max}}
+\item 
+\mbox{\hyperlink{epwm__emu_8c_a44ea5baa4c092c9c4ebba71d81f30412}{EPWM\+\_\+\+Saturation\+State\+\_\+t}} \mbox{\hyperlink{struct_e_p_w_m___state__s_acda2b84020dd84d56a798c38835eb5ce}{sat\+State}} \mbox{[}\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}\mbox{]}
+\item 
+double \mbox{\hyperlink{struct_e_p_w_m___state__s_a3568b181170b58c898058b5728435680}{t\+On}} \mbox{[}\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}\mbox{]}
+\item 
+double \mbox{\hyperlink{struct_e_p_w_m___state__s_a088364075c523b2dcc76a66a5921d210}{t\+Off}} \mbox{[}\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}\mbox{]}
+\item 
+double \mbox{\hyperlink{struct_e_p_w_m___state__s_a6e7735be20346d04744e304de58f2148}{t\+Csw}} \mbox{[}\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}\mbox{]}
+\item 
+bool \mbox{\hyperlink{struct_e_p_w_m___state__s_a9f04e7e54a28c5f1f0560091cac41fd8}{is\+Half\+Period\+Event}}
+\item 
+double \mbox{\hyperlink{struct_e_p_w_m___state__s_a221d4a1d5ab8c41efb061aacdb6f3c07}{t\+Half\+Period\+Start}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_e_p_w_m___state__s_a08e58eef3ce96b2339f544d3d966a2ef}{n\+Half\+Periods}}
+\item 
+bool \mbox{\hyperlink{struct_e_p_w_m___state__s_a092e7a0e252417951a1b258f9f62a529}{is\+Disabled}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_ac6fe03fd8ca065933beaedea8cda1ecd}\label{struct_e_p_w_m___state__s_ac6fe03fd8ca065933beaedea8cda1ecd}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!eventQueue@{eventQueue}}
+\index{eventQueue@{eventQueue}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{eventQueue}{eventQueue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{epwm__emu_8c_a5580106735fd6104e8f44676a78ca0b9}{EPWM\+\_\+\+Action\+Event\+\_\+t}} EPWM\+\_\+\+State\+\_\+s\+::event\+Queue\mbox{[}\mbox{\hyperlink{epwm__emu_8c_ab660d8e73fe04be099cd2dbda7c5f682}{EPWM\+\_\+\+EVENT\+\_\+\+QUEUE\+\_\+\+SIZE}}\mbox{]}}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a092e7a0e252417951a1b258f9f62a529}\label{struct_e_p_w_m___state__s_a092e7a0e252417951a1b258f9f62a529}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{isDisabled}{isDisabled}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+State\+\_\+s\+::is\+Disabled}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a9f04e7e54a28c5f1f0560091cac41fd8}\label{struct_e_p_w_m___state__s_a9f04e7e54a28c5f1f0560091cac41fd8}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!isHalfPeriodEvent@{isHalfPeriodEvent}}
+\index{isHalfPeriodEvent@{isHalfPeriodEvent}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{isHalfPeriodEvent}{isHalfPeriodEvent}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+State\+\_\+s\+::is\+Half\+Period\+Event}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a08e58eef3ce96b2339f544d3d966a2ef}\label{struct_e_p_w_m___state__s_a08e58eef3ce96b2339f544d3d966a2ef}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!nHalfPeriods@{nHalfPeriods}}
+\index{nHalfPeriods@{nHalfPeriods}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{nHalfPeriods}{nHalfPeriods}}
+{\footnotesize\ttfamily uint32\+\_\+t EPWM\+\_\+\+State\+\_\+s\+::n\+Half\+Periods}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a2d97e411b92b2557216f42cc87d21dbc}\label{struct_e_p_w_m___state__s_a2d97e411b92b2557216f42cc87d21dbc}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!queueDepth@{queueDepth}}
+\index{queueDepth@{queueDepth}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{queueDepth}{queueDepth}}
+{\footnotesize\ttfamily uint16\+\_\+t EPWM\+\_\+\+State\+\_\+s\+::queue\+Depth}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_ac082c603eb33a65374b72b0f1e508f12}\label{struct_e_p_w_m___state__s_ac082c603eb33a65374b72b0f1e508f12}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!queueDepthMax@{queueDepthMax}}
+\index{queueDepthMax@{queueDepthMax}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{queueDepthMax}{queueDepthMax}}
+{\footnotesize\ttfamily uint16\+\_\+t EPWM\+\_\+\+State\+\_\+s\+::queue\+Depth\+Max}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_acda2b84020dd84d56a798c38835eb5ce}\label{struct_e_p_w_m___state__s_acda2b84020dd84d56a798c38835eb5ce}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!satState@{satState}}
+\index{satState@{satState}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{satState}{satState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{epwm__emu_8c_a44ea5baa4c092c9c4ebba71d81f30412}{EPWM\+\_\+\+Saturation\+State\+\_\+t}} EPWM\+\_\+\+State\+\_\+s\+::sat\+State\mbox{[}\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}\mbox{]}}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a6e7735be20346d04744e304de58f2148}\label{struct_e_p_w_m___state__s_a6e7735be20346d04744e304de58f2148}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!tCsw@{tCsw}}
+\index{tCsw@{tCsw}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{tCsw}{tCsw}}
+{\footnotesize\ttfamily double EPWM\+\_\+\+State\+\_\+s\+::t\+Csw\mbox{[}\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}\mbox{]}}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a5346dae0759f032b1778b5b235a35e68}\label{struct_e_p_w_m___state__s_a5346dae0759f032b1778b5b235a35e68}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!tFullPeriod@{tFullPeriod}}
+\index{tFullPeriod@{tFullPeriod}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{tFullPeriod}{tFullPeriod}}
+{\footnotesize\ttfamily double EPWM\+\_\+\+State\+\_\+s\+::t\+Full\+Period}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a948a3a15ba9b7676df4d97023669a86e}\label{struct_e_p_w_m___state__s_a948a3a15ba9b7676df4d97023669a86e}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!tHalfPeriod@{tHalfPeriod}}
+\index{tHalfPeriod@{tHalfPeriod}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{tHalfPeriod}{tHalfPeriod}}
+{\footnotesize\ttfamily double EPWM\+\_\+\+State\+\_\+s\+::t\+Half\+Period}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a221d4a1d5ab8c41efb061aacdb6f3c07}\label{struct_e_p_w_m___state__s_a221d4a1d5ab8c41efb061aacdb6f3c07}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!tHalfPeriodStart@{tHalfPeriodStart}}
+\index{tHalfPeriodStart@{tHalfPeriodStart}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{tHalfPeriodStart}{tHalfPeriodStart}}
+{\footnotesize\ttfamily double EPWM\+\_\+\+State\+\_\+s\+::t\+Half\+Period\+Start}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a4024ad128837faa2c0c1d1f18a811d87}\label{struct_e_p_w_m___state__s_a4024ad128837faa2c0c1d1f18a811d87}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!tLastSolverHit@{tLastSolverHit}}
+\index{tLastSolverHit@{tLastSolverHit}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{tLastSolverHit}{tLastSolverHit}}
+{\footnotesize\ttfamily double EPWM\+\_\+\+State\+\_\+s\+::t\+Last\+Solver\+Hit}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a088364075c523b2dcc76a66a5921d210}\label{struct_e_p_w_m___state__s_a088364075c523b2dcc76a66a5921d210}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!tOff@{tOff}}
+\index{tOff@{tOff}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{tOff}{tOff}}
+{\footnotesize\ttfamily double EPWM\+\_\+\+State\+\_\+s\+::t\+Off\mbox{[}\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}\mbox{]}}
+
+\mbox{\Hypertarget{struct_e_p_w_m___state__s_a3568b181170b58c898058b5728435680}\label{struct_e_p_w_m___state__s_a3568b181170b58c898058b5728435680}} 
+\index{EPWM\_State\_s@{EPWM\_State\_s}!tOn@{tOn}}
+\index{tOn@{tOn}!EPWM\_State\_s@{EPWM\_State\_s}}
+\doxysubsubsection{\texorpdfstring{tOn}{tOn}}
+{\footnotesize\ttfamily double EPWM\+\_\+\+State\+\_\+s\+::t\+On\mbox{[}\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}\mbox{]}}
+

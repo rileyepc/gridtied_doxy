@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_rejection_reasons" kind="struct" language="C++" prot="public">
+    <compoundname>RejectionReasons</compoundname>
+    <includes refid="interface_8h" local="no">interface.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_rejection_reasons_1a911393d8abc75cf1c1f8405417ffe29b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RejectionReasons::outOfRange</definition>
+        <argsstring></argsstring>
+        <name>outOfRange</name>
+        <qualifiedname>RejectionReasons::outOfRange</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="20" column="10" bodyfile="interface/interface.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rejection_reasons_1ae907285d9dc38682c7c64783f0df434c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RejectionReasons::meta</definition>
+        <argsstring></argsstring>
+        <name>meta</name>
+        <qualifiedname>RejectionReasons::meta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="21" column="10" bodyfile="interface/interface.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rejection_reasons_1aa448f4a38ecb557ece1ff629c0bf4adc" prot="public" static="no" mutable="no">
+        <type>Meta_Enum</type>
+        <definition>Meta_Enum RejectionReasons::metaIndex</definition>
+        <argsstring></argsstring>
+        <name>metaIndex</name>
+        <qualifiedname>RejectionReasons::metaIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="22" column="15" bodyfile="interface/interface.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rejection_reasons_1af2dace2b8e813fcc0a84a34856128d91" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RejectionReasons::auth</definition>
+        <argsstring></argsstring>
+        <name>auth</name>
+        <qualifiedname>RejectionReasons::auth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="23" column="10" bodyfile="interface/interface.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rejection_reasons_1ac24f1b14617c40866ec7ef3590d4b6cd" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RejectionReasons::setter</definition>
+        <argsstring></argsstring>
+        <name>setter</name>
+        <qualifiedname>RejectionReasons::setter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="24" column="10" bodyfile="interface/interface.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rejection_reasons_1a52ad669d9d01fece70b55cbee88458f5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RejectionReasons::inactiveInterface</definition>
+        <argsstring></argsstring>
+        <name>inactiveInterface</name>
+        <qualifiedname>RejectionReasons::inactiveInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="25" column="10" bodyfile="interface/interface.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/interface.h" line="19" column="1" bodyfile="interface/interface.h" bodystart="19" bodyend="26"/>
+    <listofallmembers>
+      <member refid="struct_rejection_reasons_1af2dace2b8e813fcc0a84a34856128d91" prot="public" virt="non-virtual"><scope>RejectionReasons</scope><name>auth</name></member>
+      <member refid="struct_rejection_reasons_1a52ad669d9d01fece70b55cbee88458f5" prot="public" virt="non-virtual"><scope>RejectionReasons</scope><name>inactiveInterface</name></member>
+      <member refid="struct_rejection_reasons_1ae907285d9dc38682c7c64783f0df434c" prot="public" virt="non-virtual"><scope>RejectionReasons</scope><name>meta</name></member>
+      <member refid="struct_rejection_reasons_1aa448f4a38ecb557ece1ff629c0bf4adc" prot="public" virt="non-virtual"><scope>RejectionReasons</scope><name>metaIndex</name></member>
+      <member refid="struct_rejection_reasons_1a911393d8abc75cf1c1f8405417ffe29b" prot="public" virt="non-virtual"><scope>RejectionReasons</scope><name>outOfRange</name></member>
+      <member refid="struct_rejection_reasons_1ac24f1b14617c40866ec7ef3590d4b6cd" prot="public" virt="non-virtual"><scope>RejectionReasons</scope><name>setter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

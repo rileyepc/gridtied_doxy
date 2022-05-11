@@ -1,0 +1,266 @@
+\hypertarget{interface_8h}{}\doxysection{interface/interface.h File Reference}
+\label{interface_8h}\index{interface/interface.h@{interface/interface.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}can\+Interface\+Enums.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sunspec.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}meta.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IEEE1547.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}authorization.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}
+\item 
+struct \mbox{\hyperlink{struct_interface_specifics}{Interface\+Specifics}}
+\item 
+struct \mbox{\hyperlink{struct_interface_specifics_sun_spec}{Interface\+Specifics\+Sun\+Spec}}
+\item 
+struct \mbox{\hyperlink{struct_interface_specifics_static_modbus}{Interface\+Specifics\+Static\+Modbus}}
+\item 
+struct \mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}}
+\item 
+struct \mbox{\hyperlink{struct_interface_item___bitfield_member}{Interface\+Item\+\_\+\+Bitfield\+Member}}
+\item 
+struct \mbox{\hyperlink{struct_interface_item___bitfield}{Interface\+Item\+\_\+\+Bitfield}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{interface_8h_aa983482eaaf4b98c2e967c60c13ebb42}{REJECTIONREASONS\+\_\+\+DEFAULTS}}(meta\+Index\+\_\+, ...)
+\item 
+\#define \mbox{\hyperlink{interface_8h_a61fa532cd4060e9b2d2d701c6c4d1b30}{REJECTIONREASONS\+\_\+\+ANY}}(reasons)
+\item 
+\#define \mbox{\hyperlink{interface_8h_a365fa67bab8eb8daf2e6351ef4d52d6e}{REJECTIONREASONS\+\_\+\+NONE}}(reasons)~(!\mbox{\hyperlink{interface_8h_a61fa532cd4060e9b2d2d701c6c4d1b30}{REJECTIONREASONS\+\_\+\+ANY}}(reasons))
+\item 
+\#define \mbox{\hyperlink{interface_8h_ac0aecb85217a8c58bcbbe0add3e9fa06}{REJECTIONREASONS\+\_\+\+ONLY}}(reasons,  name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}}
+\item 
+typedef struct \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} \mbox{\hyperlink{interface_8h_aeb8e6c70056e982823417048cc8b0b10}{Rejection\+Reasons}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{interface_8h_a7e4c5ca9fb6c453361a231c31799f2b8}{Item\+Getter}}) (void const $\ast$const item, Meta\+\_\+\+Enum meta)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{interface_8h_abd123dcb703c202a5cb3e6d04fd03328}{Item\+Getter\+Static\+Modbus}}) (void const $\ast$const item, Meta\+\_\+\+Enum meta, int16\+\_\+t $\ast$getter\+Variable)
+\item 
+typedef bool($\ast$ \mbox{\hyperlink{interface_8h_a4123a77c6016d61b0b1026ec0541d735}{Item\+Setter}}) (void const $\ast$const item, bool check\+\_\+limits, Meta\+\_\+\+Enum meta)
+\item 
+typedef bool($\ast$ \mbox{\hyperlink{interface_8h_ae88346ef2671fe02f5968bb747aeb9c3}{Item\+Setter\+Static\+Modbus}}) (void const $\ast$const item, bool check\+\_\+limits, Meta\+\_\+\+Enum meta, int16\+\_\+t $\ast$setter\+Variable)
+\item 
+typedef struct \mbox{\hyperlink{struct_interface_specifics}{Interface\+Specifics}} \mbox{\hyperlink{interface_8h_ace168ec393881d3c5f5ecf94e417e33b}{Interface\+Specifics}}
+\item 
+typedef struct \mbox{\hyperlink{struct_interface_specifics_sun_spec}{Interface\+Specifics\+Sun\+Spec}} \mbox{\hyperlink{interface_8h_a541093f34997b86155bc05413d9831c2}{Interface\+Specifics\+Sun\+Spec}}
+\item 
+typedef struct \mbox{\hyperlink{struct_interface_specifics_static_modbus}{Interface\+Specifics\+Static\+Modbus}} \mbox{\hyperlink{interface_8h_aec201b9ad26c19f3cc25668fe2ead5c6}{Interface\+Specifics\+Static\+Modbus}}
+\item 
+typedef struct \mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} \mbox{\hyperlink{interface_8h_acb1d82380be5c0d254dfb501eb3d5e97}{Interface\+Item\+Common}}
+\item 
+typedef struct \mbox{\hyperlink{struct_interface_item___bitfield_member}{Interface\+Item\+\_\+\+Bitfield\+Member}} \mbox{\hyperlink{interface_8h_a3dadbb90a5406c1176a12b289bc1d49d}{Interface\+Item\+\_\+\+Bitfield\+Member}}
+\item 
+typedef struct \mbox{\hyperlink{struct_interface_item___bitfield}{Interface\+Item\+\_\+\+Bitfield}} \mbox{\hyperlink{interface_8h_ad4788ffbec9d53108170995250840db7}{Interface\+Item\+\_\+\+Bitfield}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sunssf \mbox{\hyperlink{interface_8h_a1456a3e6d18b4b338ca7d542de34ed6c}{item\+Net\+Scale\+Factor}} (\mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} const $\ast$const item)
+\item 
+void \mbox{\hyperlink{interface_8h_a6aadaf337d1caee0a760aa9ae127360d}{items\+\_\+get\+Meta}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{interface_8h_ad509994a37bdba87b40e6407e5523b20}{items\+\_\+set\+Meta}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{interface_8h_a00ca1b7737ba8d9bf03aa228a2186171}{table\+\_\+items\+\_\+get\+Meta}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{interface_8h_a176414fba733ccb522284cdd7fbe31ce}{table\+\_\+items\+\_\+set\+Meta}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+CAN\+\_\+\+Enum\+\_\+\+Access\+Level \mbox{\hyperlink{interface_8h_a4b4d547f1291c2b0839837d1263cecd8}{meta\+Minimum\+Access\+Level}} \mbox{[}Meta\+\_\+\+Count\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{interface_8h_a61fa532cd4060e9b2d2d701c6c4d1b30}\label{interface_8h_a61fa532cd4060e9b2d2d701c6c4d1b30}} 
+\index{interface.h@{interface.h}!REJECTIONREASONS\_ANY@{REJECTIONREASONS\_ANY}}
+\index{REJECTIONREASONS\_ANY@{REJECTIONREASONS\_ANY}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{REJECTIONREASONS\_ANY}{REJECTIONREASONS\_ANY}}
+{\footnotesize\ttfamily \#define REJECTIONREASONS\+\_\+\+ANY(\begin{DoxyParamCaption}\item[{}]{reasons }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{( \(\backslash\)}
+\DoxyCodeLine{    (reasons).outOfRange \(\backslash\)}
+\DoxyCodeLine{    || (reasons).meta \(\backslash\)}
+\DoxyCodeLine{    || (reasons).auth \(\backslash\)}
+\DoxyCodeLine{    || (reasons).setter \(\backslash\)}
+\DoxyCodeLine{    || (reasons).inactiveInterface \(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interface_8h_aa983482eaaf4b98c2e967c60c13ebb42}\label{interface_8h_aa983482eaaf4b98c2e967c60c13ebb42}} 
+\index{interface.h@{interface.h}!REJECTIONREASONS\_DEFAULTS@{REJECTIONREASONS\_DEFAULTS}}
+\index{REJECTIONREASONS\_DEFAULTS@{REJECTIONREASONS\_DEFAULTS}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{REJECTIONREASONS\_DEFAULTS}{REJECTIONREASONS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define REJECTIONREASONS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{meta\+Index\+\_\+,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{    .outOfRange = \textcolor{keyword}{false}, \(\backslash\)}
+\DoxyCodeLine{    .meta = \textcolor{keyword}{false}, \(\backslash\)}
+\DoxyCodeLine{    .metaIndex = metaIndex\_, \(\backslash\)}
+\DoxyCodeLine{    .auth = \textcolor{keyword}{false}, \(\backslash\)}
+\DoxyCodeLine{    .setter = \textcolor{keyword}{false}, \(\backslash\)}
+\DoxyCodeLine{    .inactiveInterface = \textcolor{keyword}{false}, \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interface_8h_a365fa67bab8eb8daf2e6351ef4d52d6e}\label{interface_8h_a365fa67bab8eb8daf2e6351ef4d52d6e}} 
+\index{interface.h@{interface.h}!REJECTIONREASONS\_NONE@{REJECTIONREASONS\_NONE}}
+\index{REJECTIONREASONS\_NONE@{REJECTIONREASONS\_NONE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{REJECTIONREASONS\_NONE}{REJECTIONREASONS\_NONE}}
+{\footnotesize\ttfamily \#define REJECTIONREASONS\+\_\+\+NONE(\begin{DoxyParamCaption}\item[{}]{reasons }\end{DoxyParamCaption})~(!\mbox{\hyperlink{interface_8h_a61fa532cd4060e9b2d2d701c6c4d1b30}{REJECTIONREASONS\+\_\+\+ANY}}(reasons))}
+
+\mbox{\Hypertarget{interface_8h_ac0aecb85217a8c58bcbbe0add3e9fa06}\label{interface_8h_ac0aecb85217a8c58bcbbe0add3e9fa06}} 
+\index{interface.h@{interface.h}!REJECTIONREASONS\_ONLY@{REJECTIONREASONS\_ONLY}}
+\index{REJECTIONREASONS\_ONLY@{REJECTIONREASONS\_ONLY}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{REJECTIONREASONS\_ONLY}{REJECTIONREASONS\_ONLY}}
+{\footnotesize\ttfamily \#define REJECTIONREASONS\+\_\+\+ONLY(\begin{DoxyParamCaption}\item[{}]{reasons,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{( \(\backslash\)}
+\DoxyCodeLine{    ((reasons).name) \(\backslash\)}
+\DoxyCodeLine{    \&\& ( \(\backslash\)}
+\DoxyCodeLine{        ( \(\backslash\)}
+\DoxyCodeLine{            ((reasons).outOfRange ? 1 : 0) \(\backslash\)}
+\DoxyCodeLine{            + ((reasons).meta ? 1 : 0) \(\backslash\)}
+\DoxyCodeLine{            + ((reasons).auth ? 1 : 0) \(\backslash\)}
+\DoxyCodeLine{            + ((reasons).setter ? 1 : 0) \(\backslash\)}
+\DoxyCodeLine{            + ((reasons).inactiveInterface ? 1 : 0) \(\backslash\)}
+\DoxyCodeLine{        ) \(\backslash\)}
+\DoxyCodeLine{        == 1 \(\backslash\)}
+\DoxyCodeLine{    ) \(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{interface_8h_ad4788ffbec9d53108170995250840db7}\label{interface_8h_ad4788ffbec9d53108170995250840db7}} 
+\index{interface.h@{interface.h}!InterfaceItem\_Bitfield@{InterfaceItem\_Bitfield}}
+\index{InterfaceItem\_Bitfield@{InterfaceItem\_Bitfield}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{InterfaceItem\_Bitfield}{InterfaceItem\_Bitfield}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_interface_item___bitfield}{Interface\+Item\+\_\+\+Bitfield}} \mbox{\hyperlink{struct_interface_item___bitfield}{Interface\+Item\+\_\+\+Bitfield}}}
+
+\mbox{\Hypertarget{interface_8h_a3dadbb90a5406c1176a12b289bc1d49d}\label{interface_8h_a3dadbb90a5406c1176a12b289bc1d49d}} 
+\index{interface.h@{interface.h}!InterfaceItem\_BitfieldMember@{InterfaceItem\_BitfieldMember}}
+\index{InterfaceItem\_BitfieldMember@{InterfaceItem\_BitfieldMember}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{InterfaceItem\_BitfieldMember}{InterfaceItem\_BitfieldMember}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_interface_item___bitfield_member}{Interface\+Item\+\_\+\+Bitfield\+Member}} \mbox{\hyperlink{struct_interface_item___bitfield_member}{Interface\+Item\+\_\+\+Bitfield\+Member}}}
+
+\mbox{\Hypertarget{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}\label{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}} 
+\index{interface.h@{interface.h}!InterfaceItem\_void@{InterfaceItem\_void}}
+\index{InterfaceItem\_void@{InterfaceItem\_void}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{InterfaceItem\_void}{InterfaceItem\_void}}
+{\footnotesize\ttfamily typedef void \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}}}
+
+\mbox{\Hypertarget{interface_8h_acb1d82380be5c0d254dfb501eb3d5e97}\label{interface_8h_acb1d82380be5c0d254dfb501eb3d5e97}} 
+\index{interface.h@{interface.h}!InterfaceItemCommon@{InterfaceItemCommon}}
+\index{InterfaceItemCommon@{InterfaceItemCommon}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{InterfaceItemCommon}{InterfaceItemCommon}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} \mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}}}
+
+\mbox{\Hypertarget{interface_8h_ace168ec393881d3c5f5ecf94e417e33b}\label{interface_8h_ace168ec393881d3c5f5ecf94e417e33b}} 
+\index{interface.h@{interface.h}!InterfaceSpecifics@{InterfaceSpecifics}}
+\index{InterfaceSpecifics@{InterfaceSpecifics}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{InterfaceSpecifics}{InterfaceSpecifics}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_interface_specifics}{Interface\+Specifics}} \mbox{\hyperlink{struct_interface_specifics}{Interface\+Specifics}}}
+
+\mbox{\Hypertarget{interface_8h_aec201b9ad26c19f3cc25668fe2ead5c6}\label{interface_8h_aec201b9ad26c19f3cc25668fe2ead5c6}} 
+\index{interface.h@{interface.h}!InterfaceSpecificsStaticModbus@{InterfaceSpecificsStaticModbus}}
+\index{InterfaceSpecificsStaticModbus@{InterfaceSpecificsStaticModbus}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{InterfaceSpecificsStaticModbus}{InterfaceSpecificsStaticModbus}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_interface_specifics_static_modbus}{Interface\+Specifics\+Static\+Modbus}} \mbox{\hyperlink{struct_interface_specifics_static_modbus}{Interface\+Specifics\+Static\+Modbus}}}
+
+\mbox{\Hypertarget{interface_8h_a541093f34997b86155bc05413d9831c2}\label{interface_8h_a541093f34997b86155bc05413d9831c2}} 
+\index{interface.h@{interface.h}!InterfaceSpecificsSunSpec@{InterfaceSpecificsSunSpec}}
+\index{InterfaceSpecificsSunSpec@{InterfaceSpecificsSunSpec}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{InterfaceSpecificsSunSpec}{InterfaceSpecificsSunSpec}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_interface_specifics_sun_spec}{Interface\+Specifics\+Sun\+Spec}} \mbox{\hyperlink{struct_interface_specifics_sun_spec}{Interface\+Specifics\+Sun\+Spec}}}
+
+\mbox{\Hypertarget{interface_8h_a7e4c5ca9fb6c453361a231c31799f2b8}\label{interface_8h_a7e4c5ca9fb6c453361a231c31799f2b8}} 
+\index{interface.h@{interface.h}!ItemGetter@{ItemGetter}}
+\index{ItemGetter@{ItemGetter}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ItemGetter}{ItemGetter}}
+{\footnotesize\ttfamily typedef void($\ast$ Item\+Getter) (void const $\ast$const item, Meta\+\_\+\+Enum meta)}
+
+\mbox{\Hypertarget{interface_8h_abd123dcb703c202a5cb3e6d04fd03328}\label{interface_8h_abd123dcb703c202a5cb3e6d04fd03328}} 
+\index{interface.h@{interface.h}!ItemGetterStaticModbus@{ItemGetterStaticModbus}}
+\index{ItemGetterStaticModbus@{ItemGetterStaticModbus}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ItemGetterStaticModbus}{ItemGetterStaticModbus}}
+{\footnotesize\ttfamily typedef void($\ast$ Item\+Getter\+Static\+Modbus) (void const $\ast$const item, Meta\+\_\+\+Enum meta, int16\+\_\+t $\ast$getter\+Variable)}
+
+\mbox{\Hypertarget{interface_8h_a4123a77c6016d61b0b1026ec0541d735}\label{interface_8h_a4123a77c6016d61b0b1026ec0541d735}} 
+\index{interface.h@{interface.h}!ItemSetter@{ItemSetter}}
+\index{ItemSetter@{ItemSetter}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ItemSetter}{ItemSetter}}
+{\footnotesize\ttfamily typedef bool($\ast$ Item\+Setter) (void const $\ast$const item, bool check\+\_\+limits, Meta\+\_\+\+Enum meta)}
+
+\mbox{\Hypertarget{interface_8h_ae88346ef2671fe02f5968bb747aeb9c3}\label{interface_8h_ae88346ef2671fe02f5968bb747aeb9c3}} 
+\index{interface.h@{interface.h}!ItemSetterStaticModbus@{ItemSetterStaticModbus}}
+\index{ItemSetterStaticModbus@{ItemSetterStaticModbus}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ItemSetterStaticModbus}{ItemSetterStaticModbus}}
+{\footnotesize\ttfamily typedef bool($\ast$ Item\+Setter\+Static\+Modbus) (void const $\ast$const item, bool check\+\_\+limits, Meta\+\_\+\+Enum meta, int16\+\_\+t $\ast$setter\+Variable)}
+
+\mbox{\Hypertarget{interface_8h_aeb8e6c70056e982823417048cc8b0b10}\label{interface_8h_aeb8e6c70056e982823417048cc8b0b10}} 
+\index{interface.h@{interface.h}!RejectionReasons@{RejectionReasons}}
+\index{RejectionReasons@{RejectionReasons}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{RejectionReasons}{RejectionReasons}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interface_8h_a1456a3e6d18b4b338ca7d542de34ed6c}\label{interface_8h_a1456a3e6d18b4b338ca7d542de34ed6c}} 
+\index{interface.h@{interface.h}!itemNetScaleFactor@{itemNetScaleFactor}}
+\index{itemNetScaleFactor@{itemNetScaleFactor}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{itemNetScaleFactor()}{itemNetScaleFactor()}}
+{\footnotesize\ttfamily sunssf item\+Net\+Scale\+Factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} const $\ast$const}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_8h_a6aadaf337d1caee0a760aa9ae127360d}\label{interface_8h_a6aadaf337d1caee0a760aa9ae127360d}} 
+\index{interface.h@{interface.h}!items\_getMeta@{items\_getMeta}}
+\index{items\_getMeta@{items\_getMeta}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{items\_getMeta()}{items\_getMeta()}}
+{\footnotesize\ttfamily void items\+\_\+get\+Meta (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_8h_ad509994a37bdba87b40e6407e5523b20}\label{interface_8h_ad509994a37bdba87b40e6407e5523b20}} 
+\index{interface.h@{interface.h}!items\_setMeta@{items\_setMeta}}
+\index{items\_setMeta@{items\_setMeta}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{items\_setMeta()}{items\_setMeta()}}
+{\footnotesize\ttfamily void items\+\_\+set\+Meta (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_8h_a00ca1b7737ba8d9bf03aa228a2186171}\label{interface_8h_a00ca1b7737ba8d9bf03aa228a2186171}} 
+\index{interface.h@{interface.h}!table\_items\_getMeta@{table\_items\_getMeta}}
+\index{table\_items\_getMeta@{table\_items\_getMeta}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{table\_items\_getMeta()}{table\_items\_getMeta()}}
+{\footnotesize\ttfamily void table\+\_\+items\+\_\+get\+Meta (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_8h_a176414fba733ccb522284cdd7fbe31ce}\label{interface_8h_a176414fba733ccb522284cdd7fbe31ce}} 
+\index{interface.h@{interface.h}!table\_items\_setMeta@{table\_items\_setMeta}}
+\index{table\_items\_setMeta@{table\_items\_setMeta}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{table\_items\_setMeta()}{table\_items\_setMeta()}}
+{\footnotesize\ttfamily void table\+\_\+items\+\_\+set\+Meta (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{interface_8h_a4b4d547f1291c2b0839837d1263cecd8}\label{interface_8h_a4b4d547f1291c2b0839837d1263cecd8}} 
+\index{interface.h@{interface.h}!metaMinimumAccessLevel@{metaMinimumAccessLevel}}
+\index{metaMinimumAccessLevel@{metaMinimumAccessLevel}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{metaMinimumAccessLevel}{metaMinimumAccessLevel}}
+{\footnotesize\ttfamily CAN\+\_\+\+Enum\+\_\+\+Access\+Level meta\+Minimum\+Access\+Level\mbox{[}Meta\+\_\+\+Count\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

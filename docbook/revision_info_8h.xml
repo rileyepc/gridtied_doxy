@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_revision_info_8h" xml:lang="en-US">
+<title>interface/revisionInfo.h File Reference</title>
+<indexterm><primary>interface/revisionInfo.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdint.h&gt;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_build_info">BuildInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_build_info">BuildInfo</link> <link linkend="_revision_info_8h_1ac0d4a508a23307d71108dfdf63d64200">BuildInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_build_info">BuildInfo</link> <link linkend="_revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655">buildInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_revision_info_8h_1ac0d4a508a23307d71108dfdf63d64200"/><section>
+    <title>BuildInfo</title>
+<indexterm><primary>BuildInfo</primary><secondary>revisionInfo.h</secondary></indexterm>
+<indexterm><primary>revisionInfo.h</primary><secondary>BuildInfo</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_build_info">BuildInfo</link> <link linkend="_struct_build_info">BuildInfo</link></computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655"/><section>
+    <title>buildInfo</title>
+<indexterm><primary>buildInfo</primary><secondary>revisionInfo.h</secondary></indexterm>
+<indexterm><primary>revisionInfo.h</primary><secondary>buildInfo</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_build_info">BuildInfo</link> buildInfo<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,443 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_epc_control_8c" xml:lang="en-US">
+<title>sil/libEpcControl.c File Reference</title>
+<indexterm><primary>sil/libEpcControl.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+#include &quot;libEpcControl.h&quot;
+#include &quot;libEpcControlInterface.h&quot;
+#include &quot;application.h&quot;
+#include &quot;channelMappingManagerI.h&quot;
+#include &quot;topLevelControlI.h&quot;
+#include &quot;topLevelControl.h&quot;
+#include &quot;powerConversionControl.h&quot;
+#include &quot;phaseConfigDetectI.h&quot;
+#include &quot;phaseControl.h&quot;
+#include &quot;filterObserverI.h&quot;
+#include &quot;phasePll.h&quot;
+#include &quot;auxiliaryPllI.h&quot;
+#include &quot;islandControlI.h&quot;
+#include &quot;protectedBusControlI.h&quot;
+#include &quot;phaseCurrentControlI.h&quot;
+#include &quot;adaptiveHarmonicControlI.h&quot;
+#include &quot;referenceHandler.h&quot;
+#include &quot;afe.h&quot;
+#include &quot;phaseSharedData.h&quot;
+#include &quot;modulator.h&quot;
+#include &quot;system.h&quot;
+#include &quot;scheduler_emu.h&quot;
+#include &quot;gridMonitor.h&quot;
+#include &quot;protectionsI.h&quot;
+#include &quot;deviceThermalModel.h&quot;
+#include &quot;measurementd.h&quot;
+#include &quot;epwm_emu.h&quot;
+#include &quot;hardware.h&quot;
+#include &quot;hardwareScales.h&quot;
+#include &quot;supervisor.h&quot;
+#include &quot;protections.h&quot;
+#include &quot;externalInhibit.h&quot;
+#include &quot;interfaceAccessors.h&quot;
+#include &quot;phaseConfigDetect.h&quot;
+#include &quot;syntheticInertia.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_i_l___task_handler__s">SIL_TaskHandler_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_i_l___task_group__s">SIL_TaskGroup_s</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1ae782abdb390d65528ebd622389c5a5d4">SIL_EPSILON</link>   ( 0.1e-9L )</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1aec2b58cf1ed4b2c1886e3da72fa549fe">SIL_SNAPSHOT_FILENAME</link>   &quot;snapshot_data&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1ada32dc3ec0f400058499e4580e8eea2b">SIL_SNAPSHOT_FILE_EXTENSION</link>   &quot;.dat&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1a1f3c42a620f7679b0c31c42950b36100">SIL_TASK_HANDLER_DEFAULTS</link>(mCbk)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1ad19e0c4362119d2f90556e7b53730929">SIL_TASK_HANDLERS_DEFAULTS</link>(mGrp)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1aff35d265592c728e66c7510c82902233">SIL_TASK_GROUP_DEFAULTS</link>(mGrp,  mPer)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1a9af98f89d7f7d97e6b61ff6d29435844">SIL_TASK_GROUP_DEFAULT</link>(mGrp,  mPer)       [SIL_TASK_GROUP_##mGrp]     = <link linkend="_lib_epc_control_8c_1aff35d265592c728e66c7510c82902233">SIL_TASK_GROUP_DEFAULTS</link>(mGrp, mPer)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1a73217f13108e9859b06c1082d832d5fb">SIL_TASK_GROUPS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8c_1af27efe74bbbc92dd505ed6feb632c2f4">SIL_UPDATE_TOGGLE</link>(mGrp)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0">SIL_TaskContext_e</link> <link linkend="_lib_epc_control_8c_1a3210e1f49d48170d6b757cb502986256">SIL_eTaskContext_t</link></para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_lib_epc_control_8c_1ae6f17a342abe900c59d650833838087c">SIL_fTaskCallback_t</link>) (double tNow)</para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_i_l___task_handler__s">SIL_TaskHandler_s</link> <link linkend="_lib_epc_control_8c_1ae89a63ad9fd5e364d8b48eb25eef9757">SIL_sTaskHandler_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_i_l___task_group__s">SIL_TaskGroup_s</link> <link linkend="_lib_epc_control_8c_1a7ed97dea947336ca74b74780fb21e48b">SIL_sTaskGroup_t</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0">SIL_TaskContext_e</link> { <link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0a29f3a1246607f135de9c112ae2258e8a">SIL_TASK_CONTEXT_OUTPUT</link>
+, <link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0abeaa7ea1b3e75063a32888ba135cac51">SIL_TASK_CONTEXT_STATE</link>
+, <link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0aabf0e2f1d319c42f4eb74f8795897373">SIL_TASK_CONTEXT_CNT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1af0fe4affddb768264dd9a710510f3bc8">system_main</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1ad9bda3cab726f79b7c06a60441554998">AD1D_SIL_writeSnapshot</link> (FILE *snapshotFile)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1aceb6ad89b9571df43544631e548e0228">AD1D_SIL_readSnapshot</link> (FILE *snapshotFile)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a366bea37699901e8e0f83572c121e5d0">AD2D_SIL_writeSnapshot</link> (FILE *snapshotFile)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a1e14b3d0dc196f803eddbdaf9694e990">AD2D_SIL_readSnapshot</link> (FILE *snapshotFile)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_lib_epc_control_8c_1ab81a90ab6353010bbcbfbe378b6c133b">SIL_initializeLibrary</link> (double tStep, <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link> solverType, <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link> mdlIntent, char *pmvsPath)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1ace37954380efd0cc545d686525f44253">SIL_terminateLibrary</link> (double tNow)</para>
+</listitem>
+            <listitem><para>double <link linkend="_lib_epc_control_8c_1ae7faa4e53156bb74ada32b2980fdc965">SIL_getNextSampleHit</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a4516f98eb48b67f3cfac58f6f506395b">SIL_updateOutput</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1ac996ef11ecaea694174e16c084e34121">SIL_updateOutput_ts</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a0ee7728e508048a3431cbe5591a6fe6e">SIL_updateOutput_200us</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a75ff58ce3d5d4580e490ef7a69007e21">SIL_updateOutput_1ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1ae7e96e5405835166c40c25a724ec7439">SIL_updateOutput_10ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a6fa1fbbfa14569f4bd41950a860eb75a">SIL_updateOutput_100ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a01c7e531ea48b2b39560b8232dadb472">SIL_updateOutput_1s</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a4bba7ed7d059aaea97ea7739d4a8aadf">SIL_updateState</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a2825be5948559ec4590c28ede64e4450">SIL_updateState_ts</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a59eac95bc7334b0a03715fe1cfbbcca1">SIL_updateState_200us</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a771f5694ced82f12c455c9aa7b09e8a4">SIL_updateState_1ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1ad4d3c47eb9a2d78a7c7042067d358d94">SIL_updateState_10ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a06036b1f582360534fabe0accf99ddcc">SIL_updateState_100ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a2838f5346d7b4916cd601c41594fc05c">SIL_updateState_1s</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a3f337ca55a1e439329bc2b11fabbd673">SIL_SIL_writeSnapshot</link> (FILE *snapshotFile)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1aeab96a996fe49fffa8e45559025012b9">SIL_SIL_readSnapshot</link> (FILE *snapshotFile)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a5509b491627e5f7ee27c25815ac07c48">SIL_writeSnapshot</link> (double tNow, uint16_t instanceNumber, char *tempPath)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1a296ff2009cd74a2c451a2bcded01dff7">SIL_readSnapshot</link> (uint16_t instanceNumber, char *tempPath)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8c_1ad56504ca7eecddc4addf6b342e0d6370">SIL_diagPrintf</link> (const char *msg,...)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_lib_epc_control_8h_1a6c0dfafedd208ad225a68a634c9ea8c7">SIL_sParam_t</link> <link linkend="_lib_epc_control_8c_1ab657a19b95f6cfab5a555d5d503c0b3e">SIL_Parameters</link> [] = <link linkend="_lib_epc_control_8h_1a7c2f4c041f12cff2bdc76a124fac163a">SIL_PARAMETERS_DEFAULTS</link>()</para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9">SIL_sPorts_t</link> <link linkend="_lib_epc_control_8c_1aa8c520d7306f12a6098f3cb4fdd3d1ea">SIL_Ports</link> = <link linkend="_lib_epc_control_8h_1a18cd38012e645a9dc030b596eef8d6e7">SIL_PORTS_DEFAULTS</link>()</para>
+</listitem>
+            <listitem><para>FILE * <link linkend="_lib_epc_control_8c_1a842a505ccbf33200790bee3a49ea14e4">SIL_SnapshotFile</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_lib_epc_control_8c_1ae782abdb390d65528ebd622389c5a5d4"/><section>
+    <title>SIL_EPSILON</title>
+<indexterm><primary>SIL_EPSILON</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_EPSILON</secondary></indexterm>
+<para><computeroutput>#define SIL_EPSILON   ( 0.1e-9L )</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ada32dc3ec0f400058499e4580e8eea2b"/><section>
+    <title>SIL_SNAPSHOT_FILE_EXTENSION</title>
+<indexterm><primary>SIL_SNAPSHOT_FILE_EXTENSION</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_SNAPSHOT_FILE_EXTENSION</secondary></indexterm>
+<para><computeroutput>#define SIL_SNAPSHOT_FILE_EXTENSION   &quot;.dat&quot;</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1aec2b58cf1ed4b2c1886e3da72fa549fe"/><section>
+    <title>SIL_SNAPSHOT_FILENAME</title>
+<indexterm><primary>SIL_SNAPSHOT_FILENAME</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_SNAPSHOT_FILENAME</secondary></indexterm>
+<para><computeroutput>#define SIL_SNAPSHOT_FILENAME   &quot;snapshot_data&quot;</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a9af98f89d7f7d97e6b61ff6d29435844"/><section>
+    <title>SIL_TASK_GROUP_DEFAULT</title>
+<indexterm><primary>SIL_TASK_GROUP_DEFAULT</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TASK_GROUP_DEFAULT</secondary></indexterm>
+<para><computeroutput>#define SIL_TASK_GROUP_DEFAULT( mGrp,  mPer)       [SIL_TASK_GROUP_##mGrp]     = <link linkend="_lib_epc_control_8c_1aff35d265592c728e66c7510c82902233">SIL_TASK_GROUP_DEFAULTS</link>(mGrp, mPer)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1aff35d265592c728e66c7510c82902233"/><section>
+    <title>SIL_TASK_GROUP_DEFAULTS</title>
+<indexterm><primary>SIL_TASK_GROUP_DEFAULTS</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TASK_GROUP_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_TASK_GROUP_DEFAULTS( mGrp,  mPer)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.tPeriod&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;mPer,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.nHandlers&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;2U,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.taskHandlers&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_lib_epc_control_8c_1ad19e0c4362119d2f90556e7b53730929">SIL_TASK_HANDLERS_DEFAULTS</link>(mGrp)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_lib_epc_control_8c_1a73217f13108e9859b06c1082d832d5fb"/><section>
+    <title>SIL_TASK_GROUPS_DEFAULTS</title>
+<indexterm><primary>SIL_TASK_GROUPS_DEFAULTS</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TASK_GROUPS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_TASK_GROUPS_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SIL_TASK_GROUP_DEFAULT(ts,&#32;&#32;&#32;&#32;&#32;150e-6),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SIL_TASK_GROUP_DEFAULT(200us,&#32;&#32;200e-6),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SIL_TASK_GROUP_DEFAULT(1ms,&#32;&#32;&#32;&#32;1.0e-3),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SIL_TASK_GROUP_DEFAULT(10ms,&#32;&#32;&#32;10.0e-3),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SIL_TASK_GROUP_DEFAULT(100ms,&#32;&#32;100.0e-3),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SIL_TASK_GROUP_DEFAULT(1s,&#32;&#32;&#32;&#32;&#32;1000.0e-3),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_lib_epc_control_8c_1a1f3c42a620f7679b0c31c42950b36100"/><section>
+    <title>SIL_TASK_HANDLER_DEFAULTS</title>
+<indexterm><primary>SIL_TASK_HANDLER_DEFAULTS</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TASK_HANDLER_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_TASK_HANDLER_DEFAULTS( mCbk)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.tCallLast&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;-1.0,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.taskCallback&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;mCbk&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_lib_epc_control_8c_1ad19e0c4362119d2f90556e7b53730929"/><section>
+    <title>SIL_TASK_HANDLERS_DEFAULTS</title>
+<indexterm><primary>SIL_TASK_HANDLERS_DEFAULTS</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TASK_HANDLERS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_TASK_HANDLERS_DEFAULTS( mGrp)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[<link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0a29f3a1246607f135de9c112ae2258e8a">SIL_TASK_CONTEXT_OUTPUT</link>]&#32;&#32;&#32;=&#32;<link linkend="_lib_epc_control_8c_1a1f3c42a620f7679b0c31c42950b36100">SIL_TASK_HANDLER_DEFAULTS</link>(SIL_updateOutput_##mGrp),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[<link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0abeaa7ea1b3e75063a32888ba135cac51">SIL_TASK_CONTEXT_STATE</link>]&#32;&#32;&#32;&#32;=&#32;<link linkend="_lib_epc_control_8c_1a1f3c42a620f7679b0c31c42950b36100">SIL_TASK_HANDLER_DEFAULTS</link>(SIL_updateState_##mGrp)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_lib_epc_control_8c_1af27efe74bbbc92dd505ed6feb632c2f4"/><section>
+    <title>SIL_UPDATE_TOGGLE</title>
+<indexterm><primary>SIL_UPDATE_TOGGLE</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_UPDATE_TOGGLE</secondary></indexterm>
+<para><computeroutput>#define SIL_UPDATE_TOGGLE( mGrp)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;updateToggle&#32;=&#32;<emphasis role="keyword">true</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_lib_epc_control_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">\</link>
+<link linkend="_lib_epc_control_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">                                                                                                        \</link>
+<link linkend="_lib_epc_control_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">    SIL_PORT_OUT</link>(<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e">SIL_OUT_CTL_CDIR</link>,&#32;mGrp)&#32;&#32;&#32;&#32;=&#32;&#32;updateToggle;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;updateToggle&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;!updateToggle
+</programlisting></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_lib_epc_control_8c_1a3210e1f49d48170d6b757cb502986256"/><section>
+    <title>SIL_eTaskContext_t</title>
+<indexterm><primary>SIL_eTaskContext_t</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_eTaskContext_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0">SIL_TaskContext_e</link> <link linkend="_lib_epc_control_8c_1a3210e1f49d48170d6b757cb502986256">SIL_eTaskContext_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ae6f17a342abe900c59d650833838087c"/><section>
+    <title>SIL_fTaskCallback_t</title>
+<indexterm><primary>SIL_fTaskCallback_t</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_fTaskCallback_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SIL_fTaskCallback_t) (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a7ed97dea947336ca74b74780fb21e48b"/><section>
+    <title>SIL_sTaskGroup_t</title>
+<indexterm><primary>SIL_sTaskGroup_t</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_sTaskGroup_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_i_l___task_group__s">SIL_TaskGroup_s</link> <link linkend="_lib_epc_control_8c_1a7ed97dea947336ca74b74780fb21e48b">SIL_sTaskGroup_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ae89a63ad9fd5e364d8b48eb25eef9757"/><section>
+    <title>SIL_sTaskHandler_t</title>
+<indexterm><primary>SIL_sTaskHandler_t</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_sTaskHandler_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_i_l___task_handler__s">SIL_TaskHandler_s</link> <link linkend="_lib_epc_control_8c_1ae89a63ad9fd5e364d8b48eb25eef9757">SIL_sTaskHandler_t</link></computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0"/><section>
+    <title>SIL_TaskContext_e</title>
+<indexterm><primary>SIL_TaskContext_e</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TaskContext_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0">SIL_TaskContext_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SIL_TASK_CONTEXT_OUTPUT</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TASK_CONTEXT_OUTPUT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0a29f3a1246607f135de9c112ae2258e8a"/>SIL_TASK_CONTEXT_OUTPUT</entry><entry></entry></row><row><entry><indexterm><primary>SIL_TASK_CONTEXT_STATE</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TASK_CONTEXT_STATE</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0abeaa7ea1b3e75063a32888ba135cac51"/>SIL_TASK_CONTEXT_STATE</entry><entry></entry></row><row><entry><indexterm><primary>SIL_TASK_CONTEXT_CNT</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_TASK_CONTEXT_CNT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8c_1a69f2cbfe0627771bb7a8a35e626491d0aabf0e2f1d319c42f4eb74f8795897373"/>SIL_TASK_CONTEXT_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_lib_epc_control_8c_1aceb6ad89b9571df43544631e548e0228"/><section>
+    <title>AD1D_SIL_readSnapshot()</title>
+<indexterm><primary>AD1D_SIL_readSnapshot</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>AD1D_SIL_readSnapshot</secondary></indexterm>
+<para><computeroutput>void AD1D_SIL_readSnapshot (FILE * snapshotFile)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ad9bda3cab726f79b7c06a60441554998"/><section>
+    <title>AD1D_SIL_writeSnapshot()</title>
+<indexterm><primary>AD1D_SIL_writeSnapshot</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>AD1D_SIL_writeSnapshot</secondary></indexterm>
+<para><computeroutput>void AD1D_SIL_writeSnapshot (FILE * snapshotFile)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a1e14b3d0dc196f803eddbdaf9694e990"/><section>
+    <title>AD2D_SIL_readSnapshot()</title>
+<indexterm><primary>AD2D_SIL_readSnapshot</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>AD2D_SIL_readSnapshot</secondary></indexterm>
+<para><computeroutput>void AD2D_SIL_readSnapshot (FILE * snapshotFile)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a366bea37699901e8e0f83572c121e5d0"/><section>
+    <title>AD2D_SIL_writeSnapshot()</title>
+<indexterm><primary>AD2D_SIL_writeSnapshot</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>AD2D_SIL_writeSnapshot</secondary></indexterm>
+<para><computeroutput>void AD2D_SIL_writeSnapshot (FILE * snapshotFile)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ad56504ca7eecddc4addf6b342e0d6370"/><section>
+    <title>SIL_diagPrintf()</title>
+<indexterm><primary>SIL_diagPrintf</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_diagPrintf</secondary></indexterm>
+<para><computeroutput>void SIL_diagPrintf (const char * msg,  ...)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ae7faa4e53156bb74ada32b2980fdc965"/><section>
+    <title>SIL_getNextSampleHit()</title>
+<indexterm><primary>SIL_getNextSampleHit</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_getNextSampleHit</secondary></indexterm>
+<para><computeroutput>double SIL_getNextSampleHit (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ab81a90ab6353010bbcbfbe378b6c133b"/><section>
+    <title>SIL_initializeLibrary()</title>
+<indexterm><primary>SIL_initializeLibrary</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_initializeLibrary</secondary></indexterm>
+<para><computeroutput>bool SIL_initializeLibrary (double tStep, <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link> solverType, <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link> mdlIntent, char * pmvsPath)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a296ff2009cd74a2c451a2bcded01dff7"/><section>
+    <title>SIL_readSnapshot()</title>
+<indexterm><primary>SIL_readSnapshot</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_readSnapshot</secondary></indexterm>
+<para><computeroutput>void SIL_readSnapshot (uint16_t instanceNumber, char * tempPath)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1aeab96a996fe49fffa8e45559025012b9"/><section>
+    <title>SIL_SIL_readSnapshot()</title>
+<indexterm><primary>SIL_SIL_readSnapshot</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_SIL_readSnapshot</secondary></indexterm>
+<para><computeroutput>void SIL_SIL_readSnapshot (FILE * snapshotFile)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a3f337ca55a1e439329bc2b11fabbd673"/><section>
+    <title>SIL_SIL_writeSnapshot()</title>
+<indexterm><primary>SIL_SIL_writeSnapshot</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_SIL_writeSnapshot</secondary></indexterm>
+<para><computeroutput>void SIL_SIL_writeSnapshot (FILE * snapshotFile)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ace37954380efd0cc545d686525f44253"/><section>
+    <title>SIL_terminateLibrary()</title>
+<indexterm><primary>SIL_terminateLibrary</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_terminateLibrary</secondary></indexterm>
+<para><computeroutput>void SIL_terminateLibrary (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a4516f98eb48b67f3cfac58f6f506395b"/><section>
+    <title>SIL_updateOutput()</title>
+<indexterm><primary>SIL_updateOutput</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateOutput</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a6fa1fbbfa14569f4bd41950a860eb75a"/><section>
+    <title>SIL_updateOutput_100ms()</title>
+<indexterm><primary>SIL_updateOutput_100ms</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateOutput_100ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_100ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ae7e96e5405835166c40c25a724ec7439"/><section>
+    <title>SIL_updateOutput_10ms()</title>
+<indexterm><primary>SIL_updateOutput_10ms</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateOutput_10ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_10ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a75ff58ce3d5d4580e490ef7a69007e21"/><section>
+    <title>SIL_updateOutput_1ms()</title>
+<indexterm><primary>SIL_updateOutput_1ms</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateOutput_1ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_1ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a01c7e531ea48b2b39560b8232dadb472"/><section>
+    <title>SIL_updateOutput_1s()</title>
+<indexterm><primary>SIL_updateOutput_1s</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateOutput_1s</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_1s (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a0ee7728e508048a3431cbe5591a6fe6e"/><section>
+    <title>SIL_updateOutput_200us()</title>
+<indexterm><primary>SIL_updateOutput_200us</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateOutput_200us</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_200us (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ac996ef11ecaea694174e16c084e34121"/><section>
+    <title>SIL_updateOutput_ts()</title>
+<indexterm><primary>SIL_updateOutput_ts</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateOutput_ts</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_ts (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a4bba7ed7d059aaea97ea7739d4a8aadf"/><section>
+    <title>SIL_updateState()</title>
+<indexterm><primary>SIL_updateState</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateState</secondary></indexterm>
+<para><computeroutput>void SIL_updateState (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a06036b1f582360534fabe0accf99ddcc"/><section>
+    <title>SIL_updateState_100ms()</title>
+<indexterm><primary>SIL_updateState_100ms</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateState_100ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_100ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1ad4d3c47eb9a2d78a7c7042067d358d94"/><section>
+    <title>SIL_updateState_10ms()</title>
+<indexterm><primary>SIL_updateState_10ms</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateState_10ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_10ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a771f5694ced82f12c455c9aa7b09e8a4"/><section>
+    <title>SIL_updateState_1ms()</title>
+<indexterm><primary>SIL_updateState_1ms</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateState_1ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_1ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a2838f5346d7b4916cd601c41594fc05c"/><section>
+    <title>SIL_updateState_1s()</title>
+<indexterm><primary>SIL_updateState_1s</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateState_1s</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_1s (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a59eac95bc7334b0a03715fe1cfbbcca1"/><section>
+    <title>SIL_updateState_200us()</title>
+<indexterm><primary>SIL_updateState_200us</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateState_200us</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_200us (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a2825be5948559ec4590c28ede64e4450"/><section>
+    <title>SIL_updateState_ts()</title>
+<indexterm><primary>SIL_updateState_ts</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_updateState_ts</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_ts (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a5509b491627e5f7ee27c25815ac07c48"/><section>
+    <title>SIL_writeSnapshot()</title>
+<indexterm><primary>SIL_writeSnapshot</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_writeSnapshot</secondary></indexterm>
+<para><computeroutput>void SIL_writeSnapshot (double tNow, uint16_t instanceNumber, char * tempPath)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1af0fe4affddb768264dd9a710510f3bc8"/><section>
+    <title>system_main()</title>
+<indexterm><primary>system_main</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>system_main</secondary></indexterm>
+<para><computeroutput>void system_main (void )</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_lib_epc_control_8c_1ab657a19b95f6cfab5a555d5d503c0b3e"/><section>
+    <title>SIL_Parameters</title>
+<indexterm><primary>SIL_Parameters</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_Parameters</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_8h_1a6c0dfafedd208ad225a68a634c9ea8c7">SIL_sParam_t</link> SIL_Parameters[] = <link linkend="_lib_epc_control_8h_1a7c2f4c041f12cff2bdc76a124fac163a">SIL_PARAMETERS_DEFAULTS</link>()</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1aa8c520d7306f12a6098f3cb4fdd3d1ea"/><section>
+    <title>SIL_Ports</title>
+<indexterm><primary>SIL_Ports</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_Ports</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9">SIL_sPorts_t</link> SIL_Ports = <link linkend="_lib_epc_control_8h_1a18cd38012e645a9dc030b596eef8d6e7">SIL_PORTS_DEFAULTS</link>()</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8c_1a842a505ccbf33200790bee3a49ea14e4"/><section>
+    <title>SIL_SnapshotFile</title>
+<indexterm><primary>SIL_SnapshotFile</primary><secondary>libEpcControl.c</secondary></indexterm>
+<indexterm><primary>libEpcControl.c</primary><secondary>SIL_SnapshotFile</secondary></indexterm>
+<para><computeroutput>FILE* SIL_SnapshotFile</computeroutput></para></section>
+</section>
+</section>

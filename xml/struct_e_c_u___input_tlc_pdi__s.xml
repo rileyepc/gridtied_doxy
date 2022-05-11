@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___input_tlc_pdi__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_InputTlcPdi_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___input_tlc_pdi__s_1a9008bd64b8b58241139ada626ffc6842" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputTlcPdi_s::controlModeRequest</definition>
+        <argsstring></argsstring>
+        <name>controlModeRequest</name>
+        <qualifiedname>ECU_InputTlcPdi_s::controlModeRequest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="76" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input_tlc_pdi__s_1a194be3de7073e508b34d66c24f9cfe06" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputTlcPdi_s::rIg_ref[2U]</definition>
+        <argsstring>[2U]</argsstring>
+        <name>rIg_ref</name>
+        <qualifiedname>ECU_InputTlcPdi_s::rIg_ref</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="77" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input_tlc_pdi__s_1a8b3c068e762922ebee4745c1a8f3842c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputTlcPdi_s::eVg_ref[3U]</definition>
+        <argsstring>[3U]</argsstring>
+        <name>eVg_ref</name>
+        <qualifiedname>ECU_InputTlcPdi_s::eVg_ref</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="78" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="75" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="75" bodyend="79"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___input_tlc_pdi__s_1a9008bd64b8b58241139ada626ffc6842" prot="public" virt="non-virtual"><scope>ECU_InputTlcPdi_s</scope><name>controlModeRequest</name></member>
+      <member refid="struct_e_c_u___input_tlc_pdi__s_1a8b3c068e762922ebee4745c1a8f3842c" prot="public" virt="non-virtual"><scope>ECU_InputTlcPdi_s</scope><name>eVg_ref</name></member>
+      <member refid="struct_e_c_u___input_tlc_pdi__s_1a194be3de7073e508b34d66c24f9cfe06" prot="public" virt="non-virtual"><scope>ECU_InputTlcPdi_s</scope><name>rIg_ref</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

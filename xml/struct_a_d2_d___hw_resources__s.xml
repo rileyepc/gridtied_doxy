@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_a_d2_d___hw_resources__s" kind="struct" language="C++" prot="public">
+    <compoundname>AD2D_HwResources_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" prot="public" static="no" mutable="no">
+        <type><ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref> volatile *</type>
+        <definition>AD2D_uSgnExtend_t volatile* AD2D_HwResources_s::adcResult</definition>
+        <argsstring></argsstring>
+        <name>adcResult</name>
+        <qualifiedname>AD2D_HwResources_s::adcResult</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="100" column="32" bodyfile="sil/emu/ad2d_emu.c" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>AD2D_HwResources_s</label>
+        <link refid="struct_a_d2_d___hw_resources__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>adcResult</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>AD2D_SgnExtend_s</label>
+        <link refid="struct_a_d2_d___sgn_extend__s"/>
+      </node>
+      <node id="2">
+        <label>AD2D_SgnExtend_u</label>
+        <link refid="struct_a_d2_d___sgn_extend__u"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>bits</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/emu/ad2d_emu.c" line="99" column="1" bodyfile="sil/emu/ad2d_emu.c" bodystart="99" bodyend="101"/>
+    <listofallmembers>
+      <member refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" prot="public" virt="non-virtual"><scope>AD2D_HwResources_s</scope><name>adcResult</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

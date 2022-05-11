@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_j1939___i_n_t_e_r_f_a_c_e" xml:lang="en-US">
+<title>J1939_INTERFACE Struct Reference</title>
+<indexterm><primary>J1939_INTERFACE</primary></indexterm>
+<para>
+<computeroutput>#include &lt;application.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1a57e574ff9f1e129568bc68606886ab8e">nodeID</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1aceac1fd1ebbd90bcda15fa186fdb7e99">masterAddr</link></para>
+</listitem>
+            <listitem><para>CAN_BAUDRATE <link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1a4959602aae7830fd547f54e3329b1dd7">baud</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1aea384cfa02b15a089bff4254fd5cc2df">timeout</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_j1939___i_n_t_e_r_f_a_c_e_1a4959602aae7830fd547f54e3329b1dd7"/><section>
+    <title>baud</title>
+<indexterm><primary>baud</primary><secondary>J1939_INTERFACE</secondary></indexterm>
+<indexterm><primary>J1939_INTERFACE</primary><secondary>baud</secondary></indexterm>
+<para><computeroutput>CAN_BAUDRATE J1939_INTERFACE::baud</computeroutput></para></section>
+<anchor xml:id="_struct_j1939___i_n_t_e_r_f_a_c_e_1aceac1fd1ebbd90bcda15fa186fdb7e99"/><section>
+    <title>masterAddr</title>
+<indexterm><primary>masterAddr</primary><secondary>J1939_INTERFACE</secondary></indexterm>
+<indexterm><primary>J1939_INTERFACE</primary><secondary>masterAddr</secondary></indexterm>
+<para><computeroutput>char J1939_INTERFACE::masterAddr</computeroutput></para></section>
+<anchor xml:id="_struct_j1939___i_n_t_e_r_f_a_c_e_1a57e574ff9f1e129568bc68606886ab8e"/><section>
+    <title>nodeID</title>
+<indexterm><primary>nodeID</primary><secondary>J1939_INTERFACE</secondary></indexterm>
+<indexterm><primary>J1939_INTERFACE</primary><secondary>nodeID</secondary></indexterm>
+<para><computeroutput>char J1939_INTERFACE::nodeID</computeroutput></para></section>
+<anchor xml:id="_struct_j1939___i_n_t_e_r_f_a_c_e_1aea384cfa02b15a089bff4254fd5cc2df"/><section>
+    <title>timeout</title>
+<indexterm><primary>timeout</primary><secondary>J1939_INTERFACE</secondary></indexterm>
+<indexterm><primary>J1939_INTERFACE</primary><secondary>timeout</secondary></indexterm>
+<para><computeroutput>uint16_t J1939_INTERFACE::timeout</computeroutput></para></section>
+</section>
+</section>

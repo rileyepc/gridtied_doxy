@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="namespacegridtied_1_1tests_1_1hil" kind="namespace" language="Python">
+    <compoundname>gridtied::tests::hil</compoundname>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1conftest">gridtied::tests::hil::conftest</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1pytest__plugin">gridtied::tests::hil::pytest_plugin</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1test__auth">gridtied::tests::hil::test_auth</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1test__datalogger">gridtied::tests::hil::test_datalogger</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1test__example">gridtied::tests::hil::test_example</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1test__following">gridtied::tests::hil::test_following</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1test__interface">gridtied::tests::hil::test_interface</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1test__tlcvariant">gridtied::tests::hil::test_tlcvariant</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests_1_1hil_1_1test__watt__power__factor">gridtied::tests::hil::test_watt_power_factor</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gridtied/tests/hil/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

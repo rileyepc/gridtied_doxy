@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___input__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_Input_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___input__s_1a74ae8fb25e193685bd9051b85c711059" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1aada87f8a06d3f3a98324a837a3693f4d" kindref="member">ECU_InputTlcPdi_t</ref></type>
+        <definition>ECU_InputTlcPdi_t ECU_Input_s::tlcPdi</definition>
+        <argsstring></argsstring>
+        <name>tlcPdi</name>
+        <qualifiedname>ECU_Input_s::tlcPdi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="115" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input__s_1a22397e9b1f74ad4f7362a5e0a9d905b4" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1aa73356b11bf03ec92bc735a85bca55fc" kindref="member">ECU_sInputControl_t</ref></type>
+        <definition>ECU_sInputControl_t ECU_Input_s::control</definition>
+        <argsstring></argsstring>
+        <name>control</name>
+        <qualifiedname>ECU_Input_s::control</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="116" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input__s_1a76dea4d0c8998cfd4d8059fb8262298f" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1a2145616628bd68522f127ea3158a3b31" kindref="member">ECU_sInputReference_t</ref></type>
+        <definition>ECU_sInputReference_t ECU_Input_s::reference</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <qualifiedname>ECU_Input_s::reference</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="117" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input__s_1a53eed7c3bc6df0ff09294aff404750d8" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1a8bac538c25083c913ab05a3ce721dd5c" kindref="member">ECU_sInputFeedback_t</ref></type>
+        <definition>ECU_sInputFeedback_t ECU_Input_s::feedback</definition>
+        <argsstring></argsstring>
+        <name>feedback</name>
+        <qualifiedname>ECU_Input_s::feedback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="118" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>ECU_InputControl_s</label>
+        <link refid="struct_e_c_u___input_control__s"/>
+      </node>
+      <node id="5">
+        <label>ECU_InputFeedback_s</label>
+        <link refid="struct_e_c_u___input_feedback__s"/>
+      </node>
+      <node id="4">
+        <label>ECU_InputReference_s</label>
+        <link refid="struct_e_c_u___input_reference__s"/>
+      </node>
+      <node id="2">
+        <label>ECU_InputTlcPdi_s</label>
+        <link refid="struct_e_c_u___input_tlc_pdi__s"/>
+      </node>
+      <node id="1">
+        <label>ECU_Input_s</label>
+        <link refid="struct_e_c_u___input__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>tlcPdi</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>control</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>reference</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>feedback</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="114" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="114" bodyend="119"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___input__s_1a22397e9b1f74ad4f7362a5e0a9d905b4" prot="public" virt="non-virtual"><scope>ECU_Input_s</scope><name>control</name></member>
+      <member refid="struct_e_c_u___input__s_1a53eed7c3bc6df0ff09294aff404750d8" prot="public" virt="non-virtual"><scope>ECU_Input_s</scope><name>feedback</name></member>
+      <member refid="struct_e_c_u___input__s_1a76dea4d0c8998cfd4d8059fb8262298f" prot="public" virt="non-virtual"><scope>ECU_Input_s</scope><name>reference</name></member>
+      <member refid="struct_e_c_u___input__s_1a74ae8fb25e193685bd9051b85c711059" prot="public" virt="non-virtual"><scope>ECU_Input_s</scope><name>tlcPdi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

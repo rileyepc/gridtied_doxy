@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_p_w_m___data__s" kind="struct" language="C++" prot="public">
+    <compoundname>EPWM_Data_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_p_w_m___data__s_1a7d83019784519977b05b9bd7333f85e1" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a1453b48c7b1fc53c3f9ec7957965c78f" kindref="member">EPWM_Config_t</ref></type>
+        <definition>EPWM_Config_t EPWM_Data_s::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>EPWM_Data_s::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="226" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___data__s_1ae9ad6c51dc11f98c11891dc9398a1452" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a04bd23471b2a891d8fecdd970441ca9c" kindref="member">EPWM_Input_t</ref></type>
+        <definition>EPWM_Input_t EPWM_Data_s::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <qualifiedname>EPWM_Data_s::input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="227" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___data__s_1a62e44fe33a6e731a549fb245ce5183c1" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a04bd23471b2a891d8fecdd970441ca9c" kindref="member">EPWM_Input_t</ref></type>
+        <definition>EPWM_Input_t EPWM_Data_s::shadow</definition>
+        <argsstring></argsstring>
+        <name>shadow</name>
+        <qualifiedname>EPWM_Data_s::shadow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="228" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___data__s_1a50e6cd607af1a5b2b35305a24dcc1330" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a85b9207f97638bb1006416f65acafaa6" kindref="member">EPWM_State_t</ref></type>
+        <definition>EPWM_State_t EPWM_Data_s::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>EPWM_Data_s::state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="229" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___data__s_1a973b880ad11968840fcfd91a868c18cc" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a939857fadec19bd8bf18e250df150687" kindref="member">EPWM_Output_t</ref></type>
+        <definition>EPWM_Output_t EPWM_Data_s::output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <qualifiedname>EPWM_Data_s::output</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="230" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>EPWM_ActionEvent_s</label>
+        <link refid="struct_e_p_w_m___action_event__s"/>
+      </node>
+      <node id="6">
+        <label>EPWM_AqActionZones_s</label>
+        <link refid="struct_e_p_w_m___aq_action_zones__s"/>
+      </node>
+      <node id="2">
+        <label>EPWM_Config_s</label>
+        <link refid="struct_e_p_w_m___config__s"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>dutyLimits</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>shadowZones</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>satThresh</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>actionZones</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EPWM_Data_s</label>
+        <link refid="struct_e_p_w_m___data__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>input</edgelabel>
+          <edgelabel>shadow</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>output</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>EPWM_DutyLimits_s</label>
+        <link refid="struct_e_p_w_m___duty_limits__s"/>
+      </node>
+      <node id="7">
+        <label>EPWM_Input_s</label>
+        <link refid="struct_e_p_w_m___input__s"/>
+      </node>
+      <node id="10">
+        <label>EPWM_Output_s</label>
+        <link refid="struct_e_p_w_m___output__s"/>
+      </node>
+      <node id="5">
+        <label>EPWM_SatThreshold_s</label>
+        <link refid="struct_e_p_w_m___sat_threshold__s"/>
+      </node>
+      <node id="4">
+        <label>EPWM_ShadowZones_s</label>
+        <link refid="struct_e_p_w_m___shadow_zones__s"/>
+      </node>
+      <node id="8">
+        <label>EPWM_State_s</label>
+        <link refid="struct_e_p_w_m___state__s"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>eventQueue</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/emu/epwm_emu.c" line="225" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="225" bodyend="231"/>
+    <listofallmembers>
+      <member refid="struct_e_p_w_m___data__s_1a7d83019784519977b05b9bd7333f85e1" prot="public" virt="non-virtual"><scope>EPWM_Data_s</scope><name>config</name></member>
+      <member refid="struct_e_p_w_m___data__s_1ae9ad6c51dc11f98c11891dc9398a1452" prot="public" virt="non-virtual"><scope>EPWM_Data_s</scope><name>input</name></member>
+      <member refid="struct_e_p_w_m___data__s_1a973b880ad11968840fcfd91a868c18cc" prot="public" virt="non-virtual"><scope>EPWM_Data_s</scope><name>output</name></member>
+      <member refid="struct_e_p_w_m___data__s_1a62e44fe33a6e731a549fb245ce5183c1" prot="public" virt="non-virtual"><scope>EPWM_Data_s</scope><name>shadow</name></member>
+      <member refid="struct_e_p_w_m___data__s_1a50e6cd607af1a5b2b35305a24dcc1330" prot="public" virt="non-virtual"><scope>EPWM_Data_s</scope><name>state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,516 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="ad2d__emu_8c" kind="file" language="C++">
+    <compoundname>ad2d_emu.c</compoundname>
+    <includes local="yes">ad2d.h</includes>
+    <includes local="yes">utils.h</includes>
+    <includes local="yes">fpgaRegs.h</includes>
+    <includes local="yes">MTH_scale.h</includes>
+    <includes local="yes">hardwareScales.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>sil/emu/ad2d_emu.c</label>
+        <link refid="ad2d__emu_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>MTH_scale.h</label>
+      </node>
+      <node id="2">
+        <label>ad2d.h</label>
+      </node>
+      <node id="4">
+        <label>fpgaRegs.h</label>
+      </node>
+      <node id="6">
+        <label>hardwareScales.h</label>
+      </node>
+      <node id="3">
+        <label>utils.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_a_d2_d___sgn_extend__s" prot="public">AD2D_SgnExtend_s</innerclass>
+    <innerclass refid="struct_a_d2_d___sgn_extend__u" prot="public">AD2D_SgnExtend_u</innerclass>
+    <innerclass refid="struct_a_d2_d___hw_resources__s" prot="public">AD2D_HwResources_s</innerclass>
+    <innerclass refid="struct_a_d2_d___meas_channel__s" prot="public">AD2D_MeasChannel_s</innerclass>
+    <innerclass refid="struct_a_d2_d___data__s" prot="public">AD2D_Data_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b" prot="public" static="no">
+        <name>AD2D_SEQUENCER_CHANNELS</name>
+        <initializer>6U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="51" column="9" bodyfile="sil/emu/ad2d_emu.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ad2d__emu_8c_1a0f8a45dbdfd318e1abe032c2553b91be" prot="public" static="no">
+        <name>AD2D_CONVERSION_BUSY_TIMEOUT</name>
+        <initializer>200U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="52" column="9" bodyfile="sil/emu/ad2d_emu.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ad2d__emu_8c_1ad901cdebf19316aaeab7fa7596bee414" prot="public" static="no">
+        <name>AD2D_HARDWARE_RESOURCES_DEFAULTS</name>
+        <param><defname>...</defname></param>
+        <initializer>    {                             \
+    [AD2D_CHANNEL_VFB_LO_1] = { (<ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref> *)&amp;ozFpga.vLvA.all   },  \
+    [AD2D_CHANNEL_VFB_LO_2] = { (<ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref> *)&amp;ozFpga.vLvB.all   },  \
+    [AD2D_CHANNEL_VFB_LO_3] = { (<ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref> *)&amp;ozFpga.vLvC.all   },  \
+    [AD2D_CHANNEL_VFB_HI_1] = { (<ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref> *)&amp;ozFpga.vLineA.all },  \
+    [AD2D_CHANNEL_VFB_HI_2] = { (<ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref> *)&amp;ozFpga.vLineB.all },  \
+    [AD2D_CHANNEL_VFB_HI_3] = { (<ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref> *)&amp;ozFpga.vLineC.all },  \
+    ##__VA_ARGS__                                                           \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="58" column="9" bodyfile="sil/emu/ad2d_emu.c" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ad2d__emu_8c_1a732a6a180bbbc56389a9b4efd7f1e3a8" prot="public" static="no">
+        <name>AD2D_MEAS_CHANNEL_DEFAULTS</name>
+        <param><defname>...</defname></param>
+        <initializer>    {                               \
+    .adcResult              = NULL,                                     \
+    .mesdDest               = NULL,                                     \
+    ##__VA_ARGS__                                                       \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="68" column="9" bodyfile="sil/emu/ad2d_emu.c" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ad2d__emu_8c_1af5f9a41adfa8b50175bd0d05ab66f917" prot="public" static="no">
+        <name>AD2D_MEAS_CHANNELS_DEFAULTS</name>
+        <param><defname>...</defname></param>
+        <initializer>    {                              \
+    [0U ... (<ref refid="ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b" kindref="member">AD2D_SEQUENCER_CHANNELS</ref> - 1U)] =                           \
+        <ref refid="ad2d__emu_8c_1a732a6a180bbbc56389a9b4efd7f1e3a8" kindref="member">AD2D_MEAS_CHANNEL_DEFAULTS</ref>(__VA_ARGS__)                         \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="74" column="9" bodyfile="sil/emu/ad2d_emu.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ad2d__emu_8c_1a2f2c4efc92e7a2eb80450dbeb5816147" prot="public" static="no">
+        <name>AD2D_DATA_DEFAULTS</name>
+        <param><defname>...</defname></param>
+        <initializer>    {                                       \
+    .measChannels           = <ref refid="ad2d__emu_8c_1af5f9a41adfa8b50175bd0d05ab66f917" kindref="member">AD2D_MEAS_CHANNELS_DEFAULTS</ref>(),            \
+    .channelCount           = 0U,                                       \
+    ##__VA_ARGS__                                                       \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="79" column="9" bodyfile="sil/emu/ad2d_emu.c" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="ad2d__emu_8c_1a54be1832c3f2655b48038185b6c3aa6f" prot="public" static="no">
+        <type>struct <ref refid="struct_a_d2_d___sgn_extend__s" kindref="compound">AD2D_SgnExtend_s</ref></type>
+        <definition>typedef struct AD2D_SgnExtend_s AD2D_sSgnExtend_t</definition>
+        <argsstring></argsstring>
+        <name>AD2D_sSgnExtend_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="92" column="19"/>
+      </memberdef>
+      <memberdef kind="typedef" id="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" prot="public" static="no">
+        <type>struct <ref refid="struct_a_d2_d___sgn_extend__u" kindref="compound">AD2D_SgnExtend_u</ref></type>
+        <definition>typedef struct AD2D_SgnExtend_u AD2D_uSgnExtend_t</definition>
+        <argsstring></argsstring>
+        <name>AD2D_uSgnExtend_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="97" column="19"/>
+      </memberdef>
+      <memberdef kind="typedef" id="ad2d__emu_8c_1a62d33c1d76705e1026f4095d6267986d" prot="public" static="no">
+        <type>struct <ref refid="struct_a_d2_d___hw_resources__s" kindref="compound">AD2D_HwResources_s</ref></type>
+        <definition>typedef struct AD2D_HwResources_s AD2D_HwResources_t</definition>
+        <argsstring></argsstring>
+        <name>AD2D_HwResources_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="101" column="20"/>
+      </memberdef>
+      <memberdef kind="typedef" id="ad2d__emu_8c_1ac6c98544c59d6e06532cbbde0e2a9157" prot="public" static="no">
+        <type>struct <ref refid="struct_a_d2_d___meas_channel__s" kindref="compound">AD2D_MeasChannel_s</ref></type>
+        <definition>typedef struct AD2D_MeasChannel_s AD2D_MeasChannel_t</definition>
+        <argsstring></argsstring>
+        <name>AD2D_MeasChannel_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="106" column="20"/>
+      </memberdef>
+      <memberdef kind="typedef" id="ad2d__emu_8c_1a5eec6c14184855675e9e0c7ec4e8157a" prot="public" static="no">
+        <type>struct <ref refid="struct_a_d2_d___data__s" kindref="compound">AD2D_Data_s</ref></type>
+        <definition>typedef struct AD2D_Data_s AD2D_Data_t</definition>
+        <argsstring></argsstring>
+        <name>AD2D_Data_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="111" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" prot="public" static="no" mutable="no">
+        <type><ref refid="ad2d__emu_8c_1a62d33c1d76705e1026f4095d6267986d" kindref="member">AD2D_HwResources_t</ref> const</type>
+        <definition>AD2D_HwResources_t const AD2D_HwResources[AD2D_CHANNEL_CNT]</definition>
+        <argsstring>[AD2D_CHANNEL_CNT]</argsstring>
+        <name>AD2D_HwResources</name>
+        <initializer>= <ref refid="ad2d__emu_8c_1ad901cdebf19316aaeab7fa7596bee414" kindref="member">AD2D_HARDWARE_RESOURCES_DEFAULTS</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="117" column="33" bodyfile="sil/emu/ad2d_emu.c" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" prot="public" static="no" mutable="no">
+        <type><ref refid="ad2d__emu_8c_1a5eec6c14184855675e9e0c7ec4e8157a" kindref="member">AD2D_Data_t</ref></type>
+        <definition>AD2D_Data_t AD2D_Data</definition>
+        <argsstring></argsstring>
+        <name>AD2D_Data</name>
+        <initializer>= <ref refid="ad2d__emu_8c_1a2f2c4efc92e7a2eb80450dbeb5816147" kindref="member">AD2D_DATA_DEFAULTS</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="118" column="33" bodyfile="sil/emu/ad2d_emu.c" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ad2d__emu_8c_1abb2c869fd838f67efc38dea0da13f669" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int16_t</type>
+        <definition>int16_t AD2D_enqueueMeasurementChannel</definition>
+        <argsstring>(uint16_t const chanName, MESD_SequenceGroup_t const seqGroup, _iq31 *const mesdDest)</argsstring>
+        <name>AD2D_enqueueMeasurementChannel</name>
+        <param>
+          <type>uint16_t const</type>
+          <declname>chanName</declname>
+        </param>
+        <param>
+          <type>MESD_SequenceGroup_t const</type>
+          <declname>seqGroup</declname>
+        </param>
+        <param>
+          <type><ref refid="_i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d" kindref="member">_iq31</ref> *const</type>
+          <declname>mesdDest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="137" column="9" bodyfile="sil/emu/ad2d_emu.c" bodystart="137" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="ad2d__emu_8c_1ac5c7fb0b68a3ab2ff81a409777725212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AD2D_releaseConfiguration</definition>
+        <argsstring>(void)</argsstring>
+        <name>AD2D_releaseConfiguration</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="164" column="6" bodyfile="sil/emu/ad2d_emu.c" bodystart="164" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="ad2d__emu_8c_1ab082633aaec3b8328366f30752e45240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool AD2D_measurementsUpdate_ts</definition>
+        <argsstring>(void)</argsstring>
+        <name>AD2D_measurementsUpdate_ts</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="170" column="6" bodyfile="sil/emu/ad2d_emu.c" bodystart="170" bodyend="191"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/>########<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/>#########<sp/><sp/><sp/>#######</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/>##</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/>#<sp/>########<sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/>#<sp/>########<sp/><sp/><sp/><sp/>#########<sp/><sp/>##<sp/>######<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/><sp/>######<sp/><sp/>######<sp/><sp/><sp/><sp/>#########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COMPANY<sp/>CONFIDENTIAL</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>document<sp/>contains<sp/>information<sp/>proprietary<sp/>to<sp/>EPC<sp/>Power.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>is<sp/>an<sp/>unpublished<sp/>work<sp/>subject<sp/>to<sp/>trade<sp/>secret<sp/>and<sp/>copyright<sp/>protection.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>addition,<sp/>the<sp/>information<sp/>may<sp/>be<sp/>the<sp/>subject<sp/>of<sp/>patent<sp/>applications</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>United<sp/>States<sp/>and<sp/>foreign<sp/>countries.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>M<sp/>O<sp/>D<sp/>U<sp/>L<sp/>E<sp/><sp/><sp/><sp/>D<sp/>E<sp/>S<sp/>C<sp/>R<sp/>I<sp/>P<sp/>T<sp/>I<sp/>O<sp/>N</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Filename<sp/><sp/><sp/><sp/><sp/>:<sp/>ad2d.c</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>Embedded-Control::Drivers::Adc2Driver</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Prefix<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>AD2D_</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>Description<sp/><sp/>:<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>D.<sp/>Michaud</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>History<sp/><sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>Date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Description</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>23.04.2018<sp/><sp/><sp/>D.<sp/>Michaud<sp/><sp/><sp/><sp/><sp/><sp/>Initial<sp/>Version</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>Include<sp/>Files</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ad2d.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;utils.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>UNUSED_ARG<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fpgaRegs.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>OzTek<sp/>FPGA<sp/>MMUR&apos;s<sp/>and<sp/>defined<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MTH_scale.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>scaling<sp/>macros<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hardwareScales.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>normalization<sp/>full-scale<sp/>ranges<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>Constant<sp/>Defines</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD2D_SEQUENCER_CHANNELS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD2D_CONVERSION_BUSY_TIMEOUT<sp/><sp/><sp/><sp/>200U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>Macro<sp/>Defines</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD2D_HARDWARE_RESOURCES_DEFAULTS(...)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>[AD2D_CHANNEL_VFB_LO_1]<sp/>=<sp/>{<sp/>(AD2D_uSgnExtend_t<sp/>*)&amp;ozFpga.vLvA.all<sp/><sp/><sp/>},<sp/><sp/>\</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>[AD2D_CHANNEL_VFB_LO_2]<sp/>=<sp/>{<sp/>(AD2D_uSgnExtend_t<sp/>*)&amp;ozFpga.vLvB.all<sp/><sp/><sp/>},<sp/><sp/>\</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>[AD2D_CHANNEL_VFB_LO_3]<sp/>=<sp/>{<sp/>(AD2D_uSgnExtend_t<sp/>*)&amp;ozFpga.vLvC.all<sp/><sp/><sp/>},<sp/><sp/>\</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>[AD2D_CHANNEL_VFB_HI_1]<sp/>=<sp/>{<sp/>(AD2D_uSgnExtend_t<sp/>*)&amp;ozFpga.vLineA.all<sp/>},<sp/><sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>[AD2D_CHANNEL_VFB_HI_2]<sp/>=<sp/>{<sp/>(AD2D_uSgnExtend_t<sp/>*)&amp;ozFpga.vLineB.all<sp/>},<sp/><sp/>\</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>[AD2D_CHANNEL_VFB_HI_3]<sp/>=<sp/>{<sp/>(AD2D_uSgnExtend_t<sp/>*)&amp;ozFpga.vLineC.all<sp/>},<sp/><sp/>\</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>##__VA_ARGS__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD2D_MEAS_CHANNEL_DEFAULTS(...)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.adcResult<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.mesdDest<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>##__VA_ARGS__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD2D_MEAS_CHANNELS_DEFAULTS(...)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>[0U<sp/>...<sp/>(AD2D_SEQUENCER_CHANNELS<sp/>-<sp/>1U)]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AD2D_MEAS_CHANNEL_DEFAULTS(__VA_ARGS__)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD2D_DATA_DEFAULTS(...)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.measChannels<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>AD2D_MEAS_CHANNELS_DEFAULTS(),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.channelCount<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0U,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>##__VA_ARGS__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>Type<sp/>Definitions</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="struct_a_d2_d___sgn_extend__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_a_d2_d___sgn_extend__s" kindref="compound">AD2D_SgnExtend_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___sgn_extend__s_1a2e897fcad8b4b13210b813154d607848" kindref="member">result</ref><sp/>:<sp/>13;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___sgn_extend__s_1aa36a7c17a5eb23eea68305e59fb239f4" kindref="member">unused</ref><sp/>:<sp/><sp/>3;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}<sp/><ref refid="ad2d__emu_8c_1a54be1832c3f2655b48038185b6c3aa6f" kindref="member">AD2D_sSgnExtend_t</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="struct_a_d2_d___sgn_extend__u" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_a_d2_d___sgn_extend__u" kindref="compound">AD2D_SgnExtend_u</ref><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___sgn_extend__s" kindref="compound">AD2D_sSgnExtend_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" kindref="member">bits</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___sgn_extend__u_1ad2128d178883c12e5fdbedba1d6d6f44" kindref="member">word</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}<sp/><ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="struct_a_d2_d___hw_resources__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_a_d2_d___hw_resources__s" kindref="compound">AD2D_HwResources_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___sgn_extend__u" kindref="compound">AD2D_uSgnExtend_t</ref><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<ref refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" kindref="member">adcResult</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}<sp/><ref refid="ad2d__emu_8c_1a62d33c1d76705e1026f4095d6267986d" kindref="member">AD2D_HwResources_t</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="struct_a_d2_d___meas_channel__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_a_d2_d___meas_channel__s" kindref="compound">AD2D_MeasChannel_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___sgn_extend__u" kindref="compound">AD2D_uSgnExtend_t</ref><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<ref refid="struct_a_d2_d___meas_channel__s_1aec3365d72c9f6d8f0eb802471291a830" kindref="member">adcResult</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_a_d2_d___meas_channel__s_1a09c43551818e64fdb74d134f60795a06" kindref="member">mesdDest</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}<sp/><ref refid="ad2d__emu_8c_1ac6c98544c59d6e06532cbbde0e2a9157" kindref="member">AD2D_MeasChannel_t</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="struct_a_d2_d___data__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_a_d2_d___data__s" kindref="compound">AD2D_Data_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___meas_channel__s" kindref="compound">AD2D_MeasChannel_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___data__s_1a416a9ec8e1dff9bc6ed2e06c580e35f7" kindref="member">measChannels</ref>[<ref refid="ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b" kindref="member">AD2D_SEQUENCER_CHANNELS</ref>];</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" kindref="member">channelCount</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}<sp/><ref refid="ad2d__emu_8c_1a5eec6c14184855675e9e0c7ec4e8157a" kindref="member">AD2D_Data_t</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>Global<sp/>Variable<sp/>Declarations</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><ref refid="struct_a_d2_d___hw_resources__s" kindref="compound">AD2D_HwResources_t</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" kindref="member">AD2D_HwResources</ref>[AD2D_CHANNEL_CNT]<sp/><sp/>=<sp/><ref refid="ad2d__emu_8c_1ad901cdebf19316aaeab7fa7596bee414" kindref="member">AD2D_HARDWARE_RESOURCES_DEFAULTS</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><ref refid="struct_a_d2_d___data__s" kindref="compound">AD2D_Data_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="ad2d__emu_8c_1a2f2c4efc92e7a2eb80450dbeb5816147" kindref="member">AD2D_DATA_DEFAULTS</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>Imported<sp/>Variables</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>Imported<sp/>Functions</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/>Forward<sp/>Declarations</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>Local<sp/>Functions</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">int16_t<sp/><ref refid="ad2d__emu_8c_1abb2c869fd838f67efc38dea0da13f669" kindref="member">AD2D_enqueueMeasurementChannel</ref>(uint16_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>chanName,<sp/>MESD_SequenceGroup_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>seqGroup,<sp/><ref refid="_i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d" kindref="member">_iq31</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mesdDest)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(seqGroup);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(chanName<sp/>&gt;=<sp/>AD2D_CHANNEL_CNT)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ERROR:<sp/>Undefined<sp/>channel<sp/>name<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-__LINE__;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>seqIndex<sp/>=<sp/><ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" kindref="member">channelCount</ref>++;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(seqIndex<sp/>&gt;=<sp/><ref refid="ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b" kindref="member">AD2D_SEQUENCER_CHANNELS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ERROR:<sp/>over-stuffed<sp/>sequencer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-__LINE__;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a416a9ec8e1dff9bc6ed2e06c580e35f7" kindref="member">measChannels</ref>[seqIndex].<ref refid="struct_a_d2_d___meas_channel__s_1aec3365d72c9f6d8f0eb802471291a830" kindref="member">adcResult</ref><sp/><sp/>=<sp/><ref refid="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" kindref="member">AD2D_HwResources</ref>[chanName].<ref refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" kindref="member">adcResult</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a416a9ec8e1dff9bc6ed2e06c580e35f7" kindref="member">measChannels</ref>[seqIndex].<ref refid="struct_a_d2_d___meas_channel__s_1a09c43551818e64fdb74d134f60795a06" kindref="member">mesdDest</ref><sp/><sp/><sp/>=<sp/>mesdDest;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Return<sp/>remaining<sp/>number<sp/>of<sp/>sequencer<sp/>slots<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((<ref refid="ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b" kindref="member">AD2D_SEQUENCER_CHANNELS</ref><sp/>-<sp/>1U)<sp/>-<sp/>seqIndex);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ad2d__emu_8c_1ac5c7fb0b68a3ab2ff81a409777725212" kindref="member">AD2D_releaseConfiguration</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="ad2d__emu_8c_1ab082633aaec3b8328366f30752e45240" kindref="member">AD2D_measurementsUpdate_ts</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>chanCount<sp/><sp/><sp/>=<sp/><sp/><ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" kindref="member">channelCount</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_d2_d___meas_channel__s" kindref="compound">AD2D_MeasChannel_t</ref><sp/>*measChannel<sp/>=<sp/>&amp;<ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a416a9ec8e1dff9bc6ed2e06c580e35f7" kindref="member">measChannels</ref>[0U];</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(UNIT_TEST)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" kindref="member">AD2D_HwResources</ref>[AD2D_CHANNEL_VFB_LO_1].<ref refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" kindref="member">adcResult</ref>-&gt;<ref refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" kindref="member">bits</ref>.<ref refid="struct_a_d2_d___sgn_extend__s_1a2e897fcad8b4b13210b813154d607848" kindref="member">result</ref><sp/>=<sp/><ref refid="_i_qmath_lib_8h_1aae0980ad4c11c79c16c3177a7927bef6" kindref="member">_IQsat</ref>(<sp/><ref refid="_i_qmath_lib_8h_1a0cab5bcac9cacec7cbb2c3fa119bcd35" kindref="member">_IQ11</ref>(SCL_VPH_PU(<ref refid="lib_epc_control_8h_1a785efee4fbf0d28247f2570f245fd735" kindref="member">SIL_PORT_INP</ref>(<ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048" kindref="member">SIL_INP_FBK_PVR</ref>,<sp/>0))),<sp/>4095L,<sp/>-4096L);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" kindref="member">AD2D_HwResources</ref>[AD2D_CHANNEL_VFB_LO_2].<ref refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" kindref="member">adcResult</ref>-&gt;<ref refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" kindref="member">bits</ref>.<ref refid="struct_a_d2_d___sgn_extend__s_1a2e897fcad8b4b13210b813154d607848" kindref="member">result</ref><sp/>=<sp/><ref refid="_i_qmath_lib_8h_1aae0980ad4c11c79c16c3177a7927bef6" kindref="member">_IQsat</ref>(<sp/><ref refid="_i_qmath_lib_8h_1a0cab5bcac9cacec7cbb2c3fa119bcd35" kindref="member">_IQ11</ref>(SCL_VPH_PU(<ref refid="lib_epc_control_8h_1a785efee4fbf0d28247f2570f245fd735" kindref="member">SIL_PORT_INP</ref>(<ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048" kindref="member">SIL_INP_FBK_PVR</ref>,<sp/>1))),<sp/>4095L,<sp/>-4096L);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" kindref="member">AD2D_HwResources</ref>[AD2D_CHANNEL_VFB_LO_3].<ref refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" kindref="member">adcResult</ref>-&gt;<ref refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" kindref="member">bits</ref>.<ref refid="struct_a_d2_d___sgn_extend__s_1a2e897fcad8b4b13210b813154d607848" kindref="member">result</ref><sp/>=<sp/><ref refid="_i_qmath_lib_8h_1aae0980ad4c11c79c16c3177a7927bef6" kindref="member">_IQsat</ref>(<sp/><ref refid="_i_qmath_lib_8h_1a0cab5bcac9cacec7cbb2c3fa119bcd35" kindref="member">_IQ11</ref>(SCL_VPH_PU(<ref refid="lib_epc_control_8h_1a785efee4fbf0d28247f2570f245fd735" kindref="member">SIL_PORT_INP</ref>(<ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048" kindref="member">SIL_INP_FBK_PVR</ref>,<sp/>2))),<sp/>4095L,<sp/>-4096L);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" kindref="member">AD2D_HwResources</ref>[AD2D_CHANNEL_VFB_HI_1].<ref refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" kindref="member">adcResult</ref>-&gt;<ref refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" kindref="member">bits</ref>.<ref refid="struct_a_d2_d___sgn_extend__s_1a2e897fcad8b4b13210b813154d607848" kindref="member">result</ref><sp/>=<sp/><ref refid="_i_qmath_lib_8h_1aae0980ad4c11c79c16c3177a7927bef6" kindref="member">_IQsat</ref>(-<ref refid="_i_qmath_lib_8h_1a0cab5bcac9cacec7cbb2c3fa119bcd35" kindref="member">_IQ11</ref>(SCL_VPH_PU(<ref refid="lib_epc_control_8h_1a785efee4fbf0d28247f2570f245fd735" kindref="member">SIL_PORT_INP</ref>(<ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951" kindref="member">SIL_INP_FBK_PVL</ref>,<sp/>0))),<sp/>4095L,<sp/>-4096L);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" kindref="member">AD2D_HwResources</ref>[AD2D_CHANNEL_VFB_HI_2].<ref refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" kindref="member">adcResult</ref>-&gt;<ref refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" kindref="member">bits</ref>.<ref refid="struct_a_d2_d___sgn_extend__s_1a2e897fcad8b4b13210b813154d607848" kindref="member">result</ref><sp/>=<sp/><ref refid="_i_qmath_lib_8h_1aae0980ad4c11c79c16c3177a7927bef6" kindref="member">_IQsat</ref>(-<ref refid="_i_qmath_lib_8h_1a0cab5bcac9cacec7cbb2c3fa119bcd35" kindref="member">_IQ11</ref>(SCL_VPH_PU(<ref refid="lib_epc_control_8h_1a785efee4fbf0d28247f2570f245fd735" kindref="member">SIL_PORT_INP</ref>(<ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951" kindref="member">SIL_INP_FBK_PVL</ref>,<sp/>1))),<sp/>4095L,<sp/>-4096L);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b" kindref="member">AD2D_HwResources</ref>[AD2D_CHANNEL_VFB_HI_3].<ref refid="struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4" kindref="member">adcResult</ref>-&gt;<ref refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" kindref="member">bits</ref>.<ref refid="struct_a_d2_d___sgn_extend__s_1a2e897fcad8b4b13210b813154d607848" kindref="member">result</ref><sp/>=<sp/><ref refid="_i_qmath_lib_8h_1aae0980ad4c11c79c16c3177a7927bef6" kindref="member">_IQsat</ref>(-<ref refid="_i_qmath_lib_8h_1a0cab5bcac9cacec7cbb2c3fa119bcd35" kindref="member">_IQ11</ref>(SCL_VPH_PU(<ref refid="lib_epc_control_8h_1a785efee4fbf0d28247f2570f245fd735" kindref="member">SIL_PORT_INP</ref>(<ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951" kindref="member">SIL_INP_FBK_PVL</ref>,<sp/>2))),<sp/>4095L,<sp/>-4096L);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Store<sp/>raw<sp/>ADC<sp/>results<sp/>into<sp/>the<sp/>measurement<sp/>driver<sp/>in<sp/>uniform<sp/>format.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint16_t<sp/>chanIdx<sp/>=<sp/>0U;<sp/>chanIdx<sp/>&lt;<sp/>chanCount;<sp/>chanIdx++,<sp/>measChannel++)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*measChannel-&gt;<ref refid="struct_a_d2_d___meas_channel__s_1a09c43551818e64fdb74d134f60795a06" kindref="member">mesdDest</ref><sp/>=<sp/>(uint32_t)(measChannel-&gt;<ref refid="struct_a_d2_d___meas_channel__s_1aec3365d72c9f6d8f0eb802471291a830" kindref="member">adcResult</ref>-&gt;<ref refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" kindref="member">bits</ref>.<ref refid="struct_a_d2_d___sgn_extend__s_1a2e897fcad8b4b13210b813154d607848" kindref="member">result</ref>)<sp/>&lt;&lt;<sp/>(30U<sp/>-<sp/>11U);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Writes<sp/>all<sp/>necessary<sp/>variables<sp/>to<sp/>snapshot<sp/>data<sp/>file.</highlight></codeline>
+<codeline lineno="198"><highlight class="comment">*<sp/><sp/>The<sp/>file<sp/>is<sp/>already<sp/>open<sp/>and<sp/>the<sp/>file<sp/>will<sp/>not<sp/>be<sp/>closed</highlight></codeline>
+<codeline lineno="199"><highlight class="comment">*<sp/><sp/>by<sp/>this<sp/>function.</highlight></codeline>
+<codeline lineno="200"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_8c_1a366bea37699901e8e0f83572c121e5d0" kindref="member">AD2D_SIL_writeSnapshot</ref>(FILE*<sp/>snapshotFile)<sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" kindref="member">channelCount</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" kindref="member">channelCount</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Reads<sp/>all<sp/>necessary<sp/>variables<sp/>from<sp/>a<sp/>snapshot<sp/>data<sp/>file.</highlight></codeline>
+<codeline lineno="209"><highlight class="comment">*<sp/><sp/>The<sp/>file<sp/>is<sp/>already<sp/>open<sp/>and<sp/>the<sp/>file<sp/>will<sp/>not<sp/>be<sp/>closed</highlight></codeline>
+<codeline lineno="210"><highlight class="comment">*<sp/><sp/>by<sp/>this<sp/>function.</highlight></codeline>
+<codeline lineno="211"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_8c_1a1e14b3d0dc196f803eddbdaf9694e990" kindref="member">AD2D_SIL_readSnapshot</ref>(FILE*<sp/>snapshotFile)<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" kindref="member">channelCount</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a" kindref="member">AD2D_Data</ref>.<ref refid="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" kindref="member">channelCount</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="sil/emu/ad2d_emu.c"/>
+  </compounddef>
+</doxygen>

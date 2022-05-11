@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_a_d2_d___sgn_extend__u" kind="struct" language="C++" prot="public">
+    <compoundname>AD2D_SgnExtend_u</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" prot="public" static="no" mutable="no">
+        <type><ref refid="ad2d__emu_8c_1a54be1832c3f2655b48038185b6c3aa6f" kindref="member">AD2D_sSgnExtend_t</ref></type>
+        <definition>AD2D_sSgnExtend_t AD2D_SgnExtend_u::bits</definition>
+        <argsstring></argsstring>
+        <name>bits</name>
+        <qualifiedname>AD2D_SgnExtend_u::bits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="95" column="33" bodyfile="sil/emu/ad2d_emu.c" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d2_d___sgn_extend__u_1ad2128d178883c12e5fdbedba1d6d6f44" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t AD2D_SgnExtend_u::word</definition>
+        <argsstring></argsstring>
+        <name>word</name>
+        <qualifiedname>AD2D_SgnExtend_u::word</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="96" column="33" bodyfile="sil/emu/ad2d_emu.c" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>AD2D_SgnExtend_s</label>
+        <link refid="struct_a_d2_d___sgn_extend__s"/>
+      </node>
+      <node id="1">
+        <label>AD2D_SgnExtend_u</label>
+        <link refid="struct_a_d2_d___sgn_extend__u"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bits</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/emu/ad2d_emu.c" line="94" column="1" bodyfile="sil/emu/ad2d_emu.c" bodystart="94" bodyend="97"/>
+    <listofallmembers>
+      <member refid="struct_a_d2_d___sgn_extend__u_1a03a65c432a04f1581d7a46e0ac5f0b69" prot="public" virt="non-virtual"><scope>AD2D_SgnExtend_u</scope><name>bits</name></member>
+      <member refid="struct_a_d2_d___sgn_extend__u_1ad2128d178883c12e5fdbedba1d6d6f44" prot="public" virt="non-virtual"><scope>AD2D_SgnExtend_u</scope><name>word</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

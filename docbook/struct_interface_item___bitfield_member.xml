@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_interface_item___bitfield_member" xml:lang="en-US">
+<title>InterfaceItem_BitfieldMember Struct Reference</title>
+<indexterm><primary>InterfaceItem_BitfieldMember</primary></indexterm>
+<para>
+<computeroutput>#include &lt;interface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>unsigned char <link linkend="_struct_interface_item___bitfield_member_1a517f9dc2c6a6b3fc06f5b427fbd27bbd">offset</link></para>
+</listitem>
+            <listitem><para>unsigned char <link linkend="_struct_interface_item___bitfield_member_1a2727d3c32afd1f8ba70feb86e2ce7b4c">length</link></para>
+</listitem>
+            <listitem><para><link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const  *const <link linkend="_struct_interface_item___bitfield_member_1a5e311b0ab3fb93ed2e6a836dbcb88a03">item</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_interface_item___bitfield_member_1a5e311b0ab3fb93ed2e6a836dbcb88a03"/><section>
+    <title>item</title>
+<indexterm><primary>item</primary><secondary>InterfaceItem_BitfieldMember</secondary></indexterm>
+<indexterm><primary>InterfaceItem_BitfieldMember</primary><secondary>item</secondary></indexterm>
+<para><computeroutput><link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const* const InterfaceItem_BitfieldMember::item</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item___bitfield_member_1a2727d3c32afd1f8ba70feb86e2ce7b4c"/><section>
+    <title>length</title>
+<indexterm><primary>length</primary><secondary>InterfaceItem_BitfieldMember</secondary></indexterm>
+<indexterm><primary>InterfaceItem_BitfieldMember</primary><secondary>length</secondary></indexterm>
+<para><computeroutput>unsigned char InterfaceItem_BitfieldMember::length</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item___bitfield_member_1a517f9dc2c6a6b3fc06f5b427fbd27bbd"/><section>
+    <title>offset</title>
+<indexterm><primary>offset</primary><secondary>InterfaceItem_BitfieldMember</secondary></indexterm>
+<indexterm><primary>InterfaceItem_BitfieldMember</primary><secondary>offset</secondary></indexterm>
+<para><computeroutput>unsigned char InterfaceItem_BitfieldMember::offset</computeroutput></para></section>
+</section>
+</section>

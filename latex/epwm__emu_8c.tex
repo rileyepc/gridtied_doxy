@@ -1,0 +1,662 @@
+\hypertarget{epwm__emu_8c}{}\doxysection{sil/emu/epwm\+\_\+emu.c File Reference}
+\label{epwm__emu_8c}\index{sil/emu/epwm\_emu.c@{sil/emu/epwm\_emu.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}epwm\+\_\+emu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pwmd\+R.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}channel\+Mapping\+Manager.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___shadow_zones__s}{EPWM\+\_\+\+Shadow\+Zones\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___aq_action_zones__s}{EPWM\+\_\+\+Aq\+Action\+Zones\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___duty_limits__s}{EPWM\+\_\+\+Duty\+Limits\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___sat_threshold__s}{EPWM\+\_\+\+Sat\+Threshold\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___config__s}{EPWM\+\_\+\+Config\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___input__s}{EPWM\+\_\+\+Input\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___action_event__s}{EPWM\+\_\+\+Action\+Event\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___state__s}{EPWM\+\_\+\+State\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___output__s}{EPWM\+\_\+\+Output\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_p_w_m___data__s}{EPWM\+\_\+\+Data\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_a8878148d5329df5d8f604d4bbf141ecc}{EPWM\+\_\+\+MIN\+\_\+\+RELOAD\+\_\+\+COUNT\+\_\+\+DIAG\+\_\+\+ENA}}~6
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_aa18e9c53cf89fe421d3c178814978ce8}{EPWM\+\_\+\+CARRIER\+\_\+\+CHANNEL}}~\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_ab660d8e73fe04be099cd2dbda7c5f682}{EPWM\+\_\+\+EVENT\+\_\+\+QUEUE\+\_\+\+SIZE}}~((\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}} + 1U) $\ast$ 4U)
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_a073c70ff34930b8378285d54d448e498}{EPWM\+\_\+\+ZONE\+\_\+\+ENTRY}}~0U
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_a7c911f6860265fd667a1eb1864269fc7}{EPWM\+\_\+\+ZONE\+\_\+\+EXIT}}~1U
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_ade29593dff0c58e4a7dda9c823cf65ac}{EPWM\+\_\+\+CTRDIR\+\_\+\+STRINGS}}
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_a7283a7f88e7419afe6bf3fe7053137be}{EPWM\+\_\+\+TOPBOT\+\_\+\+STRINGS}}
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_a418efbe56c8e5c55c1125fd0dec5d780}{EPWM\+\_\+\+AQOUTPUTACTION\+\_\+\+STRINGS}}
+\item 
+\#define \mbox{\hyperlink{epwm__emu_8c_ac9c2b73eb3c1e2f98938ab01deb9a444}{EPWM\+\_\+\+AQEVENTSOURCE\+\_\+\+STRINGS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48}{EPWM\+\_\+\+Shadow\+Behaviour\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_a6db68d8f0a63b2abb77e37cb926dbcec}{EPWM\+\_\+\+Shadow\+Behaviour\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9}{EPWM\+\_\+\+Aq\+Output\+Action\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_af5665a9cb9ae25c32d428572226d8650}{EPWM\+\_\+\+Aq\+Output\+Action\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433fa}{EPWM\+\_\+\+Aq\+Event\+Source\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_a5ca83038074430b3815c96c95ed0b3bc}{EPWM\+\_\+\+Aq\+Event\+Source\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{epwm__emu_8c_a6206738f6960788a969fda3e2d617568}{EPWM\+\_\+\+Saturation\+State\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_a44ea5baa4c092c9c4ebba71d81f30412}{EPWM\+\_\+\+Saturation\+State\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68}{EPWM\+\_\+\+Complementary\+State\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_aa387b9b95e7fa780c577192b5c0a320c}{EPWM\+\_\+\+Complementary\+State\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___shadow_zones__s}{EPWM\+\_\+\+Shadow\+Zones\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_af0d00671afab18edf5b3ac6ffae39999}{EPWM\+\_\+\+Shadow\+Zones\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___aq_action_zones__s}{EPWM\+\_\+\+Aq\+Action\+Zones\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a6970546fd658c502859704dce216b503}{EPWM\+\_\+\+Aq\+Action\+Zones\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___duty_limits__s}{EPWM\+\_\+\+Duty\+Limits\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a15e691f63b2bbe8eed6aed6041a2aa5c}{EPWM\+\_\+\+Duty\+Limits\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___sat_threshold__s}{EPWM\+\_\+\+Sat\+Threshold\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_ae4013020997b9290fe302e56a3b108eb}{EPWM\+\_\+\+Sat\+Threshold\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___config__s}{EPWM\+\_\+\+Config\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a1453b48c7b1fc53c3f9ec7957965c78f}{EPWM\+\_\+\+Config\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___input__s}{EPWM\+\_\+\+Input\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a04bd23471b2a891d8fecdd970441ca9c}{EPWM\+\_\+\+Input\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___action_event__s}{EPWM\+\_\+\+Action\+Event\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a5580106735fd6104e8f44676a78ca0b9}{EPWM\+\_\+\+Action\+Event\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___state__s}{EPWM\+\_\+\+State\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a85b9207f97638bb1006416f65acafaa6}{EPWM\+\_\+\+State\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___output__s}{EPWM\+\_\+\+Output\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a939857fadec19bd8bf18e250df150687}{EPWM\+\_\+\+Output\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_p_w_m___data__s}{EPWM\+\_\+\+Data\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_ae8b08bcd03b84b14c4f3bdec933e1f70}{EPWM\+\_\+\+Data\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48}{EPWM\+\_\+\+Shadow\+Behaviour\+\_\+e}} \{ \mbox{\hyperlink{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48aa4a11f5af00c601026cb17e3901178eb}{EPWM\+\_\+\+SHADOW\+\_\+\+RELOAD\+\_\+\+ERROR}}
+, \mbox{\hyperlink{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48a1e6c25c4b96dcfa3f7413cc1e8ac0156}{EPWM\+\_\+\+SHADOW\+\_\+\+RELOAD\+\_\+\+TOP}}
+, \mbox{\hyperlink{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48aeed717fcbc27d06e8d98be19f7612df8}{EPWM\+\_\+\+SHADOW\+\_\+\+RELOAD\+\_\+\+BOT}}
+, \mbox{\hyperlink{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45}{EPWM\+\_\+\+SHADOW\+\_\+\+RELOAD\+\_\+\+BOTH}}
+ \}
+\item 
+enum \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9}{EPWM\+\_\+\+Aq\+Output\+Action\+\_\+e}} \{ \newline
+\mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9ab3af8514264341988178809ff560ffd1}{EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+ERROR}}
+, \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a08264d2b1d2f971f3397f14e71391b4a}{EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+NOTHING}}
+, \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a0bd8cccda1a03fcf5baba614b27d736e}{EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+RESET}}
+, \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a39cde6ff634f6ae887b026530a8035c4}{EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+SET}}
+, \newline
+\mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9aa662dca2413c5d30631f9750b23787ff}{EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+TOGGLE}}
+ \}
+\item 
+enum \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433fa}{EPWM\+\_\+\+Aq\+Event\+Source\+\_\+e}} \{ \newline
+\mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faadc0b3c1e51965ecf6fa1bc790373fa19}{EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+BOT}}
+, \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faafce49a5f577b86ac75c50bbe79023d0c}{EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+CUP}}
+, \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faa2b9779bd0f7e766803af334a4bd8a794}{EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+TOP}}
+, \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faad67de340ed798a73ab539e643f89cc95}{EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+CDN}}
+, \newline
+\mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faa2eeb0ab2d954675e4c5824cd6e61b626}{EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{epwm__emu_8c_a6206738f6960788a969fda3e2d617568}{EPWM\+\_\+\+Saturation\+State\+\_\+e}} \{ \mbox{\hyperlink{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a20fcd7cd71c970061851d6be782cd016}{EPWM\+\_\+\+SAT\+\_\+\+STATE\+\_\+\+UNSAT}}
+, \mbox{\hyperlink{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a82b1436e7367e3dafbbeadc35aa118c4}{EPWM\+\_\+\+SAT\+\_\+\+STATE\+\_\+\+UPPER}}
+, \mbox{\hyperlink{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a75d7715df6eda16939d8083d6a3e512d}{EPWM\+\_\+\+SAT\+\_\+\+STATE\+\_\+\+LOWER}}
+ \}
+\item 
+enum \mbox{\hyperlink{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68}{EPWM\+\_\+\+Complementary\+State\+\_\+e}} \{ \mbox{\hyperlink{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68a573bb3536fe47a89476f5c4e18de2903}{EPWM\+\_\+\+COMP\+\_\+\+STATE\+\_\+\+NN}}
+, \mbox{\hyperlink{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68a11c52ae5dca026dc6fa6390b24bc43fd}{EPWM\+\_\+\+COMP\+\_\+\+STATE\+\_\+\+PN}}
+, \mbox{\hyperlink{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68aa6901628f3c0b77795b3696bf5696aad}{EPWM\+\_\+\+COMP\+\_\+\+STATE\+\_\+\+NP}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{epwm__emu_8c_acb03ee9d7360843f7f2b96891bf507f2}{update\+Diagnostics}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{epwm__emu_8c_a5c7955b8e45b9f13c3f3193d51c47126}{EPWM\+\_\+\+Initialize}} (double t\+Init, bool is\+Fixed\+Rate)
+\item 
+double \mbox{\hyperlink{epwm__emu_8c_a177a27247999a85001e98fda816cef2e}{EPWM\+\_\+\+Get\+Next\+Solver\+Hit}} (double t\+Now)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_affefd814056482f0d96b74e4e906230e}{EPWM\+\_\+\+Output}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{epwm__emu_8c_ad6d064f34ac3f3621d40e69739eec80c}{EPWM\+\_\+\+Update}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{epwm__emu_8c_ae4484d7085296d45e76ee9bb0b246c71}{EPWM\+\_\+\+Terminate}} (double t\+Now)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a4b5f8b57993a11edcc3f8cffa01c4a11}{EPWM\+\_\+\+Set\+Param\+Number\+Of\+Channels}} (uint16\+\_\+t n\+Ch)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a2e9f18815e66057fa0590b9fc71fda16}{EPWM\+\_\+\+Set\+Param\+System\+Clock}} (double f\+Clock)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a70dfae6e93d6fa3e008f7996e7edff37}{EPWM\+\_\+\+Set\+Param\+Duty\+Cycle\+Limits}} (double d\+Upper, double d\+Lower)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a964710b8943a3d01a336335682c5ee37}{EPWM\+\_\+\+Set\+Param\+Dead\+Time}} (double t\+Dead)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a11810bd5f480bad68ba870b93a312f22}{EPWM\+\_\+\+Set\+Param\+Diag\+TOn\+Min}} (double t\+Hi\+Min)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a3a346956ee46c1c0b958d8255fb9dbc5}{EPWM\+\_\+\+Set\+Param\+Diag\+TOff\+Min}} (double t\+Lo\+Min)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_ab2c6885979c35ac0daf9ec4a272f4724}{EPWM\+\_\+\+Set\+Param\+Diag\+TAdj\+Min}} (double t\+Csw\+Min)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a73a9cf1875fa5ec2f8b69e4928803b87}{EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Half\+Period}} (int rld\+Behaviour)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a22e226ea489716e5fd0540b5f8eadbd4}{EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Entry\+Upper}} (int rld\+Behaviour)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a4e7373fac98c4cdf695a3c24180be67c}{EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Entry\+Lower}} (int rld\+Behaviour)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_af4766dc6b350308996eb9f8d55f9ae86}{EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Unsat}} (int rld\+Behaviour)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a45d803b1d987d8dee73c012f963fe1b5}{EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Exit\+Upper}} (int rld\+Behaviour)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_aa1c9aab58f198332effa7422252dfc44}{EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Exit\+Lower}} (int rld\+Behaviour)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a71e10cf731cbbf8cc6f8bc219cad49de}{EPWM\+\_\+\+Set\+Param\+Saturation\+Threshold}} (int sat\+Upper, int sat\+Lower)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a8d3e6fdb2fdc3f2aae24a8eafd7191b5}{EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Entry\+Upper}} (int i\+Bot, int i\+Top, int i\+Cup, int i\+Cdn)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a4b1d7ad5e8f9049fdc09e9917609cd3a}{EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Entry\+Lower}} (int i\+Bot, int i\+Top, int i\+Cup, int i\+Cdn)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_af3371b648dcd7273cb1e51516a82f6c0}{EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Exit\+Upper}} (int i\+Bot, int i\+Top, int i\+Cup, int i\+Cdn)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a676a8174ab16d206dde2c7515c2dbb3c}{EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Exit\+Lower}} (int i\+Bot, int i\+Top, int i\+Cup, int i\+Cdn)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_a4d6d96ea4ff3517fec41d53226ba465f}{EPWM\+\_\+\+Set\+Param\+Average\+Mode}} (bool be\+Average)
+\item 
+void \mbox{\hyperlink{epwm__emu_8c_a33638d842654de8348be285b3dcdb9fd}{EPWM\+\_\+\+SIL\+\_\+write\+Snapshot}} (FILE $\ast$snapshot\+File)
+\item 
+void \mbox{\hyperlink{epwm__emu_8c_af274c8f8e3de1793cfca8b82dac0c036}{EPWM\+\_\+\+SIL\+\_\+read\+Snapshot}} (FILE $\ast$snapshot\+File)
+\item 
+bool \mbox{\hyperlink{epwm__emu_8c_adaf4b1e98a6f5dd301101e5c066774cb}{EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Unsat}} (int i\+Bot, int i\+Top, int i\+Cup, int i\+Cdn)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{epwm__emu_8c_ac9c2b73eb3c1e2f98938ab01deb9a444}\label{epwm__emu_8c_ac9c2b73eb3c1e2f98938ab01deb9a444}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQEVENTSOURCE\_STRINGS@{EPWM\_AQEVENTSOURCE\_STRINGS}}
+\index{EPWM\_AQEVENTSOURCE\_STRINGS@{EPWM\_AQEVENTSOURCE\_STRINGS}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_AQEVENTSOURCE\_STRINGS}{EPWM\_AQEVENTSOURCE\_STRINGS}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+AQEVENTSOURCE\+\_\+\+STRINGS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{            \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faadc0b3c1e51965ecf6fa1bc790373fa19}{EPWM\_AQ\_SOURCE\_BOT}} ]      = \textcolor{stringliteral}{"{}BOT"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faafce49a5f577b86ac75c50bbe79023d0c}{EPWM\_AQ\_SOURCE\_CUP}} ]      = \textcolor{stringliteral}{"{}CUP"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faa2b9779bd0f7e766803af334a4bd8a794}{EPWM\_AQ\_SOURCE\_TOP}} ]      = \textcolor{stringliteral}{"{}TOP"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faad67de340ed798a73ab539e643f89cc95}{EPWM\_AQ\_SOURCE\_CDN}} ]      = \textcolor{stringliteral}{"{}CDN"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faa2eeb0ab2d954675e4c5824cd6e61b626}{EPWM\_AQ\_SOURCE\_CNT}} ]      = \textcolor{stringliteral}{"{}CNT"{}}         \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epwm__emu_8c_a418efbe56c8e5c55c1125fd0dec5d780}\label{epwm__emu_8c_a418efbe56c8e5c55c1125fd0dec5d780}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQOUTPUTACTION\_STRINGS@{EPWM\_AQOUTPUTACTION\_STRINGS}}
+\index{EPWM\_AQOUTPUTACTION\_STRINGS@{EPWM\_AQOUTPUTACTION\_STRINGS}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_AQOUTPUTACTION\_STRINGS}{EPWM\_AQOUTPUTACTION\_STRINGS}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+AQOUTPUTACTION\+\_\+\+STRINGS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{           \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9ab3af8514264341988178809ff560ffd1}{EPWM\_AQ\_OUTPUT\_ERROR}}   ]  = \textcolor{stringliteral}{"{}ERR"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a08264d2b1d2f971f3397f14e71391b4a}{EPWM\_AQ\_OUTPUT\_NOTHING}} ]  = \textcolor{stringliteral}{"{}NIL"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a0bd8cccda1a03fcf5baba614b27d736e}{EPWM\_AQ\_OUTPUT\_RESET}}   ]  = \textcolor{stringliteral}{"{}RST"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a39cde6ff634f6ae887b026530a8035c4}{EPWM\_AQ\_OUTPUT\_SET}}     ]  = \textcolor{stringliteral}{"{}SET"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9aa662dca2413c5d30631f9750b23787ff}{EPWM\_AQ\_OUTPUT\_TOGGLE}}  ]  = \textcolor{stringliteral}{"{}TOG"{}}         \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epwm__emu_8c_aa18e9c53cf89fe421d3c178814978ce8}\label{epwm__emu_8c_aa18e9c53cf89fe421d3c178814978ce8}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_CARRIER\_CHANNEL@{EPWM\_CARRIER\_CHANNEL}}
+\index{EPWM\_CARRIER\_CHANNEL@{EPWM\_CARRIER\_CHANNEL}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_CARRIER\_CHANNEL}{EPWM\_CARRIER\_CHANNEL}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+CARRIER\+\_\+\+CHANNEL~\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_ade29593dff0c58e4a7dda9c823cf65ac}\label{epwm__emu_8c_ade29593dff0c58e4a7dda9c823cf65ac}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_CTRDIR\_STRINGS@{EPWM\_CTRDIR\_STRINGS}}
+\index{EPWM\_CTRDIR\_STRINGS@{EPWM\_CTRDIR\_STRINGS}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_CTRDIR\_STRINGS}{EPWM\_CTRDIR\_STRINGS}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+CTRDIR\+\_\+\+STRINGS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                   \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8h_a26cd066448b5ccfdcddd605f20e95f1e}{EPWM\_TB\_COUNTING\_UP}} ]     = \textcolor{stringliteral}{"{}UP"{}},         \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{epwm__emu_8h_a5df749f08075143ee95ee01b7c531510}{EPWM\_TB\_COUNTING\_DN}} ]     = \textcolor{stringliteral}{"{}DN"{}}          \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epwm__emu_8c_ab660d8e73fe04be099cd2dbda7c5f682}\label{epwm__emu_8c_ab660d8e73fe04be099cd2dbda7c5f682}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_EVENT\_QUEUE\_SIZE@{EPWM\_EVENT\_QUEUE\_SIZE}}
+\index{EPWM\_EVENT\_QUEUE\_SIZE@{EPWM\_EVENT\_QUEUE\_SIZE}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_EVENT\_QUEUE\_SIZE}{EPWM\_EVENT\_QUEUE\_SIZE}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+EVENT\+\_\+\+QUEUE\+\_\+\+SIZE~((\mbox{\hyperlink{epwm__emu_8h_aa6a38010d4781ef1b3c08293dfbbb50a}{EPWM\+\_\+\+NR\+\_\+\+CHANNELS\+\_\+\+MAX}} + 1U) $\ast$ 4U)}
+
+\mbox{\Hypertarget{epwm__emu_8c_a8878148d5329df5d8f604d4bbf141ecc}\label{epwm__emu_8c_a8878148d5329df5d8f604d4bbf141ecc}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_MIN\_RELOAD\_COUNT\_DIAG\_ENA@{EPWM\_MIN\_RELOAD\_COUNT\_DIAG\_ENA}}
+\index{EPWM\_MIN\_RELOAD\_COUNT\_DIAG\_ENA@{EPWM\_MIN\_RELOAD\_COUNT\_DIAG\_ENA}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_MIN\_RELOAD\_COUNT\_DIAG\_ENA}{EPWM\_MIN\_RELOAD\_COUNT\_DIAG\_ENA}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+MIN\+\_\+\+RELOAD\+\_\+\+COUNT\+\_\+\+DIAG\+\_\+\+ENA~6}
+
+\mbox{\Hypertarget{epwm__emu_8c_a7283a7f88e7419afe6bf3fe7053137be}\label{epwm__emu_8c_a7283a7f88e7419afe6bf3fe7053137be}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_TOPBOT\_STRINGS@{EPWM\_TOPBOT\_STRINGS}}
+\index{EPWM\_TOPBOT\_STRINGS@{EPWM\_TOPBOT\_STRINGS}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_TOPBOT\_STRINGS}{EPWM\_TOPBOT\_STRINGS}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+TOPBOT\+\_\+\+STRINGS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                   \(\backslash\)}
+\DoxyCodeLine{    [ true ]                    = \textcolor{stringliteral}{"{}TOP"{}},        \(\backslash\)}
+\DoxyCodeLine{    [ false ]                   = \textcolor{stringliteral}{"{}BOT"{}}         \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epwm__emu_8c_a073c70ff34930b8378285d54d448e498}\label{epwm__emu_8c_a073c70ff34930b8378285d54d448e498}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_ZONE\_ENTRY@{EPWM\_ZONE\_ENTRY}}
+\index{EPWM\_ZONE\_ENTRY@{EPWM\_ZONE\_ENTRY}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_ZONE\_ENTRY}{EPWM\_ZONE\_ENTRY}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+ZONE\+\_\+\+ENTRY~0U}
+
+\mbox{\Hypertarget{epwm__emu_8c_a7c911f6860265fd667a1eb1864269fc7}\label{epwm__emu_8c_a7c911f6860265fd667a1eb1864269fc7}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_ZONE\_EXIT@{EPWM\_ZONE\_EXIT}}
+\index{EPWM\_ZONE\_EXIT@{EPWM\_ZONE\_EXIT}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_ZONE\_EXIT}{EPWM\_ZONE\_EXIT}}
+{\footnotesize\ttfamily \#define EPWM\+\_\+\+ZONE\+\_\+\+EXIT~1U}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{epwm__emu_8c_a5580106735fd6104e8f44676a78ca0b9}\label{epwm__emu_8c_a5580106735fd6104e8f44676a78ca0b9}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_ActionEvent\_t@{EPWM\_ActionEvent\_t}}
+\index{EPWM\_ActionEvent\_t@{EPWM\_ActionEvent\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_ActionEvent\_t}{EPWM\_ActionEvent\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___action_event__s}{EPWM\+\_\+\+Action\+Event\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a5580106735fd6104e8f44676a78ca0b9}{EPWM\+\_\+\+Action\+Event\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a6970546fd658c502859704dce216b503}\label{epwm__emu_8c_a6970546fd658c502859704dce216b503}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AqActionZones\_t@{EPWM\_AqActionZones\_t}}
+\index{EPWM\_AqActionZones\_t@{EPWM\_AqActionZones\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_AqActionZones\_t}{EPWM\_AqActionZones\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___aq_action_zones__s}{EPWM\+\_\+\+Aq\+Action\+Zones\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a6970546fd658c502859704dce216b503}{EPWM\+\_\+\+Aq\+Action\+Zones\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a5ca83038074430b3815c96c95ed0b3bc}\label{epwm__emu_8c_a5ca83038074430b3815c96c95ed0b3bc}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AqEventSource\_t@{EPWM\_AqEventSource\_t}}
+\index{EPWM\_AqEventSource\_t@{EPWM\_AqEventSource\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_AqEventSource\_t}{EPWM\_AqEventSource\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433fa}{EPWM\+\_\+\+Aq\+Event\+Source\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_a5ca83038074430b3815c96c95ed0b3bc}{EPWM\+\_\+\+Aq\+Event\+Source\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_af5665a9cb9ae25c32d428572226d8650}\label{epwm__emu_8c_af5665a9cb9ae25c32d428572226d8650}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AqOutputAction\_t@{EPWM\_AqOutputAction\_t}}
+\index{EPWM\_AqOutputAction\_t@{EPWM\_AqOutputAction\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_AqOutputAction\_t}{EPWM\_AqOutputAction\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9}{EPWM\+\_\+\+Aq\+Output\+Action\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_af5665a9cb9ae25c32d428572226d8650}{EPWM\+\_\+\+Aq\+Output\+Action\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_aa387b9b95e7fa780c577192b5c0a320c}\label{epwm__emu_8c_aa387b9b95e7fa780c577192b5c0a320c}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_ComplementaryState\_t@{EPWM\_ComplementaryState\_t}}
+\index{EPWM\_ComplementaryState\_t@{EPWM\_ComplementaryState\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_ComplementaryState\_t}{EPWM\_ComplementaryState\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68}{EPWM\+\_\+\+Complementary\+State\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_aa387b9b95e7fa780c577192b5c0a320c}{EPWM\+\_\+\+Complementary\+State\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a1453b48c7b1fc53c3f9ec7957965c78f}\label{epwm__emu_8c_a1453b48c7b1fc53c3f9ec7957965c78f}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_Config\_t@{EPWM\_Config\_t}}
+\index{EPWM\_Config\_t@{EPWM\_Config\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_Config\_t}{EPWM\_Config\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___config__s}{EPWM\+\_\+\+Config\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a1453b48c7b1fc53c3f9ec7957965c78f}{EPWM\+\_\+\+Config\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_ae8b08bcd03b84b14c4f3bdec933e1f70}\label{epwm__emu_8c_ae8b08bcd03b84b14c4f3bdec933e1f70}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_Data\_t@{EPWM\_Data\_t}}
+\index{EPWM\_Data\_t@{EPWM\_Data\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_Data\_t}{EPWM\_Data\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___data__s}{EPWM\+\_\+\+Data\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_ae8b08bcd03b84b14c4f3bdec933e1f70}{EPWM\+\_\+\+Data\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a15e691f63b2bbe8eed6aed6041a2aa5c}\label{epwm__emu_8c_a15e691f63b2bbe8eed6aed6041a2aa5c}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_DutyLimits\_t@{EPWM\_DutyLimits\_t}}
+\index{EPWM\_DutyLimits\_t@{EPWM\_DutyLimits\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_DutyLimits\_t}{EPWM\_DutyLimits\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___duty_limits__s}{EPWM\+\_\+\+Duty\+Limits\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a15e691f63b2bbe8eed6aed6041a2aa5c}{EPWM\+\_\+\+Duty\+Limits\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a04bd23471b2a891d8fecdd970441ca9c}\label{epwm__emu_8c_a04bd23471b2a891d8fecdd970441ca9c}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_Input\_t@{EPWM\_Input\_t}}
+\index{EPWM\_Input\_t@{EPWM\_Input\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_Input\_t}{EPWM\_Input\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___input__s}{EPWM\+\_\+\+Input\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a04bd23471b2a891d8fecdd970441ca9c}{EPWM\+\_\+\+Input\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a939857fadec19bd8bf18e250df150687}\label{epwm__emu_8c_a939857fadec19bd8bf18e250df150687}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_Output\_t@{EPWM\_Output\_t}}
+\index{EPWM\_Output\_t@{EPWM\_Output\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_Output\_t}{EPWM\_Output\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___output__s}{EPWM\+\_\+\+Output\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a939857fadec19bd8bf18e250df150687}{EPWM\+\_\+\+Output\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_ae4013020997b9290fe302e56a3b108eb}\label{epwm__emu_8c_ae4013020997b9290fe302e56a3b108eb}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SatThreshold\_t@{EPWM\_SatThreshold\_t}}
+\index{EPWM\_SatThreshold\_t@{EPWM\_SatThreshold\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SatThreshold\_t}{EPWM\_SatThreshold\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___sat_threshold__s}{EPWM\+\_\+\+Sat\+Threshold\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_ae4013020997b9290fe302e56a3b108eb}{EPWM\+\_\+\+Sat\+Threshold\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a44ea5baa4c092c9c4ebba71d81f30412}\label{epwm__emu_8c_a44ea5baa4c092c9c4ebba71d81f30412}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SaturationState\_t@{EPWM\_SaturationState\_t}}
+\index{EPWM\_SaturationState\_t@{EPWM\_SaturationState\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SaturationState\_t}{EPWM\_SaturationState\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{epwm__emu_8c_a6206738f6960788a969fda3e2d617568}{EPWM\+\_\+\+Saturation\+State\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_a44ea5baa4c092c9c4ebba71d81f30412}{EPWM\+\_\+\+Saturation\+State\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a6db68d8f0a63b2abb77e37cb926dbcec}\label{epwm__emu_8c_a6db68d8f0a63b2abb77e37cb926dbcec}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_ShadowBehaviour\_t@{EPWM\_ShadowBehaviour\_t}}
+\index{EPWM\_ShadowBehaviour\_t@{EPWM\_ShadowBehaviour\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_ShadowBehaviour\_t}{EPWM\_ShadowBehaviour\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48}{EPWM\+\_\+\+Shadow\+Behaviour\+\_\+e}} \mbox{\hyperlink{epwm__emu_8c_a6db68d8f0a63b2abb77e37cb926dbcec}{EPWM\+\_\+\+Shadow\+Behaviour\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_af0d00671afab18edf5b3ac6ffae39999}\label{epwm__emu_8c_af0d00671afab18edf5b3ac6ffae39999}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_ShadowZones\_t@{EPWM\_ShadowZones\_t}}
+\index{EPWM\_ShadowZones\_t@{EPWM\_ShadowZones\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_ShadowZones\_t}{EPWM\_ShadowZones\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___shadow_zones__s}{EPWM\+\_\+\+Shadow\+Zones\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_af0d00671afab18edf5b3ac6ffae39999}{EPWM\+\_\+\+Shadow\+Zones\+\_\+t}}}
+
+\mbox{\Hypertarget{epwm__emu_8c_a85b9207f97638bb1006416f65acafaa6}\label{epwm__emu_8c_a85b9207f97638bb1006416f65acafaa6}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_State\_t@{EPWM\_State\_t}}
+\index{EPWM\_State\_t@{EPWM\_State\_t}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_State\_t}{EPWM\_State\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_p_w_m___state__s}{EPWM\+\_\+\+State\+\_\+s}} \mbox{\hyperlink{epwm__emu_8c_a85b9207f97638bb1006416f65acafaa6}{EPWM\+\_\+\+State\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433fa}\label{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433fa}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AqEventSource\_e@{EPWM\_AqEventSource\_e}}
+\index{EPWM\_AqEventSource\_e@{EPWM\_AqEventSource\_e}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_AqEventSource\_e}{EPWM\_AqEventSource\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433fa}{EPWM\+\_\+\+Aq\+Event\+Source\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_SOURCE\_BOT@{EPWM\_AQ\_SOURCE\_BOT}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_SOURCE\_BOT@{EPWM\_AQ\_SOURCE\_BOT}}}\mbox{\Hypertarget{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faadc0b3c1e51965ecf6fa1bc790373fa19}\label{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faadc0b3c1e51965ecf6fa1bc790373fa19}} 
+EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+BOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_SOURCE\_CUP@{EPWM\_AQ\_SOURCE\_CUP}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_SOURCE\_CUP@{EPWM\_AQ\_SOURCE\_CUP}}}\mbox{\Hypertarget{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faafce49a5f577b86ac75c50bbe79023d0c}\label{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faafce49a5f577b86ac75c50bbe79023d0c}} 
+EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+CUP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_SOURCE\_TOP@{EPWM\_AQ\_SOURCE\_TOP}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_SOURCE\_TOP@{EPWM\_AQ\_SOURCE\_TOP}}}\mbox{\Hypertarget{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faa2b9779bd0f7e766803af334a4bd8a794}\label{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faa2b9779bd0f7e766803af334a4bd8a794}} 
+EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_SOURCE\_CDN@{EPWM\_AQ\_SOURCE\_CDN}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_SOURCE\_CDN@{EPWM\_AQ\_SOURCE\_CDN}}}\mbox{\Hypertarget{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faad67de340ed798a73ab539e643f89cc95}\label{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faad67de340ed798a73ab539e643f89cc95}} 
+EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+CDN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_SOURCE\_CNT@{EPWM\_AQ\_SOURCE\_CNT}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_SOURCE\_CNT@{EPWM\_AQ\_SOURCE\_CNT}}}\mbox{\Hypertarget{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faa2eeb0ab2d954675e4c5824cd6e61b626}\label{epwm__emu_8c_a18abec3619c375e6cad7222d4f6433faa2eeb0ab2d954675e4c5824cd6e61b626}} 
+EPWM\+\_\+\+AQ\+\_\+\+SOURCE\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9}\label{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AqOutputAction\_e@{EPWM\_AqOutputAction\_e}}
+\index{EPWM\_AqOutputAction\_e@{EPWM\_AqOutputAction\_e}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_AqOutputAction\_e}{EPWM\_AqOutputAction\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9}{EPWM\+\_\+\+Aq\+Output\+Action\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_OUTPUT\_ERROR@{EPWM\_AQ\_OUTPUT\_ERROR}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_OUTPUT\_ERROR@{EPWM\_AQ\_OUTPUT\_ERROR}}}\mbox{\Hypertarget{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9ab3af8514264341988178809ff560ffd1}\label{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9ab3af8514264341988178809ff560ffd1}} 
+EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_OUTPUT\_NOTHING@{EPWM\_AQ\_OUTPUT\_NOTHING}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_OUTPUT\_NOTHING@{EPWM\_AQ\_OUTPUT\_NOTHING}}}\mbox{\Hypertarget{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a08264d2b1d2f971f3397f14e71391b4a}\label{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a08264d2b1d2f971f3397f14e71391b4a}} 
+EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+NOTHING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_OUTPUT\_RESET@{EPWM\_AQ\_OUTPUT\_RESET}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_OUTPUT\_RESET@{EPWM\_AQ\_OUTPUT\_RESET}}}\mbox{\Hypertarget{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a0bd8cccda1a03fcf5baba614b27d736e}\label{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a0bd8cccda1a03fcf5baba614b27d736e}} 
+EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+RESET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_OUTPUT\_SET@{EPWM\_AQ\_OUTPUT\_SET}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_OUTPUT\_SET@{EPWM\_AQ\_OUTPUT\_SET}}}\mbox{\Hypertarget{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a39cde6ff634f6ae887b026530a8035c4}\label{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9a39cde6ff634f6ae887b026530a8035c4}} 
+EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+SET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_AQ\_OUTPUT\_TOGGLE@{EPWM\_AQ\_OUTPUT\_TOGGLE}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_AQ\_OUTPUT\_TOGGLE@{EPWM\_AQ\_OUTPUT\_TOGGLE}}}\mbox{\Hypertarget{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9aa662dca2413c5d30631f9750b23787ff}\label{epwm__emu_8c_aa31bde0bc1f2beb47a8b6d5c9ec45db9aa662dca2413c5d30631f9750b23787ff}} 
+EPWM\+\_\+\+AQ\+\_\+\+OUTPUT\+\_\+\+TOGGLE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68}\label{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_ComplementaryState\_e@{EPWM\_ComplementaryState\_e}}
+\index{EPWM\_ComplementaryState\_e@{EPWM\_ComplementaryState\_e}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_ComplementaryState\_e}{EPWM\_ComplementaryState\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68}{EPWM\+\_\+\+Complementary\+State\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_COMP\_STATE\_NN@{EPWM\_COMP\_STATE\_NN}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_COMP\_STATE\_NN@{EPWM\_COMP\_STATE\_NN}}}\mbox{\Hypertarget{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68a573bb3536fe47a89476f5c4e18de2903}\label{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68a573bb3536fe47a89476f5c4e18de2903}} 
+EPWM\+\_\+\+COMP\+\_\+\+STATE\+\_\+\+NN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_COMP\_STATE\_PN@{EPWM\_COMP\_STATE\_PN}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_COMP\_STATE\_PN@{EPWM\_COMP\_STATE\_PN}}}\mbox{\Hypertarget{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68a11c52ae5dca026dc6fa6390b24bc43fd}\label{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68a11c52ae5dca026dc6fa6390b24bc43fd}} 
+EPWM\+\_\+\+COMP\+\_\+\+STATE\+\_\+\+PN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_COMP\_STATE\_NP@{EPWM\_COMP\_STATE\_NP}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_COMP\_STATE\_NP@{EPWM\_COMP\_STATE\_NP}}}\mbox{\Hypertarget{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68aa6901628f3c0b77795b3696bf5696aad}\label{epwm__emu_8c_a4a48174ae62eb9f4a3acbc86160b8f68aa6901628f3c0b77795b3696bf5696aad}} 
+EPWM\+\_\+\+COMP\+\_\+\+STATE\+\_\+\+NP&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{epwm__emu_8c_a6206738f6960788a969fda3e2d617568}\label{epwm__emu_8c_a6206738f6960788a969fda3e2d617568}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SaturationState\_e@{EPWM\_SaturationState\_e}}
+\index{EPWM\_SaturationState\_e@{EPWM\_SaturationState\_e}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SaturationState\_e}{EPWM\_SaturationState\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{epwm__emu_8c_a6206738f6960788a969fda3e2d617568}{EPWM\+\_\+\+Saturation\+State\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_SAT\_STATE\_UNSAT@{EPWM\_SAT\_STATE\_UNSAT}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SAT\_STATE\_UNSAT@{EPWM\_SAT\_STATE\_UNSAT}}}\mbox{\Hypertarget{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a20fcd7cd71c970061851d6be782cd016}\label{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a20fcd7cd71c970061851d6be782cd016}} 
+EPWM\+\_\+\+SAT\+\_\+\+STATE\+\_\+\+UNSAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_SAT\_STATE\_UPPER@{EPWM\_SAT\_STATE\_UPPER}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SAT\_STATE\_UPPER@{EPWM\_SAT\_STATE\_UPPER}}}\mbox{\Hypertarget{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a82b1436e7367e3dafbbeadc35aa118c4}\label{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a82b1436e7367e3dafbbeadc35aa118c4}} 
+EPWM\+\_\+\+SAT\+\_\+\+STATE\+\_\+\+UPPER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_SAT\_STATE\_LOWER@{EPWM\_SAT\_STATE\_LOWER}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SAT\_STATE\_LOWER@{EPWM\_SAT\_STATE\_LOWER}}}\mbox{\Hypertarget{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a75d7715df6eda16939d8083d6a3e512d}\label{epwm__emu_8c_a6206738f6960788a969fda3e2d617568a75d7715df6eda16939d8083d6a3e512d}} 
+EPWM\+\_\+\+SAT\+\_\+\+STATE\+\_\+\+LOWER&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48}\label{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_ShadowBehaviour\_e@{EPWM\_ShadowBehaviour\_e}}
+\index{EPWM\_ShadowBehaviour\_e@{EPWM\_ShadowBehaviour\_e}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_ShadowBehaviour\_e}{EPWM\_ShadowBehaviour\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48}{EPWM\+\_\+\+Shadow\+Behaviour\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_SHADOW\_RELOAD\_ERROR@{EPWM\_SHADOW\_RELOAD\_ERROR}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SHADOW\_RELOAD\_ERROR@{EPWM\_SHADOW\_RELOAD\_ERROR}}}\mbox{\Hypertarget{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48aa4a11f5af00c601026cb17e3901178eb}\label{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48aa4a11f5af00c601026cb17e3901178eb}} 
+EPWM\+\_\+\+SHADOW\+\_\+\+RELOAD\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_SHADOW\_RELOAD\_TOP@{EPWM\_SHADOW\_RELOAD\_TOP}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SHADOW\_RELOAD\_TOP@{EPWM\_SHADOW\_RELOAD\_TOP}}}\mbox{\Hypertarget{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48a1e6c25c4b96dcfa3f7413cc1e8ac0156}\label{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48a1e6c25c4b96dcfa3f7413cc1e8ac0156}} 
+EPWM\+\_\+\+SHADOW\+\_\+\+RELOAD\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_SHADOW\_RELOAD\_BOT@{EPWM\_SHADOW\_RELOAD\_BOT}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SHADOW\_RELOAD\_BOT@{EPWM\_SHADOW\_RELOAD\_BOT}}}\mbox{\Hypertarget{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48aeed717fcbc27d06e8d98be19f7612df8}\label{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48aeed717fcbc27d06e8d98be19f7612df8}} 
+EPWM\+\_\+\+SHADOW\+\_\+\+RELOAD\+\_\+\+BOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPWM\_SHADOW\_RELOAD\_BOTH@{EPWM\_SHADOW\_RELOAD\_BOTH}!epwm\_emu.c@{epwm\_emu.c}}\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SHADOW\_RELOAD\_BOTH@{EPWM\_SHADOW\_RELOAD\_BOTH}}}\mbox{\Hypertarget{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45}\label{epwm__emu_8c_af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45}} 
+EPWM\+\_\+\+SHADOW\+\_\+\+RELOAD\+\_\+\+BOTH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{epwm__emu_8c_a177a27247999a85001e98fda816cef2e}\label{epwm__emu_8c_a177a27247999a85001e98fda816cef2e}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_GetNextSolverHit@{EPWM\_GetNextSolverHit}}
+\index{EPWM\_GetNextSolverHit@{EPWM\_GetNextSolverHit}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_GetNextSolverHit()}{EPWM\_GetNextSolverHit()}}
+{\footnotesize\ttfamily double EPWM\+\_\+\+Get\+Next\+Solver\+Hit (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a5c7955b8e45b9f13c3f3193d51c47126}\label{epwm__emu_8c_a5c7955b8e45b9f13c3f3193d51c47126}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_Initialize@{EPWM\_Initialize}}
+\index{EPWM\_Initialize@{EPWM\_Initialize}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_Initialize()}{EPWM\_Initialize()}}
+{\footnotesize\ttfamily void EPWM\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{double}]{t\+Init,  }\item[{bool}]{is\+Fixed\+Rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_affefd814056482f0d96b74e4e906230e}\label{epwm__emu_8c_affefd814056482f0d96b74e4e906230e}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_Output@{EPWM\_Output}}
+\index{EPWM\_Output@{EPWM\_Output}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_Output()}{EPWM\_Output()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Output (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a4b1d7ad5e8f9049fdc09e9917609cd3a}\label{epwm__emu_8c_a4b1d7ad5e8f9049fdc09e9917609cd3a}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamAqOutputActionsEntryLower@{EPWM\_SetParamAqOutputActionsEntryLower}}
+\index{EPWM\_SetParamAqOutputActionsEntryLower@{EPWM\_SetParamAqOutputActionsEntryLower}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamAqOutputActionsEntryLower()}{EPWM\_SetParamAqOutputActionsEntryLower()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Entry\+Lower (\begin{DoxyParamCaption}\item[{int}]{i\+Bot,  }\item[{int}]{i\+Top,  }\item[{int}]{i\+Cup,  }\item[{int}]{i\+Cdn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a8d3e6fdb2fdc3f2aae24a8eafd7191b5}\label{epwm__emu_8c_a8d3e6fdb2fdc3f2aae24a8eafd7191b5}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamAqOutputActionsEntryUpper@{EPWM\_SetParamAqOutputActionsEntryUpper}}
+\index{EPWM\_SetParamAqOutputActionsEntryUpper@{EPWM\_SetParamAqOutputActionsEntryUpper}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamAqOutputActionsEntryUpper()}{EPWM\_SetParamAqOutputActionsEntryUpper()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Entry\+Upper (\begin{DoxyParamCaption}\item[{int}]{i\+Bot,  }\item[{int}]{i\+Top,  }\item[{int}]{i\+Cup,  }\item[{int}]{i\+Cdn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a676a8174ab16d206dde2c7515c2dbb3c}\label{epwm__emu_8c_a676a8174ab16d206dde2c7515c2dbb3c}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamAqOutputActionsExitLower@{EPWM\_SetParamAqOutputActionsExitLower}}
+\index{EPWM\_SetParamAqOutputActionsExitLower@{EPWM\_SetParamAqOutputActionsExitLower}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamAqOutputActionsExitLower()}{EPWM\_SetParamAqOutputActionsExitLower()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Exit\+Lower (\begin{DoxyParamCaption}\item[{int}]{i\+Bot,  }\item[{int}]{i\+Top,  }\item[{int}]{i\+Cup,  }\item[{int}]{i\+Cdn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_af3371b648dcd7273cb1e51516a82f6c0}\label{epwm__emu_8c_af3371b648dcd7273cb1e51516a82f6c0}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamAqOutputActionsExitUpper@{EPWM\_SetParamAqOutputActionsExitUpper}}
+\index{EPWM\_SetParamAqOutputActionsExitUpper@{EPWM\_SetParamAqOutputActionsExitUpper}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamAqOutputActionsExitUpper()}{EPWM\_SetParamAqOutputActionsExitUpper()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Exit\+Upper (\begin{DoxyParamCaption}\item[{int}]{i\+Bot,  }\item[{int}]{i\+Top,  }\item[{int}]{i\+Cup,  }\item[{int}]{i\+Cdn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_adaf4b1e98a6f5dd301101e5c066774cb}\label{epwm__emu_8c_adaf4b1e98a6f5dd301101e5c066774cb}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamAqOutputActionsUnsat@{EPWM\_SetParamAqOutputActionsUnsat}}
+\index{EPWM\_SetParamAqOutputActionsUnsat@{EPWM\_SetParamAqOutputActionsUnsat}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamAqOutputActionsUnsat()}{EPWM\_SetParamAqOutputActionsUnsat()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Aq\+Output\+Actions\+Unsat (\begin{DoxyParamCaption}\item[{int}]{i\+Bot,  }\item[{int}]{i\+Top,  }\item[{int}]{i\+Cup,  }\item[{int}]{i\+Cdn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a4d6d96ea4ff3517fec41d53226ba465f}\label{epwm__emu_8c_a4d6d96ea4ff3517fec41d53226ba465f}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamAverageMode@{EPWM\_SetParamAverageMode}}
+\index{EPWM\_SetParamAverageMode@{EPWM\_SetParamAverageMode}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamAverageMode()}{EPWM\_SetParamAverageMode()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Average\+Mode (\begin{DoxyParamCaption}\item[{bool}]{be\+Average }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a964710b8943a3d01a336335682c5ee37}\label{epwm__emu_8c_a964710b8943a3d01a336335682c5ee37}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamDeadTime@{EPWM\_SetParamDeadTime}}
+\index{EPWM\_SetParamDeadTime@{EPWM\_SetParamDeadTime}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamDeadTime()}{EPWM\_SetParamDeadTime()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Dead\+Time (\begin{DoxyParamCaption}\item[{double}]{t\+Dead }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_ab2c6885979c35ac0daf9ec4a272f4724}\label{epwm__emu_8c_ab2c6885979c35ac0daf9ec4a272f4724}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamDiagTAdjMin@{EPWM\_SetParamDiagTAdjMin}}
+\index{EPWM\_SetParamDiagTAdjMin@{EPWM\_SetParamDiagTAdjMin}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamDiagTAdjMin()}{EPWM\_SetParamDiagTAdjMin()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Diag\+TAdj\+Min (\begin{DoxyParamCaption}\item[{double}]{t\+Csw\+Min }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a3a346956ee46c1c0b958d8255fb9dbc5}\label{epwm__emu_8c_a3a346956ee46c1c0b958d8255fb9dbc5}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamDiagTOffMin@{EPWM\_SetParamDiagTOffMin}}
+\index{EPWM\_SetParamDiagTOffMin@{EPWM\_SetParamDiagTOffMin}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamDiagTOffMin()}{EPWM\_SetParamDiagTOffMin()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Diag\+TOff\+Min (\begin{DoxyParamCaption}\item[{double}]{t\+Lo\+Min }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a11810bd5f480bad68ba870b93a312f22}\label{epwm__emu_8c_a11810bd5f480bad68ba870b93a312f22}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamDiagTOnMin@{EPWM\_SetParamDiagTOnMin}}
+\index{EPWM\_SetParamDiagTOnMin@{EPWM\_SetParamDiagTOnMin}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamDiagTOnMin()}{EPWM\_SetParamDiagTOnMin()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Diag\+TOn\+Min (\begin{DoxyParamCaption}\item[{double}]{t\+Hi\+Min }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a70dfae6e93d6fa3e008f7996e7edff37}\label{epwm__emu_8c_a70dfae6e93d6fa3e008f7996e7edff37}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamDutyCycleLimits@{EPWM\_SetParamDutyCycleLimits}}
+\index{EPWM\_SetParamDutyCycleLimits@{EPWM\_SetParamDutyCycleLimits}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamDutyCycleLimits()}{EPWM\_SetParamDutyCycleLimits()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Duty\+Cycle\+Limits (\begin{DoxyParamCaption}\item[{double}]{d\+Upper,  }\item[{double}]{d\+Lower }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a4b5f8b57993a11edcc3f8cffa01c4a11}\label{epwm__emu_8c_a4b5f8b57993a11edcc3f8cffa01c4a11}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamNumberOfChannels@{EPWM\_SetParamNumberOfChannels}}
+\index{EPWM\_SetParamNumberOfChannels@{EPWM\_SetParamNumberOfChannels}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamNumberOfChannels()}{EPWM\_SetParamNumberOfChannels()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Number\+Of\+Channels (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n\+Ch }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a71e10cf731cbbf8cc6f8bc219cad49de}\label{epwm__emu_8c_a71e10cf731cbbf8cc6f8bc219cad49de}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamSaturationThreshold@{EPWM\_SetParamSaturationThreshold}}
+\index{EPWM\_SetParamSaturationThreshold@{EPWM\_SetParamSaturationThreshold}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamSaturationThreshold()}{EPWM\_SetParamSaturationThreshold()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Saturation\+Threshold (\begin{DoxyParamCaption}\item[{int}]{sat\+Upper,  }\item[{int}]{sat\+Lower }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a4e7373fac98c4cdf695a3c24180be67c}\label{epwm__emu_8c_a4e7373fac98c4cdf695a3c24180be67c}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamShadowReloadBehaviourEntryLower@{EPWM\_SetParamShadowReloadBehaviourEntryLower}}
+\index{EPWM\_SetParamShadowReloadBehaviourEntryLower@{EPWM\_SetParamShadowReloadBehaviourEntryLower}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamShadowReloadBehaviourEntryLower()}{EPWM\_SetParamShadowReloadBehaviourEntryLower()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Entry\+Lower (\begin{DoxyParamCaption}\item[{int}]{rld\+Behaviour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a22e226ea489716e5fd0540b5f8eadbd4}\label{epwm__emu_8c_a22e226ea489716e5fd0540b5f8eadbd4}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamShadowReloadBehaviourEntryUpper@{EPWM\_SetParamShadowReloadBehaviourEntryUpper}}
+\index{EPWM\_SetParamShadowReloadBehaviourEntryUpper@{EPWM\_SetParamShadowReloadBehaviourEntryUpper}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamShadowReloadBehaviourEntryUpper()}{EPWM\_SetParamShadowReloadBehaviourEntryUpper()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Entry\+Upper (\begin{DoxyParamCaption}\item[{int}]{rld\+Behaviour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_aa1c9aab58f198332effa7422252dfc44}\label{epwm__emu_8c_aa1c9aab58f198332effa7422252dfc44}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamShadowReloadBehaviourExitLower@{EPWM\_SetParamShadowReloadBehaviourExitLower}}
+\index{EPWM\_SetParamShadowReloadBehaviourExitLower@{EPWM\_SetParamShadowReloadBehaviourExitLower}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamShadowReloadBehaviourExitLower()}{EPWM\_SetParamShadowReloadBehaviourExitLower()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Exit\+Lower (\begin{DoxyParamCaption}\item[{int}]{rld\+Behaviour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a45d803b1d987d8dee73c012f963fe1b5}\label{epwm__emu_8c_a45d803b1d987d8dee73c012f963fe1b5}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamShadowReloadBehaviourExitUpper@{EPWM\_SetParamShadowReloadBehaviourExitUpper}}
+\index{EPWM\_SetParamShadowReloadBehaviourExitUpper@{EPWM\_SetParamShadowReloadBehaviourExitUpper}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamShadowReloadBehaviourExitUpper()}{EPWM\_SetParamShadowReloadBehaviourExitUpper()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Exit\+Upper (\begin{DoxyParamCaption}\item[{int}]{rld\+Behaviour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a73a9cf1875fa5ec2f8b69e4928803b87}\label{epwm__emu_8c_a73a9cf1875fa5ec2f8b69e4928803b87}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamShadowReloadBehaviourHalfPeriod@{EPWM\_SetParamShadowReloadBehaviourHalfPeriod}}
+\index{EPWM\_SetParamShadowReloadBehaviourHalfPeriod@{EPWM\_SetParamShadowReloadBehaviourHalfPeriod}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamShadowReloadBehaviourHalfPeriod()}{EPWM\_SetParamShadowReloadBehaviourHalfPeriod()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Half\+Period (\begin{DoxyParamCaption}\item[{int}]{rld\+Behaviour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_af4766dc6b350308996eb9f8d55f9ae86}\label{epwm__emu_8c_af4766dc6b350308996eb9f8d55f9ae86}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamShadowReloadBehaviourUnsat@{EPWM\_SetParamShadowReloadBehaviourUnsat}}
+\index{EPWM\_SetParamShadowReloadBehaviourUnsat@{EPWM\_SetParamShadowReloadBehaviourUnsat}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamShadowReloadBehaviourUnsat()}{EPWM\_SetParamShadowReloadBehaviourUnsat()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+Shadow\+Reload\+Behaviour\+Unsat (\begin{DoxyParamCaption}\item[{int}]{rld\+Behaviour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a2e9f18815e66057fa0590b9fc71fda16}\label{epwm__emu_8c_a2e9f18815e66057fa0590b9fc71fda16}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SetParamSystemClock@{EPWM\_SetParamSystemClock}}
+\index{EPWM\_SetParamSystemClock@{EPWM\_SetParamSystemClock}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SetParamSystemClock()}{EPWM\_SetParamSystemClock()}}
+{\footnotesize\ttfamily bool EPWM\+\_\+\+Set\+Param\+System\+Clock (\begin{DoxyParamCaption}\item[{double}]{f\+Clock }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_af274c8f8e3de1793cfca8b82dac0c036}\label{epwm__emu_8c_af274c8f8e3de1793cfca8b82dac0c036}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SIL\_readSnapshot@{EPWM\_SIL\_readSnapshot}}
+\index{EPWM\_SIL\_readSnapshot@{EPWM\_SIL\_readSnapshot}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SIL\_readSnapshot()}{EPWM\_SIL\_readSnapshot()}}
+{\footnotesize\ttfamily void EPWM\+\_\+\+SIL\+\_\+read\+Snapshot (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{snapshot\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_a33638d842654de8348be285b3dcdb9fd}\label{epwm__emu_8c_a33638d842654de8348be285b3dcdb9fd}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_SIL\_writeSnapshot@{EPWM\_SIL\_writeSnapshot}}
+\index{EPWM\_SIL\_writeSnapshot@{EPWM\_SIL\_writeSnapshot}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_SIL\_writeSnapshot()}{EPWM\_SIL\_writeSnapshot()}}
+{\footnotesize\ttfamily void EPWM\+\_\+\+SIL\+\_\+write\+Snapshot (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{snapshot\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_ae4484d7085296d45e76ee9bb0b246c71}\label{epwm__emu_8c_ae4484d7085296d45e76ee9bb0b246c71}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_Terminate@{EPWM\_Terminate}}
+\index{EPWM\_Terminate@{EPWM\_Terminate}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_Terminate()}{EPWM\_Terminate()}}
+{\footnotesize\ttfamily void EPWM\+\_\+\+Terminate (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_ad6d064f34ac3f3621d40e69739eec80c}\label{epwm__emu_8c_ad6d064f34ac3f3621d40e69739eec80c}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!EPWM\_Update@{EPWM\_Update}}
+\index{EPWM\_Update@{EPWM\_Update}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{EPWM\_Update()}{EPWM\_Update()}}
+{\footnotesize\ttfamily void EPWM\+\_\+\+Update (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epwm__emu_8c_acb03ee9d7360843f7f2b96891bf507f2}\label{epwm__emu_8c_acb03ee9d7360843f7f2b96891bf507f2}} 
+\index{epwm\_emu.c@{epwm\_emu.c}!updateDiagnostics@{updateDiagnostics}}
+\index{updateDiagnostics@{updateDiagnostics}!epwm\_emu.c@{epwm\_emu.c}}
+\doxysubsubsection{\texorpdfstring{updateDiagnostics()}{updateDiagnostics()}}
+{\footnotesize\ttfamily void update\+Diagnostics (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+

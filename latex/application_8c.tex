@@ -1,0 +1,431 @@
+\hypertarget{application_8c}{}\doxysection{application.\+c File Reference}
+\label{application_8c}\index{application.c@{application.c}}
+{\ttfamily \#include \char`\"{}application.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}revision\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}channel\+Mapping\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}can\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}can\+Interface\+Gen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reference\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grid\+Support.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}top\+Level\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}afe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dcdc\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+Conversion\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Config\+Detect\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filter\+Observer\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Pll\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}auxiliary\+Pll\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}island\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protected\+Bus\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Current\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}adaptive\+Harmonic\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synchronous\+Harmonic\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mppt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}eng\+Debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthetic\+Inertia\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ABB\+\_\+lib\+Primary\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}modulator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}modbus\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sunspec.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}data\+Logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}eeprom\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}authorization.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}device\+Thermal\+Model.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}supervisor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IEEE1547.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grid\+Monitor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protections\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fan\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}environment\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fpga\+Regs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pwmd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}measurementd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}led.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simulate\+Feedback.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{application_8c_aac167759466a8cf18f6e33417e546f4d}{APP\+\_\+\+EEPROM\+\_\+\+SECTIONS\+\_\+\+DEFAULTS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0c}{APP\+\_\+\+Ee\+Sections\+\_\+e}} \{ \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cafaa8efd816207382b37685f325b9e905}{EE\+\_\+\+SECTION\+\_\+\+HW\+\_\+\+DEF}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca5b604da0f4df6079fe5292b92bfc373d}{EE\+\_\+\+SECTION\+\_\+\+CAN\+\_\+\+INTERFACE}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cab606ecab53108202be513deb4a58ec8e}{EE\+\_\+\+SECTION\+\_\+\+FAULT\+\_\+\+CONFIGURATION}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cab90bdca4b282c91f047bbe623064b727}{EE\+\_\+\+SECTION\+\_\+\+IO}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca807c4741ca242e85cde6002ef34a6442}{EE\+\_\+\+SECTION\+\_\+\+AFE}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca88990d79422fa7da5e15b20c0d9e307b}{EE\+\_\+\+SECTION\+\_\+\+LINE\+\_\+\+MONITOR}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca954db3b77be99dea319a43ab324eb6f4}{EE\+\_\+\+SECTION\+\_\+\+SERIAL}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cad8403b322b446430f4268656f5ea1f1b}{EE\+\_\+\+SECTION\+\_\+\+DATA\+\_\+\+LOGGER}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3c2a801b89624bb7162f534ff7e1c5a3}{EE\+\_\+\+SECTION\+\_\+\+DCDC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca8bb0d268a7b0de50562de9674a25a79a}{EE\+\_\+\+SECTION\+\_\+\+CAN\+\_\+\+TX\+\_\+\+RATES}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caeb0038013ccb79efe69f5031a5e4a115}{EE\+\_\+\+SECTION\+\_\+\+PCC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca2a301d6537ed2337c1a60c2d3c9d3cca}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caaa3dcb19f366aa6806a021da32f56708}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+HFO\+\_\+I}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caaf381ed7f6f681889cf7ddb76bcd5c4d}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+HFO\+\_\+C}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca852e0ffce3358517fa91af38ae2be7f0}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+PLL}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca80a77c2f40c7a83ba2ab15359f1ddc1c}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+APL}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca12d69ddd64b69b238702bb139f5e92a0}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+PBC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cae80f5549624ec7fae961ab4716853a70}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+ISL}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca4bfbbce40f7d6153024f07c5a78dba06}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+SPC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca1e7642aa30a6ffdc91d43a195ace932f}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+AHC}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca345b8a03cd9d00545ecf5adfa24af0fc}{EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+SHC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7ccfb126ba1ce03589b04ab2fac322fe}{EE\+\_\+\+SECTION\+\_\+\+MOD\+\_\+\+AC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caf8163c3ac13fca88c155c8f2fcf57338}{EE\+\_\+\+SECTION\+\_\+\+MOD\+\_\+\+DC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac0cd3a438d71426e750afe23ee0cd934}{EE\+\_\+\+SECTION\+\_\+\+PWMD}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca0f7531ffc48f9cb8c22510e545731139}{EE\+\_\+\+SECTION\+\_\+\+MESD}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca12a1bf6da5fd07bd4a7d3e8530651b54}{EE\+\_\+\+SECTION\+\_\+\+PROT}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caacbc0a3960b1f9a9419f30f7f13c3c77}{EE\+\_\+\+SECTION\+\_\+\+DTM}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3b9bad817b4fd842bfe6378302cb91b5}{EE\+\_\+\+SECTION\+\_\+\+SIM}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7f3ade36b71b86fe87672ea6fcc9f6a6}{EE\+\_\+\+SECTION\+\_\+\+CMM}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac03402ad085ff001adec8530b3d45ac3}{EE\+\_\+\+SECTION\+\_\+\+PCD}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca6edfd7f17bf11e988322ad5f6f2f27dc}{EE\+\_\+\+SECTION\+\_\+\+TLC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3c07baef931f722703a270098dabcfbb}{EE\+\_\+\+SECTION\+\_\+\+ABB}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cae932a4de5d6360b8eaeec095c8eea17e}{EE\+\_\+\+SECTION\+\_\+\+MPP}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca5a5adfc7ba2ca988fb6ef686832308dc}{EE\+\_\+\+SECTION\+\_\+\+FC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cabbcaf74b948a8b295de0a2affa3b2cd6}{EE\+\_\+\+SECTION\+\_\+\+EDB}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca8a31e73a6668674b1d692c2fbc07adc9}{EE\+\_\+\+SECTION\+\_\+\+ENV}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac37dbaf9eec105942564578876fe93ae}{EE\+\_\+\+SECTION\+\_\+\+AUTH}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7d4a520ed031f19ae64a5bf930106d01}{EE\+\_\+\+SECTION\+\_\+\+GSU}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac7f450a035bb629e4f9a94222799c735}{EE\+\_\+\+SECTION\+\_\+\+REF}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7c7d1d2875bcde7b871748246745c106}{EE\+\_\+\+SECTION\+\_\+\+VSG}}
+, \newline
+\mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca058ab488fb1988683987bc4026ae4253}{EE\+\_\+\+SECTION\+\_\+\+EI}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caf877d1c8e669a52955e7fbe14a465d6b}{EE\+\_\+\+SECTION\+\_\+\+SUNSPEC}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caab95e72862b693b23a72b03a37bea0c1}{EE\+\_\+\+SECTION\+\_\+\+COUNTERS}}
+, \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1}{EE\+\_\+\+SECTION\+\_\+\+COUNT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{application_8c_a0e95431f48ee71c1040217b94766ffcf}{application\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{application_8c_aae45035e0712c66641eda8c3b74e64d8}{APP\+\_\+set\+Fault\+Config}} (uint16\+\_\+t unused)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+MOD\+\_\+\+Ac\+Modulator\+\_\+t \mbox{\hyperlink{application_8c_a99999c420aa2ec727cdcdd61cc5737e2}{PCC\+\_\+\+Ac\+Modulator}}
+\item 
+MOD\+\_\+\+Dc\+Modulator\+\_\+t \mbox{\hyperlink{application_8c_a6f21714ffb159d1406870dc7d294687c}{DCDC\+\_\+\+Dc\+Modulator}}
+\item 
+Fault\+Configuration \mbox{\hyperlink{application_8c_aa9c39f99a87f5a9bd9b27fe269b1de04}{app\+Fault\+Configuration}} \mbox{[}FLT\+\_\+\+CFG\+\_\+\+ARRAY\+\_\+\+LENGTH\mbox{]}
+\item 
+\mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e}{J1939\+\_\+\+INTERFACE}} \mbox{\hyperlink{application_8c_aad4f26eabbeb37bd61a3bb2c76195043}{j1939\+Interface}} = \mbox{\hyperlink{application_8h_ae8d2212f7c053cff78f8630589545e61}{J1939\+\_\+\+INTERFACE\+\_\+\+DEFAULTS}}()
+\item 
+AUTH\+\_\+\+Nv \mbox{\hyperlink{application_8c_a52957b0633643716121c30ca8ac20e62}{authorization\+\_\+nv}}
+\item 
+volatile bool \mbox{\hyperlink{application_8c_a12358381f3cac018871d7c6b73a404ff}{ee\+Handler\+Use\+Defaults}} = false
+\item 
+AUTH\+\_\+\+Class \mbox{\hyperlink{application_8c_ad7db6abdd9f1159237959f51aa3bb13b}{authorization\+\_\+this}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{application_8c_aac167759466a8cf18f6e33417e546f4d}\label{application_8c_aac167759466a8cf18f6e33417e546f4d}} 
+\index{application.c@{application.c}!APP\_EEPROM\_SECTIONS\_DEFAULTS@{APP\_EEPROM\_SECTIONS\_DEFAULTS}}
+\index{APP\_EEPROM\_SECTIONS\_DEFAULTS@{APP\_EEPROM\_SECTIONS\_DEFAULTS}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{APP\_EEPROM\_SECTIONS\_DEFAULTS}{APP\_EEPROM\_SECTIONS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define APP\+\_\+\+EEPROM\+\_\+\+SECTIONS\+\_\+\+DEFAULTS}
+
+\begin{DoxyNote}{Note}
+Section revision must be updated under the following conditions\+:
+\begin{DoxyEnumerate}
+\item Any addition, subtraction, or size change to a meta parameter section (meta ruins everything)
+\item Removing one or more parameters from a section
+\item Changing the size of an existing parameter in a section
+\item Re-\/ordering parameters within a section
+\item Adding a parameter anywhere other than to the end of a section
+\end{DoxyEnumerate}
+\end{DoxyNote}
+In the future this should/will be managed and generated automatically by PM, preferably with memory storage managed by an OS file system running on a SoC.
+
+\begin{DoxyNote}{Note}
+uuids are used here to uniquely identify a parameter group, even if its name or index changes, and conversely prevent a parameter section\textquotesingle{}s data from being loaded into the wrong section in RAM. UUIDs can be generated with the following python code\+: 
+\end{DoxyNote}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0c}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0c}} 
+\index{application.c@{application.c}!APP\_EeSections\_e@{APP\_EeSections\_e}}
+\index{APP\_EeSections\_e@{APP\_EeSections\_e}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{APP\_EeSections\_e}{APP\_EeSections\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0c}{APP\+\_\+\+Ee\+Sections\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_HW\_DEF@{EE\_SECTION\_HW\_DEF}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_HW\_DEF@{EE\_SECTION\_HW\_DEF}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cafaa8efd816207382b37685f325b9e905}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cafaa8efd816207382b37685f325b9e905}} 
+EE\+\_\+\+SECTION\+\_\+\+HW\+\_\+\+DEF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_CAN\_INTERFACE@{EE\_SECTION\_CAN\_INTERFACE}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_CAN\_INTERFACE@{EE\_SECTION\_CAN\_INTERFACE}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca5b604da0f4df6079fe5292b92bfc373d}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca5b604da0f4df6079fe5292b92bfc373d}} 
+EE\+\_\+\+SECTION\+\_\+\+CAN\+\_\+\+INTERFACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_FAULT\_CONFIGURATION@{EE\_SECTION\_FAULT\_CONFIGURATION}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_FAULT\_CONFIGURATION@{EE\_SECTION\_FAULT\_CONFIGURATION}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cab606ecab53108202be513deb4a58ec8e}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cab606ecab53108202be513deb4a58ec8e}} 
+EE\+\_\+\+SECTION\+\_\+\+FAULT\+\_\+\+CONFIGURATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_IO@{EE\_SECTION\_IO}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_IO@{EE\_SECTION\_IO}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cab90bdca4b282c91f047bbe623064b727}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cab90bdca4b282c91f047bbe623064b727}} 
+EE\+\_\+\+SECTION\+\_\+\+IO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_AFE@{EE\_SECTION\_AFE}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_AFE@{EE\_SECTION\_AFE}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca807c4741ca242e85cde6002ef34a6442}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca807c4741ca242e85cde6002ef34a6442}} 
+EE\+\_\+\+SECTION\+\_\+\+AFE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_LINE\_MONITOR@{EE\_SECTION\_LINE\_MONITOR}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_LINE\_MONITOR@{EE\_SECTION\_LINE\_MONITOR}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca88990d79422fa7da5e15b20c0d9e307b}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca88990d79422fa7da5e15b20c0d9e307b}} 
+EE\+\_\+\+SECTION\+\_\+\+LINE\+\_\+\+MONITOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_SERIAL@{EE\_SECTION\_SERIAL}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_SERIAL@{EE\_SECTION\_SERIAL}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca954db3b77be99dea319a43ab324eb6f4}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca954db3b77be99dea319a43ab324eb6f4}} 
+EE\+\_\+\+SECTION\+\_\+\+SERIAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_DATA\_LOGGER@{EE\_SECTION\_DATA\_LOGGER}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_DATA\_LOGGER@{EE\_SECTION\_DATA\_LOGGER}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cad8403b322b446430f4268656f5ea1f1b}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cad8403b322b446430f4268656f5ea1f1b}} 
+EE\+\_\+\+SECTION\+\_\+\+DATA\+\_\+\+LOGGER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_DCDC@{EE\_SECTION\_DCDC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_DCDC@{EE\_SECTION\_DCDC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3c2a801b89624bb7162f534ff7e1c5a3}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3c2a801b89624bb7162f534ff7e1c5a3}} 
+EE\+\_\+\+SECTION\+\_\+\+DCDC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_CAN\_TX\_RATES@{EE\_SECTION\_CAN\_TX\_RATES}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_CAN\_TX\_RATES@{EE\_SECTION\_CAN\_TX\_RATES}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca8bb0d268a7b0de50562de9674a25a79a}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca8bb0d268a7b0de50562de9674a25a79a}} 
+EE\+\_\+\+SECTION\+\_\+\+CAN\+\_\+\+TX\+\_\+\+RATES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC@{EE\_SECTION\_PCC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC@{EE\_SECTION\_PCC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caeb0038013ccb79efe69f5031a5e4a115}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caeb0038013ccb79efe69f5031a5e4a115}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC@{EE\_SECTION\_PCC\_PPC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC@{EE\_SECTION\_PCC\_PPC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca2a301d6537ed2337c1a60c2d3c9d3cca}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca2a301d6537ed2337c1a60c2d3c9d3cca}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_HFO\_I@{EE\_SECTION\_PCC\_PPC\_HFO\_I}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_HFO\_I@{EE\_SECTION\_PCC\_PPC\_HFO\_I}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caaa3dcb19f366aa6806a021da32f56708}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caaa3dcb19f366aa6806a021da32f56708}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+HFO\+\_\+I&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_HFO\_C@{EE\_SECTION\_PCC\_PPC\_HFO\_C}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_HFO\_C@{EE\_SECTION\_PCC\_PPC\_HFO\_C}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caaf381ed7f6f681889cf7ddb76bcd5c4d}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caaf381ed7f6f681889cf7ddb76bcd5c4d}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+HFO\+\_\+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_PLL@{EE\_SECTION\_PCC\_PPC\_PLL}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_PLL@{EE\_SECTION\_PCC\_PPC\_PLL}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca852e0ffce3358517fa91af38ae2be7f0}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca852e0ffce3358517fa91af38ae2be7f0}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+PLL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_APL@{EE\_SECTION\_PCC\_PPC\_APL}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_APL@{EE\_SECTION\_PCC\_PPC\_APL}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca80a77c2f40c7a83ba2ab15359f1ddc1c}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca80a77c2f40c7a83ba2ab15359f1ddc1c}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+APL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_PBC@{EE\_SECTION\_PCC\_PPC\_PBC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_PBC@{EE\_SECTION\_PCC\_PPC\_PBC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca12d69ddd64b69b238702bb139f5e92a0}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca12d69ddd64b69b238702bb139f5e92a0}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+PBC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_ISL@{EE\_SECTION\_PCC\_PPC\_ISL}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_ISL@{EE\_SECTION\_PCC\_PPC\_ISL}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cae80f5549624ec7fae961ab4716853a70}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cae80f5549624ec7fae961ab4716853a70}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+ISL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_SPC@{EE\_SECTION\_PCC\_PPC\_SPC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_SPC@{EE\_SECTION\_PCC\_PPC\_SPC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca4bfbbce40f7d6153024f07c5a78dba06}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca4bfbbce40f7d6153024f07c5a78dba06}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+SPC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_AHC@{EE\_SECTION\_PCC\_PPC\_AHC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_AHC@{EE\_SECTION\_PCC\_PPC\_AHC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca1e7642aa30a6ffdc91d43a195ace932f}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca1e7642aa30a6ffdc91d43a195ace932f}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+AHC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCC\_PPC\_SHC@{EE\_SECTION\_PCC\_PPC\_SHC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCC\_PPC\_SHC@{EE\_SECTION\_PCC\_PPC\_SHC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca345b8a03cd9d00545ecf5adfa24af0fc}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca345b8a03cd9d00545ecf5adfa24af0fc}} 
+EE\+\_\+\+SECTION\+\_\+\+PCC\+\_\+\+PPC\+\_\+\+SHC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_MOD\_AC@{EE\_SECTION\_MOD\_AC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_MOD\_AC@{EE\_SECTION\_MOD\_AC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7ccfb126ba1ce03589b04ab2fac322fe}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7ccfb126ba1ce03589b04ab2fac322fe}} 
+EE\+\_\+\+SECTION\+\_\+\+MOD\+\_\+\+AC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_MOD\_DC@{EE\_SECTION\_MOD\_DC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_MOD\_DC@{EE\_SECTION\_MOD\_DC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caf8163c3ac13fca88c155c8f2fcf57338}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caf8163c3ac13fca88c155c8f2fcf57338}} 
+EE\+\_\+\+SECTION\+\_\+\+MOD\+\_\+\+DC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PWMD@{EE\_SECTION\_PWMD}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PWMD@{EE\_SECTION\_PWMD}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac0cd3a438d71426e750afe23ee0cd934}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac0cd3a438d71426e750afe23ee0cd934}} 
+EE\+\_\+\+SECTION\+\_\+\+PWMD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_MESD@{EE\_SECTION\_MESD}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_MESD@{EE\_SECTION\_MESD}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca0f7531ffc48f9cb8c22510e545731139}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca0f7531ffc48f9cb8c22510e545731139}} 
+EE\+\_\+\+SECTION\+\_\+\+MESD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PROT@{EE\_SECTION\_PROT}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PROT@{EE\_SECTION\_PROT}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca12a1bf6da5fd07bd4a7d3e8530651b54}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca12a1bf6da5fd07bd4a7d3e8530651b54}} 
+EE\+\_\+\+SECTION\+\_\+\+PROT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_DTM@{EE\_SECTION\_DTM}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_DTM@{EE\_SECTION\_DTM}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caacbc0a3960b1f9a9419f30f7f13c3c77}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caacbc0a3960b1f9a9419f30f7f13c3c77}} 
+EE\+\_\+\+SECTION\+\_\+\+DTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_SIM@{EE\_SECTION\_SIM}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_SIM@{EE\_SECTION\_SIM}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3b9bad817b4fd842bfe6378302cb91b5}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3b9bad817b4fd842bfe6378302cb91b5}} 
+EE\+\_\+\+SECTION\+\_\+\+SIM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_CMM@{EE\_SECTION\_CMM}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_CMM@{EE\_SECTION\_CMM}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7f3ade36b71b86fe87672ea6fcc9f6a6}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7f3ade36b71b86fe87672ea6fcc9f6a6}} 
+EE\+\_\+\+SECTION\+\_\+\+CMM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_PCD@{EE\_SECTION\_PCD}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_PCD@{EE\_SECTION\_PCD}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac03402ad085ff001adec8530b3d45ac3}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac03402ad085ff001adec8530b3d45ac3}} 
+EE\+\_\+\+SECTION\+\_\+\+PCD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_TLC@{EE\_SECTION\_TLC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_TLC@{EE\_SECTION\_TLC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca6edfd7f17bf11e988322ad5f6f2f27dc}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca6edfd7f17bf11e988322ad5f6f2f27dc}} 
+EE\+\_\+\+SECTION\+\_\+\+TLC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_ABB@{EE\_SECTION\_ABB}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_ABB@{EE\_SECTION\_ABB}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3c07baef931f722703a270098dabcfbb}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca3c07baef931f722703a270098dabcfbb}} 
+EE\+\_\+\+SECTION\+\_\+\+ABB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_MPP@{EE\_SECTION\_MPP}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_MPP@{EE\_SECTION\_MPP}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cae932a4de5d6360b8eaeec095c8eea17e}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cae932a4de5d6360b8eaeec095c8eea17e}} 
+EE\+\_\+\+SECTION\+\_\+\+MPP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_FC@{EE\_SECTION\_FC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_FC@{EE\_SECTION\_FC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca5a5adfc7ba2ca988fb6ef686832308dc}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca5a5adfc7ba2ca988fb6ef686832308dc}} 
+EE\+\_\+\+SECTION\+\_\+\+FC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_EDB@{EE\_SECTION\_EDB}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_EDB@{EE\_SECTION\_EDB}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cabbcaf74b948a8b295de0a2affa3b2cd6}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cabbcaf74b948a8b295de0a2affa3b2cd6}} 
+EE\+\_\+\+SECTION\+\_\+\+EDB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_ENV@{EE\_SECTION\_ENV}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_ENV@{EE\_SECTION\_ENV}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca8a31e73a6668674b1d692c2fbc07adc9}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca8a31e73a6668674b1d692c2fbc07adc9}} 
+EE\+\_\+\+SECTION\+\_\+\+ENV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_AUTH@{EE\_SECTION\_AUTH}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_AUTH@{EE\_SECTION\_AUTH}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac37dbaf9eec105942564578876fe93ae}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac37dbaf9eec105942564578876fe93ae}} 
+EE\+\_\+\+SECTION\+\_\+\+AUTH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_GSU@{EE\_SECTION\_GSU}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_GSU@{EE\_SECTION\_GSU}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7d4a520ed031f19ae64a5bf930106d01}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7d4a520ed031f19ae64a5bf930106d01}} 
+EE\+\_\+\+SECTION\+\_\+\+GSU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_REF@{EE\_SECTION\_REF}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_REF@{EE\_SECTION\_REF}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac7f450a035bb629e4f9a94222799c735}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0cac7f450a035bb629e4f9a94222799c735}} 
+EE\+\_\+\+SECTION\+\_\+\+REF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_VSG@{EE\_SECTION\_VSG}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_VSG@{EE\_SECTION\_VSG}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7c7d1d2875bcde7b871748246745c106}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca7c7d1d2875bcde7b871748246745c106}} 
+EE\+\_\+\+SECTION\+\_\+\+VSG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_EI@{EE\_SECTION\_EI}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_EI@{EE\_SECTION\_EI}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca058ab488fb1988683987bc4026ae4253}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0ca058ab488fb1988683987bc4026ae4253}} 
+EE\+\_\+\+SECTION\+\_\+\+EI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_SUNSPEC@{EE\_SECTION\_SUNSPEC}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_SUNSPEC@{EE\_SECTION\_SUNSPEC}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caf877d1c8e669a52955e7fbe14a465d6b}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caf877d1c8e669a52955e7fbe14a465d6b}} 
+EE\+\_\+\+SECTION\+\_\+\+SUNSPEC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_COUNTERS@{EE\_SECTION\_COUNTERS}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_COUNTERS@{EE\_SECTION\_COUNTERS}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caab95e72862b693b23a72b03a37bea0c1}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caab95e72862b693b23a72b03a37bea0c1}} 
+EE\+\_\+\+SECTION\+\_\+\+COUNTERS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EE\_SECTION\_COUNT@{EE\_SECTION\_COUNT}!application.c@{application.c}}\index{application.c@{application.c}!EE\_SECTION\_COUNT@{EE\_SECTION\_COUNT}}}\mbox{\Hypertarget{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1}\label{application_8c_a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1}} 
+EE\+\_\+\+SECTION\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{application_8c_aae45035e0712c66641eda8c3b74e64d8}\label{application_8c_aae45035e0712c66641eda8c3b74e64d8}} 
+\index{application.c@{application.c}!APP\_setFaultConfig@{APP\_setFaultConfig}}
+\index{APP\_setFaultConfig@{APP\_setFaultConfig}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{APP\_setFaultConfig()}{APP\_setFaultConfig()}}
+{\footnotesize\ttfamily void APP\+\_\+set\+Fault\+Config (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{unused }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{application_8c_a0e95431f48ee71c1040217b94766ffcf}\label{application_8c_a0e95431f48ee71c1040217b94766ffcf}} 
+\index{application.c@{application.c}!application\_init@{application\_init}}
+\index{application\_init@{application\_init}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{application\_init()}{application\_init()}}
+{\footnotesize\ttfamily void application\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{application_8c_aa9c39f99a87f5a9bd9b27fe269b1de04}\label{application_8c_aa9c39f99a87f5a9bd9b27fe269b1de04}} 
+\index{application.c@{application.c}!appFaultConfiguration@{appFaultConfiguration}}
+\index{appFaultConfiguration@{appFaultConfiguration}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{appFaultConfiguration}{appFaultConfiguration}}
+{\footnotesize\ttfamily Fault\+Configuration app\+Fault\+Configuration\mbox{[}FLT\+\_\+\+CFG\+\_\+\+ARRAY\+\_\+\+LENGTH\mbox{]}}
+
+\mbox{\Hypertarget{application_8c_a52957b0633643716121c30ca8ac20e62}\label{application_8c_a52957b0633643716121c30ca8ac20e62}} 
+\index{application.c@{application.c}!authorization\_nv@{authorization\_nv}}
+\index{authorization\_nv@{authorization\_nv}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{authorization\_nv}{authorization\_nv}}
+{\footnotesize\ttfamily AUTH\+\_\+\+Nv authorization\+\_\+nv}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= AUTH\_NV\_DEFAULTS(}
+\DoxyCodeLine{    .keys = \{}
+\DoxyCodeLine{         [0 ... AUTHORIZATION\_KEY\_COUNT-\/1] = AUTH\_KEY\_DEFAULTS(),}
+\DoxyCodeLine{         [0] = AUTH\_KEY\_DEFAULTS(}
+\DoxyCodeLine{             .value = \{ .uint64\_t = UINT64\_C(0x3193650bda3297ee)\},}
+\DoxyCodeLine{             .level = CAN\_Enum\_AccessLevel\_MAC\_Auth}
+\DoxyCodeLine{         )}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{application_8c_ad7db6abdd9f1159237959f51aa3bb13b}\label{application_8c_ad7db6abdd9f1159237959f51aa3bb13b}} 
+\index{application.c@{application.c}!authorization\_this@{authorization\_this}}
+\index{authorization\_this@{authorization\_this}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{authorization\_this}{authorization\_this}}
+{\footnotesize\ttfamily AUTH\+\_\+\+Class authorization\+\_\+this}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= AUTH\_CLASS\_DEFAULTS(}
+\DoxyCodeLine{    \mbox{\hyperlink{application_8c_a52957b0633643716121c30ca8ac20e62}{authorization\_nv}}.keys,}
+\DoxyCodeLine{    \mbox{\hyperlink{application_8c_a52957b0633643716121c30ca8ac20e62}{authorization\_nv}}.tags,}
+\DoxyCodeLine{    CAN\_Enum\_AccessLevel\_MAC\_Auth}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{application_8c_a6f21714ffb159d1406870dc7d294687c}\label{application_8c_a6f21714ffb159d1406870dc7d294687c}} 
+\index{application.c@{application.c}!DCDC\_DcModulator@{DCDC\_DcModulator}}
+\index{DCDC\_DcModulator@{DCDC\_DcModulator}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{DCDC\_DcModulator}{DCDC\_DcModulator}}
+{\footnotesize\ttfamily MOD\+\_\+\+Dc\+Modulator\+\_\+t DCDC\+\_\+\+Dc\+Modulator\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{application_8c_a12358381f3cac018871d7c6b73a404ff}\label{application_8c_a12358381f3cac018871d7c6b73a404ff}} 
+\index{application.c@{application.c}!eeHandlerUseDefaults@{eeHandlerUseDefaults}}
+\index{eeHandlerUseDefaults@{eeHandlerUseDefaults}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{eeHandlerUseDefaults}{eeHandlerUseDefaults}}
+{\footnotesize\ttfamily volatile bool ee\+Handler\+Use\+Defaults = false}
+
+\mbox{\Hypertarget{application_8c_aad4f26eabbeb37bd61a3bb2c76195043}\label{application_8c_aad4f26eabbeb37bd61a3bb2c76195043}} 
+\index{application.c@{application.c}!j1939Interface@{j1939Interface}}
+\index{j1939Interface@{j1939Interface}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{j1939Interface}{j1939Interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e}{J1939\+\_\+\+INTERFACE}} j1939\+Interface = \mbox{\hyperlink{application_8h_ae8d2212f7c053cff78f8630589545e61}{J1939\+\_\+\+INTERFACE\+\_\+\+DEFAULTS}}()}
+
+\mbox{\Hypertarget{application_8c_a99999c420aa2ec727cdcdd61cc5737e2}\label{application_8c_a99999c420aa2ec727cdcdd61cc5737e2}} 
+\index{application.c@{application.c}!PCC\_AcModulator@{PCC\_AcModulator}}
+\index{PCC\_AcModulator@{PCC\_AcModulator}!application.c@{application.c}}
+\doxysubsubsection{\texorpdfstring{PCC\_AcModulator}{PCC\_AcModulator}}
+{\footnotesize\ttfamily MOD\+\_\+\+Ac\+Modulator\+\_\+t PCC\+\_\+\+Ac\+Modulator\hspace{0.3cm}{\ttfamily [extern]}}
+

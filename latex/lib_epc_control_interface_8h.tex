@@ -1,0 +1,291 @@
+\hypertarget{lib_epc_control_interface_8h}{}\doxysection{sil/lib\+Epc\+Control\+Interface.h File Reference}
+\label{lib_epc_control_interface_8h}\index{sil/libEpcControlInterface.h@{sil/libEpcControlInterface.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}IEEE1547.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_setter__u}{Setter\+\_\+u}}
+\item 
+union \mbox{\hyperlink{union_table_setter__u}{Table\+Setter\+\_\+u}}
+\item 
+union \mbox{\hyperlink{union_variable_pointer__u}{Variable\+Pointer\+\_\+u}}
+\item 
+union \mbox{\hyperlink{union_variable__u}{Variable\+\_\+u}}
+\item 
+struct \mbox{\hyperlink{struct_table_info__s}{Table\+Info\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_item}{Item}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef char \mbox{\hyperlink{lib_epc_control_interface_8h_aee34cdd6ca7ac21b86cbe0045b054980}{Uuid\+String}}\mbox{[}37\mbox{]}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1be}{Setter\+Types}} \mbox{\hyperlink{lib_epc_control_interface_8h_a6e560b354532ba4468b16b3d7ce1688a}{Setter\+Types}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a09106c24c55cdf076dbda15144b0e354}{Setter\+Pointer\+\_\+float}}) (float)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a596cd4e31ef9726668d1dc4e8a97cb4f}{Setter\+Pointer\+\_\+uint64\+\_\+t}}) (uint64\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a1570b2c494bfb5466026274977d6f6f6}{Setter\+Pointer\+\_\+uint32\+\_\+t}}) (uint32\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a7097888a0ca042480a9b1e720ed6baae}{Setter\+Pointer\+\_\+uint16\+\_\+t}}) (uint16\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_aa3c4127315fb090a7562837dc1777fcc}{Setter\+Pointer\+\_\+int32\+\_\+t}}) (int32\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a7dbae0918f1a8ce9c4c62eca4dccdbcf}{Setter\+Pointer\+\_\+int16\+\_\+t}}) (int16\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_aed09fe87badac6697aeb78de5f8af381}{Setter\+Pointer\+\_\+size\+\_\+t}}) (size\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a0bc6b4f4fbd030b047b4851745cf599a}{Setter\+Pointer\+\_\+bool\+\_\+t}}) (bool)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_acb402f85b1799476879a05463aded3be}{Table\+Setter\+Pointer\+\_\+float}}) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, float)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_ae8b05fc055d4c5d647fe46724fa457fc}{Table\+Setter\+Pointer\+\_\+uint64\+\_\+t}}) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, uint64\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a52e72a12db0e60ade7d4ab13c43794ac}{Table\+Setter\+Pointer\+\_\+uint32\+\_\+t}}) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, uint32\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a08fe91592e98b86b9af4c691c43395e8}{Table\+Setter\+Pointer\+\_\+uint16\+\_\+t}}) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, uint16\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a1be165b29bd37e0c1328e7455392a4ab}{Table\+Setter\+Pointer\+\_\+int32\+\_\+t}}) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, int32\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_af6dff3e8dacb2d94d4a68d04c7fa54df}{Table\+Setter\+Pointer\+\_\+int16\+\_\+t}}) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, int16\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a3705b6364bbb4254479c485e434e8086}{Table\+Setter\+Pointer\+\_\+size\+\_\+t}}) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, size\+\_\+t)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{lib_epc_control_interface_8h_a3fc7297f838d1994209acd17df02310b}{Table\+Setter\+Pointer\+\_\+bool\+\_\+t}}) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, bool)
+\item 
+typedef union \mbox{\hyperlink{union_setter__u}{Setter\+\_\+u}} \mbox{\hyperlink{lib_epc_control_interface_8h_a8656d1b6efcc2cf91c97e72a03246850}{Setter\+\_\+t}}
+\item 
+typedef union \mbox{\hyperlink{union_table_setter__u}{Table\+Setter\+\_\+u}} \mbox{\hyperlink{lib_epc_control_interface_8h_ad622f3f4c94c42387e716c83aeefc71c}{Table\+Setter\+\_\+t}}
+\item 
+typedef union \mbox{\hyperlink{union_variable_pointer__u}{Variable\+Pointer\+\_\+u}} \mbox{\hyperlink{lib_epc_control_interface_8h_a5e5e471a0d381c6a2bcff73d0c8648ee}{Variable\+Pointer\+\_\+t}}
+\item 
+typedef union \mbox{\hyperlink{union_variable__u}{Variable\+\_\+u}} \mbox{\hyperlink{lib_epc_control_interface_8h_a8dcd954911da542c2eecf6d71bd04a63}{Variable\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_table_info__s}{Table\+Info\+\_\+s}} \mbox{\hyperlink{lib_epc_control_interface_8h_ac646c65bdea74999f4603fd9b529eab7}{Table\+Info\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_item}{Item}} \mbox{\hyperlink{lib_epc_control_interface_8h_a749adef16b111dddf0ab08f96707a3a0}{Item}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1be}{Setter\+Types}} \{ \newline
+\mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf}{setter\+\_\+float}}
+, \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298}{setter\+\_\+uint64\+\_\+t}}
+, \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd}{setter\+\_\+uint32\+\_\+t}}
+, \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0}{setter\+\_\+uint16\+\_\+t}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92}{setter\+\_\+int32\+\_\+t}}
+, \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f}{setter\+\_\+int16\+\_\+t}}
+, \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9}{setter\+\_\+size\+\_\+t}}
+, \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc}{setter\+\_\+bool}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lib_epc_control_interface_8h_a0a34752190321c6d532b08678991cf02}{SIL\+\_\+load\+Pmvs}} (char $\ast$path, bool const b\+Verbose, bool const call\+Setters)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a749adef16b111dddf0ab08f96707a3a0}\label{lib_epc_control_interface_8h_a749adef16b111dddf0ab08f96707a3a0}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!Item@{Item}}
+\index{Item@{Item}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{Item}{Item}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_item}{Item}} \mbox{\hyperlink{struct_item}{Item}}}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a8656d1b6efcc2cf91c97e72a03246850}\label{lib_epc_control_interface_8h_a8656d1b6efcc2cf91c97e72a03246850}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!Setter\_t@{Setter\_t}}
+\index{Setter\_t@{Setter\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{Setter\_t}{Setter\_t}}
+{\footnotesize\ttfamily typedef union \mbox{\hyperlink{union_setter__u}{Setter\+\_\+u}} \mbox{\hyperlink{lib_epc_control_interface_8h_a8656d1b6efcc2cf91c97e72a03246850}{Setter\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a0bc6b4f4fbd030b047b4851745cf599a}\label{lib_epc_control_interface_8h_a0bc6b4f4fbd030b047b4851745cf599a}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterPointer\_bool\_t@{SetterPointer\_bool\_t}}
+\index{SetterPointer\_bool\_t@{SetterPointer\_bool\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterPointer\_bool\_t}{SetterPointer\_bool\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Pointer\+\_\+bool\+\_\+t) (bool)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a09106c24c55cdf076dbda15144b0e354}\label{lib_epc_control_interface_8h_a09106c24c55cdf076dbda15144b0e354}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterPointer\_float@{SetterPointer\_float}}
+\index{SetterPointer\_float@{SetterPointer\_float}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterPointer\_float}{SetterPointer\_float}}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Pointer\+\_\+float) (float)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a7dbae0918f1a8ce9c4c62eca4dccdbcf}\label{lib_epc_control_interface_8h_a7dbae0918f1a8ce9c4c62eca4dccdbcf}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterPointer\_int16\_t@{SetterPointer\_int16\_t}}
+\index{SetterPointer\_int16\_t@{SetterPointer\_int16\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterPointer\_int16\_t}{SetterPointer\_int16\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Pointer\+\_\+int16\+\_\+t) (int16\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_aa3c4127315fb090a7562837dc1777fcc}\label{lib_epc_control_interface_8h_aa3c4127315fb090a7562837dc1777fcc}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterPointer\_int32\_t@{SetterPointer\_int32\_t}}
+\index{SetterPointer\_int32\_t@{SetterPointer\_int32\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterPointer\_int32\_t}{SetterPointer\_int32\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Pointer\+\_\+int32\+\_\+t) (int32\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_aed09fe87badac6697aeb78de5f8af381}\label{lib_epc_control_interface_8h_aed09fe87badac6697aeb78de5f8af381}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterPointer\_size\_t@{SetterPointer\_size\_t}}
+\index{SetterPointer\_size\_t@{SetterPointer\_size\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterPointer\_size\_t}{SetterPointer\_size\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Pointer\+\_\+size\+\_\+t) (size\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a7097888a0ca042480a9b1e720ed6baae}\label{lib_epc_control_interface_8h_a7097888a0ca042480a9b1e720ed6baae}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterPointer\_uint16\_t@{SetterPointer\_uint16\_t}}
+\index{SetterPointer\_uint16\_t@{SetterPointer\_uint16\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterPointer\_uint16\_t}{SetterPointer\_uint16\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Pointer\+\_\+uint16\+\_\+t) (uint16\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a1570b2c494bfb5466026274977d6f6f6}\label{lib_epc_control_interface_8h_a1570b2c494bfb5466026274977d6f6f6}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterPointer\_uint32\_t@{SetterPointer\_uint32\_t}}
+\index{SetterPointer\_uint32\_t@{SetterPointer\_uint32\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterPointer\_uint32\_t}{SetterPointer\_uint32\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Pointer\+\_\+uint32\+\_\+t) (uint32\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a596cd4e31ef9726668d1dc4e8a97cb4f}\label{lib_epc_control_interface_8h_a596cd4e31ef9726668d1dc4e8a97cb4f}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterPointer\_uint64\_t@{SetterPointer\_uint64\_t}}
+\index{SetterPointer\_uint64\_t@{SetterPointer\_uint64\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterPointer\_uint64\_t}{SetterPointer\_uint64\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Pointer\+\_\+uint64\+\_\+t) (uint64\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a6e560b354532ba4468b16b3d7ce1688a}\label{lib_epc_control_interface_8h_a6e560b354532ba4468b16b3d7ce1688a}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterTypes@{SetterTypes}}
+\index{SetterTypes@{SetterTypes}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterTypes}{SetterTypes}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1be}{Setter\+Types}} \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1be}{Setter\+Types}}}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_ac646c65bdea74999f4603fd9b529eab7}\label{lib_epc_control_interface_8h_ac646c65bdea74999f4603fd9b529eab7}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableInfo\_t@{TableInfo\_t}}
+\index{TableInfo\_t@{TableInfo\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableInfo\_t}{TableInfo\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_table_info__s}{Table\+Info\+\_\+s}} \mbox{\hyperlink{lib_epc_control_interface_8h_ac646c65bdea74999f4603fd9b529eab7}{Table\+Info\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_ad622f3f4c94c42387e716c83aeefc71c}\label{lib_epc_control_interface_8h_ad622f3f4c94c42387e716c83aeefc71c}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetter\_t@{TableSetter\_t}}
+\index{TableSetter\_t@{TableSetter\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetter\_t}{TableSetter\_t}}
+{\footnotesize\ttfamily typedef union \mbox{\hyperlink{union_table_setter__u}{Table\+Setter\+\_\+u}} \mbox{\hyperlink{lib_epc_control_interface_8h_ad622f3f4c94c42387e716c83aeefc71c}{Table\+Setter\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a3fc7297f838d1994209acd17df02310b}\label{lib_epc_control_interface_8h_a3fc7297f838d1994209acd17df02310b}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetterPointer\_bool\_t@{TableSetterPointer\_bool\_t}}
+\index{TableSetterPointer\_bool\_t@{TableSetterPointer\_bool\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetterPointer\_bool\_t}{TableSetterPointer\_bool\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+Setter\+Pointer\+\_\+bool\+\_\+t) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, bool)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_acb402f85b1799476879a05463aded3be}\label{lib_epc_control_interface_8h_acb402f85b1799476879a05463aded3be}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetterPointer\_float@{TableSetterPointer\_float}}
+\index{TableSetterPointer\_float@{TableSetterPointer\_float}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetterPointer\_float}{TableSetterPointer\_float}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+Setter\+Pointer\+\_\+float) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, float)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_af6dff3e8dacb2d94d4a68d04c7fa54df}\label{lib_epc_control_interface_8h_af6dff3e8dacb2d94d4a68d04c7fa54df}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetterPointer\_int16\_t@{TableSetterPointer\_int16\_t}}
+\index{TableSetterPointer\_int16\_t@{TableSetterPointer\_int16\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetterPointer\_int16\_t}{TableSetterPointer\_int16\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+Setter\+Pointer\+\_\+int16\+\_\+t) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, int16\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a1be165b29bd37e0c1328e7455392a4ab}\label{lib_epc_control_interface_8h_a1be165b29bd37e0c1328e7455392a4ab}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetterPointer\_int32\_t@{TableSetterPointer\_int32\_t}}
+\index{TableSetterPointer\_int32\_t@{TableSetterPointer\_int32\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetterPointer\_int32\_t}{TableSetterPointer\_int32\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+Setter\+Pointer\+\_\+int32\+\_\+t) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, int32\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a3705b6364bbb4254479c485e434e8086}\label{lib_epc_control_interface_8h_a3705b6364bbb4254479c485e434e8086}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetterPointer\_size\_t@{TableSetterPointer\_size\_t}}
+\index{TableSetterPointer\_size\_t@{TableSetterPointer\_size\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetterPointer\_size\_t}{TableSetterPointer\_size\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+Setter\+Pointer\+\_\+size\+\_\+t) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, size\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a08fe91592e98b86b9af4c691c43395e8}\label{lib_epc_control_interface_8h_a08fe91592e98b86b9af4c691c43395e8}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetterPointer\_uint16\_t@{TableSetterPointer\_uint16\_t}}
+\index{TableSetterPointer\_uint16\_t@{TableSetterPointer\_uint16\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetterPointer\_uint16\_t}{TableSetterPointer\_uint16\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+Setter\+Pointer\+\_\+uint16\+\_\+t) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, uint16\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a52e72a12db0e60ade7d4ab13c43794ac}\label{lib_epc_control_interface_8h_a52e72a12db0e60ade7d4ab13c43794ac}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetterPointer\_uint32\_t@{TableSetterPointer\_uint32\_t}}
+\index{TableSetterPointer\_uint32\_t@{TableSetterPointer\_uint32\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetterPointer\_uint32\_t}{TableSetterPointer\_uint32\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+Setter\+Pointer\+\_\+uint32\+\_\+t) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, uint32\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_ae8b05fc055d4c5d647fe46724fa457fc}\label{lib_epc_control_interface_8h_ae8b05fc055d4c5d647fe46724fa457fc}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!TableSetterPointer\_uint64\_t@{TableSetterPointer\_uint64\_t}}
+\index{TableSetterPointer\_uint64\_t@{TableSetterPointer\_uint64\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{TableSetterPointer\_uint64\_t}{TableSetterPointer\_uint64\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+Setter\+Pointer\+\_\+uint64\+\_\+t) (IEEE1547\+\_\+\+Mon\+Curve\+Type, size\+\_\+t, size\+\_\+t, uint64\+\_\+t)}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_aee34cdd6ca7ac21b86cbe0045b054980}\label{lib_epc_control_interface_8h_aee34cdd6ca7ac21b86cbe0045b054980}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!UuidString@{UuidString}}
+\index{UuidString@{UuidString}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{UuidString}{UuidString}}
+{\footnotesize\ttfamily typedef char Uuid\+String\mbox{[}37\mbox{]}}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a8dcd954911da542c2eecf6d71bd04a63}\label{lib_epc_control_interface_8h_a8dcd954911da542c2eecf6d71bd04a63}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!Variable\_t@{Variable\_t}}
+\index{Variable\_t@{Variable\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{Variable\_t}{Variable\_t}}
+{\footnotesize\ttfamily typedef union \mbox{\hyperlink{union_variable__u}{Variable\+\_\+u}} \mbox{\hyperlink{lib_epc_control_interface_8h_a8dcd954911da542c2eecf6d71bd04a63}{Variable\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a5e5e471a0d381c6a2bcff73d0c8648ee}\label{lib_epc_control_interface_8h_a5e5e471a0d381c6a2bcff73d0c8648ee}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!VariablePointer\_t@{VariablePointer\_t}}
+\index{VariablePointer\_t@{VariablePointer\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{VariablePointer\_t}{VariablePointer\_t}}
+{\footnotesize\ttfamily typedef union \mbox{\hyperlink{union_variable_pointer__u}{Variable\+Pointer\+\_\+u}} \mbox{\hyperlink{lib_epc_control_interface_8h_a5e5e471a0d381c6a2bcff73d0c8648ee}{Variable\+Pointer\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1be}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1be}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SetterTypes@{SetterTypes}}
+\index{SetterTypes@{SetterTypes}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SetterTypes}{SetterTypes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1be}{Setter\+Types}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{setter\_float@{setter\_float}!libEpcControlInterface.h@{libEpcControlInterface.h}}\index{libEpcControlInterface.h@{libEpcControlInterface.h}!setter\_float@{setter\_float}}}\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf}} 
+setter\+\_\+float&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{setter\_uint64\_t@{setter\_uint64\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}\index{libEpcControlInterface.h@{libEpcControlInterface.h}!setter\_uint64\_t@{setter\_uint64\_t}}}\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298}} 
+setter\+\_\+uint64\+\_\+t&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{setter\_uint32\_t@{setter\_uint32\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}\index{libEpcControlInterface.h@{libEpcControlInterface.h}!setter\_uint32\_t@{setter\_uint32\_t}}}\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd}} 
+setter\+\_\+uint32\+\_\+t&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{setter\_uint16\_t@{setter\_uint16\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}\index{libEpcControlInterface.h@{libEpcControlInterface.h}!setter\_uint16\_t@{setter\_uint16\_t}}}\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0}} 
+setter\+\_\+uint16\+\_\+t&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{setter\_int32\_t@{setter\_int32\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}\index{libEpcControlInterface.h@{libEpcControlInterface.h}!setter\_int32\_t@{setter\_int32\_t}}}\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92}} 
+setter\+\_\+int32\+\_\+t&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{setter\_int16\_t@{setter\_int16\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}\index{libEpcControlInterface.h@{libEpcControlInterface.h}!setter\_int16\_t@{setter\_int16\_t}}}\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f}} 
+setter\+\_\+int16\+\_\+t&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{setter\_size\_t@{setter\_size\_t}!libEpcControlInterface.h@{libEpcControlInterface.h}}\index{libEpcControlInterface.h@{libEpcControlInterface.h}!setter\_size\_t@{setter\_size\_t}}}\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9}} 
+setter\+\_\+size\+\_\+t&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{setter\_bool@{setter\_bool}!libEpcControlInterface.h@{libEpcControlInterface.h}}\index{libEpcControlInterface.h@{libEpcControlInterface.h}!setter\_bool@{setter\_bool}}}\mbox{\Hypertarget{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc}\label{lib_epc_control_interface_8h_af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc}} 
+setter\+\_\+bool&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lib_epc_control_interface_8h_a0a34752190321c6d532b08678991cf02}\label{lib_epc_control_interface_8h_a0a34752190321c6d532b08678991cf02}} 
+\index{libEpcControlInterface.h@{libEpcControlInterface.h}!SIL\_loadPmvs@{SIL\_loadPmvs}}
+\index{SIL\_loadPmvs@{SIL\_loadPmvs}!libEpcControlInterface.h@{libEpcControlInterface.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_loadPmvs()}{SIL\_loadPmvs()}}
+{\footnotesize\ttfamily void SIL\+\_\+load\+Pmvs (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{bool const}]{b\+Verbose,  }\item[{bool const}]{call\+Setters }\end{DoxyParamCaption})}
+

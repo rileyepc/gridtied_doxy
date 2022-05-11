@@ -1,0 +1,591 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="lib_epc_control_interface_8h" kind="file" language="C++">
+    <compoundname>libEpcControlInterface.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="yes">IEEE1547.h</includes>
+    <includedby refid="debug_8c" local="yes">sil/debug.c</includedby>
+    <includedby refid="lib_epc_control_8c" local="yes">sil/libEpcControl.c</includedby>
+    <includedby refid="lib_epc_control_interface_8c" local="yes">sil/libEpcControlInterface.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>sil/libEpcControlInterface.h</label>
+        <link refid="lib_epc_control_interface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IEEE1547.h</label>
+      </node>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>sil/debug.c</label>
+        <link refid="debug_8c"/>
+      </node>
+      <node id="3">
+        <label>sil/libEpcControl.c</label>
+        <link refid="lib_epc_control_8c"/>
+      </node>
+      <node id="4">
+        <label>sil/libEpcControlInterface.c</label>
+        <link refid="lib_epc_control_interface_8c"/>
+      </node>
+      <node id="1">
+        <label>sil/libEpcControlInterface.h</label>
+        <link refid="lib_epc_control_interface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="union_setter__u" prot="public">Setter_u</innerclass>
+    <innerclass refid="union_table_setter__u" prot="public">TableSetter_u</innerclass>
+    <innerclass refid="union_variable_pointer__u" prot="public">VariablePointer_u</innerclass>
+    <innerclass refid="union_variable__u" prot="public">Variable_u</innerclass>
+    <innerclass refid="struct_table_info__s" prot="public">TableInfo_s</innerclass>
+    <innerclass refid="struct_item" prot="public">Item</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SetterTypes</name>
+        <enumvalue id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf" prot="public">
+          <name>setter_float</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298" prot="public">
+          <name>setter_uint64_t</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd" prot="public">
+          <name>setter_uint32_t</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0" prot="public">
+          <name>setter_uint16_t</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92" prot="public">
+          <name>setter_int32_t</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f" prot="public">
+          <name>setter_int16_t</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9" prot="public">
+          <name>setter_size_t</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc" prot="public">
+          <name>setter_bool</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="13" column="1" bodyfile="sil/libEpcControlInterface.h" bodystart="13" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1aee34cdd6ca7ac21b86cbe0045b054980" prot="public" static="no">
+        <type>char</type>
+        <definition>typedef char UuidString[37]</definition>
+        <argsstring>[37]</argsstring>
+        <name>UuidString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="11" column="14" bodyfile="sil/libEpcControlInterface.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a6e560b354532ba4468b16b3d7ce1688a" prot="public" static="no">
+        <type>enum <ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be" kindref="member">SetterTypes</ref></type>
+        <definition>typedef enum SetterTypes SetterTypes</definition>
+        <argsstring></argsstring>
+        <name>SetterTypes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="22" column="13"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a09106c24c55cdf076dbda15144b0e354" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SetterPointer_float) (float)</definition>
+        <argsstring>)(float)</argsstring>
+        <name>SetterPointer_float</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="24" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a596cd4e31ef9726668d1dc4e8a97cb4f" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SetterPointer_uint64_t) (uint64_t)</definition>
+        <argsstring>)(uint64_t)</argsstring>
+        <name>SetterPointer_uint64_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="25" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a1570b2c494bfb5466026274977d6f6f6" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SetterPointer_uint32_t) (uint32_t)</definition>
+        <argsstring>)(uint32_t)</argsstring>
+        <name>SetterPointer_uint32_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="26" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a7097888a0ca042480a9b1e720ed6baae" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SetterPointer_uint16_t) (uint16_t)</definition>
+        <argsstring>)(uint16_t)</argsstring>
+        <name>SetterPointer_uint16_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="27" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1aa3c4127315fb090a7562837dc1777fcc" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SetterPointer_int32_t) (int32_t)</definition>
+        <argsstring>)(int32_t)</argsstring>
+        <name>SetterPointer_int32_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="28" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a7dbae0918f1a8ce9c4c62eca4dccdbcf" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SetterPointer_int16_t) (int16_t)</definition>
+        <argsstring>)(int16_t)</argsstring>
+        <name>SetterPointer_int16_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="29" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1aed09fe87badac6697aeb78de5f8af381" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SetterPointer_size_t) (size_t)</definition>
+        <argsstring>)(size_t)</argsstring>
+        <name>SetterPointer_size_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="30" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a0bc6b4f4fbd030b047b4851745cf599a" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SetterPointer_bool_t) (bool)</definition>
+        <argsstring>)(bool)</argsstring>
+        <name>SetterPointer_bool_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="31" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1acb402f85b1799476879a05463aded3be" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TableSetterPointer_float) (IEEE1547_MonCurveType, size_t, size_t, float)</definition>
+        <argsstring>)(IEEE1547_MonCurveType, size_t, size_t, float)</argsstring>
+        <name>TableSetterPointer_float</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="33" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1ae8b05fc055d4c5d647fe46724fa457fc" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TableSetterPointer_uint64_t) (IEEE1547_MonCurveType, size_t, size_t, uint64_t)</definition>
+        <argsstring>)(IEEE1547_MonCurveType, size_t, size_t, uint64_t)</argsstring>
+        <name>TableSetterPointer_uint64_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="34" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a52e72a12db0e60ade7d4ab13c43794ac" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TableSetterPointer_uint32_t) (IEEE1547_MonCurveType, size_t, size_t, uint32_t)</definition>
+        <argsstring>)(IEEE1547_MonCurveType, size_t, size_t, uint32_t)</argsstring>
+        <name>TableSetterPointer_uint32_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="35" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a08fe91592e98b86b9af4c691c43395e8" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TableSetterPointer_uint16_t) (IEEE1547_MonCurveType, size_t, size_t, uint16_t)</definition>
+        <argsstring>)(IEEE1547_MonCurveType, size_t, size_t, uint16_t)</argsstring>
+        <name>TableSetterPointer_uint16_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="36" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a1be165b29bd37e0c1328e7455392a4ab" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TableSetterPointer_int32_t) (IEEE1547_MonCurveType, size_t, size_t, int32_t)</definition>
+        <argsstring>)(IEEE1547_MonCurveType, size_t, size_t, int32_t)</argsstring>
+        <name>TableSetterPointer_int32_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="37" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1af6dff3e8dacb2d94d4a68d04c7fa54df" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TableSetterPointer_int16_t) (IEEE1547_MonCurveType, size_t, size_t, int16_t)</definition>
+        <argsstring>)(IEEE1547_MonCurveType, size_t, size_t, int16_t)</argsstring>
+        <name>TableSetterPointer_int16_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="38" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a3705b6364bbb4254479c485e434e8086" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TableSetterPointer_size_t) (IEEE1547_MonCurveType, size_t, size_t, size_t)</definition>
+        <argsstring>)(IEEE1547_MonCurveType, size_t, size_t, size_t)</argsstring>
+        <name>TableSetterPointer_size_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="39" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a3fc7297f838d1994209acd17df02310b" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TableSetterPointer_bool_t) (IEEE1547_MonCurveType, size_t, size_t, bool)</definition>
+        <argsstring>)(IEEE1547_MonCurveType, size_t, size_t, bool)</argsstring>
+        <name>TableSetterPointer_bool_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="40" column="9" bodyfile="sil/libEpcControlInterface.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850" prot="public" static="no">
+        <type>union <ref refid="union_setter__u" kindref="compound">Setter_u</ref></type>
+        <definition>typedef union Setter_u Setter_t</definition>
+        <argsstring></argsstring>
+        <name>Setter_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="51" column="10"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c" prot="public" static="no">
+        <type>union <ref refid="union_table_setter__u" kindref="compound">TableSetter_u</ref></type>
+        <definition>typedef union TableSetter_u TableSetter_t</definition>
+        <argsstring></argsstring>
+        <name>TableSetter_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="62" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee" prot="public" static="no">
+        <type>union <ref refid="union_variable_pointer__u" kindref="compound">VariablePointer_u</ref></type>
+        <definition>typedef union VariablePointer_u VariablePointer_t</definition>
+        <argsstring></argsstring>
+        <name>VariablePointer_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="73" column="19"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a8dcd954911da542c2eecf6d71bd04a63" prot="public" static="no">
+        <type>union <ref refid="union_variable__u" kindref="compound">Variable_u</ref></type>
+        <definition>typedef union Variable_u Variable_t</definition>
+        <argsstring></argsstring>
+        <name>Variable_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="84" column="12"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7" prot="public" static="no">
+        <type>struct <ref refid="struct_table_info__s" kindref="compound">TableInfo_s</ref></type>
+        <definition>typedef struct TableInfo_s TableInfo_t</definition>
+        <argsstring></argsstring>
+        <name>TableInfo_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="91" column="13"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lib_epc_control_interface_8h_1a749adef16b111dddf0ab08f96707a3a0" prot="public" static="no">
+        <type>struct <ref refid="struct_item" kindref="compound">Item</ref></type>
+        <definition>typedef struct Item Item</definition>
+        <argsstring></argsstring>
+        <name>Item</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="101" column="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="lib_epc_control_interface_8h_1a0a34752190321c6d532b08678991cf02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SIL_loadPmvs</definition>
+        <argsstring>(char *path, bool const bVerbose, bool const callSetters)</argsstring>
+        <name>SIL_loadPmvs</name>
+        <param>
+          <type>char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>bool const</type>
+          <declname>bVerbose</declname>
+        </param>
+        <param>
+          <type>bool const</type>
+          <declname>callSetters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="103" column="6" bodyfile="sil/libEpcControlInterface.c" bodystart="356" bodyend="389" declfile="sil/libEpcControlInterface.h" declline="103" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>libEpcControlInterface_h_guard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>libEpcControlInterface_h_guard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IEEE1547.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="lib_epc_control_interface_8h_1aee34cdd6ca7ac21b86cbe0045b054980" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1aee34cdd6ca7ac21b86cbe0045b054980" kindref="member">UuidString</ref>[37];</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be" kindref="member">SetterTypes</ref><sp/>{</highlight></codeline>
+<codeline lineno="14" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4d8d878fce26e6cf1e426c2689ae04cf" kindref="member">setter_float</ref>,</highlight></codeline>
+<codeline lineno="15" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea37648cdbd153f9de7bcd52e209b2f298" kindref="member">setter_uint64_t</ref>,</highlight></codeline>
+<codeline lineno="16" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea322139a1673b575a75139f0a869de9cd" kindref="member">setter_uint32_t</ref>,</highlight></codeline>
+<codeline lineno="17" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaef2c826e2303ec080694416e06097df0" kindref="member">setter_uint16_t</ref>,</highlight></codeline>
+<codeline lineno="18" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1beaa3343bcb7f41ab4fa149baafaedccd92" kindref="member">setter_int32_t</ref>,</highlight></codeline>
+<codeline lineno="19" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea67c4f4a7b21f0f94e2fa545227c8233f" kindref="member">setter_int16_t</ref>,</highlight></codeline>
+<codeline lineno="20" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea43a194ed2ff674e1974fdcee68b375d9" kindref="member">setter_size_t</ref>,</highlight></codeline>
+<codeline lineno="21" refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1bea4f4cd0075dd97fb3fc99f0d8eeaabefc" kindref="member">setter_bool</ref>,</highlight></codeline>
+<codeline lineno="22" refid="lib_epc_control_interface_8h_1a6e560b354532ba4468b16b3d7ce1688a" refkind="member"><highlight class="normal">}<sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be" kindref="member">SetterTypes</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="lib_epc_control_interface_8h_1a09106c24c55cdf076dbda15144b0e354" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a09106c24c55cdf076dbda15144b0e354" kindref="member">SetterPointer_float</ref>)(float);</highlight></codeline>
+<codeline lineno="25" refid="lib_epc_control_interface_8h_1a596cd4e31ef9726668d1dc4e8a97cb4f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a596cd4e31ef9726668d1dc4e8a97cb4f" kindref="member">SetterPointer_uint64_t</ref>)(uint64_t);</highlight></codeline>
+<codeline lineno="26" refid="lib_epc_control_interface_8h_1a1570b2c494bfb5466026274977d6f6f6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a1570b2c494bfb5466026274977d6f6f6" kindref="member">SetterPointer_uint32_t</ref>)(uint32_t);</highlight></codeline>
+<codeline lineno="27" refid="lib_epc_control_interface_8h_1a7097888a0ca042480a9b1e720ed6baae" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a7097888a0ca042480a9b1e720ed6baae" kindref="member">SetterPointer_uint16_t</ref>)(uint16_t);</highlight></codeline>
+<codeline lineno="28" refid="lib_epc_control_interface_8h_1aa3c4127315fb090a7562837dc1777fcc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1aa3c4127315fb090a7562837dc1777fcc" kindref="member">SetterPointer_int32_t</ref>)(int32_t);</highlight></codeline>
+<codeline lineno="29" refid="lib_epc_control_interface_8h_1a7dbae0918f1a8ce9c4c62eca4dccdbcf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a7dbae0918f1a8ce9c4c62eca4dccdbcf" kindref="member">SetterPointer_int16_t</ref>)(int16_t);</highlight></codeline>
+<codeline lineno="30" refid="lib_epc_control_interface_8h_1aed09fe87badac6697aeb78de5f8af381" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1aed09fe87badac6697aeb78de5f8af381" kindref="member">SetterPointer_size_t</ref>)(size_t);</highlight></codeline>
+<codeline lineno="31" refid="lib_epc_control_interface_8h_1a0bc6b4f4fbd030b047b4851745cf599a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a0bc6b4f4fbd030b047b4851745cf599a" kindref="member">SetterPointer_bool_t</ref>)(bool);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="lib_epc_control_interface_8h_1acb402f85b1799476879a05463aded3be" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1acb402f85b1799476879a05463aded3be" kindref="member">TableSetterPointer_float</ref>)(IEEE1547_MonCurveType,<sp/>size_t,<sp/>size_t,<sp/>float);</highlight></codeline>
+<codeline lineno="34" refid="lib_epc_control_interface_8h_1ae8b05fc055d4c5d647fe46724fa457fc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1ae8b05fc055d4c5d647fe46724fa457fc" kindref="member">TableSetterPointer_uint64_t</ref>)(IEEE1547_MonCurveType,<sp/>size_t,<sp/>size_t,<sp/>uint64_t);</highlight></codeline>
+<codeline lineno="35" refid="lib_epc_control_interface_8h_1a52e72a12db0e60ade7d4ab13c43794ac" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a52e72a12db0e60ade7d4ab13c43794ac" kindref="member">TableSetterPointer_uint32_t</ref>)(IEEE1547_MonCurveType,<sp/>size_t,<sp/>size_t,<sp/>uint32_t);</highlight></codeline>
+<codeline lineno="36" refid="lib_epc_control_interface_8h_1a08fe91592e98b86b9af4c691c43395e8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a08fe91592e98b86b9af4c691c43395e8" kindref="member">TableSetterPointer_uint16_t</ref>)(IEEE1547_MonCurveType,<sp/>size_t,<sp/>size_t,<sp/>uint16_t);</highlight></codeline>
+<codeline lineno="37" refid="lib_epc_control_interface_8h_1a1be165b29bd37e0c1328e7455392a4ab" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a1be165b29bd37e0c1328e7455392a4ab" kindref="member">TableSetterPointer_int32_t</ref>)(IEEE1547_MonCurveType,<sp/>size_t,<sp/>size_t,<sp/>int32_t);</highlight></codeline>
+<codeline lineno="38" refid="lib_epc_control_interface_8h_1af6dff3e8dacb2d94d4a68d04c7fa54df" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1af6dff3e8dacb2d94d4a68d04c7fa54df" kindref="member">TableSetterPointer_int16_t</ref>)(IEEE1547_MonCurveType,<sp/>size_t,<sp/>size_t,<sp/>int16_t);</highlight></codeline>
+<codeline lineno="39" refid="lib_epc_control_interface_8h_1a3705b6364bbb4254479c485e434e8086" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a3705b6364bbb4254479c485e434e8086" kindref="member">TableSetterPointer_size_t</ref>)(IEEE1547_MonCurveType,<sp/>size_t,<sp/>size_t,<sp/>size_t);</highlight></codeline>
+<codeline lineno="40" refid="lib_epc_control_interface_8h_1a3fc7297f838d1994209acd17df02310b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="lib_epc_control_interface_8h_1a3fc7297f838d1994209acd17df02310b" kindref="member">TableSetterPointer_bool_t</ref>)(IEEE1547_MonCurveType,<sp/>size_t,<sp/>size_t,<sp/>bool);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="union_setter__u" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="union_setter__u" kindref="compound">Setter_u</ref><sp/>{</highlight></codeline>
+<codeline lineno="43" refid="union_setter__u_1a0f4031b29e64dc28ef278af23519221c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a09106c24c55cdf076dbda15144b0e354" kindref="member">SetterPointer_float</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_setter__u_1a0f4031b29e64dc28ef278af23519221c" kindref="member">float_</ref>;</highlight></codeline>
+<codeline lineno="44" refid="union_setter__u_1ac9472e2c38a5464dbcd46712e31db594" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a596cd4e31ef9726668d1dc4e8a97cb4f" kindref="member">SetterPointer_uint64_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_setter__u_1ac9472e2c38a5464dbcd46712e31db594" kindref="member">uint64_t_</ref>;</highlight></codeline>
+<codeline lineno="45" refid="union_setter__u_1ae9903ac35a7a373a9d636f365596ce59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a1570b2c494bfb5466026274977d6f6f6" kindref="member">SetterPointer_uint32_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_setter__u_1ae9903ac35a7a373a9d636f365596ce59" kindref="member">uint32_t_</ref>;</highlight></codeline>
+<codeline lineno="46" refid="union_setter__u_1a6a570917051ccf1d79c62de78e1b4427" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a7097888a0ca042480a9b1e720ed6baae" kindref="member">SetterPointer_uint16_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_setter__u_1a6a570917051ccf1d79c62de78e1b4427" kindref="member">uint16_t_</ref>;</highlight></codeline>
+<codeline lineno="47" refid="union_setter__u_1a54a9e3a267854a1b766e818d842df907" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1aa3c4127315fb090a7562837dc1777fcc" kindref="member">SetterPointer_int32_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_setter__u_1a54a9e3a267854a1b766e818d842df907" kindref="member">int32_t_</ref>;</highlight></codeline>
+<codeline lineno="48" refid="union_setter__u_1a16e518308f6e5fde1605d7cb0f19c20a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a7dbae0918f1a8ce9c4c62eca4dccdbcf" kindref="member">SetterPointer_int16_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_setter__u_1a16e518308f6e5fde1605d7cb0f19c20a" kindref="member">int16_t_</ref>;</highlight></codeline>
+<codeline lineno="49" refid="union_setter__u_1ab6cfce32cd0b0aba29e8f8eee1e4348b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1aed09fe87badac6697aeb78de5f8af381" kindref="member">SetterPointer_size_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_setter__u_1ab6cfce32cd0b0aba29e8f8eee1e4348b" kindref="member">size_t_</ref>;</highlight></codeline>
+<codeline lineno="50" refid="union_setter__u_1a269a30ca16afb2a1e9363b7a04cc0ae5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a0bc6b4f4fbd030b047b4851745cf599a" kindref="member">SetterPointer_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_setter__u_1a269a30ca16afb2a1e9363b7a04cc0ae5" kindref="member">bool_</ref>;</highlight></codeline>
+<codeline lineno="51" refid="lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850" refkind="member"><highlight class="normal">}<sp/><ref refid="lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850" kindref="member">Setter_t</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="union_table_setter__u" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="union_table_setter__u" kindref="compound">TableSetter_u</ref><sp/>{</highlight></codeline>
+<codeline lineno="54" refid="union_table_setter__u_1afd2f53d4c4c42e107f972778baf5ffc5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1acb402f85b1799476879a05463aded3be" kindref="member">TableSetterPointer_float</ref><sp/><sp/><sp/><sp/><ref refid="union_table_setter__u_1afd2f53d4c4c42e107f972778baf5ffc5" kindref="member">float_</ref>;</highlight></codeline>
+<codeline lineno="55" refid="union_table_setter__u_1a67fdb17ef3d71c73070a858c6ba6b387" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1ae8b05fc055d4c5d647fe46724fa457fc" kindref="member">TableSetterPointer_uint64_t</ref><sp/><ref refid="union_table_setter__u_1a67fdb17ef3d71c73070a858c6ba6b387" kindref="member">uint64_t_</ref>;</highlight></codeline>
+<codeline lineno="56" refid="union_table_setter__u_1a5245f3a2f81cc062ef064b7fbc205253" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a52e72a12db0e60ade7d4ab13c43794ac" kindref="member">TableSetterPointer_uint32_t</ref><sp/><ref refid="union_table_setter__u_1a5245f3a2f81cc062ef064b7fbc205253" kindref="member">uint32_t_</ref>;</highlight></codeline>
+<codeline lineno="57" refid="union_table_setter__u_1ab944ed7d3de88f397500036e6d42aaf8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a08fe91592e98b86b9af4c691c43395e8" kindref="member">TableSetterPointer_uint16_t</ref><sp/><ref refid="union_table_setter__u_1ab944ed7d3de88f397500036e6d42aaf8" kindref="member">uint16_t_</ref>;</highlight></codeline>
+<codeline lineno="58" refid="union_table_setter__u_1a3fb814acc447230b6df8aea4a48a0949" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a1be165b29bd37e0c1328e7455392a4ab" kindref="member">TableSetterPointer_int32_t</ref><sp/><sp/><ref refid="union_table_setter__u_1a3fb814acc447230b6df8aea4a48a0949" kindref="member">int32_t_</ref>;</highlight></codeline>
+<codeline lineno="59" refid="union_table_setter__u_1a3ac087b535f62d339e8edab4d67b1eeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af6dff3e8dacb2d94d4a68d04c7fa54df" kindref="member">TableSetterPointer_int16_t</ref><sp/><sp/><ref refid="union_table_setter__u_1a3ac087b535f62d339e8edab4d67b1eeb" kindref="member">int16_t_</ref>;</highlight></codeline>
+<codeline lineno="60" refid="union_table_setter__u_1a7f400d19f8c533e336c7c48c587a2cd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a3705b6364bbb4254479c485e434e8086" kindref="member">TableSetterPointer_size_t</ref><sp/><sp/><sp/><ref refid="union_table_setter__u_1a7f400d19f8c533e336c7c48c587a2cd9" kindref="member">size_t_</ref>;</highlight></codeline>
+<codeline lineno="61" refid="union_table_setter__u_1a6de711fab67ee8285dca8f93293f7ae5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1a3fc7297f838d1994209acd17df02310b" kindref="member">TableSetterPointer_bool_t</ref><sp/><sp/><sp/><ref refid="union_table_setter__u_1a6de711fab67ee8285dca8f93293f7ae5" kindref="member">bool_</ref>;</highlight></codeline>
+<codeline lineno="62" refid="lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c" refkind="member"><highlight class="normal">}<sp/><ref refid="lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c" kindref="member">TableSetter_t</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="union_variable_pointer__u" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="union_variable_pointer__u" kindref="compound">VariablePointer_u</ref><sp/>{</highlight></codeline>
+<codeline lineno="65" refid="union_variable_pointer__u_1ab61203efcf48547f23e92a9643fbb3bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="union_variable_pointer__u_1ab61203efcf48547f23e92a9643fbb3bf" kindref="member">float_</ref>;</highlight></codeline>
+<codeline lineno="66" refid="union_variable_pointer__u_1a520af636ea3bda62abe8453bcf4e66f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="union_variable_pointer__u_1a520af636ea3bda62abe8453bcf4e66f9" kindref="member">uint64_t_</ref>;</highlight></codeline>
+<codeline lineno="67" refid="union_variable_pointer__u_1a6c5ab022d441dcd99862ff65ec1cfa83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="union_variable_pointer__u_1a6c5ab022d441dcd99862ff65ec1cfa83" kindref="member">uint32_t_</ref>;</highlight></codeline>
+<codeline lineno="68" refid="union_variable_pointer__u_1ac714fd90ab8b1c754abb9280ef5cd0ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="union_variable_pointer__u_1ac714fd90ab8b1c754abb9280ef5cd0ca" kindref="member">uint16_t_</ref>;</highlight></codeline>
+<codeline lineno="69" refid="union_variable_pointer__u_1a56e6a6ce1bb86402b5adf26b97428ca7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="union_variable_pointer__u_1a56e6a6ce1bb86402b5adf26b97428ca7" kindref="member">int32_t_</ref>;</highlight></codeline>
+<codeline lineno="70" refid="union_variable_pointer__u_1a36a543a52eac597023a4deb363c1fa24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="union_variable_pointer__u_1a36a543a52eac597023a4deb363c1fa24" kindref="member">int16_t_</ref>;</highlight></codeline>
+<codeline lineno="71" refid="union_variable_pointer__u_1afc3dca84929f43265b742afb1084a412" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="union_variable_pointer__u_1afc3dca84929f43265b742afb1084a412" kindref="member">size_t_</ref>;</highlight></codeline>
+<codeline lineno="72" refid="union_variable_pointer__u_1ab4ff753c3d026640f04e56658ebebb21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="union_variable_pointer__u_1ab4ff753c3d026640f04e56658ebebb21" kindref="member">bool_</ref>;</highlight></codeline>
+<codeline lineno="73" refid="lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee" refkind="member"><highlight class="normal">}<sp/><ref refid="lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee" kindref="member">VariablePointer_t</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="union_variable__u" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="union_variable__u" kindref="compound">Variable_u</ref><sp/>{</highlight></codeline>
+<codeline lineno="76" refid="union_variable__u_1a6125d6ae3c32fa6a18d8550675337ae3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_variable__u_1a6125d6ae3c32fa6a18d8550675337ae3" kindref="member">float_</ref>;</highlight></codeline>
+<codeline lineno="77" refid="union_variable__u_1a3f2d42ad233ad5bbfc411757a5303832" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_variable__u_1a3f2d42ad233ad5bbfc411757a5303832" kindref="member">uint64_t_</ref>;</highlight></codeline>
+<codeline lineno="78" refid="union_variable__u_1a91222ca191c49df332a800058a84a1e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_variable__u_1a91222ca191c49df332a800058a84a1e0" kindref="member">uint32_t_</ref>;</highlight></codeline>
+<codeline lineno="79" refid="union_variable__u_1a28a00627da3703bbd5820bc15487ddcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_variable__u_1a28a00627da3703bbd5820bc15487ddcd" kindref="member">uint16_t_</ref>;</highlight></codeline>
+<codeline lineno="80" refid="union_variable__u_1ad52dba957745a1fe9b3da97d157e582a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_variable__u_1ad52dba957745a1fe9b3da97d157e582a" kindref="member">int32_t_</ref>;</highlight></codeline>
+<codeline lineno="81" refid="union_variable__u_1a26221f7986221139ab2ebdbbefe0477d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_variable__u_1a26221f7986221139ab2ebdbbefe0477d" kindref="member">int16_t_</ref>;</highlight></codeline>
+<codeline lineno="82" refid="union_variable__u_1a06103e891c2e34f4d715e2c9789184cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_variable__u_1a06103e891c2e34f4d715e2c9789184cd" kindref="member">size_t_</ref>;</highlight></codeline>
+<codeline lineno="83" refid="union_variable__u_1a32848544a244452595bd36605349e8d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="union_variable__u_1a32848544a244452595bd36605349e8d9" kindref="member">bool_</ref>;</highlight></codeline>
+<codeline lineno="84" refid="lib_epc_control_interface_8h_1a8dcd954911da542c2eecf6d71bd04a63" refkind="member"><highlight class="normal">}<sp/><ref refid="lib_epc_control_interface_8h_1a8dcd954911da542c2eecf6d71bd04a63" kindref="member">Variable_t</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="struct_table_info__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_table_info__s" kindref="compound">TableInfo_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="87" refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" kindref="member">zone</ref>;</highlight></codeline>
+<codeline lineno="88" refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" kindref="member">curve</ref>;</highlight></codeline>
+<codeline lineno="89" refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" kindref="member">index</ref>;</highlight></codeline>
+<codeline lineno="90" refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_table_setter__u" kindref="compound">TableSetter_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" kindref="member">setter</ref>;</highlight></codeline>
+<codeline lineno="91" refid="lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7" refkind="member"><highlight class="normal">}<sp/><ref refid="lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7" kindref="member">TableInfo_t</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="struct_item" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_item" kindref="compound">Item</ref><sp/>{</highlight></codeline>
+<codeline lineno="94" refid="struct_item_1a9a33d1eaf53797d7fdea08469e9cc3c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_item_1a9a33d1eaf53797d7fdea08469e9cc3c0" kindref="member">uuid</ref>[37];</highlight></codeline>
+<codeline lineno="95" refid="struct_item_1abcf7712fe602099f40fbb8664857d381" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be" kindref="member">SetterTypes</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_item_1abcf7712fe602099f40fbb8664857d381" kindref="member">setterType</ref>;</highlight></codeline>
+<codeline lineno="96" refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_setter__u" kindref="compound">Setter_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" kindref="member">setter</ref>;</highlight></codeline>
+<codeline lineno="97" refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_variable_pointer__u" kindref="compound">VariablePointer_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" kindref="member">variable</ref>;</highlight></codeline>
+<codeline lineno="98" refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" kindref="member">internalScale</ref>;</highlight></codeline>
+<codeline lineno="99" refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" kindref="member">isTable</ref>;</highlight></codeline>
+<codeline lineno="100" refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_table_info__s" kindref="compound">TableInfo_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" kindref="member">tableInfo</ref>;</highlight></codeline>
+<codeline lineno="101" refid="lib_epc_control_interface_8h_1a749adef16b111dddf0ab08f96707a3a0" refkind="member"><highlight class="normal">}<sp/><ref refid="lib_epc_control_interface_8h_1a749adef16b111dddf0ab08f96707a3a0" kindref="member">Item</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="lib_epc_control_interface_8h_1a0a34752190321c6d532b08678991cf02" kindref="member">SIL_loadPmvs</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>bVerbose,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>callSetters);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="sil/libEpcControlInterface.h"/>
+  </compounddef>
+</doxygen>

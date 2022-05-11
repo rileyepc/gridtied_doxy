@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_application_8h_source" xml:lang="en-US">
+<title>application.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">__APPLICATION_H__</emphasis>
+2 
+3 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__APPLICATION_H__</emphasis>
+4 
+5 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdbool</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+6 
+7 <emphasis role="comment">/*&#32;Hardware&#32;*/</emphasis>
+8 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;ioHandler.h&quot;</emphasis>
+9 
+10 <emphasis role="comment">/*&#32;System&#32;*/</emphasis>
+11 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;faultHandler.h&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;not&#32;really&#32;a&#32;handler&#32;of&#32;anything.&#32;*/</emphasis>
+12 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;dataLogger.h&quot;</emphasis>
+13 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;authorization.h&quot;</emphasis>
+14 
+15 <emphasis role="comment">/*&#32;Drivers&#32;*/</emphasis>
+16 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;cand.h&quot;</emphasis>
+17 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;digitalIO.h&quot;</emphasis>
+18 
+19 
+20 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_application_8c_1aa9c39f99a87f5a9bd9b27fe269b1de04">FaultConfiguration</link>&#32;<link linkend="_application_8c_1aa9c39f99a87f5a9bd9b27fe269b1de04">appFaultConfiguration</link>[FLT_CFG_ARRAY_LENGTH];
+21 
+22 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;{
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1a57e574ff9f1e129568bc68606886ab8e">nodeID</link>;
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1aceac1fd1ebbd90bcda15fa186fdb7e99">masterAddr</link>;
+25 &#32;&#32;&#32;&#32;<link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1a4959602aae7830fd547f54e3329b1dd7">CAN_BAUDRATE</link>&#32;<link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1a4959602aae7830fd547f54e3329b1dd7">baud</link>;
+26 &#32;&#32;&#32;&#32;<link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1aea384cfa02b15a089bff4254fd5cc2df">uint16_t</link>&#32;<link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e_1aea384cfa02b15a089bff4254fd5cc2df">timeout</link>;
+27 }&#32;J1939_INTERFACE;&#32;<emphasis role="comment">///&#32;\todo&#32;this&#32;belongs&#32;somewhere&#32;else</emphasis>
+28 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">J1939_INTERFACE_DEFAULTS</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">{</emphasis>&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">nodeID</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;0xF7<emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">masterAddr</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;0x41<emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">baud</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="preprocessor">CAN_BAUDRATE_500K</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">timeout</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;1000<emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">__VA_ARGS__</emphasis><emphasis role="preprocessor">}</emphasis>
+29 
+30 <emphasis role="keyword">extern</emphasis>&#32;J1939_INTERFACE&#32;<link linkend="_application_8c_1aad4f26eabbeb37bd61a3bb2c76195043">j1939Interface</link>;
+31 
+32 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keyword">volatile</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_application_8c_1a12358381f3cac018871d7c6b73a404ff">eeHandlerUseDefaults</link>;
+33 
+34 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_application_8c_1aae45035e0712c66641eda8c3b74e64d8">APP_setFaultConfig</link>(uint16_t&#32;unused);
+35 
+36 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_application_8c_1a52957b0633643716121c30ca8ac20e62">AUTH_Nv</link>&#32;<link linkend="_application_8c_1a52957b0633643716121c30ca8ac20e62">authorization_nv</link>;
+37 
+38 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>&#32;<emphasis role="comment">//__APPLICATION_H__</emphasis>
+</programlisting></section>

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_interface_item___bitfield_member" kind="struct" language="C++" prot="public">
+    <compoundname>InterfaceItem_BitfieldMember</compoundname>
+    <includes refid="interface_8h" local="no">interface.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_interface_item___bitfield_member_1a517f9dc2c6a6b3fc06f5b427fbd27bbd" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char InterfaceItem_BitfieldMember::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <qualifiedname>InterfaceItem_BitfieldMember::offset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="106" column="19" bodyfile="interface/interface.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_interface_item___bitfield_member_1a2727d3c32afd1f8ba70feb86e2ce7b4c" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char InterfaceItem_BitfieldMember::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>InterfaceItem_BitfieldMember::length</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="107" column="19" bodyfile="interface/interface.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_interface_item___bitfield_member_1a5e311b0ab3fb93ed2e6a836dbcb88a03" prot="public" static="no" mutable="no">
+        <type><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref> const  *const</type>
+        <definition>InterfaceItem_void const* const InterfaceItem_BitfieldMember::item</definition>
+        <argsstring></argsstring>
+        <name>item</name>
+        <qualifiedname>InterfaceItem_BitfieldMember::item</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="108" column="37" bodyfile="interface/interface.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/interface.h" line="105" column="1" bodyfile="interface/interface.h" bodystart="105" bodyend="109"/>
+    <listofallmembers>
+      <member refid="struct_interface_item___bitfield_member_1a5e311b0ab3fb93ed2e6a836dbcb88a03" prot="public" virt="non-virtual"><scope>InterfaceItem_BitfieldMember</scope><name>item</name></member>
+      <member refid="struct_interface_item___bitfield_member_1a2727d3c32afd1f8ba70feb86e2ce7b4c" prot="public" virt="non-virtual"><scope>InterfaceItem_BitfieldMember</scope><name>length</name></member>
+      <member refid="struct_interface_item___bitfield_member_1a517f9dc2c6a6b3fc06f5b427fbd27bbd" prot="public" virt="non-virtual"><scope>InterfaceItem_BitfieldMember</scope><name>offset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

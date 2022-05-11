@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_interface_item___bitfield" xml:lang="en-US">
+<title>InterfaceItem_Bitfield Struct Reference</title>
+<indexterm><primary>InterfaceItem_Bitfield</primary></indexterm>
+<para>
+<computeroutput>#include &lt;interface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_interface_item_common">InterfaceItemCommon</link> const <link linkend="_struct_interface_item___bitfield_1aa9447ffb0df96c9921c490fd5558a392">common</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_interface_item___bitfield_member">InterfaceItem_BitfieldMember</link> const  *const <link linkend="_struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b">staticmodbusMembers</link></para>
+</listitem>
+            <listitem><para>size_t const <link linkend="_struct_interface_item___bitfield_1a7163300b7ddf96affbb40cf0eed35093">staticmodbusMembersCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_interface_item___bitfield_member">InterfaceItem_BitfieldMember</link> const  *const <link linkend="_struct_interface_item___bitfield_1a02709814798eb783b5ac36c6b4521a0b">sunspecMembers</link></para>
+</listitem>
+            <listitem><para>size_t const <link linkend="_struct_interface_item___bitfield_1a99e2439251dfe801a7ca8659f20da309">sunspecMembersCount</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_interface_item___bitfield_1aa9447ffb0df96c9921c490fd5558a392"/><section>
+    <title>common</title>
+<indexterm><primary>common</primary><secondary>InterfaceItem_Bitfield</secondary></indexterm>
+<indexterm><primary>InterfaceItem_Bitfield</primary><secondary>common</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_interface_item_common">InterfaceItemCommon</link> const InterfaceItem_Bitfield::common</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b"/><section>
+    <title>staticmodbusMembers</title>
+<indexterm><primary>staticmodbusMembers</primary><secondary>InterfaceItem_Bitfield</secondary></indexterm>
+<indexterm><primary>InterfaceItem_Bitfield</primary><secondary>staticmodbusMembers</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_interface_item___bitfield_member">InterfaceItem_BitfieldMember</link> const* const InterfaceItem_Bitfield::staticmodbusMembers</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item___bitfield_1a7163300b7ddf96affbb40cf0eed35093"/><section>
+    <title>staticmodbusMembersCount</title>
+<indexterm><primary>staticmodbusMembersCount</primary><secondary>InterfaceItem_Bitfield</secondary></indexterm>
+<indexterm><primary>InterfaceItem_Bitfield</primary><secondary>staticmodbusMembersCount</secondary></indexterm>
+<para><computeroutput>size_t const InterfaceItem_Bitfield::staticmodbusMembersCount</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item___bitfield_1a02709814798eb783b5ac36c6b4521a0b"/><section>
+    <title>sunspecMembers</title>
+<indexterm><primary>sunspecMembers</primary><secondary>InterfaceItem_Bitfield</secondary></indexterm>
+<indexterm><primary>InterfaceItem_Bitfield</primary><secondary>sunspecMembers</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_interface_item___bitfield_member">InterfaceItem_BitfieldMember</link> const* const InterfaceItem_Bitfield::sunspecMembers</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item___bitfield_1a99e2439251dfe801a7ca8659f20da309"/><section>
+    <title>sunspecMembersCount</title>
+<indexterm><primary>sunspecMembersCount</primary><secondary>InterfaceItem_Bitfield</secondary></indexterm>
+<indexterm><primary>InterfaceItem_Bitfield</primary><secondary>sunspecMembersCount</secondary></indexterm>
+<para><computeroutput>size_t const InterfaceItem_Bitfield::sunspecMembersCount</computeroutput></para></section>
+</section>
+</section>

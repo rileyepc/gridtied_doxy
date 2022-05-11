@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___output_monitor__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_OutputMonitor_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___output_monitor__s_1aabe5ff0fa220f8329a2ead03969df6c9" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputMonitor_s::fvLocal[3U]</definition>
+        <argsstring>[3U]</argsstring>
+        <name>fvLocal</name>
+        <qualifiedname>ECU_OutputMonitor_s::fvLocal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="128" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output_monitor__s_1a9515c7d915f6aaaac6d2c37ffb1c0b21" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputMonitor_s::mIg[4U]</definition>
+        <argsstring>[4U]</argsstring>
+        <name>mIg</name>
+        <qualifiedname>ECU_OutputMonitor_s::mIg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="129" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output_monitor__s_1a3e3e0f3f2dc1e1f8a89394c5f8ac455f" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputMonitor_s::mPg[4U]</definition>
+        <argsstring>[4U]</argsstring>
+        <name>mPg</name>
+        <qualifiedname>ECU_OutputMonitor_s::mPg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="130" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output_monitor__s_1a79ce2ddc6bc6684395e66df33be3e436" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputMonitor_s::scI[4U]</definition>
+        <argsstring>[4U]</argsstring>
+        <name>scI</name>
+        <qualifiedname>ECU_OutputMonitor_s::scI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="131" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output_monitor__s_1a5f7f5d0efac544fbf92949956d8288ba" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputMonitor_s::scV[2U]</definition>
+        <argsstring>[2U]</argsstring>
+        <name>scV</name>
+        <qualifiedname>ECU_OutputMonitor_s::scV</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="132" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="127" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="127" bodyend="133"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___output_monitor__s_1aabe5ff0fa220f8329a2ead03969df6c9" prot="public" virt="non-virtual"><scope>ECU_OutputMonitor_s</scope><name>fvLocal</name></member>
+      <member refid="struct_e_c_u___output_monitor__s_1a9515c7d915f6aaaac6d2c37ffb1c0b21" prot="public" virt="non-virtual"><scope>ECU_OutputMonitor_s</scope><name>mIg</name></member>
+      <member refid="struct_e_c_u___output_monitor__s_1a3e3e0f3f2dc1e1f8a89394c5f8ac455f" prot="public" virt="non-virtual"><scope>ECU_OutputMonitor_s</scope><name>mPg</name></member>
+      <member refid="struct_e_c_u___output_monitor__s_1a79ce2ddc6bc6684395e66df33be3e436" prot="public" virt="non-virtual"><scope>ECU_OutputMonitor_s</scope><name>scI</name></member>
+      <member refid="struct_e_c_u___output_monitor__s_1a5f7f5d0efac544fbf92949956d8288ba" prot="public" virt="non-virtual"><scope>ECU_OutputMonitor_s</scope><name>scV</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

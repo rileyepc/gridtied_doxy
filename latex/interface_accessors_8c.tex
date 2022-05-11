@@ -1,0 +1,804 @@
+\hypertarget{interface_accessors_8c}{}\doxysection{interface/interface\+Accessors.c File Reference}
+\label{interface_accessors_8c}\index{interface/interfaceAccessors.c@{interface/interfaceAccessors.c}}
+{\ttfamily \#include \char`\"{}interface\+Accessors.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}authorization.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interface\+Gen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sw\+Revs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}measurementd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}channel\+Mapping\+Manager\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synchronous\+Harmonic\+Control\+I.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a1228c2eaf73fb7eca186e9e293102d53}{INTF\+\_\+zero\+\_\+getter}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a029dd9afdde2d1bff394065deaa065be}{INTF\+\_\+update\+Hardware\+Ratings}} (float unused)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_ad48f6ff174bd5fdf8d3379d3311badf7}{INTF\+\_\+update\+Commercial\+Ratings}} (float unused)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_ac4d66ced4eb860621975532e4c355fbc}{INTF\+\_\+get\+Sunspec\+Scaled\+Grid\+PositiveP}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_ac855468bdc131df6467def4be0436589}{INTF\+\_\+set\+Sunspec\+Scaled\+Grid\+PositiveP}} (float value)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_aa4c881ac0a915733b4f4f8a7bb712003}{INTF\+\_\+get\+Sunspec\+Scaled\+Apparent\+Power}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a368e3ab89e146aa5d551f2f809f15618}{INTF\+\_\+set\+Sunspec\+Scaled\+Apparent\+Power}} (float value)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_abac3ae5fd4e68e0ae5bf12e171e0a02a}{INTF\+\_\+get\+Sunspec\+Scaled\+Real\+Power\+Limits\+Max}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a0ce166744dff63c46e0f51b639bc4ea8}{INTF\+\_\+set\+Sunspec\+Scaled\+Real\+Power\+Limits\+Max}} (float value)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a757d38299417604ee511c1653683d3eb}{INTF\+\_\+get\+Sunspec\+Scaled\+Apparent\+Power\+Limit}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a58b6b2294b9b81ec20427b64a8ebfff2}{INTF\+\_\+set\+Sunspec\+Scaled\+Apparent\+Power\+Limit}} (float value)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_acdc3e47f8f199fb330ef5dd50cf70002}{INTF\+\_\+update\+User\+Limits}} (float unused)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a006eb78c3747a3132acf3fbfffd8c90e}{INTF\+\_\+set\+NomV}} (float v\+Nom)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_af6d7a32e10af877759ff1750646693ad}{INTF\+\_\+set\+NomF}} (float f\+Nom)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_ac119e5cc4490d32a5df4b0ed858b1148}{INTF\+\_\+set\+Grid\+Voltage\+Offset}} (float offset)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a2f7aff32e5d90cb76b50bfafef0cc8eb}{INTF\+\_\+get\+Grid\+Voltage\+Offset}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a6f387f6273f8a34065a9004b831fbc41}{INTF\+\_\+set\+Allow\+Forming}} (bool const allow\+Forming)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a2fc814a80f10d21457a59c2cd1d1cadc}{INTF\+\_\+set\+Allow\+Following}} (bool const allow\+Following)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a56d9ef27c5907a892b1ec678cbd77b25}{INTF\+\_\+set\+Island\+Response}} (uint16\+\_\+t const island\+Response)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_ad9bf92610fb7c66ea1757fba181b75f7}{INTF\+\_\+set\+Island\+Detector}} (uint16\+\_\+t const island\+Detector)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8c_aa4b4b022baea21dd2bbe7d384e658fb4}{INTF\+\_\+get\+Allow\+Forming}} (void)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8c_ac887a74446bcbffadcb1c01169c59fc6}{INTF\+\_\+get\+Allow\+Following}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a4ef6eb3f5734e746da42d0be15db9319}{INTF\+\_\+get\+Island\+Response}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a213da2d6b3a814f1bf2d91036b1cd982}{INTF\+\_\+get\+Island\+Detector}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_aede25ba3463daf83e7b38bf447baed32}{INTF\+\_\+set\+Config\+Rate\+Limit\+Pg\+Ref\+\_\+p\+Delta}} (float const p\+Delta)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a4e78e721dcce3c3add08a839b5301e31}{INTF\+\_\+set\+Config\+Rate\+Limit\+Pg\+Ref\+\_\+t\+Delta}} (float const t\+Delta)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8c_a1cdd34e87e38eafe4bccb1db4f8dd63e}{get\+Bridge\+AVoltage\+Ok}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a8604f381346ef74eeec9ba0e871bdccb}{get\+Bridge\+Bridge\+AFault}} (void)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8c_ae6afb52e9d3f938c2716a35aae0dc67a}{get\+Bridge\+BVoltage\+Ok}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a9de3c2162c7d8d5c5edaf1c53e9164a9}{get\+Bridge\+Bridge\+BFault}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a33e147c35fdb72a43ca93b641fc31ce6}{INTF\+\_\+set\+Access\+Level}} (uint16\+\_\+t level)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a46b0d089a19f2ed60c19f39bb019cb64}{INTF\+\_\+set\+Access\+Password}} (uint16\+\_\+t password)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_af6b9c83d41c21522601ebca742053813}{INTF\+\_\+set\+Access\+Check\+Limits}} (bool check\+Limits)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a4b5476da70ea4532e90764241f9eeea0}{INTF\+\_\+submit\+Access\+Level\+Request}} (bool request)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a749c4bd4cdd167d1f1c0fd27c0e7aa3b}{INTF\+\_\+access\+Level\+\_\+on\+Write}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a4772b8e3b012a7ecdf4427ec04c5f043}{INTF\+\_\+logger\+Chunk\+\_\+on\+Write}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a66e723cc746cb0571e5fd38ef3fb5503}{INTF\+\_\+set\+Control\+Source}} (uint16\+\_\+t src)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a508f2224dc87e11a6b54ddd6fb7ecd87}{INTF\+\_\+set\+Enable}} (uint16\+\_\+t en)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a75bf088a5b5b4f7f90d8c6e143388f02}{INTF\+\_\+enable\+Rejected}} (uint16\+\_\+t value, \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} reasons)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a687afa24dcc6c8ac947a0a601d45b2b3}{INTF\+\_\+clear\+Faults}} (bool clear\+Faults)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a90c974d866763bf6850e4fc591971805}{INTF\+\_\+clear\+Warnings}} (bool clear\+Warnings)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_ab4d95922580fc39df11a9c72b913bf7a}{INTF\+\_\+set\+Island\+State\+Request}} (bool req)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a5760cc69fac51973d303af38b37de7db}{INTF\+\_\+power\+Rejected}} (float value, \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} reasons)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a874fe2cfea71a6d06db81ef27cc574d9}{INTF\+\_\+current\+Rejected}} (float value, \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} reasons)
+\item 
+void \mbox{\hyperlink{interface_accessors_8c_a17fe067e29ab8eb2bdc1f06e051a9cd3}{INTF\+\_\+dc\+Ref\+Rejected}} (float value, \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} reasons)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8c_af6c75b31ca6f45cd628a479eacca434e}{INTF\+\_\+bool\+\_\+table\+\_\+false\+\_\+getter}} (IEEE1547\+\_\+\+Mon\+Curve\+Type zone, size\+\_\+t curve, size\+\_\+t index, uint16\+\_\+t value)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a05b8955eb1ddf10a8e5a669af82afbba}{INTF\+\_\+get\+Vers\+Major}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a1485b9c8a1c1f215edfd99a11a25012c}{INTF\+\_\+get\+Vers\+Minor}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_aa27b07ddc231a81562ab7d3d19578848}{INTF\+\_\+get\+Vers\+Patch}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a725db5a0fea72547846006b348a8f2e0}{INTF\+\_\+get\+Pos24V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a744a180aace820f7a870be5a57455362}{INTF\+\_\+get\+Pos15V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a689c81667a2b236dacbee1dbd7e806ac}{INTF\+\_\+get\+Neg15V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a9e62ad9479ba4a7620c31ac22fc4ec6f}{INTF\+\_\+get\+Pos5V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a7e78a1bdfad85f233e54739ba8683927}{INTF\+\_\+get\+Pos3V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_af141bf9cc0d9d10b9c1ac60f90f914e3}{INTF\+\_\+get\+Harm\+Current\+Ch0\+PhA}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a2ea93777f0f8d8785276ea38dcf1b8af}{INTF\+\_\+get\+Harm\+Current\+Ch0\+PhB}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_ab82de2b81f7895b19768db41b81932c6}{INTF\+\_\+get\+Harm\+Current\+Ch1\+PhA}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a420f1d1047ca0c73fb4e3be469502cab}{INTF\+\_\+get\+Harm\+Current\+Ch1\+PhB}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a8268b411345496f59b756787bb0323a5}{INTF\+\_\+get\+Harm\+Current\+Ch2\+PhA}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a42cdd58dab6e3558113b81df6e16839c}{INTF\+\_\+get\+Harm\+Current\+Ch2\+PhB}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a958f82000278c76d992da150a55b0a18}{INTF\+\_\+get\+Harm\+Current\+Ch3\+PhA}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a7946fac2f11a44eff7c700907c189bc6}{INTF\+\_\+get\+Harm\+Current\+Ch3\+PhB}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_ace657ecb30a062f6b7ba1c9a00ee89fa}{access\+Codes}} \mbox{[}CAN\+\_\+\+Enum\+\_\+\+Access\+Level\+\_\+\+Count\mbox{]}
+\item 
+\mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\+\_\+\+Command\+Flags}} \mbox{\hyperlink{interface_accessors_8c_a88f562c1031cccffe74fb20b4ca06060}{INTF\+\_\+command\+Flags}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a3f54617f49f9242541779331eb124182}{INTF\+\_\+cmd\+Real\+Pwr}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a79e31bef5a37336542c4f6361506fa02}{INTF\+\_\+cmd\+Reactive\+Pwr}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a4c8db66e9aff805c09de8ef33a33388c}{INTF\+\_\+cmd\+Real\+Current}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a4b95211c26a962044ea4690e06eb87b3}{INTF\+\_\+cmd\+Reactive\+Current}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a5538df13b1da6a0aefd3bde487b9a4cb}{INTF\+\_\+cmd\+Input\+Current}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_aafe89f987c23c36dd842e3a95c4fa2e5}{INTF\+\_\+cmd\+Dc\+VLim}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_aa28bf8dd3bf1d36d1aecb7c754e0383b}{INTF\+\_\+cmd\+Real\+Pwr\+Ns}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_aba3e765c9fe3dfe3040ad741ded00f77}{INTF\+\_\+cmd\+Reactive\+Pwr\+Ns}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a27a2166f2c156045cf525468d2f313b9}{INTF\+\_\+cmd\+Real\+Current\+Ns}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_af9d9bcbabff6b55ae0b251ce94d7ef44}{INTF\+\_\+cmd\+Reactive\+Current\+Ns}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a6ace3b5f1a80d2fed688ebc10a7765f9}{INTF\+\_\+cmd\+Mppt\+Pwr\+Dcdc}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_ad60b78557c3eb0a494afc3da4bc211b1}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch0\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a257409e80c6c6c3948950bee7bac7468}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch0\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_ad4d0e1e55f52f153f8ddf02fcdb53127}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch0\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a8627ea41577512343ccd97df985cf8e8}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch0\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a11c24207ef9ae315b743906a04699725}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch1\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_aa1d4c43a43d0db93a916869e4cd8c6bb}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch1\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_ae06b06f088104b223512e5b52c139ee1}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch1\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_ac16d5d125f14e01708e4b4136ee62697}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch1\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a27c2f062b9e1ed74ff613c2718b90980}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch2\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_abb23731cbb6e0ca066fefb7ca8a0e71f}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch2\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a89baaacf4a6c79627efa601eacd004a1}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch2\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_af10fd01df5b4f8ce44b25e8d9bd0e706}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch2\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a1017f9aea6d8265abce63ec31eb56db6}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch3\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a5e5100c627d6e798db9361cad6a52c7b}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch3\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_a0029c5f594b19e6799580e1ece9f87c9}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch3\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8c_ae2d788832709698a110e292aa4e046b3}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch3\+Iq}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a0ddb442d4001c97f63d71a4cfe51ab4a}{\+\_\+\+INTF\+\_\+access\+Password}} = 0
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8c_a4cf22a6b217847fc7cae3ae3e3b915ab}{\+\_\+\+INTF\+\_\+access\+Level}} = 0
+\item 
+bool \mbox{\hyperlink{interface_accessors_8c_aaf78dc227e447940fe70ccb423b49ab2}{\+\_\+\+INTF\+\_\+check\+Limits}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interface_accessors_8c_a1cdd34e87e38eafe4bccb1db4f8dd63e}\label{interface_accessors_8c_a1cdd34e87e38eafe4bccb1db4f8dd63e}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!getBridgeAVoltageOk@{getBridgeAVoltageOk}}
+\index{getBridgeAVoltageOk@{getBridgeAVoltageOk}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{getBridgeAVoltageOk()}{getBridgeAVoltageOk()}}
+{\footnotesize\ttfamily bool get\+Bridge\+AVoltage\+Ok (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]
+\begin{DoxyEnumerate}
+\item fix the FPGA inverter status registers to match the fault mapping
+\begin{DoxyEnumerate}
+\item determine where to put these getters 
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\end{DoxyRefDesc}
+\mbox{\Hypertarget{interface_accessors_8c_a8604f381346ef74eeec9ba0e871bdccb}\label{interface_accessors_8c_a8604f381346ef74eeec9ba0e871bdccb}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!getBridgeBridgeAFault@{getBridgeBridgeAFault}}
+\index{getBridgeBridgeAFault@{getBridgeBridgeAFault}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{getBridgeBridgeAFault()}{getBridgeBridgeAFault()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+Bridge\+Bridge\+AFault (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a9de3c2162c7d8d5c5edaf1c53e9164a9}\label{interface_accessors_8c_a9de3c2162c7d8d5c5edaf1c53e9164a9}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!getBridgeBridgeBFault@{getBridgeBridgeBFault}}
+\index{getBridgeBridgeBFault@{getBridgeBridgeBFault}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{getBridgeBridgeBFault()}{getBridgeBridgeBFault()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+Bridge\+Bridge\+BFault (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_ae6afb52e9d3f938c2716a35aae0dc67a}\label{interface_accessors_8c_ae6afb52e9d3f938c2716a35aae0dc67a}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!getBridgeBVoltageOk@{getBridgeBVoltageOk}}
+\index{getBridgeBVoltageOk@{getBridgeBVoltageOk}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{getBridgeBVoltageOk()}{getBridgeBVoltageOk()}}
+{\footnotesize\ttfamily bool get\+Bridge\+BVoltage\+Ok (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a749c4bd4cdd167d1f1c0fd27c0e7aa3b}\label{interface_accessors_8c_a749c4bd4cdd167d1f1c0fd27c0e7aa3b}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_accessLevel\_onWrite@{INTF\_accessLevel\_onWrite}}
+\index{INTF\_accessLevel\_onWrite@{INTF\_accessLevel\_onWrite}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_accessLevel\_onWrite()}{INTF\_accessLevel\_onWrite()}}
+{\footnotesize\ttfamily void INTF\+\_\+access\+Level\+\_\+on\+Write (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_af6c75b31ca6f45cd628a479eacca434e}\label{interface_accessors_8c_af6c75b31ca6f45cd628a479eacca434e}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_bool\_table\_false\_getter@{INTF\_bool\_table\_false\_getter}}
+\index{INTF\_bool\_table\_false\_getter@{INTF\_bool\_table\_false\_getter}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_bool\_table\_false\_getter()}{INTF\_bool\_table\_false\_getter()}}
+{\footnotesize\ttfamily bool INTF\+\_\+bool\+\_\+table\+\_\+false\+\_\+getter (\begin{DoxyParamCaption}\item[{IEEE1547\+\_\+\+Mon\+Curve\+Type}]{zone,  }\item[{size\+\_\+t}]{curve,  }\item[{size\+\_\+t}]{index,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a687afa24dcc6c8ac947a0a601d45b2b3}\label{interface_accessors_8c_a687afa24dcc6c8ac947a0a601d45b2b3}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_clearFaults@{INTF\_clearFaults}}
+\index{INTF\_clearFaults@{INTF\_clearFaults}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_clearFaults()}{INTF\_clearFaults()}}
+{\footnotesize\ttfamily void INTF\+\_\+clear\+Faults (\begin{DoxyParamCaption}\item[{bool}]{clear\+Faults }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a90c974d866763bf6850e4fc591971805}\label{interface_accessors_8c_a90c974d866763bf6850e4fc591971805}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_clearWarnings@{INTF\_clearWarnings}}
+\index{INTF\_clearWarnings@{INTF\_clearWarnings}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_clearWarnings()}{INTF\_clearWarnings()}}
+{\footnotesize\ttfamily void INTF\+\_\+clear\+Warnings (\begin{DoxyParamCaption}\item[{bool}]{clear\+Warnings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a874fe2cfea71a6d06db81ef27cc574d9}\label{interface_accessors_8c_a874fe2cfea71a6d06db81ef27cc574d9}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_currentRejected@{INTF\_currentRejected}}
+\index{INTF\_currentRejected@{INTF\_currentRejected}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_currentRejected()}{INTF\_currentRejected()}}
+{\footnotesize\ttfamily void INTF\+\_\+current\+Rejected (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{\mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}]{reasons }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a17fe067e29ab8eb2bdc1f06e051a9cd3}\label{interface_accessors_8c_a17fe067e29ab8eb2bdc1f06e051a9cd3}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_dcRefRejected@{INTF\_dcRefRejected}}
+\index{INTF\_dcRefRejected@{INTF\_dcRefRejected}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_dcRefRejected()}{INTF\_dcRefRejected()}}
+{\footnotesize\ttfamily void INTF\+\_\+dc\+Ref\+Rejected (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{\mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}]{reasons }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a75bf088a5b5b4f7f90d8c6e143388f02}\label{interface_accessors_8c_a75bf088a5b5b4f7f90d8c6e143388f02}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_enableRejected@{INTF\_enableRejected}}
+\index{INTF\_enableRejected@{INTF\_enableRejected}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_enableRejected()}{INTF\_enableRejected()}}
+{\footnotesize\ttfamily void INTF\+\_\+enable\+Rejected (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{value,  }\item[{\mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}]{reasons }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & uint16\+\_\+t to allow the out of range values of 2 and 3 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_accessors_8c_ac887a74446bcbffadcb1c01169c59fc6}\label{interface_accessors_8c_ac887a74446bcbffadcb1c01169c59fc6}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getAllowFollowing@{INTF\_getAllowFollowing}}
+\index{INTF\_getAllowFollowing@{INTF\_getAllowFollowing}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getAllowFollowing()}{INTF\_getAllowFollowing()}}
+{\footnotesize\ttfamily bool INTF\+\_\+get\+Allow\+Following (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_aa4b4b022baea21dd2bbe7d384e658fb4}\label{interface_accessors_8c_aa4b4b022baea21dd2bbe7d384e658fb4}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getAllowForming@{INTF\_getAllowForming}}
+\index{INTF\_getAllowForming@{INTF\_getAllowForming}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getAllowForming()}{INTF\_getAllowForming()}}
+{\footnotesize\ttfamily bool INTF\+\_\+get\+Allow\+Forming (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a2f7aff32e5d90cb76b50bfafef0cc8eb}\label{interface_accessors_8c_a2f7aff32e5d90cb76b50bfafef0cc8eb}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getGridVoltageOffset@{INTF\_getGridVoltageOffset}}
+\index{INTF\_getGridVoltageOffset@{INTF\_getGridVoltageOffset}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getGridVoltageOffset()}{INTF\_getGridVoltageOffset()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Grid\+Voltage\+Offset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_af141bf9cc0d9d10b9c1ac60f90f914e3}\label{interface_accessors_8c_af141bf9cc0d9d10b9c1ac60f90f914e3}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getHarmCurrentCh0PhA@{INTF\_getHarmCurrentCh0PhA}}
+\index{INTF\_getHarmCurrentCh0PhA@{INTF\_getHarmCurrentCh0PhA}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh0PhA()}{INTF\_getHarmCurrentCh0PhA()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch0\+PhA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a2ea93777f0f8d8785276ea38dcf1b8af}\label{interface_accessors_8c_a2ea93777f0f8d8785276ea38dcf1b8af}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getHarmCurrentCh0PhB@{INTF\_getHarmCurrentCh0PhB}}
+\index{INTF\_getHarmCurrentCh0PhB@{INTF\_getHarmCurrentCh0PhB}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh0PhB()}{INTF\_getHarmCurrentCh0PhB()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch0\+PhB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_ab82de2b81f7895b19768db41b81932c6}\label{interface_accessors_8c_ab82de2b81f7895b19768db41b81932c6}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getHarmCurrentCh1PhA@{INTF\_getHarmCurrentCh1PhA}}
+\index{INTF\_getHarmCurrentCh1PhA@{INTF\_getHarmCurrentCh1PhA}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh1PhA()}{INTF\_getHarmCurrentCh1PhA()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch1\+PhA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a420f1d1047ca0c73fb4e3be469502cab}\label{interface_accessors_8c_a420f1d1047ca0c73fb4e3be469502cab}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getHarmCurrentCh1PhB@{INTF\_getHarmCurrentCh1PhB}}
+\index{INTF\_getHarmCurrentCh1PhB@{INTF\_getHarmCurrentCh1PhB}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh1PhB()}{INTF\_getHarmCurrentCh1PhB()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch1\+PhB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a8268b411345496f59b756787bb0323a5}\label{interface_accessors_8c_a8268b411345496f59b756787bb0323a5}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getHarmCurrentCh2PhA@{INTF\_getHarmCurrentCh2PhA}}
+\index{INTF\_getHarmCurrentCh2PhA@{INTF\_getHarmCurrentCh2PhA}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh2PhA()}{INTF\_getHarmCurrentCh2PhA()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch2\+PhA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a42cdd58dab6e3558113b81df6e16839c}\label{interface_accessors_8c_a42cdd58dab6e3558113b81df6e16839c}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getHarmCurrentCh2PhB@{INTF\_getHarmCurrentCh2PhB}}
+\index{INTF\_getHarmCurrentCh2PhB@{INTF\_getHarmCurrentCh2PhB}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh2PhB()}{INTF\_getHarmCurrentCh2PhB()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch2\+PhB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a958f82000278c76d992da150a55b0a18}\label{interface_accessors_8c_a958f82000278c76d992da150a55b0a18}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getHarmCurrentCh3PhA@{INTF\_getHarmCurrentCh3PhA}}
+\index{INTF\_getHarmCurrentCh3PhA@{INTF\_getHarmCurrentCh3PhA}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh3PhA()}{INTF\_getHarmCurrentCh3PhA()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch3\+PhA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a7946fac2f11a44eff7c700907c189bc6}\label{interface_accessors_8c_a7946fac2f11a44eff7c700907c189bc6}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getHarmCurrentCh3PhB@{INTF\_getHarmCurrentCh3PhB}}
+\index{INTF\_getHarmCurrentCh3PhB@{INTF\_getHarmCurrentCh3PhB}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh3PhB()}{INTF\_getHarmCurrentCh3PhB()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch3\+PhB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a213da2d6b3a814f1bf2d91036b1cd982}\label{interface_accessors_8c_a213da2d6b3a814f1bf2d91036b1cd982}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getIslandDetector@{INTF\_getIslandDetector}}
+\index{INTF\_getIslandDetector@{INTF\_getIslandDetector}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getIslandDetector()}{INTF\_getIslandDetector()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Island\+Detector (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a4ef6eb3f5734e746da42d0be15db9319}\label{interface_accessors_8c_a4ef6eb3f5734e746da42d0be15db9319}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getIslandResponse@{INTF\_getIslandResponse}}
+\index{INTF\_getIslandResponse@{INTF\_getIslandResponse}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getIslandResponse()}{INTF\_getIslandResponse()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Island\+Response (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a689c81667a2b236dacbee1dbd7e806ac}\label{interface_accessors_8c_a689c81667a2b236dacbee1dbd7e806ac}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getNeg15V@{INTF\_getNeg15V}}
+\index{INTF\_getNeg15V@{INTF\_getNeg15V}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getNeg15V()}{INTF\_getNeg15V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Neg15V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a744a180aace820f7a870be5a57455362}\label{interface_accessors_8c_a744a180aace820f7a870be5a57455362}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getPos15V@{INTF\_getPos15V}}
+\index{INTF\_getPos15V@{INTF\_getPos15V}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getPos15V()}{INTF\_getPos15V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Pos15V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a725db5a0fea72547846006b348a8f2e0}\label{interface_accessors_8c_a725db5a0fea72547846006b348a8f2e0}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getPos24V@{INTF\_getPos24V}}
+\index{INTF\_getPos24V@{INTF\_getPos24V}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getPos24V()}{INTF\_getPos24V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Pos24V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a7e78a1bdfad85f233e54739ba8683927}\label{interface_accessors_8c_a7e78a1bdfad85f233e54739ba8683927}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getPos3V@{INTF\_getPos3V}}
+\index{INTF\_getPos3V@{INTF\_getPos3V}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getPos3V()}{INTF\_getPos3V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Pos3V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a9e62ad9479ba4a7620c31ac22fc4ec6f}\label{interface_accessors_8c_a9e62ad9479ba4a7620c31ac22fc4ec6f}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getPos5V@{INTF\_getPos5V}}
+\index{INTF\_getPos5V@{INTF\_getPos5V}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getPos5V()}{INTF\_getPos5V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Pos5V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_aa4c881ac0a915733b4f4f8a7bb712003}\label{interface_accessors_8c_aa4c881ac0a915733b4f4f8a7bb712003}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getSunspecScaledApparentPower@{INTF\_getSunspecScaledApparentPower}}
+\index{INTF\_getSunspecScaledApparentPower@{INTF\_getSunspecScaledApparentPower}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getSunspecScaledApparentPower()}{INTF\_getSunspecScaledApparentPower()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Sunspec\+Scaled\+Apparent\+Power (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a757d38299417604ee511c1653683d3eb}\label{interface_accessors_8c_a757d38299417604ee511c1653683d3eb}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getSunspecScaledApparentPowerLimit@{INTF\_getSunspecScaledApparentPowerLimit}}
+\index{INTF\_getSunspecScaledApparentPowerLimit@{INTF\_getSunspecScaledApparentPowerLimit}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getSunspecScaledApparentPowerLimit()}{INTF\_getSunspecScaledApparentPowerLimit()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Sunspec\+Scaled\+Apparent\+Power\+Limit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_ac4d66ced4eb860621975532e4c355fbc}\label{interface_accessors_8c_ac4d66ced4eb860621975532e4c355fbc}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getSunspecScaledGridPositiveP@{INTF\_getSunspecScaledGridPositiveP}}
+\index{INTF\_getSunspecScaledGridPositiveP@{INTF\_getSunspecScaledGridPositiveP}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getSunspecScaledGridPositiveP()}{INTF\_getSunspecScaledGridPositiveP()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Sunspec\+Scaled\+Grid\+PositiveP (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_abac3ae5fd4e68e0ae5bf12e171e0a02a}\label{interface_accessors_8c_abac3ae5fd4e68e0ae5bf12e171e0a02a}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getSunspecScaledRealPowerLimitsMax@{INTF\_getSunspecScaledRealPowerLimitsMax}}
+\index{INTF\_getSunspecScaledRealPowerLimitsMax@{INTF\_getSunspecScaledRealPowerLimitsMax}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getSunspecScaledRealPowerLimitsMax()}{INTF\_getSunspecScaledRealPowerLimitsMax()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Sunspec\+Scaled\+Real\+Power\+Limits\+Max (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a05b8955eb1ddf10a8e5a669af82afbba}\label{interface_accessors_8c_a05b8955eb1ddf10a8e5a669af82afbba}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getVersMajor@{INTF\_getVersMajor}}
+\index{INTF\_getVersMajor@{INTF\_getVersMajor}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getVersMajor()}{INTF\_getVersMajor()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Vers\+Major (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a1485b9c8a1c1f215edfd99a11a25012c}\label{interface_accessors_8c_a1485b9c8a1c1f215edfd99a11a25012c}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getVersMinor@{INTF\_getVersMinor}}
+\index{INTF\_getVersMinor@{INTF\_getVersMinor}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getVersMinor()}{INTF\_getVersMinor()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Vers\+Minor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_aa27b07ddc231a81562ab7d3d19578848}\label{interface_accessors_8c_aa27b07ddc231a81562ab7d3d19578848}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_getVersPatch@{INTF\_getVersPatch}}
+\index{INTF\_getVersPatch@{INTF\_getVersPatch}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_getVersPatch()}{INTF\_getVersPatch()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Vers\+Patch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a4772b8e3b012a7ecdf4427ec04c5f043}\label{interface_accessors_8c_a4772b8e3b012a7ecdf4427ec04c5f043}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_loggerChunk\_onWrite@{INTF\_loggerChunk\_onWrite}}
+\index{INTF\_loggerChunk\_onWrite@{INTF\_loggerChunk\_onWrite}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_loggerChunk\_onWrite()}{INTF\_loggerChunk\_onWrite()}}
+{\footnotesize\ttfamily void INTF\+\_\+logger\+Chunk\+\_\+on\+Write (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a5760cc69fac51973d303af38b37de7db}\label{interface_accessors_8c_a5760cc69fac51973d303af38b37de7db}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_powerRejected@{INTF\_powerRejected}}
+\index{INTF\_powerRejected@{INTF\_powerRejected}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_powerRejected()}{INTF\_powerRejected()}}
+{\footnotesize\ttfamily void INTF\+\_\+power\+Rejected (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{\mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}]{reasons }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_af6b9c83d41c21522601ebca742053813}\label{interface_accessors_8c_af6b9c83d41c21522601ebca742053813}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setAccessCheckLimits@{INTF\_setAccessCheckLimits}}
+\index{INTF\_setAccessCheckLimits@{INTF\_setAccessCheckLimits}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAccessCheckLimits()}{INTF\_setAccessCheckLimits()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Access\+Check\+Limits (\begin{DoxyParamCaption}\item[{bool}]{check\+Limits }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a33e147c35fdb72a43ca93b641fc31ce6}\label{interface_accessors_8c_a33e147c35fdb72a43ca93b641fc31ce6}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setAccessLevel@{INTF\_setAccessLevel}}
+\index{INTF\_setAccessLevel@{INTF\_setAccessLevel}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAccessLevel()}{INTF\_setAccessLevel()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Access\+Level (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a46b0d089a19f2ed60c19f39bb019cb64}\label{interface_accessors_8c_a46b0d089a19f2ed60c19f39bb019cb64}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setAccessPassword@{INTF\_setAccessPassword}}
+\index{INTF\_setAccessPassword@{INTF\_setAccessPassword}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAccessPassword()}{INTF\_setAccessPassword()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Access\+Password (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a2fc814a80f10d21457a59c2cd1d1cadc}\label{interface_accessors_8c_a2fc814a80f10d21457a59c2cd1d1cadc}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setAllowFollowing@{INTF\_setAllowFollowing}}
+\index{INTF\_setAllowFollowing@{INTF\_setAllowFollowing}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAllowFollowing()}{INTF\_setAllowFollowing()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Allow\+Following (\begin{DoxyParamCaption}\item[{bool const}]{allow\+Following }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a6f387f6273f8a34065a9004b831fbc41}\label{interface_accessors_8c_a6f387f6273f8a34065a9004b831fbc41}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setAllowForming@{INTF\_setAllowForming}}
+\index{INTF\_setAllowForming@{INTF\_setAllowForming}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAllowForming()}{INTF\_setAllowForming()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Allow\+Forming (\begin{DoxyParamCaption}\item[{bool const}]{allow\+Forming }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_aede25ba3463daf83e7b38bf447baed32}\label{interface_accessors_8c_aede25ba3463daf83e7b38bf447baed32}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setConfigRateLimitPgRef\_pDelta@{INTF\_setConfigRateLimitPgRef\_pDelta}}
+\index{INTF\_setConfigRateLimitPgRef\_pDelta@{INTF\_setConfigRateLimitPgRef\_pDelta}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setConfigRateLimitPgRef\_pDelta()}{INTF\_setConfigRateLimitPgRef\_pDelta()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Config\+Rate\+Limit\+Pg\+Ref\+\_\+p\+Delta (\begin{DoxyParamCaption}\item[{float const}]{p\+Delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a4e78e721dcce3c3add08a839b5301e31}\label{interface_accessors_8c_a4e78e721dcce3c3add08a839b5301e31}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setConfigRateLimitPgRef\_tDelta@{INTF\_setConfigRateLimitPgRef\_tDelta}}
+\index{INTF\_setConfigRateLimitPgRef\_tDelta@{INTF\_setConfigRateLimitPgRef\_tDelta}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setConfigRateLimitPgRef\_tDelta()}{INTF\_setConfigRateLimitPgRef\_tDelta()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Config\+Rate\+Limit\+Pg\+Ref\+\_\+t\+Delta (\begin{DoxyParamCaption}\item[{float const}]{t\+Delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a66e723cc746cb0571e5fd38ef3fb5503}\label{interface_accessors_8c_a66e723cc746cb0571e5fd38ef3fb5503}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setControlSource@{INTF\_setControlSource}}
+\index{INTF\_setControlSource@{INTF\_setControlSource}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setControlSource()}{INTF\_setControlSource()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Control\+Source (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{src }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a508f2224dc87e11a6b54ddd6fb7ecd87}\label{interface_accessors_8c_a508f2224dc87e11a6b54ddd6fb7ecd87}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setEnable@{INTF\_setEnable}}
+\index{INTF\_setEnable@{INTF\_setEnable}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setEnable()}{INTF\_setEnable()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Enable (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{en }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em en} & uint16\+\_\+t to allow the out of range values of 2 and 3 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_accessors_8c_ac119e5cc4490d32a5df4b0ed858b1148}\label{interface_accessors_8c_ac119e5cc4490d32a5df4b0ed858b1148}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setGridVoltageOffset@{INTF\_setGridVoltageOffset}}
+\index{INTF\_setGridVoltageOffset@{INTF\_setGridVoltageOffset}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setGridVoltageOffset()}{INTF\_setGridVoltageOffset()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Grid\+Voltage\+Offset (\begin{DoxyParamCaption}\item[{float}]{offset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_ad9bf92610fb7c66ea1757fba181b75f7}\label{interface_accessors_8c_ad9bf92610fb7c66ea1757fba181b75f7}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setIslandDetector@{INTF\_setIslandDetector}}
+\index{INTF\_setIslandDetector@{INTF\_setIslandDetector}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setIslandDetector()}{INTF\_setIslandDetector()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Island\+Detector (\begin{DoxyParamCaption}\item[{uint16\+\_\+t const}]{island\+Detector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a56d9ef27c5907a892b1ec678cbd77b25}\label{interface_accessors_8c_a56d9ef27c5907a892b1ec678cbd77b25}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setIslandResponse@{INTF\_setIslandResponse}}
+\index{INTF\_setIslandResponse@{INTF\_setIslandResponse}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setIslandResponse()}{INTF\_setIslandResponse()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Island\+Response (\begin{DoxyParamCaption}\item[{uint16\+\_\+t const}]{island\+Response }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_ab4d95922580fc39df11a9c72b913bf7a}\label{interface_accessors_8c_ab4d95922580fc39df11a9c72b913bf7a}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setIslandStateRequest@{INTF\_setIslandStateRequest}}
+\index{INTF\_setIslandStateRequest@{INTF\_setIslandStateRequest}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setIslandStateRequest()}{INTF\_setIslandStateRequest()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Island\+State\+Request (\begin{DoxyParamCaption}\item[{bool}]{req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_af6d7a32e10af877759ff1750646693ad}\label{interface_accessors_8c_af6d7a32e10af877759ff1750646693ad}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setNomF@{INTF\_setNomF}}
+\index{INTF\_setNomF@{INTF\_setNomF}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setNomF()}{INTF\_setNomF()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+NomF (\begin{DoxyParamCaption}\item[{float}]{f\+Nom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a006eb78c3747a3132acf3fbfffd8c90e}\label{interface_accessors_8c_a006eb78c3747a3132acf3fbfffd8c90e}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setNomV@{INTF\_setNomV}}
+\index{INTF\_setNomV@{INTF\_setNomV}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setNomV()}{INTF\_setNomV()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+NomV (\begin{DoxyParamCaption}\item[{float}]{v\+Nom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a368e3ab89e146aa5d551f2f809f15618}\label{interface_accessors_8c_a368e3ab89e146aa5d551f2f809f15618}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setSunspecScaledApparentPower@{INTF\_setSunspecScaledApparentPower}}
+\index{INTF\_setSunspecScaledApparentPower@{INTF\_setSunspecScaledApparentPower}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setSunspecScaledApparentPower()}{INTF\_setSunspecScaledApparentPower()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Sunspec\+Scaled\+Apparent\+Power (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a58b6b2294b9b81ec20427b64a8ebfff2}\label{interface_accessors_8c_a58b6b2294b9b81ec20427b64a8ebfff2}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setSunspecScaledApparentPowerLimit@{INTF\_setSunspecScaledApparentPowerLimit}}
+\index{INTF\_setSunspecScaledApparentPowerLimit@{INTF\_setSunspecScaledApparentPowerLimit}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setSunspecScaledApparentPowerLimit()}{INTF\_setSunspecScaledApparentPowerLimit()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Sunspec\+Scaled\+Apparent\+Power\+Limit (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_ac855468bdc131df6467def4be0436589}\label{interface_accessors_8c_ac855468bdc131df6467def4be0436589}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setSunspecScaledGridPositiveP@{INTF\_setSunspecScaledGridPositiveP}}
+\index{INTF\_setSunspecScaledGridPositiveP@{INTF\_setSunspecScaledGridPositiveP}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setSunspecScaledGridPositiveP()}{INTF\_setSunspecScaledGridPositiveP()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Sunspec\+Scaled\+Grid\+PositiveP (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a0ce166744dff63c46e0f51b639bc4ea8}\label{interface_accessors_8c_a0ce166744dff63c46e0f51b639bc4ea8}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_setSunspecScaledRealPowerLimitsMax@{INTF\_setSunspecScaledRealPowerLimitsMax}}
+\index{INTF\_setSunspecScaledRealPowerLimitsMax@{INTF\_setSunspecScaledRealPowerLimitsMax}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_setSunspecScaledRealPowerLimitsMax()}{INTF\_setSunspecScaledRealPowerLimitsMax()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Sunspec\+Scaled\+Real\+Power\+Limits\+Max (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a4b5476da70ea4532e90764241f9eeea0}\label{interface_accessors_8c_a4b5476da70ea4532e90764241f9eeea0}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_submitAccessLevelRequest@{INTF\_submitAccessLevelRequest}}
+\index{INTF\_submitAccessLevelRequest@{INTF\_submitAccessLevelRequest}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_submitAccessLevelRequest()}{INTF\_submitAccessLevelRequest()}}
+{\footnotesize\ttfamily void INTF\+\_\+submit\+Access\+Level\+Request (\begin{DoxyParamCaption}\item[{bool}]{request }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_ad48f6ff174bd5fdf8d3379d3311badf7}\label{interface_accessors_8c_ad48f6ff174bd5fdf8d3379d3311badf7}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_updateCommercialRatings@{INTF\_updateCommercialRatings}}
+\index{INTF\_updateCommercialRatings@{INTF\_updateCommercialRatings}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_updateCommercialRatings()}{INTF\_updateCommercialRatings()}}
+{\footnotesize\ttfamily void INTF\+\_\+update\+Commercial\+Ratings (\begin{DoxyParamCaption}\item[{float}]{unused }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a029dd9afdde2d1bff394065deaa065be}\label{interface_accessors_8c_a029dd9afdde2d1bff394065deaa065be}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_updateHardwareRatings@{INTF\_updateHardwareRatings}}
+\index{INTF\_updateHardwareRatings@{INTF\_updateHardwareRatings}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_updateHardwareRatings()}{INTF\_updateHardwareRatings()}}
+{\footnotesize\ttfamily void INTF\+\_\+update\+Hardware\+Ratings (\begin{DoxyParamCaption}\item[{float}]{unused }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_acdc3e47f8f199fb330ef5dd50cf70002}\label{interface_accessors_8c_acdc3e47f8f199fb330ef5dd50cf70002}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_updateUserLimits@{INTF\_updateUserLimits}}
+\index{INTF\_updateUserLimits@{INTF\_updateUserLimits}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_updateUserLimits()}{INTF\_updateUserLimits()}}
+{\footnotesize\ttfamily void INTF\+\_\+update\+User\+Limits (\begin{DoxyParamCaption}\item[{float}]{unused }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8c_a1228c2eaf73fb7eca186e9e293102d53}\label{interface_accessors_8c_a1228c2eaf73fb7eca186e9e293102d53}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_zero\_getter@{INTF\_zero\_getter}}
+\index{INTF\_zero\_getter@{INTF\_zero\_getter}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_zero\_getter()}{INTF\_zero\_getter()}}
+{\footnotesize\ttfamily uint32\+\_\+t INTF\+\_\+zero\+\_\+getter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{interface_accessors_8c_a4cf22a6b217847fc7cae3ae3e3b915ab}\label{interface_accessors_8c_a4cf22a6b217847fc7cae3ae3e3b915ab}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!\_INTF\_accessLevel@{\_INTF\_accessLevel}}
+\index{\_INTF\_accessLevel@{\_INTF\_accessLevel}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{\_INTF\_accessLevel}{\_INTF\_accessLevel}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+INTF\+\_\+access\+Level = 0}
+
+\mbox{\Hypertarget{interface_accessors_8c_a0ddb442d4001c97f63d71a4cfe51ab4a}\label{interface_accessors_8c_a0ddb442d4001c97f63d71a4cfe51ab4a}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!\_INTF\_accessPassword@{\_INTF\_accessPassword}}
+\index{\_INTF\_accessPassword@{\_INTF\_accessPassword}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{\_INTF\_accessPassword}{\_INTF\_accessPassword}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+INTF\+\_\+access\+Password = 0}
+
+\mbox{\Hypertarget{interface_accessors_8c_aaf78dc227e447940fe70ccb423b49ab2}\label{interface_accessors_8c_aaf78dc227e447940fe70ccb423b49ab2}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!\_INTF\_checkLimits@{\_INTF\_checkLimits}}
+\index{\_INTF\_checkLimits@{\_INTF\_checkLimits}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{\_INTF\_checkLimits}{\_INTF\_checkLimits}}
+{\footnotesize\ttfamily bool \+\_\+\+INTF\+\_\+check\+Limits = true}
+
+\mbox{\Hypertarget{interface_accessors_8c_ace657ecb30a062f6b7ba1c9a00ee89fa}\label{interface_accessors_8c_ace657ecb30a062f6b7ba1c9a00ee89fa}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!accessCodes@{accessCodes}}
+\index{accessCodes@{accessCodes}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{accessCodes}{accessCodes}}
+{\footnotesize\ttfamily uint16\+\_\+t access\+Codes\mbox{[}CAN\+\_\+\+Enum\+\_\+\+Access\+Level\+\_\+\+Count\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    [CAN\_Enum\_AccessLevel\_Service\_Tech] = 0,}
+\DoxyCodeLine{    [CAN\_Enum\_AccessLevel\_Service\_Eng] = 14205,}
+\DoxyCodeLine{    [CAN\_Enum\_AccessLevel\_EPC\_Eng] = 54682,}
+\DoxyCodeLine{    [CAN\_Enum\_AccessLevel\_EPC\_Factory] = 48289,}
+\DoxyCodeLine{    [CAN\_Enum\_AccessLevel\_MAC\_Auth] = 31415}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interface_accessors_8c_aafe89f987c23c36dd842e3a95c4fa2e5}\label{interface_accessors_8c_aafe89f987c23c36dd842e3a95c4fa2e5}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdDcVLim@{INTF\_cmdDcVLim}}
+\index{INTF\_cmdDcVLim@{INTF\_cmdDcVLim}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdDcVLim}{INTF\_cmdDcVLim}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Dc\+VLim}
+
+\mbox{\Hypertarget{interface_accessors_8c_a5538df13b1da6a0aefd3bde487b9a4cb}\label{interface_accessors_8c_a5538df13b1da6a0aefd3bde487b9a4cb}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdInputCurrent@{INTF\_cmdInputCurrent}}
+\index{INTF\_cmdInputCurrent@{INTF\_cmdInputCurrent}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdInputCurrent}{INTF\_cmdInputCurrent}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Input\+Current}
+
+\mbox{\Hypertarget{interface_accessors_8c_a6ace3b5f1a80d2fed688ebc10a7765f9}\label{interface_accessors_8c_a6ace3b5f1a80d2fed688ebc10a7765f9}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdMpptPwrDcdc@{INTF\_cmdMpptPwrDcdc}}
+\index{INTF\_cmdMpptPwrDcdc@{INTF\_cmdMpptPwrDcdc}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdMpptPwrDcdc}{INTF\_cmdMpptPwrDcdc}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Mppt\+Pwr\+Dcdc}
+
+\mbox{\Hypertarget{interface_accessors_8c_ad60b78557c3eb0a494afc3da4bc211b1}\label{interface_accessors_8c_ad60b78557c3eb0a494afc3da4bc211b1}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhAHarmCh0Id@{INTF\_cmdPhAHarmCh0Id}}
+\index{INTF\_cmdPhAHarmCh0Id@{INTF\_cmdPhAHarmCh0Id}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh0Id}{INTF\_cmdPhAHarmCh0Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch0\+Id}
+
+\mbox{\Hypertarget{interface_accessors_8c_a257409e80c6c6c3948950bee7bac7468}\label{interface_accessors_8c_a257409e80c6c6c3948950bee7bac7468}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhAHarmCh0Iq@{INTF\_cmdPhAHarmCh0Iq}}
+\index{INTF\_cmdPhAHarmCh0Iq@{INTF\_cmdPhAHarmCh0Iq}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh0Iq}{INTF\_cmdPhAHarmCh0Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch0\+Iq}
+
+\mbox{\Hypertarget{interface_accessors_8c_a11c24207ef9ae315b743906a04699725}\label{interface_accessors_8c_a11c24207ef9ae315b743906a04699725}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhAHarmCh1Id@{INTF\_cmdPhAHarmCh1Id}}
+\index{INTF\_cmdPhAHarmCh1Id@{INTF\_cmdPhAHarmCh1Id}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh1Id}{INTF\_cmdPhAHarmCh1Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch1\+Id}
+
+\mbox{\Hypertarget{interface_accessors_8c_aa1d4c43a43d0db93a916869e4cd8c6bb}\label{interface_accessors_8c_aa1d4c43a43d0db93a916869e4cd8c6bb}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhAHarmCh1Iq@{INTF\_cmdPhAHarmCh1Iq}}
+\index{INTF\_cmdPhAHarmCh1Iq@{INTF\_cmdPhAHarmCh1Iq}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh1Iq}{INTF\_cmdPhAHarmCh1Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch1\+Iq}
+
+\mbox{\Hypertarget{interface_accessors_8c_a27c2f062b9e1ed74ff613c2718b90980}\label{interface_accessors_8c_a27c2f062b9e1ed74ff613c2718b90980}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhAHarmCh2Id@{INTF\_cmdPhAHarmCh2Id}}
+\index{INTF\_cmdPhAHarmCh2Id@{INTF\_cmdPhAHarmCh2Id}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh2Id}{INTF\_cmdPhAHarmCh2Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch2\+Id}
+
+\mbox{\Hypertarget{interface_accessors_8c_abb23731cbb6e0ca066fefb7ca8a0e71f}\label{interface_accessors_8c_abb23731cbb6e0ca066fefb7ca8a0e71f}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhAHarmCh2Iq@{INTF\_cmdPhAHarmCh2Iq}}
+\index{INTF\_cmdPhAHarmCh2Iq@{INTF\_cmdPhAHarmCh2Iq}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh2Iq}{INTF\_cmdPhAHarmCh2Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch2\+Iq}
+
+\mbox{\Hypertarget{interface_accessors_8c_a1017f9aea6d8265abce63ec31eb56db6}\label{interface_accessors_8c_a1017f9aea6d8265abce63ec31eb56db6}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhAHarmCh3Id@{INTF\_cmdPhAHarmCh3Id}}
+\index{INTF\_cmdPhAHarmCh3Id@{INTF\_cmdPhAHarmCh3Id}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh3Id}{INTF\_cmdPhAHarmCh3Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch3\+Id}
+
+\mbox{\Hypertarget{interface_accessors_8c_a5e5100c627d6e798db9361cad6a52c7b}\label{interface_accessors_8c_a5e5100c627d6e798db9361cad6a52c7b}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhAHarmCh3Iq@{INTF\_cmdPhAHarmCh3Iq}}
+\index{INTF\_cmdPhAHarmCh3Iq@{INTF\_cmdPhAHarmCh3Iq}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh3Iq}{INTF\_cmdPhAHarmCh3Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch3\+Iq}
+
+\mbox{\Hypertarget{interface_accessors_8c_ad4d0e1e55f52f153f8ddf02fcdb53127}\label{interface_accessors_8c_ad4d0e1e55f52f153f8ddf02fcdb53127}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhBHarmCh0Id@{INTF\_cmdPhBHarmCh0Id}}
+\index{INTF\_cmdPhBHarmCh0Id@{INTF\_cmdPhBHarmCh0Id}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh0Id}{INTF\_cmdPhBHarmCh0Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch0\+Id}
+
+\mbox{\Hypertarget{interface_accessors_8c_a8627ea41577512343ccd97df985cf8e8}\label{interface_accessors_8c_a8627ea41577512343ccd97df985cf8e8}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhBHarmCh0Iq@{INTF\_cmdPhBHarmCh0Iq}}
+\index{INTF\_cmdPhBHarmCh0Iq@{INTF\_cmdPhBHarmCh0Iq}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh0Iq}{INTF\_cmdPhBHarmCh0Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch0\+Iq}
+
+\mbox{\Hypertarget{interface_accessors_8c_ae06b06f088104b223512e5b52c139ee1}\label{interface_accessors_8c_ae06b06f088104b223512e5b52c139ee1}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhBHarmCh1Id@{INTF\_cmdPhBHarmCh1Id}}
+\index{INTF\_cmdPhBHarmCh1Id@{INTF\_cmdPhBHarmCh1Id}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh1Id}{INTF\_cmdPhBHarmCh1Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch1\+Id}
+
+\mbox{\Hypertarget{interface_accessors_8c_ac16d5d125f14e01708e4b4136ee62697}\label{interface_accessors_8c_ac16d5d125f14e01708e4b4136ee62697}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhBHarmCh1Iq@{INTF\_cmdPhBHarmCh1Iq}}
+\index{INTF\_cmdPhBHarmCh1Iq@{INTF\_cmdPhBHarmCh1Iq}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh1Iq}{INTF\_cmdPhBHarmCh1Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch1\+Iq}
+
+\mbox{\Hypertarget{interface_accessors_8c_a89baaacf4a6c79627efa601eacd004a1}\label{interface_accessors_8c_a89baaacf4a6c79627efa601eacd004a1}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhBHarmCh2Id@{INTF\_cmdPhBHarmCh2Id}}
+\index{INTF\_cmdPhBHarmCh2Id@{INTF\_cmdPhBHarmCh2Id}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh2Id}{INTF\_cmdPhBHarmCh2Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch2\+Id}
+
+\mbox{\Hypertarget{interface_accessors_8c_af10fd01df5b4f8ce44b25e8d9bd0e706}\label{interface_accessors_8c_af10fd01df5b4f8ce44b25e8d9bd0e706}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhBHarmCh2Iq@{INTF\_cmdPhBHarmCh2Iq}}
+\index{INTF\_cmdPhBHarmCh2Iq@{INTF\_cmdPhBHarmCh2Iq}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh2Iq}{INTF\_cmdPhBHarmCh2Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch2\+Iq}
+
+\mbox{\Hypertarget{interface_accessors_8c_a0029c5f594b19e6799580e1ece9f87c9}\label{interface_accessors_8c_a0029c5f594b19e6799580e1ece9f87c9}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhBHarmCh3Id@{INTF\_cmdPhBHarmCh3Id}}
+\index{INTF\_cmdPhBHarmCh3Id@{INTF\_cmdPhBHarmCh3Id}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh3Id}{INTF\_cmdPhBHarmCh3Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch3\+Id}
+
+\mbox{\Hypertarget{interface_accessors_8c_ae2d788832709698a110e292aa4e046b3}\label{interface_accessors_8c_ae2d788832709698a110e292aa4e046b3}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdPhBHarmCh3Iq@{INTF\_cmdPhBHarmCh3Iq}}
+\index{INTF\_cmdPhBHarmCh3Iq@{INTF\_cmdPhBHarmCh3Iq}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh3Iq}{INTF\_cmdPhBHarmCh3Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch3\+Iq}
+
+\mbox{\Hypertarget{interface_accessors_8c_a4b95211c26a962044ea4690e06eb87b3}\label{interface_accessors_8c_a4b95211c26a962044ea4690e06eb87b3}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdReactiveCurrent@{INTF\_cmdReactiveCurrent}}
+\index{INTF\_cmdReactiveCurrent@{INTF\_cmdReactiveCurrent}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdReactiveCurrent}{INTF\_cmdReactiveCurrent}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Reactive\+Current}
+
+\mbox{\Hypertarget{interface_accessors_8c_af9d9bcbabff6b55ae0b251ce94d7ef44}\label{interface_accessors_8c_af9d9bcbabff6b55ae0b251ce94d7ef44}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdReactiveCurrentNs@{INTF\_cmdReactiveCurrentNs}}
+\index{INTF\_cmdReactiveCurrentNs@{INTF\_cmdReactiveCurrentNs}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdReactiveCurrentNs}{INTF\_cmdReactiveCurrentNs}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Reactive\+Current\+Ns}
+
+\mbox{\Hypertarget{interface_accessors_8c_a79e31bef5a37336542c4f6361506fa02}\label{interface_accessors_8c_a79e31bef5a37336542c4f6361506fa02}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdReactivePwr@{INTF\_cmdReactivePwr}}
+\index{INTF\_cmdReactivePwr@{INTF\_cmdReactivePwr}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdReactivePwr}{INTF\_cmdReactivePwr}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Reactive\+Pwr}
+
+\mbox{\Hypertarget{interface_accessors_8c_aba3e765c9fe3dfe3040ad741ded00f77}\label{interface_accessors_8c_aba3e765c9fe3dfe3040ad741ded00f77}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdReactivePwrNs@{INTF\_cmdReactivePwrNs}}
+\index{INTF\_cmdReactivePwrNs@{INTF\_cmdReactivePwrNs}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdReactivePwrNs}{INTF\_cmdReactivePwrNs}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Reactive\+Pwr\+Ns}
+
+\mbox{\Hypertarget{interface_accessors_8c_a4c8db66e9aff805c09de8ef33a33388c}\label{interface_accessors_8c_a4c8db66e9aff805c09de8ef33a33388c}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdRealCurrent@{INTF\_cmdRealCurrent}}
+\index{INTF\_cmdRealCurrent@{INTF\_cmdRealCurrent}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdRealCurrent}{INTF\_cmdRealCurrent}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Real\+Current}
+
+\mbox{\Hypertarget{interface_accessors_8c_a27a2166f2c156045cf525468d2f313b9}\label{interface_accessors_8c_a27a2166f2c156045cf525468d2f313b9}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdRealCurrentNs@{INTF\_cmdRealCurrentNs}}
+\index{INTF\_cmdRealCurrentNs@{INTF\_cmdRealCurrentNs}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdRealCurrentNs}{INTF\_cmdRealCurrentNs}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Real\+Current\+Ns}
+
+\mbox{\Hypertarget{interface_accessors_8c_a3f54617f49f9242541779331eb124182}\label{interface_accessors_8c_a3f54617f49f9242541779331eb124182}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdRealPwr@{INTF\_cmdRealPwr}}
+\index{INTF\_cmdRealPwr@{INTF\_cmdRealPwr}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdRealPwr}{INTF\_cmdRealPwr}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Real\+Pwr}
+
+\mbox{\Hypertarget{interface_accessors_8c_aa28bf8dd3bf1d36d1aecb7c754e0383b}\label{interface_accessors_8c_aa28bf8dd3bf1d36d1aecb7c754e0383b}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_cmdRealPwrNs@{INTF\_cmdRealPwrNs}}
+\index{INTF\_cmdRealPwrNs@{INTF\_cmdRealPwrNs}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdRealPwrNs}{INTF\_cmdRealPwrNs}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Real\+Pwr\+Ns}
+
+\mbox{\Hypertarget{interface_accessors_8c_a88f562c1031cccffe74fb20b4ca06060}\label{interface_accessors_8c_a88f562c1031cccffe74fb20b4ca06060}} 
+\index{interfaceAccessors.c@{interfaceAccessors.c}!INTF\_commandFlags@{INTF\_commandFlags}}
+\index{INTF\_commandFlags@{INTF\_commandFlags}!interfaceAccessors.c@{interfaceAccessors.c}}
+\doxysubsubsection{\texorpdfstring{INTF\_commandFlags}{INTF\_commandFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\+\_\+\+Command\+Flags}} INTF\+\_\+command\+Flags}
+

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_build_info" xml:lang="en-US">
+<title>BuildInfo Struct Reference</title>
+<indexterm><primary>BuildInfo</primary></indexterm>
+<para>
+<computeroutput>#include &lt;revisionInfo.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_struct_build_info_1a86c527649d9f37ea332a388a6bf4da16">year</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_build_info_1a1795aa29fcdbcf3e7d08c8f883e79bdb">month</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_build_info_1a9382e8b62b78c80d87c15b67056a7cfc">day</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_build_info_1a273531526928ad7161a97e75e1a61724">hour</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_build_info_1a26b670ec78a246194393cbe979b75cea">minute</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_struct_build_info_1a485771dfeb15f4135f11cbfb1a665a44">formattedIntegerTime</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad">hash</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_build_info_1a9382e8b62b78c80d87c15b67056a7cfc"/><section>
+    <title>day</title>
+<indexterm><primary>day</primary><secondary>BuildInfo</secondary></indexterm>
+<indexterm><primary>BuildInfo</primary><secondary>day</secondary></indexterm>
+<para><computeroutput>uint16_t BuildInfo::day</computeroutput></para></section>
+<anchor xml:id="_struct_build_info_1a485771dfeb15f4135f11cbfb1a665a44"/><section>
+    <title>formattedIntegerTime</title>
+<indexterm><primary>formattedIntegerTime</primary><secondary>BuildInfo</secondary></indexterm>
+<indexterm><primary>BuildInfo</primary><secondary>formattedIntegerTime</secondary></indexterm>
+<para><computeroutput>uint32_t BuildInfo::formattedIntegerTime</computeroutput></para></section>
+<anchor xml:id="_struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad"/><section>
+    <title>hash</title>
+<indexterm><primary>hash</primary><secondary>BuildInfo</secondary></indexterm>
+<indexterm><primary>BuildInfo</primary><secondary>hash</secondary></indexterm>
+<para><computeroutput>uint32_t BuildInfo::hash</computeroutput></para></section>
+<anchor xml:id="_struct_build_info_1a273531526928ad7161a97e75e1a61724"/><section>
+    <title>hour</title>
+<indexterm><primary>hour</primary><secondary>BuildInfo</secondary></indexterm>
+<indexterm><primary>BuildInfo</primary><secondary>hour</secondary></indexterm>
+<para><computeroutput>uint16_t BuildInfo::hour</computeroutput></para></section>
+<anchor xml:id="_struct_build_info_1a26b670ec78a246194393cbe979b75cea"/><section>
+    <title>minute</title>
+<indexterm><primary>minute</primary><secondary>BuildInfo</secondary></indexterm>
+<indexterm><primary>BuildInfo</primary><secondary>minute</secondary></indexterm>
+<para><computeroutput>uint16_t BuildInfo::minute</computeroutput></para></section>
+<anchor xml:id="_struct_build_info_1a1795aa29fcdbcf3e7d08c8f883e79bdb"/><section>
+    <title>month</title>
+<indexterm><primary>month</primary><secondary>BuildInfo</secondary></indexterm>
+<indexterm><primary>BuildInfo</primary><secondary>month</secondary></indexterm>
+<para><computeroutput>uint16_t BuildInfo::month</computeroutput></para></section>
+<anchor xml:id="_struct_build_info_1a86c527649d9f37ea332a388a6bf4da16"/><section>
+    <title>year</title>
+<indexterm><primary>year</primary><secondary>BuildInfo</secondary></indexterm>
+<indexterm><primary>BuildInfo</primary><secondary>year</secondary></indexterm>
+<para><computeroutput>uint16_t BuildInfo::year</computeroutput></para></section>
+</section>
+</section>

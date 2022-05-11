@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sil_wrapper_8h_source" xml:lang="en-US">
+<title>silWrapper.h</title>
+<indexterm><primary>sil/silWrapper.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">_SIL_WRAPPER_H_</emphasis>
+2 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">_SIL_WRAPPER_H_</emphasis>
+3 <emphasis role="comment">/********************************************************************************************************</emphasis>
+4 <emphasis role="comment">*</emphasis>
+5 <emphasis role="comment">*&#32;&#32;&#32;#########&#32;&#32;&#32;&#32;#########&#32;&#32;&#32;&#32;#########&#32;&#32;&#32;########&#32;&#32;&#32;&#32;&#32;&#32;#######&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;#########&#32;&#32;&#32;#######</emphasis>
+6 <emphasis role="comment">*&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;##</emphasis>
+7 <emphasis role="comment">*&#32;&#32;#&#32;########&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##########&#32;&#32;##</emphasis>
+8 <emphasis role="comment">*&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##</emphasis>
+9 <emphasis role="comment">*&#32;&#32;&#32;#########&#32;&#32;&#32;#&#32;########&#32;&#32;&#32;&#32;#########&#32;&#32;##&#32;######&#32;&#32;&#32;&#32;&#32;&#32;#######&#32;&#32;&#32;&#32;&#32;######&#32;&#32;######&#32;&#32;&#32;&#32;#########&#32;&#32;##</emphasis>
+10 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##</emphasis>
+11 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#</emphasis>
+12 <emphasis role="comment">*</emphasis>
+13 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;COMPANY&#32;CONFIDENTIAL</emphasis>
+14 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;document&#32;contains&#32;information&#32;proprietary&#32;to&#32;EPC&#32;Power.</emphasis>
+15 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;is&#32;an&#32;unpublished&#32;work&#32;subject&#32;to&#32;trade&#32;secret&#32;and&#32;copyright&#32;protection.</emphasis>
+16 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;In&#32;addition,&#32;the&#32;information&#32;may&#32;be&#32;the&#32;subject&#32;of&#32;patent&#32;applications</emphasis>
+17 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;in&#32;the&#32;United&#32;States&#32;and&#32;foreign&#32;countries.</emphasis>
+18 <emphasis role="comment">*</emphasis>
+19 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+20 
+21 <emphasis role="comment">/********************************************************************************************************</emphasis>
+22 <emphasis role="comment">&#32;*&#32;M&#32;O&#32;D&#32;U&#32;L&#32;E&#32;&#32;&#32;&#32;D&#32;E&#32;S&#32;C&#32;R&#32;I&#32;P&#32;T&#32;I&#32;O&#32;N</emphasis>
+23 <emphasis role="comment">&#32;*</emphasis>
+24 <emphasis role="comment">&#32;*&#32;Filename&#32;&#32;&#32;&#32;&#32;:&#32;silWrapper.h</emphasis>
+25 <emphasis role="comment">&#32;*&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Package::SubPackage::..::Class</emphasis>
+26 <emphasis role="comment">&#32;*&#32;Prefix&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;</emphasis>
+27 <emphasis role="comment">&#32;*&#32;Description&#32;&#32;:&#32;</emphasis>
+28 <emphasis role="comment">&#32;*&#32;Author&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;</emphasis>
+29 <emphasis role="comment">&#32;*</emphasis>
+30 <emphasis role="comment">&#32;*&#32;History&#32;&#32;&#32;&#32;&#32;&#32;:</emphasis>
+31 <emphasis role="comment">&#32;*&#32;Date&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Name&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Description</emphasis>
+32 <emphasis role="comment">&#32;*&#32;14.01.2019&#32;&#32;&#32;D.&#32;Michaud&#32;&#32;&#32;&#32;&#32;&#32;Initial&#32;Version</emphasis>
+33 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+34 
+35 <emphasis role="comment">/********************************************************************************************************</emphasis>
+36 <emphasis role="comment">&#32;*&#32;Include&#32;Files</emphasis>
+37 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+38 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">SIL_WRAPPER</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">DEBUG</emphasis><emphasis role="preprocessor">)</emphasis>
+39 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">MATLAB_MEX_FILE</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">USE_MEX_CMD</emphasis><emphasis role="preprocessor">)</emphasis>
+40 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="stringliteral">&quot;mex.h&quot;</emphasis>
+41 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">else</emphasis>
+42 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stdio</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+43 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+44 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+45 
+46 
+47 <emphasis role="comment">/********************************************************************************************************</emphasis>
+48 <emphasis role="comment">&#32;*&#32;Constant&#32;Defines</emphasis>
+49 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+50 
+51 <emphasis role="comment">/********************************************************************************************************</emphasis>
+52 <emphasis role="comment">&#32;*&#32;Macro&#32;Defines</emphasis>
+53 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+54 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">_STRINGIFY</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">s</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">s</emphasis>
+55 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">STRINGIFY</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">s</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_sil_wrapper_8h_1aaac393258b46cdcc2da9818c3408aa70">_STRINGIFY</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">s</emphasis><emphasis role="preprocessor">)</emphasis>
+56 
+57 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">SIL_WRAPPER</emphasis><emphasis role="preprocessor">)</emphasis>
+58 
+59 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_WARNING</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">printf</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis><emphasis role="preprocessor">)</emphasis>
+60 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_ERROR</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">printf</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis><emphasis role="preprocessor">)</emphasis>
+61 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_DIAG</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">printf</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis><emphasis role="preprocessor">)</emphasis>
+62 
+63 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">else</emphasis>
+64 
+65 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_WARNING</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>
+66 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_ERROR</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>
+67 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_DIAG</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>
+68 
+69 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORT_OUT</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">)</emphasis>
+70 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PORT_INP</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">)</emphasis>
+71 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_PARAM</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">mPort</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">mIdx</emphasis><emphasis role="preprocessor">)</emphasis>
+72 
+73 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+74 
+75 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">SIL_DEBUG</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">{</emphasis>
+76 &#32;&#32;&#32;&#32;<link linkend="_sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120">SIL_DIAG</link><emphasis role="preprocessor">(</emphasis><emphasis role="stringliteral">&quot;%s&#32;Line&#32;%d:&#32;&quot;</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">__FILE__</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">__LINE__</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">;</emphasis>
+77 &#32;&#32;&#32;&#32;<link linkend="_sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120">SIL_DIAG</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">\</emphasis>
+78 <emphasis role="preprocessor">}</emphasis>
+79 
+80 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">DEBUG</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">SIL_WRAPPER</emphasis><emphasis role="preprocessor">)</emphasis>
+81 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">DEBUG_PRINT</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">printf</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis><emphasis role="preprocessor">)</emphasis>
+82 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">else</emphasis>
+83 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">DEBUG_PRINT</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>
+84 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+85 
+86 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">SIL_WRAPPER</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">UNIT_TEST</emphasis><emphasis role="preprocessor">)</emphasis>
+87 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">cregister</emphasis>
+88 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">interrupt</emphasis>
+89 
+90 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__cregister</emphasis>
+91 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__interrupt</emphasis>
+92 
+93 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__disable_interrupts</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">void</emphasis><emphasis role="preprocessor">)</emphasis>0
+94 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__enable_interrupts</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;&#32;&#32;&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">void</emphasis><emphasis role="preprocessor">)</emphasis>0
+95 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__eallow</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>
+96 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__edis</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>
+97 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">asm</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>
+98 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+99 
+100 
+101 <emphasis role="comment">/********************************************************************************************************</emphasis>
+102 <emphasis role="comment">&#32;*&#32;Type&#32;Definitions</emphasis>
+103 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+104 
+105 <emphasis role="comment">/********************************************************************************************************</emphasis>
+106 <emphasis role="comment">&#32;*&#32;Exported&#32;Variable&#32;Declarations</emphasis>
+107 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+108 
+109 <emphasis role="comment">/********************************************************************************************************</emphasis>
+110 <emphasis role="comment">&#32;*&#32;Exported&#32;Function&#32;Prototypes</emphasis>
+111 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+112 
+113 <emphasis role="comment">/********************************************************************************************************</emphasis>
+114 <emphasis role="comment">&#32;*&#32;Inline&#32;Function&#32;Definitions&#32;:-(</emphasis>
+115 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+116 
+117 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>&#32;<emphasis role="comment">//_SIL_WRAPPER_H_</emphasis>
+</programlisting></section>

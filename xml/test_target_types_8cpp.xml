@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="test_target_types_8cpp" kind="file" language="C++">
+    <compoundname>testTargetTypes.cpp</compoundname>
+    <includes local="yes">CppUTest/TestHarness.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes local="no">stdint.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>sil/emu/test/testTargetTypes.cpp</label>
+        <link refid="test_target_types_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CppUTest/TestHarness.h</label>
+      </node>
+      <node id="3">
+        <label>limits.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="test_target_types_8cpp_1af83f4fb65b4546178bf4a8bd9830eb9e" prot="public" static="no">
+        <name>TYPE_BITS</name>
+        <param><defname>x</defname></param>
+        <initializer>(sizeof(x) * CHAR_BIT)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/test/testTargetTypes.cpp" line="37" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test_target_types_8cpp_1a11e2adda84be90741d9dffc672f7e718" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST_GROUP</definition>
+        <argsstring>(targetTypes)</argsstring>
+        <name>TEST_GROUP</name>
+        <param>
+          <type>targetTypes</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/test/testTargetTypes.cpp" line="10" column="1" bodyfile="sil/emu/test/testTargetTypes.cpp" bodystart="10" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="test_target_types_8cpp_1aa9c04988ccd775ec5161ab97058f324a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(targetTypes, signType)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>targetTypes</type>
+        </param>
+        <param>
+          <type>signType</type>
+        </param>
+        <briefdescription>
+<para>ensure host platform uses twos complement </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/test/testTargetTypes.cpp" line="22" column="1" bodyfile="sil/emu/test/testTargetTypes.cpp" bodystart="22" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="test_target_types_8cpp_1aee6d0d5f77305b0a42e8292fb553272c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(targetTypes, lengths)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>targetTypes</type>
+        </param>
+        <param>
+          <type>lengths</type>
+        </param>
+        <briefdescription>
+<para>check that host bitlengths are normal for a modern PC </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/test/testTargetTypes.cpp" line="36" column="1" bodyfile="sil/emu/test/testTargetTypes.cpp" bodystart="36" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;CppUTest/TestHarness.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="test_target_types_8cpp_1a11e2adda84be90741d9dffc672f7e718" kindref="member">TEST_GROUP</ref>(targetTypes)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setup()<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>teardown()<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="test_target_types_8cpp_1aa9c04988ccd775ec5161ab97058f324a" kindref="member">TEST</ref>(targetTypes,<sp/>signType)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((-1<sp/>&amp;<sp/>0x1)<sp/>==<sp/>0)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>-1<sp/>ends<sp/>in<sp/>b00<sp/>=&gt;<sp/>1s&apos;<sp/>complement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((-1<sp/>&amp;<sp/>0x2)<sp/>==<sp/>0)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>-1<sp/>ends<sp/>in<sp/>b01<sp/>=&gt;<sp/>sign-magnitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>-1<sp/>ends<sp/>in<sp/>b11<sp/>=&gt;<sp/>two&apos;s<sp/>complement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="test_target_types_8cpp_1aa9c04988ccd775ec5161ab97058f324a" kindref="member">TEST</ref>(targetTypes,<sp/>lengths)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TYPE_BITS(x)<sp/>(sizeof(x)<sp/>*<sp/>CHAR_BIT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>longBits<sp/>=<sp/><ref refid="test_target_types_8cpp_1af83f4fb65b4546178bf4a8bd9830eb9e" kindref="member">TYPE_BITS</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>intBits<sp/>=<sp/><ref refid="test_target_types_8cpp_1af83f4fb65b4546178bf4a8bd9830eb9e" kindref="member">TYPE_BITS</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>floatBits<sp/>=<sp/><ref refid="test_target_types_8cpp_1af83f4fb65b4546178bf4a8bd9830eb9e" kindref="member">TYPE_BITS</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>doubleBits<sp/>=<sp/><ref refid="test_target_types_8cpp_1af83f4fb65b4546178bf4a8bd9830eb9e" kindref="member">TYPE_BITS</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>charBits<sp/>=<sp/><ref refid="test_target_types_8cpp_1af83f4fb65b4546178bf4a8bd9830eb9e" kindref="member">TYPE_BITS</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>expectedLong<sp/>=<sp/>64;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>expectedLong<sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>LONGS_EQUAL(expectedLong,<sp/>longBits);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>LONGS_EQUAL(32,<sp/>intBits);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>LONGS_EQUAL(32,<sp/>floatBits);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>LONGS_EQUAL(64,<sp/>doubleBits);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>LONGS_EQUAL(8,<sp/>charBits);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="sil/emu/test/testTargetTypes.cpp"/>
+  </compounddef>
+</doxygen>

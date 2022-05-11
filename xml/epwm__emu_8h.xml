@@ -1,0 +1,1439 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="epwm__emu_8h" kind="file" language="C++">
+    <compoundname>epwm_emu.h</compoundname>
+    <includedby refid="epwm__emu_8c" local="yes">sil/emu/epwm_emu.c</includedby>
+    <includedby refid="lib_epc_control_8c" local="yes">sil/libEpcControl.c</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>sil/emu/epwm_emu.c</label>
+        <link refid="epwm__emu_8c"/>
+      </node>
+      <node id="1">
+        <label>sil/emu/epwm_emu.h</label>
+        <link refid="epwm__emu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sil/libEpcControl.c</label>
+        <link refid="lib_epc_control_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a" prot="public" static="no">
+        <name>EPWM_NR_CHANNELS_MAX</name>
+        <initializer>6U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="42" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a26cd066448b5ccfdcddd605f20e95f1e" prot="public" static="no">
+        <name>EPWM_TB_COUNTING_UP</name>
+        <initializer>true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="44" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a5df749f08075143ee95ee01b7c531510" prot="public" static="no">
+        <name>EPWM_TB_COUNTING_DN</name>
+        <initializer>false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="45" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a48edc40b05cf8252395febfdc1c048cd" prot="public" static="no">
+        <name>EPWM_AQ_HIT_TOLERANCE</name>
+        <initializer>1e-12L</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="47" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a4e53c50d692f0a67d86a8f9e6f2c0cc2" prot="public" static="no">
+        <name>EPWM_DIAG_TOLERANCE</name>
+        <initializer>128.0L * DBL_EPSILON</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="48" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a522adc846f7e5f88f5025ae72d69f01d" prot="public" static="no">
+        <name>EPWM_THP_MIN</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="50" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1acb5e47eb7495810252e6c99a8174ae39" prot="public" static="no">
+        <name>EPWM_THP_INI</name>
+        <initializer>65000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="51" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1acc045ae80665ab61975fe457e735e450" prot="public" static="no">
+        <name>EPWM_DEFAULT_FCLOCK</name>
+        <initializer>150e6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="52" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a102bbd510a466db8ef11bcb4bff50648" prot="public" static="no">
+        <name>EPWM_DISA_HALFPERIOD</name>
+        <initializer>1.0e-3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="54" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a9afc4f7ad80352fa8d100b777e7f1a48" prot="public" static="no">
+        <name>EPWM_PAR_AVERAGE_MODE</name>
+        <initializer>false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="61" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a836edba9e67d05644cd0d9401f43bd9b" prot="public" static="no">
+        <name>EPWM_PAR_DTY_UPPER</name>
+        <initializer>1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="63" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a0f4016cd641bd52d8926a95b3500c99a" prot="public" static="no">
+        <name>EPWM_PAR_DTY_LOWER</name>
+        <initializer>-1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="64" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a6701b0e37cfc727238cba504feeef5e5" prot="public" static="no">
+        <name>EPWM_PAR_RLD_HALF_PERIOD</name>
+        <initializer><ref refid="epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48aeed717fcbc27d06e8d98be19f7612df8" kindref="member">EPWM_SHADOW_RELOAD_BOT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="66" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1af2bcdd2ad30f8d1f459183948eb770ad" prot="public" static="no">
+        <name>EPWM_PAR_RLD_ENTRY_UPPER</name>
+        <initializer><ref refid="epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45" kindref="member">EPWM_SHADOW_RELOAD_BOTH</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="67" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1aa806befd507f48e3f9f1810cbfd544d9" prot="public" static="no">
+        <name>EPWM_PAR_RLD_ENTRY_LOWER</name>
+        <initializer><ref refid="epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45" kindref="member">EPWM_SHADOW_RELOAD_BOTH</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="68" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ac4723948c31a93073469e1f3891502f0" prot="public" static="no">
+        <name>EPWM_PAR_RLD_UNSAT</name>
+        <initializer><ref refid="epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45" kindref="member">EPWM_SHADOW_RELOAD_BOTH</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="69" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ab1c60ea7f60cd718738d39c8bc4bdba5" prot="public" static="no">
+        <name>EPWM_PAR_RLD_EXIT_UPPER</name>
+        <initializer><ref refid="epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45" kindref="member">EPWM_SHADOW_RELOAD_BOTH</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="70" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a397ec38883ae143989940eb08aeb71f5" prot="public" static="no">
+        <name>EPWM_PAR_RLD_EXIT_LOWER</name>
+        <initializer><ref refid="epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45" kindref="member">EPWM_SHADOW_RELOAD_BOTH</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="71" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ac6353b83e30029d44c4730f341b34bd4" prot="public" static="no">
+        <name>EPWM_PAR_SAT_UPPER</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="73" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a735e00e6c5df088fc4062f58f7bfc4a2" prot="public" static="no">
+        <name>EPWM_PAR_SAT_LOWER</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="74" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a5b86c8476bf383e0ad1c84f8f8486802" prot="public" static="no">
+        <name>EPWM_PAR_AQC_ENTRY_UPPER_BOT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="76" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1aac1151b5838fca413eff5ca107f1b840" prot="public" static="no">
+        <name>EPWM_PAR_AQC_ENTRY_UPPER_TOP</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="77" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a61dd51c7ea020fb7b75374037013352e" prot="public" static="no">
+        <name>EPWM_PAR_AQC_ENTRY_UPPER_CUP</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="78" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a8d0254048f02dfdced9015a710aa93d1" prot="public" static="no">
+        <name>EPWM_PAR_AQC_ENTRY_UPPER_CDN</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="79" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a608a4ce638cdcb888f55c3cec5bcc5d5" prot="public" static="no">
+        <name>EPWM_PAR_AQC_ENTRY_LOWER_BOT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="81" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1aa3f04a5a47f60da32d982e41ec0da360" prot="public" static="no">
+        <name>EPWM_PAR_AQC_ENTRY_LOWER_TOP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="82" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ac263d0f77ad14c488ff01af40adf4ac9" prot="public" static="no">
+        <name>EPWM_PAR_AQC_ENTRY_LOWER_CUP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="83" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a22a8d68ba367c45bfe09352bcb313b17" prot="public" static="no">
+        <name>EPWM_PAR_AQC_ENTRY_LOWER_CDN</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="84" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a66702811d9737e883ef3ed460d3b43fe" prot="public" static="no">
+        <name>EPWM_PAR_AQC_UNSAT_BOT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="86" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ad049c2df441cbe2291afbf79a0cde880" prot="public" static="no">
+        <name>EPWM_PAR_AQC_UNSAT_TOP</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="87" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a33e27916bc59862bb6099e721d4568e5" prot="public" static="no">
+        <name>EPWM_PAR_AQC_UNSAT_CUP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="88" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a3950b872d3d00040754bd1d1f6b98add" prot="public" static="no">
+        <name>EPWM_PAR_AQC_UNSAT_CDN</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="89" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a3daaaafc1551a95c4bb0d82f6b5092e9" prot="public" static="no">
+        <name>EPWM_PAR_AQC_EXIT_UPPER_BOT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="91" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a398cfda199f5651ba5d4ba4585711a37" prot="public" static="no">
+        <name>EPWM_PAR_AQC_EXIT_UPPER_TOP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="92" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1af5bf296b3bc2237369daaaa832db3594" prot="public" static="no">
+        <name>EPWM_PAR_AQC_EXIT_UPPER_CUP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="93" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a68bfb44765cb37b1108cc4256d173514" prot="public" static="no">
+        <name>EPWM_PAR_AQC_EXIT_UPPER_CDN</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="94" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ae9a623b5e94503b12b93d59f433cfff5" prot="public" static="no">
+        <name>EPWM_PAR_AQC_EXIT_LOWER_BOT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="96" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1abd9f5d1e16fca7c2600355399058e87a" prot="public" static="no">
+        <name>EPWM_PAR_AQC_EXIT_LOWER_TOP</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="97" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a93927abccee4d059ea61df82969db789" prot="public" static="no">
+        <name>EPWM_PAR_AQC_EXIT_LOWER_CUP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="98" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ac45cf06d2744fcc41a000d7ef3acb28c" prot="public" static="no">
+        <name>EPWM_PAR_AQC_EXIT_LOWER_CDN</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="99" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a7160a0f9d7b1f53b62aede5457004342" prot="public" static="no">
+        <name>EPWM_PAR_DIAG_TON_MIN</name>
+        <initializer>4.0e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="101" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ae16da2a7eed4a95836e7e08ef765229d" prot="public" static="no">
+        <name>EPWM_PAR_DIAG_TOFF_MIN</name>
+        <initializer>4.0e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="102" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a88c8a9caaa3354cf34c1095a75b1e97e" prot="public" static="no">
+        <name>EPWM_PAR_DIAG_TADJ_MIN</name>
+        <initializer>2.0e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="103" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a306af69694a3bcf0a4eb0d37ba1ba87f" prot="public" static="no">
+        <name>EPWM_PAR_DIAG_TADJ_CHANS_SZ</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="104" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a51695a423cdd884f317ea93ce8902e77" prot="public" static="no">
+        <name>EPWM_PAR_DIAG_TADJ_CHANS</name>
+        <param><defname>j</defname></param>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="105" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a5b1809ce19546bba037d3dcddc93d77d" prot="public" static="no">
+        <name>EPWM_INP_HALF_PERIOD</name>
+        <initializer><ref refid="sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735" kindref="member">SIL_PORT_INP</ref>(SIL_INP_REF_THP, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="108" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a4dcee8b1d281d930e8df7d1e657de193" prot="public" static="no">
+        <name>EPWM_INP_SWITCH_TIME</name>
+        <param><defname>ch</defname></param>
+        <initializer><ref refid="sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735" kindref="member">SIL_PORT_INP</ref>(SIL_INP_REF_TSW, ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="109" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1aae92d8f9c65e8fc09152734bd7f9e04d" prot="public" static="no">
+        <name>EPWM_OUT_GATE_STATE</name>
+        <param><defname>ch</defname></param>
+        <initializer><ref refid="sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3" kindref="member">SIL_PORT_OUT</ref>(<ref refid="lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53" kindref="member">SIL_OUT_CTL_GATE</ref>, ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="112" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a95ca18cbd3b8d84f5d0b0183e2d8e718" prot="public" static="no">
+        <name>EPWM_OUT_VIOL_TON</name>
+        <param><defname>ch</defname></param>
+        <initializer>OutputSignal(1,  ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="113" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a52362ccefddcf3fbc54133bd31157149" prot="public" static="no">
+        <name>EPWM_OUT_VIOL_TOFF</name>
+        <param><defname>ch</defname></param>
+        <initializer>OutputSignal(2,  ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="114" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a118f6cee648c3f165f93cbaebebf48c5" prot="public" static="no">
+        <name>EPWM_OUT_VIOL_TADJ</name>
+        <initializer>OutputSignal(3,  0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="115" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ae974c678c4bb760a86f55f37356130a8" prot="public" static="no">
+        <name>EPWM_OUT_NVIOL_TON</name>
+        <param><defname>ch</defname></param>
+        <initializer>OutputSignal(4,  ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="116" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a77f1fec1875ceefe40917752cbd09b59" prot="public" static="no">
+        <name>EPWM_OUT_NVIOL_TOFF</name>
+        <param><defname>ch</defname></param>
+        <initializer>OutputSignal(5,  ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="117" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ab396437fd6b163daadd46c8e4c96566d" prot="public" static="no">
+        <name>EPWM_OUT_NVIOL_TADJ</name>
+        <initializer>OutputSignal(6,  0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="118" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a76a77110a70067d814c199c98b1e23a0" prot="public" static="no">
+        <name>EPWM_OUT_TON</name>
+        <param><defname>ch</defname></param>
+        <initializer>OutputSignal(7,  ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="119" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a09cac77d2b2cf2941fa1f6bc437843dc" prot="public" static="no">
+        <name>EPWM_OUT_TOFF</name>
+        <param><defname>ch</defname></param>
+        <initializer>OutputSignal(8,  ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="120" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a66fcc5ad1aa071a2fef9b235caabc6bb" prot="public" static="no">
+        <name>EPWM_OUT_TADJ</name>
+        <initializer>OutputSignal(9,  0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="121" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ac6412711d43246333201fbe6dfa5a853" prot="public" static="no">
+        <name>EPWM_OUT_TSW</name>
+        <param><defname>ch</defname></param>
+        <initializer>OutputSignal(10, ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="122" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1ad30b8b44e4dc32d82746adcd37deeb60" prot="public" static="no">
+        <name>EPWM_OUT_THP</name>
+        <initializer>OutputSignal(11, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="123" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a8a8e36416ea93f3b6d01c1df9caa102a" prot="public" static="no">
+        <name>EPWM_OUT_TSW_SDW</name>
+        <param><defname>ch</defname></param>
+        <initializer>OutputSignal(12, ch)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="124" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a0e261c90fb93f98248081e934e3ae2c6" prot="public" static="no">
+        <name>EPWM_OUT_DEBUG</name>
+        <param><defname>i</defname></param>
+        <initializer>OutputSignal(13, i)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="125" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epwm__emu_8h_1a150a7bb2f7ded50160337cae130f189b" prot="public" static="no">
+        <name>EPWM_OUT_COUNT_DIR</name>
+        <initializer><ref refid="sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3" kindref="member">SIL_PORT_OUT</ref>(<ref refid="lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e" kindref="member">SIL_OUT_CTL_CDIR</ref>, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="126" column="9" bodyfile="sil/emu/epwm_emu.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="epwm__emu_8h_1a5c7955b8e45b9f13c3f3193d51c47126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EPWM_Initialize</definition>
+        <argsstring>(double tInit, bool isFixedRate)</argsstring>
+        <name>EPWM_Initialize</name>
+        <param>
+          <type>double</type>
+          <declname>tInit</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isFixedRate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="140" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="288" bodyend="409" declfile="sil/emu/epwm_emu.h" declline="140" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a177a27247999a85001e98fda816cef2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double EPWM_GetNextSolverHit</definition>
+        <argsstring>(double tNow)</argsstring>
+        <name>EPWM_GetNextSolverHit</name>
+        <param>
+          <type>double</type>
+          <declname>tNow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="142" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="414" bodyend="422" declfile="sil/emu/epwm_emu.h" declline="142" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1affefd814056482f0d96b74e4e906230e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_Output</definition>
+        <argsstring>(double tNow)</argsstring>
+        <name>EPWM_Output</name>
+        <param>
+          <type>double</type>
+          <declname>tNow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="143" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="427" bodyend="438" declfile="sil/emu/epwm_emu.h" declline="143" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1ad6d064f34ac3f3621d40e69739eec80c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EPWM_Update</definition>
+        <argsstring>(double tNow)</argsstring>
+        <name>EPWM_Update</name>
+        <param>
+          <type>double</type>
+          <declname>tNow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="144" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="443" bodyend="455" declfile="sil/emu/epwm_emu.h" declline="144" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1ae4484d7085296d45e76ee9bb0b246c71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EPWM_Terminate</definition>
+        <argsstring>(double tNow)</argsstring>
+        <name>EPWM_Terminate</name>
+        <param>
+          <type>double</type>
+          <declname>tNow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="146" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="460" bodyend="463" declfile="sil/emu/epwm_emu.h" declline="146" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a4b5f8b57993a11edcc3f8cffa01c4a11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamNumberOfChannels</definition>
+        <argsstring>(uint16_t nCh)</argsstring>
+        <name>EPWM_SetParamNumberOfChannels</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>nCh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="148" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="468" bodyend="482" declfile="sil/emu/epwm_emu.h" declline="148" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a2e9f18815e66057fa0590b9fc71fda16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamSystemClock</definition>
+        <argsstring>(double fClock)</argsstring>
+        <name>EPWM_SetParamSystemClock</name>
+        <param>
+          <type>double</type>
+          <declname>fClock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="149" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="487" bodyend="491" declfile="sil/emu/epwm_emu.h" declline="149" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a70dfae6e93d6fa3e008f7996e7edff37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamDutyCycleLimits</definition>
+        <argsstring>(double dUpper, double dLower)</argsstring>
+        <name>EPWM_SetParamDutyCycleLimits</name>
+        <param>
+          <type>double</type>
+          <declname>dUpper</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dLower</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="150" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="496" bodyend="501" declfile="sil/emu/epwm_emu.h" declline="150" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a964710b8943a3d01a336335682c5ee37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamDeadTime</definition>
+        <argsstring>(double tDead)</argsstring>
+        <name>EPWM_SetParamDeadTime</name>
+        <param>
+          <type>double</type>
+          <declname>tDead</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="151" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="506" bodyend="510" declfile="sil/emu/epwm_emu.h" declline="151" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a82f13117117e108d6c59fa49a80a20cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamDiagTOnMin</definition>
+        <argsstring>(double tOnMin)</argsstring>
+        <name>EPWM_SetParamDiagTOnMin</name>
+        <param>
+          <type>double</type>
+          <declname>tOnMin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="152" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="515" bodyend="519" declfile="sil/emu/epwm_emu.h" declline="152" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a3a75b3c7572867436bb760b0fed49ab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamDiagTOffMin</definition>
+        <argsstring>(double tOffMin)</argsstring>
+        <name>EPWM_SetParamDiagTOffMin</name>
+        <param>
+          <type>double</type>
+          <declname>tOffMin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="153" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="524" bodyend="528" declfile="sil/emu/epwm_emu.h" declline="153" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1ad7cd2dc5b0723770e28d592bf9bbf3d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamDiagTAdjMin</definition>
+        <argsstring>(double tAdjMin)</argsstring>
+        <name>EPWM_SetParamDiagTAdjMin</name>
+        <param>
+          <type>double</type>
+          <declname>tAdjMin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="154" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="533" bodyend="554" declfile="sil/emu/epwm_emu.h" declline="154" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a73a9cf1875fa5ec2f8b69e4928803b87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamShadowReloadBehaviourHalfPeriod</definition>
+        <argsstring>(int rldBehaviour)</argsstring>
+        <name>EPWM_SetParamShadowReloadBehaviourHalfPeriod</name>
+        <param>
+          <type>int</type>
+          <declname>rldBehaviour</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="155" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="559" bodyend="563" declfile="sil/emu/epwm_emu.h" declline="155" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a22e226ea489716e5fd0540b5f8eadbd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamShadowReloadBehaviourEntryUpper</definition>
+        <argsstring>(int rldBehaviour)</argsstring>
+        <name>EPWM_SetParamShadowReloadBehaviourEntryUpper</name>
+        <param>
+          <type>int</type>
+          <declname>rldBehaviour</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="156" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="568" bodyend="572" declfile="sil/emu/epwm_emu.h" declline="156" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a4e7373fac98c4cdf695a3c24180be67c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamShadowReloadBehaviourEntryLower</definition>
+        <argsstring>(int rldBehaviour)</argsstring>
+        <name>EPWM_SetParamShadowReloadBehaviourEntryLower</name>
+        <param>
+          <type>int</type>
+          <declname>rldBehaviour</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="157" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="577" bodyend="581" declfile="sil/emu/epwm_emu.h" declline="157" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1af4766dc6b350308996eb9f8d55f9ae86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamShadowReloadBehaviourUnsat</definition>
+        <argsstring>(int rldBehaviour)</argsstring>
+        <name>EPWM_SetParamShadowReloadBehaviourUnsat</name>
+        <param>
+          <type>int</type>
+          <declname>rldBehaviour</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="158" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="586" bodyend="590" declfile="sil/emu/epwm_emu.h" declline="158" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a45d803b1d987d8dee73c012f963fe1b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamShadowReloadBehaviourExitUpper</definition>
+        <argsstring>(int rldBehaviour)</argsstring>
+        <name>EPWM_SetParamShadowReloadBehaviourExitUpper</name>
+        <param>
+          <type>int</type>
+          <declname>rldBehaviour</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="159" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="595" bodyend="599" declfile="sil/emu/epwm_emu.h" declline="159" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1aa1c9aab58f198332effa7422252dfc44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamShadowReloadBehaviourExitLower</definition>
+        <argsstring>(int rldBehaviour)</argsstring>
+        <name>EPWM_SetParamShadowReloadBehaviourExitLower</name>
+        <param>
+          <type>int</type>
+          <declname>rldBehaviour</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="160" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="604" bodyend="608" declfile="sil/emu/epwm_emu.h" declline="160" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a71e10cf731cbbf8cc6f8bc219cad49de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamSaturationThreshold</definition>
+        <argsstring>(int satUpper, int satLower)</argsstring>
+        <name>EPWM_SetParamSaturationThreshold</name>
+        <param>
+          <type>int</type>
+          <declname>satUpper</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>satLower</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="161" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="613" bodyend="618" declfile="sil/emu/epwm_emu.h" declline="161" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a8d3e6fdb2fdc3f2aae24a8eafd7191b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamAqOutputActionsEntryUpper</definition>
+        <argsstring>(int iBot, int iTop, int iCup, int iCdn)</argsstring>
+        <name>EPWM_SetParamAqOutputActionsEntryUpper</name>
+        <param>
+          <type>int</type>
+          <declname>iBot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iTop</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCup</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCdn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="162" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="623" bodyend="645" declfile="sil/emu/epwm_emu.h" declline="162" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a4b1d7ad5e8f9049fdc09e9917609cd3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamAqOutputActionsEntryLower</definition>
+        <argsstring>(int iBot, int iTop, int iCup, int iCdn)</argsstring>
+        <name>EPWM_SetParamAqOutputActionsEntryLower</name>
+        <param>
+          <type>int</type>
+          <declname>iBot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iTop</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCup</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCdn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="163" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="650" bodyend="672" declfile="sil/emu/epwm_emu.h" declline="163" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1adaf4b1e98a6f5dd301101e5c066774cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamAqOutputActionsUnsat</definition>
+        <argsstring>(int iBot, int iTop, int iCup, int iCdn)</argsstring>
+        <name>EPWM_SetParamAqOutputActionsUnsat</name>
+        <param>
+          <type>int</type>
+          <declname>iBot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iTop</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCup</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCdn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="164" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="785" bodyend="807" declfile="sil/emu/epwm_emu.h" declline="164" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1af3371b648dcd7273cb1e51516a82f6c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamAqOutputActionsExitUpper</definition>
+        <argsstring>(int iBot, int iTop, int iCup, int iCdn)</argsstring>
+        <name>EPWM_SetParamAqOutputActionsExitUpper</name>
+        <param>
+          <type>int</type>
+          <declname>iBot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iTop</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCup</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCdn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="165" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="677" bodyend="699" declfile="sil/emu/epwm_emu.h" declline="165" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a676a8174ab16d206dde2c7515c2dbb3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamAqOutputActionsExitLower</definition>
+        <argsstring>(int iBot, int iTop, int iCup, int iCdn)</argsstring>
+        <name>EPWM_SetParamAqOutputActionsExitLower</name>
+        <param>
+          <type>int</type>
+          <declname>iBot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iTop</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCup</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCdn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="166" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="704" bodyend="726" declfile="sil/emu/epwm_emu.h" declline="166" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a4d6d96ea4ff3517fec41d53226ba465f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EPWM_SetParamAverageMode</definition>
+        <argsstring>(bool beAverage)</argsstring>
+        <name>EPWM_SetParamAverageMode</name>
+        <param>
+          <type>bool</type>
+          <declname>beAverage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="167" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="731" bodyend="739" declfile="sil/emu/epwm_emu.h" declline="167" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1a33638d842654de8348be285b3dcdb9fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EPWM_SIL_writeSnapshot</definition>
+        <argsstring>(FILE *snapshotFile)</argsstring>
+        <name>EPWM_SIL_writeSnapshot</name>
+        <param>
+          <type>FILE *</type>
+          <declname>snapshotFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="169" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="748" bodyend="756" declfile="sil/emu/epwm_emu.h" declline="169" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="epwm__emu_8h_1af274c8f8e3de1793cfca8b82dac0c036" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EPWM_SIL_readSnapshot</definition>
+        <argsstring>(FILE *snapshotFile)</argsstring>
+        <name>EPWM_SIL_readSnapshot</name>
+        <param>
+          <type>FILE *</type>
+          <declname>snapshotFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.h" line="170" column="9" bodyfile="sil/emu/epwm_emu.c" bodystart="765" bodyend="780" declfile="sil/emu/epwm_emu.h" declline="170" declcolumn="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__EPWM_EMULATOR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__EPWM_EMULATOR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/>########<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/>#########<sp/><sp/><sp/>#######</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/>##</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/>#<sp/>########<sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/>#<sp/>########<sp/><sp/><sp/><sp/>#########<sp/><sp/>##<sp/>######<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/><sp/>######<sp/><sp/>######<sp/><sp/><sp/><sp/>#########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COMPANY<sp/>CONFIDENTIAL</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>document<sp/>contains<sp/>information<sp/>proprietary<sp/>to<sp/>EPC<sp/>Power.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>is<sp/>an<sp/>unpublished<sp/>work<sp/>subject<sp/>to<sp/>trade<sp/>secret<sp/>and<sp/>copyright<sp/>protection.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>addition,<sp/>the<sp/>information<sp/>may<sp/>be<sp/>the<sp/>subject<sp/>of<sp/>patent<sp/>applications</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>United<sp/>States<sp/>and<sp/>foreign<sp/>countries.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>M<sp/>O<sp/>D<sp/>U<sp/>L<sp/>E<sp/><sp/><sp/><sp/>D<sp/>E<sp/>S<sp/>C<sp/>R<sp/>I<sp/>P<sp/>T<sp/>I<sp/>O<sp/>N</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Filename<sp/><sp/><sp/><sp/><sp/>:<sp/>epwm_emu.h</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>Package::SubPackage::..::Class</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Prefix<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>Description<sp/><sp/>:<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>D.<sp/>Michaud</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>History<sp/><sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>Date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Description</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>24.02.2018<sp/><sp/><sp/>D.<sp/>Michaud<sp/><sp/><sp/><sp/><sp/><sp/>Initial<sp/>Version</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>Include<sp/>Files</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>Constant<sp/>Defines</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_NR_CHANNELS_MAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="epwm__emu_8h_1a26cd066448b5ccfdcddd605f20e95f1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_TB_COUNTING_UP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="epwm__emu_8h_1a5df749f08075143ee95ee01b7c531510" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_TB_COUNTING_DN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="epwm__emu_8h_1a48edc40b05cf8252395febfdc1c048cd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_AQ_HIT_TOLERANCE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1e-12L</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="epwm__emu_8h_1a4e53c50d692f0a67d86a8f9e6f2c0cc2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_DIAG_TOLERANCE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>128.0L<sp/>*<sp/>DBL_EPSILON</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="epwm__emu_8h_1a522adc846f7e5f88f5025ae72d69f01d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_THP_MIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="epwm__emu_8h_1acb5e47eb7495810252e6c99a8174ae39" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_THP_INI<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>65000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="epwm__emu_8h_1acc045ae80665ab61975fe457e735e450" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_DEFAULT_FCLOCK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>150e6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="epwm__emu_8h_1a102bbd510a466db8ef11bcb4bff50648" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_DISA_HALFPERIOD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.0e-3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>Macro<sp/>Defines</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--<sp/>Pair-o-Metres<sp/>--<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="epwm__emu_8h_1a9afc4f7ad80352fa8d100b777e7f1a48" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AVERAGE_MODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="epwm__emu_8h_1a836edba9e67d05644cd0d9401f43bd9b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_DTY_UPPER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="epwm__emu_8h_1a0f4016cd641bd52d8926a95b3500c99a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_DTY_LOWER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="epwm__emu_8h_1a6701b0e37cfc727238cba504feeef5e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_RLD_HALF_PERIOD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EPWM_SHADOW_RELOAD_BOT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="epwm__emu_8h_1af2bcdd2ad30f8d1f459183948eb770ad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_RLD_ENTRY_UPPER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EPWM_SHADOW_RELOAD_BOTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="epwm__emu_8h_1aa806befd507f48e3f9f1810cbfd544d9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_RLD_ENTRY_LOWER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EPWM_SHADOW_RELOAD_BOTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="epwm__emu_8h_1ac4723948c31a93073469e1f3891502f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_RLD_UNSAT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EPWM_SHADOW_RELOAD_BOTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="epwm__emu_8h_1ab1c60ea7f60cd718738d39c8bc4bdba5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_RLD_EXIT_UPPER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EPWM_SHADOW_RELOAD_BOTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="epwm__emu_8h_1a397ec38883ae143989940eb08aeb71f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_RLD_EXIT_LOWER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EPWM_SHADOW_RELOAD_BOTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="epwm__emu_8h_1ac6353b83e30029d44c4730f341b34bd4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_SAT_UPPER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="epwm__emu_8h_1a735e00e6c5df088fc4062f58f7bfc4a2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_SAT_LOWER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="epwm__emu_8h_1a5b86c8476bf383e0ad1c84f8f8486802" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_ENTRY_UPPER_BOT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="epwm__emu_8h_1aac1151b5838fca413eff5ca107f1b840" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_ENTRY_UPPER_TOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="epwm__emu_8h_1a61dd51c7ea020fb7b75374037013352e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_ENTRY_UPPER_CUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="epwm__emu_8h_1a8d0254048f02dfdced9015a710aa93d1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_ENTRY_UPPER_CDN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="epwm__emu_8h_1a608a4ce638cdcb888f55c3cec5bcc5d5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_ENTRY_LOWER_BOT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="epwm__emu_8h_1aa3f04a5a47f60da32d982e41ec0da360" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_ENTRY_LOWER_TOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="epwm__emu_8h_1ac263d0f77ad14c488ff01af40adf4ac9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_ENTRY_LOWER_CUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="epwm__emu_8h_1a22a8d68ba367c45bfe09352bcb313b17" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_ENTRY_LOWER_CDN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="epwm__emu_8h_1a66702811d9737e883ef3ed460d3b43fe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_UNSAT_BOT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="epwm__emu_8h_1ad049c2df441cbe2291afbf79a0cde880" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_UNSAT_TOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="epwm__emu_8h_1a33e27916bc59862bb6099e721d4568e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_UNSAT_CUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="epwm__emu_8h_1a3950b872d3d00040754bd1d1f6b98add" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_UNSAT_CDN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="epwm__emu_8h_1a3daaaafc1551a95c4bb0d82f6b5092e9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_EXIT_UPPER_BOT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="epwm__emu_8h_1a398cfda199f5651ba5d4ba4585711a37" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_EXIT_UPPER_TOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="epwm__emu_8h_1af5bf296b3bc2237369daaaa832db3594" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_EXIT_UPPER_CUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="epwm__emu_8h_1a68bfb44765cb37b1108cc4256d173514" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_EXIT_UPPER_CDN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="epwm__emu_8h_1ae9a623b5e94503b12b93d59f433cfff5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_EXIT_LOWER_BOT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="epwm__emu_8h_1abd9f5d1e16fca7c2600355399058e87a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_EXIT_LOWER_TOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="epwm__emu_8h_1a93927abccee4d059ea61df82969db789" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_EXIT_LOWER_CUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="epwm__emu_8h_1ac45cf06d2744fcc41a000d7ef3acb28c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_AQC_EXIT_LOWER_CDN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="epwm__emu_8h_1a7160a0f9d7b1f53b62aede5457004342" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_DIAG_TON_MIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4.0e-6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="epwm__emu_8h_1ae16da2a7eed4a95836e7e08ef765229d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_DIAG_TOFF_MIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4.0e-6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="epwm__emu_8h_1a88c8a9caaa3354cf34c1095a75b1e97e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_DIAG_TADJ_MIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.0e-6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="epwm__emu_8h_1a306af69694a3bcf0a4eb0d37ba1ba87f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_DIAG_TADJ_CHANS_SZ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="epwm__emu_8h_1a51695a423cdd884f317ea93ce8902e77" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_PAR_DIAG_TADJ_CHANS(j)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--<sp/>Inputs<sp/>--<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="epwm__emu_8h_1a5b1809ce19546bba037d3dcddc93d77d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_INP_HALF_PERIOD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIL_PORT_INP(SIL_INP_REF_THP,<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="epwm__emu_8h_1a4dcee8b1d281d930e8df7d1e657de193" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_INP_SWITCH_TIME(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIL_PORT_INP(SIL_INP_REF_TSW,<sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--<sp/>Outputs<sp/>--<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="epwm__emu_8h_1aae92d8f9c65e8fc09152734bd7f9e04d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_GATE_STATE(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIL_PORT_OUT(SIL_OUT_CTL_GATE,<sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="epwm__emu_8h_1a95ca18cbd3b8d84f5d0b0183e2d8e718" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_VIOL_TON(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(1,<sp/><sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="epwm__emu_8h_1a52362ccefddcf3fbc54133bd31157149" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_VIOL_TOFF(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(2,<sp/><sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="epwm__emu_8h_1a118f6cee648c3f165f93cbaebebf48c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_VIOL_TADJ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(3,<sp/><sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="epwm__emu_8h_1ae974c678c4bb760a86f55f37356130a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_NVIOL_TON(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(4,<sp/><sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="epwm__emu_8h_1a77f1fec1875ceefe40917752cbd09b59" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_NVIOL_TOFF(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(5,<sp/><sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="epwm__emu_8h_1ab396437fd6b163daadd46c8e4c96566d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_NVIOL_TADJ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(6,<sp/><sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="epwm__emu_8h_1a76a77110a70067d814c199c98b1e23a0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_TON(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(7,<sp/><sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="epwm__emu_8h_1a09cac77d2b2cf2941fa1f6bc437843dc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_TOFF(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(8,<sp/><sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="epwm__emu_8h_1a66fcc5ad1aa071a2fef9b235caabc6bb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_TADJ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(9,<sp/><sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="epwm__emu_8h_1ac6412711d43246333201fbe6dfa5a853" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_TSW(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(10,<sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="epwm__emu_8h_1ad30b8b44e4dc32d82746adcd37deeb60" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_THP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(11,<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="epwm__emu_8h_1a8a8e36416ea93f3b6d01c1df9caa102a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_TSW_SDW(ch)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(12,<sp/>ch)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="epwm__emu_8h_1a0e261c90fb93f98248081e934e3ae2c6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_DEBUG(i)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutputSignal(13,<sp/>i)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="epwm__emu_8h_1a150a7bb2f7ded50160337cae130f189b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPWM_OUT_COUNT_DIR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIL_PORT_OUT(SIL_OUT_CTL_CDIR,<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/>Type<sp/>Definitions</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>Exported<sp/>Variable<sp/>Declarations</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/>Exported<sp/>Function<sp/>Prototypes</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a5c7955b8e45b9f13c3f3193d51c47126" kindref="member">EPWM_Initialize</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tInit,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isFixedRate);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><ref refid="epwm__emu_8h_1a177a27247999a85001e98fda816cef2e" kindref="member">EPWM_GetNextSolverHit</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1affefd814056482f0d96b74e4e906230e" kindref="member">EPWM_Output</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1ad6d064f34ac3f3621d40e69739eec80c" kindref="member">EPWM_Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1ae4484d7085296d45e76ee9bb0b246c71" kindref="member">EPWM_Terminate</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a4b5f8b57993a11edcc3f8cffa01c4a11" kindref="member">EPWM_SetParamNumberOfChannels</ref>(uint16_t<sp/>nCh);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a2e9f18815e66057fa0590b9fc71fda16" kindref="member">EPWM_SetParamSystemClock</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>fClock);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a70dfae6e93d6fa3e008f7996e7edff37" kindref="member">EPWM_SetParamDutyCycleLimits</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dUpper,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dLower);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a964710b8943a3d01a336335682c5ee37" kindref="member">EPWM_SetParamDeadTime</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tDead);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a82f13117117e108d6c59fa49a80a20cc" kindref="member">EPWM_SetParamDiagTOnMin</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tOnMin);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a3a75b3c7572867436bb760b0fed49ab5" kindref="member">EPWM_SetParamDiagTOffMin</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tOffMin);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1ad7cd2dc5b0723770e28d592bf9bbf3d2" kindref="member">EPWM_SetParamDiagTAdjMin</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tAdjMin);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a73a9cf1875fa5ec2f8b69e4928803b87" kindref="member">EPWM_SetParamShadowReloadBehaviourHalfPeriod</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rldBehaviour);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a22e226ea489716e5fd0540b5f8eadbd4" kindref="member">EPWM_SetParamShadowReloadBehaviourEntryUpper</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rldBehaviour);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a4e7373fac98c4cdf695a3c24180be67c" kindref="member">EPWM_SetParamShadowReloadBehaviourEntryLower</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rldBehaviour);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1af4766dc6b350308996eb9f8d55f9ae86" kindref="member">EPWM_SetParamShadowReloadBehaviourUnsat</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rldBehaviour);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a45d803b1d987d8dee73c012f963fe1b5" kindref="member">EPWM_SetParamShadowReloadBehaviourExitUpper</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rldBehaviour);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1aa1c9aab58f198332effa7422252dfc44" kindref="member">EPWM_SetParamShadowReloadBehaviourExitLower</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rldBehaviour);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a71e10cf731cbbf8cc6f8bc219cad49de" kindref="member">EPWM_SetParamSaturationThreshold</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>satUpper,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>satLower);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a8d3e6fdb2fdc3f2aae24a8eafd7191b5" kindref="member">EPWM_SetParamAqOutputActionsEntryUpper</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iBot,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iTop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCup,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCdn);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a4b1d7ad5e8f9049fdc09e9917609cd3a" kindref="member">EPWM_SetParamAqOutputActionsEntryLower</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iBot,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iTop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCup,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCdn);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1adaf4b1e98a6f5dd301101e5c066774cb" kindref="member">EPWM_SetParamAqOutputActionsUnsat</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iBot,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iTop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCup,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCdn);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1af3371b648dcd7273cb1e51516a82f6c0" kindref="member">EPWM_SetParamAqOutputActionsExitUpper</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iBot,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iTop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCup,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCdn);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a676a8174ab16d206dde2c7515c2dbb3c" kindref="member">EPWM_SetParamAqOutputActionsExitLower</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iBot,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iTop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCup,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCdn);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a4d6d96ea4ff3517fec41d53226ba465f" kindref="member">EPWM_SetParamAverageMode</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>beAverage);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1a33638d842654de8348be285b3dcdb9fd" kindref="member">EPWM_SIL_writeSnapshot</ref>(FILE*<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epwm__emu_8h_1af274c8f8e3de1793cfca8b82dac0c036" kindref="member">EPWM_SIL_readSnapshot</ref>(FILE*<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/>Inline<sp/>Function<sp/>Definitions<sp/>:-(</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//_EPWM_EMULATOR_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="sil/emu/epwm_emu.h"/>
+  </compounddef>
+</doxygen>

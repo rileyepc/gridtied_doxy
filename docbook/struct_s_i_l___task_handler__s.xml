@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_i_l___task_handler__s" xml:lang="en-US">
+<title>SIL_TaskHandler_s Struct Reference</title>
+<indexterm><primary>SIL_TaskHandler_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_struct_s_i_l___task_handler__s_1a83e576ac97d0e1fd408e6417aefe659a">tCallLast</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_8c_1ae6f17a342abe900c59d650833838087c">SIL_fTaskCallback_t</link> <link linkend="_struct_s_i_l___task_handler__s_1a7793cf5336e0ac983f3336229f436355">taskCallback</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_i_l___task_handler__s_1a7793cf5336e0ac983f3336229f436355"/><section>
+    <title>taskCallback</title>
+<indexterm><primary>taskCallback</primary><secondary>SIL_TaskHandler_s</secondary></indexterm>
+<indexterm><primary>SIL_TaskHandler_s</primary><secondary>taskCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_8c_1ae6f17a342abe900c59d650833838087c">SIL_fTaskCallback_t</link> SIL_TaskHandler_s::taskCallback</computeroutput></para></section>
+<anchor xml:id="_struct_s_i_l___task_handler__s_1a83e576ac97d0e1fd408e6417aefe659a"/><section>
+    <title>tCallLast</title>
+<indexterm><primary>tCallLast</primary><secondary>SIL_TaskHandler_s</secondary></indexterm>
+<indexterm><primary>SIL_TaskHandler_s</primary><secondary>tCallLast</secondary></indexterm>
+<para><computeroutput>double SIL_TaskHandler_s::tCallLast</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,72 @@
+\hypertarget{lib_epc_control_interface_8c}{}\doxysection{sil/lib\+Epc\+Control\+Interface.c File Reference}
+\label{lib_epc_control_interface_8c}\index{sil/libEpcControlInterface.c@{sil/libEpcControlInterface.c}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sil\+Wrapper.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json-\/c/json\+\_\+object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json-\/c/json\+\_\+tokener.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lib\+Epc\+Control\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lib\+Epc\+Control\+Interface\+Gen.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_interface_8c_a45895ce296865f2abdf7414446c607d4}{SCALE\+\_\+\+FLOAT}}(value,  power)~((double)(value) $\ast$ pow(10.\+0L, (double)(power)))
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_interface_8c_a4e18acc8f3b4018d713b5f4f64c9332b}{SCALE\+\_\+\+INT}}(value,  power)~(round(\mbox{\hyperlink{lib_epc_control_interface_8c_a45895ce296865f2abdf7414446c607d4}{SCALE\+\_\+\+FLOAT}}(value, power)))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+json\+\_\+object $\ast$ \mbox{\hyperlink{lib_epc_control_interface_8c_a79bea176d7f6b5e9718f5450a27c77a1}{get\+\_\+json}} (char $\ast$path)
+\item 
+json\+\_\+object $\ast$ \mbox{\hyperlink{lib_epc_control_interface_8c_ae5a56d30a6cda41f97e15a9ae9a37df1}{get\+\_\+json\+\_\+item}} (json\+\_\+object $\ast$root, char $\ast$uuid)
+\item 
+void \mbox{\hyperlink{lib_epc_control_interface_8c_acf7f4325c6a7da38a297edc498de3a38}{set}} (\mbox{\hyperlink{struct_item}{Item}} $\ast$item, json\+\_\+object $\ast$json\+\_\+item, bool const b\+Verbose, bool const call\+Setters)
+\item 
+void \mbox{\hyperlink{lib_epc_control_interface_8c_a0a34752190321c6d532b08678991cf02}{SIL\+\_\+load\+Pmvs}} (char $\ast$path, bool const b\+Verbose, bool const call\+Setters)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lib_epc_control_interface_8c_a45895ce296865f2abdf7414446c607d4}\label{lib_epc_control_interface_8c_a45895ce296865f2abdf7414446c607d4}} 
+\index{libEpcControlInterface.c@{libEpcControlInterface.c}!SCALE\_FLOAT@{SCALE\_FLOAT}}
+\index{SCALE\_FLOAT@{SCALE\_FLOAT}!libEpcControlInterface.c@{libEpcControlInterface.c}}
+\doxysubsubsection{\texorpdfstring{SCALE\_FLOAT}{SCALE\_FLOAT}}
+{\footnotesize\ttfamily \#define SCALE\+\_\+\+FLOAT(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{power }\end{DoxyParamCaption})~((double)(value) $\ast$ pow(10.\+0L, (double)(power)))}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8c_a4e18acc8f3b4018d713b5f4f64c9332b}\label{lib_epc_control_interface_8c_a4e18acc8f3b4018d713b5f4f64c9332b}} 
+\index{libEpcControlInterface.c@{libEpcControlInterface.c}!SCALE\_INT@{SCALE\_INT}}
+\index{SCALE\_INT@{SCALE\_INT}!libEpcControlInterface.c@{libEpcControlInterface.c}}
+\doxysubsubsection{\texorpdfstring{SCALE\_INT}{SCALE\_INT}}
+{\footnotesize\ttfamily \#define SCALE\+\_\+\+INT(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{power }\end{DoxyParamCaption})~(round(\mbox{\hyperlink{lib_epc_control_interface_8c_a45895ce296865f2abdf7414446c607d4}{SCALE\+\_\+\+FLOAT}}(value, power)))}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lib_epc_control_interface_8c_a79bea176d7f6b5e9718f5450a27c77a1}\label{lib_epc_control_interface_8c_a79bea176d7f6b5e9718f5450a27c77a1}} 
+\index{libEpcControlInterface.c@{libEpcControlInterface.c}!get\_json@{get\_json}}
+\index{get\_json@{get\_json}!libEpcControlInterface.c@{libEpcControlInterface.c}}
+\doxysubsubsection{\texorpdfstring{get\_json()}{get\_json()}}
+{\footnotesize\ttfamily json\+\_\+object $\ast$ get\+\_\+json (\begin{DoxyParamCaption}\item[{char $\ast$}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8c_ae5a56d30a6cda41f97e15a9ae9a37df1}\label{lib_epc_control_interface_8c_ae5a56d30a6cda41f97e15a9ae9a37df1}} 
+\index{libEpcControlInterface.c@{libEpcControlInterface.c}!get\_json\_item@{get\_json\_item}}
+\index{get\_json\_item@{get\_json\_item}!libEpcControlInterface.c@{libEpcControlInterface.c}}
+\doxysubsubsection{\texorpdfstring{get\_json\_item()}{get\_json\_item()}}
+{\footnotesize\ttfamily json\+\_\+object $\ast$ get\+\_\+json\+\_\+item (\begin{DoxyParamCaption}\item[{json\+\_\+object $\ast$}]{root,  }\item[{char $\ast$}]{uuid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8c_acf7f4325c6a7da38a297edc498de3a38}\label{lib_epc_control_interface_8c_acf7f4325c6a7da38a297edc498de3a38}} 
+\index{libEpcControlInterface.c@{libEpcControlInterface.c}!set@{set}}
+\index{set@{set}!libEpcControlInterface.c@{libEpcControlInterface.c}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_item}{Item}} $\ast$}]{item,  }\item[{json\+\_\+object $\ast$}]{json\+\_\+item,  }\item[{bool const}]{b\+Verbose,  }\item[{bool const}]{call\+Setters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_interface_8c_a0a34752190321c6d532b08678991cf02}\label{lib_epc_control_interface_8c_a0a34752190321c6d532b08678991cf02}} 
+\index{libEpcControlInterface.c@{libEpcControlInterface.c}!SIL\_loadPmvs@{SIL\_loadPmvs}}
+\index{SIL\_loadPmvs@{SIL\_loadPmvs}!libEpcControlInterface.c@{libEpcControlInterface.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_loadPmvs()}{SIL\_loadPmvs()}}
+{\footnotesize\ttfamily void SIL\+\_\+load\+Pmvs (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{bool const}]{b\+Verbose,  }\item[{bool const}]{call\+Setters }\end{DoxyParamCaption})}
+

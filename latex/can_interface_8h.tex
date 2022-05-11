@@ -1,0 +1,120 @@
+\hypertarget{can_interface_8h}{}\doxysection{interface/can\+Interface.h File Reference}
+\label{can_interface_8h}\index{interface/canInterface.h@{interface/canInterface.h}}
+{\ttfamily \#include \char`\"{}cand.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interface.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{can_interface_8h_a08d3af6fd69d3b80a0e30fedfd7d4026}{TEMP\+\_\+\+DELTA\+\_\+\+SCALE}}~(10.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8h_a91bbe13402240b67e032c3c8a1b3f992}{TEMP\+\_\+\+DELTA\+\_\+\+TIME\+\_\+\+SCALE}}~(0.\+01f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8h_a89f143a998937dd4a94319dc1c0471a0}{SOFTSTART\+\_\+\+INC\+\_\+\+SCALE}}~(10000.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8h_a9914f7259abdf98e198b43a1c5afa669}{VOUT\+\_\+\+GAIN\+\_\+\+SCALE}}~(1000.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8h_af92fe56fa9d203ac7ed172951a7764c5}{IGBT\+\_\+\+THERMAL\+\_\+\+IMPEDANCE\+\_\+\+SCALE}}~(1000000.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8h_a8e4d6085a0d16bde2868a5de8c07b88d}{FBK\+\_\+\+SCALING\+\_\+\+SCALE}}~(100000.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8h_a0f45377ecf0285616fff0c525b34a327}{POWER\+\_\+\+SCALE}}~(10.\+0f/1000.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8h_ab909947eb49bfce3b280b12ef3e7f5fc}{TEMPERATURE\+\_\+\+SCALE}}~(10.\+0f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{can_interface_8h_a78f073adbefd90c277a7962d8d383996}{Parameter\+Getter\+Setter}}) (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{can_interface_8h_a1c41607124c2a3edfba4aca78b93e253}{can\+Interface\+Init}} (int can\+ID, int SA\+\_\+mask, CAN\+\_\+\+BAUDRATE baud, uint32\+\_\+t build\+Time, uint32\+\_\+t build\+Git\+Rev)
+\item 
+void \mbox{\hyperlink{can_interface_8h_aa05e7dbca4ce3c6efc8800cd471a26cd}{update\+Process\+To\+Inverter}} (bool valid)
+\item 
+long double \mbox{\hyperlink{can_interface_8h_a39a21ea844fd21be0c1ac875ba3231d1}{can\+Interface\+\_\+item\+Net\+Multiplier}} (\mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} const $\ast$const item)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{can_interface_8h_a8e4d6085a0d16bde2868a5de8c07b88d}\label{can_interface_8h_a8e4d6085a0d16bde2868a5de8c07b88d}} 
+\index{canInterface.h@{canInterface.h}!FBK\_SCALING\_SCALE@{FBK\_SCALING\_SCALE}}
+\index{FBK\_SCALING\_SCALE@{FBK\_SCALING\_SCALE}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{FBK\_SCALING\_SCALE}{FBK\_SCALING\_SCALE}}
+{\footnotesize\ttfamily \#define FBK\+\_\+\+SCALING\+\_\+\+SCALE~(100000.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8h_af92fe56fa9d203ac7ed172951a7764c5}\label{can_interface_8h_af92fe56fa9d203ac7ed172951a7764c5}} 
+\index{canInterface.h@{canInterface.h}!IGBT\_THERMAL\_IMPEDANCE\_SCALE@{IGBT\_THERMAL\_IMPEDANCE\_SCALE}}
+\index{IGBT\_THERMAL\_IMPEDANCE\_SCALE@{IGBT\_THERMAL\_IMPEDANCE\_SCALE}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{IGBT\_THERMAL\_IMPEDANCE\_SCALE}{IGBT\_THERMAL\_IMPEDANCE\_SCALE}}
+{\footnotesize\ttfamily \#define IGBT\+\_\+\+THERMAL\+\_\+\+IMPEDANCE\+\_\+\+SCALE~(1000000.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8h_a0f45377ecf0285616fff0c525b34a327}\label{can_interface_8h_a0f45377ecf0285616fff0c525b34a327}} 
+\index{canInterface.h@{canInterface.h}!POWER\_SCALE@{POWER\_SCALE}}
+\index{POWER\_SCALE@{POWER\_SCALE}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{POWER\_SCALE}{POWER\_SCALE}}
+{\footnotesize\ttfamily \#define POWER\+\_\+\+SCALE~(10.\+0f/1000.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8h_a89f143a998937dd4a94319dc1c0471a0}\label{can_interface_8h_a89f143a998937dd4a94319dc1c0471a0}} 
+\index{canInterface.h@{canInterface.h}!SOFTSTART\_INC\_SCALE@{SOFTSTART\_INC\_SCALE}}
+\index{SOFTSTART\_INC\_SCALE@{SOFTSTART\_INC\_SCALE}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{SOFTSTART\_INC\_SCALE}{SOFTSTART\_INC\_SCALE}}
+{\footnotesize\ttfamily \#define SOFTSTART\+\_\+\+INC\+\_\+\+SCALE~(10000.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8h_a08d3af6fd69d3b80a0e30fedfd7d4026}\label{can_interface_8h_a08d3af6fd69d3b80a0e30fedfd7d4026}} 
+\index{canInterface.h@{canInterface.h}!TEMP\_DELTA\_SCALE@{TEMP\_DELTA\_SCALE}}
+\index{TEMP\_DELTA\_SCALE@{TEMP\_DELTA\_SCALE}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_DELTA\_SCALE}{TEMP\_DELTA\_SCALE}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+\+DELTA\+\_\+\+SCALE~(10.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8h_a91bbe13402240b67e032c3c8a1b3f992}\label{can_interface_8h_a91bbe13402240b67e032c3c8a1b3f992}} 
+\index{canInterface.h@{canInterface.h}!TEMP\_DELTA\_TIME\_SCALE@{TEMP\_DELTA\_TIME\_SCALE}}
+\index{TEMP\_DELTA\_TIME\_SCALE@{TEMP\_DELTA\_TIME\_SCALE}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_DELTA\_TIME\_SCALE}{TEMP\_DELTA\_TIME\_SCALE}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+\+DELTA\+\_\+\+TIME\+\_\+\+SCALE~(0.\+01f)}
+
+\mbox{\Hypertarget{can_interface_8h_ab909947eb49bfce3b280b12ef3e7f5fc}\label{can_interface_8h_ab909947eb49bfce3b280b12ef3e7f5fc}} 
+\index{canInterface.h@{canInterface.h}!TEMPERATURE\_SCALE@{TEMPERATURE\_SCALE}}
+\index{TEMPERATURE\_SCALE@{TEMPERATURE\_SCALE}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{TEMPERATURE\_SCALE}{TEMPERATURE\_SCALE}}
+{\footnotesize\ttfamily \#define TEMPERATURE\+\_\+\+SCALE~(10.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8h_a9914f7259abdf98e198b43a1c5afa669}\label{can_interface_8h_a9914f7259abdf98e198b43a1c5afa669}} 
+\index{canInterface.h@{canInterface.h}!VOUT\_GAIN\_SCALE@{VOUT\_GAIN\_SCALE}}
+\index{VOUT\_GAIN\_SCALE@{VOUT\_GAIN\_SCALE}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{VOUT\_GAIN\_SCALE}{VOUT\_GAIN\_SCALE}}
+{\footnotesize\ttfamily \#define VOUT\+\_\+\+GAIN\+\_\+\+SCALE~(1000.\+0f)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{can_interface_8h_a78f073adbefd90c277a7962d8d383996}\label{can_interface_8h_a78f073adbefd90c277a7962d8d383996}} 
+\index{canInterface.h@{canInterface.h}!ParameterGetterSetter@{ParameterGetterSetter}}
+\index{ParameterGetterSetter@{ParameterGetterSetter}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{ParameterGetterSetter}{ParameterGetterSetter}}
+{\footnotesize\ttfamily typedef void($\ast$ Parameter\+Getter\+Setter) (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{can_interface_8h_a39a21ea844fd21be0c1ac875ba3231d1}\label{can_interface_8h_a39a21ea844fd21be0c1ac875ba3231d1}} 
+\index{canInterface.h@{canInterface.h}!canInterface\_itemNetMultiplier@{canInterface\_itemNetMultiplier}}
+\index{canInterface\_itemNetMultiplier@{canInterface\_itemNetMultiplier}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{canInterface\_itemNetMultiplier()}{canInterface\_itemNetMultiplier()}}
+{\footnotesize\ttfamily long double can\+Interface\+\_\+item\+Net\+Multiplier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} const $\ast$const}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8h_a1c41607124c2a3edfba4aca78b93e253}\label{can_interface_8h_a1c41607124c2a3edfba4aca78b93e253}} 
+\index{canInterface.h@{canInterface.h}!canInterfaceInit@{canInterfaceInit}}
+\index{canInterfaceInit@{canInterfaceInit}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{canInterfaceInit()}{canInterfaceInit()}}
+{\footnotesize\ttfamily void can\+Interface\+Init (\begin{DoxyParamCaption}\item[{int}]{can\+ID,  }\item[{int}]{SA\+\_\+mask,  }\item[{CAN\+\_\+\+BAUDRATE}]{baud,  }\item[{uint32\+\_\+t}]{build\+Time,  }\item[{uint32\+\_\+t}]{build\+Git\+Rev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8h_aa05e7dbca4ce3c6efc8800cd471a26cd}\label{can_interface_8h_aa05e7dbca4ce3c6efc8800cd471a26cd}} 
+\index{canInterface.h@{canInterface.h}!updateProcessToInverter@{updateProcessToInverter}}
+\index{updateProcessToInverter@{updateProcessToInverter}!canInterface.h@{canInterface.h}}
+\doxysubsubsection{\texorpdfstring{updateProcessToInverter()}{updateProcessToInverter()}}
+{\footnotesize\ttfamily void update\+Process\+To\+Inverter (\begin{DoxyParamCaption}\item[{bool}]{valid }\end{DoxyParamCaption})}
+

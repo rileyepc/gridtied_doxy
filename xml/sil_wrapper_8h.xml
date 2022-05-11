@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="sil_wrapper_8h" kind="file" language="C++">
+    <compoundname>silWrapper.h</compoundname>
+    <includedby refid="debug_8c" local="yes">sil/debug.c</includedby>
+    <includedby refid="lib_epc_control_interface_8c" local="yes">sil/libEpcControlInterface.c</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>sil/debug.c</label>
+        <link refid="debug_8c"/>
+      </node>
+      <node id="3">
+        <label>sil/libEpcControlInterface.c</label>
+        <link refid="lib_epc_control_interface_8c"/>
+      </node>
+      <node id="1">
+        <label>sil/silWrapper.h</label>
+        <link refid="sil_wrapper_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="sil_wrapper_8h_1aaac393258b46cdcc2da9818c3408aa70" prot="public" static="no">
+        <name>_STRINGIFY</name>
+        <param><defname>s</defname></param>
+        <initializer>#s</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="54" column="9" bodyfile="sil/silWrapper.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1a4689212d5a549893cabb9d7782eecfb6" prot="public" static="no">
+        <name>STRINGIFY</name>
+        <param><defname>s</defname></param>
+        <initializer><ref refid="sil_wrapper_8h_1aaac393258b46cdcc2da9818c3408aa70" kindref="member">_STRINGIFY</ref>(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="55" column="9" bodyfile="sil/silWrapper.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1ab437589e9e94c01c02ba99450e313752" prot="public" static="no">
+        <name>SIL_WARNING</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="65" column="9" bodyfile="sil/silWrapper.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1ac87af9dc4e1a2b96a73588443fd36aa1" prot="public" static="no">
+        <name>SIL_ERROR</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="66" column="9" bodyfile="sil/silWrapper.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" prot="public" static="no">
+        <name>SIL_DIAG</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="67" column="9" bodyfile="sil/silWrapper.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3" prot="public" static="no">
+        <name>SIL_PORT_OUT</name>
+        <param><defname>mPort</defname></param>
+        <param><defname>mIdx</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="69" column="9" bodyfile="sil/silWrapper.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735" prot="public" static="no">
+        <name>SIL_PORT_INP</name>
+        <param><defname>mPort</defname></param>
+        <param><defname>mIdx</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="70" column="9" bodyfile="sil/silWrapper.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1a352a935588c5e0f47f299592854f205a" prot="public" static="no">
+        <name>SIL_PARAM</name>
+        <param><defname>mPort</defname></param>
+        <param><defname>mIdx</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="71" column="9" bodyfile="sil/silWrapper.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981" prot="public" static="no">
+        <name>SIL_DEBUG</name>
+        <param><defname>...</defname></param>
+        <initializer>    { \
+    <ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(&quot;%s Line %d: &quot;, __FILE__, __LINE__); \
+    <ref refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" kindref="member">SIL_DIAG</ref>(__VA_ARGS__);                        \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="75" column="9" bodyfile="sil/silWrapper.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sil_wrapper_8h_1a88edd2aa4feabff4af21a997d5d8aa23" prot="public" static="no">
+        <name>DEBUG_PRINT</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/silWrapper.h" line="83" column="10" bodyfile="sil/silWrapper.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_SIL_WRAPPER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_SIL_WRAPPER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/>########<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/>#########<sp/><sp/><sp/>#######</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/>##</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/>#<sp/>########<sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/>#<sp/>########<sp/><sp/><sp/><sp/>#########<sp/><sp/>##<sp/>######<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/><sp/>######<sp/><sp/>######<sp/><sp/><sp/><sp/>#########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COMPANY<sp/>CONFIDENTIAL</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>document<sp/>contains<sp/>information<sp/>proprietary<sp/>to<sp/>EPC<sp/>Power.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>is<sp/>an<sp/>unpublished<sp/>work<sp/>subject<sp/>to<sp/>trade<sp/>secret<sp/>and<sp/>copyright<sp/>protection.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>addition,<sp/>the<sp/>information<sp/>may<sp/>be<sp/>the<sp/>subject<sp/>of<sp/>patent<sp/>applications</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>United<sp/>States<sp/>and<sp/>foreign<sp/>countries.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>M<sp/>O<sp/>D<sp/>U<sp/>L<sp/>E<sp/><sp/><sp/><sp/>D<sp/>E<sp/>S<sp/>C<sp/>R<sp/>I<sp/>P<sp/>T<sp/>I<sp/>O<sp/>N</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Filename<sp/><sp/><sp/><sp/><sp/>:<sp/>silWrapper.h</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>Package::SubPackage::..::Class</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Prefix<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>Description<sp/><sp/>:<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>History<sp/><sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>Date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Description</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>14.01.2019<sp/><sp/><sp/>D.<sp/>Michaud<sp/><sp/><sp/><sp/><sp/><sp/>Initial<sp/>Version</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>Include<sp/>Files</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(SIL_WRAPPER)<sp/>||<sp/>defined(DEBUG)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MATLAB_MEX_FILE)<sp/>||<sp/>defined(USE_MEX_CMD)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;mex.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>Constant<sp/>Defines</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>Macro<sp/>Defines</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="sil_wrapper_8h_1aaac393258b46cdcc2da9818c3408aa70" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_STRINGIFY(s)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#s</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="sil_wrapper_8h_1a4689212d5a549893cabb9d7782eecfb6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STRINGIFY(s)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_STRINGIFY(s)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_WARNING(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_ERROR(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_DIAG(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="sil_wrapper_8h_1ab437589e9e94c01c02ba99450e313752" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_WARNING(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="sil_wrapper_8h_1ac87af9dc4e1a2b96a73588443fd36aa1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_ERROR(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_DIAG(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_PORT_OUT(mPort,<sp/>mIdx)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_PORT_INP(mPort,<sp/>mIdx)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="sil_wrapper_8h_1a352a935588c5e0f47f299592854f205a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_PARAM(mPort,<sp/>mIdx)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIL_DEBUG(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>SIL_DIAG(&quot;%s<sp/>Line<sp/>%d:<sp/>&quot;</highlight><highlight class="normal">,<sp/>__FILE__,<sp/>__LINE__);<sp/>\</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>SIL_DIAG(__VA_ARGS__);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(DEBUG)<sp/>||<sp/>defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG_PRINT(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="sil_wrapper_8h_1a88edd2aa4feabff4af21a997d5d8aa23" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG_PRINT(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(SIL_WRAPPER)<sp/>||<sp/>defined(UNIT_TEST)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>cregister</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__cregister</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__disable_interrupts(...)<sp/><sp/><sp/>(void)0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__enable_interrupts(...)<sp/><sp/><sp/><sp/>(void)0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__eallow(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__edis(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>asm(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>Type<sp/>Definitions</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>Exported<sp/>Variable<sp/>Declarations</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>Exported<sp/>Function<sp/>Prototypes</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>Inline<sp/>Function<sp/>Definitions<sp/>:-(</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//_SIL_WRAPPER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="sil/silWrapper.h"/>
+  </compounddef>
+</doxygen>

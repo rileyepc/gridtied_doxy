@@ -1,0 +1,194 @@
+\hypertarget{interface_accessors_8h_source}{}\doxysection{interface\+Accessors.\+h}
+\label{interface_accessors_8h_source}\index{interface/interfaceAccessors.h@{interface/interfaceAccessors.h}}
+\mbox{\hyperlink{interface_accessors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{ifndef} \textcolor{preprocessor}{\_\_INTERFACEACCESSORS\_H\_\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_INTERFACEACCESSORS\_H\_\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// TODO: now that the accessor references are becoming isolated to just a couple files}}
+\DoxyCodeLine{5 \textcolor{comment}{//       let's just put them all here instead of spreading them around.}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}adaptiveHarmonicControlI.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}authorization\_generated.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}filterObserverI.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}gridMonitor.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}hardware.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}islandControlI.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}modulatorI.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}powerConversionControl.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}phaseControlI.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}phaseConfigDetectI.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}phaseCurrentControlI.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}phasePllI.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}auxiliaryPllI.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}syntheticInertiaI.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}ABB\_libPrimaryControl.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}dcdcControlI.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}deviceThermalModel.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}measurementdI.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}protectionsI.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}humiditySensor.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}mppt.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}system.h"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}loader.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}fanControl.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}environmentControl.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \mbox{\hyperlink{application_8h}{"{}application.h"{}}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}topLevelControl.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}engDebug.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}afe.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}gridSupport.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}referenceHandler.h"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}sunspecRefs.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \mbox{\hyperlink{interface_8h}{"{}interface.h"{}}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}supervisor.h"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}eepromHandler.h"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}modbusHandler.h"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}fpgaRegs.h"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}externalInhibit.h"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}simulateFeedbackI.h"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{"{}interfaceAccessors\_generated.h"{}}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{/**}}
+\DoxyCodeLine{49 \textcolor{comment}{ * @brief Volatile Process Data flags}}
+\DoxyCodeLine{50 \textcolor{comment}{ */}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{struct} \mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\_CommandFlags}} \{}
+\DoxyCodeLine{52     \mbox{\hyperlink{struct_i_n_t_f___command_flags_a061f5a9482d5eac586d05fbbc5278515}{uint16\_t}} \mbox{\hyperlink{struct_i_n_t_f___command_flags_a061f5a9482d5eac586d05fbbc5278515}{enable}}; \textcolor{comment}{///< run enable request, uint16\_t to allow the out of range values of 2 and 3}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_n_t_f___command_flags_a726f8801e06bf917e43d95c4c1a976d8}{clearFaults}}; \textcolor{comment}{///< clear fault reuquest}}
+\DoxyCodeLine{54     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_n_t_f___command_flags_a7a3579235e0e2a5efece0fbc2c1aba55}{clearWarnings}}; \textcolor{comment}{///< clear warnings}}
+\DoxyCodeLine{55     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_n_t_f___command_flags_a0704ebf6a2d9622d12dd3713aacca9ac}{islandReconnect}};}
+\DoxyCodeLine{56     \mbox{\hyperlink{struct_i_n_t_f___command_flags_aa61fde7144c23f119a393104c9c81df1}{PBC\_ConnectSequence\_t}} \mbox{\hyperlink{struct_i_n_t_f___command_flags_aa61fde7144c23f119a393104c9c81df1}{protBusSeq}};}
+\DoxyCodeLine{57 \} INTF\_CommandFlags;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \mbox{\hyperlink{interface_accessors_8c_a1228c2eaf73fb7eca186e9e293102d53}{uint32\_t}} \mbox{\hyperlink{interface_accessors_8c_a1228c2eaf73fb7eca186e9e293102d53}{INTF\_zero\_getter}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a029dd9afdde2d1bff394065deaa065be}{INTF\_updateHardwareRatings}}(\textcolor{keywordtype}{float} unused);}
+\DoxyCodeLine{63 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_ad48f6ff174bd5fdf8d3379d3311badf7}{INTF\_updateCommercialRatings}}(\textcolor{keywordtype}{float} unused);}
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_acdc3e47f8f199fb330ef5dd50cf70002}{INTF\_updateUserLimits}}(\textcolor{keywordtype}{float} unused);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_ac4d66ced4eb860621975532e4c355fbc}{INTF\_getSunspecScaledGridPositiveP}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_ac855468bdc131df6467def4be0436589}{INTF\_setSunspecScaledGridPositiveP}}(\textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{68 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_aa4c881ac0a915733b4f4f8a7bb712003}{INTF\_getSunspecScaledApparentPower}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{69 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a368e3ab89e146aa5d551f2f809f15618}{INTF\_setSunspecScaledApparentPower}}(\textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{70 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_abac3ae5fd4e68e0ae5bf12e171e0a02a}{INTF\_getSunspecScaledRealPowerLimitsMax}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a0ce166744dff63c46e0f51b639bc4ea8}{INTF\_setSunspecScaledRealPowerLimitsMax}}(\textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{72 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a757d38299417604ee511c1653683d3eb}{INTF\_getSunspecScaledApparentPowerLimit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{73 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a58b6b2294b9b81ec20427b64a8ebfff2}{INTF\_setSunspecScaledApparentPowerLimit}}(\textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a006eb78c3747a3132acf3fbfffd8c90e}{INTF\_setNomV}}(\textcolor{keywordtype}{float} vNom);}
+\DoxyCodeLine{76 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_af6d7a32e10af877759ff1750646693ad}{INTF\_setNomF}}(\textcolor{keywordtype}{float} fNom);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_ac119e5cc4490d32a5df4b0ed858b1148}{INTF\_setGridVoltageOffset}}(\textcolor{keywordtype}{float} offset);}
+\DoxyCodeLine{79 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a2f7aff32e5d90cb76b50bfafef0cc8eb}{INTF\_getGridVoltageOffset}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a6f387f6273f8a34065a9004b831fbc41}{INTF\_setAllowForming}}(\textcolor{keywordtype}{bool} \textcolor{keyword}{const} allowForming);}
+\DoxyCodeLine{82 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a2fc814a80f10d21457a59c2cd1d1cadc}{INTF\_setAllowFollowing}}(\textcolor{keywordtype}{bool} \textcolor{keyword}{const} allowFollowing);}
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a56d9ef27c5907a892b1ec678cbd77b25}{INTF\_setIslandResponse}}(uint16\_t \textcolor{keyword}{const} islandResponse);}
+\DoxyCodeLine{84 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_ad9bf92610fb7c66ea1757fba181b75f7}{INTF\_setIslandDetector}}(uint16\_t \textcolor{keyword}{const} islandDetector);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keywordtype}{bool} \mbox{\hyperlink{interface_accessors_8c_aa4b4b022baea21dd2bbe7d384e658fb4}{INTF\_getAllowForming}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{87 \textcolor{keywordtype}{bool} \mbox{\hyperlink{interface_accessors_8c_ac887a74446bcbffadcb1c01169c59fc6}{INTF\_getAllowFollowing}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{88 \mbox{\hyperlink{interface_accessors_8c_a4ef6eb3f5734e746da42d0be15db9319}{uint16\_t}} \mbox{\hyperlink{interface_accessors_8c_a4ef6eb3f5734e746da42d0be15db9319}{INTF\_getIslandResponse}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{89 \mbox{\hyperlink{interface_accessors_8c_a213da2d6b3a814f1bf2d91036b1cd982}{uint16\_t}} \mbox{\hyperlink{interface_accessors_8c_a213da2d6b3a814f1bf2d91036b1cd982}{INTF\_getIslandDetector}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8h_ac1be592dbab02f670ce3c02c1ae5038c}{INTF\_setConfigRateLimitPgRef\_pDelta}}(\textcolor{keywordtype}{float} pDelta);}
+\DoxyCodeLine{92 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8h_af40ee9c95a6bb01af3d27e527eee27da}{INTF\_setConfigRateLimitPgRef\_tDelta}}(\textcolor{keywordtype}{float} tDelta);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{keywordtype}{bool} \mbox{\hyperlink{interface_accessors_8c_a1cdd34e87e38eafe4bccb1db4f8dd63e}{getBridgeAVoltageOk}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{95 \mbox{\hyperlink{interface_accessors_8c_a8604f381346ef74eeec9ba0e871bdccb}{uint16\_t}} \mbox{\hyperlink{interface_accessors_8c_a8604f381346ef74eeec9ba0e871bdccb}{getBridgeBridgeAFault}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{96 \textcolor{keywordtype}{bool} \mbox{\hyperlink{interface_accessors_8c_ae6afb52e9d3f938c2716a35aae0dc67a}{getBridgeBVoltageOk}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{97 \mbox{\hyperlink{interface_accessors_8c_a9de3c2162c7d8d5c5edaf1c53e9164a9}{uint16\_t}} \mbox{\hyperlink{interface_accessors_8c_a9de3c2162c7d8d5c5edaf1c53e9164a9}{getBridgeBridgeBFault}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a33e147c35fdb72a43ca93b641fc31ce6}{INTF\_setAccessLevel}}(uint16\_t level);}
+\DoxyCodeLine{100 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a46b0d089a19f2ed60c19f39bb019cb64}{INTF\_setAccessPassword}}(uint16\_t password);}
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_af6b9c83d41c21522601ebca742053813}{INTF\_setAccessCheckLimits}}(\textcolor{keywordtype}{bool} checkLimits);}
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a4b5476da70ea4532e90764241f9eeea0}{INTF\_submitAccessLevelRequest}}(\textcolor{keywordtype}{bool} request);}
+\DoxyCodeLine{103 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a749c4bd4cdd167d1f1c0fd27c0e7aa3b}{INTF\_accessLevel\_onWrite}}(}
+\DoxyCodeLine{104         Meta\_Enum meta\_index,}
+\DoxyCodeLine{105         \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{InterfaceItem\_void}} \textcolor{keyword}{const} * \textcolor{keyword}{const} * \textcolor{keyword}{const} items,}
+\DoxyCodeLine{106         uint16\_t items\_count}
+\DoxyCodeLine{107 );}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a4772b8e3b012a7ecdf4427ec04c5f043}{INTF\_loggerChunk\_onWrite}}(}
+\DoxyCodeLine{110         Meta\_Enum meta\_index,}
+\DoxyCodeLine{111         \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{InterfaceItem\_void}} \textcolor{keyword}{const} * \textcolor{keyword}{const} * \textcolor{keyword}{const} items,}
+\DoxyCodeLine{112         uint16\_t items\_count}
+\DoxyCodeLine{113 );}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a66e723cc746cb0571e5fd38ef3fb5503}{INTF\_setControlSource}}(uint16\_t src);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a508f2224dc87e11a6b54ddd6fb7ecd87}{INTF\_setEnable}}(uint16\_t en);}
+\DoxyCodeLine{118 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a75bf088a5b5b4f7f90d8c6e143388f02}{INTF\_enableRejected}}(uint16\_t value, \mbox{\hyperlink{struct_rejection_reasons}{RejectionReasons}} reasons);}
+\DoxyCodeLine{119 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a687afa24dcc6c8ac947a0a601d45b2b3}{INTF\_clearFaults}}(\textcolor{keywordtype}{bool} clearFaults);}
+\DoxyCodeLine{120 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a90c974d866763bf6850e4fc591971805}{INTF\_clearWarnings}}(\textcolor{keywordtype}{bool} clearWarnings);}
+\DoxyCodeLine{121 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_ab4d95922580fc39df11a9c72b913bf7a}{INTF\_setIslandStateRequest}}(\textcolor{keywordtype}{bool} req);}
+\DoxyCodeLine{122 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a5760cc69fac51973d303af38b37de7db}{INTF\_powerRejected}}(\textcolor{keywordtype}{float} value, \mbox{\hyperlink{struct_rejection_reasons}{RejectionReasons}} reasons);}
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a874fe2cfea71a6d06db81ef27cc574d9}{INTF\_currentRejected}}(\textcolor{keywordtype}{float} value, \mbox{\hyperlink{struct_rejection_reasons}{RejectionReasons}} reasons);}
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{interface_accessors_8c_a17fe067e29ab8eb2bdc1f06e051a9cd3}{INTF\_dcRefRejected}}(\textcolor{keywordtype}{float} value, \mbox{\hyperlink{struct_rejection_reasons}{RejectionReasons}} reasons);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keywordtype}{bool} \mbox{\hyperlink{interface_accessors_8c_af6c75b31ca6f45cd628a479eacca434e}{INTF\_bool\_table\_false\_getter}}(}
+\DoxyCodeLine{127     IEEE1547\_MonCurveType zone,}
+\DoxyCodeLine{128     size\_t curve,}
+\DoxyCodeLine{129     size\_t index,}
+\DoxyCodeLine{130     uint16\_t value}
+\DoxyCodeLine{131 );}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \mbox{\hyperlink{interface_accessors_8c_a05b8955eb1ddf10a8e5a669af82afbba}{uint16\_t}} \mbox{\hyperlink{interface_accessors_8c_a05b8955eb1ddf10a8e5a669af82afbba}{INTF\_getVersMajor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{134 \mbox{\hyperlink{interface_accessors_8c_a1485b9c8a1c1f215edfd99a11a25012c}{uint16\_t}} \mbox{\hyperlink{interface_accessors_8c_a1485b9c8a1c1f215edfd99a11a25012c}{INTF\_getVersMinor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{135 \mbox{\hyperlink{interface_accessors_8c_aa27b07ddc231a81562ab7d3d19578848}{uint16\_t}} \mbox{\hyperlink{interface_accessors_8c_aa27b07ddc231a81562ab7d3d19578848}{INTF\_getVersPatch}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a725db5a0fea72547846006b348a8f2e0}{INTF\_getPos24V}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{138 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a744a180aace820f7a870be5a57455362}{INTF\_getPos15V}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{139 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a689c81667a2b236dacbee1dbd7e806ac}{INTF\_getNeg15V}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{140 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a9e62ad9479ba4a7620c31ac22fc4ec6f}{INTF\_getPos5V}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{141 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a7e78a1bdfad85f233e54739ba8683927}{INTF\_getPos3V}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_af141bf9cc0d9d10b9c1ac60f90f914e3}{INTF\_getHarmCurrentCh0PhA}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{144 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a2ea93777f0f8d8785276ea38dcf1b8af}{INTF\_getHarmCurrentCh0PhB}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{145 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_ab82de2b81f7895b19768db41b81932c6}{INTF\_getHarmCurrentCh1PhA}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{146 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a420f1d1047ca0c73fb4e3be469502cab}{INTF\_getHarmCurrentCh1PhB}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{147 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a8268b411345496f59b756787bb0323a5}{INTF\_getHarmCurrentCh2PhA}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{148 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a42cdd58dab6e3558113b81df6e16839c}{INTF\_getHarmCurrentCh2PhB}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{149 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a958f82000278c76d992da150a55b0a18}{INTF\_getHarmCurrentCh3PhA}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{150 \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a7946fac2f11a44eff7c700907c189bc6}{INTF\_getHarmCurrentCh3PhB}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_WRAPPER}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{153 \textcolor{keywordtype}{void} INTF\_SIL\_writeSnapshot(FILE* snapshotFile);}
+\DoxyCodeLine{154 \textcolor{keywordtype}{void} INTF\_SIL\_readSnapshot(FILE* snapshotFile);}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{extern} \mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\_CommandFlags}} \mbox{\hyperlink{interface_accessors_8c_a88f562c1031cccffe74fb20b4ca06060}{INTF\_commandFlags}};}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a3f54617f49f9242541779331eb124182}{INTF\_cmdRealPwr}};}
+\DoxyCodeLine{160 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a79e31bef5a37336542c4f6361506fa02}{INTF\_cmdReactivePwr}};}
+\DoxyCodeLine{161 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a4c8db66e9aff805c09de8ef33a33388c}{INTF\_cmdRealCurrent}};}
+\DoxyCodeLine{162 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a4b95211c26a962044ea4690e06eb87b3}{INTF\_cmdReactiveCurrent}};}
+\DoxyCodeLine{163 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a5538df13b1da6a0aefd3bde487b9a4cb}{INTF\_cmdInputCurrent}};}
+\DoxyCodeLine{164 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_aafe89f987c23c36dd842e3a95c4fa2e5}{INTF\_cmdDcVLim}};}
+\DoxyCodeLine{165 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_aa28bf8dd3bf1d36d1aecb7c754e0383b}{INTF\_cmdRealPwrNs}};}
+\DoxyCodeLine{166 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_aba3e765c9fe3dfe3040ad741ded00f77}{INTF\_cmdReactivePwrNs}};}
+\DoxyCodeLine{167 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a27a2166f2c156045cf525468d2f313b9}{INTF\_cmdRealCurrentNs}};}
+\DoxyCodeLine{168 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_af9d9bcbabff6b55ae0b251ce94d7ef44}{INTF\_cmdReactiveCurrentNs}};}
+\DoxyCodeLine{169 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a6ace3b5f1a80d2fed688ebc10a7765f9}{INTF\_cmdMpptPwrDcdc}};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_ad60b78557c3eb0a494afc3da4bc211b1}{INTF\_cmdPhAHarmCh0Id}};}
+\DoxyCodeLine{172 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a257409e80c6c6c3948950bee7bac7468}{INTF\_cmdPhAHarmCh0Iq}};}
+\DoxyCodeLine{173 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_ad4d0e1e55f52f153f8ddf02fcdb53127}{INTF\_cmdPhBHarmCh0Id}};}
+\DoxyCodeLine{174 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a8627ea41577512343ccd97df985cf8e8}{INTF\_cmdPhBHarmCh0Iq}};}
+\DoxyCodeLine{175 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a11c24207ef9ae315b743906a04699725}{INTF\_cmdPhAHarmCh1Id}};}
+\DoxyCodeLine{176 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_aa1d4c43a43d0db93a916869e4cd8c6bb}{INTF\_cmdPhAHarmCh1Iq}};}
+\DoxyCodeLine{177 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_ae06b06f088104b223512e5b52c139ee1}{INTF\_cmdPhBHarmCh1Id}};}
+\DoxyCodeLine{178 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_ac16d5d125f14e01708e4b4136ee62697}{INTF\_cmdPhBHarmCh1Iq}};}
+\DoxyCodeLine{179 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a27c2f062b9e1ed74ff613c2718b90980}{INTF\_cmdPhAHarmCh2Id}};}
+\DoxyCodeLine{180 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_abb23731cbb6e0ca066fefb7ca8a0e71f}{INTF\_cmdPhAHarmCh2Iq}};}
+\DoxyCodeLine{181 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a89baaacf4a6c79627efa601eacd004a1}{INTF\_cmdPhBHarmCh2Id}};}
+\DoxyCodeLine{182 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_af10fd01df5b4f8ce44b25e8d9bd0e706}{INTF\_cmdPhBHarmCh2Iq}};}
+\DoxyCodeLine{183 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a1017f9aea6d8265abce63ec31eb56db6}{INTF\_cmdPhAHarmCh3Id}};}
+\DoxyCodeLine{184 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a5e5100c627d6e798db9361cad6a52c7b}{INTF\_cmdPhAHarmCh3Iq}};}
+\DoxyCodeLine{185 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_a0029c5f594b19e6799580e1ece9f87c9}{INTF\_cmdPhBHarmCh3Id}};}
+\DoxyCodeLine{186 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} \mbox{\hyperlink{interface_accessors_8c_ae2d788832709698a110e292aa4e046b3}{INTF\_cmdPhBHarmCh3Iq}};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+
+\end{DoxyCode}

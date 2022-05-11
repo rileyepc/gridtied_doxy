@@ -1,0 +1,581 @@
+\hypertarget{ad1d__emu_8c}{}\doxysection{sil/emu/ad1d\+\_\+emu.c File Reference}
+\label{ad1d__emu_8c}\index{sil/emu/ad1d\_emu.c@{sil/emu/ad1d\_emu.c}}
+{\ttfamily \#include \char`\"{}ad1d.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dsp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fpga\+Regs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}MTH\+\_\+scale.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hardware\+Scales.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_d1_d___hw_resources__s}{AD1\+D\+\_\+\+Hw\+Resources\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_a_d1_d___meas_channel__s}{AD1\+D\+\_\+\+Meas\+Channel\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_a_d1_d___mux_channel__s}{AD1\+D\+\_\+\+Mux\+Channel\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_a_d1_d___mux_state__s}{AD1\+D\+\_\+\+Mux\+State\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_a_d1_d___sequencer__s}{AD1\+D\+\_\+\+Sequencer\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_a_d1_d___data__s}{AD1\+D\+\_\+\+Data\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a87afe8e338dfe452c8f3402c7d3de3e5}{AD1\+D\+\_\+\+SEQUENCER\+\_\+\+CHANNELS}}~9U
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a326f8de3386b95b0e620c9efacac9da5}{AD1\+D\+\_\+\+CONVERSION\+\_\+\+BUSY\+\_\+\+TIMEOUT}}~200U
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_af4db88218ea4fd8f82bd69744f952428}{AD1\+D\+\_\+\+BANDGAP\+\_\+\+DELAY\+\_\+\+US}}~50000U
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a833ed8f5dd16f1e7b7ad26e97d6399d8}{AD1\+D\+\_\+\+SAMPLE\+\_\+\+TIME\+\_\+S}}~200.\+0e-\/9
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_abe4a885cb44bf26365e270c4fbfa8607}{AD1\+D\+\_\+\+ADCTRL1\+\_\+\+ACQ\+\_\+\+PS}}~((uint16\+\_\+t)(ADC\+\_\+\+CLOCK\+\_\+\+FREQUENCY\+\_\+\+HZ $\ast$ \mbox{\hyperlink{ad1d__emu_8c_a833ed8f5dd16f1e7b7ad26e97d6399d8}{AD1\+D\+\_\+\+SAMPLE\+\_\+\+TIME\+\_\+S}}) -\/ 1U)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_ab9253411038ec27a61b84c64b20c0c50}{AD1\+D\+\_\+\+ADCTRL3\+\_\+\+ADCBGRFDN}}~0x00\+C0U
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a58bef6a2126fcdd1a7f84db2d15db96b}{AD1\+D\+\_\+\+ADCTRL3\+\_\+\+ADCPWDN}}~0x0020U
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_ad9124706e75925499cfa0d88090439b4}{AD1\+D\+\_\+\+HARDWARE\+\_\+\+RESOURCES\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a329c6cb6c04e8a381ecf8fe2d127fdfc}{AD1\+D\+\_\+\+MEAS\+\_\+\+CHANNEL\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a198b864a8ff7dbc4c423e3118edb8ac2}{AD1\+D\+\_\+\+MUX\+\_\+\+CHANNEL\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a2d5377d1b1ee7d6eb8f355d319b4abf5}{AD1\+D\+\_\+\+MUX\+\_\+\+STATE\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a1584150d50d6d14621d5c3b9cc1117bf}{AD1\+D\+\_\+\+MEAS\+\_\+\+CHANNELS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_ac4830930aac94b4b384528b09e9fe3ca}{AD1\+D\+\_\+\+SEQUENCER\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_a9ff13f79f402aed0d60f6ff986596086}{AD1\+D\+\_\+\+SEQ\+\_\+\+GROUPS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_ad45e792d8812ce19921ae984751b502e}{AD1\+D\+\_\+\+MUX\+\_\+\+CHANNELS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad1d__emu_8c_aff18e8162bba502e11d37e62be04c177}{AD1\+D\+\_\+\+DATA\+\_\+\+DEFAULTS}}(...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29}{AD1\+D\+\_\+\+Inputs\+\_\+e}} \mbox{\hyperlink{ad1d__emu_8c_ae68c26d3439d1475cd4f8057cd9c6fdd}{AD1\+D\+\_\+\+Inputs\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763}{AD1\+D\+\_\+\+Mux\+Select\+Name\+\_\+e}} \mbox{\hyperlink{ad1d__emu_8c_a065fd175027eba57c1b5c72581f67e19}{AD1\+D\+\_\+\+Mux\+Select\+Name\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d1_d___hw_resources__s}{AD1\+D\+\_\+\+Hw\+Resources\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_acc9ce226226db55ac8cebe2ad4bc540b}{AD1\+D\+\_\+\+Hw\+Resources\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d1_d___meas_channel__s}{AD1\+D\+\_\+\+Meas\+Channel\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_abb77a940fc8e53a100f83be6f9cec42d}{AD1\+D\+\_\+\+Meas\+Channel\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d1_d___mux_channel__s}{AD1\+D\+\_\+\+Mux\+Channel\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_a22f4d1bdc5efd3498720f6edce2c47ba}{AD1\+D\+\_\+\+Mux\+Channel\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d1_d___mux_state__s}{AD1\+D\+\_\+\+Mux\+State\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_a2d267b8898befbab9d31a60a910cf6e0}{AD1\+D\+\_\+\+Mux\+State\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d1_d___sequencer__s}{AD1\+D\+\_\+\+Sequencer\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_a9d2d4a8ddfc4347d8e3d40f29e749361}{AD1\+D\+\_\+\+Sequencer\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d1_d___data__s}{AD1\+D\+\_\+\+Data\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_aeeb9fff3de27bef6ee032d9b527ad594}{AD1\+D\+\_\+\+Data\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29}{AD1\+D\+\_\+\+Inputs\+\_\+e}} \{ \newline
+\mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a17f57d0302cb514547f9d51897fe6d5c}{AD1\+D\+\_\+\+INPUT\+\_\+\+A0}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a71ce77c509c0cce378dbe6547f9c286f}{AD1\+D\+\_\+\+INPUT\+\_\+\+A1}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a44627a4c5e7b4d96b929941b08436996}{AD1\+D\+\_\+\+INPUT\+\_\+\+A2}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a162fd96501005fbb8b756627e97eb0df}{AD1\+D\+\_\+\+INPUT\+\_\+\+A3}}
+, \newline
+\mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a5b836faef95eacf6e942656b6cb9630f}{AD1\+D\+\_\+\+INPUT\+\_\+\+A4}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a2f5e922b5a133702df650f087fbfe17a}{AD1\+D\+\_\+\+INPUT\+\_\+\+A5}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a124a5829575a36f8e6a80211379a153a}{AD1\+D\+\_\+\+INPUT\+\_\+\+A6}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a74b111efae002376196bc53b9e637068}{AD1\+D\+\_\+\+INPUT\+\_\+\+A7}}
+, \newline
+\mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a855e363f726ce621900a571d0a90bace}{AD1\+D\+\_\+\+INPUT\+\_\+\+B0}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a24d375e3f6612dde1681ba9b5e4cac1f}{AD1\+D\+\_\+\+INPUT\+\_\+\+B1}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a36aa3e35a6c03c62eef9dff97f1c085c}{AD1\+D\+\_\+\+INPUT\+\_\+\+B2}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a397ee2250033452f2898c713cfe0748c}{AD1\+D\+\_\+\+INPUT\+\_\+\+B3}}
+, \newline
+\mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29ac5e4077f4c591bbcc6331a425d27694a}{AD1\+D\+\_\+\+INPUT\+\_\+\+B4}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a2979414fe4f0d1a5124ebbc8bc47063c}{AD1\+D\+\_\+\+INPUT\+\_\+\+B5}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29ae6a77dca8fdf5a6920148d698d2758ce}{AD1\+D\+\_\+\+INPUT\+\_\+\+B6}}
+, \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1\+D\+\_\+\+INPUT\+\_\+\+B7}}
+, \newline
+\mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71}{AD1\+D\+\_\+\+INPUT\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763}{AD1\+D\+\_\+\+Mux\+Select\+Name\+\_\+e}} \{ \newline
+\mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763aa9e755515c393774f1216fe8484bc210}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+INV\+\_\+A}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a9c8e113bcefc9f5db9ec2561b5490ea1}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+INV\+\_\+B}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a3c94ba93d63d70a0667e8d003fc0e811}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+HALFB}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763acabb7b2ed80d2d5efe9de3840036c6f1}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+AUX\+\_\+A}}
+, \newline
+\mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a2aed7f3e7b86f2520001607c5ef136a2}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+AUX\+\_\+B}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763aa713a6ef0bfde03d2931feda3f741570}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+AUX\+\_\+C}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a845ca75f63fe3671e7d204aca0b7c3e0}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+P24V}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a37a609c91be49cab7a3285119c8a61bc}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+P15V}}
+, \newline
+\mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a472161bfc029a57054697b14de3dfc63}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+P5V}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a5fe733c8b85cfe657ed1af3ca06c78f5}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+P3V}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a0841ab90c51c4cb854958f15c885a176}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+N15V}}
+, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a5b5395f14f30d77ac8272b7b7e10e2ad}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+TP}}
+, \newline
+\mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+CNT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{ad1d__emu_8c_a793ae8095e620913ed5f03833c1d5481}{AD1\+D\+\_\+enqueue\+Measurement\+Channel}} (uint16\+\_\+t const chan\+Name, MESD\+\_\+\+Sequence\+Group\+\_\+t const seq\+Group, \mbox{\hyperlink{_i_qmath_lib_8h_a3a40eb7e42ca749c68ee683060ff050d}{\+\_\+iq31}} $\ast$const mesd\+Dest)
+\item 
+void \mbox{\hyperlink{ad1d__emu_8c_a749ea38b5cb4c05e64381634cfafdb68}{AD1\+D\+\_\+release\+Configuration}} (void)
+\item 
+bool \mbox{\hyperlink{ad1d__emu_8c_a042feb23aedcb668d60d4b879f1dbfc1}{AD1\+D\+\_\+measurements\+Update\+\_\+ts}} (MESD\+\_\+\+Sequence\+Group\+\_\+t const seq\+Group, uint16\+\_\+t const trigger\+Index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ad1d__emu_8c_acc9ce226226db55ac8cebe2ad4bc540b}{AD1\+D\+\_\+\+Hw\+Resources\+\_\+t}} const \mbox{\hyperlink{ad1d__emu_8c_ace8003acac28b56efb20bb406cb0f867}{AD1\+D\+\_\+\+Hw\+Resources}} \mbox{[}AD1\+D\+\_\+\+CHANNEL\+\_\+\+CNT\mbox{]} = \mbox{\hyperlink{ad1d__emu_8c_ad9124706e75925499cfa0d88090439b4}{AD1\+D\+\_\+\+HARDWARE\+\_\+\+RESOURCES\+\_\+\+DEFAULTS}}()
+\item 
+\mbox{\hyperlink{ad1d__emu_8c_aeeb9fff3de27bef6ee032d9b527ad594}{AD1\+D\+\_\+\+Data\+\_\+t}} \mbox{\hyperlink{ad1d__emu_8c_a6859a7dfd47677acdc55d325df8f9cad}{AD1\+D\+\_\+\+Data}} = \mbox{\hyperlink{ad1d__emu_8c_aff18e8162bba502e11d37e62be04c177}{AD1\+D\+\_\+\+DATA\+\_\+\+DEFAULTS}}()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{ad1d__emu_8c_a5d57ca5bef82b3866a69fce00e49fdbe}{AD1\+D\+\_\+\+Adc\+Input\+\_\+emu}} \mbox{[}\mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71}{AD1\+D\+\_\+\+INPUT\+\_\+\+CNT}}\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{ad1d__emu_8c_a26ce67771c6cde0e2a8ac91bcf0ddb8e}{AD1\+D\+\_\+\+Mux\+Input\+\_\+emu}} \mbox{[}\mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+CNT}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ad1d__emu_8c_abe4a885cb44bf26365e270c4fbfa8607}\label{ad1d__emu_8c_abe4a885cb44bf26365e270c4fbfa8607}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_ADCTRL1\_ACQ\_PS@{AD1D\_ADCTRL1\_ACQ\_PS}}
+\index{AD1D\_ADCTRL1\_ACQ\_PS@{AD1D\_ADCTRL1\_ACQ\_PS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_ADCTRL1\_ACQ\_PS}{AD1D\_ADCTRL1\_ACQ\_PS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+ADCTRL1\+\_\+\+ACQ\+\_\+\+PS~((uint16\+\_\+t)(ADC\+\_\+\+CLOCK\+\_\+\+FREQUENCY\+\_\+\+HZ $\ast$ \mbox{\hyperlink{ad1d__emu_8c_a833ed8f5dd16f1e7b7ad26e97d6399d8}{AD1\+D\+\_\+\+SAMPLE\+\_\+\+TIME\+\_\+S}}) -\/ 1U)}
+
+\mbox{\Hypertarget{ad1d__emu_8c_ab9253411038ec27a61b84c64b20c0c50}\label{ad1d__emu_8c_ab9253411038ec27a61b84c64b20c0c50}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_ADCTRL3\_ADCBGRFDN@{AD1D\_ADCTRL3\_ADCBGRFDN}}
+\index{AD1D\_ADCTRL3\_ADCBGRFDN@{AD1D\_ADCTRL3\_ADCBGRFDN}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_ADCTRL3\_ADCBGRFDN}{AD1D\_ADCTRL3\_ADCBGRFDN}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+ADCTRL3\+\_\+\+ADCBGRFDN~0x00\+C0U}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a58bef6a2126fcdd1a7f84db2d15db96b}\label{ad1d__emu_8c_a58bef6a2126fcdd1a7f84db2d15db96b}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_ADCTRL3\_ADCPWDN@{AD1D\_ADCTRL3\_ADCPWDN}}
+\index{AD1D\_ADCTRL3\_ADCPWDN@{AD1D\_ADCTRL3\_ADCPWDN}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_ADCTRL3\_ADCPWDN}{AD1D\_ADCTRL3\_ADCPWDN}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+ADCTRL3\+\_\+\+ADCPWDN~0x0020U}
+
+\mbox{\Hypertarget{ad1d__emu_8c_af4db88218ea4fd8f82bd69744f952428}\label{ad1d__emu_8c_af4db88218ea4fd8f82bd69744f952428}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_BANDGAP\_DELAY\_US@{AD1D\_BANDGAP\_DELAY\_US}}
+\index{AD1D\_BANDGAP\_DELAY\_US@{AD1D\_BANDGAP\_DELAY\_US}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_BANDGAP\_DELAY\_US}{AD1D\_BANDGAP\_DELAY\_US}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+BANDGAP\+\_\+\+DELAY\+\_\+\+US~50000U}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a326f8de3386b95b0e620c9efacac9da5}\label{ad1d__emu_8c_a326f8de3386b95b0e620c9efacac9da5}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_CONVERSION\_BUSY\_TIMEOUT@{AD1D\_CONVERSION\_BUSY\_TIMEOUT}}
+\index{AD1D\_CONVERSION\_BUSY\_TIMEOUT@{AD1D\_CONVERSION\_BUSY\_TIMEOUT}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_CONVERSION\_BUSY\_TIMEOUT}{AD1D\_CONVERSION\_BUSY\_TIMEOUT}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+CONVERSION\+\_\+\+BUSY\+\_\+\+TIMEOUT~200U}
+
+\mbox{\Hypertarget{ad1d__emu_8c_aff18e8162bba502e11d37e62be04c177}\label{ad1d__emu_8c_aff18e8162bba502e11d37e62be04c177}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_DATA\_DEFAULTS@{AD1D\_DATA\_DEFAULTS}}
+\index{AD1D\_DATA\_DEFAULTS@{AD1D\_DATA\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_DATA\_DEFAULTS}{AD1D\_DATA\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+DATA\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                               \(\backslash\)}
+\DoxyCodeLine{    .seqGroups              = \mbox{\hyperlink{ad1d__emu_8c_a9ff13f79f402aed0d60f6ff986596086}{AD1D\_SEQ\_GROUPS\_DEFAULTS}}(),       \(\backslash\)}
+\DoxyCodeLine{    .muxChannels            = \mbox{\hyperlink{ad1d__emu_8c_ad45e792d8812ce19921ae984751b502e}{AD1D\_MUX\_CHANNELS\_DEFAULTS}}(),     \(\backslash\)}
+\DoxyCodeLine{    .muxState               = \mbox{\hyperlink{ad1d__emu_8c_a2d5377d1b1ee7d6eb8f355d319b4abf5}{AD1D\_MUX\_STATE\_DEFAULTS}}(),        \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad1d__emu_8c_ad9124706e75925499cfa0d88090439b4}\label{ad1d__emu_8c_ad9124706e75925499cfa0d88090439b4}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_HARDWARE\_RESOURCES\_DEFAULTS@{AD1D\_HARDWARE\_RESOURCES\_DEFAULTS}}
+\index{AD1D\_HARDWARE\_RESOURCES\_DEFAULTS@{AD1D\_HARDWARE\_RESOURCES\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_HARDWARE\_RESOURCES\_DEFAULTS}{AD1D\_HARDWARE\_RESOURCES\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+HARDWARE\+\_\+\+RESOURCES\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                 \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_IPC\_1     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a17f57d0302cb514547f9d51897fe6d5c}{AD1D\_INPUT\_A0}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_IPC\_2     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a71ce77c509c0cce378dbe6547f9c286f}{AD1D\_INPUT\_A1}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_IPC\_3     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a44627a4c5e7b4d96b929941b08436996}{AD1D\_INPUT\_A2}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_IPC\_4     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a855e363f726ce621900a571d0a90bace}{AD1D\_INPUT\_B0}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_IPC\_5     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a24d375e3f6612dde1681ba9b5e4cac1f}{AD1D\_INPUT\_B1}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_IPC\_6     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a36aa3e35a6c03c62eef9dff97f1c085c}{AD1D\_INPUT\_B2}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_VDC\_A     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a162fd96501005fbb8b756627e97eb0df}{AD1D\_INPUT\_A3}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_VDC\_B     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a397ee2250033452f2898c713cfe0748c}{AD1D\_INPUT\_B3}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_IPEAK     ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29ac5e4077f4c591bbcc6331a425d27694a}{AD1D\_INPUT\_B4}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}}        \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_TEMP\_INV\_A] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763aa9e755515c393774f1216fe8484bc210}{AD1D\_MUX\_SELECT\_TEMP\_INV\_A}} \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_TEMP\_INV\_B] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a9c8e113bcefc9f5db9ec2561b5490ea1}{AD1D\_MUX\_SELECT\_TEMP\_INV\_B}} \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_TEMP\_HALFB] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a3c94ba93d63d70a0667e8d003fc0e811}{AD1D\_MUX\_SELECT\_TEMP\_HALFB}} \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_TEMP\_AUX\_A] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763acabb7b2ed80d2d5efe9de3840036c6f1}{AD1D\_MUX\_SELECT\_TEMP\_AUX\_A}} \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_TEMP\_AUX\_B] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a2aed7f3e7b86f2520001607c5ef136a2}{AD1D\_MUX\_SELECT\_TEMP\_AUX\_B}} \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_TEMP\_AUX\_C] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763aa713a6ef0bfde03d2931feda3f741570}{AD1D\_MUX\_SELECT\_TEMP\_AUX\_C}} \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_VOLT\_P24V ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a845ca75f63fe3671e7d204aca0b7c3e0}{AD1D\_MUX\_SELECT\_VOLT\_P24V}}  \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_VOLT\_P15V ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a37a609c91be49cab7a3285119c8a61bc}{AD1D\_MUX\_SELECT\_VOLT\_P15V}}  \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_VOLT\_N15V ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a0841ab90c51c4cb854958f15c885a176}{AD1D\_MUX\_SELECT\_VOLT\_N15V}}  \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_VOLT\_P5V  ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a472161bfc029a57054697b14de3dfc63}{AD1D\_MUX\_SELECT\_VOLT\_P5V}}   \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_VOLT\_P3V  ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a5fe733c8b85cfe657ed1af3ca06c78f5}{AD1D\_MUX\_SELECT\_VOLT\_P3V}}   \},  \(\backslash\)}
+\DoxyCodeLine{    [AD1D\_CHANNEL\_VOLT\_TP   ] = \{ \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}{AD1D\_INPUT\_B7}}, \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a5b5395f14f30d77ac8272b7b7e10e2ad}{AD1D\_MUX\_SELECT\_VOLT\_TP}}    \},  \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad1d__emu_8c_a329c6cb6c04e8a381ecf8fe2d127fdfc}\label{ad1d__emu_8c_a329c6cb6c04e8a381ecf8fe2d127fdfc}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MEAS\_CHANNEL\_DEFAULTS@{AD1D\_MEAS\_CHANNEL\_DEFAULTS}}
+\index{AD1D\_MEAS\_CHANNEL\_DEFAULTS@{AD1D\_MEAS\_CHANNEL\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MEAS\_CHANNEL\_DEFAULTS}{AD1D\_MEAS\_CHANNEL\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+MEAS\+\_\+\+CHANNEL\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{    .adcInput               = (\mbox{\hyperlink{ad1d__emu_8c_ae68c26d3439d1475cd4f8057cd9c6fdd}{AD1D\_Inputs\_t}})0U,                \(\backslash\)}
+\DoxyCodeLine{    .mesdDest               = NULL,                             \(\backslash\)}
+\DoxyCodeLine{    \#\#\_\_VA\_ARGS\_\_                                               \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad1d__emu_8c_a1584150d50d6d14621d5c3b9cc1117bf}\label{ad1d__emu_8c_a1584150d50d6d14621d5c3b9cc1117bf}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MEAS\_CHANNELS\_DEFAULTS@{AD1D\_MEAS\_CHANNELS\_DEFAULTS}}
+\index{AD1D\_MEAS\_CHANNELS\_DEFAULTS@{AD1D\_MEAS\_CHANNELS\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MEAS\_CHANNELS\_DEFAULTS}{AD1D\_MEAS\_CHANNELS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+MEAS\+\_\+\+CHANNELS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                      \(\backslash\)}
+\DoxyCodeLine{    [0U ... (\mbox{\hyperlink{ad1d__emu_8c_a87afe8e338dfe452c8f3402c7d3de3e5}{AD1D\_SEQUENCER\_CHANNELS}} -\/ 1U)] =                   \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{ad1d__emu_8c_a329c6cb6c04e8a381ecf8fe2d127fdfc}{AD1D\_MEAS\_CHANNEL\_DEFAULTS}}(\_\_VA\_ARGS\_\_),                \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad1d__emu_8c_a198b864a8ff7dbc4c423e3118edb8ac2}\label{ad1d__emu_8c_a198b864a8ff7dbc4c423e3118edb8ac2}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_CHANNEL\_DEFAULTS@{AD1D\_MUX\_CHANNEL\_DEFAULTS}}
+\index{AD1D\_MUX\_CHANNEL\_DEFAULTS@{AD1D\_MUX\_CHANNEL\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MUX\_CHANNEL\_DEFAULTS}{AD1D\_MUX\_CHANNEL\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+MUX\+\_\+\+CHANNEL\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                        \(\backslash\)}
+\DoxyCodeLine{    .mesdDest               = NULL,                             \(\backslash\)}
+\DoxyCodeLine{    .muxSelect              = (\mbox{\hyperlink{ad1d__emu_8c_a065fd175027eba57c1b5c72581f67e19}{AD1D\_MuxSelectName\_t}})0U,         \(\backslash\)}
+\DoxyCodeLine{    .nextChannel            = NULL,                             \(\backslash\)}
+\DoxyCodeLine{    \#\#\_\_VA\_ARGS\_\_                                               \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad1d__emu_8c_ad45e792d8812ce19921ae984751b502e}\label{ad1d__emu_8c_ad45e792d8812ce19921ae984751b502e}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_CHANNELS\_DEFAULTS@{AD1D\_MUX\_CHANNELS\_DEFAULTS}}
+\index{AD1D\_MUX\_CHANNELS\_DEFAULTS@{AD1D\_MUX\_CHANNELS\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MUX\_CHANNELS\_DEFAULTS}{AD1D\_MUX\_CHANNELS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+MUX\+\_\+\+CHANNELS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{    [0U ... (\mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1D\_MUX\_SELECT\_CNT}} -\/ 1U)] =                       \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{ad1d__emu_8c_a198b864a8ff7dbc4c423e3118edb8ac2}{AD1D\_MUX\_CHANNEL\_DEFAULTS}}(\_\_VA\_ARGS\_\_)                  \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad1d__emu_8c_a2d5377d1b1ee7d6eb8f355d319b4abf5}\label{ad1d__emu_8c_a2d5377d1b1ee7d6eb8f355d319b4abf5}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_STATE\_DEFAULTS@{AD1D\_MUX\_STATE\_DEFAULTS}}
+\index{AD1D\_MUX\_STATE\_DEFAULTS@{AD1D\_MUX\_STATE\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MUX\_STATE\_DEFAULTS}{AD1D\_MUX\_STATE\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+MUX\+\_\+\+STATE\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                          \(\backslash\)}
+\DoxyCodeLine{    .nextChannel            = NULL,                             \(\backslash\)}
+\DoxyCodeLine{    .mesdDest               = NULL,                             \(\backslash\)}
+\DoxyCodeLine{    .groupAssoc             = MESD\_SEQUENCE\_GROUP\_CNT,          \(\backslash\)}
+\DoxyCodeLine{    .channelCount           = 0U,                               \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad1d__emu_8c_a833ed8f5dd16f1e7b7ad26e97d6399d8}\label{ad1d__emu_8c_a833ed8f5dd16f1e7b7ad26e97d6399d8}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_SAMPLE\_TIME\_S@{AD1D\_SAMPLE\_TIME\_S}}
+\index{AD1D\_SAMPLE\_TIME\_S@{AD1D\_SAMPLE\_TIME\_S}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_SAMPLE\_TIME\_S}{AD1D\_SAMPLE\_TIME\_S}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+SAMPLE\+\_\+\+TIME\+\_\+S~200.\+0e-\/9}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a9ff13f79f402aed0d60f6ff986596086}\label{ad1d__emu_8c_a9ff13f79f402aed0d60f6ff986596086}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_SEQ\_GROUPS\_DEFAULTS@{AD1D\_SEQ\_GROUPS\_DEFAULTS}}
+\index{AD1D\_SEQ\_GROUPS\_DEFAULTS@{AD1D\_SEQ\_GROUPS\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_SEQ\_GROUPS\_DEFAULTS}{AD1D\_SEQ\_GROUPS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+SEQ\+\_\+\+GROUPS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                         \(\backslash\)}
+\DoxyCodeLine{    [0U ... (MESD\_SEQUENCE\_GROUP\_CNT -\/ 1U)] =                   \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{ad1d__emu_8c_ac4830930aac94b4b384528b09e9fe3ca}{AD1D\_SEQUENCER\_DEFAULTS}}(\_\_VA\_ARGS\_\_)                    \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad1d__emu_8c_a87afe8e338dfe452c8f3402c7d3de3e5}\label{ad1d__emu_8c_a87afe8e338dfe452c8f3402c7d3de3e5}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_SEQUENCER\_CHANNELS@{AD1D\_SEQUENCER\_CHANNELS}}
+\index{AD1D\_SEQUENCER\_CHANNELS@{AD1D\_SEQUENCER\_CHANNELS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_SEQUENCER\_CHANNELS}{AD1D\_SEQUENCER\_CHANNELS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+SEQUENCER\+\_\+\+CHANNELS~9U}
+
+\mbox{\Hypertarget{ad1d__emu_8c_ac4830930aac94b4b384528b09e9fe3ca}\label{ad1d__emu_8c_ac4830930aac94b4b384528b09e9fe3ca}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_SEQUENCER\_DEFAULTS@{AD1D\_SEQUENCER\_DEFAULTS}}
+\index{AD1D\_SEQUENCER\_DEFAULTS@{AD1D\_SEQUENCER\_DEFAULTS}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_SEQUENCER\_DEFAULTS}{AD1D\_SEQUENCER\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD1\+D\+\_\+\+SEQUENCER\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                          \(\backslash\)}
+\DoxyCodeLine{    .measChannels           =                                   \(\backslash\)}
+\DoxyCodeLine{        AD1D\_MEAS\_CHANNELS\_DEFAULTS(\_\_VA\_ARGS\_\_),               \(\backslash\)}
+\DoxyCodeLine{    .channelCount           = 0U                                \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ad1d__emu_8c_aeeb9fff3de27bef6ee032d9b527ad594}\label{ad1d__emu_8c_aeeb9fff3de27bef6ee032d9b527ad594}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_Data\_t@{AD1D\_Data\_t}}
+\index{AD1D\_Data\_t@{AD1D\_Data\_t}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_Data\_t}{AD1D\_Data\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d1_d___data__s}{AD1\+D\+\_\+\+Data\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_aeeb9fff3de27bef6ee032d9b527ad594}{AD1\+D\+\_\+\+Data\+\_\+t}}}
+
+\mbox{\Hypertarget{ad1d__emu_8c_acc9ce226226db55ac8cebe2ad4bc540b}\label{ad1d__emu_8c_acc9ce226226db55ac8cebe2ad4bc540b}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_HwResources\_t@{AD1D\_HwResources\_t}}
+\index{AD1D\_HwResources\_t@{AD1D\_HwResources\_t}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_HwResources\_t}{AD1D\_HwResources\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d1_d___hw_resources__s}{AD1\+D\+\_\+\+Hw\+Resources\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_acc9ce226226db55ac8cebe2ad4bc540b}{AD1\+D\+\_\+\+Hw\+Resources\+\_\+t}}}
+
+\mbox{\Hypertarget{ad1d__emu_8c_ae68c26d3439d1475cd4f8057cd9c6fdd}\label{ad1d__emu_8c_ae68c26d3439d1475cd4f8057cd9c6fdd}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_Inputs\_t@{AD1D\_Inputs\_t}}
+\index{AD1D\_Inputs\_t@{AD1D\_Inputs\_t}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_Inputs\_t}{AD1D\_Inputs\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29}{AD1\+D\+\_\+\+Inputs\+\_\+e}} \mbox{\hyperlink{ad1d__emu_8c_ae68c26d3439d1475cd4f8057cd9c6fdd}{AD1\+D\+\_\+\+Inputs\+\_\+t}}}
+
+\mbox{\Hypertarget{ad1d__emu_8c_abb77a940fc8e53a100f83be6f9cec42d}\label{ad1d__emu_8c_abb77a940fc8e53a100f83be6f9cec42d}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MeasChannel\_t@{AD1D\_MeasChannel\_t}}
+\index{AD1D\_MeasChannel\_t@{AD1D\_MeasChannel\_t}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MeasChannel\_t}{AD1D\_MeasChannel\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d1_d___meas_channel__s}{AD1\+D\+\_\+\+Meas\+Channel\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_abb77a940fc8e53a100f83be6f9cec42d}{AD1\+D\+\_\+\+Meas\+Channel\+\_\+t}}}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a22f4d1bdc5efd3498720f6edce2c47ba}\label{ad1d__emu_8c_a22f4d1bdc5efd3498720f6edce2c47ba}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MuxChannel\_t@{AD1D\_MuxChannel\_t}}
+\index{AD1D\_MuxChannel\_t@{AD1D\_MuxChannel\_t}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MuxChannel\_t}{AD1D\_MuxChannel\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d1_d___mux_channel__s}{AD1\+D\+\_\+\+Mux\+Channel\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_a22f4d1bdc5efd3498720f6edce2c47ba}{AD1\+D\+\_\+\+Mux\+Channel\+\_\+t}}}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a065fd175027eba57c1b5c72581f67e19}\label{ad1d__emu_8c_a065fd175027eba57c1b5c72581f67e19}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MuxSelectName\_t@{AD1D\_MuxSelectName\_t}}
+\index{AD1D\_MuxSelectName\_t@{AD1D\_MuxSelectName\_t}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MuxSelectName\_t}{AD1D\_MuxSelectName\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763}{AD1\+D\+\_\+\+Mux\+Select\+Name\+\_\+e}} \mbox{\hyperlink{ad1d__emu_8c_a065fd175027eba57c1b5c72581f67e19}{AD1\+D\+\_\+\+Mux\+Select\+Name\+\_\+t}}}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a2d267b8898befbab9d31a60a910cf6e0}\label{ad1d__emu_8c_a2d267b8898befbab9d31a60a910cf6e0}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MuxState\_t@{AD1D\_MuxState\_t}}
+\index{AD1D\_MuxState\_t@{AD1D\_MuxState\_t}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MuxState\_t}{AD1D\_MuxState\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d1_d___mux_state__s}{AD1\+D\+\_\+\+Mux\+State\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_a2d267b8898befbab9d31a60a910cf6e0}{AD1\+D\+\_\+\+Mux\+State\+\_\+t}}}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a9d2d4a8ddfc4347d8e3d40f29e749361}\label{ad1d__emu_8c_a9d2d4a8ddfc4347d8e3d40f29e749361}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_Sequencer\_t@{AD1D\_Sequencer\_t}}
+\index{AD1D\_Sequencer\_t@{AD1D\_Sequencer\_t}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_Sequencer\_t}{AD1D\_Sequencer\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d1_d___sequencer__s}{AD1\+D\+\_\+\+Sequencer\+\_\+s}} \mbox{\hyperlink{ad1d__emu_8c_a9d2d4a8ddfc4347d8e3d40f29e749361}{AD1\+D\+\_\+\+Sequencer\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_Inputs\_e@{AD1D\_Inputs\_e}}
+\index{AD1D\_Inputs\_e@{AD1D\_Inputs\_e}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_Inputs\_e}{AD1D\_Inputs\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29}{AD1\+D\+\_\+\+Inputs\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_A0@{AD1D\_INPUT\_A0}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_A0@{AD1D\_INPUT\_A0}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a17f57d0302cb514547f9d51897fe6d5c}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a17f57d0302cb514547f9d51897fe6d5c}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+A0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_A1@{AD1D\_INPUT\_A1}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_A1@{AD1D\_INPUT\_A1}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a71ce77c509c0cce378dbe6547f9c286f}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a71ce77c509c0cce378dbe6547f9c286f}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+A1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_A2@{AD1D\_INPUT\_A2}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_A2@{AD1D\_INPUT\_A2}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a44627a4c5e7b4d96b929941b08436996}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a44627a4c5e7b4d96b929941b08436996}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+A2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_A3@{AD1D\_INPUT\_A3}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_A3@{AD1D\_INPUT\_A3}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a162fd96501005fbb8b756627e97eb0df}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a162fd96501005fbb8b756627e97eb0df}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+A3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_A4@{AD1D\_INPUT\_A4}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_A4@{AD1D\_INPUT\_A4}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a5b836faef95eacf6e942656b6cb9630f}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a5b836faef95eacf6e942656b6cb9630f}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+A4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_A5@{AD1D\_INPUT\_A5}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_A5@{AD1D\_INPUT\_A5}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a2f5e922b5a133702df650f087fbfe17a}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a2f5e922b5a133702df650f087fbfe17a}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+A5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_A6@{AD1D\_INPUT\_A6}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_A6@{AD1D\_INPUT\_A6}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a124a5829575a36f8e6a80211379a153a}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a124a5829575a36f8e6a80211379a153a}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+A6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_A7@{AD1D\_INPUT\_A7}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_A7@{AD1D\_INPUT\_A7}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a74b111efae002376196bc53b9e637068}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a74b111efae002376196bc53b9e637068}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+A7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_B0@{AD1D\_INPUT\_B0}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_B0@{AD1D\_INPUT\_B0}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a855e363f726ce621900a571d0a90bace}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a855e363f726ce621900a571d0a90bace}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+B0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_B1@{AD1D\_INPUT\_B1}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_B1@{AD1D\_INPUT\_B1}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a24d375e3f6612dde1681ba9b5e4cac1f}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a24d375e3f6612dde1681ba9b5e4cac1f}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+B1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_B2@{AD1D\_INPUT\_B2}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_B2@{AD1D\_INPUT\_B2}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a36aa3e35a6c03c62eef9dff97f1c085c}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a36aa3e35a6c03c62eef9dff97f1c085c}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+B2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_B3@{AD1D\_INPUT\_B3}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_B3@{AD1D\_INPUT\_B3}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a397ee2250033452f2898c713cfe0748c}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a397ee2250033452f2898c713cfe0748c}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+B3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_B4@{AD1D\_INPUT\_B4}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_B4@{AD1D\_INPUT\_B4}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29ac5e4077f4c591bbcc6331a425d27694a}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29ac5e4077f4c591bbcc6331a425d27694a}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+B4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_B5@{AD1D\_INPUT\_B5}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_B5@{AD1D\_INPUT\_B5}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a2979414fe4f0d1a5124ebbc8bc47063c}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a2979414fe4f0d1a5124ebbc8bc47063c}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+B5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_B6@{AD1D\_INPUT\_B6}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_B6@{AD1D\_INPUT\_B6}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29ae6a77dca8fdf5a6920148d698d2758ce}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29ae6a77dca8fdf5a6920148d698d2758ce}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+B6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_B7@{AD1D\_INPUT\_B7}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_B7@{AD1D\_INPUT\_B7}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+B7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_INPUT\_CNT@{AD1D\_INPUT\_CNT}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_INPUT\_CNT@{AD1D\_INPUT\_CNT}}}\mbox{\Hypertarget{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71}\label{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71}} 
+AD1\+D\+\_\+\+INPUT\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MuxSelectName\_e@{AD1D\_MuxSelectName\_e}}
+\index{AD1D\_MuxSelectName\_e@{AD1D\_MuxSelectName\_e}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MuxSelectName\_e}{AD1D\_MuxSelectName\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763}{AD1\+D\+\_\+\+Mux\+Select\+Name\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_TEMP\_INV\_A@{AD1D\_MUX\_SELECT\_TEMP\_INV\_A}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_TEMP\_INV\_A@{AD1D\_MUX\_SELECT\_TEMP\_INV\_A}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763aa9e755515c393774f1216fe8484bc210}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763aa9e755515c393774f1216fe8484bc210}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+INV\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_TEMP\_INV\_B@{AD1D\_MUX\_SELECT\_TEMP\_INV\_B}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_TEMP\_INV\_B@{AD1D\_MUX\_SELECT\_TEMP\_INV\_B}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a9c8e113bcefc9f5db9ec2561b5490ea1}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a9c8e113bcefc9f5db9ec2561b5490ea1}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+INV\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_TEMP\_HALFB@{AD1D\_MUX\_SELECT\_TEMP\_HALFB}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_TEMP\_HALFB@{AD1D\_MUX\_SELECT\_TEMP\_HALFB}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a3c94ba93d63d70a0667e8d003fc0e811}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a3c94ba93d63d70a0667e8d003fc0e811}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+HALFB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_TEMP\_AUX\_A@{AD1D\_MUX\_SELECT\_TEMP\_AUX\_A}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_TEMP\_AUX\_A@{AD1D\_MUX\_SELECT\_TEMP\_AUX\_A}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763acabb7b2ed80d2d5efe9de3840036c6f1}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763acabb7b2ed80d2d5efe9de3840036c6f1}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+AUX\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_TEMP\_AUX\_B@{AD1D\_MUX\_SELECT\_TEMP\_AUX\_B}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_TEMP\_AUX\_B@{AD1D\_MUX\_SELECT\_TEMP\_AUX\_B}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a2aed7f3e7b86f2520001607c5ef136a2}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a2aed7f3e7b86f2520001607c5ef136a2}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+AUX\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_TEMP\_AUX\_C@{AD1D\_MUX\_SELECT\_TEMP\_AUX\_C}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_TEMP\_AUX\_C@{AD1D\_MUX\_SELECT\_TEMP\_AUX\_C}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763aa713a6ef0bfde03d2931feda3f741570}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763aa713a6ef0bfde03d2931feda3f741570}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+TEMP\+\_\+\+AUX\+\_\+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_VOLT\_P24V@{AD1D\_MUX\_SELECT\_VOLT\_P24V}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_VOLT\_P24V@{AD1D\_MUX\_SELECT\_VOLT\_P24V}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a845ca75f63fe3671e7d204aca0b7c3e0}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a845ca75f63fe3671e7d204aca0b7c3e0}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+P24V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_VOLT\_P15V@{AD1D\_MUX\_SELECT\_VOLT\_P15V}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_VOLT\_P15V@{AD1D\_MUX\_SELECT\_VOLT\_P15V}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a37a609c91be49cab7a3285119c8a61bc}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a37a609c91be49cab7a3285119c8a61bc}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+P15V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_VOLT\_P5V@{AD1D\_MUX\_SELECT\_VOLT\_P5V}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_VOLT\_P5V@{AD1D\_MUX\_SELECT\_VOLT\_P5V}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a472161bfc029a57054697b14de3dfc63}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a472161bfc029a57054697b14de3dfc63}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+P5V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_VOLT\_P3V@{AD1D\_MUX\_SELECT\_VOLT\_P3V}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_VOLT\_P3V@{AD1D\_MUX\_SELECT\_VOLT\_P3V}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a5fe733c8b85cfe657ed1af3ca06c78f5}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a5fe733c8b85cfe657ed1af3ca06c78f5}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+P3V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_VOLT\_N15V@{AD1D\_MUX\_SELECT\_VOLT\_N15V}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_VOLT\_N15V@{AD1D\_MUX\_SELECT\_VOLT\_N15V}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a0841ab90c51c4cb854958f15c885a176}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a0841ab90c51c4cb854958f15c885a176}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+N15V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_VOLT\_TP@{AD1D\_MUX\_SELECT\_VOLT\_TP}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_VOLT\_TP@{AD1D\_MUX\_SELECT\_VOLT\_TP}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a5b5395f14f30d77ac8272b7b7e10e2ad}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763a5b5395f14f30d77ac8272b7b7e10e2ad}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+VOLT\+\_\+\+TP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AD1D\_MUX\_SELECT\_CNT@{AD1D\_MUX\_SELECT\_CNT}!ad1d\_emu.c@{ad1d\_emu.c}}\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MUX\_SELECT\_CNT@{AD1D\_MUX\_SELECT\_CNT}}}\mbox{\Hypertarget{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}\label{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}} 
+AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ad1d__emu_8c_a793ae8095e620913ed5f03833c1d5481}\label{ad1d__emu_8c_a793ae8095e620913ed5f03833c1d5481}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_enqueueMeasurementChannel@{AD1D\_enqueueMeasurementChannel}}
+\index{AD1D\_enqueueMeasurementChannel@{AD1D\_enqueueMeasurementChannel}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_enqueueMeasurementChannel()}{AD1D\_enqueueMeasurementChannel()}}
+{\footnotesize\ttfamily int16\+\_\+t AD1\+D\+\_\+enqueue\+Measurement\+Channel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t const}]{chan\+Name,  }\item[{MESD\+\_\+\+Sequence\+Group\+\_\+t const}]{seq\+Group,  }\item[{\mbox{\hyperlink{_i_qmath_lib_8h_a3a40eb7e42ca749c68ee683060ff050d}{\+\_\+iq31}} $\ast$const}]{mesd\+Dest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a042feb23aedcb668d60d4b879f1dbfc1}\label{ad1d__emu_8c_a042feb23aedcb668d60d4b879f1dbfc1}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_measurementsUpdate\_ts@{AD1D\_measurementsUpdate\_ts}}
+\index{AD1D\_measurementsUpdate\_ts@{AD1D\_measurementsUpdate\_ts}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_measurementsUpdate\_ts()}{AD1D\_measurementsUpdate\_ts()}}
+{\footnotesize\ttfamily bool AD1\+D\+\_\+measurements\+Update\+\_\+ts (\begin{DoxyParamCaption}\item[{MESD\+\_\+\+Sequence\+Group\+\_\+t const}]{seq\+Group,  }\item[{uint16\+\_\+t const}]{trigger\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a749ea38b5cb4c05e64381634cfafdb68}\label{ad1d__emu_8c_a749ea38b5cb4c05e64381634cfafdb68}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_releaseConfiguration@{AD1D\_releaseConfiguration}}
+\index{AD1D\_releaseConfiguration@{AD1D\_releaseConfiguration}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_releaseConfiguration()}{AD1D\_releaseConfiguration()}}
+{\footnotesize\ttfamily void AD1\+D\+\_\+release\+Configuration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ad1d__emu_8c_a5d57ca5bef82b3866a69fce00e49fdbe}\label{ad1d__emu_8c_a5d57ca5bef82b3866a69fce00e49fdbe}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_AdcInput\_emu@{AD1D\_AdcInput\_emu}}
+\index{AD1D\_AdcInput\_emu@{AD1D\_AdcInput\_emu}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_AdcInput\_emu}{AD1D\_AdcInput\_emu}}
+{\footnotesize\ttfamily uint16\+\_\+t AD1\+D\+\_\+\+Adc\+Input\+\_\+emu\mbox{[}\mbox{\hyperlink{ad1d__emu_8c_aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71}{AD1\+D\+\_\+\+INPUT\+\_\+\+CNT}}\mbox{]}}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a6859a7dfd47677acdc55d325df8f9cad}\label{ad1d__emu_8c_a6859a7dfd47677acdc55d325df8f9cad}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_Data@{AD1D\_Data}}
+\index{AD1D\_Data@{AD1D\_Data}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_Data}{AD1D\_Data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ad1d__emu_8c_aeeb9fff3de27bef6ee032d9b527ad594}{AD1\+D\+\_\+\+Data\+\_\+t}} AD1\+D\+\_\+\+Data = \mbox{\hyperlink{ad1d__emu_8c_aff18e8162bba502e11d37e62be04c177}{AD1\+D\+\_\+\+DATA\+\_\+\+DEFAULTS}}()}
+
+\mbox{\Hypertarget{ad1d__emu_8c_ace8003acac28b56efb20bb406cb0f867}\label{ad1d__emu_8c_ace8003acac28b56efb20bb406cb0f867}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_HwResources@{AD1D\_HwResources}}
+\index{AD1D\_HwResources@{AD1D\_HwResources}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_HwResources}{AD1D\_HwResources}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ad1d__emu_8c_acc9ce226226db55ac8cebe2ad4bc540b}{AD1\+D\+\_\+\+Hw\+Resources\+\_\+t}} const AD1\+D\+\_\+\+Hw\+Resources\mbox{[}AD1\+D\+\_\+\+CHANNEL\+\_\+\+CNT\mbox{]} = \mbox{\hyperlink{ad1d__emu_8c_ad9124706e75925499cfa0d88090439b4}{AD1\+D\+\_\+\+HARDWARE\+\_\+\+RESOURCES\+\_\+\+DEFAULTS}}()}
+
+\mbox{\Hypertarget{ad1d__emu_8c_a26ce67771c6cde0e2a8ac91bcf0ddb8e}\label{ad1d__emu_8c_a26ce67771c6cde0e2a8ac91bcf0ddb8e}} 
+\index{ad1d\_emu.c@{ad1d\_emu.c}!AD1D\_MuxInput\_emu@{AD1D\_MuxInput\_emu}}
+\index{AD1D\_MuxInput\_emu@{AD1D\_MuxInput\_emu}!ad1d\_emu.c@{ad1d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD1D\_MuxInput\_emu}{AD1D\_MuxInput\_emu}}
+{\footnotesize\ttfamily uint16\+\_\+t AD1\+D\+\_\+\+Mux\+Input\+\_\+emu\mbox{[}\mbox{\hyperlink{ad1d__emu_8c_a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef}{AD1\+D\+\_\+\+MUX\+\_\+\+SELECT\+\_\+\+CNT}}\mbox{]}}
+

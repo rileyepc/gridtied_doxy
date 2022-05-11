@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_p_w_m___input__s" xml:lang="en-US">
+<title>EPWM_Input_s Struct Reference</title>
+<indexterm><primary>EPWM_Input_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_struct_e_p_w_m___input__s_1a2bc949b88ec50d62370f890828c404b0">tbHalfPeriod</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_e_p_w_m___input__s_1ae200c33bfdb6b9e40bce487ba7c2396e">tbCompare</link> [<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_p_w_m___input__s_1ae200c33bfdb6b9e40bce487ba7c2396e"/><section>
+    <title>tbCompare</title>
+<indexterm><primary>tbCompare</primary><secondary>EPWM_Input_s</secondary></indexterm>
+<indexterm><primary>EPWM_Input_s</primary><secondary>tbCompare</secondary></indexterm>
+<para><computeroutput>uint16_t EPWM_Input_s::tbCompare[<link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___input__s_1a2bc949b88ec50d62370f890828c404b0"/><section>
+    <title>tbHalfPeriod</title>
+<indexterm><primary>tbHalfPeriod</primary><secondary>EPWM_Input_s</secondary></indexterm>
+<indexterm><primary>EPWM_Input_s</primary><secondary>tbHalfPeriod</secondary></indexterm>
+<para><computeroutput>uint16_t EPWM_Input_s::tbHalfPeriod</computeroutput></para></section>
+</section>
+</section>

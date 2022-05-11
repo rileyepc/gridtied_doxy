@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacegridtied_1_1ccstudiodss" xml:lang="en-US">
+<title>gridtied.ccstudiodss Namespace Reference</title>
+<indexterm><primary>gridtied.ccstudiodss</primary></indexterm>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacegridtied_1_1ccstudiodss_1a3425cc9892d644a13c857360b0aa76f2">build_command</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacegridtied_1_1ccstudiodss_1a43d6347acaf78217c1dc724edbbc3e63">list_targets_command</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespacegridtied_1_1ccstudiodss_1a3425cc9892d644a13c857360b0aa76f2"/><section>
+    <title>build_command</title>
+<indexterm><primary>build_command</primary><secondary>gridtied.ccstudiodss</secondary></indexterm>
+<indexterm><primary>gridtied.ccstudiodss</primary><secondary>build_command</secondary></indexterm>
+<para><computeroutput>gridtied.ccstudiodss.build_command</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;ccstudiodss.cli.create_build_command(
+2 &#32;&#32;&#32;&#32;default_targets=[gridtied.default_target],
+3 &#32;&#32;&#32;&#32;project_root=gridtied.project_root,
+4 &#32;&#32;&#32;&#32;project_name=gridtied.project_name,
+5 )
+</programlisting></section>
+<anchor xml:id="_namespacegridtied_1_1ccstudiodss_1a43d6347acaf78217c1dc724edbbc3e63"/><section>
+    <title>list_targets_command</title>
+<indexterm><primary>list_targets_command</primary><secondary>gridtied.ccstudiodss</secondary></indexterm>
+<indexterm><primary>gridtied.ccstudiodss</primary><secondary>list_targets_command</secondary></indexterm>
+<para><computeroutput>gridtied.ccstudiodss.list_targets_command</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;ccstudiodss.cli.create_list_targets_command(
+2 &#32;&#32;&#32;&#32;project_name=gridtied.project_name,
+3 &#32;&#32;&#32;&#32;default_project_root=gridtied.project_root,
+4 )
+</programlisting></section>
+</section>
+</section>

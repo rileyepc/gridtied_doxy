@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dll_epc_control_8cpp" xml:lang="en-US">
+<title>sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp File Reference</title>
+<indexterm><primary>sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;dllEpcControl.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_dll_epc_control_8cpp_1a289ad72e687c7381255a91e59c12764a">SIL_initializeLibraryDll</link> (double tStep, <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link> solverType, <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link> mdlIntent, char *pmvsPath)</para>
+</listitem>
+            <listitem><para>void <link linkend="_dll_epc_control_8cpp_1a7b5796b8060e27bb9c911ad0f1094275">SIL_updateOutputDll</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_dll_epc_control_8cpp_1acdd850a2ed7c3544fce1632cbfb7d55b">SIL_updateStateDll</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_dll_epc_control_8cpp_1a11f1643a802279df17997436b335fdd1">SIL_writeSnapshotDll</link> (double tNow, uint16_t instanceNumber, char *tempPath)</para>
+</listitem>
+            <listitem><para>void <link linkend="_dll_epc_control_8cpp_1afbdcec4e2cd26b79b8ea364c524738bc">SIL_readSnapshotDll</link> (uint16_t instanceNumber, char *tempPath)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca">SIL_LIBRARY_DLL</link> <link linkend="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9">SIL_sPorts_t</link> * <link linkend="_dll_epc_control_8cpp_1a6342e8eb4f45e10fba6a6a4c2869029a">SIL_PortsDll</link> = &amp;<link linkend="_lib_epc_control_8h_1aa8c520d7306f12a6098f3cb4fdd3d1ea">SIL_Ports</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_dll_epc_control_8cpp_1a289ad72e687c7381255a91e59c12764a"/><section>
+    <title>SIL_initializeLibraryDll()</title>
+<indexterm><primary>SIL_initializeLibraryDll</primary><secondary>dllEpcControl.cpp</secondary></indexterm>
+<indexterm><primary>dllEpcControl.cpp</primary><secondary>SIL_initializeLibraryDll</secondary></indexterm>
+<para><computeroutput>void SIL_initializeLibraryDll (double tStep, <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link> solverType, <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link> mdlIntent, char * pmvsPath)</computeroutput></para></section>
+<anchor xml:id="_dll_epc_control_8cpp_1afbdcec4e2cd26b79b8ea364c524738bc"/><section>
+    <title>SIL_readSnapshotDll()</title>
+<indexterm><primary>SIL_readSnapshotDll</primary><secondary>dllEpcControl.cpp</secondary></indexterm>
+<indexterm><primary>dllEpcControl.cpp</primary><secondary>SIL_readSnapshotDll</secondary></indexterm>
+<para><computeroutput>void SIL_readSnapshotDll (uint16_t instanceNumber, char * tempPath)</computeroutput></para></section>
+<anchor xml:id="_dll_epc_control_8cpp_1a7b5796b8060e27bb9c911ad0f1094275"/><section>
+    <title>SIL_updateOutputDll()</title>
+<indexterm><primary>SIL_updateOutputDll</primary><secondary>dllEpcControl.cpp</secondary></indexterm>
+<indexterm><primary>dllEpcControl.cpp</primary><secondary>SIL_updateOutputDll</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutputDll (double tNow)</computeroutput></para></section>
+<anchor xml:id="_dll_epc_control_8cpp_1acdd850a2ed7c3544fce1632cbfb7d55b"/><section>
+    <title>SIL_updateStateDll()</title>
+<indexterm><primary>SIL_updateStateDll</primary><secondary>dllEpcControl.cpp</secondary></indexterm>
+<indexterm><primary>dllEpcControl.cpp</primary><secondary>SIL_updateStateDll</secondary></indexterm>
+<para><computeroutput>void SIL_updateStateDll (double tNow)</computeroutput></para></section>
+<anchor xml:id="_dll_epc_control_8cpp_1a11f1643a802279df17997436b335fdd1"/><section>
+    <title>SIL_writeSnapshotDll()</title>
+<indexterm><primary>SIL_writeSnapshotDll</primary><secondary>dllEpcControl.cpp</secondary></indexterm>
+<indexterm><primary>dllEpcControl.cpp</primary><secondary>SIL_writeSnapshotDll</secondary></indexterm>
+<para><computeroutput>void SIL_writeSnapshotDll (double tNow, uint16_t instanceNumber, char * tempPath)</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_dll_epc_control_8cpp_1a6342e8eb4f45e10fba6a6a4c2869029a"/><section>
+    <title>SIL_PortsDll</title>
+<indexterm><primary>SIL_PortsDll</primary><secondary>dllEpcControl.cpp</secondary></indexterm>
+<indexterm><primary>dllEpcControl.cpp</primary><secondary>SIL_PortsDll</secondary></indexterm>
+<para><computeroutput><link linkend="_dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca">SIL_LIBRARY_DLL</link> <link linkend="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9">SIL_sPorts_t</link>* SIL_PortsDll = &amp;<link linkend="_lib_epc_control_8h_1aa8c520d7306f12a6098f3cb4fdd3d1ea">SIL_Ports</link></computeroutput></para></section>
+</section>
+</section>

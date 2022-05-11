@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_table_info__s" kind="struct" language="C++" prot="public">
+    <compoundname>TableInfo_s</compoundname>
+    <includes refid="lib_epc_control_interface_8h" local="no">libEpcControlInterface.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t TableInfo_s::zone</definition>
+        <argsstring></argsstring>
+        <name>zone</name>
+        <qualifiedname>TableInfo_s::zone</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="87" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t TableInfo_s::curve</definition>
+        <argsstring></argsstring>
+        <name>curve</name>
+        <qualifiedname>TableInfo_s::curve</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="88" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t TableInfo_s::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <qualifiedname>TableInfo_s::index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="89" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" prot="public" static="no" mutable="no">
+        <type><ref refid="lib_epc_control_interface_8h_1ad622f3f4c94c42387e716c83aeefc71c" kindref="member">TableSetter_t</ref></type>
+        <definition>TableSetter_t TableInfo_s::setter</definition>
+        <argsstring></argsstring>
+        <name>setter</name>
+        <qualifiedname>TableInfo_s::setter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="90" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>TableInfo_s</label>
+        <link refid="struct_table_info__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>setter</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TableSetter_u</label>
+        <link refid="union_table_setter__u"/>
+      </node>
+    </collaborationgraph>
+    <location file="sil/libEpcControlInterface.h" line="86" column="1" bodyfile="sil/libEpcControlInterface.h" bodystart="86" bodyend="91"/>
+    <listofallmembers>
+      <member refid="struct_table_info__s_1a1c0db1eeb05d334c5959bfb8b2a8e352" prot="public" virt="non-virtual"><scope>TableInfo_s</scope><name>curve</name></member>
+      <member refid="struct_table_info__s_1aa5988f286dd8de10a8ea4bdd0bfdef26" prot="public" virt="non-virtual"><scope>TableInfo_s</scope><name>index</name></member>
+      <member refid="struct_table_info__s_1abd099293e66a89d4caaa5c9af8b22f64" prot="public" virt="non-virtual"><scope>TableInfo_s</scope><name>setter</name></member>
+      <member refid="struct_table_info__s_1abee788ab5eccee64fa824443ef7f9bdf" prot="public" virt="non-virtual"><scope>TableInfo_s</scope><name>zone</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,82 @@
+\hypertarget{application_8h}{}\doxysection{application.\+h File Reference}
+\label{application_8h}\index{application.h@{application.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}io\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fault\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}data\+Logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}authorization.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cand.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}digital\+IO.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e}{J1939\+\_\+\+INTERFACE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{application_8h_ae8d2212f7c053cff78f8630589545e61}{J1939\+\_\+\+INTERFACE\+\_\+\+DEFAULTS}}(...)~\{ .node\+ID = 0x\+F7, .master\+Addr = 0x41, .baud = CAN\+\_\+\+BAUDRATE\+\_\+500K, .timeout = 1000, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{application_8h_aae45035e0712c66641eda8c3b74e64d8}{APP\+\_\+set\+Fault\+Config}} (uint16\+\_\+t unused)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Fault\+Configuration \mbox{\hyperlink{application_8h_aa9c39f99a87f5a9bd9b27fe269b1de04}{app\+Fault\+Configuration}} \mbox{[}FLT\+\_\+\+CFG\+\_\+\+ARRAY\+\_\+\+LENGTH\mbox{]}
+\item 
+\mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e}{J1939\+\_\+\+INTERFACE}} \mbox{\hyperlink{application_8h_aad4f26eabbeb37bd61a3bb2c76195043}{j1939\+Interface}}
+\item 
+volatile bool \mbox{\hyperlink{application_8h_a12358381f3cac018871d7c6b73a404ff}{ee\+Handler\+Use\+Defaults}}
+\item 
+AUTH\+\_\+\+Nv \mbox{\hyperlink{application_8h_a52957b0633643716121c30ca8ac20e62}{authorization\+\_\+nv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{application_8h_ae8d2212f7c053cff78f8630589545e61}\label{application_8h_ae8d2212f7c053cff78f8630589545e61}} 
+\index{application.h@{application.h}!J1939\_INTERFACE\_DEFAULTS@{J1939\_INTERFACE\_DEFAULTS}}
+\index{J1939\_INTERFACE\_DEFAULTS@{J1939\_INTERFACE\_DEFAULTS}!application.h@{application.h}}
+\doxysubsubsection{\texorpdfstring{J1939\_INTERFACE\_DEFAULTS}{J1939\_INTERFACE\_DEFAULTS}}
+{\footnotesize\ttfamily \#define J1939\+\_\+\+INTERFACE\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~\{ .node\+ID = 0x\+F7, .master\+Addr = 0x41, .baud = CAN\+\_\+\+BAUDRATE\+\_\+500K, .timeout = 1000, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+\}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]this belongs somewhere else \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{application_8h_aae45035e0712c66641eda8c3b74e64d8}\label{application_8h_aae45035e0712c66641eda8c3b74e64d8}} 
+\index{application.h@{application.h}!APP\_setFaultConfig@{APP\_setFaultConfig}}
+\index{APP\_setFaultConfig@{APP\_setFaultConfig}!application.h@{application.h}}
+\doxysubsubsection{\texorpdfstring{APP\_setFaultConfig()}{APP\_setFaultConfig()}}
+{\footnotesize\ttfamily void APP\+\_\+set\+Fault\+Config (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{unused }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{application_8h_aa9c39f99a87f5a9bd9b27fe269b1de04}\label{application_8h_aa9c39f99a87f5a9bd9b27fe269b1de04}} 
+\index{application.h@{application.h}!appFaultConfiguration@{appFaultConfiguration}}
+\index{appFaultConfiguration@{appFaultConfiguration}!application.h@{application.h}}
+\doxysubsubsection{\texorpdfstring{appFaultConfiguration}{appFaultConfiguration}}
+{\footnotesize\ttfamily Fault\+Configuration app\+Fault\+Configuration\mbox{[}FLT\+\_\+\+CFG\+\_\+\+ARRAY\+\_\+\+LENGTH\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{application_8h_a52957b0633643716121c30ca8ac20e62}\label{application_8h_a52957b0633643716121c30ca8ac20e62}} 
+\index{application.h@{application.h}!authorization\_nv@{authorization\_nv}}
+\index{authorization\_nv@{authorization\_nv}!application.h@{application.h}}
+\doxysubsubsection{\texorpdfstring{authorization\_nv}{authorization\_nv}}
+{\footnotesize\ttfamily AUTH\+\_\+\+Nv authorization\+\_\+nv\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{application_8h_a12358381f3cac018871d7c6b73a404ff}\label{application_8h_a12358381f3cac018871d7c6b73a404ff}} 
+\index{application.h@{application.h}!eeHandlerUseDefaults@{eeHandlerUseDefaults}}
+\index{eeHandlerUseDefaults@{eeHandlerUseDefaults}!application.h@{application.h}}
+\doxysubsubsection{\texorpdfstring{eeHandlerUseDefaults}{eeHandlerUseDefaults}}
+{\footnotesize\ttfamily volatile bool ee\+Handler\+Use\+Defaults\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{application_8h_aad4f26eabbeb37bd61a3bb2c76195043}\label{application_8h_aad4f26eabbeb37bd61a3bb2c76195043}} 
+\index{application.h@{application.h}!j1939Interface@{j1939Interface}}
+\index{j1939Interface@{j1939Interface}!application.h@{application.h}}
+\doxysubsubsection{\texorpdfstring{j1939Interface}{j1939Interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_j1939___i_n_t_e_r_f_a_c_e}{J1939\+\_\+\+INTERFACE}} j1939\+Interface\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_p_w_m___action_event__s" kind="struct" language="C++" prot="public">
+    <compoundname>EPWM_ActionEvent_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_p_w_m___action_event__s_1a46e43c8bf3d0c5e9d127f60fad7ced67" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EPWM_ActionEvent_s::aqChannel</definition>
+        <argsstring></argsstring>
+        <name>aqChannel</name>
+        <qualifiedname>EPWM_ActionEvent_s::aqChannel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="182" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___action_event__s_1ac721d7014c04a283a3408867a27a410e" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a5ca83038074430b3815c96c95ed0b3bc" kindref="member">EPWM_AqEventSource_t</ref></type>
+        <definition>EPWM_AqEventSource_t EPWM_ActionEvent_s::aqSource</definition>
+        <argsstring></argsstring>
+        <name>aqSource</name>
+        <qualifiedname>EPWM_ActionEvent_s::aqSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="183" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___action_event__s_1a7aaecc45da2bb7e844d7212ec41b0c40" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1af5665a9cb9ae25c32d428572226d8650" kindref="member">EPWM_AqOutputAction_t</ref></type>
+        <definition>EPWM_AqOutputAction_t EPWM_ActionEvent_s::aqAction</definition>
+        <argsstring></argsstring>
+        <name>aqAction</name>
+        <qualifiedname>EPWM_ActionEvent_s::aqAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="184" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___action_event__s_1a4c911c50fe306886de9a44ce2bb9784b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_ActionEvent_s::tOffset</definition>
+        <argsstring></argsstring>
+        <name>tOffset</name>
+        <qualifiedname>EPWM_ActionEvent_s::tOffset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="185" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/emu/epwm_emu.c" line="181" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="181" bodyend="186"/>
+    <listofallmembers>
+      <member refid="struct_e_p_w_m___action_event__s_1a7aaecc45da2bb7e844d7212ec41b0c40" prot="public" virt="non-virtual"><scope>EPWM_ActionEvent_s</scope><name>aqAction</name></member>
+      <member refid="struct_e_p_w_m___action_event__s_1a46e43c8bf3d0c5e9d127f60fad7ced67" prot="public" virt="non-virtual"><scope>EPWM_ActionEvent_s</scope><name>aqChannel</name></member>
+      <member refid="struct_e_p_w_m___action_event__s_1ac721d7014c04a283a3408867a27a410e" prot="public" virt="non-virtual"><scope>EPWM_ActionEvent_s</scope><name>aqSource</name></member>
+      <member refid="struct_e_p_w_m___action_event__s_1a4c911c50fe306886de9a44ce2bb9784b" prot="public" virt="non-virtual"><scope>EPWM_ActionEvent_s</scope><name>tOffset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

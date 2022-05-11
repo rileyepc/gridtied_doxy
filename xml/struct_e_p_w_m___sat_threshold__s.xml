@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_p_w_m___sat_threshold__s" kind="struct" language="C++" prot="public">
+    <compoundname>EPWM_SatThreshold_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_p_w_m___sat_threshold__s_1a07196715a9e8d595395b247b9e2fb2ad" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EPWM_SatThreshold_s::upper</definition>
+        <argsstring></argsstring>
+        <name>upper</name>
+        <qualifiedname>EPWM_SatThreshold_s::upper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="151" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___sat_threshold__s_1aa9160878a06c12b67aa08d8b03397abb" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EPWM_SatThreshold_s::lower</definition>
+        <argsstring></argsstring>
+        <name>lower</name>
+        <qualifiedname>EPWM_SatThreshold_s::lower</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="152" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/emu/epwm_emu.c" line="150" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="150" bodyend="153"/>
+    <listofallmembers>
+      <member refid="struct_e_p_w_m___sat_threshold__s_1aa9160878a06c12b67aa08d8b03397abb" prot="public" virt="non-virtual"><scope>EPWM_SatThreshold_s</scope><name>lower</name></member>
+      <member refid="struct_e_p_w_m___sat_threshold__s_1a07196715a9e8d595395b247b9e2fb2ad" prot="public" virt="non-virtual"><scope>EPWM_SatThreshold_s</scope><name>upper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

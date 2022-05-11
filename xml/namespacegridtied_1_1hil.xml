@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="namespacegridtied_1_1hil" kind="namespace" language="Python">
+    <compoundname>gridtied::hil</compoundname>
+    <innernamespace refid="namespacegridtied_1_1hil_1_1cli">gridtied::hil::cli</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1hil_1_1core">gridtied::hil::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gridtied/hil/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

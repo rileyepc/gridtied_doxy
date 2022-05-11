@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_c_u___output__s" xml:lang="en-US">
+<title>ECU_Output_s Struct Reference</title>
+<indexterm><primary>ECU_Output_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1a91ca8f855368d75a84ea6d715bc48154">ECU_sOutputStatus_t</link> <link linkend="_struct_e_c_u___output__s_1a4e3501ea02be276acf88cb2cf969a317">status</link></para>
+</listitem>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1abf35ce5a3f7497508d37cd9a7b17ceab">ECU_sOutputMonitor_t</link> <link linkend="_struct_e_c_u___output__s_1a2e71a54ad9c90bee28d7f992ba7b17c4">monitor</link></para>
+</listitem>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1a69eb3a659497728991a036c60b6ab1f1">ECU_sOutputControl_t</link> <link linkend="_struct_e_c_u___output__s_1aafca3881519e887e1d837515d4cb6e0d">control</link></para>
+</listitem>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1aa3e8d51ab0e8cc8105dffab2220088a2">ECU_sOutputTlcPdo_t</link> <link linkend="_struct_e_c_u___output__s_1a936be796bbac9910ac1a72158eca02ba">tlcPdo</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output__s_1a0bfaad7c21729d6578bd209662a81948">debug</link> [32U]</para>
+</listitem>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1a23fb932f4364ed64971bf5b39f30cd52">ECU_sOutputReference_t</link> <link linkend="_struct_e_c_u___output__s_1accf89128f04bc9745220b7e028d76b65">refOut</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_c_u___output__s_1aafca3881519e887e1d837515d4cb6e0d"/><section>
+    <title>control</title>
+<indexterm><primary>control</primary><secondary>ECU_Output_s</secondary></indexterm>
+<indexterm><primary>ECU_Output_s</primary><secondary>control</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1a69eb3a659497728991a036c60b6ab1f1">ECU_sOutputControl_t</link> ECU_Output_s::control</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output__s_1a0bfaad7c21729d6578bd209662a81948"/><section>
+    <title>debug</title>
+<indexterm><primary>debug</primary><secondary>ECU_Output_s</secondary></indexterm>
+<indexterm><primary>ECU_Output_s</primary><secondary>debug</secondary></indexterm>
+<para><computeroutput>double ECU_Output_s::debug[32U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output__s_1a2e71a54ad9c90bee28d7f992ba7b17c4"/><section>
+    <title>monitor</title>
+<indexterm><primary>monitor</primary><secondary>ECU_Output_s</secondary></indexterm>
+<indexterm><primary>ECU_Output_s</primary><secondary>monitor</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1abf35ce5a3f7497508d37cd9a7b17ceab">ECU_sOutputMonitor_t</link> ECU_Output_s::monitor</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output__s_1accf89128f04bc9745220b7e028d76b65"/><section>
+    <title>refOut</title>
+<indexterm><primary>refOut</primary><secondary>ECU_Output_s</secondary></indexterm>
+<indexterm><primary>ECU_Output_s</primary><secondary>refOut</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1a23fb932f4364ed64971bf5b39f30cd52">ECU_sOutputReference_t</link> ECU_Output_s::refOut</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output__s_1a4e3501ea02be276acf88cb2cf969a317"/><section>
+    <title>status</title>
+<indexterm><primary>status</primary><secondary>ECU_Output_s</secondary></indexterm>
+<indexterm><primary>ECU_Output_s</primary><secondary>status</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1a91ca8f855368d75a84ea6d715bc48154">ECU_sOutputStatus_t</link> ECU_Output_s::status</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output__s_1a936be796bbac9910ac1a72158eca02ba"/><section>
+    <title>tlcPdo</title>
+<indexterm><primary>tlcPdo</primary><secondary>ECU_Output_s</secondary></indexterm>
+<indexterm><primary>ECU_Output_s</primary><secondary>tlcPdo</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1aa3e8d51ab0e8cc8105dffab2220088a2">ECU_sOutputTlcPdo_t</link> ECU_Output_s::tlcPdo</computeroutput></para></section>
+</section>
+</section>

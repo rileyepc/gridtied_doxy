@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_c_u___input_control__s" xml:lang="en-US">
+<title>ECU_InputControl_s Struct Reference</title>
+<indexterm><primary>ECU_InputControl_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_struct_e_c_u___input_control__s_1a6f2be2fab0203c66d6bf02a97a8ebd7f">runRequest</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_c_u___input_control__s_1a6f2be2fab0203c66d6bf02a97a8ebd7f"/><section>
+    <title>runRequest</title>
+<indexterm><primary>runRequest</primary><secondary>ECU_InputControl_s</secondary></indexterm>
+<indexterm><primary>ECU_InputControl_s</primary><secondary>runRequest</secondary></indexterm>
+<para><computeroutput>double ECU_InputControl_s::runRequest</computeroutput></para></section>
+</section>
+</section>

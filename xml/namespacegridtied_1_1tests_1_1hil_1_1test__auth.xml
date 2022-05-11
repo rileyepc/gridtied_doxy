@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="namespacegridtied_1_1tests_1_1hil_1_1test__auth" kind="namespace" language="Python">
+    <compoundname>gridtied::tests::hil::test_auth</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gridtied/tests/hil/test_auth.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_application_8c" xml:lang="en-US">
+<title>application.c File Reference</title>
+<indexterm><primary>application.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;application.h&quot;
+#include &quot;revisionInfo.h&quot;
+#include &quot;hardware.h&quot;
+#include &quot;channelMappingManager.h&quot;
+#include &quot;canInterface.h&quot;
+#include &quot;canInterfaceGen.h&quot;
+#include &quot;referenceHandler.h&quot;
+#include &quot;gridSupport.h&quot;
+#include &quot;topLevelControl.h&quot;
+#include &quot;afe.h&quot;
+#include &quot;dcdcControlI.h&quot;
+#include &quot;powerConversionControl.h&quot;
+#include &quot;phaseConfigDetectI.h&quot;
+#include &quot;phaseControlI.h&quot;
+#include &quot;filterObserverI.h&quot;
+#include &quot;phasePllI.h&quot;
+#include &quot;auxiliaryPllI.h&quot;
+#include &quot;islandControlI.h&quot;
+#include &quot;protectedBusControlI.h&quot;
+#include &quot;phaseCurrentControlI.h&quot;
+#include &quot;adaptiveHarmonicControlI.h&quot;
+#include &quot;synchronousHarmonicControlI.h&quot;
+#include &quot;mppt.h&quot;
+#include &quot;engDebug.h&quot;
+#include &quot;syntheticInertiaI.h&quot;
+#include &quot;ABB_libPrimaryControl.h&quot;
+#include &quot;modulator.h&quot;
+#include &quot;system.h&quot;
+#include &quot;scheduler.h&quot;
+#include &quot;modbusHandler.h&quot;
+#include &quot;sunspec.h&quot;
+#include &quot;ccp.h&quot;
+#include &quot;dataLogger.h&quot;
+#include &quot;eepromHandler.h&quot;
+#include &quot;authorization.h&quot;
+#include &quot;deviceThermalModel.h&quot;
+#include &quot;supervisor.h&quot;
+#include &quot;IEEE1547.h&quot;
+#include &quot;gridMonitor.h&quot;
+#include &quot;protectionsI.h&quot;
+#include &quot;fanControl.h&quot;
+#include &quot;environmentControl.h&quot;
+#include &quot;fpgaRegs.h&quot;
+#include &quot;pwmd.h&quot;
+#include &quot;measurementd.h&quot;
+#include &quot;led.h&quot;
+#include &quot;simulateFeedback.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_application_8c_1aac167759466a8cf18f6e33417e546f4d">APP_EEPROM_SECTIONS_DEFAULTS</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0c">APP_EeSections_e</link> { 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cafaa8efd816207382b37685f325b9e905">EE_SECTION_HW_DEF</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca5b604da0f4df6079fe5292b92bfc373d">EE_SECTION_CAN_INTERFACE</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cab606ecab53108202be513deb4a58ec8e">EE_SECTION_FAULT_CONFIGURATION</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cab90bdca4b282c91f047bbe623064b727">EE_SECTION_IO</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca807c4741ca242e85cde6002ef34a6442">EE_SECTION_AFE</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca88990d79422fa7da5e15b20c0d9e307b">EE_SECTION_LINE_MONITOR</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca954db3b77be99dea319a43ab324eb6f4">EE_SECTION_SERIAL</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cad8403b322b446430f4268656f5ea1f1b">EE_SECTION_DATA_LOGGER</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3c2a801b89624bb7162f534ff7e1c5a3">EE_SECTION_DCDC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca8bb0d268a7b0de50562de9674a25a79a">EE_SECTION_CAN_TX_RATES</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caeb0038013ccb79efe69f5031a5e4a115">EE_SECTION_PCC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca2a301d6537ed2337c1a60c2d3c9d3cca">EE_SECTION_PCC_PPC</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caaa3dcb19f366aa6806a021da32f56708">EE_SECTION_PCC_PPC_HFO_I</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caaf381ed7f6f681889cf7ddb76bcd5c4d">EE_SECTION_PCC_PPC_HFO_C</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca852e0ffce3358517fa91af38ae2be7f0">EE_SECTION_PCC_PPC_PLL</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca80a77c2f40c7a83ba2ab15359f1ddc1c">EE_SECTION_PCC_PPC_APL</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca12d69ddd64b69b238702bb139f5e92a0">EE_SECTION_PCC_PPC_PBC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cae80f5549624ec7fae961ab4716853a70">EE_SECTION_PCC_PPC_ISL</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca4bfbbce40f7d6153024f07c5a78dba06">EE_SECTION_PCC_PPC_SPC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca1e7642aa30a6ffdc91d43a195ace932f">EE_SECTION_PCC_PPC_AHC</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca345b8a03cd9d00545ecf5adfa24af0fc">EE_SECTION_PCC_PPC_SHC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7ccfb126ba1ce03589b04ab2fac322fe">EE_SECTION_MOD_AC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caf8163c3ac13fca88c155c8f2fcf57338">EE_SECTION_MOD_DC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac0cd3a438d71426e750afe23ee0cd934">EE_SECTION_PWMD</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca0f7531ffc48f9cb8c22510e545731139">EE_SECTION_MESD</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca12a1bf6da5fd07bd4a7d3e8530651b54">EE_SECTION_PROT</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caacbc0a3960b1f9a9419f30f7f13c3c77">EE_SECTION_DTM</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3b9bad817b4fd842bfe6378302cb91b5">EE_SECTION_SIM</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7f3ade36b71b86fe87672ea6fcc9f6a6">EE_SECTION_CMM</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac03402ad085ff001adec8530b3d45ac3">EE_SECTION_PCD</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca6edfd7f17bf11e988322ad5f6f2f27dc">EE_SECTION_TLC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3c07baef931f722703a270098dabcfbb">EE_SECTION_ABB</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cae932a4de5d6360b8eaeec095c8eea17e">EE_SECTION_MPP</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca5a5adfc7ba2ca988fb6ef686832308dc">EE_SECTION_FC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cabbcaf74b948a8b295de0a2affa3b2cd6">EE_SECTION_EDB</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca8a31e73a6668674b1d692c2fbc07adc9">EE_SECTION_ENV</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac37dbaf9eec105942564578876fe93ae">EE_SECTION_AUTH</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7d4a520ed031f19ae64a5bf930106d01">EE_SECTION_GSU</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac7f450a035bb629e4f9a94222799c735">EE_SECTION_REF</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7c7d1d2875bcde7b871748246745c106">EE_SECTION_VSG</link>
+, 
+<link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca058ab488fb1988683987bc4026ae4253">EE_SECTION_EI</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caf877d1c8e669a52955e7fbe14a465d6b">EE_SECTION_SUNSPEC</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caab95e72862b693b23a72b03a37bea0c1">EE_SECTION_COUNTERS</link>
+, <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1">EE_SECTION_COUNT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_application_8c_1a0e95431f48ee71c1040217b94766ffcf">application_init</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_application_8c_1aae45035e0712c66641eda8c3b74e64d8">APP_setFaultConfig</link> (uint16_t unused)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>MOD_AcModulator_t <link linkend="_application_8c_1a99999c420aa2ec727cdcdd61cc5737e2">PCC_AcModulator</link></para>
+</listitem>
+            <listitem><para>MOD_DcModulator_t <link linkend="_application_8c_1a6f21714ffb159d1406870dc7d294687c">DCDC_DcModulator</link></para>
+</listitem>
+            <listitem><para>FaultConfiguration <link linkend="_application_8c_1aa9c39f99a87f5a9bd9b27fe269b1de04">appFaultConfiguration</link> [FLT_CFG_ARRAY_LENGTH]</para>
+</listitem>
+            <listitem><para><link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e">J1939_INTERFACE</link> <link linkend="_application_8c_1aad4f26eabbeb37bd61a3bb2c76195043">j1939Interface</link> = <link linkend="_application_8h_1ae8d2212f7c053cff78f8630589545e61">J1939_INTERFACE_DEFAULTS</link>()</para>
+</listitem>
+            <listitem><para>AUTH_Nv <link linkend="_application_8c_1a52957b0633643716121c30ca8ac20e62">authorization_nv</link></para>
+</listitem>
+            <listitem><para>volatile bool <link linkend="_application_8c_1a12358381f3cac018871d7c6b73a404ff">eeHandlerUseDefaults</link> = false</para>
+</listitem>
+            <listitem><para>AUTH_Class <link linkend="_application_8c_1ad7db6abdd9f1159237959f51aa3bb13b">authorization_this</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_application_8c_1aac167759466a8cf18f6e33417e546f4d"/><section>
+    <title>APP_EEPROM_SECTIONS_DEFAULTS</title>
+<indexterm><primary>APP_EEPROM_SECTIONS_DEFAULTS</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>APP_EEPROM_SECTIONS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define APP_EEPROM_SECTIONS_DEFAULTS</computeroutput></para>
+<para><note><title>Note</title>
+
+<para>Section revision must be updated under the following conditions:<orderedlist>
+<listitem>
+<para>Any addition, subtraction, or size change to a meta parameter section (meta ruins everything)</para>
+</listitem><listitem>
+<para>Removing one or more parameters from a section</para>
+</listitem><listitem>
+<para>Changing the size of an existing parameter in a section</para>
+</listitem><listitem>
+<para>Re-ordering parameters within a section</para>
+</listitem><listitem>
+<para>Adding a parameter anywhere other than to the end of a section</para>
+</listitem></orderedlist>
+</para>
+</note>
+In the future this should/will be managed and generated automatically by PM, preferably with memory storage managed by an OS file system running on a SoC.</para>
+
+<para><note><title>Note</title>
+
+<para>uuids are used here to uniquely identify a parameter group, even if its name or index changes, and conversely prevent a parameter section&apos;s data from being loaded into the wrong section in RAM. UUIDs can be generated with the following python code: </para>
+</note>
+</para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0c"/><section>
+    <title>APP_EeSections_e</title>
+<indexterm><primary>APP_EeSections_e</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>APP_EeSections_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0c">APP_EeSections_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>EE_SECTION_HW_DEF</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_HW_DEF</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cafaa8efd816207382b37685f325b9e905"/>EE_SECTION_HW_DEF</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_CAN_INTERFACE</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_CAN_INTERFACE</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca5b604da0f4df6079fe5292b92bfc373d"/>EE_SECTION_CAN_INTERFACE</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_FAULT_CONFIGURATION</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_FAULT_CONFIGURATION</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cab606ecab53108202be513deb4a58ec8e"/>EE_SECTION_FAULT_CONFIGURATION</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_IO</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_IO</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cab90bdca4b282c91f047bbe623064b727"/>EE_SECTION_IO</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_AFE</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_AFE</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca807c4741ca242e85cde6002ef34a6442"/>EE_SECTION_AFE</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_LINE_MONITOR</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_LINE_MONITOR</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca88990d79422fa7da5e15b20c0d9e307b"/>EE_SECTION_LINE_MONITOR</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_SERIAL</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_SERIAL</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca954db3b77be99dea319a43ab324eb6f4"/>EE_SECTION_SERIAL</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_DATA_LOGGER</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_DATA_LOGGER</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cad8403b322b446430f4268656f5ea1f1b"/>EE_SECTION_DATA_LOGGER</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_DCDC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_DCDC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3c2a801b89624bb7162f534ff7e1c5a3"/>EE_SECTION_DCDC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_CAN_TX_RATES</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_CAN_TX_RATES</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca8bb0d268a7b0de50562de9674a25a79a"/>EE_SECTION_CAN_TX_RATES</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caeb0038013ccb79efe69f5031a5e4a115"/>EE_SECTION_PCC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca2a301d6537ed2337c1a60c2d3c9d3cca"/>EE_SECTION_PCC_PPC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_HFO_I</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_HFO_I</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caaa3dcb19f366aa6806a021da32f56708"/>EE_SECTION_PCC_PPC_HFO_I</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_HFO_C</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_HFO_C</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caaf381ed7f6f681889cf7ddb76bcd5c4d"/>EE_SECTION_PCC_PPC_HFO_C</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_PLL</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_PLL</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca852e0ffce3358517fa91af38ae2be7f0"/>EE_SECTION_PCC_PPC_PLL</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_APL</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_APL</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca80a77c2f40c7a83ba2ab15359f1ddc1c"/>EE_SECTION_PCC_PPC_APL</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_PBC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_PBC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca12d69ddd64b69b238702bb139f5e92a0"/>EE_SECTION_PCC_PPC_PBC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_ISL</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_ISL</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cae80f5549624ec7fae961ab4716853a70"/>EE_SECTION_PCC_PPC_ISL</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_SPC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_SPC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca4bfbbce40f7d6153024f07c5a78dba06"/>EE_SECTION_PCC_PPC_SPC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_AHC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_AHC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca1e7642aa30a6ffdc91d43a195ace932f"/>EE_SECTION_PCC_PPC_AHC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCC_PPC_SHC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCC_PPC_SHC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca345b8a03cd9d00545ecf5adfa24af0fc"/>EE_SECTION_PCC_PPC_SHC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_MOD_AC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_MOD_AC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7ccfb126ba1ce03589b04ab2fac322fe"/>EE_SECTION_MOD_AC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_MOD_DC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_MOD_DC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caf8163c3ac13fca88c155c8f2fcf57338"/>EE_SECTION_MOD_DC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PWMD</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PWMD</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac0cd3a438d71426e750afe23ee0cd934"/>EE_SECTION_PWMD</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_MESD</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_MESD</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca0f7531ffc48f9cb8c22510e545731139"/>EE_SECTION_MESD</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PROT</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PROT</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca12a1bf6da5fd07bd4a7d3e8530651b54"/>EE_SECTION_PROT</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_DTM</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_DTM</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caacbc0a3960b1f9a9419f30f7f13c3c77"/>EE_SECTION_DTM</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_SIM</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_SIM</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3b9bad817b4fd842bfe6378302cb91b5"/>EE_SECTION_SIM</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_CMM</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_CMM</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7f3ade36b71b86fe87672ea6fcc9f6a6"/>EE_SECTION_CMM</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_PCD</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_PCD</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac03402ad085ff001adec8530b3d45ac3"/>EE_SECTION_PCD</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_TLC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_TLC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca6edfd7f17bf11e988322ad5f6f2f27dc"/>EE_SECTION_TLC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_ABB</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_ABB</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3c07baef931f722703a270098dabcfbb"/>EE_SECTION_ABB</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_MPP</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_MPP</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cae932a4de5d6360b8eaeec095c8eea17e"/>EE_SECTION_MPP</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_FC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_FC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca5a5adfc7ba2ca988fb6ef686832308dc"/>EE_SECTION_FC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_EDB</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_EDB</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cabbcaf74b948a8b295de0a2affa3b2cd6"/>EE_SECTION_EDB</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_ENV</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_ENV</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca8a31e73a6668674b1d692c2fbc07adc9"/>EE_SECTION_ENV</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_AUTH</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_AUTH</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac37dbaf9eec105942564578876fe93ae"/>EE_SECTION_AUTH</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_GSU</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_GSU</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7d4a520ed031f19ae64a5bf930106d01"/>EE_SECTION_GSU</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_REF</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_REF</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac7f450a035bb629e4f9a94222799c735"/>EE_SECTION_REF</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_VSG</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_VSG</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7c7d1d2875bcde7b871748246745c106"/>EE_SECTION_VSG</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_EI</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_EI</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca058ab488fb1988683987bc4026ae4253"/>EE_SECTION_EI</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_SUNSPEC</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_SUNSPEC</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caf877d1c8e669a52955e7fbe14a465d6b"/>EE_SECTION_SUNSPEC</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_COUNTERS</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_COUNTERS</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caab95e72862b693b23a72b03a37bea0c1"/>EE_SECTION_COUNTERS</entry><entry></entry></row><row><entry><indexterm><primary>EE_SECTION_COUNT</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>EE_SECTION_COUNT</secondary></indexterm>
+<anchor xml:id="_application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1"/>EE_SECTION_COUNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_application_8c_1aae45035e0712c66641eda8c3b74e64d8"/><section>
+    <title>APP_setFaultConfig()</title>
+<indexterm><primary>APP_setFaultConfig</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>APP_setFaultConfig</secondary></indexterm>
+<para><computeroutput>void APP_setFaultConfig (uint16_t unused)</computeroutput></para></section>
+<anchor xml:id="_application_8c_1a0e95431f48ee71c1040217b94766ffcf"/><section>
+    <title>application_init()</title>
+<indexterm><primary>application_init</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>application_init</secondary></indexterm>
+<para><computeroutput>void application_init (void )</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_application_8c_1aa9c39f99a87f5a9bd9b27fe269b1de04"/><section>
+    <title>appFaultConfiguration</title>
+<indexterm><primary>appFaultConfiguration</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>appFaultConfiguration</secondary></indexterm>
+<para><computeroutput>FaultConfiguration appFaultConfiguration[FLT_CFG_ARRAY_LENGTH]</computeroutput></para></section>
+<anchor xml:id="_application_8c_1a52957b0633643716121c30ca8ac20e62"/><section>
+    <title>authorization_nv</title>
+<indexterm><primary>authorization_nv</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>authorization_nv</secondary></indexterm>
+<para><computeroutput>AUTH_Nv authorization_nv</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;AUTH_NV_DEFAULTS(
+&#32;&#32;&#32;&#32;.keys&#32;=&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0&#32;...&#32;AUTHORIZATION_KEY_COUNT-1]&#32;=&#32;AUTH_KEY_DEFAULTS(),
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0]&#32;=&#32;AUTH_KEY_DEFAULTS(
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;.value&#32;=&#32;{&#32;.uint64_t&#32;=&#32;UINT64_C(0x3193650bda3297ee)},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;.level&#32;=&#32;CAN_Enum_AccessLevel_MAC_Auth
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;)
+&#32;&#32;&#32;&#32;}
+)
+</programlisting></section>
+<anchor xml:id="_application_8c_1ad7db6abdd9f1159237959f51aa3bb13b"/><section>
+    <title>authorization_this</title>
+<indexterm><primary>authorization_this</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>authorization_this</secondary></indexterm>
+<para><computeroutput>AUTH_Class authorization_this</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;AUTH_CLASS_DEFAULTS(
+&#32;&#32;&#32;&#32;<link linkend="_application_8c_1a52957b0633643716121c30ca8ac20e62">authorization_nv</link>.keys,
+&#32;&#32;&#32;&#32;<link linkend="_application_8c_1a52957b0633643716121c30ca8ac20e62">authorization_nv</link>.tags,
+&#32;&#32;&#32;&#32;CAN_Enum_AccessLevel_MAC_Auth
+)
+</programlisting></section>
+<anchor xml:id="_application_8c_1a6f21714ffb159d1406870dc7d294687c"/><section>
+    <title>DCDC_DcModulator</title>
+<indexterm><primary>DCDC_DcModulator</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>DCDC_DcModulator</secondary></indexterm>
+<para><computeroutput>MOD_DcModulator_t DCDC_DcModulator<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_application_8c_1a12358381f3cac018871d7c6b73a404ff"/><section>
+    <title>eeHandlerUseDefaults</title>
+<indexterm><primary>eeHandlerUseDefaults</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>eeHandlerUseDefaults</secondary></indexterm>
+<para><computeroutput>volatile bool eeHandlerUseDefaults = false</computeroutput></para></section>
+<anchor xml:id="_application_8c_1aad4f26eabbeb37bd61a3bb2c76195043"/><section>
+    <title>j1939Interface</title>
+<indexterm><primary>j1939Interface</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>j1939Interface</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_j1939___i_n_t_e_r_f_a_c_e">J1939_INTERFACE</link> j1939Interface = <link linkend="_application_8h_1ae8d2212f7c053cff78f8630589545e61">J1939_INTERFACE_DEFAULTS</link>()</computeroutput></para></section>
+<anchor xml:id="_application_8c_1a99999c420aa2ec727cdcdd61cc5737e2"/><section>
+    <title>PCC_AcModulator</title>
+<indexterm><primary>PCC_AcModulator</primary><secondary>application.c</secondary></indexterm>
+<indexterm><primary>application.c</primary><secondary>PCC_AcModulator</secondary></indexterm>
+<para><computeroutput>MOD_AcModulator_t PCC_AcModulator<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

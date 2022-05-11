@@ -1,0 +1,763 @@
+\hypertarget{can_interface_8c}{}\doxysection{interface/can\+Interface.c File Reference}
+\label{can_interface_8c}\index{interface/canInterface.c@{interface/canInterface.c}}
+{\ttfamily \#include \char`\"{}can\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}revision\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IQmath\+Lib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dsp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}can\+Interface\+Gen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grid\+Connection\+Status.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fault\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}data\+Logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}eeprom\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}modbus\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sunspec\+Interface\+Gen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}can\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}authorization.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}device\+Thermal\+Model.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protections\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}supervisor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grid\+Monitor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IEEE1547.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fan\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}top\+Level\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+Conversion\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Config\+Detect\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}island\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Current\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}adaptive\+Harmonic\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Pll\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}auxiliary\+Pll\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protected\+Bus\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filter\+Observer\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}afe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dcdc\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reference\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}epc2\+P2\+Z.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}modulator\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simulate\+Feedback\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}channel\+Mapping\+Manager\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}measurementd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pwmd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}digital\+IO.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}humidity\+Sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}MTH\+\_\+constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}MTH\+\_\+scale.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ABB\+\_\+lib\+Primary\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sunspec.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_a9498092c6ac20577e2f7ceb794b823da}{V\+\_\+\+CMD\+\_\+\+SCALE}}~(10.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_a6b57379d32d3533e60eef8f3e395663b}{HZ\+\_\+\+CMD\+\_\+\+SCALE}}~(100.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_aa37274d148cf019caf08d558bddeb883}{SC\+\_\+\+STATUS\+\_\+\+SCALE}}~(10.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_a30aff053a671a32c2f04e915cc7b00a2}{VDC\+\_\+\+SCALE}}~(10.\+0f)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_af3331df6db97622344010ba1bf55ef42}{CANIF\+\_\+\+PROT\+\_\+\+PHASE\+\_\+\+INSTANT\+\_\+\+TRIP}}(m\+Grp)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_ad35d743eb8bc1c1c4f077b4e62715dc4}{CANIF\+\_\+\+PROT\+\_\+\+TIMED\+\_\+\+OVERLOAD\+\_\+\+TRIP}}(m\+Name)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_ac144efd69d30eaf70f5217bf93ce7415}{DATALOGGER\+\_\+\+CHUNK\+\_\+\+INDEX}}~(Parameter\+Query.\+Param0.\+Mux -\/ Parameter\+Query\+\_\+\+Logger\+Chunk01)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_a2b93cc14b388bc30f58092613992d8b2}{CANIF\+\_\+\+MESD\+\_\+\+CHANNEL\+\_\+\+CALIBRATION}}(m\+Chan,  m\+Gget,  m\+Gset)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_aa76b32faace09619051cc9848c4d4913}{CANIF\+\_\+\+MESD\+\_\+\+LUT\+\_\+\+CALIBRATION}}(m\+Enu,  m\+Nam,  m\+Idx)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_a6cd3fc10889f99cbf41c03644ef81ea3}{CANIF\+\_\+\+PROT\+\_\+\+TEMP\+\_\+\+LIMIT\+\_\+\+TRIP}}(m\+EnumT,  m\+EnumS,  m\+Temp,  m\+State)
+\item 
+\#define \mbox{\hyperlink{can_interface_8c_a92f97880f19c821ca76067998268fae5}{CANIF\+\_\+\+PROT\+\_\+\+VOLT\+\_\+\+LIMIT\+\_\+\+TRIP}}(m\+EnumV,  m\+Volt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{can_interface_8c_aa05e7dbca4ce3c6efc8800cd471a26cd}{update\+Process\+To\+Inverter}} (bool valid)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a9199144a6fe802b4c16090de601b076b}{get\+Param0}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_aee6dd93d939168638c22556f54a69461}{get\+Pcc\+Config\+Params}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a4cb0b9db2e2d4e8b83e6f7737bba5424}{set\+Pcc\+Config\+Params}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a468223789e27d85616228fb51b31216f}{get\+Precharge\+Times}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ab73ca43bc1778cb2e7ec352df6bc19de}{set\+Precharge\+Times}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a4aeb685f3138ff377ca5b945befee597}{get\+Precharge\+Secondary}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a166df2b7557c436751661104e263036a}{set\+Precharge\+Secondary}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a2eea791cce9340f4feb9c7955dcc1506}{get\+Prot\+Dc\+Bus\+Instant\+Trip}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a76eb3e3b40b81d75dc7edff6cb954eae}{set\+Prot\+Dc\+Bus\+Instant\+Trip}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a04390bfa764f4fe3c76286aea5ba97aa}{set\+Datalogger\+Config}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ad19f56c94e51d8b2a65040a7d7aa548b}{get\+Datalogger\+Config}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a28bf5ea74276cf6c228f3391e11753c3}{get\+Manage\+NV}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_aff9e6d01761a25ca3b42366129ed47ef}{set\+Manage\+NV}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_aff4d8f19e8787acc8126c2628bc3d815}{get\+Logger\+Conf01}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a8fadb47ed46d0e9efb149ad460fbd5f9}{set\+Logger\+Conf01}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_abe88e5ee2ecd92f9559467be700bcd16}{get\+Real\+Power\+Limits}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a0d33a18bebc3f854bd6bcbe5482f1d01}{set\+Real\+Power\+Limits}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a433fc8ce13f9fb2b684287a2737abb11}{get\+Reactive\+Power\+Limits}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a40c630beaa96956b4604bbf71bd72f43}{set\+Reactive\+Power\+Limits}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a1aba6e6c12734fa4d15a4104dd8119ef}{get\+Real\+Current\+Limits}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_acbbd7c4e75df278d8ad6a16a85ad9893}{set\+Real\+Current\+Limits}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a60b76e8138681685279fb0b34993bef5}{get\+Reactive\+Current\+Limits}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_aa5c2ab7bc604c48ecd83d23475331d99}{set\+Reactive\+Current\+Limits}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a18f4e87a6cfdedd8eb8502e74561c190}{get\+Mesd\+General\+Calibration}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a3c49368e5524c202d323bf627f5aeb6d}{set\+Mesd\+General\+Calibration}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a099ba9a26750952c8cdea5e8523634bb}{set\+Sim\+Ac\+Network\+Phase\+SourceU}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a5e219ca5ed6b5dd5292eee721c6aff01}{get\+Sim\+Ac\+Network\+Phase\+SourceU}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ac327c73a34d31a6cf229c924462f641b}{set\+Sim\+Ac\+Network\+Phase\+SourceV}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a4e504c8df14077f58812b255a182041e}{get\+Sim\+Ac\+Network\+Phase\+SourceV}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ae767960b9dae7d642d15b8926695b75e}{set\+Sim\+Ac\+Network\+Phase\+SourceW}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a9debf93b30de3af0309b1fd6af095860}{get\+Sim\+Ac\+Network\+Phase\+SourceW}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a9ace797ae2b711673c82fb4d90ae7717}{set\+Sim\+Ac\+Network\+Phase\+LoadU}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a9deab59ec06f1110d9cf09aaeec93459}{get\+Sim\+Ac\+Network\+Phase\+LoadU}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ac920ca45c9d3f12ffcf94765f7f32c15}{set\+Sim\+Ac\+Network\+Phase\+LoadV}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_aa113f33ce427d100a61c6fb97148ba57}{get\+Sim\+Ac\+Network\+Phase\+LoadV}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_adde16125808d042f784f6534bffdc150}{set\+Sim\+Ac\+Network\+Phase\+LoadW}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_addccb6e61bf93cf24b3eb31c1e54e2f3}{get\+Sim\+Ac\+Network\+Phase\+LoadW}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ad4603bcb31061e237822bf91bb33ca3f}{get\+Ppc\+Apl\+Coeffs\+QSG}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a8b1ade2f290e5dfc06473c88d4760789}{set\+Ppc\+Apl\+Coeffs\+QSG}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a12a740156e0379be387ac042ce47c60f}{get\+Ppc\+Apl\+Coeffs\+LFL}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a7cc2a42cf68267f853b14a7425f842b8}{set\+Ppc\+Apl\+Coeffs\+LFL}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a28313b828d65d67bc6f8af5ab033c31a}{get\+Ppc\+Apl\+Limits\+LFL}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a9ac2023f7aa37aa1a6cd2b8f48877fdf}{set\+Ppc\+Apl\+Limits\+LFL}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a0815f3e91cb4134a9fee2b4543a19f7a}{get\+Ppc\+Apl\+Lock\+Detect}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a1fb2707449888c61ecaed639a1d0eebb}{set\+Ppc\+Apl\+Lock\+Detect}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_aa68e0bf5034385046a8a968e1813f769}{get\+Ppc\+Apl\+Meas\+Adjust}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ad562ed2adbbf0401efa0aa76ff7899f9}{set\+Ppc\+Apl\+Meas\+Adjust}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a187612318fec45f237793a46ca358d0d}{set\+Pcc\+Measurement\+Config}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_aa559c7f5ca69d7f356f4de0c3d8dc79c}{get\+Pcc\+Measurement\+Config}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a6a4fe470125884df9881615e979428f2}{set\+Pcc\+Ar\+Coeffs\+Vdc}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a3fecead1b5d660a67d52e7c54c4031aa}{get\+Pcc\+Ar\+Coeffs\+Vdc}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a500d058a67c7698a0ea10b1be8e83406}{get\+Status\+Faults}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a8ba89c16ba44ad7e14981c135c2bd8e5}{get\+Status\+Faults2}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ac7554b3bedeba6e81305b3d36a971bf7}{get\+Status\+System\+Faults}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a168a8209def14070d92016774b72ef81}{get\+Status\+Warnings}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a35d14aae8a00de33809c34ea29020951}{get\+Datalogger\+Status}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a9dc159926a02f9570bf4c8934c379bc6}{get\+Build\+Time}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a780c49310495e78fa502391f5299a87b}{get\+Software\+Hash}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a84a0f351f2186ce06a6e3a7d1d13ad32}{get\+Logger\+Status01}} (void)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a1c41607124c2a3edfba4aca78b93e253}{can\+Interface\+Init}} (int can\+ID, int SA\+\_\+mask, CAN\+\_\+\+BAUDRATE baud, uint32\+\_\+t build\+Time, uint32\+\_\+t build\+Git\+Rev)
+\item 
+long double \mbox{\hyperlink{can_interface_8c_a39a21ea844fd21be0c1ac875ba3231d1}{can\+Interface\+\_\+item\+Net\+Multiplier}} (\mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} const $\ast$const item)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a6aadaf337d1caee0a760aa9ae127360d}{items\+\_\+get\+Meta}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{can_interface_8c_ad509994a37bdba87b40e6407e5523b20}{items\+\_\+set\+Meta}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a00ca1b7737ba8d9bf03aa228a2186171}{table\+\_\+items\+\_\+get\+Meta}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{can_interface_8c_a176414fba733ccb522284cdd7fbe31ce}{table\+\_\+items\+\_\+set\+Meta}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{can_interface_8c_a2b93cc14b388bc30f58092613992d8b2}\label{can_interface_8c_a2b93cc14b388bc30f58092613992d8b2}} 
+\index{canInterface.c@{canInterface.c}!CANIF\_MESD\_CHANNEL\_CALIBRATION@{CANIF\_MESD\_CHANNEL\_CALIBRATION}}
+\index{CANIF\_MESD\_CHANNEL\_CALIBRATION@{CANIF\_MESD\_CHANNEL\_CALIBRATION}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{CANIF\_MESD\_CHANNEL\_CALIBRATION}{CANIF\_MESD\_CHANNEL\_CALIBRATION}}
+{\footnotesize\ttfamily \#define CANIF\+\_\+\+MESD\+\_\+\+CHANNEL\+\_\+\+CALIBRATION(\begin{DoxyParamCaption}\item[{}]{m\+Chan,  }\item[{}]{m\+Gget,  }\item[{}]{m\+Gset }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} getMesdChannelCalibration\_\#\#mChan(\textcolor{keywordtype}{void}) \{                                                                                              \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.MesdChannelCalibration\_\#\#mChan.Offset    = myround(MESD\_ConfigI.offsetGain[MESD\_CHANNEL\_\#\#mChan].offset    * 10.0e3f);   \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.MesdChannelCalibration\_\#\#mChan.Gain      = myround(MESD\_ConfigI.offsetGain[MESD\_CHANNEL\_\#\#mChan].gain      * mGget);     \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.MesdChannelCalibration\_\#\#mChan.OffsetTau = myround(MESD\_ConfigI.offsetGain[MESD\_CHANNEL\_\#\#mChan].tau       * 16.0f);     \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.MesdChannelCalibration\_\#\#mChan.CalPermit = MESD\_ConfigI.offsetGain[MESD\_CHANNEL\_\#\#mChan].offsetCalPermit;                \(\backslash\)}
+\DoxyCodeLine{    \}                                                                                                                                           \(\backslash\)}
+\DoxyCodeLine{                                                                                                                                                \(\backslash\)}
+\DoxyCodeLine{    void setMesdChannelCalibration\_\#\#mChan(\textcolor{keywordtype}{void}) \{                                                                                              \(\backslash\)}
+\DoxyCodeLine{        MESD\_setConfigChannelCalibration(MESD\_CHANNEL\_\#\#mChan,                                                                                  \(\backslash\)}
+\DoxyCodeLine{                                         (\textcolor{keywordtype}{float})ParameterQuery.MesdChannelCalibration\_\#\#mChan.Offset    * 0.1e-\/3f,                              \(\backslash\)}
+\DoxyCodeLine{                                         (\textcolor{keywordtype}{float})ParameterQuery.MesdChannelCalibration\_\#\#mChan.Gain      * mGset,                                \(\backslash\)}
+\DoxyCodeLine{                                         (\textcolor{keywordtype}{float})ParameterQuery.MesdChannelCalibration\_\#\#mChan.OffsetTau * 0.0625f,                              \(\backslash\)}
+\DoxyCodeLine{                                         (MESD\_CalibratePermit\_t)ParameterQuery.MesdChannelCalibration\_\#\#mChan.CalPermit, \textcolor{keyword}{false});               \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_interface_8c_aa76b32faace09619051cc9848c4d4913}\label{can_interface_8c_aa76b32faace09619051cc9848c4d4913}} 
+\index{canInterface.c@{canInterface.c}!CANIF\_MESD\_LUT\_CALIBRATION@{CANIF\_MESD\_LUT\_CALIBRATION}}
+\index{CANIF\_MESD\_LUT\_CALIBRATION@{CANIF\_MESD\_LUT\_CALIBRATION}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{CANIF\_MESD\_LUT\_CALIBRATION}{CANIF\_MESD\_LUT\_CALIBRATION}}
+{\footnotesize\ttfamily \#define CANIF\+\_\+\+MESD\+\_\+\+LUT\+\_\+\+CALIBRATION(\begin{DoxyParamCaption}\item[{}]{m\+Enu,  }\item[{}]{m\+Nam,  }\item[{}]{m\+Idx }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} getMesdConfigLutCalibration\_\#\#mNam\#\#\_\#\#mIdx(\textcolor{keywordtype}{void}) \{                                                                                    \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.MesdConfigLutCalibration\_\#\#mNam\#\#\_\#\#mIdx.u = myround(MESD\_ConfigI.bptLookupTable[mEnu][mIdx -\/ 1].x * 20.0e3);            \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.MesdConfigLutCalibration\_\#\#mNam\#\#\_\#\#mIdx.y = myround(MESD\_ConfigI.bptLookupTable[mEnu][mIdx -\/ 1].y * 1.0e6);             \(\backslash\)}
+\DoxyCodeLine{    \}                                                                                                                                           \(\backslash\)}
+\DoxyCodeLine{                                                                                                                                                \(\backslash\)}
+\DoxyCodeLine{    void setMesdConfigLutCalibration\_\#\#mNam\#\#\_\#\#mIdx(\textcolor{keywordtype}{void}) \{                                                                                    \(\backslash\)}
+\DoxyCodeLine{        MESD\_ConfigI.bptLookupTable[mEnu][mIdx -\/ 1].x  = (float)ParameterQuery.MesdConfigLutCalibration\_\#\#mNam\#\#\_\#\#mIdx.u * 5.0e-\/5;             \(\backslash\)}
+\DoxyCodeLine{        MESD\_ConfigI.bptLookupTable[mEnu][mIdx -\/ 1].y  = (\textcolor{keywordtype}{float})ParameterQuery.MesdConfigLutCalibration\_\#\#mNam\#\#\_\#\#mIdx.y * 1.0e-\/6;             \(\backslash\)}
+\DoxyCodeLine{                                                                                                                                                \(\backslash\)}
+\DoxyCodeLine{        MESD\_setConfigLutCalibration(mEnu);                                                                                                     \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_interface_8c_af3331df6db97622344010ba1bf55ef42}\label{can_interface_8c_af3331df6db97622344010ba1bf55ef42}} 
+\index{canInterface.c@{canInterface.c}!CANIF\_PROT\_PHASE\_INSTANT\_TRIP@{CANIF\_PROT\_PHASE\_INSTANT\_TRIP}}
+\index{CANIF\_PROT\_PHASE\_INSTANT\_TRIP@{CANIF\_PROT\_PHASE\_INSTANT\_TRIP}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{CANIF\_PROT\_PHASE\_INSTANT\_TRIP}{CANIF\_PROT\_PHASE\_INSTANT\_TRIP}}
+{\footnotesize\ttfamily \#define CANIF\+\_\+\+PROT\+\_\+\+PHASE\+\_\+\+INSTANT\+\_\+\+TRIP(\begin{DoxyParamCaption}\item[{}]{m\+Grp }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} getProtPhaseInstantTrip\_\#\#mGrp(\textcolor{keywordtype}{void}) \{     \(\backslash\)}
+\DoxyCodeLine{\}                                               \(\backslash\)}
+\DoxyCodeLine{void setProtPhaseInstantTrip\_\#\#mGrp(\textcolor{keywordtype}{void}) \{     \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_interface_8c_a6cd3fc10889f99cbf41c03644ef81ea3}\label{can_interface_8c_a6cd3fc10889f99cbf41c03644ef81ea3}} 
+\index{canInterface.c@{canInterface.c}!CANIF\_PROT\_TEMP\_LIMIT\_TRIP@{CANIF\_PROT\_TEMP\_LIMIT\_TRIP}}
+\index{CANIF\_PROT\_TEMP\_LIMIT\_TRIP@{CANIF\_PROT\_TEMP\_LIMIT\_TRIP}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{CANIF\_PROT\_TEMP\_LIMIT\_TRIP}{CANIF\_PROT\_TEMP\_LIMIT\_TRIP}}
+{\footnotesize\ttfamily \#define CANIF\+\_\+\+PROT\+\_\+\+TEMP\+\_\+\+LIMIT\+\_\+\+TRIP(\begin{DoxyParamCaption}\item[{}]{m\+EnumT,  }\item[{}]{m\+EnumS,  }\item[{}]{m\+Temp,  }\item[{}]{m\+State }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} getProtTemperatureLimitTrip\_\#\#mTemp\#\#\_\#\#mState(\textcolor{keywordtype}{void}) \{                                                                                 \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.ProtTemperatureLimitTrip\_\#\#mTemp\#\#\_\#\#mState.limUpper =                                                                   \(\backslash\)}
+\DoxyCodeLine{            myround(PROT\_ConfigI.tempTrips.stateNamed.mState.tempNamed.mTemp.boundNamed.upper * 100.0);                                         \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.ProtTemperatureLimitTrip\_\#\#mTemp\#\#\_\#\#mState.limLower =                                                                   \(\backslash\)}
+\DoxyCodeLine{            myround(PROT\_ConfigI.tempTrips.stateNamed.mState.tempNamed.mTemp.boundNamed.lower * 100.0);                                         \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.ProtTemperatureLimitTrip\_\#\#mTemp\#\#\_\#\#mState.tripTime =                                                                   \(\backslash\)}
+\DoxyCodeLine{            myround(PROT\_ConfigI.tempTrips.stateNamed.mState.tempNamed.mTemp.boundNamed.tTrip * 100.0);                                         \(\backslash\)}
+\DoxyCodeLine{    \}                                                                                                                                           \(\backslash\)}
+\DoxyCodeLine{                                                                                                                                                \(\backslash\)}
+\DoxyCodeLine{    void setProtTemperatureLimitTrip\_\#\#mTemp\#\#\_\#\#mState(\textcolor{keywordtype}{void}) \{                                                                                 \(\backslash\)}
+\DoxyCodeLine{        PROT\_setTemperatureLimitThresholds(mEnumT, mEnumS,                                                                                      \(\backslash\)}
+\DoxyCodeLine{                                           (\textcolor{keywordtype}{float})ParameterQuery.ProtTemperatureLimitTrip\_\#\#mTemp\#\#\_\#\#mState.limUpper * 0.01,                   \(\backslash\)}
+\DoxyCodeLine{                                           (\textcolor{keywordtype}{float})ParameterQuery.ProtTemperatureLimitTrip\_\#\#mTemp\#\#\_\#\#mState.limLower * 0.01,                   \(\backslash\)}
+\DoxyCodeLine{                                           (\textcolor{keywordtype}{float})ParameterQuery.ProtTemperatureLimitTrip\_\#\#mTemp\#\#\_\#\#mState.tripTime * 0.01);                  \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_interface_8c_ad35d743eb8bc1c1c4f077b4e62715dc4}\label{can_interface_8c_ad35d743eb8bc1c1c4f077b4e62715dc4}} 
+\index{canInterface.c@{canInterface.c}!CANIF\_PROT\_TIMED\_OVERLOAD\_TRIP@{CANIF\_PROT\_TIMED\_OVERLOAD\_TRIP}}
+\index{CANIF\_PROT\_TIMED\_OVERLOAD\_TRIP@{CANIF\_PROT\_TIMED\_OVERLOAD\_TRIP}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{CANIF\_PROT\_TIMED\_OVERLOAD\_TRIP}{CANIF\_PROT\_TIMED\_OVERLOAD\_TRIP}}
+{\footnotesize\ttfamily \#define CANIF\+\_\+\+PROT\+\_\+\+TIMED\+\_\+\+OVERLOAD\+\_\+\+TRIP(\begin{DoxyParamCaption}\item[{}]{m\+Name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} getProtTimedOverloadTrip\_\#\#mName(\textcolor{keywordtype}{void}) \{   \(\backslash\)}
+\DoxyCodeLine{\}                                               \(\backslash\)}
+\DoxyCodeLine{void setProtTimedOverloadTrip\_\#\#mName(\textcolor{keywordtype}{void}) \{   \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_interface_8c_a92f97880f19c821ca76067998268fae5}\label{can_interface_8c_a92f97880f19c821ca76067998268fae5}} 
+\index{canInterface.c@{canInterface.c}!CANIF\_PROT\_VOLT\_LIMIT\_TRIP@{CANIF\_PROT\_VOLT\_LIMIT\_TRIP}}
+\index{CANIF\_PROT\_VOLT\_LIMIT\_TRIP@{CANIF\_PROT\_VOLT\_LIMIT\_TRIP}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{CANIF\_PROT\_VOLT\_LIMIT\_TRIP}{CANIF\_PROT\_VOLT\_LIMIT\_TRIP}}
+{\footnotesize\ttfamily \#define CANIF\+\_\+\+PROT\+\_\+\+VOLT\+\_\+\+LIMIT\+\_\+\+TRIP(\begin{DoxyParamCaption}\item[{}]{m\+EnumV,  }\item[{}]{m\+Volt }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} getProtCtrlVoltageLimitTrip\_\#\#mVolt(\textcolor{keywordtype}{void}) \{                                                                                            \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.ProtCtrlVoltageLimitTrip\_\#\#mVolt.limUpper = myround(PROT\_ConfigI.ctrlTrips.voltNamed.mVolt.boundNamed.upper * 1000.0);   \(\backslash\)}
+\DoxyCodeLine{        ParameterQuery.ProtCtrlVoltageLimitTrip\_\#\#mVolt.limLower = myround(PROT\_ConfigI.ctrlTrips.voltNamed.mVolt.boundNamed.lower * 1000.0);   \(\backslash\)}
+\DoxyCodeLine{    \}                                                                                                                                           \(\backslash\)}
+\DoxyCodeLine{                                                                                                                                                \(\backslash\)}
+\DoxyCodeLine{  void setProtCtrlVoltageLimitTrip\_\#\#mVolt(\textcolor{keywordtype}{void}) \{                                                                                              \(\backslash\)}
+\DoxyCodeLine{      PROT\_setControlVoltageLimitThresholds(mEnumV,                                                                                             \(\backslash\)}
+\DoxyCodeLine{                                            (\textcolor{keywordtype}{float})ParameterQuery.ProtCtrlVoltageLimitTrip\_\#\#mVolt.limUpper * 0.001f,                           \(\backslash\)}
+\DoxyCodeLine{                                            (\textcolor{keywordtype}{float})ParameterQuery.ProtCtrlVoltageLimitTrip\_\#\#mVolt.limLower * 0.001f);                          \(\backslash\)}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_interface_8c_ac144efd69d30eaf70f5217bf93ce7415}\label{can_interface_8c_ac144efd69d30eaf70f5217bf93ce7415}} 
+\index{canInterface.c@{canInterface.c}!DATALOGGER\_CHUNK\_INDEX@{DATALOGGER\_CHUNK\_INDEX}}
+\index{DATALOGGER\_CHUNK\_INDEX@{DATALOGGER\_CHUNK\_INDEX}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{DATALOGGER\_CHUNK\_INDEX}{DATALOGGER\_CHUNK\_INDEX}}
+{\footnotesize\ttfamily \#define DATALOGGER\+\_\+\+CHUNK\+\_\+\+INDEX~(Parameter\+Query.\+Param0.\+Mux -\/ Parameter\+Query\+\_\+\+Logger\+Chunk01)}
+
+\mbox{\Hypertarget{can_interface_8c_a6b57379d32d3533e60eef8f3e395663b}\label{can_interface_8c_a6b57379d32d3533e60eef8f3e395663b}} 
+\index{canInterface.c@{canInterface.c}!HZ\_CMD\_SCALE@{HZ\_CMD\_SCALE}}
+\index{HZ\_CMD\_SCALE@{HZ\_CMD\_SCALE}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{HZ\_CMD\_SCALE}{HZ\_CMD\_SCALE}}
+{\footnotesize\ttfamily \#define HZ\+\_\+\+CMD\+\_\+\+SCALE~(100.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8c_aa37274d148cf019caf08d558bddeb883}\label{can_interface_8c_aa37274d148cf019caf08d558bddeb883}} 
+\index{canInterface.c@{canInterface.c}!SC\_STATUS\_SCALE@{SC\_STATUS\_SCALE}}
+\index{SC\_STATUS\_SCALE@{SC\_STATUS\_SCALE}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{SC\_STATUS\_SCALE}{SC\_STATUS\_SCALE}}
+{\footnotesize\ttfamily \#define SC\+\_\+\+STATUS\+\_\+\+SCALE~(10.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8c_a9498092c6ac20577e2f7ceb794b823da}\label{can_interface_8c_a9498092c6ac20577e2f7ceb794b823da}} 
+\index{canInterface.c@{canInterface.c}!V\_CMD\_SCALE@{V\_CMD\_SCALE}}
+\index{V\_CMD\_SCALE@{V\_CMD\_SCALE}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{V\_CMD\_SCALE}{V\_CMD\_SCALE}}
+{\footnotesize\ttfamily \#define V\+\_\+\+CMD\+\_\+\+SCALE~(10.\+0f)}
+
+\mbox{\Hypertarget{can_interface_8c_a30aff053a671a32c2f04e915cc7b00a2}\label{can_interface_8c_a30aff053a671a32c2f04e915cc7b00a2}} 
+\index{canInterface.c@{canInterface.c}!VDC\_SCALE@{VDC\_SCALE}}
+\index{VDC\_SCALE@{VDC\_SCALE}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{VDC\_SCALE}{VDC\_SCALE}}
+{\footnotesize\ttfamily \#define VDC\+\_\+\+SCALE~(10.\+0f)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{can_interface_8c_a39a21ea844fd21be0c1ac875ba3231d1}\label{can_interface_8c_a39a21ea844fd21be0c1ac875ba3231d1}} 
+\index{canInterface.c@{canInterface.c}!canInterface\_itemNetMultiplier@{canInterface\_itemNetMultiplier}}
+\index{canInterface\_itemNetMultiplier@{canInterface\_itemNetMultiplier}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{canInterface\_itemNetMultiplier()}{canInterface\_itemNetMultiplier()}}
+{\footnotesize\ttfamily long double can\+Interface\+\_\+item\+Net\+Multiplier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_interface_item_common}{Interface\+Item\+Common}} const $\ast$const}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a1c41607124c2a3edfba4aca78b93e253}\label{can_interface_8c_a1c41607124c2a3edfba4aca78b93e253}} 
+\index{canInterface.c@{canInterface.c}!canInterfaceInit@{canInterfaceInit}}
+\index{canInterfaceInit@{canInterfaceInit}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{canInterfaceInit()}{canInterfaceInit()}}
+{\footnotesize\ttfamily void can\+Interface\+Init (\begin{DoxyParamCaption}\item[{int}]{can\+ID,  }\item[{int}]{SA\+\_\+mask,  }\item[{CAN\+\_\+\+BAUDRATE}]{baud,  }\item[{uint32\+\_\+t}]{build\+Time,  }\item[{uint32\+\_\+t}]{build\+Git\+Rev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a9dc159926a02f9570bf4c8934c379bc6}\label{can_interface_8c_a9dc159926a02f9570bf4c8934c379bc6}} 
+\index{canInterface.c@{canInterface.c}!getBuildTime@{getBuildTime}}
+\index{getBuildTime@{getBuildTime}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getBuildTime()}{getBuildTime()}}
+{\footnotesize\ttfamily void get\+Build\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ad19f56c94e51d8b2a65040a7d7aa548b}\label{can_interface_8c_ad19f56c94e51d8b2a65040a7d7aa548b}} 
+\index{canInterface.c@{canInterface.c}!getDataloggerConfig@{getDataloggerConfig}}
+\index{getDataloggerConfig@{getDataloggerConfig}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getDataloggerConfig()}{getDataloggerConfig()}}
+{\footnotesize\ttfamily void get\+Datalogger\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a35d14aae8a00de33809c34ea29020951}\label{can_interface_8c_a35d14aae8a00de33809c34ea29020951}} 
+\index{canInterface.c@{canInterface.c}!getDataloggerStatus@{getDataloggerStatus}}
+\index{getDataloggerStatus@{getDataloggerStatus}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getDataloggerStatus()}{getDataloggerStatus()}}
+{\footnotesize\ttfamily void get\+Datalogger\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_aff4d8f19e8787acc8126c2628bc3d815}\label{can_interface_8c_aff4d8f19e8787acc8126c2628bc3d815}} 
+\index{canInterface.c@{canInterface.c}!getLoggerConf01@{getLoggerConf01}}
+\index{getLoggerConf01@{getLoggerConf01}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getLoggerConf01()}{getLoggerConf01()}}
+{\footnotesize\ttfamily void get\+Logger\+Conf01 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a84a0f351f2186ce06a6e3a7d1d13ad32}\label{can_interface_8c_a84a0f351f2186ce06a6e3a7d1d13ad32}} 
+\index{canInterface.c@{canInterface.c}!getLoggerStatus01@{getLoggerStatus01}}
+\index{getLoggerStatus01@{getLoggerStatus01}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getLoggerStatus01()}{getLoggerStatus01()}}
+{\footnotesize\ttfamily void get\+Logger\+Status01 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a28bf5ea74276cf6c228f3391e11753c3}\label{can_interface_8c_a28bf5ea74276cf6c228f3391e11753c3}} 
+\index{canInterface.c@{canInterface.c}!getManageNV@{getManageNV}}
+\index{getManageNV@{getManageNV}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getManageNV()}{getManageNV()}}
+{\footnotesize\ttfamily void get\+Manage\+NV (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a18f4e87a6cfdedd8eb8502e74561c190}\label{can_interface_8c_a18f4e87a6cfdedd8eb8502e74561c190}} 
+\index{canInterface.c@{canInterface.c}!getMesdGeneralCalibration@{getMesdGeneralCalibration}}
+\index{getMesdGeneralCalibration@{getMesdGeneralCalibration}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getMesdGeneralCalibration()}{getMesdGeneralCalibration()}}
+{\footnotesize\ttfamily void get\+Mesd\+General\+Calibration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a9199144a6fe802b4c16090de601b076b}\label{can_interface_8c_a9199144a6fe802b4c16090de601b076b}} 
+\index{canInterface.c@{canInterface.c}!getParam0@{getParam0}}
+\index{getParam0@{getParam0}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getParam0()}{getParam0()}}
+{\footnotesize\ttfamily void get\+Param0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a3fecead1b5d660a67d52e7c54c4031aa}\label{can_interface_8c_a3fecead1b5d660a67d52e7c54c4031aa}} 
+\index{canInterface.c@{canInterface.c}!getPccArCoeffsVdc@{getPccArCoeffsVdc}}
+\index{getPccArCoeffsVdc@{getPccArCoeffsVdc}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPccArCoeffsVdc()}{getPccArCoeffsVdc()}}
+{\footnotesize\ttfamily void get\+Pcc\+Ar\+Coeffs\+Vdc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_aee6dd93d939168638c22556f54a69461}\label{can_interface_8c_aee6dd93d939168638c22556f54a69461}} 
+\index{canInterface.c@{canInterface.c}!getPccConfigParams@{getPccConfigParams}}
+\index{getPccConfigParams@{getPccConfigParams}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPccConfigParams()}{getPccConfigParams()}}
+{\footnotesize\ttfamily void get\+Pcc\+Config\+Params (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_aa559c7f5ca69d7f356f4de0c3d8dc79c}\label{can_interface_8c_aa559c7f5ca69d7f356f4de0c3d8dc79c}} 
+\index{canInterface.c@{canInterface.c}!getPccMeasurementConfig@{getPccMeasurementConfig}}
+\index{getPccMeasurementConfig@{getPccMeasurementConfig}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPccMeasurementConfig()}{getPccMeasurementConfig()}}
+{\footnotesize\ttfamily void get\+Pcc\+Measurement\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a12a740156e0379be387ac042ce47c60f}\label{can_interface_8c_a12a740156e0379be387ac042ce47c60f}} 
+\index{canInterface.c@{canInterface.c}!getPpcAplCoeffsLFL@{getPpcAplCoeffsLFL}}
+\index{getPpcAplCoeffsLFL@{getPpcAplCoeffsLFL}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPpcAplCoeffsLFL()}{getPpcAplCoeffsLFL()}}
+{\footnotesize\ttfamily void get\+Ppc\+Apl\+Coeffs\+LFL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ad4603bcb31061e237822bf91bb33ca3f}\label{can_interface_8c_ad4603bcb31061e237822bf91bb33ca3f}} 
+\index{canInterface.c@{canInterface.c}!getPpcAplCoeffsQSG@{getPpcAplCoeffsQSG}}
+\index{getPpcAplCoeffsQSG@{getPpcAplCoeffsQSG}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPpcAplCoeffsQSG()}{getPpcAplCoeffsQSG()}}
+{\footnotesize\ttfamily void get\+Ppc\+Apl\+Coeffs\+QSG (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a28313b828d65d67bc6f8af5ab033c31a}\label{can_interface_8c_a28313b828d65d67bc6f8af5ab033c31a}} 
+\index{canInterface.c@{canInterface.c}!getPpcAplLimitsLFL@{getPpcAplLimitsLFL}}
+\index{getPpcAplLimitsLFL@{getPpcAplLimitsLFL}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPpcAplLimitsLFL()}{getPpcAplLimitsLFL()}}
+{\footnotesize\ttfamily void get\+Ppc\+Apl\+Limits\+LFL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a0815f3e91cb4134a9fee2b4543a19f7a}\label{can_interface_8c_a0815f3e91cb4134a9fee2b4543a19f7a}} 
+\index{canInterface.c@{canInterface.c}!getPpcAplLockDetect@{getPpcAplLockDetect}}
+\index{getPpcAplLockDetect@{getPpcAplLockDetect}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPpcAplLockDetect()}{getPpcAplLockDetect()}}
+{\footnotesize\ttfamily void get\+Ppc\+Apl\+Lock\+Detect (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_aa68e0bf5034385046a8a968e1813f769}\label{can_interface_8c_aa68e0bf5034385046a8a968e1813f769}} 
+\index{canInterface.c@{canInterface.c}!getPpcAplMeasAdjust@{getPpcAplMeasAdjust}}
+\index{getPpcAplMeasAdjust@{getPpcAplMeasAdjust}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPpcAplMeasAdjust()}{getPpcAplMeasAdjust()}}
+{\footnotesize\ttfamily void get\+Ppc\+Apl\+Meas\+Adjust (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a4aeb685f3138ff377ca5b945befee597}\label{can_interface_8c_a4aeb685f3138ff377ca5b945befee597}} 
+\index{canInterface.c@{canInterface.c}!getPrechargeSecondary@{getPrechargeSecondary}}
+\index{getPrechargeSecondary@{getPrechargeSecondary}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPrechargeSecondary()}{getPrechargeSecondary()}}
+{\footnotesize\ttfamily void get\+Precharge\+Secondary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a468223789e27d85616228fb51b31216f}\label{can_interface_8c_a468223789e27d85616228fb51b31216f}} 
+\index{canInterface.c@{canInterface.c}!getPrechargeTimes@{getPrechargeTimes}}
+\index{getPrechargeTimes@{getPrechargeTimes}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getPrechargeTimes()}{getPrechargeTimes()}}
+{\footnotesize\ttfamily void get\+Precharge\+Times (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a2eea791cce9340f4feb9c7955dcc1506}\label{can_interface_8c_a2eea791cce9340f4feb9c7955dcc1506}} 
+\index{canInterface.c@{canInterface.c}!getProtDcBusInstantTrip@{getProtDcBusInstantTrip}}
+\index{getProtDcBusInstantTrip@{getProtDcBusInstantTrip}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getProtDcBusInstantTrip()}{getProtDcBusInstantTrip()}}
+{\footnotesize\ttfamily void get\+Prot\+Dc\+Bus\+Instant\+Trip (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a60b76e8138681685279fb0b34993bef5}\label{can_interface_8c_a60b76e8138681685279fb0b34993bef5}} 
+\index{canInterface.c@{canInterface.c}!getReactiveCurrentLimits@{getReactiveCurrentLimits}}
+\index{getReactiveCurrentLimits@{getReactiveCurrentLimits}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getReactiveCurrentLimits()}{getReactiveCurrentLimits()}}
+{\footnotesize\ttfamily void get\+Reactive\+Current\+Limits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a433fc8ce13f9fb2b684287a2737abb11}\label{can_interface_8c_a433fc8ce13f9fb2b684287a2737abb11}} 
+\index{canInterface.c@{canInterface.c}!getReactivePowerLimits@{getReactivePowerLimits}}
+\index{getReactivePowerLimits@{getReactivePowerLimits}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getReactivePowerLimits()}{getReactivePowerLimits()}}
+{\footnotesize\ttfamily void get\+Reactive\+Power\+Limits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a1aba6e6c12734fa4d15a4104dd8119ef}\label{can_interface_8c_a1aba6e6c12734fa4d15a4104dd8119ef}} 
+\index{canInterface.c@{canInterface.c}!getRealCurrentLimits@{getRealCurrentLimits}}
+\index{getRealCurrentLimits@{getRealCurrentLimits}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getRealCurrentLimits()}{getRealCurrentLimits()}}
+{\footnotesize\ttfamily void get\+Real\+Current\+Limits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_abe88e5ee2ecd92f9559467be700bcd16}\label{can_interface_8c_abe88e5ee2ecd92f9559467be700bcd16}} 
+\index{canInterface.c@{canInterface.c}!getRealPowerLimits@{getRealPowerLimits}}
+\index{getRealPowerLimits@{getRealPowerLimits}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getRealPowerLimits()}{getRealPowerLimits()}}
+{\footnotesize\ttfamily void get\+Real\+Power\+Limits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a9deab59ec06f1110d9cf09aaeec93459}\label{can_interface_8c_a9deab59ec06f1110d9cf09aaeec93459}} 
+\index{canInterface.c@{canInterface.c}!getSimAcNetworkPhaseLoadU@{getSimAcNetworkPhaseLoadU}}
+\index{getSimAcNetworkPhaseLoadU@{getSimAcNetworkPhaseLoadU}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getSimAcNetworkPhaseLoadU()}{getSimAcNetworkPhaseLoadU()}}
+{\footnotesize\ttfamily void get\+Sim\+Ac\+Network\+Phase\+LoadU (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_aa113f33ce427d100a61c6fb97148ba57}\label{can_interface_8c_aa113f33ce427d100a61c6fb97148ba57}} 
+\index{canInterface.c@{canInterface.c}!getSimAcNetworkPhaseLoadV@{getSimAcNetworkPhaseLoadV}}
+\index{getSimAcNetworkPhaseLoadV@{getSimAcNetworkPhaseLoadV}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getSimAcNetworkPhaseLoadV()}{getSimAcNetworkPhaseLoadV()}}
+{\footnotesize\ttfamily void get\+Sim\+Ac\+Network\+Phase\+LoadV (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_addccb6e61bf93cf24b3eb31c1e54e2f3}\label{can_interface_8c_addccb6e61bf93cf24b3eb31c1e54e2f3}} 
+\index{canInterface.c@{canInterface.c}!getSimAcNetworkPhaseLoadW@{getSimAcNetworkPhaseLoadW}}
+\index{getSimAcNetworkPhaseLoadW@{getSimAcNetworkPhaseLoadW}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getSimAcNetworkPhaseLoadW()}{getSimAcNetworkPhaseLoadW()}}
+{\footnotesize\ttfamily void get\+Sim\+Ac\+Network\+Phase\+LoadW (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a5e219ca5ed6b5dd5292eee721c6aff01}\label{can_interface_8c_a5e219ca5ed6b5dd5292eee721c6aff01}} 
+\index{canInterface.c@{canInterface.c}!getSimAcNetworkPhaseSourceU@{getSimAcNetworkPhaseSourceU}}
+\index{getSimAcNetworkPhaseSourceU@{getSimAcNetworkPhaseSourceU}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getSimAcNetworkPhaseSourceU()}{getSimAcNetworkPhaseSourceU()}}
+{\footnotesize\ttfamily void get\+Sim\+Ac\+Network\+Phase\+SourceU (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a4e504c8df14077f58812b255a182041e}\label{can_interface_8c_a4e504c8df14077f58812b255a182041e}} 
+\index{canInterface.c@{canInterface.c}!getSimAcNetworkPhaseSourceV@{getSimAcNetworkPhaseSourceV}}
+\index{getSimAcNetworkPhaseSourceV@{getSimAcNetworkPhaseSourceV}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getSimAcNetworkPhaseSourceV()}{getSimAcNetworkPhaseSourceV()}}
+{\footnotesize\ttfamily void get\+Sim\+Ac\+Network\+Phase\+SourceV (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a9debf93b30de3af0309b1fd6af095860}\label{can_interface_8c_a9debf93b30de3af0309b1fd6af095860}} 
+\index{canInterface.c@{canInterface.c}!getSimAcNetworkPhaseSourceW@{getSimAcNetworkPhaseSourceW}}
+\index{getSimAcNetworkPhaseSourceW@{getSimAcNetworkPhaseSourceW}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getSimAcNetworkPhaseSourceW()}{getSimAcNetworkPhaseSourceW()}}
+{\footnotesize\ttfamily void get\+Sim\+Ac\+Network\+Phase\+SourceW (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a780c49310495e78fa502391f5299a87b}\label{can_interface_8c_a780c49310495e78fa502391f5299a87b}} 
+\index{canInterface.c@{canInterface.c}!getSoftwareHash@{getSoftwareHash}}
+\index{getSoftwareHash@{getSoftwareHash}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getSoftwareHash()}{getSoftwareHash()}}
+{\footnotesize\ttfamily void get\+Software\+Hash (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a500d058a67c7698a0ea10b1be8e83406}\label{can_interface_8c_a500d058a67c7698a0ea10b1be8e83406}} 
+\index{canInterface.c@{canInterface.c}!getStatusFaults@{getStatusFaults}}
+\index{getStatusFaults@{getStatusFaults}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getStatusFaults()}{getStatusFaults()}}
+{\footnotesize\ttfamily void get\+Status\+Faults (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a8ba89c16ba44ad7e14981c135c2bd8e5}\label{can_interface_8c_a8ba89c16ba44ad7e14981c135c2bd8e5}} 
+\index{canInterface.c@{canInterface.c}!getStatusFaults2@{getStatusFaults2}}
+\index{getStatusFaults2@{getStatusFaults2}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getStatusFaults2()}{getStatusFaults2()}}
+{\footnotesize\ttfamily void get\+Status\+Faults2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ac7554b3bedeba6e81305b3d36a971bf7}\label{can_interface_8c_ac7554b3bedeba6e81305b3d36a971bf7}} 
+\index{canInterface.c@{canInterface.c}!getStatusSystemFaults@{getStatusSystemFaults}}
+\index{getStatusSystemFaults@{getStatusSystemFaults}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getStatusSystemFaults()}{getStatusSystemFaults()}}
+{\footnotesize\ttfamily void get\+Status\+System\+Faults (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a168a8209def14070d92016774b72ef81}\label{can_interface_8c_a168a8209def14070d92016774b72ef81}} 
+\index{canInterface.c@{canInterface.c}!getStatusWarnings@{getStatusWarnings}}
+\index{getStatusWarnings@{getStatusWarnings}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{getStatusWarnings()}{getStatusWarnings()}}
+{\footnotesize\ttfamily void get\+Status\+Warnings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a6aadaf337d1caee0a760aa9ae127360d}\label{can_interface_8c_a6aadaf337d1caee0a760aa9ae127360d}} 
+\index{canInterface.c@{canInterface.c}!items\_getMeta@{items\_getMeta}}
+\index{items\_getMeta@{items\_getMeta}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{items\_getMeta()}{items\_getMeta()}}
+{\footnotesize\ttfamily void items\+\_\+get\+Meta (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ad509994a37bdba87b40e6407e5523b20}\label{can_interface_8c_ad509994a37bdba87b40e6407e5523b20}} 
+\index{canInterface.c@{canInterface.c}!items\_setMeta@{items\_setMeta}}
+\index{items\_setMeta@{items\_setMeta}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{items\_setMeta()}{items\_setMeta()}}
+{\footnotesize\ttfamily void items\+\_\+set\+Meta (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a04390bfa764f4fe3c76286aea5ba97aa}\label{can_interface_8c_a04390bfa764f4fe3c76286aea5ba97aa}} 
+\index{canInterface.c@{canInterface.c}!setDataloggerConfig@{setDataloggerConfig}}
+\index{setDataloggerConfig@{setDataloggerConfig}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setDataloggerConfig()}{setDataloggerConfig()}}
+{\footnotesize\ttfamily void set\+Datalogger\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a8fadb47ed46d0e9efb149ad460fbd5f9}\label{can_interface_8c_a8fadb47ed46d0e9efb149ad460fbd5f9}} 
+\index{canInterface.c@{canInterface.c}!setLoggerConf01@{setLoggerConf01}}
+\index{setLoggerConf01@{setLoggerConf01}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setLoggerConf01()}{setLoggerConf01()}}
+{\footnotesize\ttfamily void set\+Logger\+Conf01 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_aff9e6d01761a25ca3b42366129ed47ef}\label{can_interface_8c_aff9e6d01761a25ca3b42366129ed47ef}} 
+\index{canInterface.c@{canInterface.c}!setManageNV@{setManageNV}}
+\index{setManageNV@{setManageNV}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setManageNV()}{setManageNV()}}
+{\footnotesize\ttfamily void set\+Manage\+NV (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a3c49368e5524c202d323bf627f5aeb6d}\label{can_interface_8c_a3c49368e5524c202d323bf627f5aeb6d}} 
+\index{canInterface.c@{canInterface.c}!setMesdGeneralCalibration@{setMesdGeneralCalibration}}
+\index{setMesdGeneralCalibration@{setMesdGeneralCalibration}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setMesdGeneralCalibration()}{setMesdGeneralCalibration()}}
+{\footnotesize\ttfamily void set\+Mesd\+General\+Calibration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a6a4fe470125884df9881615e979428f2}\label{can_interface_8c_a6a4fe470125884df9881615e979428f2}} 
+\index{canInterface.c@{canInterface.c}!setPccArCoeffsVdc@{setPccArCoeffsVdc}}
+\index{setPccArCoeffsVdc@{setPccArCoeffsVdc}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPccArCoeffsVdc()}{setPccArCoeffsVdc()}}
+{\footnotesize\ttfamily void set\+Pcc\+Ar\+Coeffs\+Vdc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a4cb0b9db2e2d4e8b83e6f7737bba5424}\label{can_interface_8c_a4cb0b9db2e2d4e8b83e6f7737bba5424}} 
+\index{canInterface.c@{canInterface.c}!setPccConfigParams@{setPccConfigParams}}
+\index{setPccConfigParams@{setPccConfigParams}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPccConfigParams()}{setPccConfigParams()}}
+{\footnotesize\ttfamily void set\+Pcc\+Config\+Params (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a187612318fec45f237793a46ca358d0d}\label{can_interface_8c_a187612318fec45f237793a46ca358d0d}} 
+\index{canInterface.c@{canInterface.c}!setPccMeasurementConfig@{setPccMeasurementConfig}}
+\index{setPccMeasurementConfig@{setPccMeasurementConfig}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPccMeasurementConfig()}{setPccMeasurementConfig()}}
+{\footnotesize\ttfamily void set\+Pcc\+Measurement\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a7cc2a42cf68267f853b14a7425f842b8}\label{can_interface_8c_a7cc2a42cf68267f853b14a7425f842b8}} 
+\index{canInterface.c@{canInterface.c}!setPpcAplCoeffsLFL@{setPpcAplCoeffsLFL}}
+\index{setPpcAplCoeffsLFL@{setPpcAplCoeffsLFL}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPpcAplCoeffsLFL()}{setPpcAplCoeffsLFL()}}
+{\footnotesize\ttfamily void set\+Ppc\+Apl\+Coeffs\+LFL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a8b1ade2f290e5dfc06473c88d4760789}\label{can_interface_8c_a8b1ade2f290e5dfc06473c88d4760789}} 
+\index{canInterface.c@{canInterface.c}!setPpcAplCoeffsQSG@{setPpcAplCoeffsQSG}}
+\index{setPpcAplCoeffsQSG@{setPpcAplCoeffsQSG}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPpcAplCoeffsQSG()}{setPpcAplCoeffsQSG()}}
+{\footnotesize\ttfamily void set\+Ppc\+Apl\+Coeffs\+QSG (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a9ac2023f7aa37aa1a6cd2b8f48877fdf}\label{can_interface_8c_a9ac2023f7aa37aa1a6cd2b8f48877fdf}} 
+\index{canInterface.c@{canInterface.c}!setPpcAplLimitsLFL@{setPpcAplLimitsLFL}}
+\index{setPpcAplLimitsLFL@{setPpcAplLimitsLFL}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPpcAplLimitsLFL()}{setPpcAplLimitsLFL()}}
+{\footnotesize\ttfamily void set\+Ppc\+Apl\+Limits\+LFL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a1fb2707449888c61ecaed639a1d0eebb}\label{can_interface_8c_a1fb2707449888c61ecaed639a1d0eebb}} 
+\index{canInterface.c@{canInterface.c}!setPpcAplLockDetect@{setPpcAplLockDetect}}
+\index{setPpcAplLockDetect@{setPpcAplLockDetect}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPpcAplLockDetect()}{setPpcAplLockDetect()}}
+{\footnotesize\ttfamily void set\+Ppc\+Apl\+Lock\+Detect (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ad562ed2adbbf0401efa0aa76ff7899f9}\label{can_interface_8c_ad562ed2adbbf0401efa0aa76ff7899f9}} 
+\index{canInterface.c@{canInterface.c}!setPpcAplMeasAdjust@{setPpcAplMeasAdjust}}
+\index{setPpcAplMeasAdjust@{setPpcAplMeasAdjust}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPpcAplMeasAdjust()}{setPpcAplMeasAdjust()}}
+{\footnotesize\ttfamily void set\+Ppc\+Apl\+Meas\+Adjust (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a166df2b7557c436751661104e263036a}\label{can_interface_8c_a166df2b7557c436751661104e263036a}} 
+\index{canInterface.c@{canInterface.c}!setPrechargeSecondary@{setPrechargeSecondary}}
+\index{setPrechargeSecondary@{setPrechargeSecondary}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPrechargeSecondary()}{setPrechargeSecondary()}}
+{\footnotesize\ttfamily void set\+Precharge\+Secondary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ab73ca43bc1778cb2e7ec352df6bc19de}\label{can_interface_8c_ab73ca43bc1778cb2e7ec352df6bc19de}} 
+\index{canInterface.c@{canInterface.c}!setPrechargeTimes@{setPrechargeTimes}}
+\index{setPrechargeTimes@{setPrechargeTimes}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setPrechargeTimes()}{setPrechargeTimes()}}
+{\footnotesize\ttfamily void set\+Precharge\+Times (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a76eb3e3b40b81d75dc7edff6cb954eae}\label{can_interface_8c_a76eb3e3b40b81d75dc7edff6cb954eae}} 
+\index{canInterface.c@{canInterface.c}!setProtDcBusInstantTrip@{setProtDcBusInstantTrip}}
+\index{setProtDcBusInstantTrip@{setProtDcBusInstantTrip}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setProtDcBusInstantTrip()}{setProtDcBusInstantTrip()}}
+{\footnotesize\ttfamily void set\+Prot\+Dc\+Bus\+Instant\+Trip (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_aa5c2ab7bc604c48ecd83d23475331d99}\label{can_interface_8c_aa5c2ab7bc604c48ecd83d23475331d99}} 
+\index{canInterface.c@{canInterface.c}!setReactiveCurrentLimits@{setReactiveCurrentLimits}}
+\index{setReactiveCurrentLimits@{setReactiveCurrentLimits}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setReactiveCurrentLimits()}{setReactiveCurrentLimits()}}
+{\footnotesize\ttfamily void set\+Reactive\+Current\+Limits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a40c630beaa96956b4604bbf71bd72f43}\label{can_interface_8c_a40c630beaa96956b4604bbf71bd72f43}} 
+\index{canInterface.c@{canInterface.c}!setReactivePowerLimits@{setReactivePowerLimits}}
+\index{setReactivePowerLimits@{setReactivePowerLimits}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setReactivePowerLimits()}{setReactivePowerLimits()}}
+{\footnotesize\ttfamily void set\+Reactive\+Power\+Limits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_acbbd7c4e75df278d8ad6a16a85ad9893}\label{can_interface_8c_acbbd7c4e75df278d8ad6a16a85ad9893}} 
+\index{canInterface.c@{canInterface.c}!setRealCurrentLimits@{setRealCurrentLimits}}
+\index{setRealCurrentLimits@{setRealCurrentLimits}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setRealCurrentLimits()}{setRealCurrentLimits()}}
+{\footnotesize\ttfamily void set\+Real\+Current\+Limits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a0d33a18bebc3f854bd6bcbe5482f1d01}\label{can_interface_8c_a0d33a18bebc3f854bd6bcbe5482f1d01}} 
+\index{canInterface.c@{canInterface.c}!setRealPowerLimits@{setRealPowerLimits}}
+\index{setRealPowerLimits@{setRealPowerLimits}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setRealPowerLimits()}{setRealPowerLimits()}}
+{\footnotesize\ttfamily void set\+Real\+Power\+Limits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a9ace797ae2b711673c82fb4d90ae7717}\label{can_interface_8c_a9ace797ae2b711673c82fb4d90ae7717}} 
+\index{canInterface.c@{canInterface.c}!setSimAcNetworkPhaseLoadU@{setSimAcNetworkPhaseLoadU}}
+\index{setSimAcNetworkPhaseLoadU@{setSimAcNetworkPhaseLoadU}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setSimAcNetworkPhaseLoadU()}{setSimAcNetworkPhaseLoadU()}}
+{\footnotesize\ttfamily void set\+Sim\+Ac\+Network\+Phase\+LoadU (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ac920ca45c9d3f12ffcf94765f7f32c15}\label{can_interface_8c_ac920ca45c9d3f12ffcf94765f7f32c15}} 
+\index{canInterface.c@{canInterface.c}!setSimAcNetworkPhaseLoadV@{setSimAcNetworkPhaseLoadV}}
+\index{setSimAcNetworkPhaseLoadV@{setSimAcNetworkPhaseLoadV}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setSimAcNetworkPhaseLoadV()}{setSimAcNetworkPhaseLoadV()}}
+{\footnotesize\ttfamily void set\+Sim\+Ac\+Network\+Phase\+LoadV (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_adde16125808d042f784f6534bffdc150}\label{can_interface_8c_adde16125808d042f784f6534bffdc150}} 
+\index{canInterface.c@{canInterface.c}!setSimAcNetworkPhaseLoadW@{setSimAcNetworkPhaseLoadW}}
+\index{setSimAcNetworkPhaseLoadW@{setSimAcNetworkPhaseLoadW}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setSimAcNetworkPhaseLoadW()}{setSimAcNetworkPhaseLoadW()}}
+{\footnotesize\ttfamily void set\+Sim\+Ac\+Network\+Phase\+LoadW (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a099ba9a26750952c8cdea5e8523634bb}\label{can_interface_8c_a099ba9a26750952c8cdea5e8523634bb}} 
+\index{canInterface.c@{canInterface.c}!setSimAcNetworkPhaseSourceU@{setSimAcNetworkPhaseSourceU}}
+\index{setSimAcNetworkPhaseSourceU@{setSimAcNetworkPhaseSourceU}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setSimAcNetworkPhaseSourceU()}{setSimAcNetworkPhaseSourceU()}}
+{\footnotesize\ttfamily void set\+Sim\+Ac\+Network\+Phase\+SourceU (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ac327c73a34d31a6cf229c924462f641b}\label{can_interface_8c_ac327c73a34d31a6cf229c924462f641b}} 
+\index{canInterface.c@{canInterface.c}!setSimAcNetworkPhaseSourceV@{setSimAcNetworkPhaseSourceV}}
+\index{setSimAcNetworkPhaseSourceV@{setSimAcNetworkPhaseSourceV}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setSimAcNetworkPhaseSourceV()}{setSimAcNetworkPhaseSourceV()}}
+{\footnotesize\ttfamily void set\+Sim\+Ac\+Network\+Phase\+SourceV (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_ae767960b9dae7d642d15b8926695b75e}\label{can_interface_8c_ae767960b9dae7d642d15b8926695b75e}} 
+\index{canInterface.c@{canInterface.c}!setSimAcNetworkPhaseSourceW@{setSimAcNetworkPhaseSourceW}}
+\index{setSimAcNetworkPhaseSourceW@{setSimAcNetworkPhaseSourceW}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{setSimAcNetworkPhaseSourceW()}{setSimAcNetworkPhaseSourceW()}}
+{\footnotesize\ttfamily void set\+Sim\+Ac\+Network\+Phase\+SourceW (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a00ca1b7737ba8d9bf03aa228a2186171}\label{can_interface_8c_a00ca1b7737ba8d9bf03aa228a2186171}} 
+\index{canInterface.c@{canInterface.c}!table\_items\_getMeta@{table\_items\_getMeta}}
+\index{table\_items\_getMeta@{table\_items\_getMeta}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{table\_items\_getMeta()}{table\_items\_getMeta()}}
+{\footnotesize\ttfamily void table\+\_\+items\+\_\+get\+Meta (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_a176414fba733ccb522284cdd7fbe31ce}\label{can_interface_8c_a176414fba733ccb522284cdd7fbe31ce}} 
+\index{canInterface.c@{canInterface.c}!table\_items\_setMeta@{table\_items\_setMeta}}
+\index{table\_items\_setMeta@{table\_items\_setMeta}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{table\_items\_setMeta()}{table\_items\_setMeta()}}
+{\footnotesize\ttfamily void table\+\_\+items\+\_\+set\+Meta (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_interface_8c_aa05e7dbca4ce3c6efc8800cd471a26cd}\label{can_interface_8c_aa05e7dbca4ce3c6efc8800cd471a26cd}} 
+\index{canInterface.c@{canInterface.c}!updateProcessToInverter@{updateProcessToInverter}}
+\index{updateProcessToInverter@{updateProcessToInverter}!canInterface.c@{canInterface.c}}
+\doxysubsubsection{\texorpdfstring{updateProcessToInverter()}{updateProcessToInverter()}}
+{\footnotesize\ttfamily void update\+Process\+To\+Inverter (\begin{DoxyParamCaption}\item[{bool}]{valid }\end{DoxyParamCaption})}
+

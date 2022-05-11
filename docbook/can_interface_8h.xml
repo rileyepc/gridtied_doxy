@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_can_interface_8h" xml:lang="en-US">
+<title>interface/canInterface.h File Reference</title>
+<indexterm><primary>interface/canInterface.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;cand.h&quot;
+#include &quot;interface.h&quot;
+#include &lt;stdbool.h&gt;
+#include &lt;stdint.h&gt;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_can_interface_8h_1a08d3af6fd69d3b80a0e30fedfd7d4026">TEMP_DELTA_SCALE</link>   (10.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8h_1a91bbe13402240b67e032c3c8a1b3f992">TEMP_DELTA_TIME_SCALE</link>   (0.01f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8h_1a89f143a998937dd4a94319dc1c0471a0">SOFTSTART_INC_SCALE</link>   (10000.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8h_1a9914f7259abdf98e198b43a1c5afa669">VOUT_GAIN_SCALE</link>   (1000.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8h_1af92fe56fa9d203ac7ed172951a7764c5">IGBT_THERMAL_IMPEDANCE_SCALE</link>   (1000000.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8h_1a8e4d6085a0d16bde2868a5de8c07b88d">FBK_SCALING_SCALE</link>   (100000.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8h_1a0f45377ecf0285616fff0c525b34a327">POWER_SCALE</link>   (10.0f/1000.0f)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_can_interface_8h_1ab909947eb49bfce3b280b12ef3e7f5fc">TEMPERATURE_SCALE</link>   (10.0f)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef void(* <link linkend="_can_interface_8h_1a78f073adbefd90c277a7962d8d383996">ParameterGetterSetter</link>) (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_can_interface_8h_1a1c41607124c2a3edfba4aca78b93e253">canInterfaceInit</link> (int canID, int SA_mask, CAN_BAUDRATE baud, uint32_t buildTime, uint32_t buildGitRev)</para>
+</listitem>
+            <listitem><para>void <link linkend="_can_interface_8h_1aa05e7dbca4ce3c6efc8800cd471a26cd">updateProcessToInverter</link> (bool valid)</para>
+</listitem>
+            <listitem><para>long double <link linkend="_can_interface_8h_1a39a21ea844fd21be0c1ac875ba3231d1">canInterface_itemNetMultiplier</link> (<link linkend="_struct_interface_item_common">InterfaceItemCommon</link> const *const item)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_can_interface_8h_1a8e4d6085a0d16bde2868a5de8c07b88d"/><section>
+    <title>FBK_SCALING_SCALE</title>
+<indexterm><primary>FBK_SCALING_SCALE</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>FBK_SCALING_SCALE</secondary></indexterm>
+<para><computeroutput>#define FBK_SCALING_SCALE   (100000.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1af92fe56fa9d203ac7ed172951a7764c5"/><section>
+    <title>IGBT_THERMAL_IMPEDANCE_SCALE</title>
+<indexterm><primary>IGBT_THERMAL_IMPEDANCE_SCALE</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>IGBT_THERMAL_IMPEDANCE_SCALE</secondary></indexterm>
+<para><computeroutput>#define IGBT_THERMAL_IMPEDANCE_SCALE   (1000000.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1a0f45377ecf0285616fff0c525b34a327"/><section>
+    <title>POWER_SCALE</title>
+<indexterm><primary>POWER_SCALE</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>POWER_SCALE</secondary></indexterm>
+<para><computeroutput>#define POWER_SCALE   (10.0f/1000.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1a89f143a998937dd4a94319dc1c0471a0"/><section>
+    <title>SOFTSTART_INC_SCALE</title>
+<indexterm><primary>SOFTSTART_INC_SCALE</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>SOFTSTART_INC_SCALE</secondary></indexterm>
+<para><computeroutput>#define SOFTSTART_INC_SCALE   (10000.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1a08d3af6fd69d3b80a0e30fedfd7d4026"/><section>
+    <title>TEMP_DELTA_SCALE</title>
+<indexterm><primary>TEMP_DELTA_SCALE</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>TEMP_DELTA_SCALE</secondary></indexterm>
+<para><computeroutput>#define TEMP_DELTA_SCALE   (10.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1a91bbe13402240b67e032c3c8a1b3f992"/><section>
+    <title>TEMP_DELTA_TIME_SCALE</title>
+<indexterm><primary>TEMP_DELTA_TIME_SCALE</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>TEMP_DELTA_TIME_SCALE</secondary></indexterm>
+<para><computeroutput>#define TEMP_DELTA_TIME_SCALE   (0.01f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1ab909947eb49bfce3b280b12ef3e7f5fc"/><section>
+    <title>TEMPERATURE_SCALE</title>
+<indexterm><primary>TEMPERATURE_SCALE</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>TEMPERATURE_SCALE</secondary></indexterm>
+<para><computeroutput>#define TEMPERATURE_SCALE   (10.0f)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1a9914f7259abdf98e198b43a1c5afa669"/><section>
+    <title>VOUT_GAIN_SCALE</title>
+<indexterm><primary>VOUT_GAIN_SCALE</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>VOUT_GAIN_SCALE</secondary></indexterm>
+<para><computeroutput>#define VOUT_GAIN_SCALE   (1000.0f)</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_can_interface_8h_1a78f073adbefd90c277a7962d8d383996"/><section>
+    <title>ParameterGetterSetter</title>
+<indexterm><primary>ParameterGetterSetter</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>ParameterGetterSetter</secondary></indexterm>
+<para><computeroutput>typedef void(* ParameterGetterSetter) (Meta_Enum meta_index, <link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link> const *const *const items, uint16_t items_count)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_can_interface_8h_1a39a21ea844fd21be0c1ac875ba3231d1"/><section>
+    <title>canInterface_itemNetMultiplier()</title>
+<indexterm><primary>canInterface_itemNetMultiplier</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>canInterface_itemNetMultiplier</secondary></indexterm>
+<para><computeroutput>long double canInterface_itemNetMultiplier (<link linkend="_struct_interface_item_common">InterfaceItemCommon</link> const *const item)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1a1c41607124c2a3edfba4aca78b93e253"/><section>
+    <title>canInterfaceInit()</title>
+<indexterm><primary>canInterfaceInit</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>canInterfaceInit</secondary></indexterm>
+<para><computeroutput>void canInterfaceInit (int canID, int SA_mask, CAN_BAUDRATE baud, uint32_t buildTime, uint32_t buildGitRev)</computeroutput></para></section>
+<anchor xml:id="_can_interface_8h_1aa05e7dbca4ce3c6efc8800cd471a26cd"/><section>
+    <title>updateProcessToInverter()</title>
+<indexterm><primary>updateProcessToInverter</primary><secondary>canInterface.h</secondary></indexterm>
+<indexterm><primary>canInterface.h</primary><secondary>updateProcessToInverter</secondary></indexterm>
+<para><computeroutput>void updateProcessToInverter (bool valid)</computeroutput></para></section>
+</section>
+</section>

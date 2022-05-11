@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_p_w_m___action_event__s" xml:lang="en-US">
+<title>EPWM_ActionEvent_s Struct Reference</title>
+<indexterm><primary>EPWM_ActionEvent_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_struct_e_p_w_m___action_event__s_1a46e43c8bf3d0c5e9d127f60fad7ced67">aqChannel</link></para>
+</listitem>
+            <listitem><para><link linkend="_epwm__emu_8c_1a5ca83038074430b3815c96c95ed0b3bc">EPWM_AqEventSource_t</link> <link linkend="_struct_e_p_w_m___action_event__s_1ac721d7014c04a283a3408867a27a410e">aqSource</link></para>
+</listitem>
+            <listitem><para><link linkend="_epwm__emu_8c_1af5665a9cb9ae25c32d428572226d8650">EPWM_AqOutputAction_t</link> <link linkend="_struct_e_p_w_m___action_event__s_1a7aaecc45da2bb7e844d7212ec41b0c40">aqAction</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_p_w_m___action_event__s_1a4c911c50fe306886de9a44ce2bb9784b">tOffset</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_p_w_m___action_event__s_1a7aaecc45da2bb7e844d7212ec41b0c40"/><section>
+    <title>aqAction</title>
+<indexterm><primary>aqAction</primary><secondary>EPWM_ActionEvent_s</secondary></indexterm>
+<indexterm><primary>EPWM_ActionEvent_s</primary><secondary>aqAction</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1af5665a9cb9ae25c32d428572226d8650">EPWM_AqOutputAction_t</link> EPWM_ActionEvent_s::aqAction</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___action_event__s_1a46e43c8bf3d0c5e9d127f60fad7ced67"/><section>
+    <title>aqChannel</title>
+<indexterm><primary>aqChannel</primary><secondary>EPWM_ActionEvent_s</secondary></indexterm>
+<indexterm><primary>EPWM_ActionEvent_s</primary><secondary>aqChannel</secondary></indexterm>
+<para><computeroutput>uint16_t EPWM_ActionEvent_s::aqChannel</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___action_event__s_1ac721d7014c04a283a3408867a27a410e"/><section>
+    <title>aqSource</title>
+<indexterm><primary>aqSource</primary><secondary>EPWM_ActionEvent_s</secondary></indexterm>
+<indexterm><primary>EPWM_ActionEvent_s</primary><secondary>aqSource</secondary></indexterm>
+<para><computeroutput><link linkend="_epwm__emu_8c_1a5ca83038074430b3815c96c95ed0b3bc">EPWM_AqEventSource_t</link> EPWM_ActionEvent_s::aqSource</computeroutput></para></section>
+<anchor xml:id="_struct_e_p_w_m___action_event__s_1a4c911c50fe306886de9a44ce2bb9784b"/><section>
+    <title>tOffset</title>
+<indexterm><primary>tOffset</primary><secondary>EPWM_ActionEvent_s</secondary></indexterm>
+<indexterm><primary>EPWM_ActionEvent_s</primary><secondary>tOffset</secondary></indexterm>
+<para><computeroutput>double EPWM_ActionEvent_s::tOffset</computeroutput></para></section>
+</section>
+</section>

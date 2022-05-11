@@ -1,0 +1,97 @@
+\hypertarget{dll_epc_control_8h_source}{}\doxysection{dll\+Epc\+Control.\+h}
+\label{dll_epc_control_8h_source}\index{sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.h@{sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.h}}
+\mbox{\hyperlink{dll_epc_control_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{ifndef} \textcolor{preprocessor}{\_\_EPC\_SIL\_LIBRARY\_DLL\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_EPC\_SIL\_LIBRARY\_DLL\_H\_}}
+\DoxyCodeLine{3 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{4 \textcolor{comment}{*}}
+\DoxyCodeLine{5 \textcolor{comment}{*   \#\#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#   \#\#\#\#\#\#\#\#      \#\#\#\#\#\#\#    \#\#     \#\#     \#\#   \#\#\#\#\#\#\#\#\#   \#\#\#\#\#\#\#}}
+\DoxyCodeLine{6 \textcolor{comment}{*  \#         \#  \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#       \#\# \#\#}}
+\DoxyCodeLine{7 \textcolor{comment}{*  \# \#\#\#\#\#\#\#\#   \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#\#\#\#\#\#\#\#\#  \#\#}}
+\DoxyCodeLine{8 \textcolor{comment}{*  \#            \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#          \#\#}}
+\DoxyCodeLine{9 \textcolor{comment}{*   \#\#\#\#\#\#\#\#\#   \# \#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#  \#\# \#\#\#\#\#\#      \#\#\#\#\#\#\#     \#\#\#\#\#\#  \#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#  \#\#}}
+\DoxyCodeLine{10 \textcolor{comment}{*               \#                        \#\#}}
+\DoxyCodeLine{11 \textcolor{comment}{*               \#                         \#}}
+\DoxyCodeLine{12 \textcolor{comment}{*}}
+\DoxyCodeLine{13 \textcolor{comment}{*                                         COMPANY CONFIDENTIAL}}
+\DoxyCodeLine{14 \textcolor{comment}{*                         This document contains information proprietary to EPC Power.}}
+\DoxyCodeLine{15 \textcolor{comment}{*             This is an unpublished work subject to trade secret and copyright protection.}}
+\DoxyCodeLine{16 \textcolor{comment}{*                   In addition, the information may be the subject of patent applications}}
+\DoxyCodeLine{17 \textcolor{comment}{*                           in the United States and foreign countries.}}
+\DoxyCodeLine{18 \textcolor{comment}{*}}
+\DoxyCodeLine{19 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{22 \textcolor{comment}{ * M O D U L E    D E S C R I P T I O N}}
+\DoxyCodeLine{23 \textcolor{comment}{ *}}
+\DoxyCodeLine{24 \textcolor{comment}{ * Filename     : dllEpcControl.h}}
+\DoxyCodeLine{25 \textcolor{comment}{ * Full Name    : Package::SubPackage::..::Class}}
+\DoxyCodeLine{26 \textcolor{comment}{ * Prefix       : None}}
+\DoxyCodeLine{27 \textcolor{comment}{ * Description  : EPC SIL Library DLL interface. This header declares data interface which is}}
+\DoxyCodeLine{28 \textcolor{comment}{ *                available from the DLL. A program which is calling the DLL must use this interface}}
+\DoxyCodeLine{29 \textcolor{comment}{ *                to access selected variables and functions of the SIL Library.}}
+\DoxyCodeLine{30 \textcolor{comment}{ * Author       : Janne Hellberg}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ * History      :}}
+\DoxyCodeLine{33 \textcolor{comment}{ * Date         Name            Description}}
+\DoxyCodeLine{34 \textcolor{comment}{ * 05.01.2022   J.Hellberg      Initial Version}}
+\DoxyCodeLine{35 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\_\_cplusplus\textcolor{preprocessor}{)}}
+\DoxyCodeLine{38 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{42 \textcolor{comment}{* Include Files}}
+\DoxyCodeLine{43 \textcolor{comment}{********************************************************************************************************/}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{stdint}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}         \textcolor{comment}{/* For Integer types */}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{keywordtype}{float}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}          \textcolor{comment}{/* For \_isnan*/}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{/* math.h is needed for Visual Studio versions prior to 2013 (\_MSC\_VER equals to 1800 in VS2013). */}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\_MSC\_VER\textcolor{preprocessor}{)} \textcolor{preprocessor}{\&\&} \textcolor{preprocessor}{(}\_MSC\_VER \textcolor{preprocessor}{<} 1800\textcolor{preprocessor}{)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{math}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \mbox{\hyperlink{lib_epc_control_8h}{"{}libEpcControl.h"{}}}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{56 \textcolor{comment}{* Constant Defines}}
+\DoxyCodeLine{57 \textcolor{comment}{********************************************************************************************************/}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{60 \textcolor{comment}{* Macro Defines}}
+\DoxyCodeLine{61 \textcolor{comment}{********************************************************************************************************/}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_LIBRARY\_DLL} \textcolor{keyword}{\_\_declspec}\textcolor{preprocessor}{(}\textcolor{preprocessor}{dllexport}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{66 \textcolor{comment}{* Type Definitions}}
+\DoxyCodeLine{67 \textcolor{comment}{********************************************************************************************************/}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{70 \textcolor{comment}{* Exported Variable Declarations}}
+\DoxyCodeLine{71 \textcolor{comment}{********************************************************************************************************/}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{74 \textcolor{comment}{* Exported Function Prototypes}}
+\DoxyCodeLine{75 \textcolor{comment}{********************************************************************************************************/}}
+\DoxyCodeLine{76 \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\_LIBRARY\_DLL}} \textcolor{keywordtype}{void}    \mbox{\hyperlink{dll_epc_control_8h_a3061953e757ae035f13df29ba38c1e93}{SIL\_initializeLibraryDll}}(\textcolor{keywordtype}{double} tStep, SIL\_eSolverType\_t solverType, SIL\_eModelIntent\_t mdlIntent, \textcolor{keywordtype}{char} *pmvsPath);}
+\DoxyCodeLine{77 \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\_LIBRARY\_DLL}} \textcolor{keywordtype}{void}    \mbox{\hyperlink{dll_epc_control_8h_acfab1bdc19dfdaf14de941b25a0def42}{SIL\_updateOutputDll}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{78 \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\_LIBRARY\_DLL}} \textcolor{keywordtype}{void}    \mbox{\hyperlink{dll_epc_control_8h_a99cba5606dc411a2ca258e735a1b7f4e}{SIL\_updateStateDll}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{79 \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\_LIBRARY\_DLL}} \textcolor{keywordtype}{void}    \mbox{\hyperlink{dll_epc_control_8h_a5cfbb854944792b0587874dd4bf93578}{SIL\_writeSnapshotDll}}(\textcolor{keywordtype}{double} tNow, uint16\_t instanceNumber, \textcolor{keywordtype}{char} *tempPath);}
+\DoxyCodeLine{80 \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\_LIBRARY\_DLL}} \textcolor{keywordtype}{void}    \mbox{\hyperlink{dll_epc_control_8h_a05952bd1e61b51d0d4ba7e19c28ea50f}{SIL\_readSnapshotDll}}(uint16\_t instanceNumber, \textcolor{keywordtype}{char} *tempPath);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{84 \textcolor{comment}{* Inline Function Definitions :-\/(}}
+\DoxyCodeLine{85 \textcolor{comment}{********************************************************************************************************/}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\_\_cplusplus\textcolor{preprocessor}{)}}
+\DoxyCodeLine{88 \}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif} \textcolor{comment}{// extern "{}C"{}}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}  \textcolor{comment}{//\_\_EPC\_SIL\_LIBRARY\_DLL\_H\_}}
+
+\end{DoxyCode}

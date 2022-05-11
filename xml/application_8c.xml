@@ -1,0 +1,1299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="application_8c" kind="file" language="C++">
+    <compoundname>application.c</compoundname>
+    <includes refid="application_8h" local="yes">application.h</includes>
+    <includes refid="revision_info_8h" local="yes">revisionInfo.h</includes>
+    <includes local="yes">hardware.h</includes>
+    <includes local="yes">channelMappingManager.h</includes>
+    <includes refid="can_interface_8h" local="yes">canInterface.h</includes>
+    <includes local="yes">canInterfaceGen.h</includes>
+    <includes local="yes">referenceHandler.h</includes>
+    <includes local="yes">gridSupport.h</includes>
+    <includes local="yes">topLevelControl.h</includes>
+    <includes local="yes">afe.h</includes>
+    <includes local="yes">dcdcControlI.h</includes>
+    <includes local="yes">powerConversionControl.h</includes>
+    <includes local="yes">phaseConfigDetectI.h</includes>
+    <includes local="yes">phaseControlI.h</includes>
+    <includes local="yes">filterObserverI.h</includes>
+    <includes local="yes">phasePllI.h</includes>
+    <includes local="yes">auxiliaryPllI.h</includes>
+    <includes local="yes">islandControlI.h</includes>
+    <includes local="yes">protectedBusControlI.h</includes>
+    <includes local="yes">phaseCurrentControlI.h</includes>
+    <includes local="yes">adaptiveHarmonicControlI.h</includes>
+    <includes local="yes">synchronousHarmonicControlI.h</includes>
+    <includes local="yes">mppt.h</includes>
+    <includes local="yes">engDebug.h</includes>
+    <includes local="yes">syntheticInertiaI.h</includes>
+    <includes local="yes">ABB_libPrimaryControl.h</includes>
+    <includes local="yes">modulator.h</includes>
+    <includes local="yes">system.h</includes>
+    <includes local="yes">scheduler.h</includes>
+    <includes local="yes">modbusHandler.h</includes>
+    <includes local="yes">sunspec.h</includes>
+    <includes local="yes">ccp.h</includes>
+    <includes local="yes">dataLogger.h</includes>
+    <includes local="yes">eepromHandler.h</includes>
+    <includes local="yes">authorization.h</includes>
+    <includes local="yes">deviceThermalModel.h</includes>
+    <includes local="yes">supervisor.h</includes>
+    <includes local="yes">IEEE1547.h</includes>
+    <includes local="yes">gridMonitor.h</includes>
+    <includes local="yes">protectionsI.h</includes>
+    <includes local="yes">fanControl.h</includes>
+    <includes local="yes">environmentControl.h</includes>
+    <includes local="yes">fpgaRegs.h</includes>
+    <includes local="yes">pwmd.h</includes>
+    <includes local="yes">measurementd.h</includes>
+    <includes local="yes">led.h</includes>
+    <includes local="yes">simulateFeedback.h</includes>
+    <incdepgraph>
+      <node id="41">
+        <label>ABB_libPrimaryControl.h</label>
+      </node>
+      <node id="1">
+        <label>application.c</label>
+        <link refid="application_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>application.h</label>
+        <link refid="application_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>canInterface.h</label>
+        <link refid="can_interface_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>revisionInfo.h</label>
+        <link refid="revision_info_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>IEEE1547.h</label>
+      </node>
+      <node id="36">
+        <label>adaptiveHarmonicControlI.h</label>
+      </node>
+      <node id="25">
+        <label>afe.h</label>
+      </node>
+      <node id="7">
+        <label>authorization.h</label>
+      </node>
+      <node id="32">
+        <label>auxiliaryPllI.h</label>
+      </node>
+      <node id="17">
+        <label>canInterfaceEnums.h</label>
+      </node>
+      <node id="21">
+        <label>canInterfaceGen.h</label>
+      </node>
+      <node id="8">
+        <label>cand.h</label>
+      </node>
+      <node id="46">
+        <label>ccp.h</label>
+      </node>
+      <node id="13">
+        <label>channelMappingManager.h</label>
+      </node>
+      <node id="6">
+        <label>dataLogger.h</label>
+      </node>
+      <node id="26">
+        <label>dcdcControlI.h</label>
+      </node>
+      <node id="48">
+        <label>deviceThermalModel.h</label>
+      </node>
+      <node id="9">
+        <label>digitalIO.h</label>
+      </node>
+      <node id="47">
+        <label>eepromHandler.h</label>
+      </node>
+      <node id="39">
+        <label>engDebug.h</label>
+      </node>
+      <node id="53">
+        <label>environmentControl.h</label>
+      </node>
+      <node id="52">
+        <label>fanControl.h</label>
+      </node>
+      <node id="5">
+        <label>faultHandler.h</label>
+      </node>
+      <node id="30">
+        <label>filterObserverI.h</label>
+      </node>
+      <node id="54">
+        <label>fpgaRegs.h</label>
+      </node>
+      <node id="50">
+        <label>gridMonitor.h</label>
+      </node>
+      <node id="23">
+        <label>gridSupport.h</label>
+      </node>
+      <node id="12">
+        <label>hardware.h</label>
+      </node>
+      <node id="4">
+        <label>ioHandler.h</label>
+      </node>
+      <node id="33">
+        <label>islandControlI.h</label>
+      </node>
+      <node id="57">
+        <label>led.h</label>
+      </node>
+      <node id="56">
+        <label>measurementd.h</label>
+      </node>
+      <node id="19">
+        <label>meta.h</label>
+      </node>
+      <node id="45">
+        <label>modbusHandler.h</label>
+      </node>
+      <node id="42">
+        <label>modulator.h</label>
+      </node>
+      <node id="38">
+        <label>mppt.h</label>
+      </node>
+      <node id="28">
+        <label>phaseConfigDetectI.h</label>
+      </node>
+      <node id="29">
+        <label>phaseControlI.h</label>
+      </node>
+      <node id="35">
+        <label>phaseCurrentControlI.h</label>
+      </node>
+      <node id="31">
+        <label>phasePllI.h</label>
+      </node>
+      <node id="27">
+        <label>powerConversionControl.h</label>
+      </node>
+      <node id="34">
+        <label>protectedBusControlI.h</label>
+      </node>
+      <node id="51">
+        <label>protectionsI.h</label>
+      </node>
+      <node id="55">
+        <label>pwmd.h</label>
+      </node>
+      <node id="22">
+        <label>referenceHandler.h</label>
+      </node>
+      <node id="44">
+        <label>scheduler.h</label>
+      </node>
+      <node id="58">
+        <label>simulateFeedback.h</label>
+      </node>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="16">
+        <label>stddef.h</label>
+      </node>
+      <node id="11">
+        <label>stdint.h</label>
+      </node>
+      <node id="18">
+        <label>sunspec.h</label>
+      </node>
+      <node id="49">
+        <label>supervisor.h</label>
+      </node>
+      <node id="37">
+        <label>synchronousHarmonicControlI.h</label>
+      </node>
+      <node id="40">
+        <label>syntheticInertiaI.h</label>
+      </node>
+      <node id="43">
+        <label>system.h</label>
+      </node>
+      <node id="24">
+        <label>topLevelControl.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="application_8c_1aac167759466a8cf18f6e33417e546f4d" prot="public" static="no">
+        <name>APP_EEPROM_SECTIONS_DEFAULTS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Section revision must be updated under the following conditions:<orderedlist>
+<listitem><para>Any addition, subtraction, or size change to a meta parameter section (meta ruins everything)</para>
+</listitem><listitem><para>Removing one or more parameters from a section</para>
+</listitem><listitem><para>Changing the size of an existing parameter in a section</para>
+</listitem><listitem><para>Re-ordering parameters within a section</para>
+</listitem><listitem><para>Adding a parameter anywhere other than to the end of a section</para>
+</listitem></orderedlist>
+</para>
+</simplesect>
+In the future this should/will be managed and generated automatically by PM, preferably with memory storage managed by an OS file system running on a SoC.</para>
+<para><simplesect kind="note"><para>uuids are used here to uniquely identify a parameter group, even if its name or index changes, and conversely prevent a parameter section&apos;s data from being loaded into the wrong section in RAM. UUIDs can be generated with the following python code: </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="150" column="9" bodyfile="application.c" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>APP_EeSections_e</name>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cafaa8efd816207382b37685f325b9e905" prot="public">
+          <name>EE_SECTION_HW_DEF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca5b604da0f4df6079fe5292b92bfc373d" prot="public">
+          <name>EE_SECTION_CAN_INTERFACE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cab606ecab53108202be513deb4a58ec8e" prot="public">
+          <name>EE_SECTION_FAULT_CONFIGURATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cab90bdca4b282c91f047bbe623064b727" prot="public">
+          <name>EE_SECTION_IO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca807c4741ca242e85cde6002ef34a6442" prot="public">
+          <name>EE_SECTION_AFE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca88990d79422fa7da5e15b20c0d9e307b" prot="public">
+          <name>EE_SECTION_LINE_MONITOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca954db3b77be99dea319a43ab324eb6f4" prot="public">
+          <name>EE_SECTION_SERIAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cad8403b322b446430f4268656f5ea1f1b" prot="public">
+          <name>EE_SECTION_DATA_LOGGER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3c2a801b89624bb7162f534ff7e1c5a3" prot="public">
+          <name>EE_SECTION_DCDC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca8bb0d268a7b0de50562de9674a25a79a" prot="public">
+          <name>EE_SECTION_CAN_TX_RATES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caeb0038013ccb79efe69f5031a5e4a115" prot="public">
+          <name>EE_SECTION_PCC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca2a301d6537ed2337c1a60c2d3c9d3cca" prot="public">
+          <name>EE_SECTION_PCC_PPC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caaa3dcb19f366aa6806a021da32f56708" prot="public">
+          <name>EE_SECTION_PCC_PPC_HFO_I</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caaf381ed7f6f681889cf7ddb76bcd5c4d" prot="public">
+          <name>EE_SECTION_PCC_PPC_HFO_C</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca852e0ffce3358517fa91af38ae2be7f0" prot="public">
+          <name>EE_SECTION_PCC_PPC_PLL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca80a77c2f40c7a83ba2ab15359f1ddc1c" prot="public">
+          <name>EE_SECTION_PCC_PPC_APL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca12d69ddd64b69b238702bb139f5e92a0" prot="public">
+          <name>EE_SECTION_PCC_PPC_PBC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cae80f5549624ec7fae961ab4716853a70" prot="public">
+          <name>EE_SECTION_PCC_PPC_ISL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca4bfbbce40f7d6153024f07c5a78dba06" prot="public">
+          <name>EE_SECTION_PCC_PPC_SPC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca1e7642aa30a6ffdc91d43a195ace932f" prot="public">
+          <name>EE_SECTION_PCC_PPC_AHC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca345b8a03cd9d00545ecf5adfa24af0fc" prot="public">
+          <name>EE_SECTION_PCC_PPC_SHC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7ccfb126ba1ce03589b04ab2fac322fe" prot="public">
+          <name>EE_SECTION_MOD_AC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caf8163c3ac13fca88c155c8f2fcf57338" prot="public">
+          <name>EE_SECTION_MOD_DC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac0cd3a438d71426e750afe23ee0cd934" prot="public">
+          <name>EE_SECTION_PWMD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca0f7531ffc48f9cb8c22510e545731139" prot="public">
+          <name>EE_SECTION_MESD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca12a1bf6da5fd07bd4a7d3e8530651b54" prot="public">
+          <name>EE_SECTION_PROT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caacbc0a3960b1f9a9419f30f7f13c3c77" prot="public">
+          <name>EE_SECTION_DTM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3b9bad817b4fd842bfe6378302cb91b5" prot="public">
+          <name>EE_SECTION_SIM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7f3ade36b71b86fe87672ea6fcc9f6a6" prot="public">
+          <name>EE_SECTION_CMM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac03402ad085ff001adec8530b3d45ac3" prot="public">
+          <name>EE_SECTION_PCD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca6edfd7f17bf11e988322ad5f6f2f27dc" prot="public">
+          <name>EE_SECTION_TLC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3c07baef931f722703a270098dabcfbb" prot="public">
+          <name>EE_SECTION_ABB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cae932a4de5d6360b8eaeec095c8eea17e" prot="public">
+          <name>EE_SECTION_MPP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca5a5adfc7ba2ca988fb6ef686832308dc" prot="public">
+          <name>EE_SECTION_FC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cabbcaf74b948a8b295de0a2affa3b2cd6" prot="public">
+          <name>EE_SECTION_EDB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca8a31e73a6668674b1d692c2fbc07adc9" prot="public">
+          <name>EE_SECTION_ENV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac37dbaf9eec105942564578876fe93ae" prot="public">
+          <name>EE_SECTION_AUTH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7d4a520ed031f19ae64a5bf930106d01" prot="public">
+          <name>EE_SECTION_GSU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac7f450a035bb629e4f9a94222799c735" prot="public">
+          <name>EE_SECTION_REF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7c7d1d2875bcde7b871748246745c106" prot="public">
+          <name>EE_SECTION_VSG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca058ab488fb1988683987bc4026ae4253" prot="public">
+          <name>EE_SECTION_EI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caf877d1c8e669a52955e7fbe14a465d6b" prot="public">
+          <name>EE_SECTION_SUNSPEC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caab95e72862b693b23a72b03a37bea0c1" prot="public">
+          <name>EE_SECTION_COUNTERS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1" prot="public">
+          <name>EE_SECTION_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="207" column="1" bodyfile="application.c" bodystart="207" bodyend="252"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="application_8c_1a99999c420aa2ec727cdcdd61cc5737e2" prot="public" static="no" mutable="no">
+        <type>MOD_AcModulator_t</type>
+        <definition>MOD_AcModulator_t PCC_AcModulator</definition>
+        <argsstring></argsstring>
+        <name>PCC_AcModulator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="258" column="33" declfile="application.c" declline="258" declcolumn="33"/>
+      </memberdef>
+      <memberdef kind="variable" id="application_8c_1a6f21714ffb159d1406870dc7d294687c" prot="public" static="no" mutable="no">
+        <type>MOD_DcModulator_t</type>
+        <definition>MOD_DcModulator_t DCDC_DcModulator</definition>
+        <argsstring></argsstring>
+        <name>DCDC_DcModulator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="259" column="33" declfile="application.c" declline="259" declcolumn="33"/>
+      </memberdef>
+      <memberdef kind="variable" id="application_8c_1aa9c39f99a87f5a9bd9b27fe269b1de04" prot="public" static="no" mutable="no">
+        <type>FaultConfiguration</type>
+        <definition>FaultConfiguration appFaultConfiguration[FLT_CFG_ARRAY_LENGTH]</definition>
+        <argsstring>[FLT_CFG_ARRAY_LENGTH]</argsstring>
+        <name>appFaultConfiguration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="265" column="33" bodyfile="application.c" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="application_8c_1aad4f26eabbeb37bd61a3bb2c76195043" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_j1939___i_n_t_e_r_f_a_c_e" kindref="compound">J1939_INTERFACE</ref></type>
+        <definition>J1939_INTERFACE j1939Interface</definition>
+        <argsstring></argsstring>
+        <name>j1939Interface</name>
+        <initializer>= <ref refid="application_8h_1ae8d2212f7c053cff78f8630589545e61" kindref="member">J1939_INTERFACE_DEFAULTS</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="267" column="17" bodyfile="application.c" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="application_8c_1a52957b0633643716121c30ca8ac20e62" prot="public" static="no" mutable="no">
+        <type>AUTH_Nv</type>
+        <definition>AUTH_Nv authorization_nv</definition>
+        <argsstring></argsstring>
+        <name>authorization_nv</name>
+        <initializer>= AUTH_NV_DEFAULTS(
+    .keys = {
+         [0 ... AUTHORIZATION_KEY_COUNT-1] = AUTH_KEY_DEFAULTS(),
+         [0] = AUTH_KEY_DEFAULTS(
+             .value = { .uint64_t = UINT64_C(0x3193650bda3297ee)},
+             .level = CAN_Enum_AccessLevel_MAC_Auth
+         )
+    }
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="269" column="9" bodyfile="application.c" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="application_8c_1a12358381f3cac018871d7c6b73a404ff" prot="public" static="no" mutable="no">
+        <type>volatile bool</type>
+        <definition>volatile bool eeHandlerUseDefaults</definition>
+        <argsstring></argsstring>
+        <name>eeHandlerUseDefaults</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="279" column="33" bodyfile="application.c" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="application_8c_1a7246d0d8229d32bb043fb1a91fe9f9cb" prot="public" static="yes" mutable="no">
+        <type>EeSection</type>
+        <definition>EeSection eeDef[]</definition>
+        <argsstring>[]</argsstring>
+        <name>eeDef</name>
+        <initializer>= <ref refid="application_8c_1aac167759466a8cf18f6e33417e546f4d" kindref="member">APP_EEPROM_SECTIONS_DEFAULTS</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="280" column="33" bodyfile="application.c" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="application_8c_1a41da49cf22e9e0bdd450f05fcb4c64a0" prot="public" static="yes" mutable="no">
+        <type>EEH_EeAddr</type>
+        <definition>EEH_EeAddr eeSectionAddrList[EE_SECTION_COUNT]</definition>
+        <argsstring>[EE_SECTION_COUNT]</argsstring>
+        <name>eeSectionAddrList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="281" column="33" bodyfile="application.c" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="application_8c_1ad7db6abdd9f1159237959f51aa3bb13b" prot="public" static="no" mutable="no">
+        <type>AUTH_Class</type>
+        <definition>AUTH_Class authorization_this</definition>
+        <argsstring></argsstring>
+        <name>authorization_this</name>
+        <initializer>= AUTH_CLASS_DEFAULTS(
+    authorization_nv.keys,
+    authorization_nv.tags,
+    CAN_Enum_AccessLevel_MAC_Auth
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="295" column="12" bodyfile="application.c" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="application_8c_1ad9a25443ee16204e2e5b0f9ac1b45dd5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void applicationUpdate_100ms</definition>
+        <argsstring>(void)</argsstring>
+        <name>applicationUpdate_100ms</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="317" column="13" bodyfile="application.c" bodystart="317" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="application_8c_1a0e95431f48ee71c1040217b94766ffcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void application_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>application_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="331" column="6" bodyfile="application.c" bodystart="331" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="application_8c_1aae45035e0712c66641eda8c3b74e64d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void APP_setFaultConfig</definition>
+        <argsstring>(uint16_t unused)</argsstring>
+        <name>APP_setFaultConfig</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>unused</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="application.c" line="407" column="6" bodyfile="application.c" bodystart="407" bodyend="411"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/>########<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/>#########<sp/><sp/><sp/>#######</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/>##</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/>#<sp/>########<sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/>#<sp/>########<sp/><sp/><sp/><sp/>#########<sp/><sp/>##<sp/>######<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/><sp/>######<sp/><sp/>######<sp/><sp/><sp/><sp/>#########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COMPANY<sp/>CONFIDENTIAL</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>document<sp/>contains<sp/>information<sp/>proprietary<sp/>to<sp/>EPC<sp/>Power.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>is<sp/>an<sp/>unpublished<sp/>work<sp/>subject<sp/>to<sp/>trade<sp/>secret<sp/>and<sp/>copyright<sp/>protection.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>addition,<sp/>the<sp/>information<sp/>may<sp/>be<sp/>the<sp/>subject<sp/>of<sp/>patent<sp/>applications</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>United<sp/>States<sp/>and<sp/>foreign<sp/>countries.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>M<sp/>O<sp/>D<sp/>U<sp/>L<sp/>E<sp/><sp/><sp/><sp/>D<sp/>E<sp/>S<sp/>C<sp/>R<sp/>I<sp/>P<sp/>T<sp/>I<sp/>O<sp/>N</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Filename<sp/><sp/><sp/><sp/><sp/>:<sp/>application.c</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>Application</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Prefix<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>APP_</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>Description<sp/><sp/>:<sp/>General<sp/>hangout...</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>History<sp/><sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>Date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Description</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>00.00.0000<sp/><sp/><sp/>&lt;F.<sp/>Last&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initial<sp/>Version</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>11.22.2019<sp/><sp/><sp/>M.<sp/>Aubuchon<sp/><sp/><sp/><sp/><sp/>refactored<sp/>fan<sp/>stuff<sp/>to<sp/>fanControl<sp/>module</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>Include<sp/>Files</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="application_8h" kindref="compound">application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="revision_info_8h" kindref="compound">revisionInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Hardware<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hardware.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;channelMappingManager.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Interface<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="can_interface_8h" kindref="compound">canInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;canInterfaceGen.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>reference<sp/>handler<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;referenceHandler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;gridSupport.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Control<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;topLevelControl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;afe.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dcdcControlI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;powerConversionControl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;phaseConfigDetectI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;phaseControlI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;filterObserverI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;phasePllI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;auxiliaryPllI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;islandControlI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;protectedBusControlI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;phaseCurrentControlI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;adaptiveHarmonicControlI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;synchronousHarmonicControlI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;referenceHandler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;mppt.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;engDebug.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;syntheticInertiaI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Customer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ABB_libPrimaryControl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Modulator<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;modulator.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Fuck.<sp/>This<sp/>should<sp/>be<sp/>just<sp/>modulatorI.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>System<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;system.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;scheduler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;modbusHandler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sunspec.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ccp.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dataLogger.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;eepromHandler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;authorization.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Supervisor<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;deviceThermalModel.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;supervisor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IEEE1547.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;gridMonitor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;protectionsI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fanControl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;environmentControl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Drivers<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fpgaRegs.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>isn&apos;t<sp/>a<sp/>driver.<sp/>--DaMi<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pwmd.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;measurementd.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;led.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(DSP377)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;humiditySensor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Simulation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;simulateFeedback.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(DEBUG)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dlog4ch.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>Constant<sp/>Defines</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="138"><highlight class="comment">&gt;&gt;&gt;<sp/>import<sp/>uuid</highlight></codeline>
+<codeline lineno="139"><highlight class="comment">&gt;&gt;&gt;<sp/>def<sp/>format_uuid_as_c_doctet_array(my_uuid):</highlight></codeline>
+<codeline lineno="140"><highlight class="comment">...<sp/><sp/><sp/><sp/><sp/>uuid_string<sp/>=<sp/>str(my_uuid).replace(&apos;-&apos;,<sp/>&apos;&apos;)</highlight></codeline>
+<codeline lineno="141"><highlight class="comment">...<sp/><sp/><sp/><sp/><sp/>uuid_array<sp/>=<sp/>[uuid_string[i:i+4]<sp/>for<sp/>i<sp/>in<sp/>range(8)]</highlight></codeline>
+<codeline lineno="142"><highlight class="comment">...<sp/><sp/><sp/><sp/><sp/>return<sp/>&apos;&apos;.join(f&apos;0x{a},<sp/>&apos;<sp/>for<sp/>a<sp/>in<sp/>uuid_array)</highlight></codeline>
+<codeline lineno="143"><highlight class="comment">...</highlight></codeline>
+<codeline lineno="144"><highlight class="comment">&gt;&gt;&gt;<sp/>for<sp/>_<sp/>in<sp/>range(2):<sp/>print(format_uuid_as_c_doctet_array(uuid.uuid4()))</highlight></codeline>
+<codeline lineno="145"><highlight class="comment">...</highlight></codeline>
+<codeline lineno="146"><highlight class="comment">0xf1ba,<sp/>0x1bad,<sp/>0xbada,<sp/>0xada3,<sp/>0xda39,<sp/>0xa39e,<sp/>0x39eb,<sp/>0x9eb9,</highlight></codeline>
+<codeline lineno="147"><highlight class="comment">0xe1ff,<sp/>0x1ffe,<sp/>0xffed,<sp/>0xfedb,<sp/>0xedb2,<sp/>0xdb2c,<sp/>0xb2ce,<sp/>0x2cef,</highlight></codeline>
+<codeline lineno="148"><highlight class="comment">&gt;&gt;&gt;</highlight></codeline>
+<codeline lineno="149"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>APP_EEPROM_SECTIONS_DEFAULTS<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="151"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_HW_DEF,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8,<sp/>hwDef,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x13bf,<sp/>0x2773,<sp/>0xaf34,<sp/>0x4151,<sp/>0xbc74,<sp/>0xfaa9,<sp/>0x166b,<sp/>0x71f5)),<sp/>\</highlight></codeline>
+<codeline lineno="152"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_CAN_INTERFACE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>j1939Interface,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xbc43,<sp/>0xef3e,<sp/>0x6b47,<sp/>0x4947,<sp/>0x975c,<sp/>0x158c,<sp/>0xacd9,<sp/>0x88e5)),<sp/>\</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_FAULT_CONFIGURATION,<sp/><sp/>4,<sp/>appFaultConfiguration,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xea82,<sp/>0xf72d,<sp/>0x55a2,<sp/>0x4710,<sp/>0xb151,<sp/>0x1c28,<sp/>0xb279,<sp/>0x5c93)),<sp/>\</highlight></codeline>
+<codeline lineno="154"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_IO,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6,<sp/>ioParams,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xab43,<sp/>0xce96,<sp/>0xc31e,<sp/>0x482e,<sp/>0xa71b,<sp/>0x6405,<sp/>0xc5cf,<sp/>0x95eb)),<sp/>\</highlight></codeline>
+<codeline lineno="155"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_AFE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9,<sp/>afeParams,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x8b69,<sp/>0xfa72,<sp/>0xc585,<sp/>0x47fc,<sp/>0x80a1,<sp/>0x7f33,<sp/>0x6364,<sp/>0xfa20)),<sp/>\</highlight></codeline>
+<codeline lineno="156"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_LINE_MONITOR,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>19,<sp/>lineMonitorParams,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x1340,<sp/>0x3faa,<sp/>0x4b07,<sp/>0x43a0,<sp/>0xbf24,<sp/>0xa196,<sp/>0x3323,<sp/>0xa8dd)),<sp/>\</highlight></codeline>
+<codeline lineno="157"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_SERIAL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4,<sp/>UART_params,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x2144,<sp/>0xdc67,<sp/>0xd644,<sp/>0x48e3,<sp/>0xb544,<sp/>0x75cf,<sp/>0x0870,<sp/>0x7b5b)),<sp/>\</highlight></codeline>
+<codeline lineno="158"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_DATA_LOGGER,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/>dataLoggerParams,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xacad,<sp/>0x4bea,<sp/>0xf7a0,<sp/>0x422c,<sp/>0x8f4f,<sp/>0x4349,<sp/>0xdcce,<sp/>0xbd29)),<sp/>\</highlight></codeline>
+<codeline lineno="159"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_DCDC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/>DCDC_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x92a9,<sp/>0x36f1,<sp/>0x3f2d,<sp/>0x43a6,<sp/>0xb666,<sp/>0xc301,<sp/>0xbec0,<sp/>0x29ed)),<sp/>\</highlight></codeline>
+<codeline lineno="160"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_CAN_TX_RATES,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>CAN_txRates,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x2960,<sp/>0x115b,<sp/>0x2971,<sp/>0x4e9f,<sp/>0x8468,<sp/>0x622a,<sp/>0xad89,<sp/>0xd959)),<sp/>\</highlight></codeline>
+<codeline lineno="161"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11,<sp/>PCC_ConfigDataI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xe11b,<sp/>0x4b48,<sp/>0x3813,<sp/>0x4d10,<sp/>0x813f,<sp/>0x6839,<sp/>0x5091,<sp/>0xdfc9)),<sp/>\</highlight></codeline>
+<codeline lineno="162"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>14,<sp/>PPC_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xc3d1,<sp/>0x77d3,<sp/>0x57c2,<sp/>0x4bcd,<sp/>0x8367,<sp/>0x05a2,<sp/>0x4108,<sp/>0x63c7)),<sp/>\</highlight></codeline>
+<codeline lineno="163"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_HFO_I,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4,<sp/>HFO_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xb0e6,<sp/>0x5a39,<sp/>0xd078,<sp/>0x4ed6,<sp/>0x81fa,<sp/>0x9266,<sp/>0x6fe6,<sp/>0xeeeb)),<sp/>\</highlight></codeline>
+<codeline lineno="164"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_HFO_C,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>HFO_CoeffMatrices,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x4891,<sp/>0x35c4,<sp/>0x675f,<sp/>0x46f3,<sp/>0x8343,<sp/>0x0ed6,<sp/>0xe630,<sp/>0x8d5c)),<sp/>\</highlight></codeline>
+<codeline lineno="165"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_PLL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5,<sp/>PLL_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xece4,<sp/>0x6de9,<sp/>0x4345,<sp/>0x40e7,<sp/>0xb900,<sp/>0x81f7,<sp/>0x9b57,<sp/>0xdbdc)),<sp/>\</highlight></codeline>
+<codeline lineno="166"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_APL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/>APL_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x0c5b,<sp/>0x7753,<sp/>0xda51,<sp/>0x4e3f,<sp/>0xac42,<sp/>0xe59f,<sp/>0x579c,<sp/>0x6349)),<sp/>\</highlight></codeline>
+<codeline lineno="167"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_PBC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>PBC_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x0a77,<sp/>0x63bc,<sp/>0x7c3d,<sp/>0x47d2,<sp/>0xaa38,<sp/>0x535d,<sp/>0x7f60,<sp/>0xd3af)),<sp/>\</highlight></codeline>
+<codeline lineno="168"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_ISL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10,<sp/>ISL_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x53f3,<sp/>0x6c1f,<sp/>0x5283,<sp/>0x4bb2,<sp/>0x88f8,<sp/>0xfa30,<sp/>0x2a1b,<sp/>0x37f5)),<sp/>\</highlight></codeline>
+<codeline lineno="169"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_SPC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5,<sp/>SPC_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x982b,<sp/>0x9973,<sp/>0xbccd,<sp/>0x49f4,<sp/>0x904a,<sp/>0xaafd,<sp/>0x382d,<sp/>0x076e)),<sp/>\</highlight></codeline>
+<codeline lineno="170"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_AHC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>AHC_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xe7e6,<sp/>0xa7a6,<sp/>0x1c9b,<sp/>0x44e6,<sp/>0x8b6e,<sp/>0x0dd8,<sp/>0x6f42,<sp/>0x2beb)),<sp/>\</highlight></codeline>
+<codeline lineno="171"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCC_PPC_SHC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/>SHC_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x5b80,<sp/>0xb804,<sp/>0x8041,<sp/>0x0417,<sp/>0x417c,<sp/>0x17cb,<sp/>0x7cbb,<sp/>0xcbb3)),<sp/>\</highlight></codeline>
+<codeline lineno="172"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_MOD_AC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>19,<sp/>PCC_AcModulator.interface,<sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xfab1,<sp/>0x1129,<sp/>0x5bd1,<sp/>0x446a,<sp/>0x8862,<sp/>0x03f9,<sp/>0x1bfb,<sp/>0xe78e)),<sp/>\</highlight></codeline>
+<codeline lineno="173"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_MOD_DC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>DCDC_DcModulator.interface,<sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xc084,<sp/>0x79f4,<sp/>0x8054,<sp/>0x437e,<sp/>0x8682,<sp/>0xad59,<sp/>0x3fa4,<sp/>0xb727)),<sp/>\</highlight></codeline>
+<codeline lineno="174"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PWMD,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>PWMD_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x8522,<sp/>0x9443,<sp/>0x0caf,<sp/>0x4bd1,<sp/>0xa1b5,<sp/>0xbabc,<sp/>0x91e7,<sp/>0xa7ef)),<sp/>\</highlight></codeline>
+<codeline lineno="175"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_MESD,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4,<sp/>MESD_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x7126,<sp/>0x6df5,<sp/>0xb628,<sp/>0x43f3,<sp/>0x95e9,<sp/>0x9918,<sp/>0x33f5,<sp/>0x13ea)),<sp/>\</highlight></codeline>
+<codeline lineno="176"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PROT,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4,<sp/>PROT_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x2be1,<sp/>0x6818,<sp/>0xe80d,<sp/>0x4823,<sp/>0xba41,<sp/>0x0b03,<sp/>0xa058,<sp/>0xaa76)),<sp/>\</highlight></codeline>
+<codeline lineno="177"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_DTM,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/>DTM_ConfigDataI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x78d0,<sp/>0x6dd4,<sp/>0xa220,<sp/>0x4bec,<sp/>0xa5ab,<sp/>0x4692,<sp/>0x346e,<sp/>0x9459)),<sp/>\</highlight></codeline>
+<codeline lineno="178"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_SIM,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4,<sp/>SIM_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x35a0,<sp/>0x823d,<sp/>0xc490,<sp/>0x4228,<sp/>0x8ae9,<sp/>0xd7de,<sp/>0x7616,<sp/>0xdea3)),<sp/>\</highlight></codeline>
+<codeline lineno="179"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_CMM,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/>CMM_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x4a5a,<sp/>0xc553,<sp/>0x0588,<sp/>0x4830,<sp/>0x82b4,<sp/>0x678d,<sp/>0xe2f8,<sp/>0x6ee7)),<sp/>\</highlight></codeline>
+<codeline lineno="180"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_PCD,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>PCD_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x06a0,<sp/>0x761f,<sp/>0x0ffe,<sp/>0x4074,<sp/>0x925d,<sp/>0xe842,<sp/>0x8a5c,<sp/>0xd866)),<sp/>\</highlight></codeline>
+<codeline lineno="181"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_TLC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>TLC_Data.config,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x9155,<sp/>0x3887,<sp/>0xdc1c,<sp/>0x465a,<sp/>0xa7a5,<sp/>0xce2e,<sp/>0xfde5,<sp/>0x3e24)),<sp/>\</highlight></codeline>
+<codeline lineno="182"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_ABB,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/>ABB_Parameters,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xacd9,<sp/>0xbab9,<sp/>0x91a9,<sp/>0x4fe3,<sp/>0x8bd8,<sp/>0x2147,<sp/>0x02a5,<sp/>0x2914)),<sp/>\</highlight></codeline>
+<codeline lineno="183"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_MPP,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>MPP_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x9630,<sp/>0x07c6,<sp/>0x7308,<sp/>0x43fd,<sp/>0x9695,<sp/>0xf010,<sp/>0xb522,<sp/>0x8044)),<sp/>\</highlight></codeline>
+<codeline lineno="184"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_FC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4,<sp/>FC_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x7adb,<sp/>0xb41c,<sp/>0x0ad2,<sp/>0x4072,<sp/>0x8abf,<sp/>0x1833,<sp/>0x763f,<sp/>0xe10e)),<sp/>\</highlight></codeline>
+<codeline lineno="185"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_EDB,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>EDB_DebugInpI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x376e,<sp/>0xcec1,<sp/>0xba4d,<sp/>0x4a61,<sp/>0x843b,<sp/>0x6ba0,<sp/>0xc423,<sp/>0x99d0)),<sp/>\</highlight></codeline>
+<codeline lineno="186"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_ENV,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4,<sp/>ENV_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x1bc1,<sp/>0x0e77,<sp/>0x0a22,<sp/>0x4dd0,<sp/>0x9a81,<sp/>0x85aa,<sp/>0x744a,<sp/>0x6650)),<sp/>\</highlight></codeline>
+<codeline lineno="187"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_AUTH,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>authorization_nv,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x8b8b,<sp/>0x8a41,<sp/>0xc5e5,<sp/>0x47b9,<sp/>0x85c0,<sp/>0x5d53,<sp/>0x13cd,<sp/>0x70d5)),<sp/>\</highlight></codeline>
+<codeline lineno="188"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_GSU,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>36,<sp/>GSU_params,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x1696,<sp/>0x0c1a,<sp/>0x5e5a,<sp/>0x4d8c,<sp/>0xbd17,<sp/>0x5722,<sp/>0x5b88,<sp/>0x37db)),<sp/>\</highlight></codeline>
+<codeline lineno="189"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_REF,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>20,<sp/>REF_params,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xb0a6,<sp/>0x0d68,<sp/>0xe7cb,<sp/>0x41a5,<sp/>0x99b2,<sp/>0x945d,<sp/>0x3766,<sp/>0xb85d)),<sp/>\</highlight></codeline>
+<codeline lineno="190"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_VSG,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5,<sp/>VSG_CommonConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xb8ff,<sp/>0x8ffb,<sp/>0xffb3,<sp/>0xfb31,<sp/>0xb31b,<sp/>0x31b6,<sp/>0x1b6c,<sp/>0xb6c4)),<sp/>\</highlight></codeline>
+<codeline lineno="191"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_EI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/>EI_ConfigI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0xc66d,<sp/>0x66dd,<sp/>0x6dd8,<sp/>0xdd83,<sp/>0xd836,<sp/>0x836a,<sp/>0x36ac,<sp/>0x6aca)),<sp/>\</highlight></codeline>
+<codeline lineno="192"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_SUNSPEC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>SUNR_params,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x721f,<sp/>0x21f4,<sp/>0x1f4f,<sp/>0xf4f2,<sp/>0x4f26,<sp/>0xf265,<sp/>0x2653,<sp/>0x6531)),<sp/>\</highlight></codeline>
+<codeline lineno="193"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EE_SECTION_DEF(EE_SECTION_COUNTERS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>SYS_counters,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEH_UUID(0x1b07,<sp/>0xb078,<sp/>0x078d,<sp/>0x78d7,<sp/>0x8d7c,<sp/>0xd7c3,<sp/>0x7c3c,<sp/>0xc3ce)),<sp/>\</highlight></codeline>
+<codeline lineno="194"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>APP_EEPROM_SECTIONS_DEFAULTS<sp/>{}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/>Macro<sp/>Defines</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*<sp/>Type<sp/>Definitions</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0c" kindref="member">APP_EeSections_e</ref><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cafaa8efd816207382b37685f325b9e905" kindref="member">EE_SECTION_HW_DEF</ref>,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca5b604da0f4df6079fe5292b92bfc373d" kindref="member">EE_SECTION_CAN_INTERFACE</ref>,</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cab606ecab53108202be513deb4a58ec8e" kindref="member">EE_SECTION_FAULT_CONFIGURATION</ref>,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cab90bdca4b282c91f047bbe623064b727" kindref="member">EE_SECTION_IO</ref>,</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca807c4741ca242e85cde6002ef34a6442" kindref="member">EE_SECTION_AFE</ref>,</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca88990d79422fa7da5e15b20c0d9e307b" kindref="member">EE_SECTION_LINE_MONITOR</ref>,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca954db3b77be99dea319a43ab324eb6f4" kindref="member">EE_SECTION_SERIAL</ref>,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cad8403b322b446430f4268656f5ea1f1b" kindref="member">EE_SECTION_DATA_LOGGER</ref>,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3c2a801b89624bb7162f534ff7e1c5a3" kindref="member">EE_SECTION_DCDC</ref>,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca8bb0d268a7b0de50562de9674a25a79a" kindref="member">EE_SECTION_CAN_TX_RATES</ref>,</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caeb0038013ccb79efe69f5031a5e4a115" kindref="member">EE_SECTION_PCC</ref>,</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca2a301d6537ed2337c1a60c2d3c9d3cca" kindref="member">EE_SECTION_PCC_PPC</ref>,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caaa3dcb19f366aa6806a021da32f56708" kindref="member">EE_SECTION_PCC_PPC_HFO_I</ref>,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caaf381ed7f6f681889cf7ddb76bcd5c4d" kindref="member">EE_SECTION_PCC_PPC_HFO_C</ref>,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca852e0ffce3358517fa91af38ae2be7f0" kindref="member">EE_SECTION_PCC_PPC_PLL</ref>,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca80a77c2f40c7a83ba2ab15359f1ddc1c" kindref="member">EE_SECTION_PCC_PPC_APL</ref>,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca12d69ddd64b69b238702bb139f5e92a0" kindref="member">EE_SECTION_PCC_PPC_PBC</ref>,</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cae80f5549624ec7fae961ab4716853a70" kindref="member">EE_SECTION_PCC_PPC_ISL</ref>,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca4bfbbce40f7d6153024f07c5a78dba06" kindref="member">EE_SECTION_PCC_PPC_SPC</ref>,</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca1e7642aa30a6ffdc91d43a195ace932f" kindref="member">EE_SECTION_PCC_PPC_AHC</ref>,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca345b8a03cd9d00545ecf5adfa24af0fc" kindref="member">EE_SECTION_PCC_PPC_SHC</ref>,</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7ccfb126ba1ce03589b04ab2fac322fe" kindref="member">EE_SECTION_MOD_AC</ref>,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caf8163c3ac13fca88c155c8f2fcf57338" kindref="member">EE_SECTION_MOD_DC</ref>,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac0cd3a438d71426e750afe23ee0cd934" kindref="member">EE_SECTION_PWMD</ref>,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca0f7531ffc48f9cb8c22510e545731139" kindref="member">EE_SECTION_MESD</ref>,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca12a1bf6da5fd07bd4a7d3e8530651b54" kindref="member">EE_SECTION_PROT</ref>,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caacbc0a3960b1f9a9419f30f7f13c3c77" kindref="member">EE_SECTION_DTM</ref>,</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3b9bad817b4fd842bfe6378302cb91b5" kindref="member">EE_SECTION_SIM</ref>,</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7f3ade36b71b86fe87672ea6fcc9f6a6" kindref="member">EE_SECTION_CMM</ref>,</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac03402ad085ff001adec8530b3d45ac3" kindref="member">EE_SECTION_PCD</ref>,</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca6edfd7f17bf11e988322ad5f6f2f27dc" kindref="member">EE_SECTION_TLC</ref>,</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca3c07baef931f722703a270098dabcfbb" kindref="member">EE_SECTION_ABB</ref>,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cae932a4de5d6360b8eaeec095c8eea17e" kindref="member">EE_SECTION_MPP</ref>,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca5a5adfc7ba2ca988fb6ef686832308dc" kindref="member">EE_SECTION_FC</ref>,</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cabbcaf74b948a8b295de0a2affa3b2cd6" kindref="member">EE_SECTION_EDB</ref>,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca8a31e73a6668674b1d692c2fbc07adc9" kindref="member">EE_SECTION_ENV</ref>,</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac37dbaf9eec105942564578876fe93ae" kindref="member">EE_SECTION_AUTH</ref>,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7d4a520ed031f19ae64a5bf930106d01" kindref="member">EE_SECTION_GSU</ref>,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0cac7f450a035bb629e4f9a94222799c735" kindref="member">EE_SECTION_REF</ref>,</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca7c7d1d2875bcde7b871748246745c106" kindref="member">EE_SECTION_VSG</ref>,</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0ca058ab488fb1988683987bc4026ae4253" kindref="member">EE_SECTION_EI</ref>,</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caf877d1c8e669a52955e7fbe14a465d6b" kindref="member">EE_SECTION_SUNSPEC</ref>,</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caab95e72862b693b23a72b03a37bea0c1" kindref="member">EE_SECTION_COUNTERS</ref>,</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1" kindref="member">EE_SECTION_COUNT</ref></highlight></codeline>
+<codeline lineno="252"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="256"><highlight class="comment"><sp/>*<sp/>Imported<sp/>Variables</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MOD_AcModulator_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="application_8c_1a99999c420aa2ec727cdcdd61cc5737e2" kindref="member">PCC_AcModulator</ref>;<sp/></highlight><highlight class="comment">/*<sp/>Fuck.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MOD_DcModulator_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="application_8c_1a6f21714ffb159d1406870dc7d294687c" kindref="member">DCDC_DcModulator</ref>;<sp/></highlight><highlight class="comment">/*<sp/>Fuck.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/>*<sp/>Global<sp/>Variable<sp/>Declarations</highlight></codeline>
+<codeline lineno="264"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal">FaultConfiguration<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="application_8c_1aa9c39f99a87f5a9bd9b27fe269b1de04" kindref="member">appFaultConfiguration</ref>[FLT_CFG_ARRAY_LENGTH];</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><ref refid="struct_j1939___i_n_t_e_r_f_a_c_e" kindref="compound">J1939_INTERFACE</ref><sp/><ref refid="application_8c_1aad4f26eabbeb37bd61a3bb2c76195043" kindref="member">j1939Interface</ref><sp/>=<sp/><ref refid="application_8h_1ae8d2212f7c053cff78f8630589545e61" kindref="member">J1939_INTERFACE_DEFAULTS</ref>();</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal">AUTH_Nv<sp/><ref refid="application_8c_1a52957b0633643716121c30ca8ac20e62" kindref="member">authorization_nv</ref><sp/>=<sp/>AUTH_NV_DEFAULTS(</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>.keys<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0<sp/>...<sp/>AUTHORIZATION_KEY_COUNT-1]<sp/>=<sp/>AUTH_KEY_DEFAULTS(),</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0]<sp/>=<sp/>AUTH_KEY_DEFAULTS(</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.value<sp/>=<sp/>{<sp/>.uint64_t<sp/>=<sp/>UINT64_C(0x3193650bda3297ee)},</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.level<sp/>=<sp/>CAN_Enum_AccessLevel_MAC_Auth</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="application_8c_1a12358381f3cac018871d7c6b73a404ff" kindref="member">eeHandlerUseDefaults</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>EeSection<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eeDef[]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="application_8c_1aac167759466a8cf18f6e33417e546f4d" kindref="member">APP_EEPROM_SECTIONS_DEFAULTS</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>EEH_EeAddr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eeSectionAddrList[<ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1" kindref="member">EE_SECTION_COUNT</ref>];</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)<sp/>&amp;&amp;<sp/>!defined(UNIT_TEST)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(LENGTHOF(eeDef)<sp/>==<sp/><ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1" kindref="member">EE_SECTION_COUNT</ref>,<sp/></highlight><highlight class="stringliteral">&quot;eeDef<sp/>size<sp/>mismatch!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(EEH_SUFFICIENT_QUEUE(<ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caae621f16c1caaf4c19672431b9b5efb1" kindref="member">EE_SECTION_COUNT</ref>),<sp/></highlight><highlight class="stringliteral">&quot;Insufficient<sp/>queue!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(AUTH_AccessLevel_Service_Tech<sp/>==<sp/>(AUTH_AccessLevel)CAN_Enum_AccessLevel_Service_Tech,<sp/></highlight><highlight class="stringliteral">&quot;Auth<sp/>Enum<sp/>Mismatch!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(AUTH_AccessLevel_Service_Eng<sp/><sp/>==<sp/>(AUTH_AccessLevel)CAN_Enum_AccessLevel_Service_Eng<sp/>,<sp/></highlight><highlight class="stringliteral">&quot;Auth<sp/>Enum<sp/>Mismatch!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(AUTH_AccessLevel_EPC_Eng<sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>(AUTH_AccessLevel)CAN_Enum_AccessLevel_EPC_Eng<sp/><sp/><sp/><sp/><sp/>,<sp/></highlight><highlight class="stringliteral">&quot;Auth<sp/>Enum<sp/>Mismatch!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(AUTH_AccessLevel_EPC_Factory<sp/><sp/>==<sp/>(AUTH_AccessLevel)CAN_Enum_AccessLevel_EPC_Factory<sp/>,<sp/></highlight><highlight class="stringliteral">&quot;Auth<sp/>Enum<sp/>Mismatch!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(AUTH_AccessLevel_MAC_Auth<sp/><sp/><sp/><sp/><sp/>==<sp/>(AUTH_AccessLevel)CAN_Enum_AccessLevel_MAC_Auth<sp/><sp/><sp/><sp/>,<sp/></highlight><highlight class="stringliteral">&quot;Auth<sp/>Enum<sp/>Mismatch!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(AUTH_AccessLevel_Count<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>(AUTH_AccessLevel)CAN_Enum_AccessLevel_Count<sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight><highlight class="stringliteral">&quot;Auth<sp/>Enum<sp/>Mismatch!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal">AUTH_Class<sp/><ref refid="application_8c_1ad7db6abdd9f1159237959f51aa3bb13b" kindref="member">authorization_this</ref><sp/>=<sp/>AUTH_CLASS_DEFAULTS(</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a52957b0633643716121c30ca8ac20e62" kindref="member">authorization_nv</ref>.keys,</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="application_8c_1a52957b0633643716121c30ca8ac20e62" kindref="member">authorization_nv</ref>.tags,</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>CAN_Enum_AccessLevel_MAC_Auth</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="303"><highlight class="comment"><sp/>*<sp/>Imported<sp/>Functions</highlight></codeline>
+<codeline lineno="304"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="307"><highlight class="comment"><sp/>*<sp/>Forward<sp/>Declarations</highlight></codeline>
+<codeline lineno="308"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="311"><highlight class="comment"><sp/>*<sp/>Local<sp/>Functions</highlight></codeline>
+<codeline lineno="312"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>applicationUpdate_100ms(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Blinkenlight<sp/>heartbeat<sp/>LED.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Spare<sp/>IO<sp/>is<sp/>now<sp/>used<sp/>for<sp/>additional<sp/>DIO,<sp/>so<sp/>can&apos;t<sp/>be<sp/>used<sp/>for<sp/>LED&apos;s</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Blink<sp/>fault<sp/>LED&apos;s<sp/>instead,<sp/>which<sp/>will<sp/>be<sp/>on<sp/>solid<sp/>if<sp/>fault<sp/>actually<sp/>exists.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fault<sp/>signals<sp/>are<sp/>OR&apos;d<sp/>with<sp/>this<sp/>&quot;force<sp/>LED&quot;<sp/>bit<sp/>in<sp/>the<sp/>FPGA.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>ozFpga.ForceLeds.bit.SYS_LED<sp/><sp/>=<sp/>~ozFpga.ForceLeds.bit.SYS_LED;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>ozFpga.ForceLeds.bit.INVA_LED<sp/>=<sp/>~ozFpga.ForceLeds.bit.INVA_LED;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>ozFpga.ForceLeds.bit.INVB_LED<sp/>=<sp/>~ozFpga.ForceLeds.bit.INVA_LED;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="328"><highlight class="comment"><sp/>*<sp/>public<sp/>functions</highlight></codeline>
+<codeline lineno="329"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="application_8c_1a0e95431f48ee71c1040217b94766ffcf" kindref="member">application_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;lineMonitorParams.vMonitorTables,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(lineMonitorParams.vMonitorTables));</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;lineMonitorParams.fMonitorTables,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(lineMonitorParams.fMonitorTables));</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Restore<sp/>parameters<sp/>from<sp/>EEPROM<sp/>first.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>eeHandlerInit(eeDef,<sp/>eeSectionAddrList,<sp/>LENGTHOF(eeDef),<sp/><ref refid="application_8c_1a12358381f3cac018871d7c6b73a404ff" kindref="member">eeHandlerUseDefaults</ref>,<sp/>(uint16_t<sp/>*)<sp/>&amp;dataLoggerBlock[0],<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(dataLoggerBlock)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint16_t));</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>SYS_initCounters(<ref refid="application_8c_1a50c0f9abb60e6c66b510b8f0406c1f0caab95e72862b693b23a72b03a37bea0c1" kindref="member">EE_SECTION_COUNTERS</ref>);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>SIM_initFeedbackSimulation();</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>EDB_initialize();</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Select<sp/>hardware<sp/>+<sp/>controls<sp/>variants.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>CMM_selectHardwareVariant(CMM_ConfigI.hdwVariantName);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>CMM_selectControlsVariant(CMM_ConfigI.ctlVariantName);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>faultHandlerInit(&amp;<ref refid="application_8c_1aa9c39f99a87f5a9bd9b27fe269b1de04" kindref="member">appFaultConfiguration</ref>);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>schedulerAddTask(&amp;applicationUpdate_100ms,<sp/><sp/>SCH_TASK_GROUP_100MS);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>supervisorInit(&amp;digins[DI_ESTOP_OK],<sp/>&amp;digins[DI_THERMAL_EN],<sp/>&amp;digins[DI_FUSE_TVS_FAULT],</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;digins[DI_DISCONNECT_FAULT],<sp/>&amp;digins[DI_GROUND_FAULT]);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>supervisorSetHwEnableLogic(ioParams.invertHwEnable);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>dataLogger_setGitRev(<ref refid="revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655" kindref="member">buildInfo</ref>.<ref refid="struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad" kindref="member">hash</ref>);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/>AUTH_init(&amp;<ref refid="application_8c_1ad7db6abdd9f1159237959f51aa3bb13b" kindref="member">authorization_this</ref>);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)<sp/>&amp;&amp;<sp/>!defined(UNIT_TEST)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="can_interface_8h_1a1c41607124c2a3edfba4aca78b93e253" kindref="member">canInterfaceInit</ref>(</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="application_8c_1aad4f26eabbeb37bd61a3bb2c76195043" kindref="member">j1939Interface</ref>.<ref refid="struct_j1939___i_n_t_e_r_f_a_c_e_1a57e574ff9f1e129568bc68606886ab8e" kindref="member">nodeID</ref>,</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="application_8c_1aad4f26eabbeb37bd61a3bb2c76195043" kindref="member">j1939Interface</ref>.<ref refid="struct_j1939___i_n_t_e_r_f_a_c_e_1aceac1fd1ebbd90bcda15fa186fdb7e99" kindref="member">masterAddr</ref>,</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="application_8c_1aad4f26eabbeb37bd61a3bb2c76195043" kindref="member">j1939Interface</ref>.<ref refid="struct_j1939___i_n_t_e_r_f_a_c_e_1a4959602aae7830fd547f54e3329b1dd7" kindref="member">baud</ref>,</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655" kindref="member">buildInfo</ref>.<ref refid="struct_build_info_1a485771dfeb15f4135f11cbfb1a665a44" kindref="member">formattedIntegerTime</ref>,</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655" kindref="member">buildInfo</ref>.<ref refid="struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad" kindref="member">hash</ref></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>ccp_init();</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/>modbusHandlerInit();</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#if<sp/>!defined(SKIP_SUNSPEC)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/>sunspecInit(XSTR(<ref refid="sw_revs_8h_1a275d231829446ca4cfcf3ce5a83f2e67" kindref="member">CONTROL_SW_MAJ</ref>)<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>XSTR(<ref refid="sw_revs_8h_1a87699d1e62deba37642c6e1c65785370" kindref="member">CONTROL_SW_MIN</ref>)<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>XSTR(<ref refid="sw_revs_8h_1a639157c007cae7e2f87ed84d29a5bee2" kindref="member">CONTROL_SW_PATCH</ref>),<sp/></highlight><highlight class="stringliteral">&quot;N/A&quot;</highlight><highlight class="normal">,<sp/><ref refid="revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655" kindref="member">buildInfo</ref>.<ref refid="struct_build_info_1a485771dfeb15f4135f11cbfb1a665a44" kindref="member">formattedIntegerTime</ref>,<sp/><ref refid="revision_info_8h_1ab9ed5a8f84d18e992b3dea2befec4655" kindref="member">buildInfo</ref>.<ref refid="struct_build_info_1a7df441e6e9ea49c34e6c739e4f4693ad" kindref="member">hash</ref>);</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>IOH_init();</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>manually<sp/>call<sp/>setter<sp/>until<sp/>T1379<sp/>is<sp/>completed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>PPC_setCommonConfigEnergizeDelay(ioParams.relayDelays[IOH_RELAY_MX1].close);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(DSP377)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/>HTS_init();</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>ENV_releaseConfiguration();</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/>FC_releaseConfiguration();</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/>EI_releaseConfiguration();</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/>gridMonitor_init();</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>REF_init();</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(DEBUG)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/>DLOG_init();</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>realtime<sp/>control<sp/>in<sp/>action</highlight></codeline>
+<codeline lineno="398"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>(XXX<sp/>Everything<sp/>else<sp/>should<sp/>come<sp/>BEFORE<sp/>this<sp/>(except<sp/>afeInit)!<sp/>XXX)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>CMM_releaseConfiguration();</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Some<sp/>classes<sp/>that<sp/>haven&apos;t<sp/>yet<sp/>been<sp/>refactored,<sp/>they<sp/>get<sp/>initialized<sp/>last<sp/>since</highlight></codeline>
+<codeline lineno="402"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>they<sp/>don&apos;t<sp/>contain<sp/>the<sp/>initialization<sp/>structure<sp/>the<sp/>newer<sp/>architecture<sp/>realizes</highlight></codeline>
+<codeline lineno="403"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>and<sp/>some<sp/>things<sp/>that<sp/>they<sp/>initialize<sp/>depend<sp/>on<sp/>other<sp/>things<sp/>being<sp/>setup<sp/>first.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/>afeInit();</highlight></codeline>
+<codeline lineno="405"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="application_8c_1aae45035e0712c66641eda8c3b74e64d8" kindref="member">APP_setFaultConfig</ref>(uint16_t<sp/>unused)<sp/>{</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(unused);</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/>faultHandlerInit(&amp;<ref refid="application_8c_1aa9c39f99a87f5a9bd9b27fe269b1de04" kindref="member">appFaultConfiguration</ref>);</highlight></codeline>
+<codeline lineno="411"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="application.c"/>
+  </compounddef>
+</doxygen>

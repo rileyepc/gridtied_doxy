@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_union_table_setter__u" xml:lang="en-US">
+<title>TableSetter_u Union Reference</title>
+<indexterm><primary>TableSetter_u</primary></indexterm>
+<para>
+<computeroutput>#include &lt;libEpcControlInterface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1acb402f85b1799476879a05463aded3be">TableSetterPointer_float</link> <link linkend="_union_table_setter__u_1afd2f53d4c4c42e107f972778baf5ffc5">float_</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1ae8b05fc055d4c5d647fe46724fa457fc">TableSetterPointer_uint64_t</link> <link linkend="_union_table_setter__u_1a67fdb17ef3d71c73070a858c6ba6b387">uint64_t_</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1a52e72a12db0e60ade7d4ab13c43794ac">TableSetterPointer_uint32_t</link> <link linkend="_union_table_setter__u_1a5245f3a2f81cc062ef064b7fbc205253">uint32_t_</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1a08fe91592e98b86b9af4c691c43395e8">TableSetterPointer_uint16_t</link> <link linkend="_union_table_setter__u_1ab944ed7d3de88f397500036e6d42aaf8">uint16_t_</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1a1be165b29bd37e0c1328e7455392a4ab">TableSetterPointer_int32_t</link> <link linkend="_union_table_setter__u_1a3fb814acc447230b6df8aea4a48a0949">int32_t_</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1af6dff3e8dacb2d94d4a68d04c7fa54df">TableSetterPointer_int16_t</link> <link linkend="_union_table_setter__u_1a3ac087b535f62d339e8edab4d67b1eeb">int16_t_</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1a3705b6364bbb4254479c485e434e8086">TableSetterPointer_size_t</link> <link linkend="_union_table_setter__u_1a7f400d19f8c533e336c7c48c587a2cd9">size_t_</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1a3fc7297f838d1994209acd17df02310b">TableSetterPointer_bool_t</link> <link linkend="_union_table_setter__u_1a6de711fab67ee8285dca8f93293f7ae5">bool_</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_union_table_setter__u_1a6de711fab67ee8285dca8f93293f7ae5"/><section>
+    <title>bool_</title>
+<indexterm><primary>bool_</primary><secondary>TableSetter_u</secondary></indexterm>
+<indexterm><primary>TableSetter_u</primary><secondary>bool_</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1a3fc7297f838d1994209acd17df02310b">TableSetterPointer_bool_t</link> TableSetter_u::bool_</computeroutput></para></section>
+<anchor xml:id="_union_table_setter__u_1afd2f53d4c4c42e107f972778baf5ffc5"/><section>
+    <title>float_</title>
+<indexterm><primary>float_</primary><secondary>TableSetter_u</secondary></indexterm>
+<indexterm><primary>TableSetter_u</primary><secondary>float_</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1acb402f85b1799476879a05463aded3be">TableSetterPointer_float</link> TableSetter_u::float_</computeroutput></para></section>
+<anchor xml:id="_union_table_setter__u_1a3ac087b535f62d339e8edab4d67b1eeb"/><section>
+    <title>int16_t_</title>
+<indexterm><primary>int16_t_</primary><secondary>TableSetter_u</secondary></indexterm>
+<indexterm><primary>TableSetter_u</primary><secondary>int16_t_</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1af6dff3e8dacb2d94d4a68d04c7fa54df">TableSetterPointer_int16_t</link> TableSetter_u::int16_t_</computeroutput></para></section>
+<anchor xml:id="_union_table_setter__u_1a3fb814acc447230b6df8aea4a48a0949"/><section>
+    <title>int32_t_</title>
+<indexterm><primary>int32_t_</primary><secondary>TableSetter_u</secondary></indexterm>
+<indexterm><primary>TableSetter_u</primary><secondary>int32_t_</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1a1be165b29bd37e0c1328e7455392a4ab">TableSetterPointer_int32_t</link> TableSetter_u::int32_t_</computeroutput></para></section>
+<anchor xml:id="_union_table_setter__u_1a7f400d19f8c533e336c7c48c587a2cd9"/><section>
+    <title>size_t_</title>
+<indexterm><primary>size_t_</primary><secondary>TableSetter_u</secondary></indexterm>
+<indexterm><primary>TableSetter_u</primary><secondary>size_t_</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1a3705b6364bbb4254479c485e434e8086">TableSetterPointer_size_t</link> TableSetter_u::size_t_</computeroutput></para></section>
+<anchor xml:id="_union_table_setter__u_1ab944ed7d3de88f397500036e6d42aaf8"/><section>
+    <title>uint16_t_</title>
+<indexterm><primary>uint16_t_</primary><secondary>TableSetter_u</secondary></indexterm>
+<indexterm><primary>TableSetter_u</primary><secondary>uint16_t_</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1a08fe91592e98b86b9af4c691c43395e8">TableSetterPointer_uint16_t</link> TableSetter_u::uint16_t_</computeroutput></para></section>
+<anchor xml:id="_union_table_setter__u_1a5245f3a2f81cc062ef064b7fbc205253"/><section>
+    <title>uint32_t_</title>
+<indexterm><primary>uint32_t_</primary><secondary>TableSetter_u</secondary></indexterm>
+<indexterm><primary>TableSetter_u</primary><secondary>uint32_t_</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1a52e72a12db0e60ade7d4ab13c43794ac">TableSetterPointer_uint32_t</link> TableSetter_u::uint32_t_</computeroutput></para></section>
+<anchor xml:id="_union_table_setter__u_1a67fdb17ef3d71c73070a858c6ba6b387"/><section>
+    <title>uint64_t_</title>
+<indexterm><primary>uint64_t_</primary><secondary>TableSetter_u</secondary></indexterm>
+<indexterm><primary>TableSetter_u</primary><secondary>uint64_t_</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1ae8b05fc055d4c5d647fe46724fa457fc">TableSetterPointer_uint64_t</link> TableSetter_u::uint64_t_</computeroutput></para></section>
+</section>
+</section>

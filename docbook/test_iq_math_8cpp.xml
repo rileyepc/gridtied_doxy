@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_test_iq_math_8cpp" xml:lang="en-US">
+<title>sil/emu/test/testIqMath.cpp File Reference</title>
+<indexterm><primary>sil/emu/test/testIqMath.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;CppUTest/TestHarness.h&quot;
+#include &quot;IQmathLib.h&quot;
+#include &lt;stdint.h&gt;
+#include &lt;float.h&gt;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_test_iq_math_8cpp_1a24d62266256bbbfe60b00b5e1d1f7e36">TEST_GROUP</link> (iqMath)</para>
+</listitem>
+            <listitem><para><link linkend="_test_iq_math_8cpp_1ace3796391fec20b2cf5807f6ca167d1d">TEST</link> (iqMath, norm32)</para>
+</listitem>
+            <listitem><para><link linkend="_test_iq_math_8cpp_1a0b3e5b4499f20cd5bc35879aec221377">TEST</link> (iqMath, iqN)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_test_iq_math_8cpp_1a0b3e5b4499f20cd5bc35879aec221377"/><section>
+    <title>TEST()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>TEST</primary><secondary>testIqMath.cpp</secondary></indexterm>
+<indexterm><primary>testIqMath.cpp</primary><secondary>TEST</secondary></indexterm>
+<para><computeroutput>TEST (iqMath , iqN )</computeroutput></para></section>
+<anchor xml:id="_test_iq_math_8cpp_1ace3796391fec20b2cf5807f6ca167d1d"/><section>
+    <title>TEST()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>TEST</primary><secondary>testIqMath.cpp</secondary></indexterm>
+<indexterm><primary>testIqMath.cpp</primary><secondary>TEST</secondary></indexterm>
+<para><computeroutput>TEST (iqMath , norm32 )</computeroutput></para></section>
+<anchor xml:id="_test_iq_math_8cpp_1a24d62266256bbbfe60b00b5e1d1f7e36"/><section>
+    <title>TEST_GROUP()</title>
+<indexterm><primary>TEST_GROUP</primary><secondary>testIqMath.cpp</secondary></indexterm>
+<indexterm><primary>testIqMath.cpp</primary><secondary>TEST_GROUP</secondary></indexterm>
+<para><computeroutput>TEST_GROUP (iqMath )</computeroutput></para></section>
+</section>
+</section>

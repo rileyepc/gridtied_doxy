@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_a_d2_d___meas_channel__s" kind="struct" language="C++" prot="public">
+    <compoundname>AD2D_MeasChannel_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d2_d___meas_channel__s_1aec3365d72c9f6d8f0eb802471291a830" prot="public" static="no" mutable="no">
+        <type><ref refid="ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1" kindref="member">AD2D_uSgnExtend_t</ref> volatile *</type>
+        <definition>AD2D_uSgnExtend_t volatile* AD2D_MeasChannel_s::adcResult</definition>
+        <argsstring></argsstring>
+        <name>adcResult</name>
+        <qualifiedname>AD2D_MeasChannel_s::adcResult</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="104" column="32" bodyfile="sil/emu/ad2d_emu.c" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d2_d___meas_channel__s_1a09c43551818e64fdb74d134f60795a06" prot="public" static="no" mutable="no">
+        <type>int32_t *</type>
+        <definition>int32_t* AD2D_MeasChannel_s::mesdDest</definition>
+        <argsstring></argsstring>
+        <name>mesdDest</name>
+        <qualifiedname>AD2D_MeasChannel_s::mesdDest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="105" column="32" bodyfile="sil/emu/ad2d_emu.c" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>AD2D_MeasChannel_s</label>
+        <link refid="struct_a_d2_d___meas_channel__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>adcResult</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>AD2D_SgnExtend_s</label>
+        <link refid="struct_a_d2_d___sgn_extend__s"/>
+      </node>
+      <node id="2">
+        <label>AD2D_SgnExtend_u</label>
+        <link refid="struct_a_d2_d___sgn_extend__u"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>bits</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/emu/ad2d_emu.c" line="103" column="1" bodyfile="sil/emu/ad2d_emu.c" bodystart="103" bodyend="106"/>
+    <listofallmembers>
+      <member refid="struct_a_d2_d___meas_channel__s_1aec3365d72c9f6d8f0eb802471291a830" prot="public" virt="non-virtual"><scope>AD2D_MeasChannel_s</scope><name>adcResult</name></member>
+      <member refid="struct_a_d2_d___meas_channel__s_1a09c43551818e64fdb74d134f60795a06" prot="public" virt="non-virtual"><scope>AD2D_MeasChannel_s</scope><name>mesdDest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

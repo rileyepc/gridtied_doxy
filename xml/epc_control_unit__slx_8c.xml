@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="epc_control_unit__slx_8c" kind="file" language="C++">
+    <compoundname>epcControlUnit_slx.c</compoundname>
+    <includes refid="lib_epc_control_8h" local="yes">../libEpcControl.h</includes>
+    <includes local="yes">simstruc.h</includes>
+    <includes local="yes">cg_sfun.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>../libEpcControl.h</label>
+        <link refid="lib_epc_control_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>sil/mdl/epcControlUnit_slx.c</label>
+        <link refid="epc_control_unit__slx_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cg_sfun.h</label>
+      </node>
+      <node id="6">
+        <label>simstruc.h</label>
+      </node>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="epc_control_unit__slx_8c_1a9a4ab27953070e39249f3fad28e93749" prot="public" static="no">
+        <name>S_FUNCTION_LEVEL</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="51" column="9" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epc_control_unit__slx_8c_1ac032abbf580c891fb0c11e63e9bc668a" prot="public" static="no">
+        <name>MDL_START</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="55" column="9" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epc_control_unit__slx_8c_1a7556dbbf5cb7f9946d3e39bcda40c63b" prot="public" static="no">
+        <name>MDL_UPDATE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="56" column="9" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epc_control_unit__slx_8c_1ace86915cd55a1175c697f892b700f5e5" prot="public" static="no">
+        <name>ECU_SOLVER_TYPE</name>
+        <initializer><ref refid="lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80" kindref="member">SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="70" column="9" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epc_control_unit__slx_8c_1a844b7814640ba5021d1fa675cd9b5566" prot="public" static="no">
+        <name>MDL_GET_TIME_OF_NEXT_VAR_HIT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="71" column="9" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb" prot="public" static="no">
+        <name>ECU_SET_SAMPLE_TIME</name>
+        <param><defname>mIdx</defname></param>
+        <param><defname>mTim</defname></param>
+        <param><defname>mOff</defname></param>
+        <initializer>    ssSetSampleTime(S, mIdx, mTim);                                 \
+    ssSetOffsetTime(S, mIdx, mOff)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="83" column="9" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" prot="public" static="no">
+        <name>ECU_UPDATE_TASK</name>
+        <param><defname>mTask</defname></param>
+        <param><defname>mContext</defname></param>
+        <initializer>    if (ssIsSampleHit(S, SIL_TASK_GROUP_##mTask, tid) == true) {    \
+        double tNow = ssGetTaskTime(S, SIL_TASK_GROUP_##mTask);     \
+        SIL_update##mContext##_##mTask(tNow);                       \
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="87" column="9" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="epc_control_unit__slx_8c_1ab500fc17ae5e95797926ac770d903b84" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void mdlInitializeSizes</definition>
+        <argsstring>(SimStruct *S)</argsstring>
+        <name>mdlInitializeSizes</name>
+        <param>
+          <type>SimStruct *</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="131" column="13" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="131" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="epc_control_unit__slx_8c_1a4308a5a20d9c7060391059b1dfce872e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void mdlInitializeSampleTimes</definition>
+        <argsstring>(SimStruct *S)</argsstring>
+        <name>mdlInitializeSampleTimes</name>
+        <param>
+          <type>SimStruct *</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="188" column="13" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="188" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="epc_control_unit__slx_8c_1a67cce1b7124b1261eb48b06f5e16bdd5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void mdlGetTimeOfNextVarHit</definition>
+        <argsstring>(SimStruct *S)</argsstring>
+        <name>mdlGetTimeOfNextVarHit</name>
+        <param>
+          <type>SimStruct *</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="218" column="13" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="218" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="epc_control_unit__slx_8c_1a0dd07daf338cf84d1aee4bb8b6771720" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void mdlStart</definition>
+        <argsstring>(SimStruct *S)</argsstring>
+        <name>mdlStart</name>
+        <param>
+          <type>SimStruct *</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="240" column="13" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="240" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="epc_control_unit__slx_8c_1ab6c8c16502dd4374f9f36cfd58cbbd15" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void mdlOutputs</definition>
+        <argsstring>(SimStruct *S, int_T tid)</argsstring>
+        <name>mdlOutputs</name>
+        <param>
+          <type>SimStruct *</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type>int_T</type>
+          <declname>tid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="280" column="13" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="280" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="epc_control_unit__slx_8c_1a90b55be5367122a2cb94e9ac87253228" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void mdlUpdate</definition>
+        <argsstring>(SimStruct *S, int_T tid)</argsstring>
+        <name>mdlUpdate</name>
+        <param>
+          <type>SimStruct *</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type>int_T</type>
+          <declname>tid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="309" column="13" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="309" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="epc_control_unit__slx_8c_1a343acfd8b3b5308d6c94bbf40efbbac5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void mdlTerminate</definition>
+        <argsstring>(SimStruct *S)</argsstring>
+        <name>mdlTerminate</name>
+        <param>
+          <type>SimStruct *</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/mdl/epcControlUnit_slx.c" line="338" column="13" bodyfile="sil/mdl/epcControlUnit_slx.c" bodystart="338" bodyend="342"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/>########<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/>#########<sp/><sp/><sp/>#######</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/>##</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/>#<sp/>########<sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/>#<sp/>########<sp/><sp/><sp/><sp/>#########<sp/><sp/>##<sp/>######<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/><sp/>######<sp/><sp/>######<sp/><sp/><sp/><sp/>#########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COMPANY<sp/>CONFIDENTIAL</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>document<sp/>contains<sp/>information<sp/>proprietary<sp/>to<sp/>EPC<sp/>Power.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>is<sp/>an<sp/>unpublished<sp/>work<sp/>subject<sp/>to<sp/>trade<sp/>secret<sp/>and<sp/>copyright<sp/>protection.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>addition,<sp/>the<sp/>information<sp/>may<sp/>be<sp/>the<sp/>subject<sp/>of<sp/>patent<sp/>applications</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>United<sp/>States<sp/>and<sp/>foreign<sp/>countries.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>M<sp/>O<sp/>D<sp/>U<sp/>L<sp/>E<sp/><sp/><sp/><sp/>D<sp/>E<sp/>S<sp/>C<sp/>R<sp/>I<sp/>P<sp/>T<sp/>I<sp/>O<sp/>N</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Filename<sp/><sp/><sp/><sp/><sp/>:<sp/>epcControlUnit_slx.c</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>EpcControlUnit</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Prefix<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>ECU_</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>Description<sp/><sp/>:<sp/>Simulink-specific<sp/>wrapper<sp/>to<sp/>the<sp/>EPC<sp/>SIL<sp/>Library--may<sp/>also<sp/>be<sp/>viewed<sp/>from<sp/>the<sp/>Simulink</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perspective<sp/>as<sp/>the<sp/>underlying<sp/>Simulink<sp/>block<sp/>implementation<sp/>which<sp/>uses<sp/>the<sp/>EPC<sp/>SIL</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Library.<sp/>Implemented<sp/>as<sp/>a<sp/>C-MEX<sp/>S-Function<sp/>which<sp/>implements<sp/>all<sp/>the<sp/>required</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S-Function<sp/>methods<sp/>to<sp/>realize<sp/>the<sp/>EPC<sp/>Control<sp/>Unit<sp/>Simulink<sp/>block.<sp/>Initializes<sp/>and</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>configures<sp/>the<sp/>block<sp/>parameters,<sp/>inputs,<sp/>and<sp/>outputs;<sp/>sets<sp/>up<sp/>the<sp/>multi-rate<sp/>tasks;</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>manages<sp/>calling<sp/>into<sp/>the<sp/>EPC<sp/>SIL<sp/>Library<sp/>the<sp/>respective<sp/>state<sp/>and<sp/>update<sp/>calls.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>D.<sp/>Michaud</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>History<sp/><sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>Date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Description</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>14.01.2019<sp/><sp/><sp/>D.<sp/>Michaud<sp/><sp/><sp/><sp/><sp/><sp/>Initial<sp/>Version</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>Include<sp/>Files</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../libEpcControl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>Constant<sp/>Defines</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>NB.<sp/>S_FUNCTION_NAME<sp/>is<sp/>defined<sp/>by<sp/>the<sp/>build<sp/>script<sp/>in<sp/>MATLAB<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>S_FUNCTION_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epcControlUnit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_FUNCTION_LEVEL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>ECU_TEST_SIMPLE_SOLVER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MDL_START</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MDL_UPDATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_CHECK_PARAMETERS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_PROCESS_PARAMETERS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_SET_INPUT_PORT_DATA_TYPE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_SET_OUTPUT_PORT_DATA_TYPE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_SET_DEFAULT_PORT_DATA_TYPES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_SET_WORK_WIDTHS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_INITIALIZE_CONDITIONS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_SIM_STATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_ZERO_CROSSINGS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_DERIVATIVES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_RTW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(ECU_TEST_SIMPLE_SOLVER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECU_SOLVER_TYPE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MDL_GET_TIME_OF_NEXT_VAR_HIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECU_SOLVER_TYPE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIL_SOLVER_TYPE_FIXED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>MDL_GET_TIME_OF_NEXT_VAR_HIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;simstruc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>Macro<sp/>Defines</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECU_SET_SAMPLE_TIME(mIdx,<sp/>mTim,<sp/>mOff)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>ssSetSampleTime(S,<sp/>mIdx,<sp/>mTim);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>ssSetOffsetTime(S,<sp/>mIdx,<sp/>mOff)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECU_UPDATE_TASK(mTask,<sp/>mContext)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(ssIsSampleHit(S,<sp/>SIL_TASK_GROUP_##mTask,<sp/>tid)<sp/>==<sp/>true)<sp/>{<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>tNow<sp/>=<sp/>ssGetTaskTime(S,<sp/>SIL_TASK_GROUP_##mTask);<sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIL_update##mContext##_##mTask(tNow);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/>Type<sp/>Definitions</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>Global<sp/>Variable<sp/>Declarations</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/>Imported<sp/>Variables</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>Imported<sp/>Functions</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>Forward<sp/>Declarations</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>Local<sp/>Functions</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>mdlInitializeSizes</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>EpcControlUnit::Simulink.mdlInitializeSizes</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Private</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"></highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>S<sp/><sp/><sp/>-<sp/>pointer<sp/>to<sp/>Simulink<sp/>S-Function<sp/>structure<sp/>instance.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Initialize<sp/>input<sp/>ports<sp/>and<sp/>their<sp/>dimensions,<sp/>output<sp/>ports<sp/>and<sp/>their<sp/>dimensions,<sp/>expected</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>number<sp/>of<sp/>parameters<sp/>and<sp/>their<sp/>dimensions,<sp/>and<sp/>number<sp/>of<sp/>sampling<sp/>tasks.<sp/>This<sp/>defines<sp/>the</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>virtual<sp/>I/O<sp/>appearance.<sp/>Called<sp/>during<sp/>model<sp/>initialization<sp/>and<sp/>model<sp/>diagram<sp/>update.</highlight></codeline>
+<codeline lineno="130"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlInitializeSizes(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>ssSetNumContStates(S,<sp/>0);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>ssSetNumDiscStates(S,<sp/>0);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>ssSetNumSFcnParams(S,<sp/><ref refid="lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c" kindref="member">SIL_PAR_CNT</ref>);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ssGetSFcnParamsCount(S)<sp/>!=<sp/><ref refid="lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c" kindref="member">SIL_PAR_CNT</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>parIdx<sp/>=<sp/>0;<sp/>parIdx<sp/>&lt;<sp/><ref refid="lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c" kindref="member">SIL_PAR_CNT</ref>;<sp/>parIdx++)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssSetSFcnParamTunable(S,<sp/>parIdx,<sp/><ref refid="lib_epc_control_8h_1af91b38aa17c2cb63c599d38dbbadbea3" kindref="member">SIL_PARAM_T</ref>(parIdx));</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ssSetNumInputPorts(S,<sp/><ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa" kindref="member">SIL_INP_CNT</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inpIdx<sp/>=<sp/>0;<sp/>inpIdx<sp/>&lt;<sp/><ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa" kindref="member">SIL_INP_CNT</ref>;<sp/>inpIdx++)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssSetInputPortWidth(S,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inpIdx,<sp/><ref refid="lib_epc_control_8h_1adf19060fe302f16473f38aebefc6d5ce" kindref="member">SIL_PORT_INP_W</ref>(inpIdx));</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssSetInputPortDirectFeedThrough(S,<sp/><sp/>inpIdx,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssSetInputPortRequiredContiguous(S,<sp/>inpIdx,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ssSetNumOutputPorts(S,<sp/><ref refid="lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee" kindref="member">SIL_OUT_CNT</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outIdx<sp/>=<sp/>0;<sp/>outIdx<sp/>&lt;<sp/><ref refid="lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee" kindref="member">SIL_OUT_CNT</ref>;<sp/>outIdx++)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssSetOutputPortWidth(S,<sp/>outIdx,<sp/><ref refid="lib_epc_control_8h_1afa2e5b0886c08c86db167e3437d78994" kindref="member">SIL_PORT_OUT_W</ref>(outIdx));</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(ECU_TEST_SIMPLE_SOLVER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>ssSetNumSampleTimes(S,<sp/><ref refid="lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcaa9e4d7626ae66406a51f13ef77cca768" kindref="member">SIL_TASK_GROUP_CNT</ref>);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>ssSetNumSampleTimes(S,<sp/>1);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>ssSetSimStateCompliance(S,<sp/>DISALLOW_SIM_STATE);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>ssSetOptions(S,<sp/>SS_OPTION_EXCEPTION_FREE_CODE);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>mdlInitializeSampleTimes</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>EpcControlUnit::Simulink.mdlInitializeSampleTimes</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Private</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"></highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>S<sp/><sp/><sp/>-<sp/>pointer<sp/>to<sp/>Simulink<sp/>S-Function<sp/>structure<sp/>instance.</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Set<sp/>the<sp/>sample<sp/>rate<sp/>times<sp/>(or<sp/>specify<sp/>variable<sp/>rate)<sp/>for<sp/>each<sp/>of<sp/>the<sp/>sample<sp/>tasks.<sp/>Called</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>after<sp/>mdlInitializeSizes().</highlight></codeline>
+<codeline lineno="187"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlInitializeSampleTimes(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(ECU_TEST_SIMPLE_SOLVER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb" kindref="member">ECU_SET_SAMPLE_TIME</ref>(<ref refid="lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdca6752bdea6ba25e1c866793d9de9fddc2" kindref="member">SIL_TASK_GROUP_ts</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>VARIABLE_SAMPLE_TIME,<sp/><sp/><sp/>0.0);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb" kindref="member">ECU_SET_SAMPLE_TIME</ref>(<ref refid="lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcad252ac161a55166b4499529360ce87c8" kindref="member">SIL_TASK_GROUP_200us</ref>,<sp/><sp/><sp/>200.0e-6,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb" kindref="member">ECU_SET_SAMPLE_TIME</ref>(<ref refid="lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcaf0d955c1cb8c3b7dd9a510ea3bf6dbd0" kindref="member">SIL_TASK_GROUP_1ms</ref>,<sp/><sp/><sp/><sp/><sp/>1.0e-3,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb" kindref="member">ECU_SET_SAMPLE_TIME</ref>(<ref refid="lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcabd3a3af76eaf8f536a2eeca2aee82f11" kindref="member">SIL_TASK_GROUP_10ms</ref>,<sp/><sp/><sp/><sp/>10.0e-3,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb" kindref="member">ECU_SET_SAMPLE_TIME</ref>(<ref refid="lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdca52ea4ad9e046ceb4545a1bf27689be6a" kindref="member">SIL_TASK_GROUP_100ms</ref>,<sp/><sp/><sp/>100.0e-3,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb" kindref="member">ECU_SET_SAMPLE_TIME</ref>(<ref refid="lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcac3d16ad5a1cedf24b10ea359023f034c" kindref="member">SIL_TASK_GROUP_1s</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>1000.0e-3,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb" kindref="member">ECU_SET_SAMPLE_TIME</ref>(0,<sp/>50e-6,<sp/>0.0);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>mdlGetTimeOfNextVarHit</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>EpcControlUnit::Simulink.mdlGetTimeOfNextVarHit</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Private</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"></highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>S<sp/><sp/><sp/>-<sp/>pointer<sp/>to<sp/>Simulink<sp/>S-Function<sp/>structure<sp/>instance.</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Update<sp/>the<sp/>future<sp/>instant<sp/>at<sp/>which<sp/>the<sp/>variable-rate<sp/>task<sp/>shall<sp/>next<sp/>be<sp/>evaluated.<sp/>This</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>function<sp/>is<sp/>not<sp/>defined<sp/>for<sp/>fixed-rate<sp/>solvers.<sp/>Called<sp/>as<sp/>the<sp/>first<sp/>step<sp/>within<sp/>each</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>simulation<sp/>loop<sp/>update<sp/>when<sp/>the<sp/>block<sp/>is<sp/>configured<sp/>with<sp/>a<sp/>variable-rate<sp/>task.</highlight></codeline>
+<codeline lineno="216"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_GET_TIME_OF_NEXT_VAR_HIT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlGetTimeOfNextVarHit(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow<sp/>=<sp/>ssGetT(S);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>ssSetTNext(S,<sp/><ref refid="lib_epc_control_8c_1ae7faa4e53156bb74ada32b2980fdc965" kindref="member">SIL_getNextSampleHit</ref>(tNow));</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>mdlStart</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>EpcControlUnit::Simulink.mdlStart</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Private</highlight></codeline>
+<codeline lineno="231"><highlight class="comment"></highlight></codeline>
+<codeline lineno="232"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>S<sp/><sp/><sp/>-<sp/>pointer<sp/>to<sp/>Simulink<sp/>S-Function<sp/>structure<sp/>instance.</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Initialize<sp/>the<sp/>pointers<sp/>for<sp/>each<sp/>of<sp/>the<sp/>input<sp/>and<sp/>output<sp/>ports<sp/>and<sp/>initialize<sp/>the<sp/>SIL</highlight></codeline>
+<codeline lineno="237"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wrapper.<sp/>Called<sp/>once<sp/>as<sp/>the<sp/>first<sp/>step<sp/>upon<sp/>execution<sp/>of<sp/>a<sp/>model<sp/>(before<sp/>any<sp/>state<sp/>or</highlight></codeline>
+<codeline lineno="238"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/>update)<sp/>once<sp/>memory<sp/>has<sp/>been<sp/>allocated<sp/>for<sp/>the<sp/>block.</highlight></codeline>
+<codeline lineno="239"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlStart(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pcPmvsPath;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inpIdx<sp/>=<sp/>0;<sp/>inpIdx<sp/>&lt;<sp/><ref refid="lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa" kindref="member">SIL_INP_CNT</ref>;<sp/>inpIdx++)<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8h_1ab566304af8c7c3ef931ddfa8c9e69eec" kindref="member">SIL_PORT_INP_P</ref>(inpIdx)<sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*)ssGetInputPortSignal(S,<sp/>inpIdx);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outIdx<sp/>=<sp/>0;<sp/>outIdx<sp/>&lt;<sp/><ref refid="lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee" kindref="member">SIL_OUT_CNT</ref>;<sp/>outIdx++)<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8h_1a5d14177846563842aefcce3d2d442c15" kindref="member">SIL_PORT_OUT_P</ref>(outIdx)<sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*)ssGetOutputPortSignal(S,<sp/>outIdx);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>parIdx<sp/>=<sp/>0;<sp/>parIdx<sp/>&lt;<sp/><ref refid="lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c" kindref="member">SIL_PAR_CNT</ref>;<sp/>parIdx++)<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8h_1a976ad84e491da31be2745a282f83966a" kindref="member">SIL_PARAM_P</ref>(parIdx)<sp/><sp/><sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)mxGetPr(ssGetSFcnParam(S,<sp/>parIdx));</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allocate<sp/>and<sp/>copy<sp/>mxArray<sp/>of<sp/>characters<sp/>to<sp/>string...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>pcPmvsPath<sp/><sp/>=<sp/>mxArrayToString(ssGetSFcnParam(S,<sp/><ref refid="lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651" kindref="member">SIL_PAR_PMVSPATH</ref>));</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1ab81a90ab6353010bbcbfbe378b6c133b" kindref="member">SIL_initializeLibrary</ref>(0.0,<sp/><ref refid="epc_control_unit__slx_8c_1ace86915cd55a1175c697f892b700f5e5" kindref="member">ECU_SOLVER_TYPE</ref>,<sp/>(<ref refid="lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01" kindref="member">SIL_eModelIntent_t</ref>)<ref refid="lib_epc_control_8h_1ab99bbf5e2bafee94921eb5682919ec62" kindref="member">SIL_PARAM</ref>(<ref refid="lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460" kindref="member">SIL_PAR_INTENT</ref>,<sp/>0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pcPmvsPath);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Free<sp/>that<sp/>shit.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>mxFree(pcPmvsPath);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>mdlOutputs</highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>EpcControlUnit::Simulink.mdlOutputs</highlight></codeline>
+<codeline lineno="271"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Private</highlight></codeline>
+<codeline lineno="272"><highlight class="comment"></highlight></codeline>
+<codeline lineno="273"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>tid<sp/>-<sp/>task<sp/>identifier<sp/>index.</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>S<sp/><sp/><sp/>-<sp/>pointer<sp/>to<sp/>Simulink<sp/>S-Function<sp/>structure<sp/>instance.</highlight></codeline>
+<codeline lineno="275"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Update<sp/>block<sp/>outputs<sp/>from<sp/>the<sp/>SIL<sp/>for<sp/>each<sp/>sample<sp/>task.<sp/>Called<sp/>as<sp/>the<sp/>second<sp/>step<sp/>within</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>each<sp/>simulation<sp/>loop<sp/>update,<sp/>after<sp/>mdlGetTimeOfNextVarHit().</highlight></codeline>
+<codeline lineno="279"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlOutputs(SimStruct<sp/>*S,<sp/>int_T<sp/>tid)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(ECU_TEST_SIMPLE_SOLVER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(ts,<sp/><sp/><sp/><sp/><sp/>Output);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(200us,<sp/><sp/>Output);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(1ms,<sp/><sp/><sp/><sp/>Output);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(10ms,<sp/><sp/><sp/>Output);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(100ms,<sp/><sp/>Output);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(1s,<sp/><sp/><sp/><sp/><sp/>Output);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow<sp/>=<sp/>ssGetTaskTime(S,<sp/>0);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1a4516f98eb48b67f3cfac58f6f506395b" kindref="member">SIL_updateOutput</ref>(tNow);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="298"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>mdlUpdate</highlight></codeline>
+<codeline lineno="299"><highlight class="comment"><sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>EpcControlUnit::Simulink.mdlUpdate</highlight></codeline>
+<codeline lineno="300"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Private</highlight></codeline>
+<codeline lineno="301"><highlight class="comment"></highlight></codeline>
+<codeline lineno="302"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>tid<sp/>-<sp/>task<sp/>identifier<sp/>index.</highlight></codeline>
+<codeline lineno="303"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>S<sp/><sp/><sp/>-<sp/>pointer<sp/>to<sp/>Simulink<sp/>S-Function<sp/>structure<sp/>instance.</highlight></codeline>
+<codeline lineno="304"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="305"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="306"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Update<sp/>SIL<sp/>internal<sp/>state,<sp/>during<sp/>which<sp/>SIL<sp/>will<sp/>read<sp/>from<sp/>block<sp/>inputs<sp/>by<sp/>reference.</highlight></codeline>
+<codeline lineno="307"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Called<sp/>as<sp/>the<sp/>third<sp/>step<sp/>within<sp/>each<sp/>simulation<sp/>loop<sp/>update,<sp/>after<sp/>mdlOutputs().</highlight></codeline>
+<codeline lineno="308"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlUpdate(SimStruct<sp/>*S,<sp/>int_T<sp/>tid)<sp/>{</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(ECU_TEST_SIMPLE_SOLVER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(ts,<sp/><sp/><sp/><sp/><sp/>State);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(200us,<sp/><sp/>State);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(1ms,<sp/><sp/><sp/><sp/>State);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(10ms,<sp/><sp/><sp/>State);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(100ms,<sp/><sp/>State);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78" kindref="member">ECU_UPDATE_TASK</ref>(1s,<sp/><sp/><sp/><sp/><sp/>State);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow<sp/>=<sp/>ssGetTaskTime(S,<sp/>0);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1a4bba7ed7d059aaea97ea7739d4a8aadf" kindref="member">SIL_updateState</ref>(tNow);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="327"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>mdlTerminate</highlight></codeline>
+<codeline lineno="328"><highlight class="comment"><sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>EpcControlUnit::Simulink.mdlTerminate</highlight></codeline>
+<codeline lineno="329"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Private</highlight></codeline>
+<codeline lineno="330"><highlight class="comment"></highlight></codeline>
+<codeline lineno="331"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="332"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>S<sp/><sp/><sp/>-<sp/>pointer<sp/>to<sp/>Simulink<sp/>S-Function<sp/>structure<sp/>instance.</highlight></codeline>
+<codeline lineno="333"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="334"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="335"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Perform<sp/>cleanup<sp/>operations<sp/>for<sp/>the<sp/>SIL<sp/>at<sp/>the<sp/>end<sp/>of<sp/>simulation.<sp/>Called<sp/>after<sp/>execution<sp/>of</highlight></codeline>
+<codeline lineno="336"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>last<sp/>simulation<sp/>loop<sp/>task.</highlight></codeline>
+<codeline lineno="337"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlTerminate(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow<sp/>=<sp/>ssGetT(S);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1ace37954380efd0cc545d686525f44253" kindref="member">SIL_terminateLibrary</ref>(tNow);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_CHECK_PARAMETERS)<sp/>&amp;&amp;<sp/>defined(MATLAB_MEX_FILE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlCheckParameters(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_PROCESS_PARAMETERS)<sp/>&amp;&amp;<sp/>defined(MATLAB_MEX_FILE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlProcessParameters(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="351"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_SET_INPUT_PORT_DATA_TYPE)<sp/>&amp;&amp;<sp/>defined(MATLAB_MEX_FILE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlSetInputPortDataType(SimStruct<sp/>*S,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portIndex,<sp/>DTypeId<sp/>dType)<sp/>{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_SET_OUTPUT_PORT_DATA_TYPE)<sp/>&amp;&amp;<sp/>defined(MATLAB_MEX_FILE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlSetOutputPortDataType(SimStruct<sp/>*S,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portIndex,<sp/>DTypeId<sp/>dType)<sp/>{</highlight></codeline>
+<codeline lineno="361"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_SET_DEFAULT_PORT_DATA_TYPES)<sp/>&amp;&amp;<sp/>defined(MATLAB_MEX_FILE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlSetDefaultPortDataTypes(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="366"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_SET_WORK_WIDTHS)<sp/>&amp;&amp;<sp/>defined(MATLAB_MEX_FILE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlSetWorkWidths(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="371"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_INITIALIZE_CONDITIONS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlInitializeConditions(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="376"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_SIM_STATE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>mxArray*<sp/>mdlGetSimState(SimStruct*<sp/>S)<sp/>{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlSetSimState(SimStruct*<sp/>S,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mxArray*<sp/>inSimState)<sp/>{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_ZERO_CROSSINGS)<sp/>&amp;&amp;<sp/>(defined(MATLAB_MEX_FILE)<sp/>||<sp/>defined(NRT))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlZeroCrossings(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="389"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_DERIVATIVES)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlDerivatives(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="394"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MDL_RTW)<sp/>&amp;&amp;<sp/>defined(MATLAB_MEX_FILE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mdlRTW(SimStruct<sp/>*S)<sp/>{</highlight></codeline>
+<codeline lineno="399"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MATLAB_MEX_FILE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;simulink.c&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>MEX-file<sp/>interface<sp/>mechanism<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cg_sfun.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Code<sp/>generation<sp/>registration<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="sil/mdl/epcControlUnit_slx.c"/>
+  </compounddef>
+</doxygen>

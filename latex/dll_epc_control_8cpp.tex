@@ -1,0 +1,63 @@
+\hypertarget{dll_epc_control_8cpp}{}\doxysection{sil/psc/lib\+Epc\+Control\+Dev/dll\+Epc\+Control/dll\+Epc\+Control.cpp File Reference}
+\label{dll_epc_control_8cpp}\index{sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp@{sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp}}
+{\ttfamily \#include \char`\"{}dll\+Epc\+Control.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dll_epc_control_8cpp_a289ad72e687c7381255a91e59c12764a}{SIL\+\_\+initialize\+Library\+Dll}} (double t\+Step, \mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}} solver\+Type, \mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}} mdl\+Intent, char $\ast$pmvs\+Path)
+\item 
+void \mbox{\hyperlink{dll_epc_control_8cpp_a7b5796b8060e27bb9c911ad0f1094275}{SIL\+\_\+update\+Output\+Dll}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{dll_epc_control_8cpp_acdd850a2ed7c3544fce1632cbfb7d55b}{SIL\+\_\+update\+State\+Dll}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{dll_epc_control_8cpp_a11f1643a802279df17997436b335fdd1}{SIL\+\_\+write\+Snapshot\+Dll}} (double t\+Now, uint16\+\_\+t instance\+Number, char $\ast$temp\+Path)
+\item 
+void \mbox{\hyperlink{dll_epc_control_8cpp_afbdcec4e2cd26b79b8ea364c524738bc}{SIL\+\_\+read\+Snapshot\+Dll}} (uint16\+\_\+t instance\+Number, char $\ast$temp\+Path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} \mbox{\hyperlink{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}{SIL\+\_\+s\+Ports\+\_\+t}} $\ast$ \mbox{\hyperlink{dll_epc_control_8cpp_a6342e8eb4f45e10fba6a6a4c2869029a}{SIL\+\_\+\+Ports\+Dll}} = \&\mbox{\hyperlink{lib_epc_control_8h_aa8c520d7306f12a6098f3cb4fdd3d1ea}{SIL\+\_\+\+Ports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dll_epc_control_8cpp_a289ad72e687c7381255a91e59c12764a}\label{dll_epc_control_8cpp_a289ad72e687c7381255a91e59c12764a}} 
+\index{dllEpcControl.cpp@{dllEpcControl.cpp}!SIL\_initializeLibraryDll@{SIL\_initializeLibraryDll}}
+\index{SIL\_initializeLibraryDll@{SIL\_initializeLibraryDll}!dllEpcControl.cpp@{dllEpcControl.cpp}}
+\doxysubsubsection{\texorpdfstring{SIL\_initializeLibraryDll()}{SIL\_initializeLibraryDll()}}
+{\footnotesize\ttfamily void SIL\+\_\+initialize\+Library\+Dll (\begin{DoxyParamCaption}\item[{double}]{t\+Step,  }\item[{\mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}}}]{solver\+Type,  }\item[{\mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}}}]{mdl\+Intent,  }\item[{char $\ast$}]{pmvs\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dll_epc_control_8cpp_afbdcec4e2cd26b79b8ea364c524738bc}\label{dll_epc_control_8cpp_afbdcec4e2cd26b79b8ea364c524738bc}} 
+\index{dllEpcControl.cpp@{dllEpcControl.cpp}!SIL\_readSnapshotDll@{SIL\_readSnapshotDll}}
+\index{SIL\_readSnapshotDll@{SIL\_readSnapshotDll}!dllEpcControl.cpp@{dllEpcControl.cpp}}
+\doxysubsubsection{\texorpdfstring{SIL\_readSnapshotDll()}{SIL\_readSnapshotDll()}}
+{\footnotesize\ttfamily void SIL\+\_\+read\+Snapshot\+Dll (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{instance\+Number,  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dll_epc_control_8cpp_a7b5796b8060e27bb9c911ad0f1094275}\label{dll_epc_control_8cpp_a7b5796b8060e27bb9c911ad0f1094275}} 
+\index{dllEpcControl.cpp@{dllEpcControl.cpp}!SIL\_updateOutputDll@{SIL\_updateOutputDll}}
+\index{SIL\_updateOutputDll@{SIL\_updateOutputDll}!dllEpcControl.cpp@{dllEpcControl.cpp}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutputDll()}{SIL\_updateOutputDll()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+Dll (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dll_epc_control_8cpp_acdd850a2ed7c3544fce1632cbfb7d55b}\label{dll_epc_control_8cpp_acdd850a2ed7c3544fce1632cbfb7d55b}} 
+\index{dllEpcControl.cpp@{dllEpcControl.cpp}!SIL\_updateStateDll@{SIL\_updateStateDll}}
+\index{SIL\_updateStateDll@{SIL\_updateStateDll}!dllEpcControl.cpp@{dllEpcControl.cpp}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateStateDll()}{SIL\_updateStateDll()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+Dll (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dll_epc_control_8cpp_a11f1643a802279df17997436b335fdd1}\label{dll_epc_control_8cpp_a11f1643a802279df17997436b335fdd1}} 
+\index{dllEpcControl.cpp@{dllEpcControl.cpp}!SIL\_writeSnapshotDll@{SIL\_writeSnapshotDll}}
+\index{SIL\_writeSnapshotDll@{SIL\_writeSnapshotDll}!dllEpcControl.cpp@{dllEpcControl.cpp}}
+\doxysubsubsection{\texorpdfstring{SIL\_writeSnapshotDll()}{SIL\_writeSnapshotDll()}}
+{\footnotesize\ttfamily void SIL\+\_\+write\+Snapshot\+Dll (\begin{DoxyParamCaption}\item[{double}]{t\+Now,  }\item[{uint16\+\_\+t}]{instance\+Number,  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{dll_epc_control_8cpp_a6342e8eb4f45e10fba6a6a4c2869029a}\label{dll_epc_control_8cpp_a6342e8eb4f45e10fba6a6a4c2869029a}} 
+\index{dllEpcControl.cpp@{dllEpcControl.cpp}!SIL\_PortsDll@{SIL\_PortsDll}}
+\index{SIL\_PortsDll@{SIL\_PortsDll}!dllEpcControl.cpp@{dllEpcControl.cpp}}
+\doxysubsubsection{\texorpdfstring{SIL\_PortsDll}{SIL\_PortsDll}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dll_epc_control_8h_ae5c1e5023687ade294eb989f50d601ca}{SIL\+\_\+\+LIBRARY\+\_\+\+DLL}} \mbox{\hyperlink{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}{SIL\+\_\+s\+Ports\+\_\+t}}$\ast$ SIL\+\_\+\+Ports\+Dll = \&\mbox{\hyperlink{lib_epc_control_8h_aa8c520d7306f12a6098f3cb4fdd3d1ea}{SIL\+\_\+\+Ports}}}
+

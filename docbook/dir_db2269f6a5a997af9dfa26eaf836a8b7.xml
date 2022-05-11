@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_db2269f6a5a997af9dfa26eaf836a8b7" xml:lang="en-US">
+<title>sil Directory Reference</title>
+<indexterm><primary>sil Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_5f1a9f40157217cf447274ad8b3fcc6d">emu</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_04978f8c8f5c8ae12a64ba8fa775a546">mdl</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_dab23c7465257c2685b497c1ecc257ad">psc</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_debug_8c">debug.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_lib_epc_control_8c">libEpcControl.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_lib_epc_control_8h">libEpcControl.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_lib_epc_control_interface_8c">libEpcControlInterface.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_lib_epc_control_interface_8h">libEpcControlInterface.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_sil_wrapper_8h">silWrapper.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

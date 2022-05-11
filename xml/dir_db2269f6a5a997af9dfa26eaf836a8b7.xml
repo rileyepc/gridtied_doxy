@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_db2269f6a5a997af9dfa26eaf836a8b7" kind="dir">
+    <compoundname>sil</compoundname>
+    <innerdir refid="dir_5f1a9f40157217cf447274ad8b3fcc6d">sil/emu</innerdir>
+    <innerdir refid="dir_04978f8c8f5c8ae12a64ba8fa775a546">sil/mdl</innerdir>
+    <innerdir refid="dir_dab23c7465257c2685b497c1ecc257ad">sil/psc</innerdir>
+    <innerfile refid="debug_8c">debug.c</innerfile>
+    <innerfile refid="lib_epc_control_8c">libEpcControl.c</innerfile>
+    <innerfile refid="lib_epc_control_8h">libEpcControl.h</innerfile>
+    <innerfile refid="lib_epc_control_interface_8c">libEpcControlInterface.c</innerfile>
+    <innerfile refid="lib_epc_control_interface_8h">libEpcControlInterface.h</innerfile>
+    <innerfile refid="sil_wrapper_8h">silWrapper.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ad2d__emu_8c" xml:lang="en-US">
+<title>sil/emu/ad2d_emu.c File Reference</title>
+<indexterm><primary>sil/emu/ad2d_emu.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;ad2d.h&quot;
+#include &quot;utils.h&quot;
+#include &quot;fpgaRegs.h&quot;
+#include &quot;MTH_scale.h&quot;
+#include &quot;hardwareScales.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_a_d2_d___sgn_extend__s">AD2D_SgnExtend_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_SgnExtend_u</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d2_d___hw_resources__s">AD2D_HwResources_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d2_d___meas_channel__s">AD2D_MeasChannel_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d2_d___data__s">AD2D_Data_s</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b">AD2D_SEQUENCER_CHANNELS</link>   6U</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad2d__emu_8c_1a0f8a45dbdfd318e1abe032c2553b91be">AD2D_CONVERSION_BUSY_TIMEOUT</link>   200U</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad2d__emu_8c_1ad901cdebf19316aaeab7fa7596bee414">AD2D_HARDWARE_RESOURCES_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad2d__emu_8c_1a732a6a180bbbc56389a9b4efd7f1e3a8">AD2D_MEAS_CHANNEL_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad2d__emu_8c_1af5f9a41adfa8b50175bd0d05ab66f917">AD2D_MEAS_CHANNELS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad2d__emu_8c_1a2f2c4efc92e7a2eb80450dbeb5816147">AD2D_DATA_DEFAULTS</link>(...)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_a_d2_d___sgn_extend__s">AD2D_SgnExtend_s</link> <link linkend="_ad2d__emu_8c_1a54be1832c3f2655b48038185b6c3aa6f">AD2D_sSgnExtend_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_SgnExtend_u</link> <link linkend="_ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1">AD2D_uSgnExtend_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d2_d___hw_resources__s">AD2D_HwResources_s</link> <link linkend="_ad2d__emu_8c_1a62d33c1d76705e1026f4095d6267986d">AD2D_HwResources_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d2_d___meas_channel__s">AD2D_MeasChannel_s</link> <link linkend="_ad2d__emu_8c_1ac6c98544c59d6e06532cbbde0e2a9157">AD2D_MeasChannel_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d2_d___data__s">AD2D_Data_s</link> <link linkend="_ad2d__emu_8c_1a5eec6c14184855675e9e0c7ec4e8157a">AD2D_Data_t</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int16_t <link linkend="_ad2d__emu_8c_1abb2c869fd838f67efc38dea0da13f669">AD2D_enqueueMeasurementChannel</link> (uint16_t const chanName, MESD_SequenceGroup_t const seqGroup, <link linkend="__i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d">_iq31</link> *const mesdDest)</para>
+</listitem>
+            <listitem><para>void <link linkend="_ad2d__emu_8c_1ac5c7fb0b68a3ab2ff81a409777725212">AD2D_releaseConfiguration</link> (void)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_ad2d__emu_8c_1ab082633aaec3b8328366f30752e45240">AD2D_measurementsUpdate_ts</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_ad2d__emu_8c_1a62d33c1d76705e1026f4095d6267986d">AD2D_HwResources_t</link> const <link linkend="_ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b">AD2D_HwResources</link> [AD2D_CHANNEL_CNT] = <link linkend="_ad2d__emu_8c_1ad901cdebf19316aaeab7fa7596bee414">AD2D_HARDWARE_RESOURCES_DEFAULTS</link>()</para>
+</listitem>
+            <listitem><para><link linkend="_ad2d__emu_8c_1a5eec6c14184855675e9e0c7ec4e8157a">AD2D_Data_t</link> <link linkend="_ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a">AD2D_Data</link> = <link linkend="_ad2d__emu_8c_1a2f2c4efc92e7a2eb80450dbeb5816147">AD2D_DATA_DEFAULTS</link>()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_ad2d__emu_8c_1a0f8a45dbdfd318e1abe032c2553b91be"/><section>
+    <title>AD2D_CONVERSION_BUSY_TIMEOUT</title>
+<indexterm><primary>AD2D_CONVERSION_BUSY_TIMEOUT</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_CONVERSION_BUSY_TIMEOUT</secondary></indexterm>
+<para><computeroutput>#define AD2D_CONVERSION_BUSY_TIMEOUT   200U</computeroutput></para></section>
+<anchor xml:id="_ad2d__emu_8c_1a2f2c4efc92e7a2eb80450dbeb5816147"/><section>
+    <title>AD2D_DATA_DEFAULTS</title>
+<indexterm><primary>AD2D_DATA_DEFAULTS</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_DATA_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD2D_DATA_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.measChannels&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_ad2d__emu_8c_1af5f9a41adfa8b50175bd0d05ab66f917">AD2D_MEAS_CHANNELS_DEFAULTS</link>(),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.channelCount&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0U,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_ad2d__emu_8c_1ad901cdebf19316aaeab7fa7596bee414"/><section>
+    <title>AD2D_HARDWARE_RESOURCES_DEFAULTS</title>
+<indexterm><primary>AD2D_HARDWARE_RESOURCES_DEFAULTS</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_HARDWARE_RESOURCES_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD2D_HARDWARE_RESOURCES_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD2D_CHANNEL_VFB_LO_1]&#32;=&#32;{&#32;(<link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_uSgnExtend_t</link>&#32;*)&amp;ozFpga.vLvA.all&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD2D_CHANNEL_VFB_LO_2]&#32;=&#32;{&#32;(<link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_uSgnExtend_t</link>&#32;*)&amp;ozFpga.vLvB.all&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD2D_CHANNEL_VFB_LO_3]&#32;=&#32;{&#32;(<link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_uSgnExtend_t</link>&#32;*)&amp;ozFpga.vLvC.all&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD2D_CHANNEL_VFB_HI_1]&#32;=&#32;{&#32;(<link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_uSgnExtend_t</link>&#32;*)&amp;ozFpga.vLineA.all&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD2D_CHANNEL_VFB_HI_2]&#32;=&#32;{&#32;(<link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_uSgnExtend_t</link>&#32;*)&amp;ozFpga.vLineB.all&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD2D_CHANNEL_VFB_HI_3]&#32;=&#32;{&#32;(<link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_uSgnExtend_t</link>&#32;*)&amp;ozFpga.vLineC.all&#32;},&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_ad2d__emu_8c_1a732a6a180bbbc56389a9b4efd7f1e3a8"/><section>
+    <title>AD2D_MEAS_CHANNEL_DEFAULTS</title>
+<indexterm><primary>AD2D_MEAS_CHANNEL_DEFAULTS</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_MEAS_CHANNEL_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD2D_MEAS_CHANNEL_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.adcResult&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.mesdDest&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_ad2d__emu_8c_1af5f9a41adfa8b50175bd0d05ab66f917"/><section>
+    <title>AD2D_MEAS_CHANNELS_DEFAULTS</title>
+<indexterm><primary>AD2D_MEAS_CHANNELS_DEFAULTS</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_MEAS_CHANNELS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD2D_MEAS_CHANNELS_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[0U&#32;...&#32;(<link linkend="_ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b">AD2D_SEQUENCER_CHANNELS</link>&#32;-&#32;1U)]&#32;=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ad2d__emu_8c_1a732a6a180bbbc56389a9b4efd7f1e3a8">AD2D_MEAS_CHANNEL_DEFAULTS</link>(__VA_ARGS__)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_ad2d__emu_8c_1a37f3e5ee5272eda310a848ca26aafa2b"/><section>
+    <title>AD2D_SEQUENCER_CHANNELS</title>
+<indexterm><primary>AD2D_SEQUENCER_CHANNELS</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_SEQUENCER_CHANNELS</secondary></indexterm>
+<para><computeroutput>#define AD2D_SEQUENCER_CHANNELS   6U</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_ad2d__emu_8c_1a5eec6c14184855675e9e0c7ec4e8157a"/><section>
+    <title>AD2D_Data_t</title>
+<indexterm><primary>AD2D_Data_t</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_Data_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d2_d___data__s">AD2D_Data_s</link> <link linkend="_ad2d__emu_8c_1a5eec6c14184855675e9e0c7ec4e8157a">AD2D_Data_t</link></computeroutput></para></section>
+<anchor xml:id="_ad2d__emu_8c_1a62d33c1d76705e1026f4095d6267986d"/><section>
+    <title>AD2D_HwResources_t</title>
+<indexterm><primary>AD2D_HwResources_t</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_HwResources_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d2_d___hw_resources__s">AD2D_HwResources_s</link> <link linkend="_ad2d__emu_8c_1a62d33c1d76705e1026f4095d6267986d">AD2D_HwResources_t</link></computeroutput></para></section>
+<anchor xml:id="_ad2d__emu_8c_1ac6c98544c59d6e06532cbbde0e2a9157"/><section>
+    <title>AD2D_MeasChannel_t</title>
+<indexterm><primary>AD2D_MeasChannel_t</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_MeasChannel_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d2_d___meas_channel__s">AD2D_MeasChannel_s</link> <link linkend="_ad2d__emu_8c_1ac6c98544c59d6e06532cbbde0e2a9157">AD2D_MeasChannel_t</link></computeroutput></para></section>
+<anchor xml:id="_ad2d__emu_8c_1a54be1832c3f2655b48038185b6c3aa6f"/><section>
+    <title>AD2D_sSgnExtend_t</title>
+<indexterm><primary>AD2D_sSgnExtend_t</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_sSgnExtend_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d2_d___sgn_extend__s">AD2D_SgnExtend_s</link> <link linkend="_ad2d__emu_8c_1a54be1832c3f2655b48038185b6c3aa6f">AD2D_sSgnExtend_t</link></computeroutput></para></section>
+<anchor xml:id="_ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1"/><section>
+    <title>AD2D_uSgnExtend_t</title>
+<indexterm><primary>AD2D_uSgnExtend_t</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_uSgnExtend_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d2_d___sgn_extend__u">AD2D_SgnExtend_u</link> <link linkend="_ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1">AD2D_uSgnExtend_t</link></computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_ad2d__emu_8c_1abb2c869fd838f67efc38dea0da13f669"/><section>
+    <title>AD2D_enqueueMeasurementChannel()</title>
+<indexterm><primary>AD2D_enqueueMeasurementChannel</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_enqueueMeasurementChannel</secondary></indexterm>
+<para><computeroutput>int16_t AD2D_enqueueMeasurementChannel (uint16_t const chanName, MESD_SequenceGroup_t const seqGroup, <link linkend="__i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d">_iq31</link> *const mesdDest)</computeroutput></para></section>
+<anchor xml:id="_ad2d__emu_8c_1ab082633aaec3b8328366f30752e45240"/><section>
+    <title>AD2D_measurementsUpdate_ts()</title>
+<indexterm><primary>AD2D_measurementsUpdate_ts</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_measurementsUpdate_ts</secondary></indexterm>
+<para><computeroutput>bool AD2D_measurementsUpdate_ts (void )</computeroutput></para></section>
+<anchor xml:id="_ad2d__emu_8c_1ac5c7fb0b68a3ab2ff81a409777725212"/><section>
+    <title>AD2D_releaseConfiguration()</title>
+<indexterm><primary>AD2D_releaseConfiguration</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_releaseConfiguration</secondary></indexterm>
+<para><computeroutput>void AD2D_releaseConfiguration (void )</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_ad2d__emu_8c_1a78e69f5d36b36c620926794a8c6bf84a"/><section>
+    <title>AD2D_Data</title>
+<indexterm><primary>AD2D_Data</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_Data</secondary></indexterm>
+<para><computeroutput><link linkend="_ad2d__emu_8c_1a5eec6c14184855675e9e0c7ec4e8157a">AD2D_Data_t</link> AD2D_Data = <link linkend="_ad2d__emu_8c_1a2f2c4efc92e7a2eb80450dbeb5816147">AD2D_DATA_DEFAULTS</link>()</computeroutput></para></section>
+<anchor xml:id="_ad2d__emu_8c_1a260839c7ebd06be2339fd16580b6185b"/><section>
+    <title>AD2D_HwResources</title>
+<indexterm><primary>AD2D_HwResources</primary><secondary>ad2d_emu.c</secondary></indexterm>
+<indexterm><primary>ad2d_emu.c</primary><secondary>AD2D_HwResources</secondary></indexterm>
+<para><computeroutput><link linkend="_ad2d__emu_8c_1a62d33c1d76705e1026f4095d6267986d">AD2D_HwResources_t</link> const AD2D_HwResources[AD2D_CHANNEL_CNT] = <link linkend="_ad2d__emu_8c_1ad901cdebf19316aaeab7fa7596bee414">AD2D_HARDWARE_RESOURCES_DEFAULTS</link>()</computeroutput></para></section>
+</section>
+</section>

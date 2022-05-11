@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_interface_8h_source" xml:lang="en-US">
+<title>interface.h</title>
+<indexterm><primary>interface/interface.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">__INTERFACE_H__</emphasis>
+2 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__INTERFACE_H__</emphasis>
+3 
+4 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">stddef</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+5 
+6 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;canInterfaceEnums.h&quot;</emphasis>
+7 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;sunspec.h&quot;</emphasis>
+8 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;meta.h&quot;</emphasis>
+9 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;IEEE1547.h&quot;</emphasis>
+10 
+11 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;authorization.h&quot;</emphasis>
+12 
+13 
+14 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_interface_8h_1a4b4d547f1291c2b0839837d1263cecd8">CAN_Enum_AccessLevel</link>&#32;<link linkend="_interface_8h_1a4b4d547f1291c2b0839837d1263cecd8">metaMinimumAccessLevel</link>[Meta_Count];
+15 
+16 
+17 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>;
+18 
+19 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_rejection_reasons">RejectionReasons</link>&#32;{
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_rejection_reasons_1a911393d8abc75cf1c1f8405417ffe29b">outOfRange</link>;
+21 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_rejection_reasons_1ae907285d9dc38682c7c64783f0df434c">meta</link>;
+22 &#32;&#32;&#32;&#32;<link linkend="_struct_rejection_reasons_1aa448f4a38ecb557ece1ff629c0bf4adc">Meta_Enum</link>&#32;<link linkend="_struct_rejection_reasons_1aa448f4a38ecb557ece1ff629c0bf4adc">metaIndex</link>;
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_rejection_reasons_1af2dace2b8e813fcc0a84a34856128d91">auth</link>;
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_rejection_reasons_1ac24f1b14617c40866ec7ef3590d4b6cd">setter</link>;
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_rejection_reasons_1a52ad669d9d01fece70b55cbee88458f5">inactiveInterface</link>;
+26 }&#32;RejectionReasons;
+27 
+28 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">REJECTIONREASONS_DEFAULTS</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">metaIndex_</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">...</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">\</emphasis>
+29 <emphasis role="preprocessor">{</emphasis>
+30 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">outOfRange</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="keyword">false</emphasis><emphasis role="preprocessor">,</emphasis>
+31 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">meta</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="keyword">false</emphasis><emphasis role="preprocessor">,</emphasis>
+32 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">metaIndex</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="preprocessor">metaIndex_</emphasis><emphasis role="preprocessor">,</emphasis>
+33 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">auth</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="keyword">false</emphasis><emphasis role="preprocessor">,</emphasis>
+34 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">setter</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="keyword">false</emphasis><emphasis role="preprocessor">,</emphasis>
+35 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">inactiveInterface</emphasis>&#32;<emphasis role="preprocessor">=</emphasis>&#32;<emphasis role="keyword">false</emphasis><emphasis role="preprocessor">,</emphasis>
+36 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">##</emphasis><emphasis role="preprocessor">__VA_ARGS__</emphasis>&#32;<emphasis role="preprocessor">\</emphasis>
+37 <emphasis role="preprocessor">}</emphasis>
+38 
+39 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">REJECTIONREASONS_ANY</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">\</emphasis>
+40 <emphasis role="preprocessor">(</emphasis>
+41 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">outOfRange</emphasis>
+42 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">meta</emphasis>
+43 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">auth</emphasis>
+44 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">setter</emphasis>
+45 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">||</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">inactiveInterface</emphasis>&#32;<emphasis role="preprocessor">\</emphasis>
+46 <emphasis role="preprocessor">)</emphasis>
+47 
+48 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">REJECTIONREASONS_NONE</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">\</emphasis>
+49 <emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">!</emphasis><link linkend="_interface_8h_1a61fa532cd4060e9b2d2d701c6c4d1b30">REJECTIONREASONS_ANY</link><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">)</emphasis>
+50 
+51 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">REJECTIONREASONS_ONLY</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">,</emphasis>&#32;<emphasis role="preprocessor">name</emphasis><emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">\</emphasis>
+52 <emphasis role="preprocessor">(</emphasis>
+53 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">name</emphasis><emphasis role="preprocessor">)</emphasis>
+54 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">&amp;&amp;</emphasis>&#32;<emphasis role="preprocessor">(</emphasis>
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">(</emphasis>
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">outOfRange</emphasis>&#32;<emphasis role="preprocessor">?</emphasis>&#32;1&#32;<emphasis role="preprocessor">:</emphasis>&#32;0<emphasis role="preprocessor">)</emphasis>
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">+</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">meta</emphasis>&#32;<emphasis role="preprocessor">?</emphasis>&#32;1&#32;<emphasis role="preprocessor">:</emphasis>&#32;0<emphasis role="preprocessor">)</emphasis>
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">+</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">auth</emphasis>&#32;<emphasis role="preprocessor">?</emphasis>&#32;1&#32;<emphasis role="preprocessor">:</emphasis>&#32;0<emphasis role="preprocessor">)</emphasis>
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">+</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">setter</emphasis>&#32;<emphasis role="preprocessor">?</emphasis>&#32;1&#32;<emphasis role="preprocessor">:</emphasis>&#32;0<emphasis role="preprocessor">)</emphasis>
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">+</emphasis>&#32;<emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">reasons</emphasis><emphasis role="preprocessor">)</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">inactiveInterface</emphasis>&#32;<emphasis role="preprocessor">?</emphasis>&#32;1&#32;<emphasis role="preprocessor">:</emphasis>&#32;0<emphasis role="preprocessor">)</emphasis>
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">)</emphasis>
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="preprocessor">==</emphasis>&#32;1
+63 &#32;&#32;&#32;&#32;<emphasis role="preprocessor">)</emphasis>&#32;<emphasis role="preprocessor">\</emphasis>
+64 <emphasis role="preprocessor">)</emphasis>
+65 
+66 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;(*<link linkend="_interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8">ItemGetter</link>)(<emphasis role="keywordtype">void</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;item,&#32;Meta_Enum&#32;meta);
+67 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;(*<link linkend="_interface_8h_1abd123dcb703c202a5cb3e6d04fd03328">ItemGetterStaticModbus</link>)(<emphasis role="keywordtype">void</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;item,&#32;Meta_Enum&#32;meta,&#32;int16_t&#32;*&#32;getterVariable);
+68 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;(*<link linkend="_interface_8h_1a4123a77c6016d61b0b1026ec0541d735">ItemSetter</link>)(<emphasis role="keywordtype">void</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;item,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;check_limits,&#32;Meta_Enum&#32;meta);
+69 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;(*<link linkend="_interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3">ItemSetterStaticModbus</link>)(<emphasis role="keywordtype">void</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;item,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;check_limits,&#32;Meta_Enum&#32;meta,&#32;int16_t&#32;*&#32;setterVariable);
+70 
+71 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_interface_specifics">InterfaceSpecifics</link>&#32;{
+72 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_1a56f1405fd60db1747248198db2008844">variable</link>;
+73 &#32;&#32;&#32;&#32;<link linkend="_interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8">ItemGetter</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_1a86486d526f67088fd03b92a83d79814e">getter</link>;
+74 &#32;&#32;&#32;&#32;<link linkend="_interface_8h_1a4123a77c6016d61b0b1026ec0541d735">ItemSetter</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_1a2435920ae82f0e0a682e26ef8ac53532">setter</link>;
+75 }&#32;InterfaceSpecifics;
+76 
+77 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_interface_specifics_sun_spec">InterfaceSpecificsSunSpec</link>&#32;{
+78 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_sun_spec_1a16f69c37689000160fba47201a909df8">variable</link>;
+79 &#32;&#32;&#32;&#32;<link linkend="_interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8">ItemGetter</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_sun_spec_1a95dacc00bd87e7eba8223b3bb02b864f">getter</link>;
+80 &#32;&#32;&#32;&#32;<link linkend="_interface_8h_1a4123a77c6016d61b0b1026ec0541d735">ItemSetter</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_sun_spec_1a8357c39aaac3550b89eafad7ad1c7b80">setter</link>;
+81 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;(*<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_sun_spec_1af44e5fdd606523d36c3910ced6c7c0ab">handGetter</link>)(<emphasis role="keywordtype">void</emphasis>);
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;(*<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_sun_spec_1ab059cca9505f61c274a772e3a7bf6399">handSetter</link>)(<emphasis role="keywordtype">void</emphasis>);
+83 }&#32;InterfaceSpecificsSunSpec;
+84 
+85 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_interface_specifics_static_modbus">InterfaceSpecificsStaticModbus</link>&#32;{
+86 &#32;&#32;&#32;&#32;<link linkend="_interface_8h_1abd123dcb703c202a5cb3e6d04fd03328">ItemGetterStaticModbus</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_static_modbus_1a933c5a85248f20322118b90b485168ae">getter</link>;
+87 &#32;&#32;&#32;&#32;<link linkend="_interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3">ItemSetterStaticModbus</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_specifics_static_modbus_1adfff6484b1d46a41ddcde98c3cfb7e8d">setter</link>;
+88 }&#32;InterfaceSpecificsStaticModbus;
+89 
+90 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_interface_item_common">InterfaceItemCommon</link>&#32;{
+91 &#32;&#32;&#32;&#32;<emphasis role="keyword">volatile</emphasis>&#32;<link linkend="_struct_interface_item_common_1a64a25e3785726ebedc4a2e92af71e49f">sunssf</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1a64a25e3785726ebedc4a2e92af71e49f">sunspecScaleFactor</link>;
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1a53c4a11e0a7621d69cfcaec3dc221463">canScaleFactor</link>;
+93 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;(*&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1a25f5a5b30d8acd1d952b77b38e0e7634">scaleFactorUpdater</link>)(<emphasis role="keywordtype">void</emphasis>);
+94 &#32;&#32;&#32;&#32;<link linkend="_struct_interface_item_common_1a0d2e5de29b3efe5a2acee7258c9c8e55">sunssf</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1a0d2e5de29b3efe5a2acee7258c9c8e55">internalScaleFactor</link>;
+95 &#32;&#32;&#32;&#32;InterfaceSpecificsSunSpec&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1a6770636c0c91bb40ecdc2acca7727ed8">sunspec</link>;
+96 &#32;&#32;&#32;&#32;InterfaceSpecifics&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1ae76ad2e0524b612b51ace6763a9240f6">can</link>;
+97 &#32;&#32;&#32;&#32;InterfaceSpecificsStaticModbus&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1a87dfb090938bdf37a82e7de9b0a5663d">staticmodbus</link>;
+98 &#32;&#32;&#32;&#32;<link linkend="_struct_interface_item_common_1a43285809ff757f9243fde502b1b48efe">CAN_Enum_AccessLevel</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1a43285809ff757f9243fde502b1b48efe">access_level</link>;
+99 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item_common_1a97ec1d7a217b9066358c0ec075d9f6eb">rejectFromInactiveInterface</link>;
+100 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifdef</emphasis>&#32;<emphasis role="preprocessor">AUTH_UUID_AVAILABLE</emphasis>
+101 &#32;&#32;&#32;&#32;<link linkend="_struct_interface_item_common">AUTH_Uuid</link>&#32;<link linkend="_struct_interface_item_common">uuid</link>;
+102 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+103 }&#32;InterfaceItemCommon;
+104 
+105 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_member">InterfaceItem_BitfieldMember</link>&#32;{
+106 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_member_1a517f9dc2c6a6b3fc06f5b427fbd27bbd">offset</link>;
+107 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_member_1a2727d3c32afd1f8ba70feb86e2ce7b4c">length</link>;
+108 &#32;&#32;&#32;&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_member_1a5e311b0ab3fb93ed2e6a836dbcb88a03">item</link>;
+109 }&#32;InterfaceItem_BitfieldMember;
+110 
+111 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_interface_item___bitfield">InterfaceItem_Bitfield</link>&#32;{
+112 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;keep&#32;common&#32;first,&#32;some&#32;pointer&#32;casting&#32;depends&#32;on&#32;it&#32;*/</emphasis>
+113 &#32;&#32;&#32;&#32;<link linkend="_struct_interface_item_common">InterfaceItemCommon</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_1aa9447ffb0df96c9921c490fd5558a392">common</link>;
+114 &#32;&#32;&#32;&#32;InterfaceItem_BitfieldMember&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b">staticmodbusMembers</link>;
+115 &#32;&#32;&#32;&#32;size_t&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_1a7163300b7ddf96affbb40cf0eed35093">staticmodbusMembersCount</link>;
+116 &#32;&#32;&#32;&#32;InterfaceItem_BitfieldMember&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_1a02709814798eb783b5ac36c6b4521a0b">sunspecMembers</link>;
+117 &#32;&#32;&#32;&#32;size_t&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_interface_item___bitfield_1a99e2439251dfe801a7ca8659f20da309">sunspecMembersCount</link>;
+118 }&#32;InterfaceItem_Bitfield;
+119 
+120 <link linkend="_interface_8h_1a1456a3e6d18b4b338ca7d542de34ed6c">sunssf</link>&#32;<link linkend="_interface_8h_1a1456a3e6d18b4b338ca7d542de34ed6c">itemNetScaleFactor</link>(<link linkend="_interface_8h_1a1456a3e6d18b4b338ca7d542de34ed6c">InterfaceItemCommon</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_interface_8h_1a1456a3e6d18b4b338ca7d542de34ed6c">item</link>);
+121 
+122 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_can_interface_8c_1a6aadaf337d1caee0a760aa9ae127360d">items_getMeta</link>(Meta_Enum&#32;meta_index,&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;items,&#32;uint16_t&#32;items_count);
+123 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_can_interface_8c_1ad509994a37bdba87b40e6407e5523b20">items_setMeta</link>(Meta_Enum&#32;meta_index,&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;items,&#32;uint16_t&#32;items_count);
+124 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_can_interface_8c_1a00ca1b7737ba8d9bf03aa228a2186171">table_items_getMeta</link>(Meta_Enum&#32;meta_index,&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;items,&#32;uint16_t&#32;items_count);
+125 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_can_interface_8c_1a176414fba733ccb522284cdd7fbe31ce">table_items_setMeta</link>(Meta_Enum&#32;meta_index,&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;items,&#32;uint16_t&#32;items_count);
+126 
+127 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+</programlisting></section>

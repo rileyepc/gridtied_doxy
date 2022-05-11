@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="namespacegridtied" kind="namespace" language="Python">
+    <compoundname>gridtied</compoundname>
+    <innernamespace refid="namespacegridtied_1_1binary">gridtied::binary</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1box">gridtied::box</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1ccs">gridtied::ccs</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1ccstudiodss">gridtied::ccstudiodss</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1ci__hiltest">gridtied::ci_hiltest</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1cli">gridtied::cli</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1common">gridtied::common</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1create__pipenv">gridtied::create_pipenv</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1createtag">gridtied::createtag</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1doc">gridtied::doc</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1ehx">gridtied::ehx</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1hil">gridtied::hil</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1load">gridtied::load</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1load__pmvs">gridtied::load_pmvs</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1package">gridtied::package</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1prebuild">gridtied::prebuild</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1test">gridtied::test</innernamespace>
+    <innernamespace refid="namespacegridtied_1_1tests">gridtied::tests</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gridtied/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

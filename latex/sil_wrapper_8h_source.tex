@@ -1,0 +1,123 @@
+\hypertarget{sil_wrapper_8h_source}{}\doxysection{sil\+Wrapper.\+h}
+\label{sil_wrapper_8h_source}\index{sil/silWrapper.h@{sil/silWrapper.h}}
+\mbox{\hyperlink{sil_wrapper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{ifndef} \textcolor{preprocessor}{\_SIL\_WRAPPER\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_SIL\_WRAPPER\_H\_}}
+\DoxyCodeLine{3 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{4 \textcolor{comment}{*}}
+\DoxyCodeLine{5 \textcolor{comment}{*   \#\#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#   \#\#\#\#\#\#\#\#      \#\#\#\#\#\#\#    \#\#     \#\#     \#\#   \#\#\#\#\#\#\#\#\#   \#\#\#\#\#\#\#}}
+\DoxyCodeLine{6 \textcolor{comment}{*  \#         \#  \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#       \#\# \#\#}}
+\DoxyCodeLine{7 \textcolor{comment}{*  \# \#\#\#\#\#\#\#\#   \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#\#\#\#\#\#\#\#\#  \#\#}}
+\DoxyCodeLine{8 \textcolor{comment}{*  \#            \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#          \#\#}}
+\DoxyCodeLine{9 \textcolor{comment}{*   \#\#\#\#\#\#\#\#\#   \# \#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#  \#\# \#\#\#\#\#\#      \#\#\#\#\#\#\#     \#\#\#\#\#\#  \#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#  \#\#}}
+\DoxyCodeLine{10 \textcolor{comment}{*               \#                        \#\#}}
+\DoxyCodeLine{11 \textcolor{comment}{*               \#                         \#}}
+\DoxyCodeLine{12 \textcolor{comment}{*}}
+\DoxyCodeLine{13 \textcolor{comment}{*                                         COMPANY CONFIDENTIAL}}
+\DoxyCodeLine{14 \textcolor{comment}{*                         This document contains information proprietary to EPC Power.}}
+\DoxyCodeLine{15 \textcolor{comment}{*             This is an unpublished work subject to trade secret and copyright protection.}}
+\DoxyCodeLine{16 \textcolor{comment}{*                   In addition, the information may be the subject of patent applications}}
+\DoxyCodeLine{17 \textcolor{comment}{*                           in the United States and foreign countries.}}
+\DoxyCodeLine{18 \textcolor{comment}{*}}
+\DoxyCodeLine{19 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{22 \textcolor{comment}{ * M O D U L E    D E S C R I P T I O N}}
+\DoxyCodeLine{23 \textcolor{comment}{ *}}
+\DoxyCodeLine{24 \textcolor{comment}{ * Filename     : silWrapper.h}}
+\DoxyCodeLine{25 \textcolor{comment}{ * Full Name    : Package::SubPackage::..::Class}}
+\DoxyCodeLine{26 \textcolor{comment}{ * Prefix       : }}
+\DoxyCodeLine{27 \textcolor{comment}{ * Description  : }}
+\DoxyCodeLine{28 \textcolor{comment}{ * Author       : }}
+\DoxyCodeLine{29 \textcolor{comment}{ *}}
+\DoxyCodeLine{30 \textcolor{comment}{ * History      :}}
+\DoxyCodeLine{31 \textcolor{comment}{ * Date         Name            Description}}
+\DoxyCodeLine{32 \textcolor{comment}{ * 14.01.2019   D. Michaud      Initial Version}}
+\DoxyCodeLine{33 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{36 \textcolor{comment}{ * Include Files}}
+\DoxyCodeLine{37 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_WRAPPER}\textcolor{preprocessor}{)} \textcolor{preprocessor}{||} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{DEBUG}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{MATLAB\_MEX\_FILE}\textcolor{preprocessor}{)} \textcolor{preprocessor}{||} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{USE\_MEX\_CMD}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{stringliteral}{"{}mex.h"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{else}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{include} \textcolor{preprocessor}{<}\textcolor{preprocessor}{stdio}\textcolor{preprocessor}{.}\textcolor{preprocessor}{h}\textcolor{preprocessor}{>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{48 \textcolor{comment}{ * Constant Defines}}
+\DoxyCodeLine{49 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{52 \textcolor{comment}{ * Macro Defines}}
+\DoxyCodeLine{53 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_STRINGIFY}\textcolor{preprocessor}{(}\textcolor{preprocessor}{s}\textcolor{preprocessor}{)}                           \textcolor{preprocessor}{\#}\textcolor{preprocessor}{s}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{STRINGIFY}\textcolor{preprocessor}{(}\textcolor{preprocessor}{s}\textcolor{preprocessor}{)}                            \mbox{\hyperlink{sil_wrapper_8h_aaac393258b46cdcc2da9818c3408aa70}{\_STRINGIFY}}\textcolor{preprocessor}{(}\textcolor{preprocessor}{s}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_WRAPPER}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_WARNING}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}                        \textcolor{preprocessor}{printf}\textcolor{preprocessor}{(}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_ERROR}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}                          \textcolor{preprocessor}{printf}\textcolor{preprocessor}{(}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_DIAG}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}                           \textcolor{preprocessor}{printf}\textcolor{preprocessor}{(}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{else}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_WARNING}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_ERROR}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_DIAG}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORT\_OUT}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{,} \textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PORT\_INP}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{,} \textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_PARAM}\textcolor{preprocessor}{(}\textcolor{preprocessor}{mPort}\textcolor{preprocessor}{,} \textcolor{preprocessor}{mIdx}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{SIL\_DEBUG}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}                        \textcolor{preprocessor}{\{}}
+\DoxyCodeLine{76     \mbox{\hyperlink{sil_wrapper_8h_a0ae9eb531a183bee8efa5ecd248c4120}{SIL\_DIAG}}\textcolor{preprocessor}{(}\textcolor{stringliteral}{"{}\%s Line \%d: "{}}\textcolor{preprocessor}{,} \textcolor{preprocessor}{\_\_FILE\_\_}\textcolor{preprocessor}{,} \textcolor{preprocessor}{\_\_LINE\_\_}\textcolor{preprocessor}{)}\textcolor{preprocessor}{;}}
+\DoxyCodeLine{77     \mbox{\hyperlink{sil_wrapper_8h_a0ae9eb531a183bee8efa5ecd248c4120}{SIL\_DIAG}}\textcolor{preprocessor}{(}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}\textcolor{preprocessor}{)}\textcolor{preprocessor}{;}                        \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{DEBUG}\textcolor{preprocessor}{)} \textcolor{preprocessor}{||} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_WRAPPER}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{DEBUG\_PRINT}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}                        \textcolor{preprocessor}{printf}\textcolor{preprocessor}{(}\textcolor{preprocessor}{\_\_VA\_ARGS\_\_}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{else}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{DEBUG\_PRINT}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{if} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_WRAPPER}\textcolor{preprocessor}{)} \textcolor{preprocessor}{||} \textcolor{preprocessor}{defined}\textcolor{preprocessor}{(}\textcolor{preprocessor}{UNIT\_TEST}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{cregister}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{interrupt}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_cregister}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_interrupt}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_disable\_interrupts}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}   \textcolor{preprocessor}{(}\textcolor{preprocessor}{void}\textcolor{preprocessor}{)}0}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_enable\_interrupts}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}    \textcolor{preprocessor}{(}\textcolor{preprocessor}{void}\textcolor{preprocessor}{)}0}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_eallow}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_edis}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{asm}\textcolor{preprocessor}{(}\textcolor{preprocessor}{...}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{102 \textcolor{comment}{ * Type Definitions}}
+\DoxyCodeLine{103 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{106 \textcolor{comment}{ * Exported Variable Declarations}}
+\DoxyCodeLine{107 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{110 \textcolor{comment}{ * Exported Function Prototypes}}
+\DoxyCodeLine{111 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{114 \textcolor{comment}{ * Inline Function Definitions :-\/(}}
+\DoxyCodeLine{115 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif} \textcolor{comment}{//\_SIL\_WRAPPER\_H\_}}
+
+\end{DoxyCode}

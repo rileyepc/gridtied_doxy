@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_a_d2_d___hw_resources__s" xml:lang="en-US">
+<title>AD2D_HwResources_s Struct Reference</title>
+<indexterm><primary>AD2D_HwResources_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1">AD2D_uSgnExtend_t</link> volatile * <link linkend="_struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4">adcResult</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_a_d2_d___hw_resources__s_1a0ddf348d7deb1bb77d8a8ace3585b3c4"/><section>
+    <title>adcResult</title>
+<indexterm><primary>adcResult</primary><secondary>AD2D_HwResources_s</secondary></indexterm>
+<indexterm><primary>AD2D_HwResources_s</primary><secondary>adcResult</secondary></indexterm>
+<para><computeroutput><link linkend="_ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1">AD2D_uSgnExtend_t</link> volatile* AD2D_HwResources_s::adcResult</computeroutput></para></section>
+</section>
+</section>

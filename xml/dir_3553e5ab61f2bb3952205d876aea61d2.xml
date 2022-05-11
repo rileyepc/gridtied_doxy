@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_3553e5ab61f2bb3952205d876aea61d2" kind="dir">
+    <compoundname>src/gridtied/tests/internal</compoundname>
+    <innerfile refid="tests_2internal_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="test__createtag_8py">test_createtag.py</innerfile>
+    <innerfile refid="test__package_8py">test_package.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gridtied/tests/internal/"/>
+  </compounddef>
+</doxygen>

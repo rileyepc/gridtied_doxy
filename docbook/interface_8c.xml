@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_interface_8c" xml:lang="en-US">
+<title>interface/interface.c File Reference</title>
+<indexterm><primary>interface/interface.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;interface.h&quot;
+#include &quot;sunspec.h&quot;
+#include &quot;canHandler.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>sunssf <link linkend="_interface_8c_1a1456a3e6d18b4b338ca7d542de34ed6c">itemNetScaleFactor</link> (<link linkend="_struct_interface_item_common">InterfaceItemCommon</link> const *const item)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>CAN_Enum_AccessLevel <link linkend="_interface_8c_1a4b4d547f1291c2b0839837d1263cecd8">metaMinimumAccessLevel</link> [Meta_Count]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_interface_8c_1a1456a3e6d18b4b338ca7d542de34ed6c"/><section>
+    <title>itemNetScaleFactor()</title>
+<indexterm><primary>itemNetScaleFactor</primary><secondary>interface.c</secondary></indexterm>
+<indexterm><primary>interface.c</primary><secondary>itemNetScaleFactor</secondary></indexterm>
+<para><computeroutput>sunssf itemNetScaleFactor (<link linkend="_struct_interface_item_common">InterfaceItemCommon</link> const *const item)</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_interface_8c_1a4b4d547f1291c2b0839837d1263cecd8"/><section>
+    <title>metaMinimumAccessLevel</title>
+<indexterm><primary>metaMinimumAccessLevel</primary><secondary>interface.c</secondary></indexterm>
+<indexterm><primary>interface.c</primary><secondary>metaMinimumAccessLevel</secondary></indexterm>
+<para><computeroutput>CAN_Enum_AccessLevel metaMinimumAccessLevel[Meta_Count]</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;{
+&#32;&#32;&#32;&#32;[Meta_Value]&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;CAN_Enum_AccessLevel_Service_Tech,
+&#32;&#32;&#32;&#32;[Meta_UserDefault]&#32;&#32;&#32;&#32;&#32;&#32;=&#32;CAN_Enum_AccessLevel_Service_Tech,
+&#32;&#32;&#32;&#32;[Meta_FactoryDefault]&#32;&#32;&#32;=&#32;CAN_Enum_AccessLevel_EPC_Eng,
+&#32;&#32;&#32;&#32;[Meta_Min]&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;CAN_Enum_AccessLevel_EPC_Eng,
+&#32;&#32;&#32;&#32;[Meta_Max]&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;CAN_Enum_AccessLevel_EPC_Eng,
+}
+</programlisting></section>
+</section>
+</section>

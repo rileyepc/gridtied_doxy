@@ -1,0 +1,815 @@
+\hypertarget{interface_accessors_8h}{}\doxysection{interface/interface\+Accessors.h File Reference}
+\label{interface_accessors_8h}\index{interface/interfaceAccessors.h@{interface/interfaceAccessors.h}}
+{\ttfamily \#include \char`\"{}adaptive\+Harmonic\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}authorization\+\_\+generated.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filter\+Observer\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grid\+Monitor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}island\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}modulator\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+Conversion\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Config\+Detect\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Current\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phase\+Pll\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}auxiliary\+Pll\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthetic\+Inertia\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ABB\+\_\+lib\+Primary\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dcdc\+Control\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}device\+Thermal\+Model.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}measurementd\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protections\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}humidity\+Sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mppt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fan\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}environment\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}top\+Level\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}eng\+Debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}afe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grid\+Support.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reference\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sunspec\+Refs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}supervisor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}eeprom\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}modbus\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fpga\+Regs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}external\+Inhibit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simulate\+Feedback\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interface\+Accessors\+\_\+generated.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\+\_\+\+Command\+Flags}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\+\_\+\+Command\+Flags}} \mbox{\hyperlink{interface_accessors_8h_ab88b36a9847433f1b196d7b8dc2f435c}{INTF\+\_\+\+Command\+Flags}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{interface_accessors_8h_a1228c2eaf73fb7eca186e9e293102d53}{INTF\+\_\+zero\+\_\+getter}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a029dd9afdde2d1bff394065deaa065be}{INTF\+\_\+update\+Hardware\+Ratings}} (float unused)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_ad48f6ff174bd5fdf8d3379d3311badf7}{INTF\+\_\+update\+Commercial\+Ratings}} (float unused)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_acdc3e47f8f199fb330ef5dd50cf70002}{INTF\+\_\+update\+User\+Limits}} (float unused)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_ac4d66ced4eb860621975532e4c355fbc}{INTF\+\_\+get\+Sunspec\+Scaled\+Grid\+PositiveP}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_ac855468bdc131df6467def4be0436589}{INTF\+\_\+set\+Sunspec\+Scaled\+Grid\+PositiveP}} (float value)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_aa4c881ac0a915733b4f4f8a7bb712003}{INTF\+\_\+get\+Sunspec\+Scaled\+Apparent\+Power}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a368e3ab89e146aa5d551f2f809f15618}{INTF\+\_\+set\+Sunspec\+Scaled\+Apparent\+Power}} (float value)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_abac3ae5fd4e68e0ae5bf12e171e0a02a}{INTF\+\_\+get\+Sunspec\+Scaled\+Real\+Power\+Limits\+Max}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a0ce166744dff63c46e0f51b639bc4ea8}{INTF\+\_\+set\+Sunspec\+Scaled\+Real\+Power\+Limits\+Max}} (float value)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a757d38299417604ee511c1653683d3eb}{INTF\+\_\+get\+Sunspec\+Scaled\+Apparent\+Power\+Limit}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a58b6b2294b9b81ec20427b64a8ebfff2}{INTF\+\_\+set\+Sunspec\+Scaled\+Apparent\+Power\+Limit}} (float value)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a006eb78c3747a3132acf3fbfffd8c90e}{INTF\+\_\+set\+NomV}} (float v\+Nom)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_af6d7a32e10af877759ff1750646693ad}{INTF\+\_\+set\+NomF}} (float f\+Nom)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_ac119e5cc4490d32a5df4b0ed858b1148}{INTF\+\_\+set\+Grid\+Voltage\+Offset}} (float offset)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a2f7aff32e5d90cb76b50bfafef0cc8eb}{INTF\+\_\+get\+Grid\+Voltage\+Offset}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a6f387f6273f8a34065a9004b831fbc41}{INTF\+\_\+set\+Allow\+Forming}} (bool const allow\+Forming)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a2fc814a80f10d21457a59c2cd1d1cadc}{INTF\+\_\+set\+Allow\+Following}} (bool const allow\+Following)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a56d9ef27c5907a892b1ec678cbd77b25}{INTF\+\_\+set\+Island\+Response}} (uint16\+\_\+t const island\+Response)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_ad9bf92610fb7c66ea1757fba181b75f7}{INTF\+\_\+set\+Island\+Detector}} (uint16\+\_\+t const island\+Detector)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8h_aa4b4b022baea21dd2bbe7d384e658fb4}{INTF\+\_\+get\+Allow\+Forming}} (void)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8h_ac887a74446bcbffadcb1c01169c59fc6}{INTF\+\_\+get\+Allow\+Following}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8h_a4ef6eb3f5734e746da42d0be15db9319}{INTF\+\_\+get\+Island\+Response}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8h_a213da2d6b3a814f1bf2d91036b1cd982}{INTF\+\_\+get\+Island\+Detector}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_ac1be592dbab02f670ce3c02c1ae5038c}{INTF\+\_\+set\+Config\+Rate\+Limit\+Pg\+Ref\+\_\+p\+Delta}} (float p\+Delta)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_af40ee9c95a6bb01af3d27e527eee27da}{INTF\+\_\+set\+Config\+Rate\+Limit\+Pg\+Ref\+\_\+t\+Delta}} (float t\+Delta)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8h_a1cdd34e87e38eafe4bccb1db4f8dd63e}{get\+Bridge\+AVoltage\+Ok}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8h_a8604f381346ef74eeec9ba0e871bdccb}{get\+Bridge\+Bridge\+AFault}} (void)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8h_ae6afb52e9d3f938c2716a35aae0dc67a}{get\+Bridge\+BVoltage\+Ok}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8h_a9de3c2162c7d8d5c5edaf1c53e9164a9}{get\+Bridge\+Bridge\+BFault}} (void)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a33e147c35fdb72a43ca93b641fc31ce6}{INTF\+\_\+set\+Access\+Level}} (uint16\+\_\+t level)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a46b0d089a19f2ed60c19f39bb019cb64}{INTF\+\_\+set\+Access\+Password}} (uint16\+\_\+t password)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_af6b9c83d41c21522601ebca742053813}{INTF\+\_\+set\+Access\+Check\+Limits}} (bool check\+Limits)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a4b5476da70ea4532e90764241f9eeea0}{INTF\+\_\+submit\+Access\+Level\+Request}} (bool request)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a749c4bd4cdd167d1f1c0fd27c0e7aa3b}{INTF\+\_\+access\+Level\+\_\+on\+Write}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a4772b8e3b012a7ecdf4427ec04c5f043}{INTF\+\_\+logger\+Chunk\+\_\+on\+Write}} (Meta\+\_\+\+Enum meta\+\_\+index, \mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const items, uint16\+\_\+t items\+\_\+count)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a66e723cc746cb0571e5fd38ef3fb5503}{INTF\+\_\+set\+Control\+Source}} (uint16\+\_\+t src)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a508f2224dc87e11a6b54ddd6fb7ecd87}{INTF\+\_\+set\+Enable}} (uint16\+\_\+t en)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a75bf088a5b5b4f7f90d8c6e143388f02}{INTF\+\_\+enable\+Rejected}} (uint16\+\_\+t value, \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} reasons)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a687afa24dcc6c8ac947a0a601d45b2b3}{INTF\+\_\+clear\+Faults}} (bool clear\+Faults)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a90c974d866763bf6850e4fc591971805}{INTF\+\_\+clear\+Warnings}} (bool clear\+Warnings)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_ab4d95922580fc39df11a9c72b913bf7a}{INTF\+\_\+set\+Island\+State\+Request}} (bool req)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a5760cc69fac51973d303af38b37de7db}{INTF\+\_\+power\+Rejected}} (float value, \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} reasons)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a874fe2cfea71a6d06db81ef27cc574d9}{INTF\+\_\+current\+Rejected}} (float value, \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} reasons)
+\item 
+void \mbox{\hyperlink{interface_accessors_8h_a17fe067e29ab8eb2bdc1f06e051a9cd3}{INTF\+\_\+dc\+Ref\+Rejected}} (float value, \mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}} reasons)
+\item 
+bool \mbox{\hyperlink{interface_accessors_8h_af6c75b31ca6f45cd628a479eacca434e}{INTF\+\_\+bool\+\_\+table\+\_\+false\+\_\+getter}} (IEEE1547\+\_\+\+Mon\+Curve\+Type zone, size\+\_\+t curve, size\+\_\+t index, uint16\+\_\+t value)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8h_a05b8955eb1ddf10a8e5a669af82afbba}{INTF\+\_\+get\+Vers\+Major}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8h_a1485b9c8a1c1f215edfd99a11a25012c}{INTF\+\_\+get\+Vers\+Minor}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{interface_accessors_8h_aa27b07ddc231a81562ab7d3d19578848}{INTF\+\_\+get\+Vers\+Patch}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a725db5a0fea72547846006b348a8f2e0}{INTF\+\_\+get\+Pos24V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a744a180aace820f7a870be5a57455362}{INTF\+\_\+get\+Pos15V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a689c81667a2b236dacbee1dbd7e806ac}{INTF\+\_\+get\+Neg15V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a9e62ad9479ba4a7620c31ac22fc4ec6f}{INTF\+\_\+get\+Pos5V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a7e78a1bdfad85f233e54739ba8683927}{INTF\+\_\+get\+Pos3V}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_af141bf9cc0d9d10b9c1ac60f90f914e3}{INTF\+\_\+get\+Harm\+Current\+Ch0\+PhA}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a2ea93777f0f8d8785276ea38dcf1b8af}{INTF\+\_\+get\+Harm\+Current\+Ch0\+PhB}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_ab82de2b81f7895b19768db41b81932c6}{INTF\+\_\+get\+Harm\+Current\+Ch1\+PhA}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a420f1d1047ca0c73fb4e3be469502cab}{INTF\+\_\+get\+Harm\+Current\+Ch1\+PhB}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a8268b411345496f59b756787bb0323a5}{INTF\+\_\+get\+Harm\+Current\+Ch2\+PhA}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a42cdd58dab6e3558113b81df6e16839c}{INTF\+\_\+get\+Harm\+Current\+Ch2\+PhB}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a958f82000278c76d992da150a55b0a18}{INTF\+\_\+get\+Harm\+Current\+Ch3\+PhA}} (void)
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a7946fac2f11a44eff7c700907c189bc6}{INTF\+\_\+get\+Harm\+Current\+Ch3\+PhB}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\+\_\+\+Command\+Flags}} \mbox{\hyperlink{interface_accessors_8h_a88f562c1031cccffe74fb20b4ca06060}{INTF\+\_\+command\+Flags}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a3f54617f49f9242541779331eb124182}{INTF\+\_\+cmd\+Real\+Pwr}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a79e31bef5a37336542c4f6361506fa02}{INTF\+\_\+cmd\+Reactive\+Pwr}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a4c8db66e9aff805c09de8ef33a33388c}{INTF\+\_\+cmd\+Real\+Current}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a4b95211c26a962044ea4690e06eb87b3}{INTF\+\_\+cmd\+Reactive\+Current}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a5538df13b1da6a0aefd3bde487b9a4cb}{INTF\+\_\+cmd\+Input\+Current}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_aafe89f987c23c36dd842e3a95c4fa2e5}{INTF\+\_\+cmd\+Dc\+VLim}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_aa28bf8dd3bf1d36d1aecb7c754e0383b}{INTF\+\_\+cmd\+Real\+Pwr\+Ns}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_aba3e765c9fe3dfe3040ad741ded00f77}{INTF\+\_\+cmd\+Reactive\+Pwr\+Ns}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a27a2166f2c156045cf525468d2f313b9}{INTF\+\_\+cmd\+Real\+Current\+Ns}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_af9d9bcbabff6b55ae0b251ce94d7ef44}{INTF\+\_\+cmd\+Reactive\+Current\+Ns}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a6ace3b5f1a80d2fed688ebc10a7765f9}{INTF\+\_\+cmd\+Mppt\+Pwr\+Dcdc}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_ad60b78557c3eb0a494afc3da4bc211b1}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch0\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a257409e80c6c6c3948950bee7bac7468}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch0\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_ad4d0e1e55f52f153f8ddf02fcdb53127}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch0\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a8627ea41577512343ccd97df985cf8e8}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch0\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a11c24207ef9ae315b743906a04699725}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch1\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_aa1d4c43a43d0db93a916869e4cd8c6bb}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch1\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_ae06b06f088104b223512e5b52c139ee1}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch1\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_ac16d5d125f14e01708e4b4136ee62697}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch1\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a27c2f062b9e1ed74ff613c2718b90980}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch2\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_abb23731cbb6e0ca066fefb7ca8a0e71f}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch2\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a89baaacf4a6c79627efa601eacd004a1}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch2\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_af10fd01df5b4f8ce44b25e8d9bd0e706}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch2\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a1017f9aea6d8265abce63ec31eb56db6}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch3\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a5e5100c627d6e798db9361cad6a52c7b}{INTF\+\_\+cmd\+Ph\+AHarm\+Ch3\+Iq}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_a0029c5f594b19e6799580e1ece9f87c9}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch3\+Id}}
+\item 
+float \mbox{\hyperlink{interface_accessors_8h_ae2d788832709698a110e292aa4e046b3}{INTF\+\_\+cmd\+Ph\+BHarm\+Ch3\+Iq}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{interface_accessors_8h_ab88b36a9847433f1b196d7b8dc2f435c}\label{interface_accessors_8h_ab88b36a9847433f1b196d7b8dc2f435c}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_CommandFlags@{INTF\_CommandFlags}}
+\index{INTF\_CommandFlags@{INTF\_CommandFlags}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_CommandFlags}{INTF\_CommandFlags}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\+\_\+\+Command\+Flags}} \mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\+\_\+\+Command\+Flags}}}
+
+
+
+Volatile Process Data flags. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interface_accessors_8h_a1cdd34e87e38eafe4bccb1db4f8dd63e}\label{interface_accessors_8h_a1cdd34e87e38eafe4bccb1db4f8dd63e}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!getBridgeAVoltageOk@{getBridgeAVoltageOk}}
+\index{getBridgeAVoltageOk@{getBridgeAVoltageOk}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{getBridgeAVoltageOk()}{getBridgeAVoltageOk()}}
+{\footnotesize\ttfamily bool get\+Bridge\+AVoltage\+Ok (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]
+\begin{DoxyEnumerate}
+\item fix the FPGA inverter status registers to match the fault mapping
+\begin{DoxyEnumerate}
+\item determine where to put these getters 
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\end{DoxyRefDesc}
+\mbox{\Hypertarget{interface_accessors_8h_a8604f381346ef74eeec9ba0e871bdccb}\label{interface_accessors_8h_a8604f381346ef74eeec9ba0e871bdccb}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!getBridgeBridgeAFault@{getBridgeBridgeAFault}}
+\index{getBridgeBridgeAFault@{getBridgeBridgeAFault}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{getBridgeBridgeAFault()}{getBridgeBridgeAFault()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+Bridge\+Bridge\+AFault (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a9de3c2162c7d8d5c5edaf1c53e9164a9}\label{interface_accessors_8h_a9de3c2162c7d8d5c5edaf1c53e9164a9}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!getBridgeBridgeBFault@{getBridgeBridgeBFault}}
+\index{getBridgeBridgeBFault@{getBridgeBridgeBFault}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{getBridgeBridgeBFault()}{getBridgeBridgeBFault()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+Bridge\+Bridge\+BFault (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_ae6afb52e9d3f938c2716a35aae0dc67a}\label{interface_accessors_8h_ae6afb52e9d3f938c2716a35aae0dc67a}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!getBridgeBVoltageOk@{getBridgeBVoltageOk}}
+\index{getBridgeBVoltageOk@{getBridgeBVoltageOk}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{getBridgeBVoltageOk()}{getBridgeBVoltageOk()}}
+{\footnotesize\ttfamily bool get\+Bridge\+BVoltage\+Ok (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a749c4bd4cdd167d1f1c0fd27c0e7aa3b}\label{interface_accessors_8h_a749c4bd4cdd167d1f1c0fd27c0e7aa3b}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_accessLevel\_onWrite@{INTF\_accessLevel\_onWrite}}
+\index{INTF\_accessLevel\_onWrite@{INTF\_accessLevel\_onWrite}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_accessLevel\_onWrite()}{INTF\_accessLevel\_onWrite()}}
+{\footnotesize\ttfamily void INTF\+\_\+access\+Level\+\_\+on\+Write (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_af6c75b31ca6f45cd628a479eacca434e}\label{interface_accessors_8h_af6c75b31ca6f45cd628a479eacca434e}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_bool\_table\_false\_getter@{INTF\_bool\_table\_false\_getter}}
+\index{INTF\_bool\_table\_false\_getter@{INTF\_bool\_table\_false\_getter}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_bool\_table\_false\_getter()}{INTF\_bool\_table\_false\_getter()}}
+{\footnotesize\ttfamily bool INTF\+\_\+bool\+\_\+table\+\_\+false\+\_\+getter (\begin{DoxyParamCaption}\item[{IEEE1547\+\_\+\+Mon\+Curve\+Type}]{zone,  }\item[{size\+\_\+t}]{curve,  }\item[{size\+\_\+t}]{index,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a687afa24dcc6c8ac947a0a601d45b2b3}\label{interface_accessors_8h_a687afa24dcc6c8ac947a0a601d45b2b3}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_clearFaults@{INTF\_clearFaults}}
+\index{INTF\_clearFaults@{INTF\_clearFaults}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_clearFaults()}{INTF\_clearFaults()}}
+{\footnotesize\ttfamily void INTF\+\_\+clear\+Faults (\begin{DoxyParamCaption}\item[{bool}]{clear\+Faults }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a90c974d866763bf6850e4fc591971805}\label{interface_accessors_8h_a90c974d866763bf6850e4fc591971805}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_clearWarnings@{INTF\_clearWarnings}}
+\index{INTF\_clearWarnings@{INTF\_clearWarnings}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_clearWarnings()}{INTF\_clearWarnings()}}
+{\footnotesize\ttfamily void INTF\+\_\+clear\+Warnings (\begin{DoxyParamCaption}\item[{bool}]{clear\+Warnings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a874fe2cfea71a6d06db81ef27cc574d9}\label{interface_accessors_8h_a874fe2cfea71a6d06db81ef27cc574d9}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_currentRejected@{INTF\_currentRejected}}
+\index{INTF\_currentRejected@{INTF\_currentRejected}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_currentRejected()}{INTF\_currentRejected()}}
+{\footnotesize\ttfamily void INTF\+\_\+current\+Rejected (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{\mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}]{reasons }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a17fe067e29ab8eb2bdc1f06e051a9cd3}\label{interface_accessors_8h_a17fe067e29ab8eb2bdc1f06e051a9cd3}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_dcRefRejected@{INTF\_dcRefRejected}}
+\index{INTF\_dcRefRejected@{INTF\_dcRefRejected}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_dcRefRejected()}{INTF\_dcRefRejected()}}
+{\footnotesize\ttfamily void INTF\+\_\+dc\+Ref\+Rejected (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{\mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}]{reasons }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a75bf088a5b5b4f7f90d8c6e143388f02}\label{interface_accessors_8h_a75bf088a5b5b4f7f90d8c6e143388f02}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_enableRejected@{INTF\_enableRejected}}
+\index{INTF\_enableRejected@{INTF\_enableRejected}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_enableRejected()}{INTF\_enableRejected()}}
+{\footnotesize\ttfamily void INTF\+\_\+enable\+Rejected (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{value,  }\item[{\mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}]{reasons }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & uint16\+\_\+t to allow the out of range values of 2 and 3 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_accessors_8h_ac887a74446bcbffadcb1c01169c59fc6}\label{interface_accessors_8h_ac887a74446bcbffadcb1c01169c59fc6}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getAllowFollowing@{INTF\_getAllowFollowing}}
+\index{INTF\_getAllowFollowing@{INTF\_getAllowFollowing}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getAllowFollowing()}{INTF\_getAllowFollowing()}}
+{\footnotesize\ttfamily bool INTF\+\_\+get\+Allow\+Following (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_aa4b4b022baea21dd2bbe7d384e658fb4}\label{interface_accessors_8h_aa4b4b022baea21dd2bbe7d384e658fb4}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getAllowForming@{INTF\_getAllowForming}}
+\index{INTF\_getAllowForming@{INTF\_getAllowForming}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getAllowForming()}{INTF\_getAllowForming()}}
+{\footnotesize\ttfamily bool INTF\+\_\+get\+Allow\+Forming (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a2f7aff32e5d90cb76b50bfafef0cc8eb}\label{interface_accessors_8h_a2f7aff32e5d90cb76b50bfafef0cc8eb}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getGridVoltageOffset@{INTF\_getGridVoltageOffset}}
+\index{INTF\_getGridVoltageOffset@{INTF\_getGridVoltageOffset}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getGridVoltageOffset()}{INTF\_getGridVoltageOffset()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Grid\+Voltage\+Offset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_af141bf9cc0d9d10b9c1ac60f90f914e3}\label{interface_accessors_8h_af141bf9cc0d9d10b9c1ac60f90f914e3}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getHarmCurrentCh0PhA@{INTF\_getHarmCurrentCh0PhA}}
+\index{INTF\_getHarmCurrentCh0PhA@{INTF\_getHarmCurrentCh0PhA}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh0PhA()}{INTF\_getHarmCurrentCh0PhA()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch0\+PhA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a2ea93777f0f8d8785276ea38dcf1b8af}\label{interface_accessors_8h_a2ea93777f0f8d8785276ea38dcf1b8af}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getHarmCurrentCh0PhB@{INTF\_getHarmCurrentCh0PhB}}
+\index{INTF\_getHarmCurrentCh0PhB@{INTF\_getHarmCurrentCh0PhB}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh0PhB()}{INTF\_getHarmCurrentCh0PhB()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch0\+PhB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_ab82de2b81f7895b19768db41b81932c6}\label{interface_accessors_8h_ab82de2b81f7895b19768db41b81932c6}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getHarmCurrentCh1PhA@{INTF\_getHarmCurrentCh1PhA}}
+\index{INTF\_getHarmCurrentCh1PhA@{INTF\_getHarmCurrentCh1PhA}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh1PhA()}{INTF\_getHarmCurrentCh1PhA()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch1\+PhA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a420f1d1047ca0c73fb4e3be469502cab}\label{interface_accessors_8h_a420f1d1047ca0c73fb4e3be469502cab}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getHarmCurrentCh1PhB@{INTF\_getHarmCurrentCh1PhB}}
+\index{INTF\_getHarmCurrentCh1PhB@{INTF\_getHarmCurrentCh1PhB}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh1PhB()}{INTF\_getHarmCurrentCh1PhB()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch1\+PhB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a8268b411345496f59b756787bb0323a5}\label{interface_accessors_8h_a8268b411345496f59b756787bb0323a5}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getHarmCurrentCh2PhA@{INTF\_getHarmCurrentCh2PhA}}
+\index{INTF\_getHarmCurrentCh2PhA@{INTF\_getHarmCurrentCh2PhA}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh2PhA()}{INTF\_getHarmCurrentCh2PhA()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch2\+PhA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a42cdd58dab6e3558113b81df6e16839c}\label{interface_accessors_8h_a42cdd58dab6e3558113b81df6e16839c}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getHarmCurrentCh2PhB@{INTF\_getHarmCurrentCh2PhB}}
+\index{INTF\_getHarmCurrentCh2PhB@{INTF\_getHarmCurrentCh2PhB}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh2PhB()}{INTF\_getHarmCurrentCh2PhB()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch2\+PhB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a958f82000278c76d992da150a55b0a18}\label{interface_accessors_8h_a958f82000278c76d992da150a55b0a18}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getHarmCurrentCh3PhA@{INTF\_getHarmCurrentCh3PhA}}
+\index{INTF\_getHarmCurrentCh3PhA@{INTF\_getHarmCurrentCh3PhA}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh3PhA()}{INTF\_getHarmCurrentCh3PhA()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch3\+PhA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a7946fac2f11a44eff7c700907c189bc6}\label{interface_accessors_8h_a7946fac2f11a44eff7c700907c189bc6}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getHarmCurrentCh3PhB@{INTF\_getHarmCurrentCh3PhB}}
+\index{INTF\_getHarmCurrentCh3PhB@{INTF\_getHarmCurrentCh3PhB}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getHarmCurrentCh3PhB()}{INTF\_getHarmCurrentCh3PhB()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Harm\+Current\+Ch3\+PhB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a213da2d6b3a814f1bf2d91036b1cd982}\label{interface_accessors_8h_a213da2d6b3a814f1bf2d91036b1cd982}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getIslandDetector@{INTF\_getIslandDetector}}
+\index{INTF\_getIslandDetector@{INTF\_getIslandDetector}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getIslandDetector()}{INTF\_getIslandDetector()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Island\+Detector (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a4ef6eb3f5734e746da42d0be15db9319}\label{interface_accessors_8h_a4ef6eb3f5734e746da42d0be15db9319}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getIslandResponse@{INTF\_getIslandResponse}}
+\index{INTF\_getIslandResponse@{INTF\_getIslandResponse}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getIslandResponse()}{INTF\_getIslandResponse()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Island\+Response (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a689c81667a2b236dacbee1dbd7e806ac}\label{interface_accessors_8h_a689c81667a2b236dacbee1dbd7e806ac}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getNeg15V@{INTF\_getNeg15V}}
+\index{INTF\_getNeg15V@{INTF\_getNeg15V}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getNeg15V()}{INTF\_getNeg15V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Neg15V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a744a180aace820f7a870be5a57455362}\label{interface_accessors_8h_a744a180aace820f7a870be5a57455362}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getPos15V@{INTF\_getPos15V}}
+\index{INTF\_getPos15V@{INTF\_getPos15V}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getPos15V()}{INTF\_getPos15V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Pos15V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a725db5a0fea72547846006b348a8f2e0}\label{interface_accessors_8h_a725db5a0fea72547846006b348a8f2e0}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getPos24V@{INTF\_getPos24V}}
+\index{INTF\_getPos24V@{INTF\_getPos24V}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getPos24V()}{INTF\_getPos24V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Pos24V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a7e78a1bdfad85f233e54739ba8683927}\label{interface_accessors_8h_a7e78a1bdfad85f233e54739ba8683927}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getPos3V@{INTF\_getPos3V}}
+\index{INTF\_getPos3V@{INTF\_getPos3V}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getPos3V()}{INTF\_getPos3V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Pos3V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a9e62ad9479ba4a7620c31ac22fc4ec6f}\label{interface_accessors_8h_a9e62ad9479ba4a7620c31ac22fc4ec6f}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getPos5V@{INTF\_getPos5V}}
+\index{INTF\_getPos5V@{INTF\_getPos5V}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getPos5V()}{INTF\_getPos5V()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Pos5V (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_aa4c881ac0a915733b4f4f8a7bb712003}\label{interface_accessors_8h_aa4c881ac0a915733b4f4f8a7bb712003}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getSunspecScaledApparentPower@{INTF\_getSunspecScaledApparentPower}}
+\index{INTF\_getSunspecScaledApparentPower@{INTF\_getSunspecScaledApparentPower}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getSunspecScaledApparentPower()}{INTF\_getSunspecScaledApparentPower()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Sunspec\+Scaled\+Apparent\+Power (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a757d38299417604ee511c1653683d3eb}\label{interface_accessors_8h_a757d38299417604ee511c1653683d3eb}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getSunspecScaledApparentPowerLimit@{INTF\_getSunspecScaledApparentPowerLimit}}
+\index{INTF\_getSunspecScaledApparentPowerLimit@{INTF\_getSunspecScaledApparentPowerLimit}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getSunspecScaledApparentPowerLimit()}{INTF\_getSunspecScaledApparentPowerLimit()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Sunspec\+Scaled\+Apparent\+Power\+Limit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_ac4d66ced4eb860621975532e4c355fbc}\label{interface_accessors_8h_ac4d66ced4eb860621975532e4c355fbc}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getSunspecScaledGridPositiveP@{INTF\_getSunspecScaledGridPositiveP}}
+\index{INTF\_getSunspecScaledGridPositiveP@{INTF\_getSunspecScaledGridPositiveP}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getSunspecScaledGridPositiveP()}{INTF\_getSunspecScaledGridPositiveP()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Sunspec\+Scaled\+Grid\+PositiveP (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_abac3ae5fd4e68e0ae5bf12e171e0a02a}\label{interface_accessors_8h_abac3ae5fd4e68e0ae5bf12e171e0a02a}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getSunspecScaledRealPowerLimitsMax@{INTF\_getSunspecScaledRealPowerLimitsMax}}
+\index{INTF\_getSunspecScaledRealPowerLimitsMax@{INTF\_getSunspecScaledRealPowerLimitsMax}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getSunspecScaledRealPowerLimitsMax()}{INTF\_getSunspecScaledRealPowerLimitsMax()}}
+{\footnotesize\ttfamily float INTF\+\_\+get\+Sunspec\+Scaled\+Real\+Power\+Limits\+Max (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a05b8955eb1ddf10a8e5a669af82afbba}\label{interface_accessors_8h_a05b8955eb1ddf10a8e5a669af82afbba}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getVersMajor@{INTF\_getVersMajor}}
+\index{INTF\_getVersMajor@{INTF\_getVersMajor}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getVersMajor()}{INTF\_getVersMajor()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Vers\+Major (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a1485b9c8a1c1f215edfd99a11a25012c}\label{interface_accessors_8h_a1485b9c8a1c1f215edfd99a11a25012c}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getVersMinor@{INTF\_getVersMinor}}
+\index{INTF\_getVersMinor@{INTF\_getVersMinor}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getVersMinor()}{INTF\_getVersMinor()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Vers\+Minor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_aa27b07ddc231a81562ab7d3d19578848}\label{interface_accessors_8h_aa27b07ddc231a81562ab7d3d19578848}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_getVersPatch@{INTF\_getVersPatch}}
+\index{INTF\_getVersPatch@{INTF\_getVersPatch}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_getVersPatch()}{INTF\_getVersPatch()}}
+{\footnotesize\ttfamily uint16\+\_\+t INTF\+\_\+get\+Vers\+Patch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a4772b8e3b012a7ecdf4427ec04c5f043}\label{interface_accessors_8h_a4772b8e3b012a7ecdf4427ec04c5f043}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_loggerChunk\_onWrite@{INTF\_loggerChunk\_onWrite}}
+\index{INTF\_loggerChunk\_onWrite@{INTF\_loggerChunk\_onWrite}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_loggerChunk\_onWrite()}{INTF\_loggerChunk\_onWrite()}}
+{\footnotesize\ttfamily void INTF\+\_\+logger\+Chunk\+\_\+on\+Write (\begin{DoxyParamCaption}\item[{Meta\+\_\+\+Enum}]{meta\+\_\+index,  }\item[{\mbox{\hyperlink{interface_8h_a2d58cf9316da363273ac00d4455ab5f7}{Interface\+Item\+\_\+void}} const $\ast$const $\ast$const}]{items,  }\item[{uint16\+\_\+t}]{items\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a5760cc69fac51973d303af38b37de7db}\label{interface_accessors_8h_a5760cc69fac51973d303af38b37de7db}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_powerRejected@{INTF\_powerRejected}}
+\index{INTF\_powerRejected@{INTF\_powerRejected}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_powerRejected()}{INTF\_powerRejected()}}
+{\footnotesize\ttfamily void INTF\+\_\+power\+Rejected (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{\mbox{\hyperlink{struct_rejection_reasons}{Rejection\+Reasons}}}]{reasons }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_af6b9c83d41c21522601ebca742053813}\label{interface_accessors_8h_af6b9c83d41c21522601ebca742053813}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setAccessCheckLimits@{INTF\_setAccessCheckLimits}}
+\index{INTF\_setAccessCheckLimits@{INTF\_setAccessCheckLimits}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAccessCheckLimits()}{INTF\_setAccessCheckLimits()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Access\+Check\+Limits (\begin{DoxyParamCaption}\item[{bool}]{check\+Limits }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a33e147c35fdb72a43ca93b641fc31ce6}\label{interface_accessors_8h_a33e147c35fdb72a43ca93b641fc31ce6}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setAccessLevel@{INTF\_setAccessLevel}}
+\index{INTF\_setAccessLevel@{INTF\_setAccessLevel}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAccessLevel()}{INTF\_setAccessLevel()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Access\+Level (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a46b0d089a19f2ed60c19f39bb019cb64}\label{interface_accessors_8h_a46b0d089a19f2ed60c19f39bb019cb64}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setAccessPassword@{INTF\_setAccessPassword}}
+\index{INTF\_setAccessPassword@{INTF\_setAccessPassword}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAccessPassword()}{INTF\_setAccessPassword()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Access\+Password (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a2fc814a80f10d21457a59c2cd1d1cadc}\label{interface_accessors_8h_a2fc814a80f10d21457a59c2cd1d1cadc}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setAllowFollowing@{INTF\_setAllowFollowing}}
+\index{INTF\_setAllowFollowing@{INTF\_setAllowFollowing}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAllowFollowing()}{INTF\_setAllowFollowing()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Allow\+Following (\begin{DoxyParamCaption}\item[{bool const}]{allow\+Following }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a6f387f6273f8a34065a9004b831fbc41}\label{interface_accessors_8h_a6f387f6273f8a34065a9004b831fbc41}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setAllowForming@{INTF\_setAllowForming}}
+\index{INTF\_setAllowForming@{INTF\_setAllowForming}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setAllowForming()}{INTF\_setAllowForming()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Allow\+Forming (\begin{DoxyParamCaption}\item[{bool const}]{allow\+Forming }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_ac1be592dbab02f670ce3c02c1ae5038c}\label{interface_accessors_8h_ac1be592dbab02f670ce3c02c1ae5038c}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setConfigRateLimitPgRef\_pDelta@{INTF\_setConfigRateLimitPgRef\_pDelta}}
+\index{INTF\_setConfigRateLimitPgRef\_pDelta@{INTF\_setConfigRateLimitPgRef\_pDelta}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setConfigRateLimitPgRef\_pDelta()}{INTF\_setConfigRateLimitPgRef\_pDelta()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Config\+Rate\+Limit\+Pg\+Ref\+\_\+p\+Delta (\begin{DoxyParamCaption}\item[{float}]{p\+Delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_af40ee9c95a6bb01af3d27e527eee27da}\label{interface_accessors_8h_af40ee9c95a6bb01af3d27e527eee27da}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setConfigRateLimitPgRef\_tDelta@{INTF\_setConfigRateLimitPgRef\_tDelta}}
+\index{INTF\_setConfigRateLimitPgRef\_tDelta@{INTF\_setConfigRateLimitPgRef\_tDelta}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setConfigRateLimitPgRef\_tDelta()}{INTF\_setConfigRateLimitPgRef\_tDelta()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Config\+Rate\+Limit\+Pg\+Ref\+\_\+t\+Delta (\begin{DoxyParamCaption}\item[{float}]{t\+Delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a66e723cc746cb0571e5fd38ef3fb5503}\label{interface_accessors_8h_a66e723cc746cb0571e5fd38ef3fb5503}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setControlSource@{INTF\_setControlSource}}
+\index{INTF\_setControlSource@{INTF\_setControlSource}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setControlSource()}{INTF\_setControlSource()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Control\+Source (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{src }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a508f2224dc87e11a6b54ddd6fb7ecd87}\label{interface_accessors_8h_a508f2224dc87e11a6b54ddd6fb7ecd87}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setEnable@{INTF\_setEnable}}
+\index{INTF\_setEnable@{INTF\_setEnable}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setEnable()}{INTF\_setEnable()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Enable (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{en }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em en} & uint16\+\_\+t to allow the out of range values of 2 and 3 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_accessors_8h_ac119e5cc4490d32a5df4b0ed858b1148}\label{interface_accessors_8h_ac119e5cc4490d32a5df4b0ed858b1148}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setGridVoltageOffset@{INTF\_setGridVoltageOffset}}
+\index{INTF\_setGridVoltageOffset@{INTF\_setGridVoltageOffset}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setGridVoltageOffset()}{INTF\_setGridVoltageOffset()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Grid\+Voltage\+Offset (\begin{DoxyParamCaption}\item[{float}]{offset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_ad9bf92610fb7c66ea1757fba181b75f7}\label{interface_accessors_8h_ad9bf92610fb7c66ea1757fba181b75f7}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setIslandDetector@{INTF\_setIslandDetector}}
+\index{INTF\_setIslandDetector@{INTF\_setIslandDetector}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setIslandDetector()}{INTF\_setIslandDetector()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Island\+Detector (\begin{DoxyParamCaption}\item[{uint16\+\_\+t const}]{island\+Detector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a56d9ef27c5907a892b1ec678cbd77b25}\label{interface_accessors_8h_a56d9ef27c5907a892b1ec678cbd77b25}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setIslandResponse@{INTF\_setIslandResponse}}
+\index{INTF\_setIslandResponse@{INTF\_setIslandResponse}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setIslandResponse()}{INTF\_setIslandResponse()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Island\+Response (\begin{DoxyParamCaption}\item[{uint16\+\_\+t const}]{island\+Response }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_ab4d95922580fc39df11a9c72b913bf7a}\label{interface_accessors_8h_ab4d95922580fc39df11a9c72b913bf7a}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setIslandStateRequest@{INTF\_setIslandStateRequest}}
+\index{INTF\_setIslandStateRequest@{INTF\_setIslandStateRequest}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setIslandStateRequest()}{INTF\_setIslandStateRequest()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Island\+State\+Request (\begin{DoxyParamCaption}\item[{bool}]{req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_af6d7a32e10af877759ff1750646693ad}\label{interface_accessors_8h_af6d7a32e10af877759ff1750646693ad}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setNomF@{INTF\_setNomF}}
+\index{INTF\_setNomF@{INTF\_setNomF}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setNomF()}{INTF\_setNomF()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+NomF (\begin{DoxyParamCaption}\item[{float}]{f\+Nom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a006eb78c3747a3132acf3fbfffd8c90e}\label{interface_accessors_8h_a006eb78c3747a3132acf3fbfffd8c90e}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setNomV@{INTF\_setNomV}}
+\index{INTF\_setNomV@{INTF\_setNomV}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setNomV()}{INTF\_setNomV()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+NomV (\begin{DoxyParamCaption}\item[{float}]{v\+Nom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a368e3ab89e146aa5d551f2f809f15618}\label{interface_accessors_8h_a368e3ab89e146aa5d551f2f809f15618}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setSunspecScaledApparentPower@{INTF\_setSunspecScaledApparentPower}}
+\index{INTF\_setSunspecScaledApparentPower@{INTF\_setSunspecScaledApparentPower}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setSunspecScaledApparentPower()}{INTF\_setSunspecScaledApparentPower()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Sunspec\+Scaled\+Apparent\+Power (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a58b6b2294b9b81ec20427b64a8ebfff2}\label{interface_accessors_8h_a58b6b2294b9b81ec20427b64a8ebfff2}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setSunspecScaledApparentPowerLimit@{INTF\_setSunspecScaledApparentPowerLimit}}
+\index{INTF\_setSunspecScaledApparentPowerLimit@{INTF\_setSunspecScaledApparentPowerLimit}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setSunspecScaledApparentPowerLimit()}{INTF\_setSunspecScaledApparentPowerLimit()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Sunspec\+Scaled\+Apparent\+Power\+Limit (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_ac855468bdc131df6467def4be0436589}\label{interface_accessors_8h_ac855468bdc131df6467def4be0436589}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setSunspecScaledGridPositiveP@{INTF\_setSunspecScaledGridPositiveP}}
+\index{INTF\_setSunspecScaledGridPositiveP@{INTF\_setSunspecScaledGridPositiveP}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setSunspecScaledGridPositiveP()}{INTF\_setSunspecScaledGridPositiveP()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Sunspec\+Scaled\+Grid\+PositiveP (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a0ce166744dff63c46e0f51b639bc4ea8}\label{interface_accessors_8h_a0ce166744dff63c46e0f51b639bc4ea8}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_setSunspecScaledRealPowerLimitsMax@{INTF\_setSunspecScaledRealPowerLimitsMax}}
+\index{INTF\_setSunspecScaledRealPowerLimitsMax@{INTF\_setSunspecScaledRealPowerLimitsMax}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_setSunspecScaledRealPowerLimitsMax()}{INTF\_setSunspecScaledRealPowerLimitsMax()}}
+{\footnotesize\ttfamily void INTF\+\_\+set\+Sunspec\+Scaled\+Real\+Power\+Limits\+Max (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a4b5476da70ea4532e90764241f9eeea0}\label{interface_accessors_8h_a4b5476da70ea4532e90764241f9eeea0}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_submitAccessLevelRequest@{INTF\_submitAccessLevelRequest}}
+\index{INTF\_submitAccessLevelRequest@{INTF\_submitAccessLevelRequest}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_submitAccessLevelRequest()}{INTF\_submitAccessLevelRequest()}}
+{\footnotesize\ttfamily void INTF\+\_\+submit\+Access\+Level\+Request (\begin{DoxyParamCaption}\item[{bool}]{request }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_ad48f6ff174bd5fdf8d3379d3311badf7}\label{interface_accessors_8h_ad48f6ff174bd5fdf8d3379d3311badf7}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_updateCommercialRatings@{INTF\_updateCommercialRatings}}
+\index{INTF\_updateCommercialRatings@{INTF\_updateCommercialRatings}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_updateCommercialRatings()}{INTF\_updateCommercialRatings()}}
+{\footnotesize\ttfamily void INTF\+\_\+update\+Commercial\+Ratings (\begin{DoxyParamCaption}\item[{float}]{unused }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a029dd9afdde2d1bff394065deaa065be}\label{interface_accessors_8h_a029dd9afdde2d1bff394065deaa065be}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_updateHardwareRatings@{INTF\_updateHardwareRatings}}
+\index{INTF\_updateHardwareRatings@{INTF\_updateHardwareRatings}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_updateHardwareRatings()}{INTF\_updateHardwareRatings()}}
+{\footnotesize\ttfamily void INTF\+\_\+update\+Hardware\+Ratings (\begin{DoxyParamCaption}\item[{float}]{unused }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_acdc3e47f8f199fb330ef5dd50cf70002}\label{interface_accessors_8h_acdc3e47f8f199fb330ef5dd50cf70002}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_updateUserLimits@{INTF\_updateUserLimits}}
+\index{INTF\_updateUserLimits@{INTF\_updateUserLimits}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_updateUserLimits()}{INTF\_updateUserLimits()}}
+{\footnotesize\ttfamily void INTF\+\_\+update\+User\+Limits (\begin{DoxyParamCaption}\item[{float}]{unused }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interface_accessors_8h_a1228c2eaf73fb7eca186e9e293102d53}\label{interface_accessors_8h_a1228c2eaf73fb7eca186e9e293102d53}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_zero\_getter@{INTF\_zero\_getter}}
+\index{INTF\_zero\_getter@{INTF\_zero\_getter}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_zero\_getter()}{INTF\_zero\_getter()}}
+{\footnotesize\ttfamily uint32\+\_\+t INTF\+\_\+zero\+\_\+getter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{interface_accessors_8h_aafe89f987c23c36dd842e3a95c4fa2e5}\label{interface_accessors_8h_aafe89f987c23c36dd842e3a95c4fa2e5}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdDcVLim@{INTF\_cmdDcVLim}}
+\index{INTF\_cmdDcVLim@{INTF\_cmdDcVLim}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdDcVLim}{INTF\_cmdDcVLim}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Dc\+VLim\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a5538df13b1da6a0aefd3bde487b9a4cb}\label{interface_accessors_8h_a5538df13b1da6a0aefd3bde487b9a4cb}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdInputCurrent@{INTF\_cmdInputCurrent}}
+\index{INTF\_cmdInputCurrent@{INTF\_cmdInputCurrent}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdInputCurrent}{INTF\_cmdInputCurrent}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Input\+Current\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a6ace3b5f1a80d2fed688ebc10a7765f9}\label{interface_accessors_8h_a6ace3b5f1a80d2fed688ebc10a7765f9}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdMpptPwrDcdc@{INTF\_cmdMpptPwrDcdc}}
+\index{INTF\_cmdMpptPwrDcdc@{INTF\_cmdMpptPwrDcdc}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdMpptPwrDcdc}{INTF\_cmdMpptPwrDcdc}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Mppt\+Pwr\+Dcdc\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_ad60b78557c3eb0a494afc3da4bc211b1}\label{interface_accessors_8h_ad60b78557c3eb0a494afc3da4bc211b1}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhAHarmCh0Id@{INTF\_cmdPhAHarmCh0Id}}
+\index{INTF\_cmdPhAHarmCh0Id@{INTF\_cmdPhAHarmCh0Id}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh0Id}{INTF\_cmdPhAHarmCh0Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch0\+Id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a257409e80c6c6c3948950bee7bac7468}\label{interface_accessors_8h_a257409e80c6c6c3948950bee7bac7468}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhAHarmCh0Iq@{INTF\_cmdPhAHarmCh0Iq}}
+\index{INTF\_cmdPhAHarmCh0Iq@{INTF\_cmdPhAHarmCh0Iq}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh0Iq}{INTF\_cmdPhAHarmCh0Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch0\+Iq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a11c24207ef9ae315b743906a04699725}\label{interface_accessors_8h_a11c24207ef9ae315b743906a04699725}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhAHarmCh1Id@{INTF\_cmdPhAHarmCh1Id}}
+\index{INTF\_cmdPhAHarmCh1Id@{INTF\_cmdPhAHarmCh1Id}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh1Id}{INTF\_cmdPhAHarmCh1Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch1\+Id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_aa1d4c43a43d0db93a916869e4cd8c6bb}\label{interface_accessors_8h_aa1d4c43a43d0db93a916869e4cd8c6bb}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhAHarmCh1Iq@{INTF\_cmdPhAHarmCh1Iq}}
+\index{INTF\_cmdPhAHarmCh1Iq@{INTF\_cmdPhAHarmCh1Iq}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh1Iq}{INTF\_cmdPhAHarmCh1Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch1\+Iq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a27c2f062b9e1ed74ff613c2718b90980}\label{interface_accessors_8h_a27c2f062b9e1ed74ff613c2718b90980}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhAHarmCh2Id@{INTF\_cmdPhAHarmCh2Id}}
+\index{INTF\_cmdPhAHarmCh2Id@{INTF\_cmdPhAHarmCh2Id}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh2Id}{INTF\_cmdPhAHarmCh2Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch2\+Id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_abb23731cbb6e0ca066fefb7ca8a0e71f}\label{interface_accessors_8h_abb23731cbb6e0ca066fefb7ca8a0e71f}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhAHarmCh2Iq@{INTF\_cmdPhAHarmCh2Iq}}
+\index{INTF\_cmdPhAHarmCh2Iq@{INTF\_cmdPhAHarmCh2Iq}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh2Iq}{INTF\_cmdPhAHarmCh2Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch2\+Iq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a1017f9aea6d8265abce63ec31eb56db6}\label{interface_accessors_8h_a1017f9aea6d8265abce63ec31eb56db6}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhAHarmCh3Id@{INTF\_cmdPhAHarmCh3Id}}
+\index{INTF\_cmdPhAHarmCh3Id@{INTF\_cmdPhAHarmCh3Id}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh3Id}{INTF\_cmdPhAHarmCh3Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch3\+Id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a5e5100c627d6e798db9361cad6a52c7b}\label{interface_accessors_8h_a5e5100c627d6e798db9361cad6a52c7b}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhAHarmCh3Iq@{INTF\_cmdPhAHarmCh3Iq}}
+\index{INTF\_cmdPhAHarmCh3Iq@{INTF\_cmdPhAHarmCh3Iq}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhAHarmCh3Iq}{INTF\_cmdPhAHarmCh3Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+AHarm\+Ch3\+Iq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_ad4d0e1e55f52f153f8ddf02fcdb53127}\label{interface_accessors_8h_ad4d0e1e55f52f153f8ddf02fcdb53127}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhBHarmCh0Id@{INTF\_cmdPhBHarmCh0Id}}
+\index{INTF\_cmdPhBHarmCh0Id@{INTF\_cmdPhBHarmCh0Id}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh0Id}{INTF\_cmdPhBHarmCh0Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch0\+Id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a8627ea41577512343ccd97df985cf8e8}\label{interface_accessors_8h_a8627ea41577512343ccd97df985cf8e8}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhBHarmCh0Iq@{INTF\_cmdPhBHarmCh0Iq}}
+\index{INTF\_cmdPhBHarmCh0Iq@{INTF\_cmdPhBHarmCh0Iq}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh0Iq}{INTF\_cmdPhBHarmCh0Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch0\+Iq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_ae06b06f088104b223512e5b52c139ee1}\label{interface_accessors_8h_ae06b06f088104b223512e5b52c139ee1}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhBHarmCh1Id@{INTF\_cmdPhBHarmCh1Id}}
+\index{INTF\_cmdPhBHarmCh1Id@{INTF\_cmdPhBHarmCh1Id}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh1Id}{INTF\_cmdPhBHarmCh1Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch1\+Id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_ac16d5d125f14e01708e4b4136ee62697}\label{interface_accessors_8h_ac16d5d125f14e01708e4b4136ee62697}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhBHarmCh1Iq@{INTF\_cmdPhBHarmCh1Iq}}
+\index{INTF\_cmdPhBHarmCh1Iq@{INTF\_cmdPhBHarmCh1Iq}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh1Iq}{INTF\_cmdPhBHarmCh1Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch1\+Iq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a89baaacf4a6c79627efa601eacd004a1}\label{interface_accessors_8h_a89baaacf4a6c79627efa601eacd004a1}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhBHarmCh2Id@{INTF\_cmdPhBHarmCh2Id}}
+\index{INTF\_cmdPhBHarmCh2Id@{INTF\_cmdPhBHarmCh2Id}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh2Id}{INTF\_cmdPhBHarmCh2Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch2\+Id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_af10fd01df5b4f8ce44b25e8d9bd0e706}\label{interface_accessors_8h_af10fd01df5b4f8ce44b25e8d9bd0e706}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhBHarmCh2Iq@{INTF\_cmdPhBHarmCh2Iq}}
+\index{INTF\_cmdPhBHarmCh2Iq@{INTF\_cmdPhBHarmCh2Iq}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh2Iq}{INTF\_cmdPhBHarmCh2Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch2\+Iq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a0029c5f594b19e6799580e1ece9f87c9}\label{interface_accessors_8h_a0029c5f594b19e6799580e1ece9f87c9}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhBHarmCh3Id@{INTF\_cmdPhBHarmCh3Id}}
+\index{INTF\_cmdPhBHarmCh3Id@{INTF\_cmdPhBHarmCh3Id}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh3Id}{INTF\_cmdPhBHarmCh3Id}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch3\+Id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_ae2d788832709698a110e292aa4e046b3}\label{interface_accessors_8h_ae2d788832709698a110e292aa4e046b3}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdPhBHarmCh3Iq@{INTF\_cmdPhBHarmCh3Iq}}
+\index{INTF\_cmdPhBHarmCh3Iq@{INTF\_cmdPhBHarmCh3Iq}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdPhBHarmCh3Iq}{INTF\_cmdPhBHarmCh3Iq}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Ph\+BHarm\+Ch3\+Iq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a4b95211c26a962044ea4690e06eb87b3}\label{interface_accessors_8h_a4b95211c26a962044ea4690e06eb87b3}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdReactiveCurrent@{INTF\_cmdReactiveCurrent}}
+\index{INTF\_cmdReactiveCurrent@{INTF\_cmdReactiveCurrent}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdReactiveCurrent}{INTF\_cmdReactiveCurrent}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Reactive\+Current\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_af9d9bcbabff6b55ae0b251ce94d7ef44}\label{interface_accessors_8h_af9d9bcbabff6b55ae0b251ce94d7ef44}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdReactiveCurrentNs@{INTF\_cmdReactiveCurrentNs}}
+\index{INTF\_cmdReactiveCurrentNs@{INTF\_cmdReactiveCurrentNs}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdReactiveCurrentNs}{INTF\_cmdReactiveCurrentNs}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Reactive\+Current\+Ns\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a79e31bef5a37336542c4f6361506fa02}\label{interface_accessors_8h_a79e31bef5a37336542c4f6361506fa02}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdReactivePwr@{INTF\_cmdReactivePwr}}
+\index{INTF\_cmdReactivePwr@{INTF\_cmdReactivePwr}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdReactivePwr}{INTF\_cmdReactivePwr}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Reactive\+Pwr\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_aba3e765c9fe3dfe3040ad741ded00f77}\label{interface_accessors_8h_aba3e765c9fe3dfe3040ad741ded00f77}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdReactivePwrNs@{INTF\_cmdReactivePwrNs}}
+\index{INTF\_cmdReactivePwrNs@{INTF\_cmdReactivePwrNs}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdReactivePwrNs}{INTF\_cmdReactivePwrNs}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Reactive\+Pwr\+Ns\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a4c8db66e9aff805c09de8ef33a33388c}\label{interface_accessors_8h_a4c8db66e9aff805c09de8ef33a33388c}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdRealCurrent@{INTF\_cmdRealCurrent}}
+\index{INTF\_cmdRealCurrent@{INTF\_cmdRealCurrent}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdRealCurrent}{INTF\_cmdRealCurrent}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Real\+Current\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a27a2166f2c156045cf525468d2f313b9}\label{interface_accessors_8h_a27a2166f2c156045cf525468d2f313b9}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdRealCurrentNs@{INTF\_cmdRealCurrentNs}}
+\index{INTF\_cmdRealCurrentNs@{INTF\_cmdRealCurrentNs}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdRealCurrentNs}{INTF\_cmdRealCurrentNs}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Real\+Current\+Ns\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a3f54617f49f9242541779331eb124182}\label{interface_accessors_8h_a3f54617f49f9242541779331eb124182}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdRealPwr@{INTF\_cmdRealPwr}}
+\index{INTF\_cmdRealPwr@{INTF\_cmdRealPwr}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdRealPwr}{INTF\_cmdRealPwr}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Real\+Pwr\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_aa28bf8dd3bf1d36d1aecb7c754e0383b}\label{interface_accessors_8h_aa28bf8dd3bf1d36d1aecb7c754e0383b}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_cmdRealPwrNs@{INTF\_cmdRealPwrNs}}
+\index{INTF\_cmdRealPwrNs@{INTF\_cmdRealPwrNs}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_cmdRealPwrNs}{INTF\_cmdRealPwrNs}}
+{\footnotesize\ttfamily float INTF\+\_\+cmd\+Real\+Pwr\+Ns\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interface_accessors_8h_a88f562c1031cccffe74fb20b4ca06060}\label{interface_accessors_8h_a88f562c1031cccffe74fb20b4ca06060}} 
+\index{interfaceAccessors.h@{interfaceAccessors.h}!INTF\_commandFlags@{INTF\_commandFlags}}
+\index{INTF\_commandFlags@{INTF\_commandFlags}!interfaceAccessors.h@{interfaceAccessors.h}}
+\doxysubsubsection{\texorpdfstring{INTF\_commandFlags}{INTF\_commandFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_n_t_f___command_flags}{INTF\+\_\+\+Command\+Flags}} INTF\+\_\+command\+Flags\hspace{0.3cm}{\ttfamily [extern]}}
+

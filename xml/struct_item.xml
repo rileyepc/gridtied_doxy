@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_item" kind="struct" language="C++" prot="public">
+    <compoundname>Item</compoundname>
+    <includes refid="lib_epc_control_interface_8h" local="no">libEpcControlInterface.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_item_1a9a33d1eaf53797d7fdea08469e9cc3c0" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char Item::uuid[37]</definition>
+        <argsstring>[37]</argsstring>
+        <name>uuid</name>
+        <qualifiedname>Item::uuid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="94" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_item_1abcf7712fe602099f40fbb8664857d381" prot="public" static="no" mutable="no">
+        <type><ref refid="lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be" kindref="member">SetterTypes</ref></type>
+        <definition>SetterTypes Item::setterType</definition>
+        <argsstring></argsstring>
+        <name>setterType</name>
+        <qualifiedname>Item::setterType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="95" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" prot="public" static="no" mutable="no">
+        <type><ref refid="lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850" kindref="member">Setter_t</ref></type>
+        <definition>Setter_t Item::setter</definition>
+        <argsstring></argsstring>
+        <name>setter</name>
+        <qualifiedname>Item::setter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="96" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" prot="public" static="no" mutable="no">
+        <type><ref refid="lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee" kindref="member">VariablePointer_t</ref></type>
+        <definition>VariablePointer_t Item::variable</definition>
+        <argsstring></argsstring>
+        <name>variable</name>
+        <qualifiedname>Item::variable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="97" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t Item::internalScale</definition>
+        <argsstring></argsstring>
+        <name>internalScale</name>
+        <qualifiedname>Item::internalScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="98" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Item::isTable</definition>
+        <argsstring></argsstring>
+        <name>isTable</name>
+        <qualifiedname>Item::isTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="99" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" prot="public" static="no" mutable="no">
+        <type><ref refid="lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7" kindref="member">TableInfo_t</ref></type>
+        <definition>TableInfo_t Item::tableInfo</definition>
+        <argsstring></argsstring>
+        <name>tableInfo</name>
+        <qualifiedname>Item::tableInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControlInterface.h" line="100" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Item</label>
+        <link refid="struct_item"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>setter</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>variable</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>tableInfo</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Setter_u</label>
+        <link refid="union_setter__u"/>
+      </node>
+      <node id="4">
+        <label>TableInfo_s</label>
+        <link refid="struct_table_info__s"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>setter</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>TableSetter_u</label>
+        <link refid="union_table_setter__u"/>
+      </node>
+      <node id="3">
+        <label>VariablePointer_u</label>
+        <link refid="union_variable_pointer__u"/>
+      </node>
+    </collaborationgraph>
+    <location file="sil/libEpcControlInterface.h" line="93" column="1" bodyfile="sil/libEpcControlInterface.h" bodystart="93" bodyend="101"/>
+    <listofallmembers>
+      <member refid="struct_item_1a3bd77e4a72df88ffd23898e5be55ae56" prot="public" virt="non-virtual"><scope>Item</scope><name>internalScale</name></member>
+      <member refid="struct_item_1a16df5c427f9a6507c88bffd5fa090dd5" prot="public" virt="non-virtual"><scope>Item</scope><name>isTable</name></member>
+      <member refid="struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef" prot="public" virt="non-virtual"><scope>Item</scope><name>setter</name></member>
+      <member refid="struct_item_1abcf7712fe602099f40fbb8664857d381" prot="public" virt="non-virtual"><scope>Item</scope><name>setterType</name></member>
+      <member refid="struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0" prot="public" virt="non-virtual"><scope>Item</scope><name>tableInfo</name></member>
+      <member refid="struct_item_1a9a33d1eaf53797d7fdea08469e9cc3c0" prot="public" virt="non-virtual"><scope>Item</scope><name>uuid</name></member>
+      <member refid="struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45" prot="public" virt="non-virtual"><scope>Item</scope><name>variable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

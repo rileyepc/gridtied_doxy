@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_epc_control_unit__slx_8c" xml:lang="en-US">
+<title>sil/mdl/epcControlUnit_slx.c File Reference</title>
+<indexterm><primary>sil/mdl/epcControlUnit_slx.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../libEpcControl.h&quot;
+#include &quot;simstruc.h&quot;
+#include &quot;cg_sfun.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_epc_control_unit__slx_8c_1a9a4ab27953070e39249f3fad28e93749">S_FUNCTION_LEVEL</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__slx_8c_1ac032abbf580c891fb0c11e63e9bc668a">MDL_START</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__slx_8c_1a7556dbbf5cb7f9946d3e39bcda40c63b">MDL_UPDATE</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__slx_8c_1ace86915cd55a1175c697f892b700f5e5">ECU_SOLVER_TYPE</link>   <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80">SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__slx_8c_1a844b7814640ba5021d1fa675cd9b5566">MDL_GET_TIME_OF_NEXT_VAR_HIT</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb">ECU_SET_SAMPLE_TIME</link>(mIdx,  mTim,  mOff)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78">ECU_UPDATE_TASK</link>(mTask,  mContext)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_epc_control_unit__slx_8c_1a04067f7644df808c71fccf928ced31cb"/><section>
+    <title>ECU_SET_SAMPLE_TIME</title>
+<indexterm><primary>ECU_SET_SAMPLE_TIME</primary><secondary>epcControlUnit_slx.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_slx.c</primary><secondary>ECU_SET_SAMPLE_TIME</secondary></indexterm>
+<para><computeroutput>#define ECU_SET_SAMPLE_TIME( mIdx,  mTim,  mOff)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;ssSetSampleTime(S,&#32;mIdx,&#32;mTim);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;ssSetOffsetTime(S,&#32;mIdx,&#32;mOff)
+</programlisting></section>
+<anchor xml:id="_epc_control_unit__slx_8c_1ace86915cd55a1175c697f892b700f5e5"/><section>
+    <title>ECU_SOLVER_TYPE</title>
+<indexterm><primary>ECU_SOLVER_TYPE</primary><secondary>epcControlUnit_slx.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_slx.c</primary><secondary>ECU_SOLVER_TYPE</secondary></indexterm>
+<para><computeroutput>#define ECU_SOLVER_TYPE   <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80">SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__slx_8c_1ac36e0adc260e344e79ef85ab7278ee78"/><section>
+    <title>ECU_UPDATE_TASK</title>
+<indexterm><primary>ECU_UPDATE_TASK</primary><secondary>epcControlUnit_slx.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_slx.c</primary><secondary>ECU_UPDATE_TASK</secondary></indexterm>
+<para><computeroutput>#define ECU_UPDATE_TASK( mTask,  mContext)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ssIsSampleHit(S,&#32;SIL_TASK_GROUP_##mTask,&#32;tid)&#32;==&#32;<emphasis role="keyword">true</emphasis>)&#32;{&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;double&#32;tNow&#32;=&#32;ssGetTaskTime(S,&#32;SIL_TASK_GROUP_##mTask);&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SIL_update##mContext##_##mTask(tNow);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_epc_control_unit__slx_8c_1a844b7814640ba5021d1fa675cd9b5566"/><section>
+    <title>MDL_GET_TIME_OF_NEXT_VAR_HIT</title>
+<indexterm><primary>MDL_GET_TIME_OF_NEXT_VAR_HIT</primary><secondary>epcControlUnit_slx.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_slx.c</primary><secondary>MDL_GET_TIME_OF_NEXT_VAR_HIT</secondary></indexterm>
+<para><computeroutput>#define MDL_GET_TIME_OF_NEXT_VAR_HIT</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__slx_8c_1ac032abbf580c891fb0c11e63e9bc668a"/><section>
+    <title>MDL_START</title>
+<indexterm><primary>MDL_START</primary><secondary>epcControlUnit_slx.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_slx.c</primary><secondary>MDL_START</secondary></indexterm>
+<para><computeroutput>#define MDL_START</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__slx_8c_1a7556dbbf5cb7f9946d3e39bcda40c63b"/><section>
+    <title>MDL_UPDATE</title>
+<indexterm><primary>MDL_UPDATE</primary><secondary>epcControlUnit_slx.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_slx.c</primary><secondary>MDL_UPDATE</secondary></indexterm>
+<para><computeroutput>#define MDL_UPDATE</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__slx_8c_1a9a4ab27953070e39249f3fad28e93749"/><section>
+    <title>S_FUNCTION_LEVEL</title>
+<indexterm><primary>S_FUNCTION_LEVEL</primary><secondary>epcControlUnit_slx.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_slx.c</primary><secondary>S_FUNCTION_LEVEL</secondary></indexterm>
+<para><computeroutput>#define S_FUNCTION_LEVEL   2</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_e_c_u___output_status__s" xml:lang="en-US">
+<title>ECU_OutputStatus_s Struct Reference</title>
+<indexterm><primary>ECU_OutputStatus_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_status__s_1a34406bd5ee14364b5daed117b1f2c1ca">controlStatus</link> [3U]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_e_c_u___output_status__s_1a36aaac4671ac20411cd4ccd1e36d1723">gridMonitorLocal</link> [3U]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_e_c_u___output_status__s_1a34406bd5ee14364b5daed117b1f2c1ca"/><section>
+    <title>controlStatus</title>
+<indexterm><primary>controlStatus</primary><secondary>ECU_OutputStatus_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputStatus_s</primary><secondary>controlStatus</secondary></indexterm>
+<para><computeroutput>double ECU_OutputStatus_s::controlStatus[3U]</computeroutput></para></section>
+<anchor xml:id="_struct_e_c_u___output_status__s_1a36aaac4671ac20411cd4ccd1e36d1723"/><section>
+    <title>gridMonitorLocal</title>
+<indexterm><primary>gridMonitorLocal</primary><secondary>ECU_OutputStatus_s</secondary></indexterm>
+<indexterm><primary>ECU_OutputStatus_s</primary><secondary>gridMonitorLocal</secondary></indexterm>
+<para><computeroutput>double ECU_OutputStatus_s::gridMonitorLocal[3U]</computeroutput></para></section>
+</section>
+</section>

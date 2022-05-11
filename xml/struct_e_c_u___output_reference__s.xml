@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___output_reference__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_OutputReference_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___output_reference__s_1afd2cac0933eeed660a7463ff3809aa8b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputReference_s::rf_ref</definition>
+        <argsstring></argsstring>
+        <name>rf_ref</name>
+        <qualifiedname>ECU_OutputReference_s::rf_ref</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="141" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output_reference__s_1afab1c97b00be2b75effbcade675485bf" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputReference_s::rv_ref</definition>
+        <argsstring></argsstring>
+        <name>rv_ref</name>
+        <qualifiedname>ECU_OutputReference_s::rv_ref</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="142" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output_reference__s_1a502aaacad7d9a03df5d2070b37bb6b4b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputReference_s::rId</definition>
+        <argsstring></argsstring>
+        <name>rId</name>
+        <qualifiedname>ECU_OutputReference_s::rId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="143" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output_reference__s_1a0c21bb3a69c71b258f20700db40cb2c8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputReference_s::rIq</definition>
+        <argsstring></argsstring>
+        <name>rIq</name>
+        <qualifiedname>ECU_OutputReference_s::rIq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="144" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="140" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="140" bodyend="145"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___output_reference__s_1afd2cac0933eeed660a7463ff3809aa8b" prot="public" virt="non-virtual"><scope>ECU_OutputReference_s</scope><name>rf_ref</name></member>
+      <member refid="struct_e_c_u___output_reference__s_1a502aaacad7d9a03df5d2070b37bb6b4b" prot="public" virt="non-virtual"><scope>ECU_OutputReference_s</scope><name>rId</name></member>
+      <member refid="struct_e_c_u___output_reference__s_1a0c21bb3a69c71b258f20700db40cb2c8" prot="public" virt="non-virtual"><scope>ECU_OutputReference_s</scope><name>rIq</name></member>
+      <member refid="struct_e_c_u___output_reference__s_1afab1c97b00be2b75effbcade675485bf" prot="public" virt="non-virtual"><scope>ECU_OutputReference_s</scope><name>rv_ref</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

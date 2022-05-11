@@ -1,0 +1,211 @@
+\hypertarget{ad2d__emu_8c}{}\doxysection{sil/emu/ad2d\+\_\+emu.c File Reference}
+\label{ad2d__emu_8c}\index{sil/emu/ad2d\_emu.c@{sil/emu/ad2d\_emu.c}}
+{\ttfamily \#include \char`\"{}ad2d.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fpga\+Regs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}MTH\+\_\+scale.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hardware\+Scales.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_d2_d___sgn_extend__s}{AD2\+D\+\_\+\+Sgn\+Extend\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2\+D\+\_\+\+Sgn\+Extend\+\_\+u}}
+\item 
+struct \mbox{\hyperlink{struct_a_d2_d___hw_resources__s}{AD2\+D\+\_\+\+Hw\+Resources\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_a_d2_d___meas_channel__s}{AD2\+D\+\_\+\+Meas\+Channel\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_a_d2_d___data__s}{AD2\+D\+\_\+\+Data\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ad2d__emu_8c_a37f3e5ee5272eda310a848ca26aafa2b}{AD2\+D\+\_\+\+SEQUENCER\+\_\+\+CHANNELS}}~6U
+\item 
+\#define \mbox{\hyperlink{ad2d__emu_8c_a0f8a45dbdfd318e1abe032c2553b91be}{AD2\+D\+\_\+\+CONVERSION\+\_\+\+BUSY\+\_\+\+TIMEOUT}}~200U
+\item 
+\#define \mbox{\hyperlink{ad2d__emu_8c_ad901cdebf19316aaeab7fa7596bee414}{AD2\+D\+\_\+\+HARDWARE\+\_\+\+RESOURCES\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad2d__emu_8c_a732a6a180bbbc56389a9b4efd7f1e3a8}{AD2\+D\+\_\+\+MEAS\+\_\+\+CHANNEL\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad2d__emu_8c_af5f9a41adfa8b50175bd0d05ab66f917}{AD2\+D\+\_\+\+MEAS\+\_\+\+CHANNELS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{ad2d__emu_8c_a2f2c4efc92e7a2eb80450dbeb5816147}{AD2\+D\+\_\+\+DATA\+\_\+\+DEFAULTS}}(...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d2_d___sgn_extend__s}{AD2\+D\+\_\+\+Sgn\+Extend\+\_\+s}} \mbox{\hyperlink{ad2d__emu_8c_a54be1832c3f2655b48038185b6c3aa6f}{AD2\+D\+\_\+s\+Sgn\+Extend\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2\+D\+\_\+\+Sgn\+Extend\+\_\+u}} \mbox{\hyperlink{ad2d__emu_8c_a0fb417f2240e96794c0ccdcf0f0509f1}{AD2\+D\+\_\+u\+Sgn\+Extend\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d2_d___hw_resources__s}{AD2\+D\+\_\+\+Hw\+Resources\+\_\+s}} \mbox{\hyperlink{ad2d__emu_8c_a62d33c1d76705e1026f4095d6267986d}{AD2\+D\+\_\+\+Hw\+Resources\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d2_d___meas_channel__s}{AD2\+D\+\_\+\+Meas\+Channel\+\_\+s}} \mbox{\hyperlink{ad2d__emu_8c_ac6c98544c59d6e06532cbbde0e2a9157}{AD2\+D\+\_\+\+Meas\+Channel\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_a_d2_d___data__s}{AD2\+D\+\_\+\+Data\+\_\+s}} \mbox{\hyperlink{ad2d__emu_8c_a5eec6c14184855675e9e0c7ec4e8157a}{AD2\+D\+\_\+\+Data\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{ad2d__emu_8c_abb2c869fd838f67efc38dea0da13f669}{AD2\+D\+\_\+enqueue\+Measurement\+Channel}} (uint16\+\_\+t const chan\+Name, MESD\+\_\+\+Sequence\+Group\+\_\+t const seq\+Group, \mbox{\hyperlink{_i_qmath_lib_8h_a3a40eb7e42ca749c68ee683060ff050d}{\+\_\+iq31}} $\ast$const mesd\+Dest)
+\item 
+void \mbox{\hyperlink{ad2d__emu_8c_ac5c7fb0b68a3ab2ff81a409777725212}{AD2\+D\+\_\+release\+Configuration}} (void)
+\item 
+bool \mbox{\hyperlink{ad2d__emu_8c_ab082633aaec3b8328366f30752e45240}{AD2\+D\+\_\+measurements\+Update\+\_\+ts}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ad2d__emu_8c_a62d33c1d76705e1026f4095d6267986d}{AD2\+D\+\_\+\+Hw\+Resources\+\_\+t}} const \mbox{\hyperlink{ad2d__emu_8c_a260839c7ebd06be2339fd16580b6185b}{AD2\+D\+\_\+\+Hw\+Resources}} \mbox{[}AD2\+D\+\_\+\+CHANNEL\+\_\+\+CNT\mbox{]} = \mbox{\hyperlink{ad2d__emu_8c_ad901cdebf19316aaeab7fa7596bee414}{AD2\+D\+\_\+\+HARDWARE\+\_\+\+RESOURCES\+\_\+\+DEFAULTS}}()
+\item 
+\mbox{\hyperlink{ad2d__emu_8c_a5eec6c14184855675e9e0c7ec4e8157a}{AD2\+D\+\_\+\+Data\+\_\+t}} \mbox{\hyperlink{ad2d__emu_8c_a78e69f5d36b36c620926794a8c6bf84a}{AD2\+D\+\_\+\+Data}} = \mbox{\hyperlink{ad2d__emu_8c_a2f2c4efc92e7a2eb80450dbeb5816147}{AD2\+D\+\_\+\+DATA\+\_\+\+DEFAULTS}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ad2d__emu_8c_a0f8a45dbdfd318e1abe032c2553b91be}\label{ad2d__emu_8c_a0f8a45dbdfd318e1abe032c2553b91be}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_CONVERSION\_BUSY\_TIMEOUT@{AD2D\_CONVERSION\_BUSY\_TIMEOUT}}
+\index{AD2D\_CONVERSION\_BUSY\_TIMEOUT@{AD2D\_CONVERSION\_BUSY\_TIMEOUT}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_CONVERSION\_BUSY\_TIMEOUT}{AD2D\_CONVERSION\_BUSY\_TIMEOUT}}
+{\footnotesize\ttfamily \#define AD2\+D\+\_\+\+CONVERSION\+\_\+\+BUSY\+\_\+\+TIMEOUT~200U}
+
+\mbox{\Hypertarget{ad2d__emu_8c_a2f2c4efc92e7a2eb80450dbeb5816147}\label{ad2d__emu_8c_a2f2c4efc92e7a2eb80450dbeb5816147}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_DATA\_DEFAULTS@{AD2D\_DATA\_DEFAULTS}}
+\index{AD2D\_DATA\_DEFAULTS@{AD2D\_DATA\_DEFAULTS}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_DATA\_DEFAULTS}{AD2D\_DATA\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD2\+D\+\_\+\+DATA\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                       \(\backslash\)}
+\DoxyCodeLine{    .measChannels           = \mbox{\hyperlink{ad2d__emu_8c_af5f9a41adfa8b50175bd0d05ab66f917}{AD2D\_MEAS\_CHANNELS\_DEFAULTS}}(),            \(\backslash\)}
+\DoxyCodeLine{    .channelCount           = 0U,                                       \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad2d__emu_8c_ad901cdebf19316aaeab7fa7596bee414}\label{ad2d__emu_8c_ad901cdebf19316aaeab7fa7596bee414}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_HARDWARE\_RESOURCES\_DEFAULTS@{AD2D\_HARDWARE\_RESOURCES\_DEFAULTS}}
+\index{AD2D\_HARDWARE\_RESOURCES\_DEFAULTS@{AD2D\_HARDWARE\_RESOURCES\_DEFAULTS}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_HARDWARE\_RESOURCES\_DEFAULTS}{AD2D\_HARDWARE\_RESOURCES\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD2\+D\+\_\+\+HARDWARE\+\_\+\+RESOURCES\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                             \(\backslash\)}
+\DoxyCodeLine{    [AD2D\_CHANNEL\_VFB\_LO\_1] = \{ (\mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2D\_uSgnExtend\_t}} *)\&ozFpga.vLvA.all   \},  \(\backslash\)}
+\DoxyCodeLine{    [AD2D\_CHANNEL\_VFB\_LO\_2] = \{ (\mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2D\_uSgnExtend\_t}} *)\&ozFpga.vLvB.all   \},  \(\backslash\)}
+\DoxyCodeLine{    [AD2D\_CHANNEL\_VFB\_LO\_3] = \{ (\mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2D\_uSgnExtend\_t}} *)\&ozFpga.vLvC.all   \},  \(\backslash\)}
+\DoxyCodeLine{    [AD2D\_CHANNEL\_VFB\_HI\_1] = \{ (\mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2D\_uSgnExtend\_t}} *)\&ozFpga.vLineA.all \},  \(\backslash\)}
+\DoxyCodeLine{    [AD2D\_CHANNEL\_VFB\_HI\_2] = \{ (\mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2D\_uSgnExtend\_t}} *)\&ozFpga.vLineB.all \},  \(\backslash\)}
+\DoxyCodeLine{    [AD2D\_CHANNEL\_VFB\_HI\_3] = \{ (\mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2D\_uSgnExtend\_t}} *)\&ozFpga.vLineC.all \},  \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad2d__emu_8c_a732a6a180bbbc56389a9b4efd7f1e3a8}\label{ad2d__emu_8c_a732a6a180bbbc56389a9b4efd7f1e3a8}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_MEAS\_CHANNEL\_DEFAULTS@{AD2D\_MEAS\_CHANNEL\_DEFAULTS}}
+\index{AD2D\_MEAS\_CHANNEL\_DEFAULTS@{AD2D\_MEAS\_CHANNEL\_DEFAULTS}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_MEAS\_CHANNEL\_DEFAULTS}{AD2D\_MEAS\_CHANNEL\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD2\+D\+\_\+\+MEAS\+\_\+\+CHANNEL\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                               \(\backslash\)}
+\DoxyCodeLine{    .adcResult              = NULL,                                     \(\backslash\)}
+\DoxyCodeLine{    .mesdDest               = NULL,                                     \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad2d__emu_8c_af5f9a41adfa8b50175bd0d05ab66f917}\label{ad2d__emu_8c_af5f9a41adfa8b50175bd0d05ab66f917}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_MEAS\_CHANNELS\_DEFAULTS@{AD2D\_MEAS\_CHANNELS\_DEFAULTS}}
+\index{AD2D\_MEAS\_CHANNELS\_DEFAULTS@{AD2D\_MEAS\_CHANNELS\_DEFAULTS}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_MEAS\_CHANNELS\_DEFAULTS}{AD2D\_MEAS\_CHANNELS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define AD2\+D\+\_\+\+MEAS\+\_\+\+CHANNELS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                              \(\backslash\)}
+\DoxyCodeLine{    [0U ... (\mbox{\hyperlink{ad2d__emu_8c_a37f3e5ee5272eda310a848ca26aafa2b}{AD2D\_SEQUENCER\_CHANNELS}} -\/ 1U)] =                           \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{ad2d__emu_8c_a732a6a180bbbc56389a9b4efd7f1e3a8}{AD2D\_MEAS\_CHANNEL\_DEFAULTS}}(\_\_VA\_ARGS\_\_)                         \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ad2d__emu_8c_a37f3e5ee5272eda310a848ca26aafa2b}\label{ad2d__emu_8c_a37f3e5ee5272eda310a848ca26aafa2b}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_SEQUENCER\_CHANNELS@{AD2D\_SEQUENCER\_CHANNELS}}
+\index{AD2D\_SEQUENCER\_CHANNELS@{AD2D\_SEQUENCER\_CHANNELS}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_SEQUENCER\_CHANNELS}{AD2D\_SEQUENCER\_CHANNELS}}
+{\footnotesize\ttfamily \#define AD2\+D\+\_\+\+SEQUENCER\+\_\+\+CHANNELS~6U}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ad2d__emu_8c_a5eec6c14184855675e9e0c7ec4e8157a}\label{ad2d__emu_8c_a5eec6c14184855675e9e0c7ec4e8157a}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_Data\_t@{AD2D\_Data\_t}}
+\index{AD2D\_Data\_t@{AD2D\_Data\_t}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_Data\_t}{AD2D\_Data\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d2_d___data__s}{AD2\+D\+\_\+\+Data\+\_\+s}} \mbox{\hyperlink{ad2d__emu_8c_a5eec6c14184855675e9e0c7ec4e8157a}{AD2\+D\+\_\+\+Data\+\_\+t}}}
+
+\mbox{\Hypertarget{ad2d__emu_8c_a62d33c1d76705e1026f4095d6267986d}\label{ad2d__emu_8c_a62d33c1d76705e1026f4095d6267986d}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_HwResources\_t@{AD2D\_HwResources\_t}}
+\index{AD2D\_HwResources\_t@{AD2D\_HwResources\_t}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_HwResources\_t}{AD2D\_HwResources\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d2_d___hw_resources__s}{AD2\+D\+\_\+\+Hw\+Resources\+\_\+s}} \mbox{\hyperlink{ad2d__emu_8c_a62d33c1d76705e1026f4095d6267986d}{AD2\+D\+\_\+\+Hw\+Resources\+\_\+t}}}
+
+\mbox{\Hypertarget{ad2d__emu_8c_ac6c98544c59d6e06532cbbde0e2a9157}\label{ad2d__emu_8c_ac6c98544c59d6e06532cbbde0e2a9157}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_MeasChannel\_t@{AD2D\_MeasChannel\_t}}
+\index{AD2D\_MeasChannel\_t@{AD2D\_MeasChannel\_t}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_MeasChannel\_t}{AD2D\_MeasChannel\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d2_d___meas_channel__s}{AD2\+D\+\_\+\+Meas\+Channel\+\_\+s}} \mbox{\hyperlink{ad2d__emu_8c_ac6c98544c59d6e06532cbbde0e2a9157}{AD2\+D\+\_\+\+Meas\+Channel\+\_\+t}}}
+
+\mbox{\Hypertarget{ad2d__emu_8c_a54be1832c3f2655b48038185b6c3aa6f}\label{ad2d__emu_8c_a54be1832c3f2655b48038185b6c3aa6f}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_sSgnExtend\_t@{AD2D\_sSgnExtend\_t}}
+\index{AD2D\_sSgnExtend\_t@{AD2D\_sSgnExtend\_t}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_sSgnExtend\_t}{AD2D\_sSgnExtend\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d2_d___sgn_extend__s}{AD2\+D\+\_\+\+Sgn\+Extend\+\_\+s}} \mbox{\hyperlink{ad2d__emu_8c_a54be1832c3f2655b48038185b6c3aa6f}{AD2\+D\+\_\+s\+Sgn\+Extend\+\_\+t}}}
+
+\mbox{\Hypertarget{ad2d__emu_8c_a0fb417f2240e96794c0ccdcf0f0509f1}\label{ad2d__emu_8c_a0fb417f2240e96794c0ccdcf0f0509f1}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_uSgnExtend\_t@{AD2D\_uSgnExtend\_t}}
+\index{AD2D\_uSgnExtend\_t@{AD2D\_uSgnExtend\_t}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_uSgnExtend\_t}{AD2D\_uSgnExtend\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_a_d2_d___sgn_extend__u}{AD2\+D\+\_\+\+Sgn\+Extend\+\_\+u}} \mbox{\hyperlink{ad2d__emu_8c_a0fb417f2240e96794c0ccdcf0f0509f1}{AD2\+D\+\_\+u\+Sgn\+Extend\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ad2d__emu_8c_abb2c869fd838f67efc38dea0da13f669}\label{ad2d__emu_8c_abb2c869fd838f67efc38dea0da13f669}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_enqueueMeasurementChannel@{AD2D\_enqueueMeasurementChannel}}
+\index{AD2D\_enqueueMeasurementChannel@{AD2D\_enqueueMeasurementChannel}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_enqueueMeasurementChannel()}{AD2D\_enqueueMeasurementChannel()}}
+{\footnotesize\ttfamily int16\+\_\+t AD2\+D\+\_\+enqueue\+Measurement\+Channel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t const}]{chan\+Name,  }\item[{MESD\+\_\+\+Sequence\+Group\+\_\+t const}]{seq\+Group,  }\item[{\mbox{\hyperlink{_i_qmath_lib_8h_a3a40eb7e42ca749c68ee683060ff050d}{\+\_\+iq31}} $\ast$const}]{mesd\+Dest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ad2d__emu_8c_ab082633aaec3b8328366f30752e45240}\label{ad2d__emu_8c_ab082633aaec3b8328366f30752e45240}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_measurementsUpdate\_ts@{AD2D\_measurementsUpdate\_ts}}
+\index{AD2D\_measurementsUpdate\_ts@{AD2D\_measurementsUpdate\_ts}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_measurementsUpdate\_ts()}{AD2D\_measurementsUpdate\_ts()}}
+{\footnotesize\ttfamily bool AD2\+D\+\_\+measurements\+Update\+\_\+ts (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ad2d__emu_8c_ac5c7fb0b68a3ab2ff81a409777725212}\label{ad2d__emu_8c_ac5c7fb0b68a3ab2ff81a409777725212}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_releaseConfiguration@{AD2D\_releaseConfiguration}}
+\index{AD2D\_releaseConfiguration@{AD2D\_releaseConfiguration}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_releaseConfiguration()}{AD2D\_releaseConfiguration()}}
+{\footnotesize\ttfamily void AD2\+D\+\_\+release\+Configuration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ad2d__emu_8c_a78e69f5d36b36c620926794a8c6bf84a}\label{ad2d__emu_8c_a78e69f5d36b36c620926794a8c6bf84a}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_Data@{AD2D\_Data}}
+\index{AD2D\_Data@{AD2D\_Data}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_Data}{AD2D\_Data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ad2d__emu_8c_a5eec6c14184855675e9e0c7ec4e8157a}{AD2\+D\+\_\+\+Data\+\_\+t}} AD2\+D\+\_\+\+Data = \mbox{\hyperlink{ad2d__emu_8c_a2f2c4efc92e7a2eb80450dbeb5816147}{AD2\+D\+\_\+\+DATA\+\_\+\+DEFAULTS}}()}
+
+\mbox{\Hypertarget{ad2d__emu_8c_a260839c7ebd06be2339fd16580b6185b}\label{ad2d__emu_8c_a260839c7ebd06be2339fd16580b6185b}} 
+\index{ad2d\_emu.c@{ad2d\_emu.c}!AD2D\_HwResources@{AD2D\_HwResources}}
+\index{AD2D\_HwResources@{AD2D\_HwResources}!ad2d\_emu.c@{ad2d\_emu.c}}
+\doxysubsubsection{\texorpdfstring{AD2D\_HwResources}{AD2D\_HwResources}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ad2d__emu_8c_a62d33c1d76705e1026f4095d6267986d}{AD2\+D\+\_\+\+Hw\+Resources\+\_\+t}} const AD2\+D\+\_\+\+Hw\+Resources\mbox{[}AD2\+D\+\_\+\+CHANNEL\+\_\+\+CNT\mbox{]} = \mbox{\hyperlink{ad2d__emu_8c_ad901cdebf19316aaeab7fa7596bee414}{AD2\+D\+\_\+\+HARDWARE\+\_\+\+RESOURCES\+\_\+\+DEFAULTS}}()}
+

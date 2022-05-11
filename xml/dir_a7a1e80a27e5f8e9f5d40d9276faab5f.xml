@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_a7a1e80a27e5f8e9f5d40d9276faab5f" kind="dir">
+    <compoundname>src/gridtied/tests</compoundname>
+    <innerdir refid="dir_6bdbf4829a0c166757c4b2ed3e31cc1f">src/gridtied/tests/hil</innerdir>
+    <innerdir refid="dir_3553e5ab61f2bb3952205d876aea61d2">src/gridtied/tests/internal</innerdir>
+    <innerfile refid="tests_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="conftest_8py">conftest.py</innerfile>
+    <innerfile refid="utils_8py">utils.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gridtied/tests/"/>
+  </compounddef>
+</doxygen>

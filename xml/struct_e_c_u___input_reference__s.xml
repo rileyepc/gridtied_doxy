@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___input_reference__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_InputReference_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___input_reference__s_1a5ef83c2911f09fe4df4e4ba645a9139b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputReference_s::fvRef[2U]</definition>
+        <argsstring>[2U]</argsstring>
+        <name>fvRef</name>
+        <qualifiedname>ECU_InputReference_s::fvRef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="103" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input_reference__s_1a8e3d79b837359aed30feb3eb11dcdbb0" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputReference_s::rIg[4U]</definition>
+        <argsstring>[4U]</argsstring>
+        <name>rIg</name>
+        <qualifiedname>ECU_InputReference_s::rIg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="104" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input_reference__s_1af2e4a0e03243482429cb905c69636ad2" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputReference_s::rPg[2U]</definition>
+        <argsstring>[2U]</argsstring>
+        <name>rPg</name>
+        <qualifiedname>ECU_InputReference_s::rPg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="105" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="102" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="102" bodyend="106"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___input_reference__s_1a5ef83c2911f09fe4df4e4ba645a9139b" prot="public" virt="non-virtual"><scope>ECU_InputReference_s</scope><name>fvRef</name></member>
+      <member refid="struct_e_c_u___input_reference__s_1a8e3d79b837359aed30feb3eb11dcdbb0" prot="public" virt="non-virtual"><scope>ECU_InputReference_s</scope><name>rIg</name></member>
+      <member refid="struct_e_c_u___input_reference__s_1af2e4a0e03243482429cb905c69636ad2" prot="public" virt="non-virtual"><scope>ECU_InputReference_s</scope><name>rPg</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

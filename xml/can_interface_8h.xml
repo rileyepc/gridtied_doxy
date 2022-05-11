@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="can_interface_8h" kind="file" language="C++">
+    <compoundname>canInterface.h</compoundname>
+    <includes local="yes">cand.h</includes>
+    <includes refid="interface_8h" local="yes">interface.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="application_8c" local="yes">application.c</includedby>
+    <includedby refid="can_interface_8c" local="yes">interface/canInterface.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>interface/canInterface.h</label>
+        <link refid="can_interface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>IEEE1547.h</label>
+      </node>
+      <node id="9">
+        <label>authorization.h</label>
+      </node>
+      <node id="5">
+        <label>canInterfaceEnums.h</label>
+      </node>
+      <node id="2">
+        <label>cand.h</label>
+      </node>
+      <node id="7">
+        <label>meta.h</label>
+      </node>
+      <node id="10">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="11">
+        <label>stdint.h</label>
+      </node>
+      <node id="6">
+        <label>sunspec.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>application.c</label>
+        <link refid="application_8c"/>
+      </node>
+      <node id="3">
+        <label>interface/canInterface.c</label>
+        <link refid="can_interface_8c"/>
+      </node>
+      <node id="1">
+        <label>interface/canInterface.h</label>
+        <link refid="can_interface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="can_interface_8h_1a08d3af6fd69d3b80a0e30fedfd7d4026" prot="public" static="no">
+        <name>TEMP_DELTA_SCALE</name>
+        <initializer>(10.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="11" column="9" bodyfile="interface/canInterface.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="can_interface_8h_1a91bbe13402240b67e032c3c8a1b3f992" prot="public" static="no">
+        <name>TEMP_DELTA_TIME_SCALE</name>
+        <initializer>(0.01f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="12" column="9" bodyfile="interface/canInterface.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="can_interface_8h_1a89f143a998937dd4a94319dc1c0471a0" prot="public" static="no">
+        <name>SOFTSTART_INC_SCALE</name>
+        <initializer>(10000.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="13" column="9" bodyfile="interface/canInterface.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="can_interface_8h_1a9914f7259abdf98e198b43a1c5afa669" prot="public" static="no">
+        <name>VOUT_GAIN_SCALE</name>
+        <initializer>(1000.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="14" column="9" bodyfile="interface/canInterface.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="can_interface_8h_1af92fe56fa9d203ac7ed172951a7764c5" prot="public" static="no">
+        <name>IGBT_THERMAL_IMPEDANCE_SCALE</name>
+        <initializer>(1000000.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="15" column="9" bodyfile="interface/canInterface.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="can_interface_8h_1a8e4d6085a0d16bde2868a5de8c07b88d" prot="public" static="no">
+        <name>FBK_SCALING_SCALE</name>
+        <initializer>(100000.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="16" column="9" bodyfile="interface/canInterface.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="can_interface_8h_1a0f45377ecf0285616fff0c525b34a327" prot="public" static="no">
+        <name>POWER_SCALE</name>
+        <initializer>(10.0f/1000.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="17" column="9" bodyfile="interface/canInterface.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="can_interface_8h_1ab909947eb49bfce3b280b12ef3e7f5fc" prot="public" static="no">
+        <name>TEMPERATURE_SCALE</name>
+        <initializer>(10.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="18" column="9" bodyfile="interface/canInterface.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="can_interface_8h_1a78f073adbefd90c277a7962d8d383996" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* ParameterGetterSetter) (Meta_Enum meta_index, InterfaceItem_void const *const *const items, uint16_t items_count)</definition>
+        <argsstring>)(Meta_Enum meta_index, InterfaceItem_void const *const *const items, uint16_t items_count)</argsstring>
+        <name>ParameterGetterSetter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="23" column="9" bodyfile="interface/canInterface.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="can_interface_8h_1a1c41607124c2a3edfba4aca78b93e253" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void canInterfaceInit</definition>
+        <argsstring>(int canID, int SA_mask, CAN_BAUDRATE baud, uint32_t buildTime, uint32_t buildGitRev)</argsstring>
+        <name>canInterfaceInit</name>
+        <param>
+          <type>int</type>
+          <declname>canID</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>SA_mask</declname>
+        </param>
+        <param>
+          <type>CAN_BAUDRATE</type>
+          <declname>baud</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>buildTime</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>buildGitRev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="21" column="6" bodyfile="interface/canInterface.c" bodystart="859" bodyend="890" declfile="interface/canInterface.h" declline="21" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="can_interface_8h_1aa05e7dbca4ce3c6efc8800cd471a26cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void updateProcessToInverter</definition>
+        <argsstring>(bool valid)</argsstring>
+        <name>updateProcessToInverter</name>
+        <param>
+          <type>bool</type>
+          <declname>valid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="29" column="6" bodyfile="interface/canInterface.c" bodystart="261" bodyend="277" declfile="interface/canInterface.h" declline="29" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="can_interface_8h_1a39a21ea844fd21be0c1ac875ba3231d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long double</type>
+        <definition>long double canInterface_itemNetMultiplier</definition>
+        <argsstring>(InterfaceItemCommon const *const item)</argsstring>
+        <name>canInterface_itemNetMultiplier</name>
+        <param>
+          <type><ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref> const *const</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/canInterface.h" line="31" column="13" bodyfile="interface/canInterface.c" bodystart="901" bodyend="903" declfile="interface/canInterface.h" declline="31" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__CANINTERFACE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__CANINTERFACE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cand.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="interface_8h" kindref="compound">interface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//standard<sp/>libraries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="can_interface_8h_1a08d3af6fd69d3b80a0e30fedfd7d4026" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEMP_DELTA_SCALE<sp/>(10.0f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="can_interface_8h_1a91bbe13402240b67e032c3c8a1b3f992" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEMP_DELTA_TIME_SCALE<sp/>(0.01f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="can_interface_8h_1a89f143a998937dd4a94319dc1c0471a0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOFTSTART_INC_SCALE<sp/>(10000.0f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="can_interface_8h_1a9914f7259abdf98e198b43a1c5afa669" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VOUT_GAIN_SCALE<sp/>(1000.0f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="can_interface_8h_1af92fe56fa9d203ac7ed172951a7764c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IGBT_THERMAL_IMPEDANCE_SCALE<sp/>(1000000.0f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="can_interface_8h_1a8e4d6085a0d16bde2868a5de8c07b88d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FBK_SCALING_SCALE<sp/>(100000.0f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="can_interface_8h_1a0f45377ecf0285616fff0c525b34a327" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>POWER_SCALE<sp/>(10.0f/1000.0f)<sp/></highlight><highlight class="comment">//scale<sp/>from<sp/>0.1kW<sp/>to<sp/>W</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="can_interface_8h_1ab909947eb49bfce3b280b12ef3e7f5fc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEMPERATURE_SCALE<sp/>(10.0f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//public<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_interface_8h_1a1c41607124c2a3edfba4aca78b93e253" kindref="member">canInterfaceInit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>canID,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SA_mask,<sp/>CAN_BAUDRATE<sp/>baud,<sp/>uint32_t<sp/>buildTime,<sp/>uint32_t<sp/>buildGitRev);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="can_interface_8h_1a78f073adbefd90c277a7962d8d383996" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="can_interface_8h_1a78f073adbefd90c277a7962d8d383996" kindref="member">ParameterGetterSetter</ref>)(</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>Meta_Enum<sp/>meta_index,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>items,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>items_count</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_interface_8h_1aa05e7dbca4ce3c6efc8800cd471a26cd" kindref="member">updateProcessToInverter</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>valid);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="can_interface_8h_1a39a21ea844fd21be0c1ac875ba3231d1" kindref="member">canInterface_itemNetMultiplier</ref>(<ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>item);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="interface/canInterface.h"/>
+  </compounddef>
+</doxygen>

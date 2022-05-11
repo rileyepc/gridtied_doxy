@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_item" xml:lang="en-US">
+<title>Item Struct Reference</title>
+<indexterm><primary>Item</primary></indexterm>
+<para>
+<computeroutput>#include &lt;libEpcControlInterface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_struct_item_1a9a33d1eaf53797d7fdea08469e9cc3c0">uuid</link> [37]</para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be">SetterTypes</link> <link linkend="_struct_item_1abcf7712fe602099f40fbb8664857d381">setterType</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850">Setter_t</link> <link linkend="_struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef">setter</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee">VariablePointer_t</link> <link linkend="_struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45">variable</link></para>
+</listitem>
+            <listitem><para>int16_t <link linkend="_struct_item_1a3bd77e4a72df88ffd23898e5be55ae56">internalScale</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_item_1a16df5c427f9a6507c88bffd5fa090dd5">isTable</link></para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7">TableInfo_t</link> <link linkend="_struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0">tableInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_item_1a3bd77e4a72df88ffd23898e5be55ae56"/><section>
+    <title>internalScale</title>
+<indexterm><primary>internalScale</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>internalScale</secondary></indexterm>
+<para><computeroutput>int16_t Item::internalScale</computeroutput></para></section>
+<anchor xml:id="_struct_item_1a16df5c427f9a6507c88bffd5fa090dd5"/><section>
+    <title>isTable</title>
+<indexterm><primary>isTable</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>isTable</secondary></indexterm>
+<para><computeroutput>bool Item::isTable</computeroutput></para></section>
+<anchor xml:id="_struct_item_1a0bad5efb24e92b4f7bfc5f23354c13ef"/><section>
+    <title>setter</title>
+<indexterm><primary>setter</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>setter</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1a8656d1b6efcc2cf91c97e72a03246850">Setter_t</link> Item::setter</computeroutput></para></section>
+<anchor xml:id="_struct_item_1abcf7712fe602099f40fbb8664857d381"/><section>
+    <title>setterType</title>
+<indexterm><primary>setterType</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>setterType</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1af2b2cce8bec3a94f448e7a8127a4b1be">SetterTypes</link> Item::setterType</computeroutput></para></section>
+<anchor xml:id="_struct_item_1ae3c7e44ea21dd2a8a22042f87b94e4d0"/><section>
+    <title>tableInfo</title>
+<indexterm><primary>tableInfo</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>tableInfo</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1ac646c65bdea74999f4603fd9b529eab7">TableInfo_t</link> Item::tableInfo</computeroutput></para></section>
+<anchor xml:id="_struct_item_1a9a33d1eaf53797d7fdea08469e9cc3c0"/><section>
+    <title>uuid</title>
+<indexterm><primary>uuid</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>uuid</secondary></indexterm>
+<para><computeroutput>char Item::uuid[37]</computeroutput></para></section>
+<anchor xml:id="_struct_item_1a6cfe3c6be8c0d69ee381e439df7daa45"/><section>
+    <title>variable</title>
+<indexterm><primary>variable</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>variable</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_interface_8h_1a5e5e471a0d381c6a2bcff73d0c8648ee">VariablePointer_t</link> Item::variable</computeroutput></para></section>
+</section>
+</section>

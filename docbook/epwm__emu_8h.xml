@@ -1,0 +1,644 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_epwm__emu_8h" xml:lang="en-US">
+<title>sil/emu/epwm_emu.h File Reference</title>
+<indexterm><primary>sil/emu/epwm_emu.h</primary></indexterm>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a">EPWM_NR_CHANNELS_MAX</link>   6U</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a26cd066448b5ccfdcddd605f20e95f1e">EPWM_TB_COUNTING_UP</link>   true</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a5df749f08075143ee95ee01b7c531510">EPWM_TB_COUNTING_DN</link>   false</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a48edc40b05cf8252395febfdc1c048cd">EPWM_AQ_HIT_TOLERANCE</link>   1e-12L</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a4e53c50d692f0a67d86a8f9e6f2c0cc2">EPWM_DIAG_TOLERANCE</link>   128.0L * DBL_EPSILON</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a522adc846f7e5f88f5025ae72d69f01d">EPWM_THP_MIN</link>   100</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1acb5e47eb7495810252e6c99a8174ae39">EPWM_THP_INI</link>   65000</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1acc045ae80665ab61975fe457e735e450">EPWM_DEFAULT_FCLOCK</link>   150e6</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a102bbd510a466db8ef11bcb4bff50648">EPWM_DISA_HALFPERIOD</link>   1.0e-3</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a9afc4f7ad80352fa8d100b777e7f1a48">EPWM_PAR_AVERAGE_MODE</link>   false</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a836edba9e67d05644cd0d9401f43bd9b">EPWM_PAR_DTY_UPPER</link>   1.0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a0f4016cd641bd52d8926a95b3500c99a">EPWM_PAR_DTY_LOWER</link>   -1.0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a6701b0e37cfc727238cba504feeef5e5">EPWM_PAR_RLD_HALF_PERIOD</link>   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48aeed717fcbc27d06e8d98be19f7612df8">EPWM_SHADOW_RELOAD_BOT</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1af2bcdd2ad30f8d1f459183948eb770ad">EPWM_PAR_RLD_ENTRY_UPPER</link>   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1aa806befd507f48e3f9f1810cbfd544d9">EPWM_PAR_RLD_ENTRY_LOWER</link>   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ac4723948c31a93073469e1f3891502f0">EPWM_PAR_RLD_UNSAT</link>   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ab1c60ea7f60cd718738d39c8bc4bdba5">EPWM_PAR_RLD_EXIT_UPPER</link>   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a397ec38883ae143989940eb08aeb71f5">EPWM_PAR_RLD_EXIT_LOWER</link>   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ac6353b83e30029d44c4730f341b34bd4">EPWM_PAR_SAT_UPPER</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a735e00e6c5df088fc4062f58f7bfc4a2">EPWM_PAR_SAT_LOWER</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a5b86c8476bf383e0ad1c84f8f8486802">EPWM_PAR_AQC_ENTRY_UPPER_BOT</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1aac1151b5838fca413eff5ca107f1b840">EPWM_PAR_AQC_ENTRY_UPPER_TOP</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a61dd51c7ea020fb7b75374037013352e">EPWM_PAR_AQC_ENTRY_UPPER_CUP</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a8d0254048f02dfdced9015a710aa93d1">EPWM_PAR_AQC_ENTRY_UPPER_CDN</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a608a4ce638cdcb888f55c3cec5bcc5d5">EPWM_PAR_AQC_ENTRY_LOWER_BOT</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1aa3f04a5a47f60da32d982e41ec0da360">EPWM_PAR_AQC_ENTRY_LOWER_TOP</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ac263d0f77ad14c488ff01af40adf4ac9">EPWM_PAR_AQC_ENTRY_LOWER_CUP</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a22a8d68ba367c45bfe09352bcb313b17">EPWM_PAR_AQC_ENTRY_LOWER_CDN</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a66702811d9737e883ef3ed460d3b43fe">EPWM_PAR_AQC_UNSAT_BOT</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ad049c2df441cbe2291afbf79a0cde880">EPWM_PAR_AQC_UNSAT_TOP</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a33e27916bc59862bb6099e721d4568e5">EPWM_PAR_AQC_UNSAT_CUP</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a3950b872d3d00040754bd1d1f6b98add">EPWM_PAR_AQC_UNSAT_CDN</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a3daaaafc1551a95c4bb0d82f6b5092e9">EPWM_PAR_AQC_EXIT_UPPER_BOT</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a398cfda199f5651ba5d4ba4585711a37">EPWM_PAR_AQC_EXIT_UPPER_TOP</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1af5bf296b3bc2237369daaaa832db3594">EPWM_PAR_AQC_EXIT_UPPER_CUP</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a68bfb44765cb37b1108cc4256d173514">EPWM_PAR_AQC_EXIT_UPPER_CDN</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ae9a623b5e94503b12b93d59f433cfff5">EPWM_PAR_AQC_EXIT_LOWER_BOT</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1abd9f5d1e16fca7c2600355399058e87a">EPWM_PAR_AQC_EXIT_LOWER_TOP</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a93927abccee4d059ea61df82969db789">EPWM_PAR_AQC_EXIT_LOWER_CUP</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ac45cf06d2744fcc41a000d7ef3acb28c">EPWM_PAR_AQC_EXIT_LOWER_CDN</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a7160a0f9d7b1f53b62aede5457004342">EPWM_PAR_DIAG_TON_MIN</link>   4.0e-6</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ae16da2a7eed4a95836e7e08ef765229d">EPWM_PAR_DIAG_TOFF_MIN</link>   4.0e-6</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a88c8a9caaa3354cf34c1095a75b1e97e">EPWM_PAR_DIAG_TADJ_MIN</link>   2.0e-6</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a306af69694a3bcf0a4eb0d37ba1ba87f">EPWM_PAR_DIAG_TADJ_CHANS_SZ</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a51695a423cdd884f317ea93ce8902e77">EPWM_PAR_DIAG_TADJ_CHANS</link>(j)   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a5b1809ce19546bba037d3dcddc93d77d">EPWM_INP_HALF_PERIOD</link>   <link linkend="_sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735">SIL_PORT_INP</link>(SIL_INP_REF_THP, 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a4dcee8b1d281d930e8df7d1e657de193">EPWM_INP_SWITCH_TIME</link>(ch)   <link linkend="_sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735">SIL_PORT_INP</link>(SIL_INP_REF_TSW, ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1aae92d8f9c65e8fc09152734bd7f9e04d">EPWM_OUT_GATE_STATE</link>(ch)   <link linkend="_sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">SIL_PORT_OUT</link>(<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53">SIL_OUT_CTL_GATE</link>, ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a95ca18cbd3b8d84f5d0b0183e2d8e718">EPWM_OUT_VIOL_TON</link>(ch)   OutputSignal(1,  ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a52362ccefddcf3fbc54133bd31157149">EPWM_OUT_VIOL_TOFF</link>(ch)   OutputSignal(2,  ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a118f6cee648c3f165f93cbaebebf48c5">EPWM_OUT_VIOL_TADJ</link>   OutputSignal(3,  0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ae974c678c4bb760a86f55f37356130a8">EPWM_OUT_NVIOL_TON</link>(ch)   OutputSignal(4,  ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a77f1fec1875ceefe40917752cbd09b59">EPWM_OUT_NVIOL_TOFF</link>(ch)   OutputSignal(5,  ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ab396437fd6b163daadd46c8e4c96566d">EPWM_OUT_NVIOL_TADJ</link>   OutputSignal(6,  0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a76a77110a70067d814c199c98b1e23a0">EPWM_OUT_TON</link>(ch)   OutputSignal(7,  ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a09cac77d2b2cf2941fa1f6bc437843dc">EPWM_OUT_TOFF</link>(ch)   OutputSignal(8,  ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a66fcc5ad1aa071a2fef9b235caabc6bb">EPWM_OUT_TADJ</link>   OutputSignal(9,  0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ac6412711d43246333201fbe6dfa5a853">EPWM_OUT_TSW</link>(ch)   OutputSignal(10, ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1ad30b8b44e4dc32d82746adcd37deeb60">EPWM_OUT_THP</link>   OutputSignal(11, 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a8a8e36416ea93f3b6d01c1df9caa102a">EPWM_OUT_TSW_SDW</link>(ch)   OutputSignal(12, ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a0e261c90fb93f98248081e934e3ae2c6">EPWM_OUT_DEBUG</link>(i)   OutputSignal(13, i)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epwm__emu_8h_1a150a7bb2f7ded50160337cae130f189b">EPWM_OUT_COUNT_DIR</link>   <link linkend="_sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">SIL_PORT_OUT</link>(<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e">SIL_OUT_CTL_CDIR</link>, 0)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_epwm__emu_8h_1a5c7955b8e45b9f13c3f3193d51c47126">EPWM_Initialize</link> (double tInit, bool isFixedRate)</para>
+</listitem>
+            <listitem><para>double <link linkend="_epwm__emu_8h_1a177a27247999a85001e98fda816cef2e">EPWM_GetNextSolverHit</link> (double tNow)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1affefd814056482f0d96b74e4e906230e">EPWM_Output</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_epwm__emu_8h_1ad6d064f34ac3f3621d40e69739eec80c">EPWM_Update</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_epwm__emu_8h_1ae4484d7085296d45e76ee9bb0b246c71">EPWM_Terminate</link> (double tNow)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a4b5f8b57993a11edcc3f8cffa01c4a11">EPWM_SetParamNumberOfChannels</link> (uint16_t nCh)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a2e9f18815e66057fa0590b9fc71fda16">EPWM_SetParamSystemClock</link> (double fClock)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a70dfae6e93d6fa3e008f7996e7edff37">EPWM_SetParamDutyCycleLimits</link> (double dUpper, double dLower)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a964710b8943a3d01a336335682c5ee37">EPWM_SetParamDeadTime</link> (double tDead)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a82f13117117e108d6c59fa49a80a20cc">EPWM_SetParamDiagTOnMin</link> (double tOnMin)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a3a75b3c7572867436bb760b0fed49ab5">EPWM_SetParamDiagTOffMin</link> (double tOffMin)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1ad7cd2dc5b0723770e28d592bf9bbf3d2">EPWM_SetParamDiagTAdjMin</link> (double tAdjMin)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a73a9cf1875fa5ec2f8b69e4928803b87">EPWM_SetParamShadowReloadBehaviourHalfPeriod</link> (int rldBehaviour)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a22e226ea489716e5fd0540b5f8eadbd4">EPWM_SetParamShadowReloadBehaviourEntryUpper</link> (int rldBehaviour)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a4e7373fac98c4cdf695a3c24180be67c">EPWM_SetParamShadowReloadBehaviourEntryLower</link> (int rldBehaviour)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1af4766dc6b350308996eb9f8d55f9ae86">EPWM_SetParamShadowReloadBehaviourUnsat</link> (int rldBehaviour)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a45d803b1d987d8dee73c012f963fe1b5">EPWM_SetParamShadowReloadBehaviourExitUpper</link> (int rldBehaviour)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1aa1c9aab58f198332effa7422252dfc44">EPWM_SetParamShadowReloadBehaviourExitLower</link> (int rldBehaviour)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a71e10cf731cbbf8cc6f8bc219cad49de">EPWM_SetParamSaturationThreshold</link> (int satUpper, int satLower)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a8d3e6fdb2fdc3f2aae24a8eafd7191b5">EPWM_SetParamAqOutputActionsEntryUpper</link> (int iBot, int iTop, int iCup, int iCdn)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a4b1d7ad5e8f9049fdc09e9917609cd3a">EPWM_SetParamAqOutputActionsEntryLower</link> (int iBot, int iTop, int iCup, int iCdn)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1adaf4b1e98a6f5dd301101e5c066774cb">EPWM_SetParamAqOutputActionsUnsat</link> (int iBot, int iTop, int iCup, int iCdn)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1af3371b648dcd7273cb1e51516a82f6c0">EPWM_SetParamAqOutputActionsExitUpper</link> (int iBot, int iTop, int iCup, int iCdn)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a676a8174ab16d206dde2c7515c2dbb3c">EPWM_SetParamAqOutputActionsExitLower</link> (int iBot, int iTop, int iCup, int iCdn)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_epwm__emu_8h_1a4d6d96ea4ff3517fec41d53226ba465f">EPWM_SetParamAverageMode</link> (bool beAverage)</para>
+</listitem>
+            <listitem><para>void <link linkend="_epwm__emu_8h_1a33638d842654de8348be285b3dcdb9fd">EPWM_SIL_writeSnapshot</link> (FILE *snapshotFile)</para>
+</listitem>
+            <listitem><para>void <link linkend="_epwm__emu_8h_1af274c8f8e3de1793cfca8b82dac0c036">EPWM_SIL_readSnapshot</link> (FILE *snapshotFile)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_epwm__emu_8h_1a48edc40b05cf8252395febfdc1c048cd"/><section>
+    <title>EPWM_AQ_HIT_TOLERANCE</title>
+<indexterm><primary>EPWM_AQ_HIT_TOLERANCE</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_AQ_HIT_TOLERANCE</secondary></indexterm>
+<para><computeroutput>#define EPWM_AQ_HIT_TOLERANCE   1e-12L</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1acc045ae80665ab61975fe457e735e450"/><section>
+    <title>EPWM_DEFAULT_FCLOCK</title>
+<indexterm><primary>EPWM_DEFAULT_FCLOCK</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_DEFAULT_FCLOCK</secondary></indexterm>
+<para><computeroutput>#define EPWM_DEFAULT_FCLOCK   150e6</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a4e53c50d692f0a67d86a8f9e6f2c0cc2"/><section>
+    <title>EPWM_DIAG_TOLERANCE</title>
+<indexterm><primary>EPWM_DIAG_TOLERANCE</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_DIAG_TOLERANCE</secondary></indexterm>
+<para><computeroutput>#define EPWM_DIAG_TOLERANCE   128.0L * DBL_EPSILON</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a102bbd510a466db8ef11bcb4bff50648"/><section>
+    <title>EPWM_DISA_HALFPERIOD</title>
+<indexterm><primary>EPWM_DISA_HALFPERIOD</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_DISA_HALFPERIOD</secondary></indexterm>
+<para><computeroutput>#define EPWM_DISA_HALFPERIOD   1.0e-3</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a5b1809ce19546bba037d3dcddc93d77d"/><section>
+    <title>EPWM_INP_HALF_PERIOD</title>
+<indexterm><primary>EPWM_INP_HALF_PERIOD</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_INP_HALF_PERIOD</secondary></indexterm>
+<para><computeroutput>#define EPWM_INP_HALF_PERIOD   <link linkend="_sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735">SIL_PORT_INP</link>(SIL_INP_REF_THP, 0)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a4dcee8b1d281d930e8df7d1e657de193"/><section>
+    <title>EPWM_INP_SWITCH_TIME</title>
+<indexterm><primary>EPWM_INP_SWITCH_TIME</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_INP_SWITCH_TIME</secondary></indexterm>
+<para><computeroutput>#define EPWM_INP_SWITCH_TIME( ch)   <link linkend="_sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735">SIL_PORT_INP</link>(SIL_INP_REF_TSW, ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1aa6a38010d4781ef1b3c08293dfbbb50a"/><section>
+    <title>EPWM_NR_CHANNELS_MAX</title>
+<indexterm><primary>EPWM_NR_CHANNELS_MAX</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_NR_CHANNELS_MAX</secondary></indexterm>
+<para><computeroutput>#define EPWM_NR_CHANNELS_MAX   6U</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a150a7bb2f7ded50160337cae130f189b"/><section>
+    <title>EPWM_OUT_COUNT_DIR</title>
+<indexterm><primary>EPWM_OUT_COUNT_DIR</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_COUNT_DIR</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_COUNT_DIR   <link linkend="_sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">SIL_PORT_OUT</link>(<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e">SIL_OUT_CTL_CDIR</link>, 0)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a0e261c90fb93f98248081e934e3ae2c6"/><section>
+    <title>EPWM_OUT_DEBUG</title>
+<indexterm><primary>EPWM_OUT_DEBUG</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_DEBUG</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_DEBUG( i)   OutputSignal(13, i)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1aae92d8f9c65e8fc09152734bd7f9e04d"/><section>
+    <title>EPWM_OUT_GATE_STATE</title>
+<indexterm><primary>EPWM_OUT_GATE_STATE</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_GATE_STATE</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_GATE_STATE( ch)   <link linkend="_sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">SIL_PORT_OUT</link>(<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53">SIL_OUT_CTL_GATE</link>, ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ab396437fd6b163daadd46c8e4c96566d"/><section>
+    <title>EPWM_OUT_NVIOL_TADJ</title>
+<indexterm><primary>EPWM_OUT_NVIOL_TADJ</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_NVIOL_TADJ</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_NVIOL_TADJ   OutputSignal(6,  0)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a77f1fec1875ceefe40917752cbd09b59"/><section>
+    <title>EPWM_OUT_NVIOL_TOFF</title>
+<indexterm><primary>EPWM_OUT_NVIOL_TOFF</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_NVIOL_TOFF</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_NVIOL_TOFF( ch)   OutputSignal(5,  ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ae974c678c4bb760a86f55f37356130a8"/><section>
+    <title>EPWM_OUT_NVIOL_TON</title>
+<indexterm><primary>EPWM_OUT_NVIOL_TON</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_NVIOL_TON</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_NVIOL_TON( ch)   OutputSignal(4,  ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a66fcc5ad1aa071a2fef9b235caabc6bb"/><section>
+    <title>EPWM_OUT_TADJ</title>
+<indexterm><primary>EPWM_OUT_TADJ</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_TADJ</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_TADJ   OutputSignal(9,  0)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ad30b8b44e4dc32d82746adcd37deeb60"/><section>
+    <title>EPWM_OUT_THP</title>
+<indexterm><primary>EPWM_OUT_THP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_THP</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_THP   OutputSignal(11, 0)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a09cac77d2b2cf2941fa1f6bc437843dc"/><section>
+    <title>EPWM_OUT_TOFF</title>
+<indexterm><primary>EPWM_OUT_TOFF</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_TOFF</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_TOFF( ch)   OutputSignal(8,  ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a76a77110a70067d814c199c98b1e23a0"/><section>
+    <title>EPWM_OUT_TON</title>
+<indexterm><primary>EPWM_OUT_TON</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_TON</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_TON( ch)   OutputSignal(7,  ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ac6412711d43246333201fbe6dfa5a853"/><section>
+    <title>EPWM_OUT_TSW</title>
+<indexterm><primary>EPWM_OUT_TSW</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_TSW</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_TSW( ch)   OutputSignal(10, ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a8a8e36416ea93f3b6d01c1df9caa102a"/><section>
+    <title>EPWM_OUT_TSW_SDW</title>
+<indexterm><primary>EPWM_OUT_TSW_SDW</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_TSW_SDW</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_TSW_SDW( ch)   OutputSignal(12, ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a118f6cee648c3f165f93cbaebebf48c5"/><section>
+    <title>EPWM_OUT_VIOL_TADJ</title>
+<indexterm><primary>EPWM_OUT_VIOL_TADJ</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_VIOL_TADJ</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_VIOL_TADJ   OutputSignal(3,  0)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a52362ccefddcf3fbc54133bd31157149"/><section>
+    <title>EPWM_OUT_VIOL_TOFF</title>
+<indexterm><primary>EPWM_OUT_VIOL_TOFF</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_VIOL_TOFF</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_VIOL_TOFF( ch)   OutputSignal(2,  ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a95ca18cbd3b8d84f5d0b0183e2d8e718"/><section>
+    <title>EPWM_OUT_VIOL_TON</title>
+<indexterm><primary>EPWM_OUT_VIOL_TON</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_OUT_VIOL_TON</secondary></indexterm>
+<para><computeroutput>#define EPWM_OUT_VIOL_TON( ch)   OutputSignal(1,  ch)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a608a4ce638cdcb888f55c3cec5bcc5d5"/><section>
+    <title>EPWM_PAR_AQC_ENTRY_LOWER_BOT</title>
+<indexterm><primary>EPWM_PAR_AQC_ENTRY_LOWER_BOT</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_ENTRY_LOWER_BOT</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_ENTRY_LOWER_BOT   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a22a8d68ba367c45bfe09352bcb313b17"/><section>
+    <title>EPWM_PAR_AQC_ENTRY_LOWER_CDN</title>
+<indexterm><primary>EPWM_PAR_AQC_ENTRY_LOWER_CDN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_ENTRY_LOWER_CDN</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_ENTRY_LOWER_CDN   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ac263d0f77ad14c488ff01af40adf4ac9"/><section>
+    <title>EPWM_PAR_AQC_ENTRY_LOWER_CUP</title>
+<indexterm><primary>EPWM_PAR_AQC_ENTRY_LOWER_CUP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_ENTRY_LOWER_CUP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_ENTRY_LOWER_CUP   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1aa3f04a5a47f60da32d982e41ec0da360"/><section>
+    <title>EPWM_PAR_AQC_ENTRY_LOWER_TOP</title>
+<indexterm><primary>EPWM_PAR_AQC_ENTRY_LOWER_TOP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_ENTRY_LOWER_TOP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_ENTRY_LOWER_TOP   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a5b86c8476bf383e0ad1c84f8f8486802"/><section>
+    <title>EPWM_PAR_AQC_ENTRY_UPPER_BOT</title>
+<indexterm><primary>EPWM_PAR_AQC_ENTRY_UPPER_BOT</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_ENTRY_UPPER_BOT</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_ENTRY_UPPER_BOT   2</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a8d0254048f02dfdced9015a710aa93d1"/><section>
+    <title>EPWM_PAR_AQC_ENTRY_UPPER_CDN</title>
+<indexterm><primary>EPWM_PAR_AQC_ENTRY_UPPER_CDN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_ENTRY_UPPER_CDN</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_ENTRY_UPPER_CDN   2</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a61dd51c7ea020fb7b75374037013352e"/><section>
+    <title>EPWM_PAR_AQC_ENTRY_UPPER_CUP</title>
+<indexterm><primary>EPWM_PAR_AQC_ENTRY_UPPER_CUP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_ENTRY_UPPER_CUP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_ENTRY_UPPER_CUP   2</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1aac1151b5838fca413eff5ca107f1b840"/><section>
+    <title>EPWM_PAR_AQC_ENTRY_UPPER_TOP</title>
+<indexterm><primary>EPWM_PAR_AQC_ENTRY_UPPER_TOP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_ENTRY_UPPER_TOP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_ENTRY_UPPER_TOP   2</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ae9a623b5e94503b12b93d59f433cfff5"/><section>
+    <title>EPWM_PAR_AQC_EXIT_LOWER_BOT</title>
+<indexterm><primary>EPWM_PAR_AQC_EXIT_LOWER_BOT</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_EXIT_LOWER_BOT</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_EXIT_LOWER_BOT   2</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ac45cf06d2744fcc41a000d7ef3acb28c"/><section>
+    <title>EPWM_PAR_AQC_EXIT_LOWER_CDN</title>
+<indexterm><primary>EPWM_PAR_AQC_EXIT_LOWER_CDN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_EXIT_LOWER_CDN</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_EXIT_LOWER_CDN   2</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a93927abccee4d059ea61df82969db789"/><section>
+    <title>EPWM_PAR_AQC_EXIT_LOWER_CUP</title>
+<indexterm><primary>EPWM_PAR_AQC_EXIT_LOWER_CUP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_EXIT_LOWER_CUP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_EXIT_LOWER_CUP   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1abd9f5d1e16fca7c2600355399058e87a"/><section>
+    <title>EPWM_PAR_AQC_EXIT_LOWER_TOP</title>
+<indexterm><primary>EPWM_PAR_AQC_EXIT_LOWER_TOP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_EXIT_LOWER_TOP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_EXIT_LOWER_TOP   0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a3daaaafc1551a95c4bb0d82f6b5092e9"/><section>
+    <title>EPWM_PAR_AQC_EXIT_UPPER_BOT</title>
+<indexterm><primary>EPWM_PAR_AQC_EXIT_UPPER_BOT</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_EXIT_UPPER_BOT</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_EXIT_UPPER_BOT   0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a68bfb44765cb37b1108cc4256d173514"/><section>
+    <title>EPWM_PAR_AQC_EXIT_UPPER_CDN</title>
+<indexterm><primary>EPWM_PAR_AQC_EXIT_UPPER_CDN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_EXIT_UPPER_CDN</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_EXIT_UPPER_CDN   2</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1af5bf296b3bc2237369daaaa832db3594"/><section>
+    <title>EPWM_PAR_AQC_EXIT_UPPER_CUP</title>
+<indexterm><primary>EPWM_PAR_AQC_EXIT_UPPER_CUP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_EXIT_UPPER_CUP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_EXIT_UPPER_CUP   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a398cfda199f5651ba5d4ba4585711a37"/><section>
+    <title>EPWM_PAR_AQC_EXIT_UPPER_TOP</title>
+<indexterm><primary>EPWM_PAR_AQC_EXIT_UPPER_TOP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_EXIT_UPPER_TOP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_EXIT_UPPER_TOP   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a66702811d9737e883ef3ed460d3b43fe"/><section>
+    <title>EPWM_PAR_AQC_UNSAT_BOT</title>
+<indexterm><primary>EPWM_PAR_AQC_UNSAT_BOT</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_UNSAT_BOT</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_UNSAT_BOT   0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a3950b872d3d00040754bd1d1f6b98add"/><section>
+    <title>EPWM_PAR_AQC_UNSAT_CDN</title>
+<indexterm><primary>EPWM_PAR_AQC_UNSAT_CDN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_UNSAT_CDN</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_UNSAT_CDN   2</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a33e27916bc59862bb6099e721d4568e5"/><section>
+    <title>EPWM_PAR_AQC_UNSAT_CUP</title>
+<indexterm><primary>EPWM_PAR_AQC_UNSAT_CUP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_UNSAT_CUP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_UNSAT_CUP   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ad049c2df441cbe2291afbf79a0cde880"/><section>
+    <title>EPWM_PAR_AQC_UNSAT_TOP</title>
+<indexterm><primary>EPWM_PAR_AQC_UNSAT_TOP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AQC_UNSAT_TOP</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AQC_UNSAT_TOP   0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a9afc4f7ad80352fa8d100b777e7f1a48"/><section>
+    <title>EPWM_PAR_AVERAGE_MODE</title>
+<indexterm><primary>EPWM_PAR_AVERAGE_MODE</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_AVERAGE_MODE</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_AVERAGE_MODE   false</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a51695a423cdd884f317ea93ce8902e77"/><section>
+    <title>EPWM_PAR_DIAG_TADJ_CHANS</title>
+<indexterm><primary>EPWM_PAR_DIAG_TADJ_CHANS</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_DIAG_TADJ_CHANS</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_DIAG_TADJ_CHANS( j)   1</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a306af69694a3bcf0a4eb0d37ba1ba87f"/><section>
+    <title>EPWM_PAR_DIAG_TADJ_CHANS_SZ</title>
+<indexterm><primary>EPWM_PAR_DIAG_TADJ_CHANS_SZ</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_DIAG_TADJ_CHANS_SZ</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_DIAG_TADJ_CHANS_SZ   0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a88c8a9caaa3354cf34c1095a75b1e97e"/><section>
+    <title>EPWM_PAR_DIAG_TADJ_MIN</title>
+<indexterm><primary>EPWM_PAR_DIAG_TADJ_MIN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_DIAG_TADJ_MIN</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_DIAG_TADJ_MIN   2.0e-6</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ae16da2a7eed4a95836e7e08ef765229d"/><section>
+    <title>EPWM_PAR_DIAG_TOFF_MIN</title>
+<indexterm><primary>EPWM_PAR_DIAG_TOFF_MIN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_DIAG_TOFF_MIN</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_DIAG_TOFF_MIN   4.0e-6</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a7160a0f9d7b1f53b62aede5457004342"/><section>
+    <title>EPWM_PAR_DIAG_TON_MIN</title>
+<indexterm><primary>EPWM_PAR_DIAG_TON_MIN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_DIAG_TON_MIN</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_DIAG_TON_MIN   4.0e-6</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a0f4016cd641bd52d8926a95b3500c99a"/><section>
+    <title>EPWM_PAR_DTY_LOWER</title>
+<indexterm><primary>EPWM_PAR_DTY_LOWER</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_DTY_LOWER</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_DTY_LOWER   -1.0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a836edba9e67d05644cd0d9401f43bd9b"/><section>
+    <title>EPWM_PAR_DTY_UPPER</title>
+<indexterm><primary>EPWM_PAR_DTY_UPPER</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_DTY_UPPER</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_DTY_UPPER   1.0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1aa806befd507f48e3f9f1810cbfd544d9"/><section>
+    <title>EPWM_PAR_RLD_ENTRY_LOWER</title>
+<indexterm><primary>EPWM_PAR_RLD_ENTRY_LOWER</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_RLD_ENTRY_LOWER</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_RLD_ENTRY_LOWER   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1af2bcdd2ad30f8d1f459183948eb770ad"/><section>
+    <title>EPWM_PAR_RLD_ENTRY_UPPER</title>
+<indexterm><primary>EPWM_PAR_RLD_ENTRY_UPPER</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_RLD_ENTRY_UPPER</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_RLD_ENTRY_UPPER   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a397ec38883ae143989940eb08aeb71f5"/><section>
+    <title>EPWM_PAR_RLD_EXIT_LOWER</title>
+<indexterm><primary>EPWM_PAR_RLD_EXIT_LOWER</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_RLD_EXIT_LOWER</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_RLD_EXIT_LOWER   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ab1c60ea7f60cd718738d39c8bc4bdba5"/><section>
+    <title>EPWM_PAR_RLD_EXIT_UPPER</title>
+<indexterm><primary>EPWM_PAR_RLD_EXIT_UPPER</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_RLD_EXIT_UPPER</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_RLD_EXIT_UPPER   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a6701b0e37cfc727238cba504feeef5e5"/><section>
+    <title>EPWM_PAR_RLD_HALF_PERIOD</title>
+<indexterm><primary>EPWM_PAR_RLD_HALF_PERIOD</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_RLD_HALF_PERIOD</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_RLD_HALF_PERIOD   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48aeed717fcbc27d06e8d98be19f7612df8">EPWM_SHADOW_RELOAD_BOT</link></computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ac4723948c31a93073469e1f3891502f0"/><section>
+    <title>EPWM_PAR_RLD_UNSAT</title>
+<indexterm><primary>EPWM_PAR_RLD_UNSAT</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_RLD_UNSAT</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_RLD_UNSAT   <link linkend="_epwm__emu_8c_1af8f54fa54db5191308ffc630d2063c48a096d6401971013cf010976eb6112ef45">EPWM_SHADOW_RELOAD_BOTH</link></computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a735e00e6c5df088fc4062f58f7bfc4a2"/><section>
+    <title>EPWM_PAR_SAT_LOWER</title>
+<indexterm><primary>EPWM_PAR_SAT_LOWER</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_SAT_LOWER</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_SAT_LOWER   0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ac6353b83e30029d44c4730f341b34bd4"/><section>
+    <title>EPWM_PAR_SAT_UPPER</title>
+<indexterm><primary>EPWM_PAR_SAT_UPPER</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_PAR_SAT_UPPER</secondary></indexterm>
+<para><computeroutput>#define EPWM_PAR_SAT_UPPER   0</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a5df749f08075143ee95ee01b7c531510"/><section>
+    <title>EPWM_TB_COUNTING_DN</title>
+<indexterm><primary>EPWM_TB_COUNTING_DN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_TB_COUNTING_DN</secondary></indexterm>
+<para><computeroutput>#define EPWM_TB_COUNTING_DN   false</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a26cd066448b5ccfdcddd605f20e95f1e"/><section>
+    <title>EPWM_TB_COUNTING_UP</title>
+<indexterm><primary>EPWM_TB_COUNTING_UP</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_TB_COUNTING_UP</secondary></indexterm>
+<para><computeroutput>#define EPWM_TB_COUNTING_UP   true</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1acb5e47eb7495810252e6c99a8174ae39"/><section>
+    <title>EPWM_THP_INI</title>
+<indexterm><primary>EPWM_THP_INI</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_THP_INI</secondary></indexterm>
+<para><computeroutput>#define EPWM_THP_INI   65000</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a522adc846f7e5f88f5025ae72d69f01d"/><section>
+    <title>EPWM_THP_MIN</title>
+<indexterm><primary>EPWM_THP_MIN</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_THP_MIN</secondary></indexterm>
+<para><computeroutput>#define EPWM_THP_MIN   100</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_epwm__emu_8h_1a177a27247999a85001e98fda816cef2e"/><section>
+    <title>EPWM_GetNextSolverHit()</title>
+<indexterm><primary>EPWM_GetNextSolverHit</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_GetNextSolverHit</secondary></indexterm>
+<para><computeroutput>double EPWM_GetNextSolverHit (double tNow)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a5c7955b8e45b9f13c3f3193d51c47126"/><section>
+    <title>EPWM_Initialize()</title>
+<indexterm><primary>EPWM_Initialize</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_Initialize</secondary></indexterm>
+<para><computeroutput>void EPWM_Initialize (double tInit, bool isFixedRate)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1affefd814056482f0d96b74e4e906230e"/><section>
+    <title>EPWM_Output()</title>
+<indexterm><primary>EPWM_Output</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_Output</secondary></indexterm>
+<para><computeroutput>bool EPWM_Output (double tNow)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a4b1d7ad5e8f9049fdc09e9917609cd3a"/><section>
+    <title>EPWM_SetParamAqOutputActionsEntryLower()</title>
+<indexterm><primary>EPWM_SetParamAqOutputActionsEntryLower</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamAqOutputActionsEntryLower</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamAqOutputActionsEntryLower (int iBot, int iTop, int iCup, int iCdn)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a8d3e6fdb2fdc3f2aae24a8eafd7191b5"/><section>
+    <title>EPWM_SetParamAqOutputActionsEntryUpper()</title>
+<indexterm><primary>EPWM_SetParamAqOutputActionsEntryUpper</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamAqOutputActionsEntryUpper</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamAqOutputActionsEntryUpper (int iBot, int iTop, int iCup, int iCdn)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a676a8174ab16d206dde2c7515c2dbb3c"/><section>
+    <title>EPWM_SetParamAqOutputActionsExitLower()</title>
+<indexterm><primary>EPWM_SetParamAqOutputActionsExitLower</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamAqOutputActionsExitLower</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamAqOutputActionsExitLower (int iBot, int iTop, int iCup, int iCdn)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1af3371b648dcd7273cb1e51516a82f6c0"/><section>
+    <title>EPWM_SetParamAqOutputActionsExitUpper()</title>
+<indexterm><primary>EPWM_SetParamAqOutputActionsExitUpper</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamAqOutputActionsExitUpper</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamAqOutputActionsExitUpper (int iBot, int iTop, int iCup, int iCdn)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1adaf4b1e98a6f5dd301101e5c066774cb"/><section>
+    <title>EPWM_SetParamAqOutputActionsUnsat()</title>
+<indexterm><primary>EPWM_SetParamAqOutputActionsUnsat</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamAqOutputActionsUnsat</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamAqOutputActionsUnsat (int iBot, int iTop, int iCup, int iCdn)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a4d6d96ea4ff3517fec41d53226ba465f"/><section>
+    <title>EPWM_SetParamAverageMode()</title>
+<indexterm><primary>EPWM_SetParamAverageMode</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamAverageMode</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamAverageMode (bool beAverage)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a964710b8943a3d01a336335682c5ee37"/><section>
+    <title>EPWM_SetParamDeadTime()</title>
+<indexterm><primary>EPWM_SetParamDeadTime</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamDeadTime</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamDeadTime (double tDead)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ad7cd2dc5b0723770e28d592bf9bbf3d2"/><section>
+    <title>EPWM_SetParamDiagTAdjMin()</title>
+<indexterm><primary>EPWM_SetParamDiagTAdjMin</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamDiagTAdjMin</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamDiagTAdjMin (double tAdjMin)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a3a75b3c7572867436bb760b0fed49ab5"/><section>
+    <title>EPWM_SetParamDiagTOffMin()</title>
+<indexterm><primary>EPWM_SetParamDiagTOffMin</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamDiagTOffMin</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamDiagTOffMin (double tOffMin)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a82f13117117e108d6c59fa49a80a20cc"/><section>
+    <title>EPWM_SetParamDiagTOnMin()</title>
+<indexterm><primary>EPWM_SetParamDiagTOnMin</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamDiagTOnMin</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamDiagTOnMin (double tOnMin)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a70dfae6e93d6fa3e008f7996e7edff37"/><section>
+    <title>EPWM_SetParamDutyCycleLimits()</title>
+<indexterm><primary>EPWM_SetParamDutyCycleLimits</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamDutyCycleLimits</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamDutyCycleLimits (double dUpper, double dLower)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a4b5f8b57993a11edcc3f8cffa01c4a11"/><section>
+    <title>EPWM_SetParamNumberOfChannels()</title>
+<indexterm><primary>EPWM_SetParamNumberOfChannels</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamNumberOfChannels</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamNumberOfChannels (uint16_t nCh)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a71e10cf731cbbf8cc6f8bc219cad49de"/><section>
+    <title>EPWM_SetParamSaturationThreshold()</title>
+<indexterm><primary>EPWM_SetParamSaturationThreshold</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamSaturationThreshold</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamSaturationThreshold (int satUpper, int satLower)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a4e7373fac98c4cdf695a3c24180be67c"/><section>
+    <title>EPWM_SetParamShadowReloadBehaviourEntryLower()</title>
+<indexterm><primary>EPWM_SetParamShadowReloadBehaviourEntryLower</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamShadowReloadBehaviourEntryLower</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamShadowReloadBehaviourEntryLower (int rldBehaviour)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a22e226ea489716e5fd0540b5f8eadbd4"/><section>
+    <title>EPWM_SetParamShadowReloadBehaviourEntryUpper()</title>
+<indexterm><primary>EPWM_SetParamShadowReloadBehaviourEntryUpper</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamShadowReloadBehaviourEntryUpper</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamShadowReloadBehaviourEntryUpper (int rldBehaviour)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1aa1c9aab58f198332effa7422252dfc44"/><section>
+    <title>EPWM_SetParamShadowReloadBehaviourExitLower()</title>
+<indexterm><primary>EPWM_SetParamShadowReloadBehaviourExitLower</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamShadowReloadBehaviourExitLower</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamShadowReloadBehaviourExitLower (int rldBehaviour)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a45d803b1d987d8dee73c012f963fe1b5"/><section>
+    <title>EPWM_SetParamShadowReloadBehaviourExitUpper()</title>
+<indexterm><primary>EPWM_SetParamShadowReloadBehaviourExitUpper</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamShadowReloadBehaviourExitUpper</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamShadowReloadBehaviourExitUpper (int rldBehaviour)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a73a9cf1875fa5ec2f8b69e4928803b87"/><section>
+    <title>EPWM_SetParamShadowReloadBehaviourHalfPeriod()</title>
+<indexterm><primary>EPWM_SetParamShadowReloadBehaviourHalfPeriod</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamShadowReloadBehaviourHalfPeriod</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamShadowReloadBehaviourHalfPeriod (int rldBehaviour)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1af4766dc6b350308996eb9f8d55f9ae86"/><section>
+    <title>EPWM_SetParamShadowReloadBehaviourUnsat()</title>
+<indexterm><primary>EPWM_SetParamShadowReloadBehaviourUnsat</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamShadowReloadBehaviourUnsat</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamShadowReloadBehaviourUnsat (int rldBehaviour)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a2e9f18815e66057fa0590b9fc71fda16"/><section>
+    <title>EPWM_SetParamSystemClock()</title>
+<indexterm><primary>EPWM_SetParamSystemClock</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SetParamSystemClock</secondary></indexterm>
+<para><computeroutput>bool EPWM_SetParamSystemClock (double fClock)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1af274c8f8e3de1793cfca8b82dac0c036"/><section>
+    <title>EPWM_SIL_readSnapshot()</title>
+<indexterm><primary>EPWM_SIL_readSnapshot</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SIL_readSnapshot</secondary></indexterm>
+<para><computeroutput>void EPWM_SIL_readSnapshot (FILE * snapshotFile)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1a33638d842654de8348be285b3dcdb9fd"/><section>
+    <title>EPWM_SIL_writeSnapshot()</title>
+<indexterm><primary>EPWM_SIL_writeSnapshot</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_SIL_writeSnapshot</secondary></indexterm>
+<para><computeroutput>void EPWM_SIL_writeSnapshot (FILE * snapshotFile)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ae4484d7085296d45e76ee9bb0b246c71"/><section>
+    <title>EPWM_Terminate()</title>
+<indexterm><primary>EPWM_Terminate</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_Terminate</secondary></indexterm>
+<para><computeroutput>void EPWM_Terminate (double tNow)</computeroutput></para></section>
+<anchor xml:id="_epwm__emu_8h_1ad6d064f34ac3f3621d40e69739eec80c"/><section>
+    <title>EPWM_Update()</title>
+<indexterm><primary>EPWM_Update</primary><secondary>epwm_emu.h</secondary></indexterm>
+<indexterm><primary>epwm_emu.h</primary><secondary>EPWM_Update</secondary></indexterm>
+<para><computeroutput>void EPWM_Update (double tNow)</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_dsp_intr__emu_8c" kind="file" language="C++">
+    <compoundname>DspIntr_emu.c</compoundname>
+    <includes local="no">stdint.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>sil/emu/DspIntr_emu.c</label>
+        <link refid="_dsp_intr__emu_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_dsp_intr__emu_8c_1a1790c0117f7106f597b3540ba57df515" prot="public" static="no" mutable="no">
+        <type>cregister volatile unsigned int</type>
+        <definition>cregister volatile unsigned int IFR</definition>
+        <argsstring></argsstring>
+        <name>IFR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/DspIntr_emu.c" line="3" column="34" bodyfile="sil/emu/DspIntr_emu.c" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_dsp_intr__emu_8c_1a8d912c89db0fb8d197e5856f05ce4907" prot="public" static="no" mutable="no">
+        <type>cregister volatile unsigned int</type>
+        <definition>cregister volatile unsigned int IER</definition>
+        <argsstring></argsstring>
+        <name>IER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/DspIntr_emu.c" line="4" column="34" bodyfile="sil/emu/DspIntr_emu.c" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">cregister<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="_dsp_intr__emu_8c_1a1790c0117f7106f597b3540ba57df515" kindref="member">IFR</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">cregister<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="_dsp_intr__emu_8c_1a8d912c89db0fb8d197e5856f05ce4907" kindref="member">IER</ref>;</highlight></codeline>
+    </programlisting>
+    <location file="sil/emu/DspIntr_emu.c"/>
+  </compounddef>
+</doxygen>

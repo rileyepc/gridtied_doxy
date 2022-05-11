@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dll_epc_control_8cpp" kind="file" language="C++">
+    <compoundname>dllEpcControl.cpp</compoundname>
+    <includes refid="dll_epc_control_8h" local="yes">dllEpcControl.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>libEpcControl.h</label>
+        <link refid="lib_epc_control_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp</label>
+        <link refid="dll_epc_control_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dllEpcControl.h</label>
+        <link refid="dll_epc_control_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>float.h</label>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="6">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="dll_epc_control_8cpp_1a6342e8eb4f45e10fba6a6a4c2869029a" prot="public" static="no" mutable="no">
+        <type><ref refid="dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca" kindref="member">SIL_LIBRARY_DLL</ref> <ref refid="lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9" kindref="member">SIL_sPorts_t</ref> *</type>
+        <definition>SIL_LIBRARY_DLL SIL_sPorts_t* SIL_PortsDll</definition>
+        <argsstring></argsstring>
+        <name>SIL_PortsDll</name>
+        <initializer>= &amp;<ref refid="lib_epc_control_8h_1aa8c520d7306f12a6098f3cb4fdd3d1ea" kindref="member">SIL_Ports</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" line="65" column="34" bodyfile="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dll_epc_control_8cpp_1a289ad72e687c7381255a91e59c12764a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SIL_initializeLibraryDll</definition>
+        <argsstring>(double tStep, SIL_eSolverType_t solverType, SIL_eModelIntent_t mdlIntent, char *pmvsPath)</argsstring>
+        <name>SIL_initializeLibraryDll</name>
+        <param>
+          <type>double</type>
+          <declname>tStep</declname>
+        </param>
+        <param>
+          <type><ref refid="lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b" kindref="member">SIL_eSolverType_t</ref></type>
+          <declname>solverType</declname>
+        </param>
+        <param>
+          <type><ref refid="lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01" kindref="member">SIL_eModelIntent_t</ref></type>
+          <declname>mdlIntent</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>pmvsPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" line="96" column="6" bodyfile="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="dll_epc_control_8cpp_1a7b5796b8060e27bb9c911ad0f1094275" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SIL_updateOutputDll</definition>
+        <argsstring>(double tNow)</argsstring>
+        <name>SIL_updateOutputDll</name>
+        <param>
+          <type>double</type>
+          <declname>tNow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" line="113" column="6" bodyfile="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" bodystart="113" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="dll_epc_control_8cpp_1acdd850a2ed7c3544fce1632cbfb7d55b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SIL_updateStateDll</definition>
+        <argsstring>(double tNow)</argsstring>
+        <name>SIL_updateStateDll</name>
+        <param>
+          <type>double</type>
+          <declname>tNow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" line="130" column="6" bodyfile="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" bodystart="130" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="dll_epc_control_8cpp_1a11f1643a802279df17997436b335fdd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SIL_writeSnapshotDll</definition>
+        <argsstring>(double tNow, uint16_t instanceNumber, char *tempPath)</argsstring>
+        <name>SIL_writeSnapshotDll</name>
+        <param>
+          <type>double</type>
+          <declname>tNow</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>instanceNumber</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>tempPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" line="149" column="6" bodyfile="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" bodystart="149" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="dll_epc_control_8cpp_1afbdcec4e2cd26b79b8ea364c524738bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SIL_readSnapshotDll</definition>
+        <argsstring>(uint16_t instanceNumber, char *tempPath)</argsstring>
+        <name>SIL_readSnapshotDll</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>instanceNumber</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>tempPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" line="167" column="6" bodyfile="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp" bodystart="167" bodyend="169"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/><sp/>#########<sp/><sp/><sp/>########<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/>#########<sp/><sp/><sp/>#######</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/>##</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/>#<sp/>########<sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/><sp/><sp/><sp/>##<sp/><sp/>##<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/><sp/>#########<sp/><sp/><sp/>#<sp/>########<sp/><sp/><sp/><sp/>#########<sp/><sp/>##<sp/>######<sp/><sp/><sp/><sp/><sp/><sp/>#######<sp/><sp/><sp/><sp/><sp/>######<sp/><sp/>######<sp/><sp/><sp/><sp/>#########<sp/><sp/>##</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>##</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COMPANY<sp/>CONFIDENTIAL</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>document<sp/>contains<sp/>information<sp/>proprietary<sp/>to<sp/>EPC<sp/>Power.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>is<sp/>an<sp/>unpublished<sp/>work<sp/>subject<sp/>to<sp/>trade<sp/>secret<sp/>and<sp/>copyright<sp/>protection.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>addition,<sp/>the<sp/>information<sp/>may<sp/>be<sp/>the<sp/>subject<sp/>of<sp/>patent<sp/>applications</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>United<sp/>States<sp/>and<sp/>foreign<sp/>countries.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>M<sp/>O<sp/>D<sp/>U<sp/>L<sp/>E<sp/><sp/><sp/><sp/>D<sp/>E<sp/>S<sp/>C<sp/>R<sp/>I<sp/>P<sp/>T<sp/>I<sp/>O<sp/>N</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Filename<sp/><sp/><sp/><sp/><sp/>:<sp/>dllEpcControl.c</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>Full<sp/>Name<sp/><sp/><sp/><sp/>:<sp/>Package::SubPackage::..::Class</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Prefix<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>Description<sp/><sp/>:<sp/>DLL<sp/>wrapper<sp/>for<sp/>the<sp/>SIL<sp/>library.<sp/>This<sp/>wrapper<sp/>is<sp/>an<sp/>intermediate<sp/>component<sp/>between</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>SIL<sp/>library<sp/>static<sp/>library<sp/>and<sp/>the<sp/>program<sp/>calling<sp/>the<sp/>DLL.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Janne<sp/>Hellberg</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>History<sp/><sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>Date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Description</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>05.01.2022<sp/><sp/><sp/>J.Hellberg<sp/><sp/><sp/><sp/><sp/><sp/>Initial<sp/>Version</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">*<sp/>Include<sp/>Files</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dll_epc_control_8h" kindref="compound">dllEpcControl.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">*<sp/>Constant<sp/>Defines</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="51"><highlight class="comment">*<sp/>Macro<sp/>Defines</highlight></codeline>
+<codeline lineno="52"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">*<sp/>Type<sp/>Definitions</highlight></codeline>
+<codeline lineno="56"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="59"><highlight class="comment">*<sp/>Imported<sp/>Variables</highlight></codeline>
+<codeline lineno="60"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="63"><highlight class="comment">*<sp/>Global<sp/>Variable<sp/>Declarations</highlight></codeline>
+<codeline lineno="64"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="dll_epc_control_8h_1ae5c1e5023687ade294eb989f50d601ca" kindref="member">SIL_LIBRARY_DLL</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_i_l___ports__s" kindref="compound">SIL_sPorts_t</ref>*<sp/><ref refid="dll_epc_control_8cpp_1a6342e8eb4f45e10fba6a6a4c2869029a" kindref="member">SIL_PortsDll</ref><sp/>=<sp/>&amp;<ref refid="lib_epc_control_8c_1aa8c520d7306f12a6098f3cb4fdd3d1ea" kindref="member">SIL_Ports</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>PSCAD<sp/>C<sp/>wrapper<sp/>needs<sp/>to<sp/>access</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIL_ports<sp/>so<sp/>we<sp/>need<sp/>a<sp/>pointer<sp/>which</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>exported<sp/>from<sp/>the<sp/>DLL.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="71"><highlight class="comment">*<sp/>Imported<sp/>Functions</highlight></codeline>
+<codeline lineno="72"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="75"><highlight class="comment">*<sp/>Forward<sp/>Declarations</highlight></codeline>
+<codeline lineno="76"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="79"><highlight class="comment">*<sp/>Local<sp/>Functions</highlight></codeline>
+<codeline lineno="80"><highlight class="comment">********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>SIL_initializeLibraryDll</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>tStep<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>requested<sp/>simulation<sp/>timestep<sp/>[s],</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>solverType<sp/><sp/>-<sp/>enumerated<sp/>selection<sp/>indicating<sp/>solver<sp/>capabilities<sp/>[-],</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mdlIntent<sp/><sp/><sp/>-<sp/>enumerated<sp/>selection<sp/>indicating<sp/>model<sp/>intent<sp/>[-],</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bridgeType<sp/><sp/>-<sp/>enumerated<sp/>selection<sp/>indicating<sp/>EPC<sp/>Power<sp/>Bridge<sp/>type<sp/>[-],</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmvsPath<sp/><sp/><sp/><sp/>-<sp/>path<sp/>to<sp/>PMVS<sp/>file.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Calls<sp/>SIL_initializeLibrary<sp/>function<sp/>from<sp/>the<sp/>static<sp/>SIL<sp/>library.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dll_epc_control_8cpp_1a289ad72e687c7381255a91e59c12764a" kindref="member">SIL_initializeLibraryDll</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tStep,<sp/><ref refid="lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b" kindref="member">SIL_eSolverType_t</ref><sp/>solverType,<sp/><ref refid="lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01" kindref="member">SIL_eModelIntent_t</ref><sp/>mdlIntent,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pmvsPath)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1ab81a90ab6353010bbcbfbe378b6c133b" kindref="member">SIL_initializeLibrary</ref>(tStep,<sp/>solverType,<sp/>mdlIntent,<sp/>pmvsPath);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>SIL_updateOutputDll</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"></highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>tNow<sp/><sp/><sp/><sp/>-<sp/>absolute<sp/>simulation<sp/>time<sp/>at<sp/>instant<sp/>of<sp/>call<sp/>[s].</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Calls<sp/>SIL_updateOutput<sp/>function<sp/>from<sp/>the<sp/>static<sp/>SIL<sp/>library.</highlight></codeline>
+<codeline lineno="112"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dll_epc_control_8cpp_1a7b5796b8060e27bb9c911ad0f1094275" kindref="member">SIL_updateOutputDll</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1a4516f98eb48b67f3cfac58f6f506395b" kindref="member">SIL_updateOutput</ref>(tNow);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>SIL_updateStateDll</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"></highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>tNow<sp/><sp/><sp/><sp/>-<sp/>absolute<sp/>simulation<sp/>time<sp/>at<sp/>instant<sp/>of<sp/>call<sp/>[s].</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Calls<sp/>SIL_updateState<sp/>function<sp/>from<sp/>the<sp/>static<sp/>SIL<sp/>library.</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dll_epc_control_8cpp_1acdd850a2ed7c3544fce1632cbfb7d55b" kindref="member">SIL_updateStateDll</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1a4bba7ed7d059aaea97ea7739d4a8aadf" kindref="member">SIL_updateState</ref>(tNow);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>SIL_writeSnapshotDll</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"></highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>tNow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>absolute<sp/>simulation<sp/>time<sp/>at<sp/>instant<sp/>of<sp/>call<sp/>[s]</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>instanceNumber<sp/><sp/>-<sp/>Instance<sp/>number,<sp/>the<sp/>first<sp/>instance<sp/>has<sp/>a<sp/>number<sp/>of<sp/>1</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempPath<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Path<sp/>to<sp/>a<sp/>temporary<sp/>folder<sp/>where<sp/>snapshot<sp/>files<sp/>will<sp/>be<sp/>written</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Calls<sp/>SIL_writeSnapshot<sp/>function<sp/>from<sp/>the<sp/>static<sp/>SIL<sp/>library.</highlight></codeline>
+<codeline lineno="148"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dll_epc_control_8cpp_1a11f1643a802279df17997436b335fdd1" kindref="member">SIL_writeSnapshotDll</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tNow,<sp/>uint16_t<sp/>instanceNumber,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tempPath)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1a5509b491627e5f7ee27c25815ac07c48" kindref="member">SIL_writeSnapshot</ref>(tNow,<sp/>instanceNumber,<sp/>tempPath);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>Function<sp/><sp/><sp/><sp/><sp/>:<sp/>SIL_readSnapshotDll</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"></highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>instanceNumber<sp/><sp/>-<sp/>Instance<sp/>number,<sp/>the<sp/>first<sp/>instance<sp/>has<sp/>a<sp/>number<sp/>of<sp/>1</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempPath<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Path<sp/>to<sp/>a<sp/>temporary<sp/>folder<sp/>where<sp/>snapshot<sp/>files<sp/>are<sp/>located</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>Description<sp/><sp/>:<sp/>Calls<sp/>SIL_readSnapshot<sp/>function<sp/>from<sp/>the<sp/>static<sp/>SIL<sp/>library.</highlight></codeline>
+<codeline lineno="166"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dll_epc_control_8cpp_1afbdcec4e2cd26b79b8ea364c524738bc" kindref="member">SIL_readSnapshotDll</ref>(uint16_t<sp/>instanceNumber,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tempPath)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lib_epc_control_8c_1a296ff2009cd74a2c451a2bcded01dff7" kindref="member">SIL_readSnapshot</ref>(instanceNumber,<sp/>tempPath);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Following<sp/>functions<sp/>are<sp/>not<sp/>available<sp/>in<sp/>standard<sp/>libraries<sp/>prior<sp/>to<sp/>Visual<sp/>Studio<sp/>2013.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_MSC_VER)<sp/>&amp;&amp;<sp/>(<sp/>_MSC_VER<sp/>&lt;<sp/>1800)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="177"><highlight class="comment">Function<sp/><sp/><sp/><sp/><sp/>:<sp/>round</highlight></codeline>
+<codeline lineno="178"><highlight class="comment">Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"></highlight></codeline>
+<codeline lineno="180"><highlight class="comment">In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>val<sp/><sp/><sp/>-<sp/>Value<sp/>to<sp/>be<sp/>rounded</highlight></codeline>
+<codeline lineno="181"><highlight class="comment">InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="182"><highlight class="comment">Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="183"><highlight class="comment">Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Rounded<sp/>value</highlight></codeline>
+<codeline lineno="184"><highlight class="comment">Description<sp/><sp/>:<sp/>Rounds<sp/>given<sp/>input<sp/>value<sp/>to<sp/>the<sp/>nearest<sp/>integer<sp/>value.<sp/>This<sp/>function<sp/>is<sp/>available<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>standard<sp/>library<sp/>since<sp/>C99.<sp/>Visual<sp/>Studio<sp/>prior<sp/>to<sp/>2013<sp/>does<sp/>not<sp/>support<sp/>C99.</highlight></codeline>
+<codeline lineno="186"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>round(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val)<sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)((val<sp/>&lt;<sp/>0)<sp/>?<sp/>(ceil((val)-0.5))<sp/>:<sp/>(floor((val)+0.5)));</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="195"><highlight class="comment">Function<sp/><sp/><sp/><sp/><sp/>:<sp/>roundf</highlight></codeline>
+<codeline lineno="196"><highlight class="comment">Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"></highlight></codeline>
+<codeline lineno="198"><highlight class="comment">In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>val<sp/><sp/><sp/>-<sp/>Value<sp/>to<sp/>be<sp/>rounded</highlight></codeline>
+<codeline lineno="199"><highlight class="comment">InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="200"><highlight class="comment">Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="201"><highlight class="comment">Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Rounded<sp/>value</highlight></codeline>
+<codeline lineno="202"><highlight class="comment">Description<sp/><sp/>:<sp/>Rounds<sp/>given<sp/>input<sp/>value<sp/>to<sp/>the<sp/>nearest<sp/>integer<sp/>value.<sp/>This<sp/>function<sp/>is<sp/>available<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>standard<sp/>library<sp/>since<sp/>C99.<sp/>Visual<sp/>Studio<sp/>prior<sp/>to<sp/>2013<sp/>does<sp/>not<sp/>support<sp/>C99.</highlight></codeline>
+<codeline lineno="204"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>roundf(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>val)<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)((val<sp/>&lt;<sp/>0)<sp/>?<sp/>(ceil((val)-0.5))<sp/>:<sp/>(floor((val)+0.5)));</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="213"><highlight class="comment">Function<sp/><sp/><sp/><sp/><sp/>:<sp/>fmax</highlight></codeline>
+<codeline lineno="214"><highlight class="comment">Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"></highlight></codeline>
+<codeline lineno="216"><highlight class="comment">In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>val1<sp/><sp/><sp/><sp/><sp/>-<sp/>Value<sp/>1</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val2<sp/><sp/><sp/><sp/><sp/>-<sp/>Value<sp/>2</highlight></codeline>
+<codeline lineno="218"><highlight class="comment">InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="219"><highlight class="comment">Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="220"><highlight class="comment">Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Maximum<sp/>value</highlight></codeline>
+<codeline lineno="221"><highlight class="comment">Description<sp/><sp/>:<sp/>Returns<sp/>the<sp/>larger<sp/>of<sp/>two<sp/>double<sp/>type<sp/>arguments.<sp/>This<sp/>function<sp/>is<sp/>available<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>standard<sp/>library<sp/>since<sp/>C99.<sp/>Visual<sp/>Studio<sp/>prior<sp/>to<sp/>2013<sp/>does<sp/>not<sp/>support<sp/>C99.</highlight></codeline>
+<codeline lineno="223"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>fmax(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val2)<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Check<sp/>for<sp/>possible<sp/>NaN<sp/>(Not<sp/>a<sp/>Number)<sp/>input<sp/>values.<sp/>In<sp/>case<sp/>NaN<sp/>is<sp/>found,</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>values<sp/>as<sp/>indicated<sp/>by<sp/>C99<sp/>standard:</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>if<sp/>(val1<sp/>==<sp/>NaN)<sp/>-&gt;<sp/>return<sp/>val2</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>if<sp/>(val2<sp/>==<sp/>NaN)<sp/>-&gt;<sp/>return<sp/>val1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_isnan(val1)<sp/>&amp;&amp;<sp/>!_isnan(val2))<sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val2;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_isnan(val1)<sp/>&amp;&amp;<sp/>_isnan(val2))<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(val1<sp/>&gt;<sp/>val2)<sp/>?<sp/>val1<sp/>:<sp/>val2;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="242"><highlight class="comment">Function<sp/><sp/><sp/><sp/><sp/>:<sp/>fmaxf</highlight></codeline>
+<codeline lineno="243"><highlight class="comment">Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"></highlight></codeline>
+<codeline lineno="245"><highlight class="comment">In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>val1<sp/><sp/><sp/><sp/><sp/>-<sp/>Value<sp/>1</highlight></codeline>
+<codeline lineno="246"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val2<sp/><sp/><sp/><sp/><sp/>-<sp/>Value<sp/>2</highlight></codeline>
+<codeline lineno="247"><highlight class="comment">InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="248"><highlight class="comment">Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="249"><highlight class="comment">Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Maximum<sp/>value</highlight></codeline>
+<codeline lineno="250"><highlight class="comment">Description<sp/><sp/>:<sp/>Returns<sp/>the<sp/>larger<sp/>of<sp/>two<sp/>floating<sp/>point<sp/>arguments.<sp/>This<sp/>function<sp/>is<sp/>available<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>standard<sp/>library<sp/>since<sp/>C99.<sp/>Visual<sp/>Studio<sp/>prior<sp/>to<sp/>2013<sp/>does<sp/>not<sp/>support<sp/>C99.</highlight></codeline>
+<codeline lineno="252"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fmaxf(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>val1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>val2)<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Check<sp/>for<sp/>possible<sp/>NaN<sp/>(Not<sp/>a<sp/>Number)<sp/>input<sp/>values.<sp/>In<sp/>case<sp/>NaN<sp/>is<sp/>found,</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>values<sp/>as<sp/>indicated<sp/>by<sp/>C99<sp/>standard:</highlight></codeline>
+<codeline lineno="256"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>if<sp/>(val1<sp/>==<sp/>NaN)<sp/>-&gt;<sp/>return<sp/>val2</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>if<sp/>(val2<sp/>==<sp/>NaN)<sp/>-&gt;<sp/>return<sp/>val1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_isnan(val1)<sp/>&amp;&amp;<sp/>!_isnan(val2))<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val2;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_isnan(val1)<sp/>&amp;&amp;<sp/>_isnan(val2))<sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(val1<sp/>&gt;<sp/>val2)<sp/>?<sp/>val1<sp/>:<sp/>val2;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="comment">/********************************************************************************************************</highlight></codeline>
+<codeline lineno="272"><highlight class="comment">Function<sp/><sp/><sp/><sp/><sp/>:<sp/>fmin</highlight></codeline>
+<codeline lineno="273"><highlight class="comment">Visibility<sp/><sp/><sp/>:<sp/>Public</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"></highlight></codeline>
+<codeline lineno="275"><highlight class="comment">In<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>val1<sp/><sp/><sp/><sp/><sp/>-<sp/>Value<sp/>1</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val2<sp/><sp/><sp/><sp/><sp/>-<sp/>Value<sp/>2</highlight></codeline>
+<codeline lineno="277"><highlight class="comment">InOut<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="278"><highlight class="comment">Out<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>None</highlight></codeline>
+<codeline lineno="279"><highlight class="comment">Returns<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Minimum<sp/>value</highlight></codeline>
+<codeline lineno="280"><highlight class="comment">Description<sp/><sp/>:<sp/>Returns<sp/>the<sp/>smaller<sp/>of<sp/>two<sp/>double<sp/>type<sp/>arguments.<sp/>This<sp/>function<sp/>is<sp/>available<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="281"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>standard<sp/>library<sp/>since<sp/>C99.<sp/>Visual<sp/>Studio<sp/>prior<sp/>to<sp/>2013<sp/>does<sp/>not<sp/>support<sp/>C99.</highlight></codeline>
+<codeline lineno="282"><highlight class="comment">*********************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>fmin(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val2)<sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Check<sp/>for<sp/>possible<sp/>NaN<sp/>(Not<sp/>a<sp/>Number)<sp/>input<sp/>values.<sp/>In<sp/>case<sp/>NaN<sp/>is<sp/>found,</highlight></codeline>
+<codeline lineno="285"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>values<sp/>as<sp/>indicated<sp/>by<sp/>C99<sp/>standard:</highlight></codeline>
+<codeline lineno="286"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>if<sp/>(val1<sp/>==<sp/>NaN)<sp/>-&gt;<sp/>return<sp/>val2</highlight></codeline>
+<codeline lineno="287"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>if<sp/>(val2<sp/>==<sp/>NaN)<sp/>-&gt;<sp/>return<sp/>val1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_isnan(val1)<sp/>&amp;&amp;<sp/>!_isnan(val2))<sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val2;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_isnan(val1)<sp/>&amp;&amp;<sp/>_isnan(val2))<sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(val1<sp/>&lt;<sp/>val2)<sp/>?<sp/>val1<sp/>:<sp/>val2;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>(_MSC_VER)<sp/>&amp;&amp;<sp/>(<sp/>_MSC_VER<sp/>&lt;<sp/>1800)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="sil/psc/libEpcControlDev/dllEpcControl/dllEpcControl.cpp"/>
+  </compounddef>
+</doxygen>

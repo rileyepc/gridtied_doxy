@@ -1,0 +1,862 @@
+\hypertarget{lib_epc_control_8h}{}\doxysection{sil/lib\+Epc\+Control.h File Reference}
+\label{lib_epc_control_8h}\index{sil/libEpcControl.h@{sil/libEpcControl.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_i_l___param__s}{SIL\+\_\+\+Param\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_s_i_l___port_spec__s}{SIL\+\_\+\+Port\+Spec\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_s_i_l___ports__s}{SIL\+\_\+\+Ports\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_aa1eb80e8e9cca94572df89842779e134}{SIL\+\_\+\+PARSPEC\+\_\+\+DEFAULTS}}(m\+Width,  m\+Tunable)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a7c2f4c041f12cff2bdc76a124fac163a}{SIL\+\_\+\+PARAMETERS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}{SIL\+\_\+\+PORTSPEC\+\_\+\+DEFAULTS}}(m\+Width)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a23890ceaa9fbba57e73f562671e3a4b7}{SIL\+\_\+\+INPUTS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_ae3523c495ef0f14dc59ffef0168128e4}{SIL\+\_\+\+OUTPUTS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a18cd38012e645a9dc030b596eef8d6e7}{SIL\+\_\+\+PORTS\+\_\+\+DEFAULTS}}(...)
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a976ad84e491da31be2745a282f83966a}{SIL\+\_\+\+PARAM\+\_\+P}}(m\+Port)~\mbox{\hyperlink{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}{SIL\+\_\+\+Parameters}}\mbox{[}m\+Port\mbox{]}.par\+Pointer
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a7d51043f59ea40b9c4f6c01cbefc3fc5}{SIL\+\_\+\+PARAM\+\_\+W}}(m\+Port)~\mbox{\hyperlink{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}{SIL\+\_\+\+Parameters}}\mbox{[}m\+Port\mbox{]}.par\+Width
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_af91b38aa17c2cb63c599d38dbbadbea3}{SIL\+\_\+\+PARAM\+\_\+T}}(m\+Port)~\mbox{\hyperlink{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}{SIL\+\_\+\+Parameters}}\mbox{[}m\+Port\mbox{]}.par\+Tunable
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_ab99bbf5e2bafee94921eb5682919ec62}{SIL\+\_\+\+PARAM}}(m\+Port,  m\+Idx,  m\+Typ)~((m\+Typ $\ast$)\mbox{\hyperlink{lib_epc_control_8h_a976ad84e491da31be2745a282f83966a}{SIL\+\_\+\+PARAM\+\_\+P}}(m\+Port))\mbox{[}m\+Idx\mbox{]}
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_ab566304af8c7c3ef931ddfa8c9e69eec}{SIL\+\_\+\+PORT\+\_\+\+INP\+\_\+P}}(m\+Port)~SIL\+\_\+\+Ports.\+inp\+Port\mbox{[}m\+Port\mbox{]}.port\+Pointer
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_adf19060fe302f16473f38aebefc6d5ce}{SIL\+\_\+\+PORT\+\_\+\+INP\+\_\+W}}(m\+Port)~SIL\+\_\+\+Ports.\+inp\+Port\mbox{[}m\+Port\mbox{]}.port\+Width
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a785efee4fbf0d28247f2570f245fd735}{SIL\+\_\+\+PORT\+\_\+\+INP}}(m\+Port,  m\+Idx)~\mbox{\hyperlink{lib_epc_control_8h_ab566304af8c7c3ef931ddfa8c9e69eec}{SIL\+\_\+\+PORT\+\_\+\+INP\+\_\+P}}(m\+Port)\mbox{[}m\+Idx\mbox{]}
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a5d14177846563842aefcce3d2d442c15}{SIL\+\_\+\+PORT\+\_\+\+OUT\+\_\+P}}(m\+Port)~SIL\+\_\+\+Ports.\+out\+Port\mbox{[}m\+Port\mbox{]}.port\+Pointer
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_afa2e5b0886c08c86db167e3437d78994}{SIL\+\_\+\+PORT\+\_\+\+OUT\+\_\+W}}(m\+Port)~SIL\+\_\+\+Ports.\+out\+Port\mbox{[}m\+Port\mbox{]}.port\+Width
+\item 
+\#define \mbox{\hyperlink{lib_epc_control_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}{SIL\+\_\+\+PORT\+\_\+\+OUT}}(m\+Port,  m\+Idx)~\mbox{\hyperlink{lib_epc_control_8h_a5d14177846563842aefcce3d2d442c15}{SIL\+\_\+\+PORT\+\_\+\+OUT\+\_\+P}}(m\+Port)\mbox{[}m\+Idx\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562b}{SIL\+\_\+\+Model\+Intent\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6}{SIL\+\_\+\+Solver\+Type\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdc}{SIL\+\_\+\+Task\+Group\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_aeebca1ae458684a037cee2625473f4d5}{SIL\+\_\+e\+Task\+Group\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649}{SIL\+\_\+\+Control\+Mode\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_ab6df339cd48acc4113a2b007b666a688}{SIL\+\_\+e\+Control\+Mode\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_i_l___param__s}{SIL\+\_\+\+Param\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8h_a6c0dfafedd208ad225a68a634c9ea8c7}{SIL\+\_\+s\+Param\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654}{SIL\+\_\+\+Parameters\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_a4a9f02338ea17a1acac55f5e3371b981}{SIL\+\_\+e\+Parameters\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_i_l___port_spec__s}{SIL\+\_\+\+Port\+Spec\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8h_a302c7e02d47e546ec9c93203cfc0313d}{SIL\+\_\+s\+Port\+Spec\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885e}{SIL\+\_\+\+Input\+Ports\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_adb252f302ab937243cb6f756d707b7d5}{SIL\+\_\+e\+Input\+Ports\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3}{SIL\+\_\+\+Output\+Ports\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_a1f1da50021dd1cd4555928bb07346926}{SIL\+\_\+e\+Output\+Ports\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_i_l___ports__s}{SIL\+\_\+\+Ports\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}{SIL\+\_\+s\+Ports\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562b}{SIL\+\_\+\+Model\+Intent\+\_\+e}} \{ \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba2df8b4b3304c6d0e365e0fd460ab3780}{SIL\+\_\+\+MODEL\+\_\+\+INTENT\+\_\+\+SWITCHED}}
+, \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba6580cbabc0e59966d19d62a57017ed8f}{SIL\+\_\+\+MODEL\+\_\+\+INTENT\+\_\+\+AVERAGED}}
+, \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba08583372439a329f9ca27216797d96c3}{SIL\+\_\+\+MODEL\+\_\+\+INTENT\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6}{SIL\+\_\+\+Solver\+Type\+\_\+e}} \{ \newline
+\mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80}{SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+VARIABLE\+\_\+\+MULTIRATE}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6afc670ce0c6f762e1e84d79fd2b41f183}{SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+VARIABLE}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6ae3685caa4ef65143b616476ec57e3d2b}{SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+FIXED\+\_\+\+MULTIRATE}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a3366082b4a36688431436954ae6908ab}{SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+FIXED}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6aa1743274adbab534b35c524d2a529938}{SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdc}{SIL\+\_\+\+Task\+Group\+\_\+e}} \{ \newline
+\mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdca6752bdea6ba25e1c866793d9de9fddc2}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+ts}}
+, \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcad252ac161a55166b4499529360ce87c8}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+200us}}
+, \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcaf0d955c1cb8c3b7dd9a510ea3bf6dbd0}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+1ms}}
+, \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcabd3a3af76eaf8f536a2eeca2aee82f11}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+10ms}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdca52ea4ad9e046ceb4545a1bf27689be6a}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+100ms}}
+, \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcac3d16ad5a1cedf24b10ea359023f034c}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+1s}}
+, \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcaa9e4d7626ae66406a51f13ef77cca768}{SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649}{SIL\+\_\+\+Control\+Mode\+\_\+e}} \{ \newline
+\mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a6cb07d8d85a5e8971fef51c675588304}{SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+INACTIVE}}
+, \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649adccd557e1aab5f27d67e94ed78824b94}{SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+POWER}}
+, \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a70c434e6626cb8b803cf6acd6a37b7f4}{SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+CURRENT}}
+, \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a93c1a8587bc8b6a6b597585ab077535f}{SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+VOLTAGE}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a47926c1001ad9f5a01e613500336ee24}{SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654}{SIL\+\_\+\+Parameters\+\_\+e}} \{ \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651}{SIL\+\_\+\+PAR\+\_\+\+PMVSPATH}}
+, \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460}{SIL\+\_\+\+PAR\+\_\+\+INTENT}}
+, \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c}{SIL\+\_\+\+PAR\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885e}{SIL\+\_\+\+Input\+Ports\+\_\+e}} \{ \newline
+\mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea7166aff228702dc13caf5967626efaa1}{SIL\+\_\+\+INP\+\_\+\+CTL\+\_\+\+RUN}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eab56fa4beec171b6c60e78e2f3d191927}{SIL\+\_\+\+INP\+\_\+\+CTL\+\_\+\+PBC}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1bfba5df17c55efeeda1f2edc61446a7}{SIL\+\_\+\+INP\+\_\+\+CTL\+\_\+\+CLR}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eab52eb214021b655a4cccafe0c3f2dd7d}{SIL\+\_\+\+INP\+\_\+\+CTL\+\_\+\+ISL}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea921d239e668458b03bc16a5a66dd5454}{SIL\+\_\+\+INP\+\_\+\+REF\+\_\+\+FVR}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea6a0fca72779f012fff2c8ea0e5c00986}{SIL\+\_\+\+INP\+\_\+\+REF\+\_\+\+RIG}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea82acb03b55e5ebb711dfa1dfccb49590}{SIL\+\_\+\+INP\+\_\+\+REF\+\_\+\+RPG}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eaf980954a2cd4c2dcbb47c83e74c8a88e}{SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+DCV}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea163346ac2bfd0c2ebf7efb9e67fd4c64}{SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+PIC}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951}{SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+PVL}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048}{SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+PVR}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea0a0b4399368e0fcf003c42071414641a}{SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+DINP}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea42fce498cf11ac467138926a04766cde}{SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+1}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea4f1c23acb5372636efd8d6b9c40ec81a}{SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+2}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eac8774fd40be37428590c7828a6c9b008}{SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+3}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eaf287e955c686ec86338a7c739c298eb9}{SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+4}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eabe2411b715f2b31aa5e19aa5dd1c58a1}{SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+5}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea7b3c68ecc26512f1ed539c4ea88cc773}{SIL\+\_\+\+INP\+\_\+\+CUST}}
+, \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa}{SIL\+\_\+\+INP\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3}{SIL\+\_\+\+Output\+Ports\+\_\+e}} \{ \newline
+\mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aa32730ef97c9a8eb5e1328ffa03f734f}{SIL\+\_\+\+OUT\+\_\+\+STA\+\_\+\+CTL}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ac64960cc7a9d2805f2cd7b61ab6beae9}{SIL\+\_\+\+OUT\+\_\+\+STA\+\_\+\+PBC}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a20b7ec65a59c24bee8ab459a98b49fc1}{SIL\+\_\+\+OUT\+\_\+\+STA\+\_\+\+GMR}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a461b753bc509a9ea390811f4099022da}{SIL\+\_\+\+OUT\+\_\+\+STA\+\_\+\+GML}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a3dc6e86c00cc451033a22a0f29c23f44}{SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+FVR}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a3877128ecc7c07bbdfc485ffec628694}{SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+FVL}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ac30210d0a725f78ec7f8f096a308f202}{SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+RIG}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ad935533f629e631c69c2a102637f8671}{SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+RPG}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a145b61c2dd3b1a19587ca4cd45dffb85}{SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+SCI}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3af7453ef1bbe00b123147f93e1cb8dba5}{SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+SCV}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a9fdb763a801f238b3dc4d5f875aa6f3f}{SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+DCVI}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a0f8ae69e9b83f36442d4c1b6556f752f}{SIL\+\_\+\+OUT\+\_\+\+FBK\+\_\+\+PIC}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a9e0b5933f169819ce830970348b6f0e6}{SIL\+\_\+\+OUT\+\_\+\+FBK\+\_\+\+PVL}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ad2d8ec2934bfb655769114ac9a3b8c08}{SIL\+\_\+\+OUT\+\_\+\+FBK\+\_\+\+PVR}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a1378b5b19189a7a44ec85a3d4b520a98}{SIL\+\_\+\+OUT\+\_\+\+CTL\+\_\+\+DOUT}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a415d9ba9009591e374d6585c28309f6a}{SIL\+\_\+\+OUT\+\_\+\+CTL\+\_\+\+RLAY}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53}{SIL\+\_\+\+OUT\+\_\+\+CTL\+\_\+\+GATE}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e}{SIL\+\_\+\+OUT\+\_\+\+CTL\+\_\+\+CDIR}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afdd819a0cd9386ad7a3d0ca3441d6594}{SIL\+\_\+\+OUT\+\_\+\+DBG}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a4ed5ea8358d221bdd61b784200486398}{SIL\+\_\+\+OUT\+\_\+\+REF}}
+, \newline
+\mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a23fc413006a1ead7f31a5e6d4bb1bba1}{SIL\+\_\+\+OUT\+\_\+\+CUST}}
+, \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee}{SIL\+\_\+\+OUT\+\_\+\+CNT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{lib_epc_control_8h_ab81a90ab6353010bbcbfbe378b6c133b}{SIL\+\_\+initialize\+Library}} (double t\+Step, \mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}} solver\+Type, \mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}} mdl\+Intent, char $\ast$pmvs\+Path)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_ace37954380efd0cc545d686525f44253}{SIL\+\_\+terminate\+Library}} (double t\+Now)
+\item 
+double \mbox{\hyperlink{lib_epc_control_8h_ae7faa4e53156bb74ada32b2980fdc965}{SIL\+\_\+get\+Next\+Sample\+Hit}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a4516f98eb48b67f3cfac58f6f506395b}{SIL\+\_\+update\+Output}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_ac996ef11ecaea694174e16c084e34121}{SIL\+\_\+update\+Output\+\_\+ts}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a0ee7728e508048a3431cbe5591a6fe6e}{SIL\+\_\+update\+Output\+\_\+200us}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a75ff58ce3d5d4580e490ef7a69007e21}{SIL\+\_\+update\+Output\+\_\+1ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_ae7e96e5405835166c40c25a724ec7439}{SIL\+\_\+update\+Output\+\_\+10ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a6fa1fbbfa14569f4bd41950a860eb75a}{SIL\+\_\+update\+Output\+\_\+100ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a01c7e531ea48b2b39560b8232dadb472}{SIL\+\_\+update\+Output\+\_\+1s}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a4bba7ed7d059aaea97ea7739d4a8aadf}{SIL\+\_\+update\+State}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a2825be5948559ec4590c28ede64e4450}{SIL\+\_\+update\+State\+\_\+ts}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a59eac95bc7334b0a03715fe1cfbbcca1}{SIL\+\_\+update\+State\+\_\+200us}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a771f5694ced82f12c455c9aa7b09e8a4}{SIL\+\_\+update\+State\+\_\+1ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_ad4d3c47eb9a2d78a7c7042067d358d94}{SIL\+\_\+update\+State\+\_\+10ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a06036b1f582360534fabe0accf99ddcc}{SIL\+\_\+update\+State\+\_\+100ms}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a2838f5346d7b4916cd601c41594fc05c}{SIL\+\_\+update\+State\+\_\+1s}} (double t\+Now)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a5509b491627e5f7ee27c25815ac07c48}{SIL\+\_\+write\+Snapshot}} (double t\+Now, uint16\+\_\+t instance\+Number, char $\ast$temp\+Path)
+\item 
+void \mbox{\hyperlink{lib_epc_control_8h_a296ff2009cd74a2c451a2bcded01dff7}{SIL\+\_\+read\+Snapshot}} (uint16\+\_\+t instance\+Number, char $\ast$temp\+Path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lib_epc_control_8h_a6c0dfafedd208ad225a68a634c9ea8c7}{SIL\+\_\+s\+Param\+\_\+t}} \mbox{\hyperlink{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}{SIL\+\_\+\+Parameters}} \mbox{[}\mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c}{SIL\+\_\+\+PAR\+\_\+\+CNT}}\mbox{]}
+\item 
+\mbox{\hyperlink{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}{SIL\+\_\+s\+Ports\+\_\+t}} \mbox{\hyperlink{lib_epc_control_8h_aa8c520d7306f12a6098f3cb4fdd3d1ea}{SIL\+\_\+\+Ports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lib_epc_control_8h_a23890ceaa9fbba57e73f562671e3a4b7}\label{lib_epc_control_8h_a23890ceaa9fbba57e73f562671e3a4b7}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_INPUTS\_DEFAULTS@{SIL\_INPUTS\_DEFAULTS}}
+\index{SIL\_INPUTS\_DEFAULTS@{SIL\_INPUTS\_DEFAULTS}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_INPUTS\_DEFAULTS}{SIL\_INPUTS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+INPUTS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_ae3523c495ef0f14dc59ffef0168128e4}\label{lib_epc_control_8h_ae3523c495ef0f14dc59ffef0168128e4}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUTPUTS\_DEFAULTS@{SIL\_OUTPUTS\_DEFAULTS}}
+\index{SIL\_OUTPUTS\_DEFAULTS@{SIL\_OUTPUTS\_DEFAULTS}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_OUTPUTS\_DEFAULTS}{SIL\_OUTPUTS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+OUTPUTS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_ab99bbf5e2bafee94921eb5682919ec62}\label{lib_epc_control_8h_ab99bbf5e2bafee94921eb5682919ec62}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PARAM@{SIL\_PARAM}}
+\index{SIL\_PARAM@{SIL\_PARAM}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PARAM}{SIL\_PARAM}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PARAM(\begin{DoxyParamCaption}\item[{}]{m\+Port,  }\item[{}]{m\+Idx,  }\item[{}]{m\+Typ }\end{DoxyParamCaption})~((m\+Typ $\ast$)\mbox{\hyperlink{lib_epc_control_8h_a976ad84e491da31be2745a282f83966a}{SIL\+\_\+\+PARAM\+\_\+P}}(m\+Port))\mbox{[}m\+Idx\mbox{]}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a976ad84e491da31be2745a282f83966a}\label{lib_epc_control_8h_a976ad84e491da31be2745a282f83966a}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PARAM\_P@{SIL\_PARAM\_P}}
+\index{SIL\_PARAM\_P@{SIL\_PARAM\_P}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PARAM\_P}{SIL\_PARAM\_P}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PARAM\+\_\+P(\begin{DoxyParamCaption}\item[{}]{m\+Port }\end{DoxyParamCaption})~\mbox{\hyperlink{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}{SIL\+\_\+\+Parameters}}\mbox{[}m\+Port\mbox{]}.par\+Pointer}
+
+\mbox{\Hypertarget{lib_epc_control_8h_af91b38aa17c2cb63c599d38dbbadbea3}\label{lib_epc_control_8h_af91b38aa17c2cb63c599d38dbbadbea3}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PARAM\_T@{SIL\_PARAM\_T}}
+\index{SIL\_PARAM\_T@{SIL\_PARAM\_T}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PARAM\_T}{SIL\_PARAM\_T}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PARAM\+\_\+T(\begin{DoxyParamCaption}\item[{}]{m\+Port }\end{DoxyParamCaption})~\mbox{\hyperlink{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}{SIL\+\_\+\+Parameters}}\mbox{[}m\+Port\mbox{]}.par\+Tunable}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a7d51043f59ea40b9c4f6c01cbefc3fc5}\label{lib_epc_control_8h_a7d51043f59ea40b9c4f6c01cbefc3fc5}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PARAM\_W@{SIL\_PARAM\_W}}
+\index{SIL\_PARAM\_W@{SIL\_PARAM\_W}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PARAM\_W}{SIL\_PARAM\_W}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PARAM\+\_\+W(\begin{DoxyParamCaption}\item[{}]{m\+Port }\end{DoxyParamCaption})~\mbox{\hyperlink{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}{SIL\+\_\+\+Parameters}}\mbox{[}m\+Port\mbox{]}.par\+Width}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a7c2f4c041f12cff2bdc76a124fac163a}\label{lib_epc_control_8h_a7c2f4c041f12cff2bdc76a124fac163a}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PARAMETERS\_DEFAULTS@{SIL\_PARAMETERS\_DEFAULTS}}
+\index{SIL\_PARAMETERS\_DEFAULTS@{SIL\_PARAMETERS\_DEFAULTS}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PARAMETERS\_DEFAULTS}{SIL\_PARAMETERS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PARAMETERS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                                  \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651}{SIL\_PAR\_PMVSPATH}} ]        = \mbox{\hyperlink{lib_epc_control_8h_aa1eb80e8e9cca94572df89842779e134}{SIL\_PARSPEC\_DEFAULTS}}(1, \textcolor{keyword}{false}),                                       \(\backslash\)}
+\DoxyCodeLine{    [ \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460}{SIL\_PAR\_INTENT}} ]          = \mbox{\hyperlink{lib_epc_control_8h_aa1eb80e8e9cca94572df89842779e134}{SIL\_PARSPEC\_DEFAULTS}}(1, \textcolor{keyword}{false}),                                       \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                                                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{lib_epc_control_8h_aa1eb80e8e9cca94572df89842779e134}\label{lib_epc_control_8h_aa1eb80e8e9cca94572df89842779e134}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PARSPEC\_DEFAULTS@{SIL\_PARSPEC\_DEFAULTS}}
+\index{SIL\_PARSPEC\_DEFAULTS@{SIL\_PARSPEC\_DEFAULTS}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PARSPEC\_DEFAULTS}{SIL\_PARSPEC\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PARSPEC\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{m\+Width,  }\item[{}]{m\+Tunable }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                        \(\backslash\)}
+\DoxyCodeLine{    .parPointer                 = NULL,                                                                 \(\backslash\)}
+\DoxyCodeLine{    .parWidth                   = mWidth,                                                               \(\backslash\)}
+\DoxyCodeLine{    .parTunable                 = mTunable                                                              \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{lib_epc_control_8h_a785efee4fbf0d28247f2570f245fd735}\label{lib_epc_control_8h_a785efee4fbf0d28247f2570f245fd735}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PORT\_INP@{SIL\_PORT\_INP}}
+\index{SIL\_PORT\_INP@{SIL\_PORT\_INP}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORT\_INP}{SIL\_PORT\_INP}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORT\+\_\+\+INP(\begin{DoxyParamCaption}\item[{}]{m\+Port,  }\item[{}]{m\+Idx }\end{DoxyParamCaption})~\mbox{\hyperlink{lib_epc_control_8h_ab566304af8c7c3ef931ddfa8c9e69eec}{SIL\+\_\+\+PORT\+\_\+\+INP\+\_\+P}}(m\+Port)\mbox{[}m\+Idx\mbox{]}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_ab566304af8c7c3ef931ddfa8c9e69eec}\label{lib_epc_control_8h_ab566304af8c7c3ef931ddfa8c9e69eec}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PORT\_INP\_P@{SIL\_PORT\_INP\_P}}
+\index{SIL\_PORT\_INP\_P@{SIL\_PORT\_INP\_P}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORT\_INP\_P}{SIL\_PORT\_INP\_P}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORT\+\_\+\+INP\+\_\+P(\begin{DoxyParamCaption}\item[{}]{m\+Port }\end{DoxyParamCaption})~SIL\+\_\+\+Ports.\+inp\+Port\mbox{[}m\+Port\mbox{]}.port\+Pointer}
+
+\mbox{\Hypertarget{lib_epc_control_8h_adf19060fe302f16473f38aebefc6d5ce}\label{lib_epc_control_8h_adf19060fe302f16473f38aebefc6d5ce}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PORT\_INP\_W@{SIL\_PORT\_INP\_W}}
+\index{SIL\_PORT\_INP\_W@{SIL\_PORT\_INP\_W}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORT\_INP\_W}{SIL\_PORT\_INP\_W}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORT\+\_\+\+INP\+\_\+W(\begin{DoxyParamCaption}\item[{}]{m\+Port }\end{DoxyParamCaption})~SIL\+\_\+\+Ports.\+inp\+Port\mbox{[}m\+Port\mbox{]}.port\+Width}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}\label{lib_epc_control_8h_a87354ee0fb8bdc7c1cd428e24ef98bc3}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PORT\_OUT@{SIL\_PORT\_OUT}}
+\index{SIL\_PORT\_OUT@{SIL\_PORT\_OUT}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORT\_OUT}{SIL\_PORT\_OUT}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORT\+\_\+\+OUT(\begin{DoxyParamCaption}\item[{}]{m\+Port,  }\item[{}]{m\+Idx }\end{DoxyParamCaption})~\mbox{\hyperlink{lib_epc_control_8h_a5d14177846563842aefcce3d2d442c15}{SIL\+\_\+\+PORT\+\_\+\+OUT\+\_\+P}}(m\+Port)\mbox{[}m\+Idx\mbox{]}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a5d14177846563842aefcce3d2d442c15}\label{lib_epc_control_8h_a5d14177846563842aefcce3d2d442c15}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PORT\_OUT\_P@{SIL\_PORT\_OUT\_P}}
+\index{SIL\_PORT\_OUT\_P@{SIL\_PORT\_OUT\_P}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORT\_OUT\_P}{SIL\_PORT\_OUT\_P}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORT\+\_\+\+OUT\+\_\+P(\begin{DoxyParamCaption}\item[{}]{m\+Port }\end{DoxyParamCaption})~SIL\+\_\+\+Ports.\+out\+Port\mbox{[}m\+Port\mbox{]}.port\+Pointer}
+
+\mbox{\Hypertarget{lib_epc_control_8h_afa2e5b0886c08c86db167e3437d78994}\label{lib_epc_control_8h_afa2e5b0886c08c86db167e3437d78994}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PORT\_OUT\_W@{SIL\_PORT\_OUT\_W}}
+\index{SIL\_PORT\_OUT\_W@{SIL\_PORT\_OUT\_W}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORT\_OUT\_W}{SIL\_PORT\_OUT\_W}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORT\+\_\+\+OUT\+\_\+W(\begin{DoxyParamCaption}\item[{}]{m\+Port }\end{DoxyParamCaption})~SIL\+\_\+\+Ports.\+out\+Port\mbox{[}m\+Port\mbox{]}.port\+Width}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a18cd38012e645a9dc030b596eef8d6e7}\label{lib_epc_control_8h_a18cd38012e645a9dc030b596eef8d6e7}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PORTS\_DEFAULTS@{SIL\_PORTS\_DEFAULTS}}
+\index{SIL\_PORTS\_DEFAULTS@{SIL\_PORTS\_DEFAULTS}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORTS\_DEFAULTS}{SIL\_PORTS\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORTS\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                                       \(\backslash\)}
+\DoxyCodeLine{    .inpPort                    = \mbox{\hyperlink{lib_epc_control_8h_a23890ceaa9fbba57e73f562671e3a4b7}{SIL\_INPUTS\_DEFAULTS}}(),                                                \(\backslash\)}
+\DoxyCodeLine{    .outPort                    = \mbox{\hyperlink{lib_epc_control_8h_ae3523c495ef0f14dc59ffef0168128e4}{SIL\_OUTPUTS\_DEFAULTS}}(),                                               \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#\#\_\_VA\_ARGS\_\_                                                                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}\label{lib_epc_control_8h_a89c7cfb83dcbdf58bb0f9f190de60c71}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_PORTSPEC\_DEFAULTS@{SIL\_PORTSPEC\_DEFAULTS}}
+\index{SIL\_PORTSPEC\_DEFAULTS@{SIL\_PORTSPEC\_DEFAULTS}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_PORTSPEC\_DEFAULTS}{SIL\_PORTSPEC\_DEFAULTS}}
+{\footnotesize\ttfamily \#define SIL\+\_\+\+PORTSPEC\+\_\+\+DEFAULTS(\begin{DoxyParamCaption}\item[{}]{m\+Width }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                                 \(\backslash\)}
+\DoxyCodeLine{    .portPointer                = NULL,                                                                 \(\backslash\)}
+\DoxyCodeLine{    .portWidth                  = mWidth                                                                \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{lib_epc_control_8h_ab6df339cd48acc4113a2b007b666a688}\label{lib_epc_control_8h_ab6df339cd48acc4113a2b007b666a688}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_eControlMode\_t@{SIL\_eControlMode\_t}}
+\index{SIL\_eControlMode\_t@{SIL\_eControlMode\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_eControlMode\_t}{SIL\_eControlMode\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649}{SIL\+\_\+\+Control\+Mode\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_ab6df339cd48acc4113a2b007b666a688}{SIL\+\_\+e\+Control\+Mode\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_adb252f302ab937243cb6f756d707b7d5}\label{lib_epc_control_8h_adb252f302ab937243cb6f756d707b7d5}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_eInputPorts\_t@{SIL\_eInputPorts\_t}}
+\index{SIL\_eInputPorts\_t@{SIL\_eInputPorts\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_eInputPorts\_t}{SIL\_eInputPorts\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885e}{SIL\+\_\+\+Input\+Ports\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_adb252f302ab937243cb6f756d707b7d5}{SIL\+\_\+e\+Input\+Ports\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}\label{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_eModelIntent\_t@{SIL\_eModelIntent\_t}}
+\index{SIL\_eModelIntent\_t@{SIL\_eModelIntent\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_eModelIntent\_t}{SIL\_eModelIntent\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562b}{SIL\+\_\+\+Model\+Intent\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a1f1da50021dd1cd4555928bb07346926}\label{lib_epc_control_8h_a1f1da50021dd1cd4555928bb07346926}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_eOutputPorts\_t@{SIL\_eOutputPorts\_t}}
+\index{SIL\_eOutputPorts\_t@{SIL\_eOutputPorts\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_eOutputPorts\_t}{SIL\_eOutputPorts\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3}{SIL\+\_\+\+Output\+Ports\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_a1f1da50021dd1cd4555928bb07346926}{SIL\+\_\+e\+Output\+Ports\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a4a9f02338ea17a1acac55f5e3371b981}\label{lib_epc_control_8h_a4a9f02338ea17a1acac55f5e3371b981}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_eParameters\_t@{SIL\_eParameters\_t}}
+\index{SIL\_eParameters\_t@{SIL\_eParameters\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_eParameters\_t}{SIL\_eParameters\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654}{SIL\+\_\+\+Parameters\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_a4a9f02338ea17a1acac55f5e3371b981}{SIL\+\_\+e\+Parameters\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}\label{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_eSolverType\_t@{SIL\_eSolverType\_t}}
+\index{SIL\_eSolverType\_t@{SIL\_eSolverType\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_eSolverType\_t}{SIL\_eSolverType\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6}{SIL\+\_\+\+Solver\+Type\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_aeebca1ae458684a037cee2625473f4d5}\label{lib_epc_control_8h_aeebca1ae458684a037cee2625473f4d5}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_eTaskGroup\_t@{SIL\_eTaskGroup\_t}}
+\index{SIL\_eTaskGroup\_t@{SIL\_eTaskGroup\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_eTaskGroup\_t}{SIL\_eTaskGroup\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdc}{SIL\+\_\+\+Task\+Group\+\_\+e}} \mbox{\hyperlink{lib_epc_control_8h_aeebca1ae458684a037cee2625473f4d5}{SIL\+\_\+e\+Task\+Group\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a6c0dfafedd208ad225a68a634c9ea8c7}\label{lib_epc_control_8h_a6c0dfafedd208ad225a68a634c9ea8c7}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_sParam\_t@{SIL\_sParam\_t}}
+\index{SIL\_sParam\_t@{SIL\_sParam\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_sParam\_t}{SIL\_sParam\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_i_l___param__s}{SIL\+\_\+\+Param\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8h_a6c0dfafedd208ad225a68a634c9ea8c7}{SIL\+\_\+s\+Param\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}\label{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_sPorts\_t@{SIL\_sPorts\_t}}
+\index{SIL\_sPorts\_t@{SIL\_sPorts\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_sPorts\_t}{SIL\_sPorts\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_i_l___ports__s}{SIL\+\_\+\+Ports\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}{SIL\+\_\+s\+Ports\+\_\+t}}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a302c7e02d47e546ec9c93203cfc0313d}\label{lib_epc_control_8h_a302c7e02d47e546ec9c93203cfc0313d}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_sPortSpec\_t@{SIL\_sPortSpec\_t}}
+\index{SIL\_sPortSpec\_t@{SIL\_sPortSpec\_t}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_sPortSpec\_t}{SIL\_sPortSpec\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_i_l___port_spec__s}{SIL\+\_\+\+Port\+Spec\+\_\+s}} \mbox{\hyperlink{lib_epc_control_8h_a302c7e02d47e546ec9c93203cfc0313d}{SIL\+\_\+s\+Port\+Spec\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649}\label{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_ControlMode\_e@{SIL\_ControlMode\_e}}
+\index{SIL\_ControlMode\_e@{SIL\_ControlMode\_e}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_ControlMode\_e}{SIL\_ControlMode\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649}{SIL\+\_\+\+Control\+Mode\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_CONTROL\_MODE\_INACTIVE@{SIL\_CONTROL\_MODE\_INACTIVE}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_CONTROL\_MODE\_INACTIVE@{SIL\_CONTROL\_MODE\_INACTIVE}}}\mbox{\Hypertarget{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a6cb07d8d85a5e8971fef51c675588304}\label{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a6cb07d8d85a5e8971fef51c675588304}} 
+SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+INACTIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_CONTROL\_MODE\_POWER@{SIL\_CONTROL\_MODE\_POWER}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_CONTROL\_MODE\_POWER@{SIL\_CONTROL\_MODE\_POWER}}}\mbox{\Hypertarget{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649adccd557e1aab5f27d67e94ed78824b94}\label{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649adccd557e1aab5f27d67e94ed78824b94}} 
+SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+POWER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_CONTROL\_MODE\_CURRENT@{SIL\_CONTROL\_MODE\_CURRENT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_CONTROL\_MODE\_CURRENT@{SIL\_CONTROL\_MODE\_CURRENT}}}\mbox{\Hypertarget{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a70c434e6626cb8b803cf6acd6a37b7f4}\label{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a70c434e6626cb8b803cf6acd6a37b7f4}} 
+SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+CURRENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_CONTROL\_MODE\_VOLTAGE@{SIL\_CONTROL\_MODE\_VOLTAGE}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_CONTROL\_MODE\_VOLTAGE@{SIL\_CONTROL\_MODE\_VOLTAGE}}}\mbox{\Hypertarget{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a93c1a8587bc8b6a6b597585ab077535f}\label{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a93c1a8587bc8b6a6b597585ab077535f}} 
+SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+VOLTAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_CONTROL\_MODE\_CNT@{SIL\_CONTROL\_MODE\_CNT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_CONTROL\_MODE\_CNT@{SIL\_CONTROL\_MODE\_CNT}}}\mbox{\Hypertarget{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a47926c1001ad9f5a01e613500336ee24}\label{lib_epc_control_8h_aff2f14d2a43919fc9074824004594649a47926c1001ad9f5a01e613500336ee24}} 
+SIL\+\_\+\+CONTROL\+\_\+\+MODE\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885e}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885e}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_InputPorts\_e@{SIL\_InputPorts\_e}}
+\index{SIL\_InputPorts\_e@{SIL\_InputPorts\_e}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_InputPorts\_e}{SIL\_InputPorts\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885e}{SIL\+\_\+\+Input\+Ports\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_CTL\_RUN@{SIL\_INP\_CTL\_RUN}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_CTL\_RUN@{SIL\_INP\_CTL\_RUN}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea7166aff228702dc13caf5967626efaa1}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea7166aff228702dc13caf5967626efaa1}} 
+SIL\+\_\+\+INP\+\_\+\+CTL\+\_\+\+RUN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_CTL\_PBC@{SIL\_INP\_CTL\_PBC}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_CTL\_PBC@{SIL\_INP\_CTL\_PBC}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eab56fa4beec171b6c60e78e2f3d191927}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eab56fa4beec171b6c60e78e2f3d191927}} 
+SIL\+\_\+\+INP\+\_\+\+CTL\+\_\+\+PBC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_CTL\_CLR@{SIL\_INP\_CTL\_CLR}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_CTL\_CLR@{SIL\_INP\_CTL\_CLR}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1bfba5df17c55efeeda1f2edc61446a7}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1bfba5df17c55efeeda1f2edc61446a7}} 
+SIL\+\_\+\+INP\+\_\+\+CTL\+\_\+\+CLR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_CTL\_ISL@{SIL\_INP\_CTL\_ISL}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_CTL\_ISL@{SIL\_INP\_CTL\_ISL}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eab52eb214021b655a4cccafe0c3f2dd7d}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eab52eb214021b655a4cccafe0c3f2dd7d}} 
+SIL\+\_\+\+INP\+\_\+\+CTL\+\_\+\+ISL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_REF\_FVR@{SIL\_INP\_REF\_FVR}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_REF\_FVR@{SIL\_INP\_REF\_FVR}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea921d239e668458b03bc16a5a66dd5454}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea921d239e668458b03bc16a5a66dd5454}} 
+SIL\+\_\+\+INP\+\_\+\+REF\+\_\+\+FVR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_REF\_RIG@{SIL\_INP\_REF\_RIG}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_REF\_RIG@{SIL\_INP\_REF\_RIG}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea6a0fca72779f012fff2c8ea0e5c00986}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea6a0fca72779f012fff2c8ea0e5c00986}} 
+SIL\+\_\+\+INP\+\_\+\+REF\+\_\+\+RIG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_REF\_RPG@{SIL\_INP\_REF\_RPG}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_REF\_RPG@{SIL\_INP\_REF\_RPG}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea82acb03b55e5ebb711dfa1dfccb49590}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea82acb03b55e5ebb711dfa1dfccb49590}} 
+SIL\+\_\+\+INP\+\_\+\+REF\+\_\+\+RPG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_FBK\_DCV@{SIL\_INP\_FBK\_DCV}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_FBK\_DCV@{SIL\_INP\_FBK\_DCV}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eaf980954a2cd4c2dcbb47c83e74c8a88e}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eaf980954a2cd4c2dcbb47c83e74c8a88e}} 
+SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+DCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_FBK\_PIC@{SIL\_INP\_FBK\_PIC}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_FBK\_PIC@{SIL\_INP\_FBK\_PIC}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea163346ac2bfd0c2ebf7efb9e67fd4c64}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea163346ac2bfd0c2ebf7efb9e67fd4c64}} 
+SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+PIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_FBK\_PVL@{SIL\_INP\_FBK\_PVL}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_FBK\_PVL@{SIL\_INP\_FBK\_PVL}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951}} 
+SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+PVL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_FBK\_PVR@{SIL\_INP\_FBK\_PVR}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_FBK\_PVR@{SIL\_INP\_FBK\_PVR}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048}} 
+SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+PVR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_FBK\_DINP@{SIL\_INP\_FBK\_DINP}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_FBK\_DINP@{SIL\_INP\_FBK\_DINP}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea0a0b4399368e0fcf003c42071414641a}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea0a0b4399368e0fcf003c42071414641a}} 
+SIL\+\_\+\+INP\+\_\+\+FBK\+\_\+\+DINP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_DBG\_1@{SIL\_INP\_DBG\_1}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_DBG\_1@{SIL\_INP\_DBG\_1}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea42fce498cf11ac467138926a04766cde}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea42fce498cf11ac467138926a04766cde}} 
+SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_DBG\_2@{SIL\_INP\_DBG\_2}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_DBG\_2@{SIL\_INP\_DBG\_2}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea4f1c23acb5372636efd8d6b9c40ec81a}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea4f1c23acb5372636efd8d6b9c40ec81a}} 
+SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_DBG\_3@{SIL\_INP\_DBG\_3}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_DBG\_3@{SIL\_INP\_DBG\_3}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eac8774fd40be37428590c7828a6c9b008}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eac8774fd40be37428590c7828a6c9b008}} 
+SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_DBG\_4@{SIL\_INP\_DBG\_4}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_DBG\_4@{SIL\_INP\_DBG\_4}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eaf287e955c686ec86338a7c739c298eb9}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eaf287e955c686ec86338a7c739c298eb9}} 
+SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_DBG\_5@{SIL\_INP\_DBG\_5}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_DBG\_5@{SIL\_INP\_DBG\_5}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eabe2411b715f2b31aa5e19aa5dd1c58a1}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885eabe2411b715f2b31aa5e19aa5dd1c58a1}} 
+SIL\+\_\+\+INP\+\_\+\+DBG\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_CUST@{SIL\_INP\_CUST}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_CUST@{SIL\_INP\_CUST}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea7b3c68ecc26512f1ed539c4ea88cc773}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea7b3c68ecc26512f1ed539c4ea88cc773}} 
+SIL\+\_\+\+INP\+\_\+\+CUST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_INP\_CNT@{SIL\_INP\_CNT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_INP\_CNT@{SIL\_INP\_CNT}}}\mbox{\Hypertarget{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa}\label{lib_epc_control_8h_a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa}} 
+SIL\+\_\+\+INP\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562b}\label{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562b}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_ModelIntent\_e@{SIL\_ModelIntent\_e}}
+\index{SIL\_ModelIntent\_e@{SIL\_ModelIntent\_e}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_ModelIntent\_e}{SIL\_ModelIntent\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562b}{SIL\+\_\+\+Model\+Intent\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_MODEL\_INTENT\_SWITCHED@{SIL\_MODEL\_INTENT\_SWITCHED}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_MODEL\_INTENT\_SWITCHED@{SIL\_MODEL\_INTENT\_SWITCHED}}}\mbox{\Hypertarget{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba2df8b4b3304c6d0e365e0fd460ab3780}\label{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba2df8b4b3304c6d0e365e0fd460ab3780}} 
+SIL\+\_\+\+MODEL\+\_\+\+INTENT\+\_\+\+SWITCHED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_MODEL\_INTENT\_AVERAGED@{SIL\_MODEL\_INTENT\_AVERAGED}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_MODEL\_INTENT\_AVERAGED@{SIL\_MODEL\_INTENT\_AVERAGED}}}\mbox{\Hypertarget{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba6580cbabc0e59966d19d62a57017ed8f}\label{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba6580cbabc0e59966d19d62a57017ed8f}} 
+SIL\+\_\+\+MODEL\+\_\+\+INTENT\+\_\+\+AVERAGED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_MODEL\_INTENT\_CNT@{SIL\_MODEL\_INTENT\_CNT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_MODEL\_INTENT\_CNT@{SIL\_MODEL\_INTENT\_CNT}}}\mbox{\Hypertarget{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba08583372439a329f9ca27216797d96c3}\label{lib_epc_control_8h_a9d01562d58954e7706d3de172b37562ba08583372439a329f9ca27216797d96c3}} 
+SIL\+\_\+\+MODEL\+\_\+\+INTENT\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_OutputPorts\_e@{SIL\_OutputPorts\_e}}
+\index{SIL\_OutputPorts\_e@{SIL\_OutputPorts\_e}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_OutputPorts\_e}{SIL\_OutputPorts\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3}{SIL\+\_\+\+Output\+Ports\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_STA\_CTL@{SIL\_OUT\_STA\_CTL}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_STA\_CTL@{SIL\_OUT\_STA\_CTL}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aa32730ef97c9a8eb5e1328ffa03f734f}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aa32730ef97c9a8eb5e1328ffa03f734f}} 
+SIL\+\_\+\+OUT\+\_\+\+STA\+\_\+\+CTL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_STA\_PBC@{SIL\_OUT\_STA\_PBC}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_STA\_PBC@{SIL\_OUT\_STA\_PBC}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ac64960cc7a9d2805f2cd7b61ab6beae9}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ac64960cc7a9d2805f2cd7b61ab6beae9}} 
+SIL\+\_\+\+OUT\+\_\+\+STA\+\_\+\+PBC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_STA\_GMR@{SIL\_OUT\_STA\_GMR}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_STA\_GMR@{SIL\_OUT\_STA\_GMR}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a20b7ec65a59c24bee8ab459a98b49fc1}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a20b7ec65a59c24bee8ab459a98b49fc1}} 
+SIL\+\_\+\+OUT\+\_\+\+STA\+\_\+\+GMR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_STA\_GML@{SIL\_OUT\_STA\_GML}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_STA\_GML@{SIL\_OUT\_STA\_GML}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a461b753bc509a9ea390811f4099022da}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a461b753bc509a9ea390811f4099022da}} 
+SIL\+\_\+\+OUT\+\_\+\+STA\+\_\+\+GML&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_MON\_FVR@{SIL\_OUT\_MON\_FVR}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_MON\_FVR@{SIL\_OUT\_MON\_FVR}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a3dc6e86c00cc451033a22a0f29c23f44}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a3dc6e86c00cc451033a22a0f29c23f44}} 
+SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+FVR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_MON\_FVL@{SIL\_OUT\_MON\_FVL}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_MON\_FVL@{SIL\_OUT\_MON\_FVL}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a3877128ecc7c07bbdfc485ffec628694}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a3877128ecc7c07bbdfc485ffec628694}} 
+SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+FVL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_MON\_RIG@{SIL\_OUT\_MON\_RIG}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_MON\_RIG@{SIL\_OUT\_MON\_RIG}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ac30210d0a725f78ec7f8f096a308f202}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ac30210d0a725f78ec7f8f096a308f202}} 
+SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+RIG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_MON\_RPG@{SIL\_OUT\_MON\_RPG}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_MON\_RPG@{SIL\_OUT\_MON\_RPG}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ad935533f629e631c69c2a102637f8671}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ad935533f629e631c69c2a102637f8671}} 
+SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+RPG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_MON\_SCI@{SIL\_OUT\_MON\_SCI}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_MON\_SCI@{SIL\_OUT\_MON\_SCI}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a145b61c2dd3b1a19587ca4cd45dffb85}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a145b61c2dd3b1a19587ca4cd45dffb85}} 
+SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+SCI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_MON\_SCV@{SIL\_OUT\_MON\_SCV}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_MON\_SCV@{SIL\_OUT\_MON\_SCV}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3af7453ef1bbe00b123147f93e1cb8dba5}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3af7453ef1bbe00b123147f93e1cb8dba5}} 
+SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+SCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_MON\_DCVI@{SIL\_OUT\_MON\_DCVI}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_MON\_DCVI@{SIL\_OUT\_MON\_DCVI}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a9fdb763a801f238b3dc4d5f875aa6f3f}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a9fdb763a801f238b3dc4d5f875aa6f3f}} 
+SIL\+\_\+\+OUT\+\_\+\+MON\+\_\+\+DCVI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_FBK\_PIC@{SIL\_OUT\_FBK\_PIC}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_FBK\_PIC@{SIL\_OUT\_FBK\_PIC}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a0f8ae69e9b83f36442d4c1b6556f752f}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a0f8ae69e9b83f36442d4c1b6556f752f}} 
+SIL\+\_\+\+OUT\+\_\+\+FBK\+\_\+\+PIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_FBK\_PVL@{SIL\_OUT\_FBK\_PVL}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_FBK\_PVL@{SIL\_OUT\_FBK\_PVL}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a9e0b5933f169819ce830970348b6f0e6}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a9e0b5933f169819ce830970348b6f0e6}} 
+SIL\+\_\+\+OUT\+\_\+\+FBK\+\_\+\+PVL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_FBK\_PVR@{SIL\_OUT\_FBK\_PVR}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_FBK\_PVR@{SIL\_OUT\_FBK\_PVR}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ad2d8ec2934bfb655769114ac9a3b8c08}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3ad2d8ec2934bfb655769114ac9a3b8c08}} 
+SIL\+\_\+\+OUT\+\_\+\+FBK\+\_\+\+PVR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_CTL\_DOUT@{SIL\_OUT\_CTL\_DOUT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_CTL\_DOUT@{SIL\_OUT\_CTL\_DOUT}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a1378b5b19189a7a44ec85a3d4b520a98}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a1378b5b19189a7a44ec85a3d4b520a98}} 
+SIL\+\_\+\+OUT\+\_\+\+CTL\+\_\+\+DOUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_CTL\_RLAY@{SIL\_OUT\_CTL\_RLAY}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_CTL\_RLAY@{SIL\_OUT\_CTL\_RLAY}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a415d9ba9009591e374d6585c28309f6a}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a415d9ba9009591e374d6585c28309f6a}} 
+SIL\+\_\+\+OUT\+\_\+\+CTL\+\_\+\+RLAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_CTL\_GATE@{SIL\_OUT\_CTL\_GATE}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_CTL\_GATE@{SIL\_OUT\_CTL\_GATE}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53}} 
+SIL\+\_\+\+OUT\+\_\+\+CTL\+\_\+\+GATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_CTL\_CDIR@{SIL\_OUT\_CTL\_CDIR}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_CTL\_CDIR@{SIL\_OUT\_CTL\_CDIR}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e}} 
+SIL\+\_\+\+OUT\+\_\+\+CTL\+\_\+\+CDIR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_DBG@{SIL\_OUT\_DBG}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_DBG@{SIL\_OUT\_DBG}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afdd819a0cd9386ad7a3d0ca3441d6594}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3afdd819a0cd9386ad7a3d0ca3441d6594}} 
+SIL\+\_\+\+OUT\+\_\+\+DBG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_REF@{SIL\_OUT\_REF}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_REF@{SIL\_OUT\_REF}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a4ed5ea8358d221bdd61b784200486398}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a4ed5ea8358d221bdd61b784200486398}} 
+SIL\+\_\+\+OUT\+\_\+\+REF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_CUST@{SIL\_OUT\_CUST}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_CUST@{SIL\_OUT\_CUST}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a23fc413006a1ead7f31a5e6d4bb1bba1}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3a23fc413006a1ead7f31a5e6d4bb1bba1}} 
+SIL\+\_\+\+OUT\+\_\+\+CUST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_OUT\_CNT@{SIL\_OUT\_CNT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_OUT\_CNT@{SIL\_OUT\_CNT}}}\mbox{\Hypertarget{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee}\label{lib_epc_control_8h_a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee}} 
+SIL\+\_\+\+OUT\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654}\label{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_Parameters\_e@{SIL\_Parameters\_e}}
+\index{SIL\_Parameters\_e@{SIL\_Parameters\_e}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_Parameters\_e}{SIL\_Parameters\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654}{SIL\+\_\+\+Parameters\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_PAR\_PMVSPATH@{SIL\_PAR\_PMVSPATH}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_PAR\_PMVSPATH@{SIL\_PAR\_PMVSPATH}}}\mbox{\Hypertarget{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651}\label{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651}} 
+SIL\+\_\+\+PAR\+\_\+\+PMVSPATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_PAR\_INTENT@{SIL\_PAR\_INTENT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_PAR\_INTENT@{SIL\_PAR\_INTENT}}}\mbox{\Hypertarget{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460}\label{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460}} 
+SIL\+\_\+\+PAR\+\_\+\+INTENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_PAR\_CNT@{SIL\_PAR\_CNT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_PAR\_CNT@{SIL\_PAR\_CNT}}}\mbox{\Hypertarget{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c}\label{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c}} 
+SIL\+\_\+\+PAR\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6}\label{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_SolverType\_e@{SIL\_SolverType\_e}}
+\index{SIL\_SolverType\_e@{SIL\_SolverType\_e}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_SolverType\_e}{SIL\_SolverType\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6}{SIL\+\_\+\+Solver\+Type\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE@{SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE@{SIL\_SOLVER\_TYPE\_VARIABLE\_MULTIRATE}}}\mbox{\Hypertarget{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80}\label{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80}} 
+SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+VARIABLE\+\_\+\+MULTIRATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_SOLVER\_TYPE\_VARIABLE@{SIL\_SOLVER\_TYPE\_VARIABLE}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_SOLVER\_TYPE\_VARIABLE@{SIL\_SOLVER\_TYPE\_VARIABLE}}}\mbox{\Hypertarget{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6afc670ce0c6f762e1e84d79fd2b41f183}\label{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6afc670ce0c6f762e1e84d79fd2b41f183}} 
+SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+VARIABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE@{SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE@{SIL\_SOLVER\_TYPE\_FIXED\_MULTIRATE}}}\mbox{\Hypertarget{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6ae3685caa4ef65143b616476ec57e3d2b}\label{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6ae3685caa4ef65143b616476ec57e3d2b}} 
+SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+FIXED\+\_\+\+MULTIRATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_SOLVER\_TYPE\_FIXED@{SIL\_SOLVER\_TYPE\_FIXED}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_SOLVER\_TYPE\_FIXED@{SIL\_SOLVER\_TYPE\_FIXED}}}\mbox{\Hypertarget{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a3366082b4a36688431436954ae6908ab}\label{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a3366082b4a36688431436954ae6908ab}} 
+SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+FIXED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_SOLVER\_TYPE\_CNT@{SIL\_SOLVER\_TYPE\_CNT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_SOLVER\_TYPE\_CNT@{SIL\_SOLVER\_TYPE\_CNT}}}\mbox{\Hypertarget{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6aa1743274adbab534b35c524d2a529938}\label{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6aa1743274adbab534b35c524d2a529938}} 
+SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdc}\label{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdc}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_TaskGroup\_e@{SIL\_TaskGroup\_e}}
+\index{SIL\_TaskGroup\_e@{SIL\_TaskGroup\_e}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_TaskGroup\_e}{SIL\_TaskGroup\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdc}{SIL\+\_\+\+Task\+Group\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_GROUP\_ts@{SIL\_TASK\_GROUP\_ts}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_TASK\_GROUP\_ts@{SIL\_TASK\_GROUP\_ts}}}\mbox{\Hypertarget{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdca6752bdea6ba25e1c866793d9de9fddc2}\label{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdca6752bdea6ba25e1c866793d9de9fddc2}} 
+SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+ts&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_GROUP\_200us@{SIL\_TASK\_GROUP\_200us}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_TASK\_GROUP\_200us@{SIL\_TASK\_GROUP\_200us}}}\mbox{\Hypertarget{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcad252ac161a55166b4499529360ce87c8}\label{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcad252ac161a55166b4499529360ce87c8}} 
+SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+200us&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_GROUP\_1ms@{SIL\_TASK\_GROUP\_1ms}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_TASK\_GROUP\_1ms@{SIL\_TASK\_GROUP\_1ms}}}\mbox{\Hypertarget{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcaf0d955c1cb8c3b7dd9a510ea3bf6dbd0}\label{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcaf0d955c1cb8c3b7dd9a510ea3bf6dbd0}} 
+SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+1ms&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_GROUP\_10ms@{SIL\_TASK\_GROUP\_10ms}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_TASK\_GROUP\_10ms@{SIL\_TASK\_GROUP\_10ms}}}\mbox{\Hypertarget{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcabd3a3af76eaf8f536a2eeca2aee82f11}\label{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcabd3a3af76eaf8f536a2eeca2aee82f11}} 
+SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+10ms&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_GROUP\_100ms@{SIL\_TASK\_GROUP\_100ms}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_TASK\_GROUP\_100ms@{SIL\_TASK\_GROUP\_100ms}}}\mbox{\Hypertarget{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdca52ea4ad9e046ceb4545a1bf27689be6a}\label{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdca52ea4ad9e046ceb4545a1bf27689be6a}} 
+SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+100ms&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_GROUP\_1s@{SIL\_TASK\_GROUP\_1s}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_TASK\_GROUP\_1s@{SIL\_TASK\_GROUP\_1s}}}\mbox{\Hypertarget{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcac3d16ad5a1cedf24b10ea359023f034c}\label{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcac3d16ad5a1cedf24b10ea359023f034c}} 
+SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+1s&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIL\_TASK\_GROUP\_CNT@{SIL\_TASK\_GROUP\_CNT}!libEpcControl.h@{libEpcControl.h}}\index{libEpcControl.h@{libEpcControl.h}!SIL\_TASK\_GROUP\_CNT@{SIL\_TASK\_GROUP\_CNT}}}\mbox{\Hypertarget{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcaa9e4d7626ae66406a51f13ef77cca768}\label{lib_epc_control_8h_a1a498bbc9ad38cb13293325bb5eb3bdcaa9e4d7626ae66406a51f13ef77cca768}} 
+SIL\+\_\+\+TASK\+\_\+\+GROUP\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lib_epc_control_8h_ae7faa4e53156bb74ada32b2980fdc965}\label{lib_epc_control_8h_ae7faa4e53156bb74ada32b2980fdc965}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_getNextSampleHit@{SIL\_getNextSampleHit}}
+\index{SIL\_getNextSampleHit@{SIL\_getNextSampleHit}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_getNextSampleHit()}{SIL\_getNextSampleHit()}}
+{\footnotesize\ttfamily double SIL\+\_\+get\+Next\+Sample\+Hit (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_ab81a90ab6353010bbcbfbe378b6c133b}\label{lib_epc_control_8h_ab81a90ab6353010bbcbfbe378b6c133b}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_initializeLibrary@{SIL\_initializeLibrary}}
+\index{SIL\_initializeLibrary@{SIL\_initializeLibrary}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_initializeLibrary()}{SIL\_initializeLibrary()}}
+{\footnotesize\ttfamily bool SIL\+\_\+initialize\+Library (\begin{DoxyParamCaption}\item[{double}]{t\+Step,  }\item[{\mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}}}]{solver\+Type,  }\item[{\mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}}}]{mdl\+Intent,  }\item[{char $\ast$}]{pmvs\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a296ff2009cd74a2c451a2bcded01dff7}\label{lib_epc_control_8h_a296ff2009cd74a2c451a2bcded01dff7}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_readSnapshot@{SIL\_readSnapshot}}
+\index{SIL\_readSnapshot@{SIL\_readSnapshot}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_readSnapshot()}{SIL\_readSnapshot()}}
+{\footnotesize\ttfamily void SIL\+\_\+read\+Snapshot (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{instance\+Number,  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_ace37954380efd0cc545d686525f44253}\label{lib_epc_control_8h_ace37954380efd0cc545d686525f44253}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_terminateLibrary@{SIL\_terminateLibrary}}
+\index{SIL\_terminateLibrary@{SIL\_terminateLibrary}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_terminateLibrary()}{SIL\_terminateLibrary()}}
+{\footnotesize\ttfamily void SIL\+\_\+terminate\+Library (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a4516f98eb48b67f3cfac58f6f506395b}\label{lib_epc_control_8h_a4516f98eb48b67f3cfac58f6f506395b}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateOutput@{SIL\_updateOutput}}
+\index{SIL\_updateOutput@{SIL\_updateOutput}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput()}{SIL\_updateOutput()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a6fa1fbbfa14569f4bd41950a860eb75a}\label{lib_epc_control_8h_a6fa1fbbfa14569f4bd41950a860eb75a}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateOutput\_100ms@{SIL\_updateOutput\_100ms}}
+\index{SIL\_updateOutput\_100ms@{SIL\_updateOutput\_100ms}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_100ms()}{SIL\_updateOutput\_100ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+100ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_ae7e96e5405835166c40c25a724ec7439}\label{lib_epc_control_8h_ae7e96e5405835166c40c25a724ec7439}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateOutput\_10ms@{SIL\_updateOutput\_10ms}}
+\index{SIL\_updateOutput\_10ms@{SIL\_updateOutput\_10ms}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_10ms()}{SIL\_updateOutput\_10ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+10ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a75ff58ce3d5d4580e490ef7a69007e21}\label{lib_epc_control_8h_a75ff58ce3d5d4580e490ef7a69007e21}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateOutput\_1ms@{SIL\_updateOutput\_1ms}}
+\index{SIL\_updateOutput\_1ms@{SIL\_updateOutput\_1ms}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_1ms()}{SIL\_updateOutput\_1ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+1ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a01c7e531ea48b2b39560b8232dadb472}\label{lib_epc_control_8h_a01c7e531ea48b2b39560b8232dadb472}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateOutput\_1s@{SIL\_updateOutput\_1s}}
+\index{SIL\_updateOutput\_1s@{SIL\_updateOutput\_1s}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_1s()}{SIL\_updateOutput\_1s()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+1s (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a0ee7728e508048a3431cbe5591a6fe6e}\label{lib_epc_control_8h_a0ee7728e508048a3431cbe5591a6fe6e}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateOutput\_200us@{SIL\_updateOutput\_200us}}
+\index{SIL\_updateOutput\_200us@{SIL\_updateOutput\_200us}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_200us()}{SIL\_updateOutput\_200us()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+200us (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_ac996ef11ecaea694174e16c084e34121}\label{lib_epc_control_8h_ac996ef11ecaea694174e16c084e34121}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateOutput\_ts@{SIL\_updateOutput\_ts}}
+\index{SIL\_updateOutput\_ts@{SIL\_updateOutput\_ts}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutput\_ts()}{SIL\_updateOutput\_ts()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+Output\+\_\+ts (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a4bba7ed7d059aaea97ea7739d4a8aadf}\label{lib_epc_control_8h_a4bba7ed7d059aaea97ea7739d4a8aadf}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateState@{SIL\_updateState}}
+\index{SIL\_updateState@{SIL\_updateState}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState()}{SIL\_updateState()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a06036b1f582360534fabe0accf99ddcc}\label{lib_epc_control_8h_a06036b1f582360534fabe0accf99ddcc}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateState\_100ms@{SIL\_updateState\_100ms}}
+\index{SIL\_updateState\_100ms@{SIL\_updateState\_100ms}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_100ms()}{SIL\_updateState\_100ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+100ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_ad4d3c47eb9a2d78a7c7042067d358d94}\label{lib_epc_control_8h_ad4d3c47eb9a2d78a7c7042067d358d94}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateState\_10ms@{SIL\_updateState\_10ms}}
+\index{SIL\_updateState\_10ms@{SIL\_updateState\_10ms}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_10ms()}{SIL\_updateState\_10ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+10ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a771f5694ced82f12c455c9aa7b09e8a4}\label{lib_epc_control_8h_a771f5694ced82f12c455c9aa7b09e8a4}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateState\_1ms@{SIL\_updateState\_1ms}}
+\index{SIL\_updateState\_1ms@{SIL\_updateState\_1ms}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_1ms()}{SIL\_updateState\_1ms()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+1ms (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a2838f5346d7b4916cd601c41594fc05c}\label{lib_epc_control_8h_a2838f5346d7b4916cd601c41594fc05c}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateState\_1s@{SIL\_updateState\_1s}}
+\index{SIL\_updateState\_1s@{SIL\_updateState\_1s}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_1s()}{SIL\_updateState\_1s()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+1s (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a59eac95bc7334b0a03715fe1cfbbcca1}\label{lib_epc_control_8h_a59eac95bc7334b0a03715fe1cfbbcca1}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateState\_200us@{SIL\_updateState\_200us}}
+\index{SIL\_updateState\_200us@{SIL\_updateState\_200us}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_200us()}{SIL\_updateState\_200us()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+200us (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a2825be5948559ec4590c28ede64e4450}\label{lib_epc_control_8h_a2825be5948559ec4590c28ede64e4450}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_updateState\_ts@{SIL\_updateState\_ts}}
+\index{SIL\_updateState\_ts@{SIL\_updateState\_ts}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateState\_ts()}{SIL\_updateState\_ts()}}
+{\footnotesize\ttfamily void SIL\+\_\+update\+State\+\_\+ts (\begin{DoxyParamCaption}\item[{double}]{t\+Now }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_epc_control_8h_a5509b491627e5f7ee27c25815ac07c48}\label{lib_epc_control_8h_a5509b491627e5f7ee27c25815ac07c48}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_writeSnapshot@{SIL\_writeSnapshot}}
+\index{SIL\_writeSnapshot@{SIL\_writeSnapshot}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_writeSnapshot()}{SIL\_writeSnapshot()}}
+{\footnotesize\ttfamily void SIL\+\_\+write\+Snapshot (\begin{DoxyParamCaption}\item[{double}]{t\+Now,  }\item[{uint16\+\_\+t}]{instance\+Number,  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}\label{lib_epc_control_8h_aedc6052d5966284d83c9699bfeab9e3f}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_Parameters@{SIL\_Parameters}}
+\index{SIL\_Parameters@{SIL\_Parameters}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_Parameters}{SIL\_Parameters}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lib_epc_control_8h_a6c0dfafedd208ad225a68a634c9ea8c7}{SIL\+\_\+s\+Param\+\_\+t}} SIL\+\_\+\+Parameters\mbox{[}\mbox{\hyperlink{lib_epc_control_8h_a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c}{SIL\+\_\+\+PAR\+\_\+\+CNT}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{lib_epc_control_8h_aa8c520d7306f12a6098f3cb4fdd3d1ea}\label{lib_epc_control_8h_aa8c520d7306f12a6098f3cb4fdd3d1ea}} 
+\index{libEpcControl.h@{libEpcControl.h}!SIL\_Ports@{SIL\_Ports}}
+\index{SIL\_Ports@{SIL\_Ports}!libEpcControl.h@{libEpcControl.h}}
+\doxysubsubsection{\texorpdfstring{SIL\_Ports}{SIL\_Ports}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lib_epc_control_8h_adc106917d4b7e38833c410ab2a4282f9}{SIL\+\_\+s\+Ports\+\_\+t}} SIL\+\_\+\+Ports\hspace{0.3cm}{\ttfamily [extern]}}
+

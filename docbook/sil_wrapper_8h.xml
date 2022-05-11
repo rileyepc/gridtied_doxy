@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sil_wrapper_8h" xml:lang="en-US">
+<title>sil/silWrapper.h File Reference</title>
+<indexterm><primary>sil/silWrapper.h</primary></indexterm>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1aaac393258b46cdcc2da9818c3408aa70">_STRINGIFY</link>(s)   #s</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1a4689212d5a549893cabb9d7782eecfb6">STRINGIFY</link>(s)   <link linkend="_sil_wrapper_8h_1aaac393258b46cdcc2da9818c3408aa70">_STRINGIFY</link>(s)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1ab437589e9e94c01c02ba99450e313752">SIL_WARNING</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1ac87af9dc4e1a2b96a73588443fd36aa1">SIL_ERROR</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120">SIL_DIAG</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">SIL_PORT_OUT</link>(mPort,  mIdx)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735">SIL_PORT_INP</link>(mPort,  mIdx)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1a352a935588c5e0f47f299592854f205a">SIL_PARAM</link>(mPort,  mIdx)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981">SIL_DEBUG</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sil_wrapper_8h_1a88edd2aa4feabff4af21a997d5d8aa23">DEBUG_PRINT</link>(...)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_sil_wrapper_8h_1aaac393258b46cdcc2da9818c3408aa70"/><section>
+    <title>_STRINGIFY</title>
+<indexterm><primary>_STRINGIFY</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>_STRINGIFY</secondary></indexterm>
+<para><computeroutput>#define _STRINGIFY( s)   #s</computeroutput></para></section>
+<anchor xml:id="_sil_wrapper_8h_1a88edd2aa4feabff4af21a997d5d8aa23"/><section>
+    <title>DEBUG_PRINT</title>
+<indexterm><primary>DEBUG_PRINT</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>DEBUG_PRINT</secondary></indexterm>
+<para><computeroutput>#define DEBUG_PRINT( ...)</computeroutput></para></section>
+<anchor xml:id="_sil_wrapper_8h_1a26bc6a0cf2461f895aa1588b077d5981"/><section>
+    <title>SIL_DEBUG</title>
+<indexterm><primary>SIL_DEBUG</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>SIL_DEBUG</secondary></indexterm>
+<para><computeroutput>#define SIL_DEBUG( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;\
+&#32;&#32;&#32;&#32;SIL_DIAG(<emphasis role="stringliteral">&quot;%s&#32;Line&#32;%d:&#32;&quot;</emphasis>,&#32;__FILE__,&#32;__LINE__);&#32;\
+&#32;&#32;&#32;&#32;SIL_DIAG(__VA_ARGS__);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_sil_wrapper_8h_1a0ae9eb531a183bee8efa5ecd248c4120"/><section>
+    <title>SIL_DIAG</title>
+<indexterm><primary>SIL_DIAG</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>SIL_DIAG</secondary></indexterm>
+<para><computeroutput>#define SIL_DIAG( ...)</computeroutput></para></section>
+<anchor xml:id="_sil_wrapper_8h_1ac87af9dc4e1a2b96a73588443fd36aa1"/><section>
+    <title>SIL_ERROR</title>
+<indexterm><primary>SIL_ERROR</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>SIL_ERROR</secondary></indexterm>
+<para><computeroutput>#define SIL_ERROR( ...)</computeroutput></para></section>
+<anchor xml:id="_sil_wrapper_8h_1a352a935588c5e0f47f299592854f205a"/><section>
+    <title>SIL_PARAM</title>
+<indexterm><primary>SIL_PARAM</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>SIL_PARAM</secondary></indexterm>
+<para><computeroutput>#define SIL_PARAM( mPort,  mIdx)</computeroutput></para></section>
+<anchor xml:id="_sil_wrapper_8h_1a785efee4fbf0d28247f2570f245fd735"/><section>
+    <title>SIL_PORT_INP</title>
+<indexterm><primary>SIL_PORT_INP</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>SIL_PORT_INP</secondary></indexterm>
+<para><computeroutput>#define SIL_PORT_INP( mPort,  mIdx)</computeroutput></para></section>
+<anchor xml:id="_sil_wrapper_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3"/><section>
+    <title>SIL_PORT_OUT</title>
+<indexterm><primary>SIL_PORT_OUT</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>SIL_PORT_OUT</secondary></indexterm>
+<para><computeroutput>#define SIL_PORT_OUT( mPort,  mIdx)</computeroutput></para></section>
+<anchor xml:id="_sil_wrapper_8h_1ab437589e9e94c01c02ba99450e313752"/><section>
+    <title>SIL_WARNING</title>
+<indexterm><primary>SIL_WARNING</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>SIL_WARNING</secondary></indexterm>
+<para><computeroutput>#define SIL_WARNING( ...)</computeroutput></para></section>
+<anchor xml:id="_sil_wrapper_8h_1a4689212d5a549893cabb9d7782eecfb6"/><section>
+    <title>STRINGIFY</title>
+<indexterm><primary>STRINGIFY</primary><secondary>silWrapper.h</secondary></indexterm>
+<indexterm><primary>silWrapper.h</primary><secondary>STRINGIFY</secondary></indexterm>
+<para><computeroutput>#define STRINGIFY( s)   <link linkend="_sil_wrapper_8h_1aaac393258b46cdcc2da9818c3408aa70">_STRINGIFY</link>(s)</computeroutput></para></section>
+</section>
+</section>

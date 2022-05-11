@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['ad1d_5fadctrl1_5facq_5fps_0',['AD1D_ADCTRL1_ACQ_PS',['../ad1d__emu_8c.html#abe4a885cb44bf26365e270c4fbfa8607',1,'ad1d_emu.c']]],
+  ['ad1d_5fadctrl3_5fadcbgrfdn_1',['AD1D_ADCTRL3_ADCBGRFDN',['../ad1d__emu_8c.html#ab9253411038ec27a61b84c64b20c0c50',1,'ad1d_emu.c']]],
+  ['ad1d_5fadctrl3_5fadcpwdn_2',['AD1D_ADCTRL3_ADCPWDN',['../ad1d__emu_8c.html#a58bef6a2126fcdd1a7f84db2d15db96b',1,'ad1d_emu.c']]],
+  ['ad1d_5fbandgap_5fdelay_5fus_3',['AD1D_BANDGAP_DELAY_US',['../ad1d__emu_8c.html#af4db88218ea4fd8f82bd69744f952428',1,'ad1d_emu.c']]],
+  ['ad1d_5fconversion_5fbusy_5ftimeout_4',['AD1D_CONVERSION_BUSY_TIMEOUT',['../ad1d__emu_8c.html#a326f8de3386b95b0e620c9efacac9da5',1,'ad1d_emu.c']]],
+  ['ad1d_5fdata_5fdefaults_5',['AD1D_DATA_DEFAULTS',['../ad1d__emu_8c.html#aff18e8162bba502e11d37e62be04c177',1,'ad1d_emu.c']]],
+  ['ad1d_5fhardware_5fresources_5fdefaults_6',['AD1D_HARDWARE_RESOURCES_DEFAULTS',['../ad1d__emu_8c.html#ad9124706e75925499cfa0d88090439b4',1,'ad1d_emu.c']]],
+  ['ad1d_5fmeas_5fchannel_5fdefaults_7',['AD1D_MEAS_CHANNEL_DEFAULTS',['../ad1d__emu_8c.html#a329c6cb6c04e8a381ecf8fe2d127fdfc',1,'ad1d_emu.c']]],
+  ['ad1d_5fmeas_5fchannels_5fdefaults_8',['AD1D_MEAS_CHANNELS_DEFAULTS',['../ad1d__emu_8c.html#a1584150d50d6d14621d5c3b9cc1117bf',1,'ad1d_emu.c']]],
+  ['ad1d_5fmux_5fchannel_5fdefaults_9',['AD1D_MUX_CHANNEL_DEFAULTS',['../ad1d__emu_8c.html#a198b864a8ff7dbc4c423e3118edb8ac2',1,'ad1d_emu.c']]],
+  ['ad1d_5fmux_5fchannels_5fdefaults_10',['AD1D_MUX_CHANNELS_DEFAULTS',['../ad1d__emu_8c.html#ad45e792d8812ce19921ae984751b502e',1,'ad1d_emu.c']]],
+  ['ad1d_5fmux_5fstate_5fdefaults_11',['AD1D_MUX_STATE_DEFAULTS',['../ad1d__emu_8c.html#a2d5377d1b1ee7d6eb8f355d319b4abf5',1,'ad1d_emu.c']]],
+  ['ad1d_5fsample_5ftime_5fs_12',['AD1D_SAMPLE_TIME_S',['../ad1d__emu_8c.html#a833ed8f5dd16f1e7b7ad26e97d6399d8',1,'ad1d_emu.c']]],
+  ['ad1d_5fseq_5fgroups_5fdefaults_13',['AD1D_SEQ_GROUPS_DEFAULTS',['../ad1d__emu_8c.html#a9ff13f79f402aed0d60f6ff986596086',1,'ad1d_emu.c']]],
+  ['ad1d_5fsequencer_5fchannels_14',['AD1D_SEQUENCER_CHANNELS',['../ad1d__emu_8c.html#a87afe8e338dfe452c8f3402c7d3de3e5',1,'ad1d_emu.c']]],
+  ['ad1d_5fsequencer_5fdefaults_15',['AD1D_SEQUENCER_DEFAULTS',['../ad1d__emu_8c.html#ac4830930aac94b4b384528b09e9fe3ca',1,'ad1d_emu.c']]],
+  ['ad2d_5fconversion_5fbusy_5ftimeout_16',['AD2D_CONVERSION_BUSY_TIMEOUT',['../ad2d__emu_8c.html#a0f8a45dbdfd318e1abe032c2553b91be',1,'ad2d_emu.c']]],
+  ['ad2d_5fdata_5fdefaults_17',['AD2D_DATA_DEFAULTS',['../ad2d__emu_8c.html#a2f2c4efc92e7a2eb80450dbeb5816147',1,'ad2d_emu.c']]],
+  ['ad2d_5fhardware_5fresources_5fdefaults_18',['AD2D_HARDWARE_RESOURCES_DEFAULTS',['../ad2d__emu_8c.html#ad901cdebf19316aaeab7fa7596bee414',1,'ad2d_emu.c']]],
+  ['ad2d_5fmeas_5fchannel_5fdefaults_19',['AD2D_MEAS_CHANNEL_DEFAULTS',['../ad2d__emu_8c.html#a732a6a180bbbc56389a9b4efd7f1e3a8',1,'ad2d_emu.c']]],
+  ['ad2d_5fmeas_5fchannels_5fdefaults_20',['AD2D_MEAS_CHANNELS_DEFAULTS',['../ad2d__emu_8c.html#af5f9a41adfa8b50175bd0d05ab66f917',1,'ad2d_emu.c']]],
+  ['ad2d_5fsequencer_5fchannels_21',['AD2D_SEQUENCER_CHANNELS',['../ad2d__emu_8c.html#a37f3e5ee5272eda310a848ca26aafa2b',1,'ad2d_emu.c']]],
+  ['app_5feeprom_5fsections_5fdefaults_22',['APP_EEPROM_SECTIONS_DEFAULTS',['../application_8c.html#aac167759466a8cf18f6e33417e546f4d',1,'application.c']]]
+];

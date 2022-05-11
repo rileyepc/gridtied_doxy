@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_i_n_t_f___command_flags" kind="struct" language="C++" prot="public">
+    <compoundname>INTF_CommandFlags</compoundname>
+    <includes refid="interface_accessors_8h" local="no">interfaceAccessors.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1a061f5a9482d5eac586d05fbbc5278515" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t INTF_CommandFlags::enable</definition>
+        <argsstring></argsstring>
+        <name>enable</name>
+        <qualifiedname>INTF_CommandFlags::enable</qualifiedname>
+        <briefdescription>
+<para>run enable request, uint16_t to allow the out of range values of 2 and 3 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.h" line="52" column="14" bodyfile="interface/interfaceAccessors.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1a726f8801e06bf917e43d95c4c1a976d8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool INTF_CommandFlags::clearFaults</definition>
+        <argsstring></argsstring>
+        <name>clearFaults</name>
+        <qualifiedname>INTF_CommandFlags::clearFaults</qualifiedname>
+        <briefdescription>
+<para>clear fault reuquest </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.h" line="53" column="10" bodyfile="interface/interfaceAccessors.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1a7a3579235e0e2a5efece0fbc2c1aba55" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool INTF_CommandFlags::clearWarnings</definition>
+        <argsstring></argsstring>
+        <name>clearWarnings</name>
+        <qualifiedname>INTF_CommandFlags::clearWarnings</qualifiedname>
+        <briefdescription>
+<para>clear warnings </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.h" line="54" column="10" bodyfile="interface/interfaceAccessors.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1a0704ebf6a2d9622d12dd3713aacca9ac" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool INTF_CommandFlags::islandReconnect</definition>
+        <argsstring></argsstring>
+        <name>islandReconnect</name>
+        <qualifiedname>INTF_CommandFlags::islandReconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.h" line="55" column="10" bodyfile="interface/interfaceAccessors.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1aa61fde7144c23f119a393104c9c81df1" prot="public" static="no" mutable="no">
+        <type>PBC_ConnectSequence_t</type>
+        <definition>PBC_ConnectSequence_t INTF_CommandFlags::protBusSeq</definition>
+        <argsstring></argsstring>
+        <name>protBusSeq</name>
+        <qualifiedname>INTF_CommandFlags::protBusSeq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.h" line="56" column="27" bodyfile="interface/interfaceAccessors.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Volatile Process Data flags. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/interfaceAccessors.h" line="51" column="1" bodyfile="interface/interfaceAccessors.h" bodystart="51" bodyend="57"/>
+    <listofallmembers>
+      <member refid="struct_i_n_t_f___command_flags_1a726f8801e06bf917e43d95c4c1a976d8" prot="public" virt="non-virtual"><scope>INTF_CommandFlags</scope><name>clearFaults</name></member>
+      <member refid="struct_i_n_t_f___command_flags_1a7a3579235e0e2a5efece0fbc2c1aba55" prot="public" virt="non-virtual"><scope>INTF_CommandFlags</scope><name>clearWarnings</name></member>
+      <member refid="struct_i_n_t_f___command_flags_1a061f5a9482d5eac586d05fbbc5278515" prot="public" virt="non-virtual"><scope>INTF_CommandFlags</scope><name>enable</name></member>
+      <member refid="struct_i_n_t_f___command_flags_1a0704ebf6a2d9622d12dd3713aacca9ac" prot="public" virt="non-virtual"><scope>INTF_CommandFlags</scope><name>islandReconnect</name></member>
+      <member refid="struct_i_n_t_f___command_flags_1aa61fde7144c23f119a393104c9c81df1" prot="public" virt="non-virtual"><scope>INTF_CommandFlags</scope><name>protBusSeq</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

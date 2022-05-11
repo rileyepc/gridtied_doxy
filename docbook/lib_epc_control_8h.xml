@@ -1,0 +1,728 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_epc_control_8h" xml:lang="en-US">
+<title>sil/libEpcControl.h File Reference</title>
+<indexterm><primary>sil/libEpcControl.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdlib.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;stdbool.h&gt;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_i_l___param__s">SIL_Param_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_i_l___port_spec__s">SIL_PortSpec_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_i_l___ports__s">SIL_Ports_s</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1aa1eb80e8e9cca94572df89842779e134">SIL_PARSPEC_DEFAULTS</link>(mWidth,  mTunable)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a7c2f4c041f12cff2bdc76a124fac163a">SIL_PARAMETERS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71">SIL_PORTSPEC_DEFAULTS</link>(mWidth)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a23890ceaa9fbba57e73f562671e3a4b7">SIL_INPUTS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1ae3523c495ef0f14dc59ffef0168128e4">SIL_OUTPUTS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a18cd38012e645a9dc030b596eef8d6e7">SIL_PORTS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a976ad84e491da31be2745a282f83966a">SIL_PARAM_P</link>(mPort)   <link linkend="_lib_epc_control_8h_1aedc6052d5966284d83c9699bfeab9e3f">SIL_Parameters</link>[mPort].parPointer</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a7d51043f59ea40b9c4f6c01cbefc3fc5">SIL_PARAM_W</link>(mPort)   <link linkend="_lib_epc_control_8h_1aedc6052d5966284d83c9699bfeab9e3f">SIL_Parameters</link>[mPort].parWidth</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1af91b38aa17c2cb63c599d38dbbadbea3">SIL_PARAM_T</link>(mPort)   <link linkend="_lib_epc_control_8h_1aedc6052d5966284d83c9699bfeab9e3f">SIL_Parameters</link>[mPort].parTunable</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1ab99bbf5e2bafee94921eb5682919ec62">SIL_PARAM</link>(mPort,  mIdx,  mTyp)   ((mTyp *)<link linkend="_lib_epc_control_8h_1a976ad84e491da31be2745a282f83966a">SIL_PARAM_P</link>(mPort))[mIdx]</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1ab566304af8c7c3ef931ddfa8c9e69eec">SIL_PORT_INP_P</link>(mPort)   SIL_Ports.inpPort[mPort].portPointer</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1adf19060fe302f16473f38aebefc6d5ce">SIL_PORT_INP_W</link>(mPort)   SIL_Ports.inpPort[mPort].portWidth</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a785efee4fbf0d28247f2570f245fd735">SIL_PORT_INP</link>(mPort,  mIdx)   <link linkend="_lib_epc_control_8h_1ab566304af8c7c3ef931ddfa8c9e69eec">SIL_PORT_INP_P</link>(mPort)[mIdx]</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a5d14177846563842aefcce3d2d442c15">SIL_PORT_OUT_P</link>(mPort)   SIL_Ports.outPort[mPort].portPointer</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1afa2e5b0886c08c86db167e3437d78994">SIL_PORT_OUT_W</link>(mPort)   SIL_Ports.outPort[mPort].portWidth</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lib_epc_control_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3">SIL_PORT_OUT</link>(mPort,  mIdx)   <link linkend="_lib_epc_control_8h_1a5d14177846563842aefcce3d2d442c15">SIL_PORT_OUT_P</link>(mPort)[mIdx]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562b">SIL_ModelIntent_e</link> <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6">SIL_SolverType_e</link> <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdc">SIL_TaskGroup_e</link> <link linkend="_lib_epc_control_8h_1aeebca1ae458684a037cee2625473f4d5">SIL_eTaskGroup_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649">SIL_ControlMode_e</link> <link linkend="_lib_epc_control_8h_1ab6df339cd48acc4113a2b007b666a688">SIL_eControlMode_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_i_l___param__s">SIL_Param_s</link> <link linkend="_lib_epc_control_8h_1a6c0dfafedd208ad225a68a634c9ea8c7">SIL_sParam_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654">SIL_Parameters_e</link> <link linkend="_lib_epc_control_8h_1a4a9f02338ea17a1acac55f5e3371b981">SIL_eParameters_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_i_l___port_spec__s">SIL_PortSpec_s</link> <link linkend="_lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d">SIL_sPortSpec_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885e">SIL_InputPorts_e</link> <link linkend="_lib_epc_control_8h_1adb252f302ab937243cb6f756d707b7d5">SIL_eInputPorts_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3">SIL_OutputPorts_e</link> <link linkend="_lib_epc_control_8h_1a1f1da50021dd1cd4555928bb07346926">SIL_eOutputPorts_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_i_l___ports__s">SIL_Ports_s</link> <link linkend="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9">SIL_sPorts_t</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562b">SIL_ModelIntent_e</link> { <link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba2df8b4b3304c6d0e365e0fd460ab3780">SIL_MODEL_INTENT_SWITCHED</link>
+, <link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba6580cbabc0e59966d19d62a57017ed8f">SIL_MODEL_INTENT_AVERAGED</link>
+, <link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba08583372439a329f9ca27216797d96c3">SIL_MODEL_INTENT_CNT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6">SIL_SolverType_e</link> { 
+<link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80">SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</link>
+, <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6afc670ce0c6f762e1e84d79fd2b41f183">SIL_SOLVER_TYPE_VARIABLE</link>
+, <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6ae3685caa4ef65143b616476ec57e3d2b">SIL_SOLVER_TYPE_FIXED_MULTIRATE</link>
+, <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a3366082b4a36688431436954ae6908ab">SIL_SOLVER_TYPE_FIXED</link>
+, 
+<link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6aa1743274adbab534b35c524d2a529938">SIL_SOLVER_TYPE_CNT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdc">SIL_TaskGroup_e</link> { 
+<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdca6752bdea6ba25e1c866793d9de9fddc2">SIL_TASK_GROUP_ts</link>
+, <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcad252ac161a55166b4499529360ce87c8">SIL_TASK_GROUP_200us</link>
+, <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcaf0d955c1cb8c3b7dd9a510ea3bf6dbd0">SIL_TASK_GROUP_1ms</link>
+, <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcabd3a3af76eaf8f536a2eeca2aee82f11">SIL_TASK_GROUP_10ms</link>
+, 
+<link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdca52ea4ad9e046ceb4545a1bf27689be6a">SIL_TASK_GROUP_100ms</link>
+, <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcac3d16ad5a1cedf24b10ea359023f034c">SIL_TASK_GROUP_1s</link>
+, <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcaa9e4d7626ae66406a51f13ef77cca768">SIL_TASK_GROUP_CNT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649">SIL_ControlMode_e</link> { 
+<link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a6cb07d8d85a5e8971fef51c675588304">SIL_CONTROL_MODE_INACTIVE</link>
+, <link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649adccd557e1aab5f27d67e94ed78824b94">SIL_CONTROL_MODE_POWER</link>
+, <link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a70c434e6626cb8b803cf6acd6a37b7f4">SIL_CONTROL_MODE_CURRENT</link>
+, <link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a93c1a8587bc8b6a6b597585ab077535f">SIL_CONTROL_MODE_VOLTAGE</link>
+, 
+<link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a47926c1001ad9f5a01e613500336ee24">SIL_CONTROL_MODE_CNT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654">SIL_Parameters_e</link> { <link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651">SIL_PAR_PMVSPATH</link>
+, <link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460">SIL_PAR_INTENT</link>
+, <link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c">SIL_PAR_CNT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885e">SIL_InputPorts_e</link> { 
+<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea7166aff228702dc13caf5967626efaa1">SIL_INP_CTL_RUN</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eab56fa4beec171b6c60e78e2f3d191927">SIL_INP_CTL_PBC</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1bfba5df17c55efeeda1f2edc61446a7">SIL_INP_CTL_CLR</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eab52eb214021b655a4cccafe0c3f2dd7d">SIL_INP_CTL_ISL</link>
+, 
+<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea921d239e668458b03bc16a5a66dd5454">SIL_INP_REF_FVR</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea6a0fca72779f012fff2c8ea0e5c00986">SIL_INP_REF_RIG</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea82acb03b55e5ebb711dfa1dfccb49590">SIL_INP_REF_RPG</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eaf980954a2cd4c2dcbb47c83e74c8a88e">SIL_INP_FBK_DCV</link>
+, 
+<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea163346ac2bfd0c2ebf7efb9e67fd4c64">SIL_INP_FBK_PIC</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951">SIL_INP_FBK_PVL</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048">SIL_INP_FBK_PVR</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea0a0b4399368e0fcf003c42071414641a">SIL_INP_FBK_DINP</link>
+, 
+<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea42fce498cf11ac467138926a04766cde">SIL_INP_DBG_1</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea4f1c23acb5372636efd8d6b9c40ec81a">SIL_INP_DBG_2</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eac8774fd40be37428590c7828a6c9b008">SIL_INP_DBG_3</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eaf287e955c686ec86338a7c739c298eb9">SIL_INP_DBG_4</link>
+, 
+<link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eabe2411b715f2b31aa5e19aa5dd1c58a1">SIL_INP_DBG_5</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea7b3c68ecc26512f1ed539c4ea88cc773">SIL_INP_CUST</link>
+, <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa">SIL_INP_CNT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3">SIL_OutputPorts_e</link> { 
+<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aa32730ef97c9a8eb5e1328ffa03f734f">SIL_OUT_STA_CTL</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ac64960cc7a9d2805f2cd7b61ab6beae9">SIL_OUT_STA_PBC</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a20b7ec65a59c24bee8ab459a98b49fc1">SIL_OUT_STA_GMR</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a461b753bc509a9ea390811f4099022da">SIL_OUT_STA_GML</link>
+, 
+<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a3dc6e86c00cc451033a22a0f29c23f44">SIL_OUT_MON_FVR</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a3877128ecc7c07bbdfc485ffec628694">SIL_OUT_MON_FVL</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ac30210d0a725f78ec7f8f096a308f202">SIL_OUT_MON_RIG</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ad935533f629e631c69c2a102637f8671">SIL_OUT_MON_RPG</link>
+, 
+<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a145b61c2dd3b1a19587ca4cd45dffb85">SIL_OUT_MON_SCI</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3af7453ef1bbe00b123147f93e1cb8dba5">SIL_OUT_MON_SCV</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a9fdb763a801f238b3dc4d5f875aa6f3f">SIL_OUT_MON_DCVI</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a0f8ae69e9b83f36442d4c1b6556f752f">SIL_OUT_FBK_PIC</link>
+, 
+<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a9e0b5933f169819ce830970348b6f0e6">SIL_OUT_FBK_PVL</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ad2d8ec2934bfb655769114ac9a3b8c08">SIL_OUT_FBK_PVR</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a1378b5b19189a7a44ec85a3d4b520a98">SIL_OUT_CTL_DOUT</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a415d9ba9009591e374d6585c28309f6a">SIL_OUT_CTL_RLAY</link>
+, 
+<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53">SIL_OUT_CTL_GATE</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e">SIL_OUT_CTL_CDIR</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afdd819a0cd9386ad7a3d0ca3441d6594">SIL_OUT_DBG</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a4ed5ea8358d221bdd61b784200486398">SIL_OUT_REF</link>
+, 
+<link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a23fc413006a1ead7f31a5e6d4bb1bba1">SIL_OUT_CUST</link>
+, <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee">SIL_OUT_CNT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_lib_epc_control_8h_1ab81a90ab6353010bbcbfbe378b6c133b">SIL_initializeLibrary</link> (double tStep, <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link> solverType, <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link> mdlIntent, char *pmvsPath)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1ace37954380efd0cc545d686525f44253">SIL_terminateLibrary</link> (double tNow)</para>
+</listitem>
+            <listitem><para>double <link linkend="_lib_epc_control_8h_1ae7faa4e53156bb74ada32b2980fdc965">SIL_getNextSampleHit</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a4516f98eb48b67f3cfac58f6f506395b">SIL_updateOutput</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1ac996ef11ecaea694174e16c084e34121">SIL_updateOutput_ts</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a0ee7728e508048a3431cbe5591a6fe6e">SIL_updateOutput_200us</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a75ff58ce3d5d4580e490ef7a69007e21">SIL_updateOutput_1ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1ae7e96e5405835166c40c25a724ec7439">SIL_updateOutput_10ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a6fa1fbbfa14569f4bd41950a860eb75a">SIL_updateOutput_100ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a01c7e531ea48b2b39560b8232dadb472">SIL_updateOutput_1s</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a4bba7ed7d059aaea97ea7739d4a8aadf">SIL_updateState</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a2825be5948559ec4590c28ede64e4450">SIL_updateState_ts</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a59eac95bc7334b0a03715fe1cfbbcca1">SIL_updateState_200us</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a771f5694ced82f12c455c9aa7b09e8a4">SIL_updateState_1ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1ad4d3c47eb9a2d78a7c7042067d358d94">SIL_updateState_10ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a06036b1f582360534fabe0accf99ddcc">SIL_updateState_100ms</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a2838f5346d7b4916cd601c41594fc05c">SIL_updateState_1s</link> (double tNow)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a5509b491627e5f7ee27c25815ac07c48">SIL_writeSnapshot</link> (double tNow, uint16_t instanceNumber, char *tempPath)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lib_epc_control_8h_1a296ff2009cd74a2c451a2bcded01dff7">SIL_readSnapshot</link> (uint16_t instanceNumber, char *tempPath)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_lib_epc_control_8h_1a6c0dfafedd208ad225a68a634c9ea8c7">SIL_sParam_t</link> <link linkend="_lib_epc_control_8h_1aedc6052d5966284d83c9699bfeab9e3f">SIL_Parameters</link> [<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c">SIL_PAR_CNT</link>]</para>
+</listitem>
+            <listitem><para><link linkend="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9">SIL_sPorts_t</link> <link linkend="_lib_epc_control_8h_1aa8c520d7306f12a6098f3cb4fdd3d1ea">SIL_Ports</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_lib_epc_control_8h_1a23890ceaa9fbba57e73f562671e3a4b7"/><section>
+    <title>SIL_INPUTS_DEFAULTS</title>
+<indexterm><primary>SIL_INPUTS_DEFAULTS</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INPUTS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_INPUTS_DEFAULTS( ...)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1ae3523c495ef0f14dc59ffef0168128e4"/><section>
+    <title>SIL_OUTPUTS_DEFAULTS</title>
+<indexterm><primary>SIL_OUTPUTS_DEFAULTS</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUTPUTS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_OUTPUTS_DEFAULTS( ...)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1ab99bbf5e2bafee94921eb5682919ec62"/><section>
+    <title>SIL_PARAM</title>
+<indexterm><primary>SIL_PARAM</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PARAM</secondary></indexterm>
+<para><computeroutput>#define SIL_PARAM( mPort,  mIdx,  mTyp)   ((mTyp *)<link linkend="_lib_epc_control_8h_1a976ad84e491da31be2745a282f83966a">SIL_PARAM_P</link>(mPort))[mIdx]</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a976ad84e491da31be2745a282f83966a"/><section>
+    <title>SIL_PARAM_P</title>
+<indexterm><primary>SIL_PARAM_P</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PARAM_P</secondary></indexterm>
+<para><computeroutput>#define SIL_PARAM_P( mPort)   <link linkend="_lib_epc_control_8h_1aedc6052d5966284d83c9699bfeab9e3f">SIL_Parameters</link>[mPort].parPointer</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1af91b38aa17c2cb63c599d38dbbadbea3"/><section>
+    <title>SIL_PARAM_T</title>
+<indexterm><primary>SIL_PARAM_T</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PARAM_T</secondary></indexterm>
+<para><computeroutput>#define SIL_PARAM_T( mPort)   <link linkend="_lib_epc_control_8h_1aedc6052d5966284d83c9699bfeab9e3f">SIL_Parameters</link>[mPort].parTunable</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a7d51043f59ea40b9c4f6c01cbefc3fc5"/><section>
+    <title>SIL_PARAM_W</title>
+<indexterm><primary>SIL_PARAM_W</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PARAM_W</secondary></indexterm>
+<para><computeroutput>#define SIL_PARAM_W( mPort)   <link linkend="_lib_epc_control_8h_1aedc6052d5966284d83c9699bfeab9e3f">SIL_Parameters</link>[mPort].parWidth</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a7c2f4c041f12cff2bdc76a124fac163a"/><section>
+    <title>SIL_PARAMETERS_DEFAULTS</title>
+<indexterm><primary>SIL_PARAMETERS_DEFAULTS</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PARAMETERS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_PARAMETERS_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[&#32;<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651">SIL_PAR_PMVSPATH</link>&#32;]&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_lib_epc_control_8h_1aa1eb80e8e9cca94572df89842779e134">SIL_PARSPEC_DEFAULTS</link>(1,&#32;<emphasis role="keyword">false</emphasis>),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[&#32;<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460">SIL_PAR_INTENT</link>&#32;]&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_lib_epc_control_8h_1aa1eb80e8e9cca94572df89842779e134">SIL_PARSPEC_DEFAULTS</link>(1,&#32;<emphasis role="keyword">false</emphasis>),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_lib_epc_control_8h_1aa1eb80e8e9cca94572df89842779e134"/><section>
+    <title>SIL_PARSPEC_DEFAULTS</title>
+<indexterm><primary>SIL_PARSPEC_DEFAULTS</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PARSPEC_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_PARSPEC_DEFAULTS( mWidth,  mTunable)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.parPointer&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.parWidth&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;mWidth,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.parTunable&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;mTunable&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_lib_epc_control_8h_1a785efee4fbf0d28247f2570f245fd735"/><section>
+    <title>SIL_PORT_INP</title>
+<indexterm><primary>SIL_PORT_INP</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PORT_INP</secondary></indexterm>
+<para><computeroutput>#define SIL_PORT_INP( mPort,  mIdx)   <link linkend="_lib_epc_control_8h_1ab566304af8c7c3ef931ddfa8c9e69eec">SIL_PORT_INP_P</link>(mPort)[mIdx]</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1ab566304af8c7c3ef931ddfa8c9e69eec"/><section>
+    <title>SIL_PORT_INP_P</title>
+<indexterm><primary>SIL_PORT_INP_P</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PORT_INP_P</secondary></indexterm>
+<para><computeroutput>#define SIL_PORT_INP_P( mPort)   SIL_Ports.inpPort[mPort].portPointer</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1adf19060fe302f16473f38aebefc6d5ce"/><section>
+    <title>SIL_PORT_INP_W</title>
+<indexterm><primary>SIL_PORT_INP_W</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PORT_INP_W</secondary></indexterm>
+<para><computeroutput>#define SIL_PORT_INP_W( mPort)   SIL_Ports.inpPort[mPort].portWidth</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a87354ee0fb8bdc7c1cd428e24ef98bc3"/><section>
+    <title>SIL_PORT_OUT</title>
+<indexterm><primary>SIL_PORT_OUT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PORT_OUT</secondary></indexterm>
+<para><computeroutput>#define SIL_PORT_OUT( mPort,  mIdx)   <link linkend="_lib_epc_control_8h_1a5d14177846563842aefcce3d2d442c15">SIL_PORT_OUT_P</link>(mPort)[mIdx]</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a5d14177846563842aefcce3d2d442c15"/><section>
+    <title>SIL_PORT_OUT_P</title>
+<indexterm><primary>SIL_PORT_OUT_P</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PORT_OUT_P</secondary></indexterm>
+<para><computeroutput>#define SIL_PORT_OUT_P( mPort)   SIL_Ports.outPort[mPort].portPointer</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1afa2e5b0886c08c86db167e3437d78994"/><section>
+    <title>SIL_PORT_OUT_W</title>
+<indexterm><primary>SIL_PORT_OUT_W</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PORT_OUT_W</secondary></indexterm>
+<para><computeroutput>#define SIL_PORT_OUT_W( mPort)   SIL_Ports.outPort[mPort].portWidth</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a18cd38012e645a9dc030b596eef8d6e7"/><section>
+    <title>SIL_PORTS_DEFAULTS</title>
+<indexterm><primary>SIL_PORTS_DEFAULTS</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PORTS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_PORTS_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.inpPort&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_lib_epc_control_8h_1a23890ceaa9fbba57e73f562671e3a4b7">SIL_INPUTS_DEFAULTS</link>(),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.outPort&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_lib_epc_control_8h_1ae3523c495ef0f14dc59ffef0168128e4">SIL_OUTPUTS_DEFAULTS</link>(),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_lib_epc_control_8h_1a89c7cfb83dcbdf58bb0f9f190de60c71"/><section>
+    <title>SIL_PORTSPEC_DEFAULTS</title>
+<indexterm><primary>SIL_PORTSPEC_DEFAULTS</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PORTSPEC_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define SIL_PORTSPEC_DEFAULTS( mWidth)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.portPointer&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.portWidth&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;mWidth&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_lib_epc_control_8h_1ab6df339cd48acc4113a2b007b666a688"/><section>
+    <title>SIL_eControlMode_t</title>
+<indexterm><primary>SIL_eControlMode_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_eControlMode_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649">SIL_ControlMode_e</link> <link linkend="_lib_epc_control_8h_1ab6df339cd48acc4113a2b007b666a688">SIL_eControlMode_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1adb252f302ab937243cb6f756d707b7d5"/><section>
+    <title>SIL_eInputPorts_t</title>
+<indexterm><primary>SIL_eInputPorts_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_eInputPorts_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885e">SIL_InputPorts_e</link> <link linkend="_lib_epc_control_8h_1adb252f302ab937243cb6f756d707b7d5">SIL_eInputPorts_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01"/><section>
+    <title>SIL_eModelIntent_t</title>
+<indexterm><primary>SIL_eModelIntent_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_eModelIntent_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562b">SIL_ModelIntent_e</link> <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a1f1da50021dd1cd4555928bb07346926"/><section>
+    <title>SIL_eOutputPorts_t</title>
+<indexterm><primary>SIL_eOutputPorts_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_eOutputPorts_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3">SIL_OutputPorts_e</link> <link linkend="_lib_epc_control_8h_1a1f1da50021dd1cd4555928bb07346926">SIL_eOutputPorts_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a4a9f02338ea17a1acac55f5e3371b981"/><section>
+    <title>SIL_eParameters_t</title>
+<indexterm><primary>SIL_eParameters_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_eParameters_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654">SIL_Parameters_e</link> <link linkend="_lib_epc_control_8h_1a4a9f02338ea17a1acac55f5e3371b981">SIL_eParameters_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b"/><section>
+    <title>SIL_eSolverType_t</title>
+<indexterm><primary>SIL_eSolverType_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_eSolverType_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6">SIL_SolverType_e</link> <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1aeebca1ae458684a037cee2625473f4d5"/><section>
+    <title>SIL_eTaskGroup_t</title>
+<indexterm><primary>SIL_eTaskGroup_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_eTaskGroup_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdc">SIL_TaskGroup_e</link> <link linkend="_lib_epc_control_8h_1aeebca1ae458684a037cee2625473f4d5">SIL_eTaskGroup_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a6c0dfafedd208ad225a68a634c9ea8c7"/><section>
+    <title>SIL_sParam_t</title>
+<indexterm><primary>SIL_sParam_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_sParam_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_i_l___param__s">SIL_Param_s</link> <link linkend="_lib_epc_control_8h_1a6c0dfafedd208ad225a68a634c9ea8c7">SIL_sParam_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9"/><section>
+    <title>SIL_sPorts_t</title>
+<indexterm><primary>SIL_sPorts_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_sPorts_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_i_l___ports__s">SIL_Ports_s</link> <link linkend="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9">SIL_sPorts_t</link></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d"/><section>
+    <title>SIL_sPortSpec_t</title>
+<indexterm><primary>SIL_sPortSpec_t</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_sPortSpec_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_i_l___port_spec__s">SIL_PortSpec_s</link> <link linkend="_lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d">SIL_sPortSpec_t</link></computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649"/><section>
+    <title>SIL_ControlMode_e</title>
+<indexterm><primary>SIL_ControlMode_e</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_ControlMode_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649">SIL_ControlMode_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SIL_CONTROL_MODE_INACTIVE</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_CONTROL_MODE_INACTIVE</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a6cb07d8d85a5e8971fef51c675588304"/>SIL_CONTROL_MODE_INACTIVE</entry><entry></entry></row><row><entry><indexterm><primary>SIL_CONTROL_MODE_POWER</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_CONTROL_MODE_POWER</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649adccd557e1aab5f27d67e94ed78824b94"/>SIL_CONTROL_MODE_POWER</entry><entry></entry></row><row><entry><indexterm><primary>SIL_CONTROL_MODE_CURRENT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_CONTROL_MODE_CURRENT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a70c434e6626cb8b803cf6acd6a37b7f4"/>SIL_CONTROL_MODE_CURRENT</entry><entry></entry></row><row><entry><indexterm><primary>SIL_CONTROL_MODE_VOLTAGE</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_CONTROL_MODE_VOLTAGE</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a93c1a8587bc8b6a6b597585ab077535f"/>SIL_CONTROL_MODE_VOLTAGE</entry><entry></entry></row><row><entry><indexterm><primary>SIL_CONTROL_MODE_CNT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_CONTROL_MODE_CNT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1aff2f14d2a43919fc9074824004594649a47926c1001ad9f5a01e613500336ee24"/>SIL_CONTROL_MODE_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885e"/><section>
+    <title>SIL_InputPorts_e</title>
+<indexterm><primary>SIL_InputPorts_e</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_InputPorts_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885e">SIL_InputPorts_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SIL_INP_CTL_RUN</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_CTL_RUN</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea7166aff228702dc13caf5967626efaa1"/>SIL_INP_CTL_RUN</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_CTL_PBC</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_CTL_PBC</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eab56fa4beec171b6c60e78e2f3d191927"/>SIL_INP_CTL_PBC</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_CTL_CLR</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_CTL_CLR</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1bfba5df17c55efeeda1f2edc61446a7"/>SIL_INP_CTL_CLR</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_CTL_ISL</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_CTL_ISL</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eab52eb214021b655a4cccafe0c3f2dd7d"/>SIL_INP_CTL_ISL</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_REF_FVR</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_REF_FVR</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea921d239e668458b03bc16a5a66dd5454"/>SIL_INP_REF_FVR</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_REF_RIG</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_REF_RIG</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea6a0fca72779f012fff2c8ea0e5c00986"/>SIL_INP_REF_RIG</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_REF_RPG</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_REF_RPG</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea82acb03b55e5ebb711dfa1dfccb49590"/>SIL_INP_REF_RPG</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_FBK_DCV</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_FBK_DCV</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eaf980954a2cd4c2dcbb47c83e74c8a88e"/>SIL_INP_FBK_DCV</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_FBK_PIC</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_FBK_PIC</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea163346ac2bfd0c2ebf7efb9e67fd4c64"/>SIL_INP_FBK_PIC</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_FBK_PVL</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_FBK_PVL</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea72246f1b86b35282f692c59ef3691951"/>SIL_INP_FBK_PVL</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_FBK_PVR</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_FBK_PVR</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea61c2ea26139f18d196da1aac04cc7048"/>SIL_INP_FBK_PVR</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_FBK_DINP</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_FBK_DINP</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea0a0b4399368e0fcf003c42071414641a"/>SIL_INP_FBK_DINP</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_DBG_1</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_DBG_1</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea42fce498cf11ac467138926a04766cde"/>SIL_INP_DBG_1</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_DBG_2</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_DBG_2</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea4f1c23acb5372636efd8d6b9c40ec81a"/>SIL_INP_DBG_2</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_DBG_3</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_DBG_3</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eac8774fd40be37428590c7828a6c9b008"/>SIL_INP_DBG_3</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_DBG_4</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_DBG_4</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eaf287e955c686ec86338a7c739c298eb9"/>SIL_INP_DBG_4</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_DBG_5</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_DBG_5</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885eabe2411b715f2b31aa5e19aa5dd1c58a1"/>SIL_INP_DBG_5</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_CUST</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_CUST</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea7b3c68ecc26512f1ed539c4ea88cc773"/>SIL_INP_CUST</entry><entry></entry></row><row><entry><indexterm><primary>SIL_INP_CNT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_INP_CNT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7ccd8a2278ccf17d66ea951ee773885ea1b2283742db0acfe57efef7514862bfa"/>SIL_INP_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562b"/><section>
+    <title>SIL_ModelIntent_e</title>
+<indexterm><primary>SIL_ModelIntent_e</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_ModelIntent_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562b">SIL_ModelIntent_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SIL_MODEL_INTENT_SWITCHED</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_MODEL_INTENT_SWITCHED</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba2df8b4b3304c6d0e365e0fd460ab3780"/>SIL_MODEL_INTENT_SWITCHED</entry><entry></entry></row><row><entry><indexterm><primary>SIL_MODEL_INTENT_AVERAGED</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_MODEL_INTENT_AVERAGED</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba6580cbabc0e59966d19d62a57017ed8f"/>SIL_MODEL_INTENT_AVERAGED</entry><entry></entry></row><row><entry><indexterm><primary>SIL_MODEL_INTENT_CNT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_MODEL_INTENT_CNT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a9d01562d58954e7706d3de172b37562ba08583372439a329f9ca27216797d96c3"/>SIL_MODEL_INTENT_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3"/><section>
+    <title>SIL_OutputPorts_e</title>
+<indexterm><primary>SIL_OutputPorts_e</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OutputPorts_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3">SIL_OutputPorts_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SIL_OUT_STA_CTL</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_STA_CTL</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aa32730ef97c9a8eb5e1328ffa03f734f"/>SIL_OUT_STA_CTL</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_STA_PBC</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_STA_PBC</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ac64960cc7a9d2805f2cd7b61ab6beae9"/>SIL_OUT_STA_PBC</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_STA_GMR</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_STA_GMR</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a20b7ec65a59c24bee8ab459a98b49fc1"/>SIL_OUT_STA_GMR</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_STA_GML</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_STA_GML</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a461b753bc509a9ea390811f4099022da"/>SIL_OUT_STA_GML</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_MON_FVR</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_MON_FVR</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a3dc6e86c00cc451033a22a0f29c23f44"/>SIL_OUT_MON_FVR</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_MON_FVL</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_MON_FVL</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a3877128ecc7c07bbdfc485ffec628694"/>SIL_OUT_MON_FVL</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_MON_RIG</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_MON_RIG</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ac30210d0a725f78ec7f8f096a308f202"/>SIL_OUT_MON_RIG</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_MON_RPG</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_MON_RPG</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ad935533f629e631c69c2a102637f8671"/>SIL_OUT_MON_RPG</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_MON_SCI</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_MON_SCI</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a145b61c2dd3b1a19587ca4cd45dffb85"/>SIL_OUT_MON_SCI</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_MON_SCV</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_MON_SCV</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3af7453ef1bbe00b123147f93e1cb8dba5"/>SIL_OUT_MON_SCV</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_MON_DCVI</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_MON_DCVI</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a9fdb763a801f238b3dc4d5f875aa6f3f"/>SIL_OUT_MON_DCVI</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_FBK_PIC</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_FBK_PIC</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a0f8ae69e9b83f36442d4c1b6556f752f"/>SIL_OUT_FBK_PIC</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_FBK_PVL</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_FBK_PVL</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a9e0b5933f169819ce830970348b6f0e6"/>SIL_OUT_FBK_PVL</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_FBK_PVR</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_FBK_PVR</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3ad2d8ec2934bfb655769114ac9a3b8c08"/>SIL_OUT_FBK_PVR</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_CTL_DOUT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_CTL_DOUT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a1378b5b19189a7a44ec85a3d4b520a98"/>SIL_OUT_CTL_DOUT</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_CTL_RLAY</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_CTL_RLAY</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a415d9ba9009591e374d6585c28309f6a"/>SIL_OUT_CTL_RLAY</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_CTL_GATE</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_CTL_GATE</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3abe02ef98248b54f3d1e9e909d6ac2d53"/>SIL_OUT_CTL_GATE</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_CTL_CDIR</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_CTL_CDIR</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afea858383784badca3cbf45f10c3769e"/>SIL_OUT_CTL_CDIR</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_DBG</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_DBG</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3afdd819a0cd9386ad7a3d0ca3441d6594"/>SIL_OUT_DBG</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_REF</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_REF</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a4ed5ea8358d221bdd61b784200486398"/>SIL_OUT_REF</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_CUST</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_CUST</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3a23fc413006a1ead7f31a5e6d4bb1bba1"/>SIL_OUT_CUST</entry><entry></entry></row><row><entry><indexterm><primary>SIL_OUT_CNT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_OUT_CNT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a941236de0fbb8ebfef607ae4eea4fac3aec6cb18105c198265236fb89dfa062ee"/>SIL_OUT_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654"/><section>
+    <title>SIL_Parameters_e</title>
+<indexterm><primary>SIL_Parameters_e</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_Parameters_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654">SIL_Parameters_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SIL_PAR_PMVSPATH</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PAR_PMVSPATH</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a4a1ed0edc6d630e602a6d396e196c651"/>SIL_PAR_PMVSPATH</entry><entry></entry></row><row><entry><indexterm><primary>SIL_PAR_INTENT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PAR_INTENT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654a09dd103c722e108164658ae851c05460"/>SIL_PAR_INTENT</entry><entry></entry></row><row><entry><indexterm><primary>SIL_PAR_CNT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_PAR_CNT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c"/>SIL_PAR_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6"/><section>
+    <title>SIL_SolverType_e</title>
+<indexterm><primary>SIL_SolverType_e</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_SolverType_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6">SIL_SolverType_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80"/>SIL_SOLVER_TYPE_VARIABLE_MULTIRATE</entry><entry></entry></row><row><entry><indexterm><primary>SIL_SOLVER_TYPE_VARIABLE</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_SOLVER_TYPE_VARIABLE</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6afc670ce0c6f762e1e84d79fd2b41f183"/>SIL_SOLVER_TYPE_VARIABLE</entry><entry></entry></row><row><entry><indexterm><primary>SIL_SOLVER_TYPE_FIXED_MULTIRATE</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_SOLVER_TYPE_FIXED_MULTIRATE</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6ae3685caa4ef65143b616476ec57e3d2b"/>SIL_SOLVER_TYPE_FIXED_MULTIRATE</entry><entry></entry></row><row><entry><indexterm><primary>SIL_SOLVER_TYPE_FIXED</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_SOLVER_TYPE_FIXED</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6a3366082b4a36688431436954ae6908ab"/>SIL_SOLVER_TYPE_FIXED</entry><entry></entry></row><row><entry><indexterm><primary>SIL_SOLVER_TYPE_CNT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_SOLVER_TYPE_CNT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a7c690e2e7f450fe5e100746ad4f59aa6aa1743274adbab534b35c524d2a529938"/>SIL_SOLVER_TYPE_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdc"/><section>
+    <title>SIL_TaskGroup_e</title>
+<indexterm><primary>SIL_TaskGroup_e</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_TaskGroup_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdc">SIL_TaskGroup_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SIL_TASK_GROUP_ts</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_TASK_GROUP_ts</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdca6752bdea6ba25e1c866793d9de9fddc2"/>SIL_TASK_GROUP_ts</entry><entry></entry></row><row><entry><indexterm><primary>SIL_TASK_GROUP_200us</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_TASK_GROUP_200us</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcad252ac161a55166b4499529360ce87c8"/>SIL_TASK_GROUP_200us</entry><entry></entry></row><row><entry><indexterm><primary>SIL_TASK_GROUP_1ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_TASK_GROUP_1ms</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcaf0d955c1cb8c3b7dd9a510ea3bf6dbd0"/>SIL_TASK_GROUP_1ms</entry><entry></entry></row><row><entry><indexterm><primary>SIL_TASK_GROUP_10ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_TASK_GROUP_10ms</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcabd3a3af76eaf8f536a2eeca2aee82f11"/>SIL_TASK_GROUP_10ms</entry><entry></entry></row><row><entry><indexterm><primary>SIL_TASK_GROUP_100ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_TASK_GROUP_100ms</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdca52ea4ad9e046ceb4545a1bf27689be6a"/>SIL_TASK_GROUP_100ms</entry><entry></entry></row><row><entry><indexterm><primary>SIL_TASK_GROUP_1s</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_TASK_GROUP_1s</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcac3d16ad5a1cedf24b10ea359023f034c"/>SIL_TASK_GROUP_1s</entry><entry></entry></row><row><entry><indexterm><primary>SIL_TASK_GROUP_CNT</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_TASK_GROUP_CNT</secondary></indexterm>
+<anchor xml:id="_lib_epc_control_8h_1a1a498bbc9ad38cb13293325bb5eb3bdcaa9e4d7626ae66406a51f13ef77cca768"/>SIL_TASK_GROUP_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_lib_epc_control_8h_1ae7faa4e53156bb74ada32b2980fdc965"/><section>
+    <title>SIL_getNextSampleHit()</title>
+<indexterm><primary>SIL_getNextSampleHit</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_getNextSampleHit</secondary></indexterm>
+<para><computeroutput>double SIL_getNextSampleHit (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1ab81a90ab6353010bbcbfbe378b6c133b"/><section>
+    <title>SIL_initializeLibrary()</title>
+<indexterm><primary>SIL_initializeLibrary</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_initializeLibrary</secondary></indexterm>
+<para><computeroutput>bool SIL_initializeLibrary (double tStep, <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link> solverType, <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link> mdlIntent, char * pmvsPath)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a296ff2009cd74a2c451a2bcded01dff7"/><section>
+    <title>SIL_readSnapshot()</title>
+<indexterm><primary>SIL_readSnapshot</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_readSnapshot</secondary></indexterm>
+<para><computeroutput>void SIL_readSnapshot (uint16_t instanceNumber, char * tempPath)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1ace37954380efd0cc545d686525f44253"/><section>
+    <title>SIL_terminateLibrary()</title>
+<indexterm><primary>SIL_terminateLibrary</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_terminateLibrary</secondary></indexterm>
+<para><computeroutput>void SIL_terminateLibrary (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a4516f98eb48b67f3cfac58f6f506395b"/><section>
+    <title>SIL_updateOutput()</title>
+<indexterm><primary>SIL_updateOutput</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateOutput</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a6fa1fbbfa14569f4bd41950a860eb75a"/><section>
+    <title>SIL_updateOutput_100ms()</title>
+<indexterm><primary>SIL_updateOutput_100ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateOutput_100ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_100ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1ae7e96e5405835166c40c25a724ec7439"/><section>
+    <title>SIL_updateOutput_10ms()</title>
+<indexterm><primary>SIL_updateOutput_10ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateOutput_10ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_10ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a75ff58ce3d5d4580e490ef7a69007e21"/><section>
+    <title>SIL_updateOutput_1ms()</title>
+<indexterm><primary>SIL_updateOutput_1ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateOutput_1ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_1ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a01c7e531ea48b2b39560b8232dadb472"/><section>
+    <title>SIL_updateOutput_1s()</title>
+<indexterm><primary>SIL_updateOutput_1s</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateOutput_1s</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_1s (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a0ee7728e508048a3431cbe5591a6fe6e"/><section>
+    <title>SIL_updateOutput_200us()</title>
+<indexterm><primary>SIL_updateOutput_200us</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateOutput_200us</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_200us (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1ac996ef11ecaea694174e16c084e34121"/><section>
+    <title>SIL_updateOutput_ts()</title>
+<indexterm><primary>SIL_updateOutput_ts</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateOutput_ts</secondary></indexterm>
+<para><computeroutput>void SIL_updateOutput_ts (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a4bba7ed7d059aaea97ea7739d4a8aadf"/><section>
+    <title>SIL_updateState()</title>
+<indexterm><primary>SIL_updateState</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateState</secondary></indexterm>
+<para><computeroutput>void SIL_updateState (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a06036b1f582360534fabe0accf99ddcc"/><section>
+    <title>SIL_updateState_100ms()</title>
+<indexterm><primary>SIL_updateState_100ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateState_100ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_100ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1ad4d3c47eb9a2d78a7c7042067d358d94"/><section>
+    <title>SIL_updateState_10ms()</title>
+<indexterm><primary>SIL_updateState_10ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateState_10ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_10ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a771f5694ced82f12c455c9aa7b09e8a4"/><section>
+    <title>SIL_updateState_1ms()</title>
+<indexterm><primary>SIL_updateState_1ms</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateState_1ms</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_1ms (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a2838f5346d7b4916cd601c41594fc05c"/><section>
+    <title>SIL_updateState_1s()</title>
+<indexterm><primary>SIL_updateState_1s</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateState_1s</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_1s (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a59eac95bc7334b0a03715fe1cfbbcca1"/><section>
+    <title>SIL_updateState_200us()</title>
+<indexterm><primary>SIL_updateState_200us</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateState_200us</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_200us (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a2825be5948559ec4590c28ede64e4450"/><section>
+    <title>SIL_updateState_ts()</title>
+<indexterm><primary>SIL_updateState_ts</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_updateState_ts</secondary></indexterm>
+<para><computeroutput>void SIL_updateState_ts (double tNow)</computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1a5509b491627e5f7ee27c25815ac07c48"/><section>
+    <title>SIL_writeSnapshot()</title>
+<indexterm><primary>SIL_writeSnapshot</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_writeSnapshot</secondary></indexterm>
+<para><computeroutput>void SIL_writeSnapshot (double tNow, uint16_t instanceNumber, char * tempPath)</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_lib_epc_control_8h_1aedc6052d5966284d83c9699bfeab9e3f"/><section>
+    <title>SIL_Parameters</title>
+<indexterm><primary>SIL_Parameters</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_Parameters</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_8h_1a6c0dfafedd208ad225a68a634c9ea8c7">SIL_sParam_t</link> SIL_Parameters[<link linkend="_lib_epc_control_8h_1a5443dcb0424820621c8f4eac114e2654aeddf7b7cdeeb36bd2282a791493f703c">SIL_PAR_CNT</link>]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_lib_epc_control_8h_1aa8c520d7306f12a6098f3cb4fdd3d1ea"/><section>
+    <title>SIL_Ports</title>
+<indexterm><primary>SIL_Ports</primary><secondary>libEpcControl.h</secondary></indexterm>
+<indexterm><primary>libEpcControl.h</primary><secondary>SIL_Ports</secondary></indexterm>
+<para><computeroutput><link linkend="_lib_epc_control_8h_1adc106917d4b7e38833c410ab2a4282f9">SIL_sPorts_t</link> SIL_Ports<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

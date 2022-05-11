@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_p_w_m___state__s" kind="struct" language="C++" prot="public">
+    <compoundname>EPWM_State_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a4024ad128837faa2c0c1d1f18a811d87" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_State_s::tLastSolverHit</definition>
+        <argsstring></argsstring>
+        <name>tLastSolverHit</name>
+        <qualifiedname>EPWM_State_s::tLastSolverHit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="189" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a5346dae0759f032b1778b5b235a35e68" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_State_s::tFullPeriod</definition>
+        <argsstring></argsstring>
+        <name>tFullPeriod</name>
+        <qualifiedname>EPWM_State_s::tFullPeriod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="191" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a948a3a15ba9b7676df4d97023669a86e" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_State_s::tHalfPeriod</definition>
+        <argsstring></argsstring>
+        <name>tHalfPeriod</name>
+        <qualifiedname>EPWM_State_s::tHalfPeriod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="192" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1ac6fe03fd8ca065933beaedea8cda1ecd" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a5580106735fd6104e8f44676a78ca0b9" kindref="member">EPWM_ActionEvent_t</ref></type>
+        <definition>EPWM_ActionEvent_t EPWM_State_s::eventQueue[EPWM_EVENT_QUEUE_SIZE]</definition>
+        <argsstring>[EPWM_EVENT_QUEUE_SIZE]</argsstring>
+        <name>eventQueue</name>
+        <qualifiedname>EPWM_State_s::eventQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="194" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a2d97e411b92b2557216f42cc87d21dbc" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EPWM_State_s::queueDepth</definition>
+        <argsstring></argsstring>
+        <name>queueDepth</name>
+        <qualifiedname>EPWM_State_s::queueDepth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="195" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1ac082c603eb33a65374b72b0f1e508f12" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EPWM_State_s::queueDepthMax</definition>
+        <argsstring></argsstring>
+        <name>queueDepthMax</name>
+        <qualifiedname>EPWM_State_s::queueDepthMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="196" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1acda2b84020dd84d56a798c38835eb5ce" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1a44ea5baa4c092c9c4ebba71d81f30412" kindref="member">EPWM_SaturationState_t</ref></type>
+        <definition>EPWM_SaturationState_t EPWM_State_s::satState[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>satState</name>
+        <qualifiedname>EPWM_State_s::satState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="198" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a3568b181170b58c898058b5728435680" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_State_s::tOn[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tOn</name>
+        <qualifiedname>EPWM_State_s::tOn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="200" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a088364075c523b2dcc76a66a5921d210" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_State_s::tOff[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tOff</name>
+        <qualifiedname>EPWM_State_s::tOff</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="201" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a6e7735be20346d04744e304de58f2148" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_State_s::tCsw[EPWM_NR_CHANNELS_MAX]</definition>
+        <argsstring>[EPWM_NR_CHANNELS_MAX]</argsstring>
+        <name>tCsw</name>
+        <qualifiedname>EPWM_State_s::tCsw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="202" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a9f04e7e54a28c5f1f0560091cac41fd8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_State_s::isHalfPeriodEvent</definition>
+        <argsstring></argsstring>
+        <name>isHalfPeriodEvent</name>
+        <qualifiedname>EPWM_State_s::isHalfPeriodEvent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="204" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a221d4a1d5ab8c41efb061aacdb6f3c07" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double EPWM_State_s::tHalfPeriodStart</definition>
+        <argsstring></argsstring>
+        <name>tHalfPeriodStart</name>
+        <qualifiedname>EPWM_State_s::tHalfPeriodStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="205" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a08e58eef3ce96b2339f544d3d966a2ef" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EPWM_State_s::nHalfPeriods</definition>
+        <argsstring></argsstring>
+        <name>nHalfPeriods</name>
+        <qualifiedname>EPWM_State_s::nHalfPeriods</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="206" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___state__s_1a092e7a0e252417951a1b258f9f62a529" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EPWM_State_s::isDisabled</definition>
+        <argsstring></argsstring>
+        <name>isDisabled</name>
+        <qualifiedname>EPWM_State_s::isDisabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="208" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>EPWM_ActionEvent_s</label>
+        <link refid="struct_e_p_w_m___action_event__s"/>
+      </node>
+      <node id="1">
+        <label>EPWM_State_s</label>
+        <link refid="struct_e_p_w_m___state__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>eventQueue</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/emu/epwm_emu.c" line="188" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="188" bodyend="209"/>
+    <listofallmembers>
+      <member refid="struct_e_p_w_m___state__s_1ac6fe03fd8ca065933beaedea8cda1ecd" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>eventQueue</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a092e7a0e252417951a1b258f9f62a529" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>isDisabled</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a9f04e7e54a28c5f1f0560091cac41fd8" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>isHalfPeriodEvent</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a08e58eef3ce96b2339f544d3d966a2ef" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>nHalfPeriods</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a2d97e411b92b2557216f42cc87d21dbc" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>queueDepth</name></member>
+      <member refid="struct_e_p_w_m___state__s_1ac082c603eb33a65374b72b0f1e508f12" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>queueDepthMax</name></member>
+      <member refid="struct_e_p_w_m___state__s_1acda2b84020dd84d56a798c38835eb5ce" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>satState</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a6e7735be20346d04744e304de58f2148" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>tCsw</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a5346dae0759f032b1778b5b235a35e68" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>tFullPeriod</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a948a3a15ba9b7676df4d97023669a86e" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>tHalfPeriod</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a221d4a1d5ab8c41efb061aacdb6f3c07" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>tHalfPeriodStart</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a4024ad128837faa2c0c1d1f18a811d87" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>tLastSolverHit</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a088364075c523b2dcc76a66a5921d210" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>tOff</name></member>
+      <member refid="struct_e_p_w_m___state__s_1a3568b181170b58c898058b5728435680" prot="public" virt="non-virtual"><scope>EPWM_State_s</scope><name>tOn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ad1d__emu_8c" xml:lang="en-US">
+<title>sil/emu/ad1d_emu.c File Reference</title>
+<indexterm><primary>sil/emu/ad1d_emu.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;ad1d.h&quot;
+#include &quot;dsp.h&quot;
+#include &quot;fpgaRegs.h&quot;
+#include &quot;scheduler.h&quot;
+#include &quot;MTH_scale.h&quot;
+#include &quot;hardwareScales.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_a_d1_d___hw_resources__s">AD1D_HwResources_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d1_d___meas_channel__s">AD1D_MeasChannel_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d1_d___mux_channel__s">AD1D_MuxChannel_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d1_d___mux_state__s">AD1D_MuxState_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d1_d___sequencer__s">AD1D_Sequencer_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_a_d1_d___data__s">AD1D_Data_s</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a87afe8e338dfe452c8f3402c7d3de3e5">AD1D_SEQUENCER_CHANNELS</link>   9U</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a326f8de3386b95b0e620c9efacac9da5">AD1D_CONVERSION_BUSY_TIMEOUT</link>   200U</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1af4db88218ea4fd8f82bd69744f952428">AD1D_BANDGAP_DELAY_US</link>   50000U</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a833ed8f5dd16f1e7b7ad26e97d6399d8">AD1D_SAMPLE_TIME_S</link>   200.0e-9</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1abe4a885cb44bf26365e270c4fbfa8607">AD1D_ADCTRL1_ACQ_PS</link>   ((uint16_t)(ADC_CLOCK_FREQUENCY_HZ * <link linkend="_ad1d__emu_8c_1a833ed8f5dd16f1e7b7ad26e97d6399d8">AD1D_SAMPLE_TIME_S</link>) - 1U)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1ab9253411038ec27a61b84c64b20c0c50">AD1D_ADCTRL3_ADCBGRFDN</link>   0x00C0U</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a58bef6a2126fcdd1a7f84db2d15db96b">AD1D_ADCTRL3_ADCPWDN</link>   0x0020U</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1ad9124706e75925499cfa0d88090439b4">AD1D_HARDWARE_RESOURCES_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a329c6cb6c04e8a381ecf8fe2d127fdfc">AD1D_MEAS_CHANNEL_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a198b864a8ff7dbc4c423e3118edb8ac2">AD1D_MUX_CHANNEL_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a2d5377d1b1ee7d6eb8f355d319b4abf5">AD1D_MUX_STATE_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a1584150d50d6d14621d5c3b9cc1117bf">AD1D_MEAS_CHANNELS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1ac4830930aac94b4b384528b09e9fe3ca">AD1D_SEQUENCER_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1a9ff13f79f402aed0d60f6ff986596086">AD1D_SEQ_GROUPS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1ad45e792d8812ce19921ae984751b502e">AD1D_MUX_CHANNELS_DEFAULTS</link>(...)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_ad1d__emu_8c_1aff18e8162bba502e11d37e62be04c177">AD1D_DATA_DEFAULTS</link>(...)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef enum <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29">AD1D_Inputs_e</link> <link linkend="_ad1d__emu_8c_1ae68c26d3439d1475cd4f8057cd9c6fdd">AD1D_Inputs_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763">AD1D_MuxSelectName_e</link> <link linkend="_ad1d__emu_8c_1a065fd175027eba57c1b5c72581f67e19">AD1D_MuxSelectName_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d1_d___hw_resources__s">AD1D_HwResources_s</link> <link linkend="_ad1d__emu_8c_1acc9ce226226db55ac8cebe2ad4bc540b">AD1D_HwResources_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d1_d___meas_channel__s">AD1D_MeasChannel_s</link> <link linkend="_ad1d__emu_8c_1abb77a940fc8e53a100f83be6f9cec42d">AD1D_MeasChannel_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d1_d___mux_channel__s">AD1D_MuxChannel_s</link> <link linkend="_ad1d__emu_8c_1a22f4d1bdc5efd3498720f6edce2c47ba">AD1D_MuxChannel_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d1_d___mux_state__s">AD1D_MuxState_s</link> <link linkend="_ad1d__emu_8c_1a2d267b8898befbab9d31a60a910cf6e0">AD1D_MuxState_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d1_d___sequencer__s">AD1D_Sequencer_s</link> <link linkend="_ad1d__emu_8c_1a9d2d4a8ddfc4347d8e3d40f29e749361">AD1D_Sequencer_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_a_d1_d___data__s">AD1D_Data_s</link> <link linkend="_ad1d__emu_8c_1aeeb9fff3de27bef6ee032d9b527ad594">AD1D_Data_t</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29">AD1D_Inputs_e</link> { 
+<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a17f57d0302cb514547f9d51897fe6d5c">AD1D_INPUT_A0</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a71ce77c509c0cce378dbe6547f9c286f">AD1D_INPUT_A1</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a44627a4c5e7b4d96b929941b08436996">AD1D_INPUT_A2</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a162fd96501005fbb8b756627e97eb0df">AD1D_INPUT_A3</link>
+, 
+<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a5b836faef95eacf6e942656b6cb9630f">AD1D_INPUT_A4</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a2f5e922b5a133702df650f087fbfe17a">AD1D_INPUT_A5</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a124a5829575a36f8e6a80211379a153a">AD1D_INPUT_A6</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a74b111efae002376196bc53b9e637068">AD1D_INPUT_A7</link>
+, 
+<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a855e363f726ce621900a571d0a90bace">AD1D_INPUT_B0</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a24d375e3f6612dde1681ba9b5e4cac1f">AD1D_INPUT_B1</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a36aa3e35a6c03c62eef9dff97f1c085c">AD1D_INPUT_B2</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a397ee2250033452f2898c713cfe0748c">AD1D_INPUT_B3</link>
+, 
+<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29ac5e4077f4c591bbcc6331a425d27694a">AD1D_INPUT_B4</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a2979414fe4f0d1a5124ebbc8bc47063c">AD1D_INPUT_B5</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29ae6a77dca8fdf5a6920148d698d2758ce">AD1D_INPUT_B6</link>
+, <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>
+, 
+<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71">AD1D_INPUT_CNT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763">AD1D_MuxSelectName_e</link> { 
+<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763aa9e755515c393774f1216fe8484bc210">AD1D_MUX_SELECT_TEMP_INV_A</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a9c8e113bcefc9f5db9ec2561b5490ea1">AD1D_MUX_SELECT_TEMP_INV_B</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a3c94ba93d63d70a0667e8d003fc0e811">AD1D_MUX_SELECT_TEMP_HALFB</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763acabb7b2ed80d2d5efe9de3840036c6f1">AD1D_MUX_SELECT_TEMP_AUX_A</link>
+, 
+<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a2aed7f3e7b86f2520001607c5ef136a2">AD1D_MUX_SELECT_TEMP_AUX_B</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763aa713a6ef0bfde03d2931feda3f741570">AD1D_MUX_SELECT_TEMP_AUX_C</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a845ca75f63fe3671e7d204aca0b7c3e0">AD1D_MUX_SELECT_VOLT_P24V</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a37a609c91be49cab7a3285119c8a61bc">AD1D_MUX_SELECT_VOLT_P15V</link>
+, 
+<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a472161bfc029a57054697b14de3dfc63">AD1D_MUX_SELECT_VOLT_P5V</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a5fe733c8b85cfe657ed1af3ca06c78f5">AD1D_MUX_SELECT_VOLT_P3V</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a0841ab90c51c4cb854958f15c885a176">AD1D_MUX_SELECT_VOLT_N15V</link>
+, <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a5b5395f14f30d77ac8272b7b7e10e2ad">AD1D_MUX_SELECT_VOLT_TP</link>
+, 
+<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int16_t <link linkend="_ad1d__emu_8c_1a793ae8095e620913ed5f03833c1d5481">AD1D_enqueueMeasurementChannel</link> (uint16_t const chanName, MESD_SequenceGroup_t const seqGroup, <link linkend="__i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d">_iq31</link> *const mesdDest)</para>
+</listitem>
+            <listitem><para>void <link linkend="_ad1d__emu_8c_1a749ea38b5cb4c05e64381634cfafdb68">AD1D_releaseConfiguration</link> (void)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_ad1d__emu_8c_1a042feb23aedcb668d60d4b879f1dbfc1">AD1D_measurementsUpdate_ts</link> (MESD_SequenceGroup_t const seqGroup, uint16_t const triggerIndex)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_ad1d__emu_8c_1acc9ce226226db55ac8cebe2ad4bc540b">AD1D_HwResources_t</link> const <link linkend="_ad1d__emu_8c_1ace8003acac28b56efb20bb406cb0f867">AD1D_HwResources</link> [AD1D_CHANNEL_CNT] = <link linkend="_ad1d__emu_8c_1ad9124706e75925499cfa0d88090439b4">AD1D_HARDWARE_RESOURCES_DEFAULTS</link>()</para>
+</listitem>
+            <listitem><para><link linkend="_ad1d__emu_8c_1aeeb9fff3de27bef6ee032d9b527ad594">AD1D_Data_t</link> <link linkend="_ad1d__emu_8c_1a6859a7dfd47677acdc55d325df8f9cad">AD1D_Data</link> = <link linkend="_ad1d__emu_8c_1aff18e8162bba502e11d37e62be04c177">AD1D_DATA_DEFAULTS</link>()</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_ad1d__emu_8c_1a5d57ca5bef82b3866a69fce00e49fdbe">AD1D_AdcInput_emu</link> [<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71">AD1D_INPUT_CNT</link>]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_ad1d__emu_8c_1a26ce67771c6cde0e2a8ac91bcf0ddb8e">AD1D_MuxInput_emu</link> [<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_ad1d__emu_8c_1abe4a885cb44bf26365e270c4fbfa8607"/><section>
+    <title>AD1D_ADCTRL1_ACQ_PS</title>
+<indexterm><primary>AD1D_ADCTRL1_ACQ_PS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_ADCTRL1_ACQ_PS</secondary></indexterm>
+<para><computeroutput>#define AD1D_ADCTRL1_ACQ_PS   ((uint16_t)(ADC_CLOCK_FREQUENCY_HZ * <link linkend="_ad1d__emu_8c_1a833ed8f5dd16f1e7b7ad26e97d6399d8">AD1D_SAMPLE_TIME_S</link>) - 1U)</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1ab9253411038ec27a61b84c64b20c0c50"/><section>
+    <title>AD1D_ADCTRL3_ADCBGRFDN</title>
+<indexterm><primary>AD1D_ADCTRL3_ADCBGRFDN</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_ADCTRL3_ADCBGRFDN</secondary></indexterm>
+<para><computeroutput>#define AD1D_ADCTRL3_ADCBGRFDN   0x00C0U</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a58bef6a2126fcdd1a7f84db2d15db96b"/><section>
+    <title>AD1D_ADCTRL3_ADCPWDN</title>
+<indexterm><primary>AD1D_ADCTRL3_ADCPWDN</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_ADCTRL3_ADCPWDN</secondary></indexterm>
+<para><computeroutput>#define AD1D_ADCTRL3_ADCPWDN   0x0020U</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1af4db88218ea4fd8f82bd69744f952428"/><section>
+    <title>AD1D_BANDGAP_DELAY_US</title>
+<indexterm><primary>AD1D_BANDGAP_DELAY_US</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_BANDGAP_DELAY_US</secondary></indexterm>
+<para><computeroutput>#define AD1D_BANDGAP_DELAY_US   50000U</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a326f8de3386b95b0e620c9efacac9da5"/><section>
+    <title>AD1D_CONVERSION_BUSY_TIMEOUT</title>
+<indexterm><primary>AD1D_CONVERSION_BUSY_TIMEOUT</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_CONVERSION_BUSY_TIMEOUT</secondary></indexterm>
+<para><computeroutput>#define AD1D_CONVERSION_BUSY_TIMEOUT   200U</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1aff18e8162bba502e11d37e62be04c177"/><section>
+    <title>AD1D_DATA_DEFAULTS</title>
+<indexterm><primary>AD1D_DATA_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_DATA_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_DATA_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.seqGroups&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_ad1d__emu_8c_1a9ff13f79f402aed0d60f6ff986596086">AD1D_SEQ_GROUPS_DEFAULTS</link>(),&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.muxChannels&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_ad1d__emu_8c_1ad45e792d8812ce19921ae984751b502e">AD1D_MUX_CHANNELS_DEFAULTS</link>(),&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.muxState&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<link linkend="_ad1d__emu_8c_1a2d5377d1b1ee7d6eb8f355d319b4abf5">AD1D_MUX_STATE_DEFAULTS</link>(),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_ad1d__emu_8c_1ad9124706e75925499cfa0d88090439b4"/><section>
+    <title>AD1D_HARDWARE_RESOURCES_DEFAULTS</title>
+<indexterm><primary>AD1D_HARDWARE_RESOURCES_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_HARDWARE_RESOURCES_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_HARDWARE_RESOURCES_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_IPC_1&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a17f57d0302cb514547f9d51897fe6d5c">AD1D_INPUT_A0</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_IPC_2&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a71ce77c509c0cce378dbe6547f9c286f">AD1D_INPUT_A1</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_IPC_3&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a44627a4c5e7b4d96b929941b08436996">AD1D_INPUT_A2</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_IPC_4&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a855e363f726ce621900a571d0a90bace">AD1D_INPUT_B0</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_IPC_5&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a24d375e3f6612dde1681ba9b5e4cac1f">AD1D_INPUT_B1</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_IPC_6&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a36aa3e35a6c03c62eef9dff97f1c085c">AD1D_INPUT_B2</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_VDC_A&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a162fd96501005fbb8b756627e97eb0df">AD1D_INPUT_A3</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_VDC_B&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a397ee2250033452f2898c713cfe0748c">AD1D_INPUT_B3</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_IPEAK&#32;&#32;&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29ac5e4077f4c591bbcc6331a425d27694a">AD1D_INPUT_B4</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_TEMP_INV_A]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763aa9e755515c393774f1216fe8484bc210">AD1D_MUX_SELECT_TEMP_INV_A</link>&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_TEMP_INV_B]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a9c8e113bcefc9f5db9ec2561b5490ea1">AD1D_MUX_SELECT_TEMP_INV_B</link>&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_TEMP_HALFB]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a3c94ba93d63d70a0667e8d003fc0e811">AD1D_MUX_SELECT_TEMP_HALFB</link>&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_TEMP_AUX_A]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763acabb7b2ed80d2d5efe9de3840036c6f1">AD1D_MUX_SELECT_TEMP_AUX_A</link>&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_TEMP_AUX_B]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a2aed7f3e7b86f2520001607c5ef136a2">AD1D_MUX_SELECT_TEMP_AUX_B</link>&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_TEMP_AUX_C]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763aa713a6ef0bfde03d2931feda3f741570">AD1D_MUX_SELECT_TEMP_AUX_C</link>&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_VOLT_P24V&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a845ca75f63fe3671e7d204aca0b7c3e0">AD1D_MUX_SELECT_VOLT_P24V</link>&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_VOLT_P15V&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a37a609c91be49cab7a3285119c8a61bc">AD1D_MUX_SELECT_VOLT_P15V</link>&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_VOLT_N15V&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a0841ab90c51c4cb854958f15c885a176">AD1D_MUX_SELECT_VOLT_N15V</link>&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_VOLT_P5V&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a472161bfc029a57054697b14de3dfc63">AD1D_MUX_SELECT_VOLT_P5V</link>&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_VOLT_P3V&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a5fe733c8b85cfe657ed1af3ca06c78f5">AD1D_MUX_SELECT_VOLT_P3V</link>&#32;&#32;&#32;},&#32;&#32;\
+&#32;&#32;&#32;&#32;[AD1D_CHANNEL_VOLT_TP&#32;&#32;&#32;]&#32;=&#32;{&#32;<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56">AD1D_INPUT_B7</link>,&#32;<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a5b5395f14f30d77ac8272b7b7e10e2ad">AD1D_MUX_SELECT_VOLT_TP</link>&#32;&#32;&#32;&#32;},&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_ad1d__emu_8c_1a329c6cb6c04e8a381ecf8fe2d127fdfc"/><section>
+    <title>AD1D_MEAS_CHANNEL_DEFAULTS</title>
+<indexterm><primary>AD1D_MEAS_CHANNEL_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MEAS_CHANNEL_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_MEAS_CHANNEL_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.adcInput&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;(<link linkend="_ad1d__emu_8c_1ae68c26d3439d1475cd4f8057cd9c6fdd">AD1D_Inputs_t</link>)0U,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.mesdDest&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_ad1d__emu_8c_1a1584150d50d6d14621d5c3b9cc1117bf"/><section>
+    <title>AD1D_MEAS_CHANNELS_DEFAULTS</title>
+<indexterm><primary>AD1D_MEAS_CHANNELS_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MEAS_CHANNELS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_MEAS_CHANNELS_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[0U&#32;...&#32;(<link linkend="_ad1d__emu_8c_1a87afe8e338dfe452c8f3402c7d3de3e5">AD1D_SEQUENCER_CHANNELS</link>&#32;-&#32;1U)]&#32;=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ad1d__emu_8c_1a329c6cb6c04e8a381ecf8fe2d127fdfc">AD1D_MEAS_CHANNEL_DEFAULTS</link>(__VA_ARGS__),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_ad1d__emu_8c_1a198b864a8ff7dbc4c423e3118edb8ac2"/><section>
+    <title>AD1D_MUX_CHANNEL_DEFAULTS</title>
+<indexterm><primary>AD1D_MUX_CHANNEL_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_CHANNEL_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_MUX_CHANNEL_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.mesdDest&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.muxSelect&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;(<link linkend="_ad1d__emu_8c_1a065fd175027eba57c1b5c72581f67e19">AD1D_MuxSelectName_t</link>)0U,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.nextChannel&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_ad1d__emu_8c_1ad45e792d8812ce19921ae984751b502e"/><section>
+    <title>AD1D_MUX_CHANNELS_DEFAULTS</title>
+<indexterm><primary>AD1D_MUX_CHANNELS_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_CHANNELS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_MUX_CHANNELS_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[0U&#32;...&#32;(<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>&#32;-&#32;1U)]&#32;=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ad1d__emu_8c_1a198b864a8ff7dbc4c423e3118edb8ac2">AD1D_MUX_CHANNEL_DEFAULTS</link>(__VA_ARGS__)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_ad1d__emu_8c_1a2d5377d1b1ee7d6eb8f355d319b4abf5"/><section>
+    <title>AD1D_MUX_STATE_DEFAULTS</title>
+<indexterm><primary>AD1D_MUX_STATE_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_STATE_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_MUX_STATE_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.nextChannel&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.mesdDest&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;NULL,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.groupAssoc&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;MESD_SEQUENCE_GROUP_CNT,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.channelCount&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0U,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+<emphasis role="preprocessor">&#32;&#32;&#32;&#32;##__VA_ARGS__&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+<emphasis role="preprocessor">}</emphasis>
+</programlisting></section>
+<anchor xml:id="_ad1d__emu_8c_1a833ed8f5dd16f1e7b7ad26e97d6399d8"/><section>
+    <title>AD1D_SAMPLE_TIME_S</title>
+<indexterm><primary>AD1D_SAMPLE_TIME_S</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_SAMPLE_TIME_S</secondary></indexterm>
+<para><computeroutput>#define AD1D_SAMPLE_TIME_S   200.0e-9</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a9ff13f79f402aed0d60f6ff986596086"/><section>
+    <title>AD1D_SEQ_GROUPS_DEFAULTS</title>
+<indexterm><primary>AD1D_SEQ_GROUPS_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_SEQ_GROUPS_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_SEQ_GROUPS_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;[0U&#32;...&#32;(MESD_SEQUENCE_GROUP_CNT&#32;-&#32;1U)]&#32;=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ad1d__emu_8c_1ac4830930aac94b4b384528b09e9fe3ca">AD1D_SEQUENCER_DEFAULTS</link>(__VA_ARGS__)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+<anchor xml:id="_ad1d__emu_8c_1a87afe8e338dfe452c8f3402c7d3de3e5"/><section>
+    <title>AD1D_SEQUENCER_CHANNELS</title>
+<indexterm><primary>AD1D_SEQUENCER_CHANNELS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_SEQUENCER_CHANNELS</secondary></indexterm>
+<para><computeroutput>#define AD1D_SEQUENCER_CHANNELS   9U</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1ac4830930aac94b4b384528b09e9fe3ca"/><section>
+    <title>AD1D_SEQUENCER_DEFAULTS</title>
+<indexterm><primary>AD1D_SEQUENCER_DEFAULTS</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_SEQUENCER_DEFAULTS</secondary></indexterm>
+<para><computeroutput>#define AD1D_SEQUENCER_DEFAULTS( ...)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.measChannels&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AD1D_MEAS_CHANNELS_DEFAULTS(__VA_ARGS__),&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;.channelCount&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0U&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+}
+</programlisting></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_ad1d__emu_8c_1aeeb9fff3de27bef6ee032d9b527ad594"/><section>
+    <title>AD1D_Data_t</title>
+<indexterm><primary>AD1D_Data_t</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_Data_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d1_d___data__s">AD1D_Data_s</link> <link linkend="_ad1d__emu_8c_1aeeb9fff3de27bef6ee032d9b527ad594">AD1D_Data_t</link></computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1acc9ce226226db55ac8cebe2ad4bc540b"/><section>
+    <title>AD1D_HwResources_t</title>
+<indexterm><primary>AD1D_HwResources_t</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_HwResources_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d1_d___hw_resources__s">AD1D_HwResources_s</link> <link linkend="_ad1d__emu_8c_1acc9ce226226db55ac8cebe2ad4bc540b">AD1D_HwResources_t</link></computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1ae68c26d3439d1475cd4f8057cd9c6fdd"/><section>
+    <title>AD1D_Inputs_t</title>
+<indexterm><primary>AD1D_Inputs_t</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_Inputs_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29">AD1D_Inputs_e</link> <link linkend="_ad1d__emu_8c_1ae68c26d3439d1475cd4f8057cd9c6fdd">AD1D_Inputs_t</link></computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1abb77a940fc8e53a100f83be6f9cec42d"/><section>
+    <title>AD1D_MeasChannel_t</title>
+<indexterm><primary>AD1D_MeasChannel_t</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MeasChannel_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d1_d___meas_channel__s">AD1D_MeasChannel_s</link> <link linkend="_ad1d__emu_8c_1abb77a940fc8e53a100f83be6f9cec42d">AD1D_MeasChannel_t</link></computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a22f4d1bdc5efd3498720f6edce2c47ba"/><section>
+    <title>AD1D_MuxChannel_t</title>
+<indexterm><primary>AD1D_MuxChannel_t</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MuxChannel_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d1_d___mux_channel__s">AD1D_MuxChannel_s</link> <link linkend="_ad1d__emu_8c_1a22f4d1bdc5efd3498720f6edce2c47ba">AD1D_MuxChannel_t</link></computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a065fd175027eba57c1b5c72581f67e19"/><section>
+    <title>AD1D_MuxSelectName_t</title>
+<indexterm><primary>AD1D_MuxSelectName_t</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MuxSelectName_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763">AD1D_MuxSelectName_e</link> <link linkend="_ad1d__emu_8c_1a065fd175027eba57c1b5c72581f67e19">AD1D_MuxSelectName_t</link></computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a2d267b8898befbab9d31a60a910cf6e0"/><section>
+    <title>AD1D_MuxState_t</title>
+<indexterm><primary>AD1D_MuxState_t</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MuxState_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d1_d___mux_state__s">AD1D_MuxState_s</link> <link linkend="_ad1d__emu_8c_1a2d267b8898befbab9d31a60a910cf6e0">AD1D_MuxState_t</link></computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a9d2d4a8ddfc4347d8e3d40f29e749361"/><section>
+    <title>AD1D_Sequencer_t</title>
+<indexterm><primary>AD1D_Sequencer_t</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_Sequencer_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_a_d1_d___sequencer__s">AD1D_Sequencer_s</link> <link linkend="_ad1d__emu_8c_1a9d2d4a8ddfc4347d8e3d40f29e749361">AD1D_Sequencer_t</link></computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29"/><section>
+    <title>AD1D_Inputs_e</title>
+<indexterm><primary>AD1D_Inputs_e</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_Inputs_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29">AD1D_Inputs_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>AD1D_INPUT_A0</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_A0</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a17f57d0302cb514547f9d51897fe6d5c"/>AD1D_INPUT_A0</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_A1</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_A1</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a71ce77c509c0cce378dbe6547f9c286f"/>AD1D_INPUT_A1</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_A2</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_A2</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a44627a4c5e7b4d96b929941b08436996"/>AD1D_INPUT_A2</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_A3</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_A3</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a162fd96501005fbb8b756627e97eb0df"/>AD1D_INPUT_A3</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_A4</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_A4</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a5b836faef95eacf6e942656b6cb9630f"/>AD1D_INPUT_A4</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_A5</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_A5</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a2f5e922b5a133702df650f087fbfe17a"/>AD1D_INPUT_A5</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_A6</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_A6</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a124a5829575a36f8e6a80211379a153a"/>AD1D_INPUT_A6</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_A7</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_A7</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a74b111efae002376196bc53b9e637068"/>AD1D_INPUT_A7</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_B0</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_B0</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a855e363f726ce621900a571d0a90bace"/>AD1D_INPUT_B0</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_B1</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_B1</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a24d375e3f6612dde1681ba9b5e4cac1f"/>AD1D_INPUT_B1</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_B2</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_B2</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a36aa3e35a6c03c62eef9dff97f1c085c"/>AD1D_INPUT_B2</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_B3</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_B3</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a397ee2250033452f2898c713cfe0748c"/>AD1D_INPUT_B3</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_B4</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_B4</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29ac5e4077f4c591bbcc6331a425d27694a"/>AD1D_INPUT_B4</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_B5</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_B5</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a2979414fe4f0d1a5124ebbc8bc47063c"/>AD1D_INPUT_B5</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_B6</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_B6</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29ae6a77dca8fdf5a6920148d698d2758ce"/>AD1D_INPUT_B6</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_B7</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_B7</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a0304912f25e29676524c0620e6f9fe56"/>AD1D_INPUT_B7</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_INPUT_CNT</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_INPUT_CNT</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71"/>AD1D_INPUT_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763"/><section>
+    <title>AD1D_MuxSelectName_e</title>
+<indexterm><primary>AD1D_MuxSelectName_e</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MuxSelectName_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763">AD1D_MuxSelectName_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>AD1D_MUX_SELECT_TEMP_INV_A</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_TEMP_INV_A</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763aa9e755515c393774f1216fe8484bc210"/>AD1D_MUX_SELECT_TEMP_INV_A</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_TEMP_INV_B</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_TEMP_INV_B</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a9c8e113bcefc9f5db9ec2561b5490ea1"/>AD1D_MUX_SELECT_TEMP_INV_B</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_TEMP_HALFB</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_TEMP_HALFB</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a3c94ba93d63d70a0667e8d003fc0e811"/>AD1D_MUX_SELECT_TEMP_HALFB</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_TEMP_AUX_A</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_TEMP_AUX_A</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763acabb7b2ed80d2d5efe9de3840036c6f1"/>AD1D_MUX_SELECT_TEMP_AUX_A</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_TEMP_AUX_B</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_TEMP_AUX_B</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a2aed7f3e7b86f2520001607c5ef136a2"/>AD1D_MUX_SELECT_TEMP_AUX_B</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_TEMP_AUX_C</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_TEMP_AUX_C</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763aa713a6ef0bfde03d2931feda3f741570"/>AD1D_MUX_SELECT_TEMP_AUX_C</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_VOLT_P24V</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_VOLT_P24V</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a845ca75f63fe3671e7d204aca0b7c3e0"/>AD1D_MUX_SELECT_VOLT_P24V</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_VOLT_P15V</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_VOLT_P15V</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a37a609c91be49cab7a3285119c8a61bc"/>AD1D_MUX_SELECT_VOLT_P15V</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_VOLT_P5V</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_VOLT_P5V</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a472161bfc029a57054697b14de3dfc63"/>AD1D_MUX_SELECT_VOLT_P5V</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_VOLT_P3V</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_VOLT_P3V</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a5fe733c8b85cfe657ed1af3ca06c78f5"/>AD1D_MUX_SELECT_VOLT_P3V</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_VOLT_N15V</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_VOLT_N15V</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a0841ab90c51c4cb854958f15c885a176"/>AD1D_MUX_SELECT_VOLT_N15V</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_VOLT_TP</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_VOLT_TP</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763a5b5395f14f30d77ac8272b7b7e10e2ad"/>AD1D_MUX_SELECT_VOLT_TP</entry><entry></entry></row><row><entry><indexterm><primary>AD1D_MUX_SELECT_CNT</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MUX_SELECT_CNT</secondary></indexterm>
+<anchor xml:id="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef"/>AD1D_MUX_SELECT_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_ad1d__emu_8c_1a793ae8095e620913ed5f03833c1d5481"/><section>
+    <title>AD1D_enqueueMeasurementChannel()</title>
+<indexterm><primary>AD1D_enqueueMeasurementChannel</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_enqueueMeasurementChannel</secondary></indexterm>
+<para><computeroutput>int16_t AD1D_enqueueMeasurementChannel (uint16_t const chanName, MESD_SequenceGroup_t const seqGroup, <link linkend="__i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d">_iq31</link> *const mesdDest)</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a042feb23aedcb668d60d4b879f1dbfc1"/><section>
+    <title>AD1D_measurementsUpdate_ts()</title>
+<indexterm><primary>AD1D_measurementsUpdate_ts</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_measurementsUpdate_ts</secondary></indexterm>
+<para><computeroutput>bool AD1D_measurementsUpdate_ts (MESD_SequenceGroup_t const seqGroup, uint16_t const triggerIndex)</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a749ea38b5cb4c05e64381634cfafdb68"/><section>
+    <title>AD1D_releaseConfiguration()</title>
+<indexterm><primary>AD1D_releaseConfiguration</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_releaseConfiguration</secondary></indexterm>
+<para><computeroutput>void AD1D_releaseConfiguration (void )</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_ad1d__emu_8c_1a5d57ca5bef82b3866a69fce00e49fdbe"/><section>
+    <title>AD1D_AdcInput_emu</title>
+<indexterm><primary>AD1D_AdcInput_emu</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_AdcInput_emu</secondary></indexterm>
+<para><computeroutput>uint16_t AD1D_AdcInput_emu[<link linkend="_ad1d__emu_8c_1aec6b4b2fee3bee1c5ddb0790c69e5b29a91d5ac3013165709f5cc1f98f8b0ff71">AD1D_INPUT_CNT</link>]</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a6859a7dfd47677acdc55d325df8f9cad"/><section>
+    <title>AD1D_Data</title>
+<indexterm><primary>AD1D_Data</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_Data</secondary></indexterm>
+<para><computeroutput><link linkend="_ad1d__emu_8c_1aeeb9fff3de27bef6ee032d9b527ad594">AD1D_Data_t</link> AD1D_Data = <link linkend="_ad1d__emu_8c_1aff18e8162bba502e11d37e62be04c177">AD1D_DATA_DEFAULTS</link>()</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1ace8003acac28b56efb20bb406cb0f867"/><section>
+    <title>AD1D_HwResources</title>
+<indexterm><primary>AD1D_HwResources</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_HwResources</secondary></indexterm>
+<para><computeroutput><link linkend="_ad1d__emu_8c_1acc9ce226226db55ac8cebe2ad4bc540b">AD1D_HwResources_t</link> const AD1D_HwResources[AD1D_CHANNEL_CNT] = <link linkend="_ad1d__emu_8c_1ad9124706e75925499cfa0d88090439b4">AD1D_HARDWARE_RESOURCES_DEFAULTS</link>()</computeroutput></para></section>
+<anchor xml:id="_ad1d__emu_8c_1a26ce67771c6cde0e2a8ac91bcf0ddb8e"/><section>
+    <title>AD1D_MuxInput_emu</title>
+<indexterm><primary>AD1D_MuxInput_emu</primary><secondary>ad1d_emu.c</secondary></indexterm>
+<indexterm><primary>ad1d_emu.c</primary><secondary>AD1D_MuxInput_emu</secondary></indexterm>
+<para><computeroutput>uint16_t AD1D_MuxInput_emu[<link linkend="_ad1d__emu_8c_1a7acdf66d95f84512a5c89a4396350763ab6f0255410a35a91b2daa3e83680ddef">AD1D_MUX_SELECT_CNT</link>]</computeroutput></para></section>
+</section>
+</section>

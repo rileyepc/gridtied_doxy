@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_interface_specifics_sun_spec" xml:lang="en-US">
+<title>InterfaceSpecificsSunSpec Struct Reference</title>
+<indexterm><primary>InterfaceSpecificsSunSpec</primary></indexterm>
+<para>
+<computeroutput>#include &lt;interface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>void *const <link linkend="_struct_interface_specifics_sun_spec_1a16f69c37689000160fba47201a909df8">variable</link></para>
+</listitem>
+            <listitem><para><link linkend="_interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8">ItemGetter</link> const <link linkend="_struct_interface_specifics_sun_spec_1a95dacc00bd87e7eba8223b3bb02b864f">getter</link></para>
+</listitem>
+            <listitem><para><link linkend="_interface_8h_1a4123a77c6016d61b0b1026ec0541d735">ItemSetter</link> const <link linkend="_struct_interface_specifics_sun_spec_1a8357c39aaac3550b89eafad7ad1c7b80">setter</link></para>
+</listitem>
+            <listitem><para>void(*const <link linkend="_struct_interface_specifics_sun_spec_1af44e5fdd606523d36c3910ced6c7c0ab">handGetter</link> )(void)</para>
+</listitem>
+            <listitem><para>void(*const <link linkend="_struct_interface_specifics_sun_spec_1ab059cca9505f61c274a772e3a7bf6399">handSetter</link> )(void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_interface_specifics_sun_spec_1a95dacc00bd87e7eba8223b3bb02b864f"/><section>
+    <title>getter</title>
+<indexterm><primary>getter</primary><secondary>InterfaceSpecificsSunSpec</secondary></indexterm>
+<indexterm><primary>InterfaceSpecificsSunSpec</primary><secondary>getter</secondary></indexterm>
+<para><computeroutput><link linkend="_interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8">ItemGetter</link> const InterfaceSpecificsSunSpec::getter</computeroutput></para></section>
+<anchor xml:id="_struct_interface_specifics_sun_spec_1af44e5fdd606523d36c3910ced6c7c0ab"/><section>
+    <title>handGetter</title>
+<indexterm><primary>handGetter</primary><secondary>InterfaceSpecificsSunSpec</secondary></indexterm>
+<indexterm><primary>InterfaceSpecificsSunSpec</primary><secondary>handGetter</secondary></indexterm>
+<para><computeroutput>void(*const InterfaceSpecificsSunSpec::handGetter) (void)</computeroutput></para></section>
+<anchor xml:id="_struct_interface_specifics_sun_spec_1ab059cca9505f61c274a772e3a7bf6399"/><section>
+    <title>handSetter</title>
+<indexterm><primary>handSetter</primary><secondary>InterfaceSpecificsSunSpec</secondary></indexterm>
+<indexterm><primary>InterfaceSpecificsSunSpec</primary><secondary>handSetter</secondary></indexterm>
+<para><computeroutput>void(*const InterfaceSpecificsSunSpec::handSetter) (void)</computeroutput></para></section>
+<anchor xml:id="_struct_interface_specifics_sun_spec_1a8357c39aaac3550b89eafad7ad1c7b80"/><section>
+    <title>setter</title>
+<indexterm><primary>setter</primary><secondary>InterfaceSpecificsSunSpec</secondary></indexterm>
+<indexterm><primary>InterfaceSpecificsSunSpec</primary><secondary>setter</secondary></indexterm>
+<para><computeroutput><link linkend="_interface_8h_1a4123a77c6016d61b0b1026ec0541d735">ItemSetter</link> const InterfaceSpecificsSunSpec::setter</computeroutput></para></section>
+<anchor xml:id="_struct_interface_specifics_sun_spec_1a16f69c37689000160fba47201a909df8"/><section>
+    <title>variable</title>
+<indexterm><primary>variable</primary><secondary>InterfaceSpecificsSunSpec</secondary></indexterm>
+<indexterm><primary>InterfaceSpecificsSunSpec</primary><secondary>variable</secondary></indexterm>
+<para><computeroutput>void* const InterfaceSpecificsSunSpec::variable</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___output__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_Output_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___output__s_1a4e3501ea02be276acf88cb2cf969a317" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1a91ca8f855368d75a84ea6d715bc48154" kindref="member">ECU_sOutputStatus_t</ref></type>
+        <definition>ECU_sOutputStatus_t ECU_Output_s::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>ECU_Output_s::status</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="148" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output__s_1a2e71a54ad9c90bee28d7f992ba7b17c4" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1abf35ce5a3f7497508d37cd9a7b17ceab" kindref="member">ECU_sOutputMonitor_t</ref></type>
+        <definition>ECU_sOutputMonitor_t ECU_Output_s::monitor</definition>
+        <argsstring></argsstring>
+        <name>monitor</name>
+        <qualifiedname>ECU_Output_s::monitor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="149" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output__s_1aafca3881519e887e1d837515d4cb6e0d" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1a69eb3a659497728991a036c60b6ab1f1" kindref="member">ECU_sOutputControl_t</ref></type>
+        <definition>ECU_sOutputControl_t ECU_Output_s::control</definition>
+        <argsstring></argsstring>
+        <name>control</name>
+        <qualifiedname>ECU_Output_s::control</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="150" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output__s_1a936be796bbac9910ac1a72158eca02ba" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1aa3e8d51ab0e8cc8105dffab2220088a2" kindref="member">ECU_sOutputTlcPdo_t</ref></type>
+        <definition>ECU_sOutputTlcPdo_t ECU_Output_s::tlcPdo</definition>
+        <argsstring></argsstring>
+        <name>tlcPdo</name>
+        <qualifiedname>ECU_Output_s::tlcPdo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="151" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output__s_1a0bfaad7c21729d6578bd209662a81948" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_Output_s::debug[32U]</definition>
+        <argsstring>[32U]</argsstring>
+        <name>debug</name>
+        <qualifiedname>ECU_Output_s::debug</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="152" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output__s_1accf89128f04bc9745220b7e028d76b65" prot="public" static="no" mutable="no">
+        <type><ref refid="epc_control_unit__psc_8c_1a23fb932f4364ed64971bf5b39f30cd52" kindref="member">ECU_sOutputReference_t</ref></type>
+        <definition>ECU_sOutputReference_t ECU_Output_s::refOut</definition>
+        <argsstring></argsstring>
+        <name>refOut</name>
+        <qualifiedname>ECU_Output_s::refOut</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="153" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>ECU_OutputControl_s</label>
+        <link refid="struct_e_c_u___output_control__s"/>
+      </node>
+      <node id="3">
+        <label>ECU_OutputMonitor_s</label>
+        <link refid="struct_e_c_u___output_monitor__s"/>
+      </node>
+      <node id="6">
+        <label>ECU_OutputReference_s</label>
+        <link refid="struct_e_c_u___output_reference__s"/>
+      </node>
+      <node id="2">
+        <label>ECU_OutputStatus_s</label>
+        <link refid="struct_e_c_u___output_status__s"/>
+      </node>
+      <node id="5">
+        <label>ECU_OutputTlcPdo_s</label>
+        <link refid="struct_e_c_u___output_tlc_pdo__s"/>
+      </node>
+      <node id="1">
+        <label>ECU_Output_s</label>
+        <link refid="struct_e_c_u___output__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>status</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>monitor</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>control</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>tlcPdo</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>refOut</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="147" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="147" bodyend="154"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___output__s_1aafca3881519e887e1d837515d4cb6e0d" prot="public" virt="non-virtual"><scope>ECU_Output_s</scope><name>control</name></member>
+      <member refid="struct_e_c_u___output__s_1a0bfaad7c21729d6578bd209662a81948" prot="public" virt="non-virtual"><scope>ECU_Output_s</scope><name>debug</name></member>
+      <member refid="struct_e_c_u___output__s_1a2e71a54ad9c90bee28d7f992ba7b17c4" prot="public" virt="non-virtual"><scope>ECU_Output_s</scope><name>monitor</name></member>
+      <member refid="struct_e_c_u___output__s_1accf89128f04bc9745220b7e028d76b65" prot="public" virt="non-virtual"><scope>ECU_Output_s</scope><name>refOut</name></member>
+      <member refid="struct_e_c_u___output__s_1a4e3501ea02be276acf88cb2cf969a317" prot="public" virt="non-virtual"><scope>ECU_Output_s</scope><name>status</name></member>
+      <member refid="struct_e_c_u___output__s_1a936be796bbac9910ac1a72158eca02ba" prot="public" virt="non-virtual"><scope>ECU_Output_s</scope><name>tlcPdo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

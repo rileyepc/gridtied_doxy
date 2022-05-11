@@ -1,0 +1,2384 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="interface_accessors_8c" kind="file" language="C++">
+    <compoundname>interfaceAccessors.c</compoundname>
+    <includes refid="interface_accessors_8h" local="yes">interfaceAccessors.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="yes">authorization.h</includes>
+    <includes local="yes">interfaceGen.h</includes>
+    <includes refid="sw_revs_8h" local="yes">swRevs.h</includes>
+    <includes local="yes">measurementd.h</includes>
+    <includes local="yes">channelMappingManagerI.h</includes>
+    <includes local="yes">synchronousHarmonicControlI.h</includes>
+    <incdepgraph>
+      <node id="17">
+        <label>ABB_libPrimaryControl.h</label>
+      </node>
+      <node id="28">
+        <label>application.h</label>
+        <link refid="application_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>interface/interfaceAccessors.c</label>
+        <link refid="interface_accessors_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>interfaceAccessors.h</label>
+        <link refid="interface_accessors_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>swRevs.h</label>
+        <link refid="sw_revs_8h"/>
+      </node>
+      <node id="47">
+        <label>IEEE1547.h</label>
+      </node>
+      <node id="3">
+        <label>adaptiveHarmonicControlI.h</label>
+      </node>
+      <node id="38">
+        <label>afe.h</label>
+      </node>
+      <node id="33">
+        <label>authorization.h</label>
+      </node>
+      <node id="4">
+        <label>authorization_generated.h</label>
+      </node>
+      <node id="15">
+        <label>auxiliaryPllI.h</label>
+      </node>
+      <node id="44">
+        <label>canInterfaceEnums.h</label>
+      </node>
+      <node id="34">
+        <label>cand.h</label>
+      </node>
+      <node id="59">
+        <label>channelMappingManagerI.h</label>
+      </node>
+      <node id="32">
+        <label>dataLogger.h</label>
+      </node>
+      <node id="18">
+        <label>dcdcControlI.h</label>
+      </node>
+      <node id="19">
+        <label>deviceThermalModel.h</label>
+      </node>
+      <node id="35">
+        <label>digitalIO.h</label>
+      </node>
+      <node id="49">
+        <label>eepromHandler.h</label>
+      </node>
+      <node id="37">
+        <label>engDebug.h</label>
+      </node>
+      <node id="27">
+        <label>environmentControl.h</label>
+      </node>
+      <node id="52">
+        <label>externalInhibit.h</label>
+      </node>
+      <node id="26">
+        <label>fanControl.h</label>
+      </node>
+      <node id="31">
+        <label>faultHandler.h</label>
+      </node>
+      <node id="5">
+        <label>filterObserverI.h</label>
+      </node>
+      <node id="51">
+        <label>fpgaRegs.h</label>
+      </node>
+      <node id="6">
+        <label>gridMonitor.h</label>
+      </node>
+      <node id="39">
+        <label>gridSupport.h</label>
+      </node>
+      <node id="7">
+        <label>hardware.h</label>
+      </node>
+      <node id="22">
+        <label>humiditySensor.h</label>
+      </node>
+      <node id="54">
+        <label>interfaceAccessors_generated.h</label>
+      </node>
+      <node id="56">
+        <label>interfaceGen.h</label>
+      </node>
+      <node id="30">
+        <label>ioHandler.h</label>
+      </node>
+      <node id="8">
+        <label>islandControlI.h</label>
+      </node>
+      <node id="25">
+        <label>loader.h</label>
+      </node>
+      <node id="58">
+        <label>measurementd.h</label>
+      </node>
+      <node id="20">
+        <label>measurementdI.h</label>
+      </node>
+      <node id="46">
+        <label>meta.h</label>
+      </node>
+      <node id="50">
+        <label>modbusHandler.h</label>
+      </node>
+      <node id="9">
+        <label>modulatorI.h</label>
+      </node>
+      <node id="23">
+        <label>mppt.h</label>
+      </node>
+      <node id="12">
+        <label>phaseConfigDetectI.h</label>
+      </node>
+      <node id="11">
+        <label>phaseControlI.h</label>
+      </node>
+      <node id="13">
+        <label>phaseCurrentControlI.h</label>
+      </node>
+      <node id="14">
+        <label>phasePllI.h</label>
+      </node>
+      <node id="10">
+        <label>powerConversionControl.h</label>
+      </node>
+      <node id="21">
+        <label>protectionsI.h</label>
+      </node>
+      <node id="40">
+        <label>referenceHandler.h</label>
+      </node>
+      <node id="53">
+        <label>simulateFeedbackI.h</label>
+      </node>
+      <node id="29">
+        <label>stdbool.h</label>
+      </node>
+      <node id="43">
+        <label>stddef.h</label>
+      </node>
+      <node id="55">
+        <label>stdint.h</label>
+      </node>
+      <node id="45">
+        <label>sunspec.h</label>
+      </node>
+      <node id="41">
+        <label>sunspecRefs.h</label>
+      </node>
+      <node id="48">
+        <label>supervisor.h</label>
+      </node>
+      <node id="60">
+        <label>synchronousHarmonicControlI.h</label>
+      </node>
+      <node id="16">
+        <label>syntheticInertiaI.h</label>
+      </node>
+      <node id="24">
+        <label>system.h</label>
+      </node>
+      <node id="36">
+        <label>topLevelControl.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="interface_accessors_8c_1ace657ecb30a062f6b7ba1c9a00ee89fa" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t accessCodes[CAN_Enum_AccessLevel_Count]</definition>
+        <argsstring>[CAN_Enum_AccessLevel_Count]</argsstring>
+        <name>accessCodes</name>
+        <initializer>= {
+    [CAN_Enum_AccessLevel_Service_Tech] = 0,
+    [CAN_Enum_AccessLevel_Service_Eng] = 14205,
+    [CAN_Enum_AccessLevel_EPC_Eng] = 54682,
+    [CAN_Enum_AccessLevel_EPC_Factory] = 48289,
+    [CAN_Enum_AccessLevel_MAC_Auth] = 31415
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="15" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a88f562c1031cccffe74fb20b4ca06060" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_i_n_t_f___command_flags" kindref="compound">INTF_CommandFlags</ref></type>
+        <definition>INTF_CommandFlags INTF_commandFlags</definition>
+        <argsstring></argsstring>
+        <name>INTF_commandFlags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="23" column="19" bodyfile="interface/interfaceAccessors.c" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a3f54617f49f9242541779331eb124182" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdRealPwr</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdRealPwr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="25" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a79e31bef5a37336542c4f6361506fa02" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdReactivePwr</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdReactivePwr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="26" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a4c8db66e9aff805c09de8ef33a33388c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdRealCurrent</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdRealCurrent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="27" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a4b95211c26a962044ea4690e06eb87b3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdReactiveCurrent</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdReactiveCurrent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="28" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a5538df13b1da6a0aefd3bde487b9a4cb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdInputCurrent</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdInputCurrent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="29" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1aafe89f987c23c36dd842e3a95c4fa2e5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdDcVLim</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdDcVLim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="30" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1aa28bf8dd3bf1d36d1aecb7c754e0383b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdRealPwrNs</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdRealPwrNs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="31" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1aba3e765c9fe3dfe3040ad741ded00f77" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdReactivePwrNs</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdReactivePwrNs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="32" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a27a2166f2c156045cf525468d2f313b9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdRealCurrentNs</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdRealCurrentNs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="33" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1af9d9bcbabff6b55ae0b251ce94d7ef44" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdReactiveCurrentNs</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdReactiveCurrentNs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="34" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a6ace3b5f1a80d2fed688ebc10a7765f9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdMpptPwrDcdc</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdMpptPwrDcdc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="35" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1ad60b78557c3eb0a494afc3da4bc211b1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhAHarmCh0Id</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhAHarmCh0Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="37" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a257409e80c6c6c3948950bee7bac7468" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhAHarmCh0Iq</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhAHarmCh0Iq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="38" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1ad4d0e1e55f52f153f8ddf02fcdb53127" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhBHarmCh0Id</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhBHarmCh0Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="39" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a8627ea41577512343ccd97df985cf8e8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhBHarmCh0Iq</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhBHarmCh0Iq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="40" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a11c24207ef9ae315b743906a04699725" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhAHarmCh1Id</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhAHarmCh1Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="41" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1aa1d4c43a43d0db93a916869e4cd8c6bb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhAHarmCh1Iq</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhAHarmCh1Iq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="42" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1ae06b06f088104b223512e5b52c139ee1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhBHarmCh1Id</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhBHarmCh1Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="43" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1ac16d5d125f14e01708e4b4136ee62697" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhBHarmCh1Iq</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhBHarmCh1Iq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="44" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a27c2f062b9e1ed74ff613c2718b90980" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhAHarmCh2Id</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhAHarmCh2Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="45" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1abb23731cbb6e0ca066fefb7ca8a0e71f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhAHarmCh2Iq</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhAHarmCh2Iq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="46" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a89baaacf4a6c79627efa601eacd004a1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhBHarmCh2Id</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhBHarmCh2Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="47" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1af10fd01df5b4f8ce44b25e8d9bd0e706" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhBHarmCh2Iq</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhBHarmCh2Iq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="48" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a1017f9aea6d8265abce63ec31eb56db6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhAHarmCh3Id</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhAHarmCh3Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="49" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a5e5100c627d6e798db9361cad6a52c7b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhAHarmCh3Iq</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhAHarmCh3Iq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="50" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a0029c5f594b19e6799580e1ece9f87c9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhBHarmCh3Id</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhBHarmCh3Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="51" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1ae2d788832709698a110e292aa4e046b3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float INTF_cmdPhBHarmCh3Iq</definition>
+        <argsstring></argsstring>
+        <name>INTF_cmdPhBHarmCh3Iq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="52" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a0ddb442d4001c97f63d71a4cfe51ab4a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _INTF_accessPassword</definition>
+        <argsstring></argsstring>
+        <name>_INTF_accessPassword</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="236" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1a4cf22a6b217847fc7cae3ae3e3b915ab" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _INTF_accessLevel</definition>
+        <argsstring></argsstring>
+        <name>_INTF_accessLevel</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="237" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_accessors_8c_1aaf78dc227e447940fe70ccb423b49ab2" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool _INTF_checkLimits</definition>
+        <argsstring></argsstring>
+        <name>_INTF_checkLimits</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="238" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="interface_accessors_8c_1a1228c2eaf73fb7eca186e9e293102d53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t INTF_zero_getter</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_zero_getter</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="55" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a029dd9afdde2d1bff394065deaa065be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_updateHardwareRatings</definition>
+        <argsstring>(float unused)</argsstring>
+        <name>INTF_updateHardwareRatings</name>
+        <param>
+          <type>float</type>
+          <declname>unused</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="60" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="60" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ad48f6ff174bd5fdf8d3379d3311badf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_updateCommercialRatings</definition>
+        <argsstring>(float unused)</argsstring>
+        <name>INTF_updateCommercialRatings</name>
+        <param>
+          <type>float</type>
+          <declname>unused</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="67" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ac4d66ced4eb860621975532e4c355fbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getSunspecScaledGridPositiveP</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getSunspecScaledGridPositiveP</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="72" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="72" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ac855468bdc131df6467def4be0436589" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setSunspecScaledGridPositiveP</definition>
+        <argsstring>(float value)</argsstring>
+        <name>INTF_setSunspecScaledGridPositiveP</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="81" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="81" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1aa4c881ac0a915733b4f4f8a7bb712003" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getSunspecScaledApparentPower</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getSunspecScaledApparentPower</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="88" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="88" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a368e3ab89e146aa5d551f2f809f15618" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setSunspecScaledApparentPower</definition>
+        <argsstring>(float value)</argsstring>
+        <name>INTF_setSunspecScaledApparentPower</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="97" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="97" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1abac3ae5fd4e68e0ae5bf12e171e0a02a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getSunspecScaledRealPowerLimitsMax</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getSunspecScaledRealPowerLimitsMax</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="104" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="104" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a0ce166744dff63c46e0f51b639bc4ea8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setSunspecScaledRealPowerLimitsMax</definition>
+        <argsstring>(float value)</argsstring>
+        <name>INTF_setSunspecScaledRealPowerLimitsMax</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="113" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="113" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a757d38299417604ee511c1653683d3eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getSunspecScaledApparentPowerLimit</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getSunspecScaledApparentPowerLimit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="120" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="120" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a58b6b2294b9b81ec20427b64a8ebfff2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setSunspecScaledApparentPowerLimit</definition>
+        <argsstring>(float value)</argsstring>
+        <name>INTF_setSunspecScaledApparentPowerLimit</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="129" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="129" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1acdc3e47f8f199fb330ef5dd50cf70002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_updateUserLimits</definition>
+        <argsstring>(float unused)</argsstring>
+        <name>INTF_updateUserLimits</name>
+        <param>
+          <type>float</type>
+          <declname>unused</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="136" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a006eb78c3747a3132acf3fbfffd8c90e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setNomV</definition>
+        <argsstring>(float vNom)</argsstring>
+        <name>INTF_setNomV</name>
+        <param>
+          <type>float</type>
+          <declname>vNom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="141" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="141" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1af6d7a32e10af877759ff1750646693ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setNomF</definition>
+        <argsstring>(float fNom)</argsstring>
+        <name>INTF_setNomF</name>
+        <param>
+          <type>float</type>
+          <declname>fNom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="147" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="147" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ac119e5cc4490d32a5df4b0ed858b1148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setGridVoltageOffset</definition>
+        <argsstring>(float offset)</argsstring>
+        <name>INTF_setGridVoltageOffset</name>
+        <param>
+          <type>float</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="155" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="155" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a2f7aff32e5d90cb76b50bfafef0cc8eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getGridVoltageOffset</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getGridVoltageOffset</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="163" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="163" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a6f387f6273f8a34065a9004b831fbc41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setAllowForming</definition>
+        <argsstring>(bool const allowForming)</argsstring>
+        <name>INTF_setAllowForming</name>
+        <param>
+          <type>bool const</type>
+          <declname>allowForming</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="169" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="169" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a2fc814a80f10d21457a59c2cd1d1cadc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setAllowFollowing</definition>
+        <argsstring>(bool const allowFollowing)</argsstring>
+        <name>INTF_setAllowFollowing</name>
+        <param>
+          <type>bool const</type>
+          <declname>allowFollowing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="174" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="174" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a56d9ef27c5907a892b1ec678cbd77b25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setIslandResponse</definition>
+        <argsstring>(uint16_t const islandResponse)</argsstring>
+        <name>INTF_setIslandResponse</name>
+        <param>
+          <type>uint16_t const</type>
+          <declname>islandResponse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="179" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="179" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ad9bf92610fb7c66ea1757fba181b75f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setIslandDetector</definition>
+        <argsstring>(uint16_t const islandDetector)</argsstring>
+        <name>INTF_setIslandDetector</name>
+        <param>
+          <type>uint16_t const</type>
+          <declname>islandDetector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="184" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="184" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1aa4b4b022baea21dd2bbe7d384e658fb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool INTF_getAllowForming</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getAllowForming</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="188" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="188" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ac887a74446bcbffadcb1c01169c59fc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool INTF_getAllowFollowing</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getAllowFollowing</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="192" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="192" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a4ef6eb3f5734e746da42d0be15db9319" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t INTF_getIslandResponse</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getIslandResponse</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="196" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="196" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a213da2d6b3a814f1bf2d91036b1cd982" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t INTF_getIslandDetector</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getIslandDetector</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="200" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="200" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1aede25ba3463daf83e7b38bf447baed32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setConfigRateLimitPgRef_pDelta</definition>
+        <argsstring>(float const pDelta)</argsstring>
+        <name>INTF_setConfigRateLimitPgRef_pDelta</name>
+        <param>
+          <type>float const</type>
+          <declname>pDelta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="204" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="204" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a4e78e721dcce3c3add08a839b5301e31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setConfigRateLimitPgRef_tDelta</definition>
+        <argsstring>(float const tDelta)</argsstring>
+        <name>INTF_setConfigRateLimitPgRef_tDelta</name>
+        <param>
+          <type>float const</type>
+          <declname>tDelta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="209" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a1cdd34e87e38eafe4bccb1db4f8dd63e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool getBridgeAVoltageOk</definition>
+        <argsstring>(void)</argsstring>
+        <name>getBridgeAVoltageOk</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para><orderedlist>
+<listitem><para>fix the FPGA inverter status registers to match the fault mapping<orderedlist>
+<listitem><para>determine where to put these getters </para>
+</listitem></orderedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="217" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a8604f381346ef74eeec9ba0e871bdccb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t getBridgeBridgeAFault</definition>
+        <argsstring>(void)</argsstring>
+        <name>getBridgeBridgeAFault</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="222" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="222" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ae6afb52e9d3f938c2716a35aae0dc67a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool getBridgeBVoltageOk</definition>
+        <argsstring>(void)</argsstring>
+        <name>getBridgeBVoltageOk</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="227" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="227" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a9de3c2162c7d8d5c5edaf1c53e9164a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t getBridgeBridgeBFault</definition>
+        <argsstring>(void)</argsstring>
+        <name>getBridgeBridgeBFault</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="232" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="232" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a33e147c35fdb72a43ca93b641fc31ce6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setAccessLevel</definition>
+        <argsstring>(uint16_t level)</argsstring>
+        <name>INTF_setAccessLevel</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="240" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="240" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a46b0d089a19f2ed60c19f39bb019cb64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setAccessPassword</definition>
+        <argsstring>(uint16_t password)</argsstring>
+        <name>INTF_setAccessPassword</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="244" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="244" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1af6b9c83d41c21522601ebca742053813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setAccessCheckLimits</definition>
+        <argsstring>(bool checkLimits)</argsstring>
+        <name>INTF_setAccessCheckLimits</name>
+        <param>
+          <type>bool</type>
+          <declname>checkLimits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="248" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="248" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a4b5476da70ea4532e90764241f9eeea0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_submitAccessLevelRequest</definition>
+        <argsstring>(bool request)</argsstring>
+        <name>INTF_submitAccessLevelRequest</name>
+        <param>
+          <type>bool</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="252" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="252" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a749c4bd4cdd167d1f1c0fd27c0e7aa3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_accessLevel_onWrite</definition>
+        <argsstring>(Meta_Enum meta_index, InterfaceItem_void const *const *const items, uint16_t items_count)</argsstring>
+        <name>INTF_accessLevel_onWrite</name>
+        <param>
+          <type>Meta_Enum</type>
+          <declname>meta_index</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref> const *const *const</type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>items_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="271" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="271" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a4772b8e3b012a7ecdf4427ec04c5f043" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_loggerChunk_onWrite</definition>
+        <argsstring>(Meta_Enum meta_index, InterfaceItem_void const *const *const items, uint16_t items_count)</argsstring>
+        <name>INTF_loggerChunk_onWrite</name>
+        <param>
+          <type>Meta_Enum</type>
+          <declname>meta_index</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref> const *const *const</type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>items_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="287" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="287" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a66e723cc746cb0571e5fd38ef3fb5503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setControlSource</definition>
+        <argsstring>(uint16_t src)</argsstring>
+        <name>INTF_setControlSource</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="305" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="305" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a508f2224dc87e11a6b54ddd6fb7ecd87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setEnable</definition>
+        <argsstring>(uint16_t en)</argsstring>
+        <name>INTF_setEnable</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>en</declname>
+          <briefdescription><para>[in, ] uint16_t to allow the out of range values of 2 and 3 </para>
+</briefdescription>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="317" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="317" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a75bf088a5b5b4f7f90d8c6e143388f02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_enableRejected</definition>
+        <argsstring>(uint16_t value, RejectionReasons reasons)</argsstring>
+        <name>INTF_enableRejected</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>value</declname>
+          <briefdescription><para>[in, ] uint16_t to allow the out of range values of 2 and 3 </para>
+</briefdescription>
+        </param>
+        <param>
+          <type><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref></type>
+          <declname>reasons</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="323" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="323" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a687afa24dcc6c8ac947a0a601d45b2b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_clearFaults</definition>
+        <argsstring>(bool clearFaults)</argsstring>
+        <name>INTF_clearFaults</name>
+        <param>
+          <type>bool</type>
+          <declname>clearFaults</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="334" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="334" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a90c974d866763bf6850e4fc591971805" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_clearWarnings</definition>
+        <argsstring>(bool clearWarnings)</argsstring>
+        <name>INTF_clearWarnings</name>
+        <param>
+          <type>bool</type>
+          <declname>clearWarnings</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="343" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="343" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ab4d95922580fc39df11a9c72b913bf7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_setIslandStateRequest</definition>
+        <argsstring>(bool req)</argsstring>
+        <name>INTF_setIslandStateRequest</name>
+        <param>
+          <type>bool</type>
+          <declname>req</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="351" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="351" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a5760cc69fac51973d303af38b37de7db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_powerRejected</definition>
+        <argsstring>(float value, RejectionReasons reasons)</argsstring>
+        <name>INTF_powerRejected</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref></type>
+          <declname>reasons</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="359" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="359" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a874fe2cfea71a6d06db81ef27cc574d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_currentRejected</definition>
+        <argsstring>(float value, RejectionReasons reasons)</argsstring>
+        <name>INTF_currentRejected</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref></type>
+          <declname>reasons</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="370" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="370" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a17fe067e29ab8eb2bdc1f06e051a9cd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void INTF_dcRefRejected</definition>
+        <argsstring>(float value, RejectionReasons reasons)</argsstring>
+        <name>INTF_dcRefRejected</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref></type>
+          <declname>reasons</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="381" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="381" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1af6c75b31ca6f45cd628a479eacca434e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool INTF_bool_table_false_getter</definition>
+        <argsstring>(IEEE1547_MonCurveType zone, size_t curve, size_t index, uint16_t value)</argsstring>
+        <name>INTF_bool_table_false_getter</name>
+        <param>
+          <type>IEEE1547_MonCurveType</type>
+          <declname>zone</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>curve</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="392" column="6" bodyfile="interface/interfaceAccessors.c" bodystart="392" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a05b8955eb1ddf10a8e5a669af82afbba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t INTF_getVersMajor</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getVersMajor</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="406" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="406" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a1485b9c8a1c1f215edfd99a11a25012c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t INTF_getVersMinor</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getVersMinor</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="410" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="410" bodyend="412"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1aa27b07ddc231a81562ab7d3d19578848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t INTF_getVersPatch</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getVersPatch</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="414" column="10" bodyfile="interface/interfaceAccessors.c" bodystart="414" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a725db5a0fea72547846006b348a8f2e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getPos24V</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getPos24V</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="418" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="418" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a744a180aace820f7a870be5a57455362" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getPos15V</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getPos15V</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="422" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="422" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a689c81667a2b236dacbee1dbd7e806ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getNeg15V</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getNeg15V</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="426" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="426" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a9e62ad9479ba4a7620c31ac22fc4ec6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getPos5V</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getPos5V</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="430" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="430" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a7e78a1bdfad85f233e54739ba8683927" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getPos3V</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getPos3V</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="434" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="434" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1af141bf9cc0d9d10b9c1ac60f90f914e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getHarmCurrentCh0PhA</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getHarmCurrentCh0PhA</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="438" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="438" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a2ea93777f0f8d8785276ea38dcf1b8af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getHarmCurrentCh0PhB</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getHarmCurrentCh0PhB</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="442" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="442" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1ab82de2b81f7895b19768db41b81932c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getHarmCurrentCh1PhA</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getHarmCurrentCh1PhA</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="446" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="446" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a420f1d1047ca0c73fb4e3be469502cab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getHarmCurrentCh1PhB</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getHarmCurrentCh1PhB</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="450" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="450" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a8268b411345496f59b756787bb0323a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getHarmCurrentCh2PhA</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getHarmCurrentCh2PhA</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="454" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="454" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a42cdd58dab6e3558113b81df6e16839c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getHarmCurrentCh2PhB</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getHarmCurrentCh2PhB</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="458" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="458" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a958f82000278c76d992da150a55b0a18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getHarmCurrentCh3PhA</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getHarmCurrentCh3PhA</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="462" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="462" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_accessors_8c_1a7946fac2f11a44eff7c700907c189bc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float INTF_getHarmCurrentCh3PhB</definition>
+        <argsstring>(void)</argsstring>
+        <name>INTF_getHarmCurrentCh3PhB</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interfaceAccessors.c" line="466" column="7" bodyfile="interface/interfaceAccessors.c" bodystart="466" bodyend="468"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="interface_accessors_8h" kindref="compound">interfaceAccessors.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;authorization.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;interfaceGen.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sw_revs_8h" kindref="compound">swRevs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;measurementd.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;channelMappingManagerI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;synchronousHarmonicControlI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1ace657ecb30a062f6b7ba1c9a00ee89fa" kindref="member">accessCodes</ref>[CAN_Enum_AccessLevel_Count]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>[CAN_Enum_AccessLevel_Service_Tech]<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>[CAN_Enum_AccessLevel_Service_Eng]<sp/>=<sp/>14205,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>[CAN_Enum_AccessLevel_EPC_Eng]<sp/>=<sp/>54682,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>[CAN_Enum_AccessLevel_EPC_Factory]<sp/>=<sp/>48289,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>[CAN_Enum_AccessLevel_MAC_Auth]<sp/>=<sp/>31415</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="struct_i_n_t_f___command_flags" kindref="compound">INTF_CommandFlags</ref><sp/><ref refid="interface_accessors_8c_1a88f562c1031cccffe74fb20b4ca06060" kindref="member">INTF_commandFlags</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a3f54617f49f9242541779331eb124182" kindref="member">INTF_cmdRealPwr</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a79e31bef5a37336542c4f6361506fa02" kindref="member">INTF_cmdReactivePwr</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a4c8db66e9aff805c09de8ef33a33388c" kindref="member">INTF_cmdRealCurrent</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a4b95211c26a962044ea4690e06eb87b3" kindref="member">INTF_cmdReactiveCurrent</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a5538df13b1da6a0aefd3bde487b9a4cb" kindref="member">INTF_cmdInputCurrent</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1aafe89f987c23c36dd842e3a95c4fa2e5" kindref="member">INTF_cmdDcVLim</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1aa28bf8dd3bf1d36d1aecb7c754e0383b" kindref="member">INTF_cmdRealPwrNs</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1aba3e765c9fe3dfe3040ad741ded00f77" kindref="member">INTF_cmdReactivePwrNs</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a27a2166f2c156045cf525468d2f313b9" kindref="member">INTF_cmdRealCurrentNs</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1af9d9bcbabff6b55ae0b251ce94d7ef44" kindref="member">INTF_cmdReactiveCurrentNs</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a6ace3b5f1a80d2fed688ebc10a7765f9" kindref="member">INTF_cmdMpptPwrDcdc</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ad60b78557c3eb0a494afc3da4bc211b1" kindref="member">INTF_cmdPhAHarmCh0Id</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a257409e80c6c6c3948950bee7bac7468" kindref="member">INTF_cmdPhAHarmCh0Iq</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ad4d0e1e55f52f153f8ddf02fcdb53127" kindref="member">INTF_cmdPhBHarmCh0Id</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a8627ea41577512343ccd97df985cf8e8" kindref="member">INTF_cmdPhBHarmCh0Iq</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a11c24207ef9ae315b743906a04699725" kindref="member">INTF_cmdPhAHarmCh1Id</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1aa1d4c43a43d0db93a916869e4cd8c6bb" kindref="member">INTF_cmdPhAHarmCh1Iq</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ae06b06f088104b223512e5b52c139ee1" kindref="member">INTF_cmdPhBHarmCh1Id</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ac16d5d125f14e01708e4b4136ee62697" kindref="member">INTF_cmdPhBHarmCh1Iq</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a27c2f062b9e1ed74ff613c2718b90980" kindref="member">INTF_cmdPhAHarmCh2Id</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1abb23731cbb6e0ca066fefb7ca8a0e71f" kindref="member">INTF_cmdPhAHarmCh2Iq</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a89baaacf4a6c79627efa601eacd004a1" kindref="member">INTF_cmdPhBHarmCh2Id</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1af10fd01df5b4f8ce44b25e8d9bd0e706" kindref="member">INTF_cmdPhBHarmCh2Iq</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a1017f9aea6d8265abce63ec31eb56db6" kindref="member">INTF_cmdPhAHarmCh3Id</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a5e5100c627d6e798db9361cad6a52c7b" kindref="member">INTF_cmdPhAHarmCh3Iq</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a0029c5f594b19e6799580e1ece9f87c9" kindref="member">INTF_cmdPhBHarmCh3Id</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ae2d788832709698a110e292aa4e046b3" kindref="member">INTF_cmdPhBHarmCh3Iq</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>remove<sp/>after<sp/>resolving<sp/>https://phabricator.epcpower.com/T961</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">uint32_t<sp/><ref refid="interface_accessors_8c_1a1228c2eaf73fb7eca186e9e293102d53" kindref="member">INTF_zero_getter</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a029dd9afdde2d1bff394065deaa065be" kindref="member">INTF_updateHardwareRatings</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>unused)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(unused);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>REF_setLimits();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>ABB_Parameters.Snom_kVA<sp/>=<sp/>hwDef.ratings.apparentPower<sp/>*<sp/>1.0e-3;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ad48f6ff174bd5fdf8d3379d3311badf7" kindref="member">INTF_updateCommercialRatings</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>unused)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(unused);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>REF_setLimits();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ac4d66ced4eb860621975532e4c355fbc" kindref="member">INTF_getSunspecScaledGridPositiveP</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_NOT_NULL(interfaceItem_17b4f529_fd19_4fdd_be78_3833a3bdb55f.variable);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*interfaceItem_17b4f529_fd19_4fdd_be78_3833a3bdb55f.variable;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0f;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ac855468bdc131df6467def4be0436589" kindref="member">INTF_setSunspecScaledGridPositiveP</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_NOT_NULL(interfaceItem_17b4f529_fd19_4fdd_be78_3833a3bdb55f.variable);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>*interfaceItem_17b4f529_fd19_4fdd_be78_3833a3bdb55f.variable<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1aa4c881ac0a915733b4f4f8a7bb712003" kindref="member">INTF_getSunspecScaledApparentPower</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_NOT_NULL(interfaceItem_958db366_9a3f_4e1b_b1ec_43d490e6970e.variable);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*interfaceItem_958db366_9a3f_4e1b_b1ec_43d490e6970e.variable;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0f;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a368e3ab89e146aa5d551f2f809f15618" kindref="member">INTF_setSunspecScaledApparentPower</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_NOT_NULL(interfaceItem_958db366_9a3f_4e1b_b1ec_43d490e6970e.variable);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>*interfaceItem_958db366_9a3f_4e1b_b1ec_43d490e6970e.variable<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1abac3ae5fd4e68e0ae5bf12e171e0a02a" kindref="member">INTF_getSunspecScaledRealPowerLimitsMax</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_NOT_NULL(interfaceItem_884bda2c_2d95_4b3b_bbd4_db019a418779.variable);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*interfaceItem_884bda2c_2d95_4b3b_bbd4_db019a418779.variable;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0f;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a0ce166744dff63c46e0f51b639bc4ea8" kindref="member">INTF_setSunspecScaledRealPowerLimitsMax</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_NOT_NULL(interfaceItem_884bda2c_2d95_4b3b_bbd4_db019a418779.variable);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>*interfaceItem_884bda2c_2d95_4b3b_bbd4_db019a418779.variable<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a757d38299417604ee511c1653683d3eb" kindref="member">INTF_getSunspecScaledApparentPowerLimit</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_NOT_NULL(interfaceItem_fc0eb6aa_4032_4cea_a527_25bdc8c5a010.variable);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*interfaceItem_fc0eb6aa_4032_4cea_a527_25bdc8c5a010.variable;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0f;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a58b6b2294b9b81ec20427b64a8ebfff2" kindref="member">INTF_setSunspecScaledApparentPowerLimit</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_NOT_NULL(interfaceItem_fc0eb6aa_4032_4cea_a527_25bdc8c5a010.variable);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>*interfaceItem_fc0eb6aa_4032_4cea_a527_25bdc8c5a010.variable<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1acdc3e47f8f199fb330ef5dd50cf70002" kindref="member">INTF_updateUserLimits</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>unused)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(unused);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>REF_setLimits();</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a006eb78c3747a3132acf3fbfffd8c90e" kindref="member">INTF_setNomV</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vNom)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)PCC_setAcNominalLineVoltage(vNom);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>ABB_Parameters.Vnom_V<sp/>=<sp/>vNom;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1af6d7a32e10af877759ff1750646693ad" kindref="member">INTF_setNomF</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fNom)<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)PCC_setAcNominalFrequency(fNom);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)MOD_setAcNominalFrequency_0(fNom);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)VSG_setCommonConfigNominalFrequency(fNom);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>ABB_Parameters.Fnom_Hz<sp/>=<sp/>fNom;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ac119e5cc4490d32a5df4b0ed858b1148" kindref="member">INTF_setGridVoltageOffset</ref>(</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>offset</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vRef<sp/>=<sp/>PCC_getAcReferenceGridVoltage0();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>APL_setCommonConfigMeasAdjust_mag(vRef<sp/>/<sp/>(vRef<sp/>+<sp/>offset));</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a2f7aff32e5d90cb76b50bfafef0cc8eb" kindref="member">INTF_getGridVoltageOffset</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vRef<sp/>=<sp/>PCC_getAcReferenceGridVoltage0();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>magAdj<sp/>=<sp/>APL_getCommonConfigMeasAdjust_mag();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(vRef<sp/>/<sp/>magAdj)<sp/>-<sp/>vRef;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a6f387f6273f8a34065a9004b831fbc41" kindref="member">INTF_setAllowForming</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>allowForming)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>afeParams.cfgFlags.allowForming<sp/>=<sp/>allowForming;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>ABB_Parameters.AllowForming<sp/>=<sp/>allowForming;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a2fc814a80f10d21457a59c2cd1d1cadc" kindref="member">INTF_setAllowFollowing</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>allowFollowing)<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>afeParams.cfgFlags.allowFollowing<sp/>=<sp/>allowFollowing;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>ABB_Parameters.AllowFollowing<sp/>=<sp/>allowFollowing;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a56d9ef27c5907a892b1ec678cbd77b25" kindref="member">INTF_setIslandResponse</ref>(uint16_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>islandResponse)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>afeParams.cfgFlags.islandResponse<sp/>=<sp/>(AFE_IslandResponse_t)islandResponse;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>ABB_Parameters.AllowAutoForming<sp/>=<sp/>(AFE_IslandResponse_t)islandResponse;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ad9bf92610fb7c66ea1757fba181b75f7" kindref="member">INTF_setIslandDetector</ref>(uint16_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>islandDetector)<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>afeParams.cfgFlags.islandDetector<sp/>=<sp/>(AFE_IslandDetector_t)islandDetector;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1aa4b4b022baea21dd2bbe7d384e658fb4" kindref="member">INTF_getAllowForming</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>afeParams.cfgFlags.allowForming;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ac887a74446bcbffadcb1c01169c59fc6" kindref="member">INTF_getAllowFollowing</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>afeParams.cfgFlags.allowFollowing;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1a4ef6eb3f5734e746da42d0be15db9319" kindref="member">INTF_getIslandResponse</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>afeParams.cfgFlags.islandResponse;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1a213da2d6b3a814f1bf2d91036b1cd982" kindref="member">INTF_getIslandDetector</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>afeParams.cfgFlags.islandDetector;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1aede25ba3463daf83e7b38bf447baed32" kindref="member">INTF_setConfigRateLimitPgRef_pDelta</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pDelta)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>REF_setConfigRateLimitPgRef_pDelta(pDelta);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>ABB_Parameters.GSM_extPQRampPwrPa<sp/>=<sp/>pDelta;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a4e78e721dcce3c3add08a839b5301e31" kindref="member">INTF_setConfigRateLimitPgRef_tDelta</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tDelta)<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>REF_setConfigRateLimitPgRef_tDelta(tDelta);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>ABB_Parameters.GSM_extPQRampTrPa<sp/>=<sp/>tDelta;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a1cdd34e87e38eafe4bccb1db4f8dd63e" kindref="member">getBridgeAVoltageOk</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>FpgaRegsInvStat<sp/>lolWtf<sp/>=<sp/>PWMD_getPwmGroupFaultStatusWord(PWMD_PWM_GROUP_A);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lolWtf.bit.OVT;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1a8604f381346ef74eeec9ba0e871bdccb" kindref="member">getBridgeBridgeAFault</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>FpgaRegsInvStat<sp/>lolWtf<sp/>=<sp/>PWMD_getPwmGroupFaultStatusWord(PWMD_PWM_GROUP_A);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(lolWtf.all<sp/>&gt;&gt;<sp/>1)<sp/>&amp;<sp/>7;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ae6afb52e9d3f938c2716a35aae0dc67a" kindref="member">getBridgeBVoltageOk</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>FpgaRegsInvStat<sp/>lolWtf<sp/>=<sp/>PWMD_getPwmGroupFaultStatusWord(PWMD_PWM_GROUP_B);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lolWtf.bit.OVT;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1a9de3c2162c7d8d5c5edaf1c53e9164a9" kindref="member">getBridgeBridgeBFault</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>FpgaRegsInvStat<sp/>lolWtf<sp/>=<sp/>PWMD_getPwmGroupFaultStatusWord(PWMD_PWM_GROUP_B);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(lolWtf.all<sp/>&gt;&gt;<sp/>1)<sp/>&amp;<sp/>7;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1a0ddb442d4001c97f63d71a4cfe51ab4a" kindref="member">_INTF_accessPassword</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1a4cf22a6b217847fc7cae3ae3e3b915ab" kindref="member">_INTF_accessLevel</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1aaf78dc227e447940fe70ccb423b49ab2" kindref="member">_INTF_checkLimits</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a33e147c35fdb72a43ca93b641fc31ce6" kindref="member">INTF_setAccessLevel</ref>(uint16_t<sp/>level)<sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1a4cf22a6b217847fc7cae3ae3e3b915ab" kindref="member">_INTF_accessLevel</ref><sp/>=<sp/>level;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a46b0d089a19f2ed60c19f39bb019cb64" kindref="member">INTF_setAccessPassword</ref>(uint16_t<sp/>password)<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1a0ddb442d4001c97f63d71a4cfe51ab4a" kindref="member">_INTF_accessPassword</ref><sp/>=<sp/>password;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1af6b9c83d41c21522601ebca742053813" kindref="member">INTF_setAccessCheckLimits</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checkLimits)<sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1aaf78dc227e447940fe70ccb423b49ab2" kindref="member">_INTF_checkLimits</ref><sp/>=<sp/>checkLimits;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a4b5476da70ea4532e90764241f9eeea0" kindref="member">INTF_submitAccessLevelRequest</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>request)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!request)<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>AUTH_requestAccessLevel(</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AUTH_AccessLevel)<sp/><ref refid="interface_accessors_8c_1a4cf22a6b217847fc7cae3ae3e3b915ab" kindref="member">_INTF_accessLevel</ref>,</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1aaf78dc227e447940fe70ccb423b49ab2" kindref="member">_INTF_checkLimits</ref><sp/>==<sp/>1,</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1a0ddb442d4001c97f63d71a4cfe51ab4a" kindref="member">_INTF_accessPassword</ref>,</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1ace657ecb30a062f6b7ba1c9a00ee89fa" kindref="member">accessCodes</ref>,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AUTH_AccessLevel_Count</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>they<sp/>should<sp/>all<sp/>have<sp/>to<sp/>be<sp/>written<sp/>again<sp/>so<sp/>let&apos;s<sp/>&apos;clear&apos;<sp/>them</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1a0ddb442d4001c97f63d71a4cfe51ab4a" kindref="member">_INTF_accessPassword</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1a4cf22a6b217847fc7cae3ae3e3b915ab" kindref="member">_INTF_accessLevel</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1aaf78dc227e447940fe70ccb423b49ab2" kindref="member">_INTF_checkLimits</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a749c4bd4cdd167d1f1c0fd27c0e7aa3b" kindref="member">INTF_accessLevel_onWrite</ref>(</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Meta_Enum<sp/>meta_index,</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>items,</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>items_count</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(items);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(items_count);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(meta_index<sp/>!=<sp/>Meta_Value)<sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_accessors_8c_1a4b5476da70ea4532e90764241f9eeea0" kindref="member">INTF_submitAccessLevelRequest</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a4772b8e3b012a7ecdf4427ec04c5f043" kindref="member">INTF_loggerChunk_onWrite</ref>(</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Meta_Enum<sp/>meta_index,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>items,</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>items_count</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(items);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(items_count);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(meta_index<sp/>!=<sp/>Meta_Value)<sp/>{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>dataLogger_configure(</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dataLoggerParams.chunks,</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dataLoggerParams.postTriggerDuration_ms</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a66e723cc746cb0571e5fd38ef3fb5503" kindref="member">INTF_setControlSource</ref>(</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>src</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>SystemControlSource<sp/>controlSource<sp/>=<sp/>(SystemControlSource)src;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(controlSource<sp/>==<sp/>SYS_CONTROL_SOURCE_MODBUS)<sp/>{</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>systemSetModbusControlActive();</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(controlSource<sp/>==<sp/>SYS_CONTROL_SOURCE_CAN)<sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>systemSetCanControlActive();</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a508f2224dc87e11a6b54ddd6fb7ecd87" kindref="member">INTF_setEnable</ref>(</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>en<sp/></highlight></codeline>
+<codeline lineno="319"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>systemSetMasterEnable(en);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a75bf088a5b5b4f7f90d8c6e143388f02" kindref="member">INTF_enableRejected</ref>(</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>value,<sp/></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref><sp/>reasons</highlight></codeline>
+<codeline lineno="326"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(value);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interface_8h_1ac0aecb85217a8c58bcbbe0add3e9fa06" kindref="member">REJECTIONREASONS_ONLY</ref>(reasons,<sp/>outOfRange))<sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>systemSetMasterAlive(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a687afa24dcc6c8ac947a0a601d45b2b3" kindref="member">INTF_clearFaults</ref>(</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clearFaults</highlight></codeline>
+<codeline lineno="336"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>systemClearFaults(clearFaults);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(clearFaults)<sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ENV_clearPumpFaults();</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="341"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a90c974d866763bf6850e4fc591971805" kindref="member">INTF_clearWarnings</ref>(</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clearWarnings</highlight></codeline>
+<codeline lineno="345"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(clearWarnings)<sp/>{</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WARNING_CLEARALL();</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ab4d95922580fc39df11a9c72b913bf7a" kindref="member">INTF_setIslandStateRequest</ref>(</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>req</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(req)<sp/>{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PCC_setAcIslandStateRequest(0U,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="357"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a5760cc69fac51973d303af38b37de7db" kindref="member">INTF_powerRejected</ref>(</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value,</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref><sp/>reasons</highlight></codeline>
+<codeline lineno="362"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(value);</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interface_8h_1ac0aecb85217a8c58bcbbe0add3e9fa06" kindref="member">REJECTIONREASONS_ONLY</ref>(reasons,<sp/>outOfRange))<sp/>{</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>REF_setPwrCmdValid(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a874fe2cfea71a6d06db81ef27cc574d9" kindref="member">INTF_currentRejected</ref>(</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value,</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref><sp/>reasons</highlight></codeline>
+<codeline lineno="373"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(value);</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interface_8h_1ac0aecb85217a8c58bcbbe0add3e9fa06" kindref="member">REJECTIONREASONS_ONLY</ref>(reasons,<sp/>outOfRange))<sp/>{</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>REF_setCurCmdValid(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="379"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a17fe067e29ab8eb2bdc1f06e051a9cd3" kindref="member">INTF_dcRefRejected</ref>(</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value,</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref><sp/>reasons</highlight></codeline>
+<codeline lineno="384"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(value);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interface_8h_1ac0aecb85217a8c58bcbbe0add3e9fa06" kindref="member">REJECTIONREASONS_ONLY</ref>(reasons,<sp/>outOfRange))<sp/>{</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>REF_setDcCmdValid(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="390"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1af6c75b31ca6f45cd628a479eacca434e" kindref="member">INTF_bool_table_false_getter</ref>(</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/>IEEE1547_MonCurveType<sp/>zone,</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>curve,</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index,</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>value</highlight></codeline>
+<codeline lineno="397"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(zone);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(curve);</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(index);</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED_ARG(value);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1a05b8955eb1ddf10a8e5a669af82afbba" kindref="member">INTF_getVersMajor</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="sw_revs_8h_1a275d231829446ca4cfcf3ce5a83f2e67" kindref="member">CONTROL_SW_MAJ</ref>;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1a1485b9c8a1c1f215edfd99a11a25012c" kindref="member">INTF_getVersMinor</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="sw_revs_8h_1a87699d1e62deba37642c6e1c65785370" kindref="member">CONTROL_SW_MIN</ref>;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal">uint16_t<sp/><ref refid="interface_accessors_8c_1aa27b07ddc231a81562ab7d3d19578848" kindref="member">INTF_getVersPatch</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="sw_revs_8h_1a639157c007cae7e2f87ed84d29a5bee2" kindref="member">CONTROL_SW_PATCH</ref>;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a725db5a0fea72547846006b348a8f2e0" kindref="member">INTF_getPos24V</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_i_qmath_lib_8h_1a42182864f316b905aa45253666f5e42e" kindref="member">_IQtoF</ref>(MESD_Measurements.aux.volt.meas.vPos24);</highlight></codeline>
+<codeline lineno="420"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"></highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a744a180aace820f7a870be5a57455362" kindref="member">INTF_getPos15V</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_i_qmath_lib_8h_1a42182864f316b905aa45253666f5e42e" kindref="member">_IQtoF</ref>(MESD_Measurements.aux.volt.meas.vPos15);</highlight></codeline>
+<codeline lineno="424"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a689c81667a2b236dacbee1dbd7e806ac" kindref="member">INTF_getNeg15V</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_i_qmath_lib_8h_1a42182864f316b905aa45253666f5e42e" kindref="member">_IQtoF</ref>(MESD_Measurements.aux.volt.meas.vNeg15);</highlight></codeline>
+<codeline lineno="428"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a9e62ad9479ba4a7620c31ac22fc4ec6f" kindref="member">INTF_getPos5V</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_i_qmath_lib_8h_1a42182864f316b905aa45253666f5e42e" kindref="member">_IQtoF</ref>(MESD_Measurements.aux.volt.meas.vPos5);</highlight></codeline>
+<codeline lineno="432"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a7e78a1bdfad85f233e54739ba8683927" kindref="member">INTF_getPos3V</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_i_qmath_lib_8h_1a42182864f316b905aa45253666f5e42e" kindref="member">_IQtoF</ref>(MESD_Measurements.aux.volt.meas.vPos3);</highlight></codeline>
+<codeline lineno="436"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1af141bf9cc0d9d10b9c1ac60f90f914e3" kindref="member">INTF_getHarmCurrentCh0PhA</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PCC_getAcHarmonicCurrentRms_SI(SHC_CONTROL_CHANNEL_0,<sp/>CMM_AC_CONTROL_CHANNEL_U);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="442"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a2ea93777f0f8d8785276ea38dcf1b8af" kindref="member">INTF_getHarmCurrentCh0PhB</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PCC_getAcHarmonicCurrentRms_SI(SHC_CONTROL_CHANNEL_0,<sp/>CMM_AC_CONTROL_CHANNEL_V);</highlight></codeline>
+<codeline lineno="444"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1ab82de2b81f7895b19768db41b81932c6" kindref="member">INTF_getHarmCurrentCh1PhA</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PCC_getAcHarmonicCurrentRms_SI(SHC_CONTROL_CHANNEL_1,<sp/>CMM_AC_CONTROL_CHANNEL_U);</highlight></codeline>
+<codeline lineno="448"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"></highlight></codeline>
+<codeline lineno="450"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a420f1d1047ca0c73fb4e3be469502cab" kindref="member">INTF_getHarmCurrentCh1PhB</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PCC_getAcHarmonicCurrentRms_SI(SHC_CONTROL_CHANNEL_1,<sp/>CMM_AC_CONTROL_CHANNEL_V);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a8268b411345496f59b756787bb0323a5" kindref="member">INTF_getHarmCurrentCh2PhA</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PCC_getAcHarmonicCurrentRms_SI(SHC_CONTROL_CHANNEL_2,<sp/>CMM_AC_CONTROL_CHANNEL_U);</highlight></codeline>
+<codeline lineno="456"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"></highlight></codeline>
+<codeline lineno="458"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a42cdd58dab6e3558113b81df6e16839c" kindref="member">INTF_getHarmCurrentCh2PhB</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PCC_getAcHarmonicCurrentRms_SI(SHC_CONTROL_CHANNEL_2,<sp/>CMM_AC_CONTROL_CHANNEL_V);</highlight></codeline>
+<codeline lineno="460"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a958f82000278c76d992da150a55b0a18" kindref="member">INTF_getHarmCurrentCh3PhA</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PCC_getAcHarmonicCurrentRms_SI(SHC_CONTROL_CHANNEL_3,<sp/>CMM_AC_CONTROL_CHANNEL_U);</highlight></codeline>
+<codeline lineno="464"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="interface_accessors_8c_1a7946fac2f11a44eff7c700907c189bc6" kindref="member">INTF_getHarmCurrentCh3PhB</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PCC_getAcHarmonicCurrentRms_SI(SHC_CONTROL_CHANNEL_3,<sp/>CMM_AC_CONTROL_CHANNEL_V);</highlight></codeline>
+<codeline lineno="468"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(SIL_WRAPPER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Writes<sp/>all<sp/>necessary<sp/>variables<sp/>to<sp/>snapshot<sp/>data<sp/>file.</highlight></codeline>
+<codeline lineno="472"><highlight class="comment">*<sp/><sp/>The<sp/>file<sp/>is<sp/>already<sp/>open<sp/>and<sp/>the<sp/>file<sp/>will<sp/>not<sp/>be<sp/>closed</highlight></codeline>
+<codeline lineno="473"><highlight class="comment">*<sp/><sp/>by<sp/>this<sp/>function.</highlight></codeline>
+<codeline lineno="474"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>INTF_SIL_writeSnapshot(FILE*<sp/>snapshotFile)<sp/>{</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a88f562c1031cccffe74fb20b4ca06060" kindref="member">INTF_commandFlags</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a88f562c1031cccffe74fb20b4ca06060" kindref="member">INTF_commandFlags</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a3f54617f49f9242541779331eb124182" kindref="member">INTF_cmdRealPwr</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a3f54617f49f9242541779331eb124182" kindref="member">INTF_cmdRealPwr</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a79e31bef5a37336542c4f6361506fa02" kindref="member">INTF_cmdReactivePwr</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a79e31bef5a37336542c4f6361506fa02" kindref="member">INTF_cmdReactivePwr</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a4c8db66e9aff805c09de8ef33a33388c" kindref="member">INTF_cmdRealCurrent</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a4c8db66e9aff805c09de8ef33a33388c" kindref="member">INTF_cmdRealCurrent</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a4b95211c26a962044ea4690e06eb87b3" kindref="member">INTF_cmdReactiveCurrent</ref>,<sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a4b95211c26a962044ea4690e06eb87b3" kindref="member">INTF_cmdReactiveCurrent</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a5538df13b1da6a0aefd3bde487b9a4cb" kindref="member">INTF_cmdInputCurrent</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a5538df13b1da6a0aefd3bde487b9a4cb" kindref="member">INTF_cmdInputCurrent</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1aafe89f987c23c36dd842e3a95c4fa2e5" kindref="member">INTF_cmdDcVLim</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1aafe89f987c23c36dd842e3a95c4fa2e5" kindref="member">INTF_cmdDcVLim</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1aa28bf8dd3bf1d36d1aecb7c754e0383b" kindref="member">INTF_cmdRealPwrNs</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1aa28bf8dd3bf1d36d1aecb7c754e0383b" kindref="member">INTF_cmdRealPwrNs</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1aba3e765c9fe3dfe3040ad741ded00f77" kindref="member">INTF_cmdReactivePwrNs</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1aba3e765c9fe3dfe3040ad741ded00f77" kindref="member">INTF_cmdReactivePwrNs</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a27a2166f2c156045cf525468d2f313b9" kindref="member">INTF_cmdRealCurrentNs</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a27a2166f2c156045cf525468d2f313b9" kindref="member">INTF_cmdRealCurrentNs</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1af9d9bcbabff6b55ae0b251ce94d7ef44" kindref="member">INTF_cmdReactiveCurrentNs</ref>,<sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1af9d9bcbabff6b55ae0b251ce94d7ef44" kindref="member">INTF_cmdReactiveCurrentNs</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a6ace3b5f1a80d2fed688ebc10a7765f9" kindref="member">INTF_cmdMpptPwrDcdc</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a6ace3b5f1a80d2fed688ebc10a7765f9" kindref="member">INTF_cmdMpptPwrDcdc</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1ad60b78557c3eb0a494afc3da4bc211b1" kindref="member">INTF_cmdPhAHarmCh0Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ad60b78557c3eb0a494afc3da4bc211b1" kindref="member">INTF_cmdPhAHarmCh0Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a257409e80c6c6c3948950bee7bac7468" kindref="member">INTF_cmdPhAHarmCh0Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a257409e80c6c6c3948950bee7bac7468" kindref="member">INTF_cmdPhAHarmCh0Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1ad4d0e1e55f52f153f8ddf02fcdb53127" kindref="member">INTF_cmdPhBHarmCh0Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ad4d0e1e55f52f153f8ddf02fcdb53127" kindref="member">INTF_cmdPhBHarmCh0Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a8627ea41577512343ccd97df985cf8e8" kindref="member">INTF_cmdPhBHarmCh0Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a8627ea41577512343ccd97df985cf8e8" kindref="member">INTF_cmdPhBHarmCh0Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a11c24207ef9ae315b743906a04699725" kindref="member">INTF_cmdPhAHarmCh1Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a11c24207ef9ae315b743906a04699725" kindref="member">INTF_cmdPhAHarmCh1Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1aa1d4c43a43d0db93a916869e4cd8c6bb" kindref="member">INTF_cmdPhAHarmCh1Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1aa1d4c43a43d0db93a916869e4cd8c6bb" kindref="member">INTF_cmdPhAHarmCh1Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1ae06b06f088104b223512e5b52c139ee1" kindref="member">INTF_cmdPhBHarmCh1Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ae06b06f088104b223512e5b52c139ee1" kindref="member">INTF_cmdPhBHarmCh1Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1ac16d5d125f14e01708e4b4136ee62697" kindref="member">INTF_cmdPhBHarmCh1Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ac16d5d125f14e01708e4b4136ee62697" kindref="member">INTF_cmdPhBHarmCh1Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a27c2f062b9e1ed74ff613c2718b90980" kindref="member">INTF_cmdPhAHarmCh2Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a27c2f062b9e1ed74ff613c2718b90980" kindref="member">INTF_cmdPhAHarmCh2Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1abb23731cbb6e0ca066fefb7ca8a0e71f" kindref="member">INTF_cmdPhAHarmCh2Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1abb23731cbb6e0ca066fefb7ca8a0e71f" kindref="member">INTF_cmdPhAHarmCh2Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a89baaacf4a6c79627efa601eacd004a1" kindref="member">INTF_cmdPhBHarmCh2Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a89baaacf4a6c79627efa601eacd004a1" kindref="member">INTF_cmdPhBHarmCh2Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1af10fd01df5b4f8ce44b25e8d9bd0e706" kindref="member">INTF_cmdPhBHarmCh2Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1af10fd01df5b4f8ce44b25e8d9bd0e706" kindref="member">INTF_cmdPhBHarmCh2Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a1017f9aea6d8265abce63ec31eb56db6" kindref="member">INTF_cmdPhAHarmCh3Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a1017f9aea6d8265abce63ec31eb56db6" kindref="member">INTF_cmdPhAHarmCh3Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a5e5100c627d6e798db9361cad6a52c7b" kindref="member">INTF_cmdPhAHarmCh3Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a5e5100c627d6e798db9361cad6a52c7b" kindref="member">INTF_cmdPhAHarmCh3Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1a0029c5f594b19e6799580e1ece9f87c9" kindref="member">INTF_cmdPhBHarmCh3Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a0029c5f594b19e6799580e1ece9f87c9" kindref="member">INTF_cmdPhBHarmCh3Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;<ref refid="interface_accessors_8c_1ae2d788832709698a110e292aa4e046b3" kindref="member">INTF_cmdPhBHarmCh3Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ae2d788832709698a110e292aa4e046b3" kindref="member">INTF_cmdPhBHarmCh3Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight></codeline>
+<codeline lineno="508"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Reads<sp/>all<sp/>necessary<sp/>variables<sp/>from<sp/>a<sp/>snapshot<sp/>data<sp/>file.</highlight></codeline>
+<codeline lineno="509"><highlight class="comment">*<sp/><sp/>The<sp/>file<sp/>is<sp/>already<sp/>open<sp/>and<sp/>the<sp/>file<sp/>will<sp/>not<sp/>be<sp/>closed</highlight></codeline>
+<codeline lineno="510"><highlight class="comment">*<sp/><sp/>by<sp/>this<sp/>function.</highlight></codeline>
+<codeline lineno="511"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>INTF_SIL_readSnapshot(FILE*<sp/>snapshotFile)<sp/>{</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a88f562c1031cccffe74fb20b4ca06060" kindref="member">INTF_commandFlags</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a88f562c1031cccffe74fb20b4ca06060" kindref="member">INTF_commandFlags</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"></highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a3f54617f49f9242541779331eb124182" kindref="member">INTF_cmdRealPwr</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a3f54617f49f9242541779331eb124182" kindref="member">INTF_cmdRealPwr</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a79e31bef5a37336542c4f6361506fa02" kindref="member">INTF_cmdReactivePwr</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a79e31bef5a37336542c4f6361506fa02" kindref="member">INTF_cmdReactivePwr</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a4c8db66e9aff805c09de8ef33a33388c" kindref="member">INTF_cmdRealCurrent</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a4c8db66e9aff805c09de8ef33a33388c" kindref="member">INTF_cmdRealCurrent</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a4b95211c26a962044ea4690e06eb87b3" kindref="member">INTF_cmdReactiveCurrent</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a4b95211c26a962044ea4690e06eb87b3" kindref="member">INTF_cmdReactiveCurrent</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a5538df13b1da6a0aefd3bde487b9a4cb" kindref="member">INTF_cmdInputCurrent</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a5538df13b1da6a0aefd3bde487b9a4cb" kindref="member">INTF_cmdInputCurrent</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1aafe89f987c23c36dd842e3a95c4fa2e5" kindref="member">INTF_cmdDcVLim</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1aafe89f987c23c36dd842e3a95c4fa2e5" kindref="member">INTF_cmdDcVLim</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1aa28bf8dd3bf1d36d1aecb7c754e0383b" kindref="member">INTF_cmdRealPwrNs</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1aa28bf8dd3bf1d36d1aecb7c754e0383b" kindref="member">INTF_cmdRealPwrNs</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1aba3e765c9fe3dfe3040ad741ded00f77" kindref="member">INTF_cmdReactivePwrNs</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1aba3e765c9fe3dfe3040ad741ded00f77" kindref="member">INTF_cmdReactivePwrNs</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a27a2166f2c156045cf525468d2f313b9" kindref="member">INTF_cmdRealCurrentNs</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a27a2166f2c156045cf525468d2f313b9" kindref="member">INTF_cmdRealCurrentNs</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1af9d9bcbabff6b55ae0b251ce94d7ef44" kindref="member">INTF_cmdReactiveCurrentNs</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1af9d9bcbabff6b55ae0b251ce94d7ef44" kindref="member">INTF_cmdReactiveCurrentNs</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a6ace3b5f1a80d2fed688ebc10a7765f9" kindref="member">INTF_cmdMpptPwrDcdc</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a6ace3b5f1a80d2fed688ebc10a7765f9" kindref="member">INTF_cmdMpptPwrDcdc</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1ad60b78557c3eb0a494afc3da4bc211b1" kindref="member">INTF_cmdPhAHarmCh0Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ad60b78557c3eb0a494afc3da4bc211b1" kindref="member">INTF_cmdPhAHarmCh0Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a257409e80c6c6c3948950bee7bac7468" kindref="member">INTF_cmdPhAHarmCh0Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a257409e80c6c6c3948950bee7bac7468" kindref="member">INTF_cmdPhAHarmCh0Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1ad4d0e1e55f52f153f8ddf02fcdb53127" kindref="member">INTF_cmdPhBHarmCh0Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ad4d0e1e55f52f153f8ddf02fcdb53127" kindref="member">INTF_cmdPhBHarmCh0Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a8627ea41577512343ccd97df985cf8e8" kindref="member">INTF_cmdPhBHarmCh0Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a8627ea41577512343ccd97df985cf8e8" kindref="member">INTF_cmdPhBHarmCh0Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a11c24207ef9ae315b743906a04699725" kindref="member">INTF_cmdPhAHarmCh1Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a11c24207ef9ae315b743906a04699725" kindref="member">INTF_cmdPhAHarmCh1Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1aa1d4c43a43d0db93a916869e4cd8c6bb" kindref="member">INTF_cmdPhAHarmCh1Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1aa1d4c43a43d0db93a916869e4cd8c6bb" kindref="member">INTF_cmdPhAHarmCh1Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1ae06b06f088104b223512e5b52c139ee1" kindref="member">INTF_cmdPhBHarmCh1Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ae06b06f088104b223512e5b52c139ee1" kindref="member">INTF_cmdPhBHarmCh1Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1ac16d5d125f14e01708e4b4136ee62697" kindref="member">INTF_cmdPhBHarmCh1Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ac16d5d125f14e01708e4b4136ee62697" kindref="member">INTF_cmdPhBHarmCh1Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a27c2f062b9e1ed74ff613c2718b90980" kindref="member">INTF_cmdPhAHarmCh2Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a27c2f062b9e1ed74ff613c2718b90980" kindref="member">INTF_cmdPhAHarmCh2Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1abb23731cbb6e0ca066fefb7ca8a0e71f" kindref="member">INTF_cmdPhAHarmCh2Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1abb23731cbb6e0ca066fefb7ca8a0e71f" kindref="member">INTF_cmdPhAHarmCh2Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a89baaacf4a6c79627efa601eacd004a1" kindref="member">INTF_cmdPhBHarmCh2Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a89baaacf4a6c79627efa601eacd004a1" kindref="member">INTF_cmdPhBHarmCh2Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1af10fd01df5b4f8ce44b25e8d9bd0e706" kindref="member">INTF_cmdPhBHarmCh2Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1af10fd01df5b4f8ce44b25e8d9bd0e706" kindref="member">INTF_cmdPhBHarmCh2Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a1017f9aea6d8265abce63ec31eb56db6" kindref="member">INTF_cmdPhAHarmCh3Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a1017f9aea6d8265abce63ec31eb56db6" kindref="member">INTF_cmdPhAHarmCh3Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a5e5100c627d6e798db9361cad6a52c7b" kindref="member">INTF_cmdPhAHarmCh3Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a5e5100c627d6e798db9361cad6a52c7b" kindref="member">INTF_cmdPhAHarmCh3Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1a0029c5f594b19e6799580e1ece9f87c9" kindref="member">INTF_cmdPhBHarmCh3Id</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1a0029c5f594b19e6799580e1ece9f87c9" kindref="member">INTF_cmdPhBHarmCh3Id</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/>fread(&amp;<ref refid="interface_accessors_8c_1ae2d788832709698a110e292aa4e046b3" kindref="member">INTF_cmdPhBHarmCh3Iq</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="interface_accessors_8c_1ae2d788832709698a110e292aa4e046b3" kindref="member">INTF_cmdPhBHarmCh3Iq</ref>),<sp/>1,<sp/>snapshotFile);</highlight></codeline>
+<codeline lineno="543"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="interface/interfaceAccessors.c"/>
+  </compounddef>
+</doxygen>

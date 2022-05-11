@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_interface_item_common" xml:lang="en-US">
+<title>InterfaceItemCommon Struct Reference</title>
+<indexterm><primary>InterfaceItemCommon</primary></indexterm>
+<para>
+<computeroutput>#include &lt;interface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>volatile sunssf const  *const <link linkend="_struct_interface_item_common_1a64a25e3785726ebedc4a2e92af71e49f">sunspecScaleFactor</link></para>
+</listitem>
+            <listitem><para>float const <link linkend="_struct_interface_item_common_1a53c4a11e0a7621d69cfcaec3dc221463">canScaleFactor</link></para>
+</listitem>
+            <listitem><para>void(*const <link linkend="_struct_interface_item_common_1a25f5a5b30d8acd1d952b77b38e0e7634">scaleFactorUpdater</link> )(void)</para>
+</listitem>
+            <listitem><para>sunssf const <link linkend="_struct_interface_item_common_1a0d2e5de29b3efe5a2acee7258c9c8e55">internalScaleFactor</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_interface_specifics_sun_spec">InterfaceSpecificsSunSpec</link> const <link linkend="_struct_interface_item_common_1a6770636c0c91bb40ecdc2acca7727ed8">sunspec</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_interface_specifics">InterfaceSpecifics</link> const <link linkend="_struct_interface_item_common_1ae76ad2e0524b612b51ace6763a9240f6">can</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_interface_specifics_static_modbus">InterfaceSpecificsStaticModbus</link> const <link linkend="_struct_interface_item_common_1a87dfb090938bdf37a82e7de9b0a5663d">staticmodbus</link></para>
+</listitem>
+            <listitem><para>CAN_Enum_AccessLevel const <link linkend="_struct_interface_item_common_1a43285809ff757f9243fde502b1b48efe">access_level</link></para>
+</listitem>
+            <listitem><para>bool const <link linkend="_struct_interface_item_common_1a97ec1d7a217b9066358c0ec075d9f6eb">rejectFromInactiveInterface</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_interface_item_common_1a43285809ff757f9243fde502b1b48efe"/><section>
+    <title>access_level</title>
+<indexterm><primary>access_level</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>access_level</secondary></indexterm>
+<para><computeroutput>CAN_Enum_AccessLevel const InterfaceItemCommon::access_level</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item_common_1ae76ad2e0524b612b51ace6763a9240f6"/><section>
+    <title>can</title>
+<indexterm><primary>can</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>can</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_interface_specifics">InterfaceSpecifics</link> const InterfaceItemCommon::can</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item_common_1a53c4a11e0a7621d69cfcaec3dc221463"/><section>
+    <title>canScaleFactor</title>
+<indexterm><primary>canScaleFactor</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>canScaleFactor</secondary></indexterm>
+<para><computeroutput>float const InterfaceItemCommon::canScaleFactor</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item_common_1a0d2e5de29b3efe5a2acee7258c9c8e55"/><section>
+    <title>internalScaleFactor</title>
+<indexterm><primary>internalScaleFactor</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>internalScaleFactor</secondary></indexterm>
+<para><computeroutput>sunssf const InterfaceItemCommon::internalScaleFactor</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item_common_1a97ec1d7a217b9066358c0ec075d9f6eb"/><section>
+    <title>rejectFromInactiveInterface</title>
+<indexterm><primary>rejectFromInactiveInterface</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>rejectFromInactiveInterface</secondary></indexterm>
+<para><computeroutput>bool const InterfaceItemCommon::rejectFromInactiveInterface</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item_common_1a25f5a5b30d8acd1d952b77b38e0e7634"/><section>
+    <title>scaleFactorUpdater</title>
+<indexterm><primary>scaleFactorUpdater</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>scaleFactorUpdater</secondary></indexterm>
+<para><computeroutput>void(*const InterfaceItemCommon::scaleFactorUpdater) (void)</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item_common_1a87dfb090938bdf37a82e7de9b0a5663d"/><section>
+    <title>staticmodbus</title>
+<indexterm><primary>staticmodbus</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>staticmodbus</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_interface_specifics_static_modbus">InterfaceSpecificsStaticModbus</link> const InterfaceItemCommon::staticmodbus</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item_common_1a6770636c0c91bb40ecdc2acca7727ed8"/><section>
+    <title>sunspec</title>
+<indexterm><primary>sunspec</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>sunspec</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_interface_specifics_sun_spec">InterfaceSpecificsSunSpec</link> const InterfaceItemCommon::sunspec</computeroutput></para></section>
+<anchor xml:id="_struct_interface_item_common_1a64a25e3785726ebedc4a2e92af71e49f"/><section>
+    <title>sunspecScaleFactor</title>
+<indexterm><primary>sunspecScaleFactor</primary><secondary>InterfaceItemCommon</secondary></indexterm>
+<indexterm><primary>InterfaceItemCommon</primary><secondary>sunspecScaleFactor</secondary></indexterm>
+<para><computeroutput>volatile sunssf const* const InterfaceItemCommon::sunspecScaleFactor</computeroutput></para></section>
+</section>
+</section>

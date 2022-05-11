@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_a_d1_d___hw_resources__s" kind="struct" language="C++" prot="public">
+    <compoundname>AD1D_HwResources_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d1_d___hw_resources__s_1ad2f7bd4edbd50be2af53b182986504c9" prot="public" static="no" mutable="no">
+        <type><ref refid="ad1d__emu_8c_1ae68c26d3439d1475cd4f8057cd9c6fdd" kindref="member">AD1D_Inputs_t</ref></type>
+        <definition>AD1D_Inputs_t AD1D_HwResources_s::adcInput</definition>
+        <argsstring></argsstring>
+        <name>adcInput</name>
+        <qualifiedname>AD1D_HwResources_s::adcInput</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad1d_emu.c" line="171" column="33" bodyfile="sil/emu/ad1d_emu.c" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d1_d___hw_resources__s_1ac7187da67cf2d711830afa87a5e555ec" prot="public" static="no" mutable="no">
+        <type><ref refid="ad1d__emu_8c_1a065fd175027eba57c1b5c72581f67e19" kindref="member">AD1D_MuxSelectName_t</ref></type>
+        <definition>AD1D_MuxSelectName_t AD1D_HwResources_s::muxSelect</definition>
+        <argsstring></argsstring>
+        <name>muxSelect</name>
+        <qualifiedname>AD1D_HwResources_s::muxSelect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad1d_emu.c" line="172" column="33" bodyfile="sil/emu/ad1d_emu.c" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/emu/ad1d_emu.c" line="170" column="1" bodyfile="sil/emu/ad1d_emu.c" bodystart="170" bodyend="173"/>
+    <listofallmembers>
+      <member refid="struct_a_d1_d___hw_resources__s_1ad2f7bd4edbd50be2af53b182986504c9" prot="public" virt="non-virtual"><scope>AD1D_HwResources_s</scope><name>adcInput</name></member>
+      <member refid="struct_a_d1_d___hw_resources__s_1ac7187da67cf2d711830afa87a5e555ec" prot="public" virt="non-virtual"><scope>AD1D_HwResources_s</scope><name>muxSelect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

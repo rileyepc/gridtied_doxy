@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_i_l___port_spec__s" xml:lang="en-US">
+<title>SIL_PortSpec_s Struct Reference</title>
+<indexterm><primary>SIL_PortSpec_s</primary></indexterm>
+<para>
+<computeroutput>#include &lt;libEpcControl.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double * <link linkend="_struct_s_i_l___port_spec__s_1a79751280ee24342b33b8bd7d7c7d8f5a">portPointer</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_s_i_l___port_spec__s_1ab69e675b9188fef7b87df0f8b6388dbc">portWidth</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_i_l___port_spec__s_1a79751280ee24342b33b8bd7d7c7d8f5a"/><section>
+    <title>portPointer</title>
+<indexterm><primary>portPointer</primary><secondary>SIL_PortSpec_s</secondary></indexterm>
+<indexterm><primary>SIL_PortSpec_s</primary><secondary>portPointer</secondary></indexterm>
+<para><computeroutput>double* SIL_PortSpec_s::portPointer</computeroutput></para></section>
+<anchor xml:id="_struct_s_i_l___port_spec__s_1ab69e675b9188fef7b87df0f8b6388dbc"/><section>
+    <title>portWidth</title>
+<indexterm><primary>portWidth</primary><secondary>SIL_PortSpec_s</secondary></indexterm>
+<indexterm><primary>SIL_PortSpec_s</primary><secondary>portWidth</secondary></indexterm>
+<para><computeroutput>int SIL_PortSpec_s::portWidth</computeroutput></para></section>
+</section>
+</section>

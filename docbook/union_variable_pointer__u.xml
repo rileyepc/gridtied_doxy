@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_union_variable_pointer__u" xml:lang="en-US">
+<title>VariablePointer_u Union Reference</title>
+<indexterm><primary>VariablePointer_u</primary></indexterm>
+<para>
+<computeroutput>#include &lt;libEpcControlInterface.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float * <link linkend="_union_variable_pointer__u_1ab61203efcf48547f23e92a9643fbb3bf">float_</link></para>
+</listitem>
+            <listitem><para>uint64_t * <link linkend="_union_variable_pointer__u_1a520af636ea3bda62abe8453bcf4e66f9">uint64_t_</link></para>
+</listitem>
+            <listitem><para>uint32_t * <link linkend="_union_variable_pointer__u_1a6c5ab022d441dcd99862ff65ec1cfa83">uint32_t_</link></para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="_union_variable_pointer__u_1ac714fd90ab8b1c754abb9280ef5cd0ca">uint16_t_</link></para>
+</listitem>
+            <listitem><para>int32_t * <link linkend="_union_variable_pointer__u_1a56e6a6ce1bb86402b5adf26b97428ca7">int32_t_</link></para>
+</listitem>
+            <listitem><para>int16_t * <link linkend="_union_variable_pointer__u_1a36a543a52eac597023a4deb363c1fa24">int16_t_</link></para>
+</listitem>
+            <listitem><para>size_t * <link linkend="_union_variable_pointer__u_1afc3dca84929f43265b742afb1084a412">size_t_</link></para>
+</listitem>
+            <listitem><para>bool * <link linkend="_union_variable_pointer__u_1ab4ff753c3d026640f04e56658ebebb21">bool_</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_union_variable_pointer__u_1ab4ff753c3d026640f04e56658ebebb21"/><section>
+    <title>bool_</title>
+<indexterm><primary>bool_</primary><secondary>VariablePointer_u</secondary></indexterm>
+<indexterm><primary>VariablePointer_u</primary><secondary>bool_</secondary></indexterm>
+<para><computeroutput>bool* VariablePointer_u::bool_</computeroutput></para></section>
+<anchor xml:id="_union_variable_pointer__u_1ab61203efcf48547f23e92a9643fbb3bf"/><section>
+    <title>float_</title>
+<indexterm><primary>float_</primary><secondary>VariablePointer_u</secondary></indexterm>
+<indexterm><primary>VariablePointer_u</primary><secondary>float_</secondary></indexterm>
+<para><computeroutput>float* VariablePointer_u::float_</computeroutput></para></section>
+<anchor xml:id="_union_variable_pointer__u_1a36a543a52eac597023a4deb363c1fa24"/><section>
+    <title>int16_t_</title>
+<indexterm><primary>int16_t_</primary><secondary>VariablePointer_u</secondary></indexterm>
+<indexterm><primary>VariablePointer_u</primary><secondary>int16_t_</secondary></indexterm>
+<para><computeroutput>int16_t* VariablePointer_u::int16_t_</computeroutput></para></section>
+<anchor xml:id="_union_variable_pointer__u_1a56e6a6ce1bb86402b5adf26b97428ca7"/><section>
+    <title>int32_t_</title>
+<indexterm><primary>int32_t_</primary><secondary>VariablePointer_u</secondary></indexterm>
+<indexterm><primary>VariablePointer_u</primary><secondary>int32_t_</secondary></indexterm>
+<para><computeroutput>int32_t* VariablePointer_u::int32_t_</computeroutput></para></section>
+<anchor xml:id="_union_variable_pointer__u_1afc3dca84929f43265b742afb1084a412"/><section>
+    <title>size_t_</title>
+<indexterm><primary>size_t_</primary><secondary>VariablePointer_u</secondary></indexterm>
+<indexterm><primary>VariablePointer_u</primary><secondary>size_t_</secondary></indexterm>
+<para><computeroutput>size_t* VariablePointer_u::size_t_</computeroutput></para></section>
+<anchor xml:id="_union_variable_pointer__u_1ac714fd90ab8b1c754abb9280ef5cd0ca"/><section>
+    <title>uint16_t_</title>
+<indexterm><primary>uint16_t_</primary><secondary>VariablePointer_u</secondary></indexterm>
+<indexterm><primary>VariablePointer_u</primary><secondary>uint16_t_</secondary></indexterm>
+<para><computeroutput>uint16_t* VariablePointer_u::uint16_t_</computeroutput></para></section>
+<anchor xml:id="_union_variable_pointer__u_1a6c5ab022d441dcd99862ff65ec1cfa83"/><section>
+    <title>uint32_t_</title>
+<indexterm><primary>uint32_t_</primary><secondary>VariablePointer_u</secondary></indexterm>
+<indexterm><primary>VariablePointer_u</primary><secondary>uint32_t_</secondary></indexterm>
+<para><computeroutput>uint32_t* VariablePointer_u::uint32_t_</computeroutput></para></section>
+<anchor xml:id="_union_variable_pointer__u_1a520af636ea3bda62abe8453bcf4e66f9"/><section>
+    <title>uint64_t_</title>
+<indexterm><primary>uint64_t_</primary><secondary>VariablePointer_u</secondary></indexterm>
+<indexterm><primary>VariablePointer_u</primary><secondary>uint64_t_</secondary></indexterm>
+<para><computeroutput>uint64_t* VariablePointer_u::uint64_t_</computeroutput></para></section>
+</section>
+</section>

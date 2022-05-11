@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__all_tests_8cpp" xml:lang="en-US">
+<title>unit_test/AllTests.cpp File Reference</title>
+<indexterm><primary>unit_test/AllTests.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;CppUTest/CommandLineTestRunner.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__all_tests_8cpp_1a217dbf8b442f20279ea00b898af96f52">main</link> (int argc, const char **argv)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__all_tests_8cpp_1a217dbf8b442f20279ea00b898af96f52"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>AllTests.cpp</secondary></indexterm>
+<indexterm><primary>AllTests.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (int argc, const char ** argv)</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_todo" xml:lang="en-US">
+
+<para><variablelist>
+<varlistentry><term>Member <link linkend="_interface_accessors_8h_1a1cdd34e87e38eafe4bccb1db4f8dd63e">getBridgeAVoltageOk</link>  (void)</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000003"/>1. fix the FPGA inverter status registers to match the fault mapping<orderedlist>
+<listitem>
+<para>determine where to put these getters  </para>
+</listitem></orderedlist>
+</para>
+</listitem></varlistentry>
+<varlistentry><term>Member <link linkend="_application_8h_1ae8d2212f7c053cff78f8630589545e61">J1939_INTERFACE_DEFAULTS</link>  (...)</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000001"/>this belongs somewhere else </para>
+</listitem></varlistentry>
+</variablelist>
+</para>
+</section>

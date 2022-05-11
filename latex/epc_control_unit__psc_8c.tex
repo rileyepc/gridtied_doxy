@@ -1,0 +1,368 @@
+\hypertarget{epc_control_unit__psc_8c}{}\doxysection{sil/psc/lib\+Epc\+Control\+Dev/epc\+Control\+Unit\+\_\+psc.c File Reference}
+\label{epc_control_unit__psc_8c}\index{sil/psc/libEpcControlDev/epcControlUnit\_psc.c@{sil/psc/libEpcControlDev/epcControlUnit\_psc.c}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lib\+Epc\+Control.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___input_tlc_pdi__s}{ECU\+\_\+\+Input\+Tlc\+Pdi\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___output_tlc_pdo__s}{ECU\+\_\+\+Output\+Tlc\+Pdo\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___input_control__s}{ECU\+\_\+\+Input\+Control\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___input_reference__s}{ECU\+\_\+\+Input\+Reference\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___input_feedback__s}{ECU\+\_\+\+Input\+Feedback\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___input__s}{ECU\+\_\+\+Input\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___output_status__s}{ECU\+\_\+\+Output\+Status\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___output_monitor__s}{ECU\+\_\+\+Output\+Monitor\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___output_control__s}{ECU\+\_\+\+Output\+Control\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___output_reference__s}{ECU\+\_\+\+Output\+Reference\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_e_c_u___output__s}{ECU\+\_\+\+Output\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a44d86f63e1aea9eb93b0c6966167f65b}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+V}}~( 1.\+0e3 )
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a35fb0e0c9c3c695d27f8f8dcfa4a711c}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+I}}~( 1.\+0e3 )
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a5b3287e95c8ab5de4e15670efccce003}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+P}}~( \mbox{\hyperlink{epc_control_unit__psc_8c_a44d86f63e1aea9eb93b0c6966167f65b}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+V}} $\ast$ \mbox{\hyperlink{epc_control_unit__psc_8c_a35fb0e0c9c3c695d27f8f8dcfa4a711c}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+I}} )
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a8a87ace1ff44a908fa1c947428ebebf2}{ECU\+\_\+\+SCALE\+\_\+\+TO\+\_\+\+PSC\+\_\+V}}~( 1.\+0 / \mbox{\hyperlink{epc_control_unit__psc_8c_a44d86f63e1aea9eb93b0c6966167f65b}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+V}} )
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a0a55c9c8b8b81c912f11d45e256aec5b}{ECU\+\_\+\+SCALE\+\_\+\+TO\+\_\+\+PSC\+\_\+I}}~( 1.\+0 / \mbox{\hyperlink{epc_control_unit__psc_8c_a35fb0e0c9c3c695d27f8f8dcfa4a711c}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+I}} )
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a702c18336033286b02b95866383fec06}{ECU\+\_\+\+SCALE\+\_\+\+TO\+\_\+\+PSC\+\_\+P}}~( 1.\+0 / \mbox{\hyperlink{epc_control_unit__psc_8c_a5b3287e95c8ab5de4e15670efccce003}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+P}} )
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a73c7870ad0714f77bbe77f7f621b3bb5}{ECU\+\_\+\+DLL\+\_\+\+TARGET\+\_\+\+FILENAME}}
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a4a872ccbd01bb8c26c9b67fe13895528}{ECU\+\_\+\+DLL\+\_\+\+FILE\+\_\+\+EXTENSION}}~\char`\"{}.dll\char`\"{}                                      /$\ast$ Dll file extension $\ast$/
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_ab053dfe85edff1ce89eff223a924bc18}{ECU\+\_\+\+MAX\+\_\+\+INSTANCES}}~10                                          /$\ast$ Maximum amount of supported instances $\ast$/
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a24947579c3880186891cbb5b9e76756d}{DLL\+\_\+\+SIL\+\_\+\+PORT\+\_\+\+INP\+\_\+P}}(inst\+Idx,  m\+Port)~($\ast$SIL\+\_\+\+Ports\+Dll\mbox{[}inst\+Idx\mbox{]})-\/$>$inp\+Port\mbox{[}m\+Port\mbox{]}.port\+Pointer
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__psc_8c_a427c304e0fec00170d64d0e993dfdeed}{DLL\+\_\+\+SIL\+\_\+\+PORT\+\_\+\+OUT\+\_\+P}}(inst\+Idx,  m\+Port)~($\ast$SIL\+\_\+\+Ports\+Dll\mbox{[}inst\+Idx\mbox{]})-\/$>$out\+Port\mbox{[}m\+Port\mbox{]}.port\+Pointer
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___input_tlc_pdi__s}{ECU\+\_\+\+Input\+Tlc\+Pdi\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_aada87f8a06d3f3a98324a837a3693f4d}{ECU\+\_\+\+Input\+Tlc\+Pdi\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___output_tlc_pdo__s}{ECU\+\_\+\+Output\+Tlc\+Pdo\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_aa3e8d51ab0e8cc8105dffab2220088a2}{ECU\+\_\+s\+Output\+Tlc\+Pdo\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___input_control__s}{ECU\+\_\+\+Input\+Control\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_aa73356b11bf03ec92bc735a85bca55fc}{ECU\+\_\+s\+Input\+Control\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___input_reference__s}{ECU\+\_\+\+Input\+Reference\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a2145616628bd68522f127ea3158a3b31}{ECU\+\_\+s\+Input\+Reference\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___input_feedback__s}{ECU\+\_\+\+Input\+Feedback\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a8bac538c25083c913ab05a3ce721dd5c}{ECU\+\_\+s\+Input\+Feedback\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___input__s}{ECU\+\_\+\+Input\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_af7cea98c7de75d62b7a61a4506a56080}{ECU\+\_\+s\+Input\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___output_status__s}{ECU\+\_\+\+Output\+Status\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a91ca8f855368d75a84ea6d715bc48154}{ECU\+\_\+s\+Output\+Status\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___output_monitor__s}{ECU\+\_\+\+Output\+Monitor\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_abf35ce5a3f7497508d37cd9a7b17ceab}{ECU\+\_\+s\+Output\+Monitor\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___output_control__s}{ECU\+\_\+\+Output\+Control\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a69eb3a659497728991a036c60b6ab1f1}{ECU\+\_\+s\+Output\+Control\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___output_reference__s}{ECU\+\_\+\+Output\+Reference\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a23fb932f4364ed64971bf5b39f30cd52}{ECU\+\_\+s\+Output\+Reference\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_u___output__s}{ECU\+\_\+\+Output\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a4f4448763d930df3386a8e88e20831d3}{ECU\+\_\+s\+Output\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4}{ECU\+\_\+\+Init\+Status\+\_\+e}} \mbox{\hyperlink{epc_control_unit__psc_8c_a3b4aa6fcbff75c8e7c5de86b40020ae2}{ECU\+\_\+\+Init\+Status\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61d}{ECU\+\_\+\+Dll\+Load\+Status\+\_\+e}} \mbox{\hyperlink{epc_control_unit__psc_8c_a1b64e2cee159f7602749caf581e386e4}{ECU\+\_\+\+Dll\+Load\+Status\+\_\+t}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{epc_control_unit__psc_8c_aa87a00c8e7be1d6aafd8773a8baf8faf}{SIL\+\_\+initialize\+Library\+Dll\+\_\+t}}) (double, \mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}}, \mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}}, char $\ast$)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{epc_control_unit__psc_8c_a544495a6a6fa5738f6ba2b7887561256}{SIL\+\_\+update\+Output\+Dll\+\_\+t}}) (double)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{epc_control_unit__psc_8c_aeec649cafc11e4c145d9a1943e292f2a}{SIL\+\_\+update\+State\+Dll\+\_\+t}}) (double)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{epc_control_unit__psc_8c_acd0a43da0d2862d66ca1a1cf4482d828}{SIL\+\_\+write\+Snapshot\+Dll\+\_\+t}}) (double, uint16\+\_\+t, char $\ast$)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{epc_control_unit__psc_8c_a6aafa2e0d4a767e704ff64d2909888e8}{SIL\+\_\+read\+Snapshot\+Dll\+\_\+t}}) (uint16\+\_\+t, char $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4}{ECU\+\_\+\+Init\+Status\+\_\+e}} \{ \mbox{\hyperlink{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a498565ca366416aa65e1e213e96c9f2e}{ECU\+\_\+\+INIT\+\_\+\+SUCCESSFUL}}
+, \mbox{\hyperlink{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a3f28c6a6430de80bc4a9b2c57be96f29}{ECU\+\_\+\+INIT\+\_\+\+FAILED}}
+, \mbox{\hyperlink{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a31fb1edc9a91a1218197760213962b67}{ECU\+\_\+\+INIT\+\_\+\+CNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61d}{ECU\+\_\+\+Dll\+Load\+Status\+\_\+e}} \{ \mbox{\hyperlink{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61daa0e615cfe4098aaeea7707edc64c5ce4}{ECU\+\_\+\+DLL\+\_\+\+LOAD\+\_\+\+SUCCESSFUL}}
+, \mbox{\hyperlink{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61daf06e5804ec030586b102fd55a3c18135}{ECU\+\_\+\+DLL\+\_\+\+LOAD\+\_\+\+FAILED}}
+, \mbox{\hyperlink{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61da6152b693943c2c9460a31303799c022e}{ECU\+\_\+\+DLL\+\_\+\+LOAD\+\_\+\+CNT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{epc_control_unit__psc_8c_a3b4aa6fcbff75c8e7c5de86b40020ae2}{ECU\+\_\+\+Init\+Status\+\_\+t}} \mbox{\hyperlink{epc_control_unit__psc_8c_ac1f960a87a4a6a3b5ab4040ad6269eca}{ECU\+\_\+control\+Initialize}} (int $\ast$instance\+Number, int $\ast$read\+Snapshot, int $\ast$multiple\+Run, double dt\+Sim, char $\ast$dll\+Path, char $\ast$temp\+Path, char $\ast$pmvs\+Path)
+\item 
+void \mbox{\hyperlink{epc_control_unit__psc_8c_a7a67c50669c6ba2f0d027951e720e848}{ECU\+\_\+control\+Terminate}} (int $\ast$instance\+Number)
+\item 
+void \mbox{\hyperlink{epc_control_unit__psc_8c_a84f39360200a5121adfaa47c0a966413}{ECU\+\_\+control\+Update}} (int $\ast$instance\+Number, int $\ast$write\+Snapshot, double t\+Sim, double tlc\+In\mbox{[}6U\mbox{]}, int ctl\mbox{[}1U\mbox{]}, double ref\mbox{[}6U\mbox{]}, double fbk\mbox{[}11U\mbox{]}, int rly\mbox{[}4U\mbox{]}, double mod\mbox{[}6U\mbox{]}, int stat\mbox{[}6U\mbox{]}, double mon\mbox{[}17U\mbox{]}, double tlc\+Out\mbox{[}21U\mbox{]}, double dbg\mbox{[}32U\mbox{]}, double ref\+Out\mbox{[}4U\mbox{]}, char $\ast$temp\+Path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a24947579c3880186891cbb5b9e76756d}\label{epc_control_unit__psc_8c_a24947579c3880186891cbb5b9e76756d}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!DLL\_SIL\_PORT\_INP\_P@{DLL\_SIL\_PORT\_INP\_P}}
+\index{DLL\_SIL\_PORT\_INP\_P@{DLL\_SIL\_PORT\_INP\_P}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{DLL\_SIL\_PORT\_INP\_P}{DLL\_SIL\_PORT\_INP\_P}}
+{\footnotesize\ttfamily \#define DLL\+\_\+\+SIL\+\_\+\+PORT\+\_\+\+INP\+\_\+P(\begin{DoxyParamCaption}\item[{}]{inst\+Idx,  }\item[{}]{m\+Port }\end{DoxyParamCaption})~($\ast$SIL\+\_\+\+Ports\+Dll\mbox{[}inst\+Idx\mbox{]})-\/$>$inp\+Port\mbox{[}m\+Port\mbox{]}.port\+Pointer}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a427c304e0fec00170d64d0e993dfdeed}\label{epc_control_unit__psc_8c_a427c304e0fec00170d64d0e993dfdeed}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!DLL\_SIL\_PORT\_OUT\_P@{DLL\_SIL\_PORT\_OUT\_P}}
+\index{DLL\_SIL\_PORT\_OUT\_P@{DLL\_SIL\_PORT\_OUT\_P}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{DLL\_SIL\_PORT\_OUT\_P}{DLL\_SIL\_PORT\_OUT\_P}}
+{\footnotesize\ttfamily \#define DLL\+\_\+\+SIL\+\_\+\+PORT\+\_\+\+OUT\+\_\+P(\begin{DoxyParamCaption}\item[{}]{inst\+Idx,  }\item[{}]{m\+Port }\end{DoxyParamCaption})~($\ast$SIL\+\_\+\+Ports\+Dll\mbox{[}inst\+Idx\mbox{]})-\/$>$out\+Port\mbox{[}m\+Port\mbox{]}.port\+Pointer}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a4a872ccbd01bb8c26c9b67fe13895528}\label{epc_control_unit__psc_8c_a4a872ccbd01bb8c26c9b67fe13895528}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_DLL\_FILE\_EXTENSION@{ECU\_DLL\_FILE\_EXTENSION}}
+\index{ECU\_DLL\_FILE\_EXTENSION@{ECU\_DLL\_FILE\_EXTENSION}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_DLL\_FILE\_EXTENSION}{ECU\_DLL\_FILE\_EXTENSION}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+DLL\+\_\+\+FILE\+\_\+\+EXTENSION~\char`\"{}.dll\char`\"{}                                      /$\ast$ Dll file extension $\ast$/}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a73c7870ad0714f77bbe77f7f621b3bb5}\label{epc_control_unit__psc_8c_a73c7870ad0714f77bbe77f7f621b3bb5}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_DLL\_TARGET\_FILENAME@{ECU\_DLL\_TARGET\_FILENAME}}
+\index{ECU\_DLL\_TARGET\_FILENAME@{ECU\_DLL\_TARGET\_FILENAME}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_DLL\_TARGET\_FILENAME}{ECU\_DLL\_TARGET\_FILENAME}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+DLL\+\_\+\+TARGET\+\_\+\+FILENAME}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                   \textcolor{stringliteral}{"{}converterControl"{}}                          \textcolor{comment}{/* Dll target file name without file extension. The file}}
+\DoxyCodeLine{\textcolor{comment}{                                                                                   will be written to the PSCAD temporary folder. */}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epc_control_unit__psc_8c_ab053dfe85edff1ce89eff223a924bc18}\label{epc_control_unit__psc_8c_ab053dfe85edff1ce89eff223a924bc18}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_MAX\_INSTANCES@{ECU\_MAX\_INSTANCES}}
+\index{ECU\_MAX\_INSTANCES@{ECU\_MAX\_INSTANCES}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_MAX\_INSTANCES}{ECU\_MAX\_INSTANCES}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+MAX\+\_\+\+INSTANCES~10                                          /$\ast$ Maximum amount of supported instances $\ast$/}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a35fb0e0c9c3c695d27f8f8dcfa4a711c}\label{epc_control_unit__psc_8c_a35fb0e0c9c3c695d27f8f8dcfa4a711c}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_SCALE\_FROM\_PSC\_I@{ECU\_SCALE\_FROM\_PSC\_I}}
+\index{ECU\_SCALE\_FROM\_PSC\_I@{ECU\_SCALE\_FROM\_PSC\_I}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_SCALE\_FROM\_PSC\_I}{ECU\_SCALE\_FROM\_PSC\_I}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+I~( 1.\+0e3 )}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a5b3287e95c8ab5de4e15670efccce003}\label{epc_control_unit__psc_8c_a5b3287e95c8ab5de4e15670efccce003}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_SCALE\_FROM\_PSC\_P@{ECU\_SCALE\_FROM\_PSC\_P}}
+\index{ECU\_SCALE\_FROM\_PSC\_P@{ECU\_SCALE\_FROM\_PSC\_P}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_SCALE\_FROM\_PSC\_P}{ECU\_SCALE\_FROM\_PSC\_P}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+P~( \mbox{\hyperlink{epc_control_unit__psc_8c_a44d86f63e1aea9eb93b0c6966167f65b}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+V}} $\ast$ \mbox{\hyperlink{epc_control_unit__psc_8c_a35fb0e0c9c3c695d27f8f8dcfa4a711c}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+I}} )}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a44d86f63e1aea9eb93b0c6966167f65b}\label{epc_control_unit__psc_8c_a44d86f63e1aea9eb93b0c6966167f65b}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_SCALE\_FROM\_PSC\_V@{ECU\_SCALE\_FROM\_PSC\_V}}
+\index{ECU\_SCALE\_FROM\_PSC\_V@{ECU\_SCALE\_FROM\_PSC\_V}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_SCALE\_FROM\_PSC\_V}{ECU\_SCALE\_FROM\_PSC\_V}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+V~( 1.\+0e3 )}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a0a55c9c8b8b81c912f11d45e256aec5b}\label{epc_control_unit__psc_8c_a0a55c9c8b8b81c912f11d45e256aec5b}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_SCALE\_TO\_PSC\_I@{ECU\_SCALE\_TO\_PSC\_I}}
+\index{ECU\_SCALE\_TO\_PSC\_I@{ECU\_SCALE\_TO\_PSC\_I}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_SCALE\_TO\_PSC\_I}{ECU\_SCALE\_TO\_PSC\_I}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+SCALE\+\_\+\+TO\+\_\+\+PSC\+\_\+I~( 1.\+0 / \mbox{\hyperlink{epc_control_unit__psc_8c_a35fb0e0c9c3c695d27f8f8dcfa4a711c}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+I}} )}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a702c18336033286b02b95866383fec06}\label{epc_control_unit__psc_8c_a702c18336033286b02b95866383fec06}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_SCALE\_TO\_PSC\_P@{ECU\_SCALE\_TO\_PSC\_P}}
+\index{ECU\_SCALE\_TO\_PSC\_P@{ECU\_SCALE\_TO\_PSC\_P}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_SCALE\_TO\_PSC\_P}{ECU\_SCALE\_TO\_PSC\_P}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+SCALE\+\_\+\+TO\+\_\+\+PSC\+\_\+P~( 1.\+0 / \mbox{\hyperlink{epc_control_unit__psc_8c_a5b3287e95c8ab5de4e15670efccce003}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+P}} )}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a8a87ace1ff44a908fa1c947428ebebf2}\label{epc_control_unit__psc_8c_a8a87ace1ff44a908fa1c947428ebebf2}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_SCALE\_TO\_PSC\_V@{ECU\_SCALE\_TO\_PSC\_V}}
+\index{ECU\_SCALE\_TO\_PSC\_V@{ECU\_SCALE\_TO\_PSC\_V}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_SCALE\_TO\_PSC\_V}{ECU\_SCALE\_TO\_PSC\_V}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+SCALE\+\_\+\+TO\+\_\+\+PSC\+\_\+V~( 1.\+0 / \mbox{\hyperlink{epc_control_unit__psc_8c_a44d86f63e1aea9eb93b0c6966167f65b}{ECU\+\_\+\+SCALE\+\_\+\+FROM\+\_\+\+PSC\+\_\+V}} )}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a1b64e2cee159f7602749caf581e386e4}\label{epc_control_unit__psc_8c_a1b64e2cee159f7602749caf581e386e4}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_DllLoadStatus\_t@{ECU\_DllLoadStatus\_t}}
+\index{ECU\_DllLoadStatus\_t@{ECU\_DllLoadStatus\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_DllLoadStatus\_t}{ECU\_DllLoadStatus\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61d}{ECU\+\_\+\+Dll\+Load\+Status\+\_\+e}} \mbox{\hyperlink{epc_control_unit__psc_8c_a1b64e2cee159f7602749caf581e386e4}{ECU\+\_\+\+Dll\+Load\+Status\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a3b4aa6fcbff75c8e7c5de86b40020ae2}\label{epc_control_unit__psc_8c_a3b4aa6fcbff75c8e7c5de86b40020ae2}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_InitStatus\_t@{ECU\_InitStatus\_t}}
+\index{ECU\_InitStatus\_t@{ECU\_InitStatus\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_InitStatus\_t}{ECU\_InitStatus\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4}{ECU\+\_\+\+Init\+Status\+\_\+e}} \mbox{\hyperlink{epc_control_unit__psc_8c_a3b4aa6fcbff75c8e7c5de86b40020ae2}{ECU\+\_\+\+Init\+Status\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_aada87f8a06d3f3a98324a837a3693f4d}\label{epc_control_unit__psc_8c_aada87f8a06d3f3a98324a837a3693f4d}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_InputTlcPdi\_t@{ECU\_InputTlcPdi\_t}}
+\index{ECU\_InputTlcPdi\_t@{ECU\_InputTlcPdi\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_InputTlcPdi\_t}{ECU\_InputTlcPdi\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___input_tlc_pdi__s}{ECU\+\_\+\+Input\+Tlc\+Pdi\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_aada87f8a06d3f3a98324a837a3693f4d}{ECU\+\_\+\+Input\+Tlc\+Pdi\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_af7cea98c7de75d62b7a61a4506a56080}\label{epc_control_unit__psc_8c_af7cea98c7de75d62b7a61a4506a56080}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sInput\_t@{ECU\_sInput\_t}}
+\index{ECU\_sInput\_t@{ECU\_sInput\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sInput\_t}{ECU\_sInput\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___input__s}{ECU\+\_\+\+Input\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_af7cea98c7de75d62b7a61a4506a56080}{ECU\+\_\+s\+Input\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_aa73356b11bf03ec92bc735a85bca55fc}\label{epc_control_unit__psc_8c_aa73356b11bf03ec92bc735a85bca55fc}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sInputControl\_t@{ECU\_sInputControl\_t}}
+\index{ECU\_sInputControl\_t@{ECU\_sInputControl\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sInputControl\_t}{ECU\_sInputControl\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___input_control__s}{ECU\+\_\+\+Input\+Control\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_aa73356b11bf03ec92bc735a85bca55fc}{ECU\+\_\+s\+Input\+Control\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a8bac538c25083c913ab05a3ce721dd5c}\label{epc_control_unit__psc_8c_a8bac538c25083c913ab05a3ce721dd5c}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sInputFeedback\_t@{ECU\_sInputFeedback\_t}}
+\index{ECU\_sInputFeedback\_t@{ECU\_sInputFeedback\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sInputFeedback\_t}{ECU\_sInputFeedback\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___input_feedback__s}{ECU\+\_\+\+Input\+Feedback\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a8bac538c25083c913ab05a3ce721dd5c}{ECU\+\_\+s\+Input\+Feedback\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a2145616628bd68522f127ea3158a3b31}\label{epc_control_unit__psc_8c_a2145616628bd68522f127ea3158a3b31}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sInputReference\_t@{ECU\_sInputReference\_t}}
+\index{ECU\_sInputReference\_t@{ECU\_sInputReference\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sInputReference\_t}{ECU\_sInputReference\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___input_reference__s}{ECU\+\_\+\+Input\+Reference\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a2145616628bd68522f127ea3158a3b31}{ECU\+\_\+s\+Input\+Reference\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a4f4448763d930df3386a8e88e20831d3}\label{epc_control_unit__psc_8c_a4f4448763d930df3386a8e88e20831d3}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sOutput\_t@{ECU\_sOutput\_t}}
+\index{ECU\_sOutput\_t@{ECU\_sOutput\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sOutput\_t}{ECU\_sOutput\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___output__s}{ECU\+\_\+\+Output\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a4f4448763d930df3386a8e88e20831d3}{ECU\+\_\+s\+Output\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a69eb3a659497728991a036c60b6ab1f1}\label{epc_control_unit__psc_8c_a69eb3a659497728991a036c60b6ab1f1}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sOutputControl\_t@{ECU\_sOutputControl\_t}}
+\index{ECU\_sOutputControl\_t@{ECU\_sOutputControl\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sOutputControl\_t}{ECU\_sOutputControl\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___output_control__s}{ECU\+\_\+\+Output\+Control\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a69eb3a659497728991a036c60b6ab1f1}{ECU\+\_\+s\+Output\+Control\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_abf35ce5a3f7497508d37cd9a7b17ceab}\label{epc_control_unit__psc_8c_abf35ce5a3f7497508d37cd9a7b17ceab}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sOutputMonitor\_t@{ECU\_sOutputMonitor\_t}}
+\index{ECU\_sOutputMonitor\_t@{ECU\_sOutputMonitor\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sOutputMonitor\_t}{ECU\_sOutputMonitor\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___output_monitor__s}{ECU\+\_\+\+Output\+Monitor\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_abf35ce5a3f7497508d37cd9a7b17ceab}{ECU\+\_\+s\+Output\+Monitor\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a23fb932f4364ed64971bf5b39f30cd52}\label{epc_control_unit__psc_8c_a23fb932f4364ed64971bf5b39f30cd52}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sOutputReference\_t@{ECU\_sOutputReference\_t}}
+\index{ECU\_sOutputReference\_t@{ECU\_sOutputReference\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sOutputReference\_t}{ECU\_sOutputReference\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___output_reference__s}{ECU\+\_\+\+Output\+Reference\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a23fb932f4364ed64971bf5b39f30cd52}{ECU\+\_\+s\+Output\+Reference\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a91ca8f855368d75a84ea6d715bc48154}\label{epc_control_unit__psc_8c_a91ca8f855368d75a84ea6d715bc48154}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sOutputStatus\_t@{ECU\_sOutputStatus\_t}}
+\index{ECU\_sOutputStatus\_t@{ECU\_sOutputStatus\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sOutputStatus\_t}{ECU\_sOutputStatus\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___output_status__s}{ECU\+\_\+\+Output\+Status\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_a91ca8f855368d75a84ea6d715bc48154}{ECU\+\_\+s\+Output\+Status\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_aa3e8d51ab0e8cc8105dffab2220088a2}\label{epc_control_unit__psc_8c_aa3e8d51ab0e8cc8105dffab2220088a2}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_sOutputTlcPdo\_t@{ECU\_sOutputTlcPdo\_t}}
+\index{ECU\_sOutputTlcPdo\_t@{ECU\_sOutputTlcPdo\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_sOutputTlcPdo\_t}{ECU\_sOutputTlcPdo\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_u___output_tlc_pdo__s}{ECU\+\_\+\+Output\+Tlc\+Pdo\+\_\+s}} \mbox{\hyperlink{epc_control_unit__psc_8c_aa3e8d51ab0e8cc8105dffab2220088a2}{ECU\+\_\+s\+Output\+Tlc\+Pdo\+\_\+t}}}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_aa87a00c8e7be1d6aafd8773a8baf8faf}\label{epc_control_unit__psc_8c_aa87a00c8e7be1d6aafd8773a8baf8faf}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!SIL\_initializeLibraryDll\_t@{SIL\_initializeLibraryDll\_t}}
+\index{SIL\_initializeLibraryDll\_t@{SIL\_initializeLibraryDll\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_initializeLibraryDll\_t}{SIL\_initializeLibraryDll\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ SIL\+\_\+initialize\+Library\+Dll\+\_\+t) (double, \mbox{\hyperlink{lib_epc_control_8h_a3dd3ad23a360da9c6163594f679ab08b}{SIL\+\_\+e\+Solver\+Type\+\_\+t}}, \mbox{\hyperlink{lib_epc_control_8h_a2fb84a2675f90cb1a951ff0ae4772f01}{SIL\+\_\+e\+Model\+Intent\+\_\+t}}, char $\ast$)}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a6aafa2e0d4a767e704ff64d2909888e8}\label{epc_control_unit__psc_8c_a6aafa2e0d4a767e704ff64d2909888e8}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!SIL\_readSnapshotDll\_t@{SIL\_readSnapshotDll\_t}}
+\index{SIL\_readSnapshotDll\_t@{SIL\_readSnapshotDll\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_readSnapshotDll\_t}{SIL\_readSnapshotDll\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ SIL\+\_\+read\+Snapshot\+Dll\+\_\+t) (uint16\+\_\+t, char $\ast$)}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a544495a6a6fa5738f6ba2b7887561256}\label{epc_control_unit__psc_8c_a544495a6a6fa5738f6ba2b7887561256}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!SIL\_updateOutputDll\_t@{SIL\_updateOutputDll\_t}}
+\index{SIL\_updateOutputDll\_t@{SIL\_updateOutputDll\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateOutputDll\_t}{SIL\_updateOutputDll\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ SIL\+\_\+update\+Output\+Dll\+\_\+t) (double)}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_aeec649cafc11e4c145d9a1943e292f2a}\label{epc_control_unit__psc_8c_aeec649cafc11e4c145d9a1943e292f2a}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!SIL\_updateStateDll\_t@{SIL\_updateStateDll\_t}}
+\index{SIL\_updateStateDll\_t@{SIL\_updateStateDll\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_updateStateDll\_t}{SIL\_updateStateDll\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ SIL\+\_\+update\+State\+Dll\+\_\+t) (double)}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_acd0a43da0d2862d66ca1a1cf4482d828}\label{epc_control_unit__psc_8c_acd0a43da0d2862d66ca1a1cf4482d828}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!SIL\_writeSnapshotDll\_t@{SIL\_writeSnapshotDll\_t}}
+\index{SIL\_writeSnapshotDll\_t@{SIL\_writeSnapshotDll\_t}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{SIL\_writeSnapshotDll\_t}{SIL\_writeSnapshotDll\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ SIL\+\_\+write\+Snapshot\+Dll\+\_\+t) (double, uint16\+\_\+t, char $\ast$)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61d}\label{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61d}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_DllLoadStatus\_e@{ECU\_DllLoadStatus\_e}}
+\index{ECU\_DllLoadStatus\_e@{ECU\_DllLoadStatus\_e}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_DllLoadStatus\_e}{ECU\_DllLoadStatus\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61d}{ECU\+\_\+\+Dll\+Load\+Status\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ECU\_DLL\_LOAD\_SUCCESSFUL@{ECU\_DLL\_LOAD\_SUCCESSFUL}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_DLL\_LOAD\_SUCCESSFUL@{ECU\_DLL\_LOAD\_SUCCESSFUL}}}\mbox{\Hypertarget{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61daa0e615cfe4098aaeea7707edc64c5ce4}\label{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61daa0e615cfe4098aaeea7707edc64c5ce4}} 
+ECU\+\_\+\+DLL\+\_\+\+LOAD\+\_\+\+SUCCESSFUL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ECU\_DLL\_LOAD\_FAILED@{ECU\_DLL\_LOAD\_FAILED}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_DLL\_LOAD\_FAILED@{ECU\_DLL\_LOAD\_FAILED}}}\mbox{\Hypertarget{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61daf06e5804ec030586b102fd55a3c18135}\label{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61daf06e5804ec030586b102fd55a3c18135}} 
+ECU\+\_\+\+DLL\+\_\+\+LOAD\+\_\+\+FAILED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ECU\_DLL\_LOAD\_CNT@{ECU\_DLL\_LOAD\_CNT}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_DLL\_LOAD\_CNT@{ECU\_DLL\_LOAD\_CNT}}}\mbox{\Hypertarget{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61da6152b693943c2c9460a31303799c022e}\label{epc_control_unit__psc_8c_a1296192a8d6b24fc4a4d13b0ef7bb61da6152b693943c2c9460a31303799c022e}} 
+ECU\+\_\+\+DLL\+\_\+\+LOAD\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4}\label{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_InitStatus\_e@{ECU\_InitStatus\_e}}
+\index{ECU\_InitStatus\_e@{ECU\_InitStatus\_e}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_InitStatus\_e}{ECU\_InitStatus\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4}{ECU\+\_\+\+Init\+Status\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ECU\_INIT\_SUCCESSFUL@{ECU\_INIT\_SUCCESSFUL}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_INIT\_SUCCESSFUL@{ECU\_INIT\_SUCCESSFUL}}}\mbox{\Hypertarget{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a498565ca366416aa65e1e213e96c9f2e}\label{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a498565ca366416aa65e1e213e96c9f2e}} 
+ECU\+\_\+\+INIT\+\_\+\+SUCCESSFUL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ECU\_INIT\_FAILED@{ECU\_INIT\_FAILED}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_INIT\_FAILED@{ECU\_INIT\_FAILED}}}\mbox{\Hypertarget{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a3f28c6a6430de80bc4a9b2c57be96f29}\label{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a3f28c6a6430de80bc4a9b2c57be96f29}} 
+ECU\+\_\+\+INIT\+\_\+\+FAILED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ECU\_INIT\_CNT@{ECU\_INIT\_CNT}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_INIT\_CNT@{ECU\_INIT\_CNT}}}\mbox{\Hypertarget{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a31fb1edc9a91a1218197760213962b67}\label{epc_control_unit__psc_8c_ad50078ba9a1e1342e798d42c24c25ab4a31fb1edc9a91a1218197760213962b67}} 
+ECU\+\_\+\+INIT\+\_\+\+CNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{epc_control_unit__psc_8c_ac1f960a87a4a6a3b5ab4040ad6269eca}\label{epc_control_unit__psc_8c_ac1f960a87a4a6a3b5ab4040ad6269eca}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_controlInitialize@{ECU\_controlInitialize}}
+\index{ECU\_controlInitialize@{ECU\_controlInitialize}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_controlInitialize()}{ECU\_controlInitialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{epc_control_unit__psc_8c_a3b4aa6fcbff75c8e7c5de86b40020ae2}{ECU\+\_\+\+Init\+Status\+\_\+t}} ECU\+\_\+control\+Initialize (\begin{DoxyParamCaption}\item[{int $\ast$}]{instance\+Number,  }\item[{int $\ast$}]{read\+Snapshot,  }\item[{int $\ast$}]{multiple\+Run,  }\item[{double}]{dt\+Sim,  }\item[{char $\ast$}]{dll\+Path,  }\item[{char $\ast$}]{temp\+Path,  }\item[{char $\ast$}]{pmvs\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a7a67c50669c6ba2f0d027951e720e848}\label{epc_control_unit__psc_8c_a7a67c50669c6ba2f0d027951e720e848}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_controlTerminate@{ECU\_controlTerminate}}
+\index{ECU\_controlTerminate@{ECU\_controlTerminate}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_controlTerminate()}{ECU\_controlTerminate()}}
+{\footnotesize\ttfamily void ECU\+\_\+control\+Terminate (\begin{DoxyParamCaption}\item[{int $\ast$}]{instance\+Number }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{epc_control_unit__psc_8c_a84f39360200a5121adfaa47c0a966413}\label{epc_control_unit__psc_8c_a84f39360200a5121adfaa47c0a966413}} 
+\index{epcControlUnit\_psc.c@{epcControlUnit\_psc.c}!ECU\_controlUpdate@{ECU\_controlUpdate}}
+\index{ECU\_controlUpdate@{ECU\_controlUpdate}!epcControlUnit\_psc.c@{epcControlUnit\_psc.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_controlUpdate()}{ECU\_controlUpdate()}}
+{\footnotesize\ttfamily void ECU\+\_\+control\+Update (\begin{DoxyParamCaption}\item[{int $\ast$}]{instance\+Number,  }\item[{int $\ast$}]{write\+Snapshot,  }\item[{double}]{t\+Sim,  }\item[{double}]{tlc\+In\mbox{[}6\+U\mbox{]},  }\item[{int}]{ctl\mbox{[}1\+U\mbox{]},  }\item[{double}]{ref\mbox{[}6\+U\mbox{]},  }\item[{double}]{fbk\mbox{[}11\+U\mbox{]},  }\item[{int}]{rly\mbox{[}4\+U\mbox{]},  }\item[{double}]{mod\mbox{[}6\+U\mbox{]},  }\item[{int}]{stat\mbox{[}6\+U\mbox{]},  }\item[{double}]{mon\mbox{[}17\+U\mbox{]},  }\item[{double}]{tlc\+Out\mbox{[}21\+U\mbox{]},  }\item[{double}]{dbg\mbox{[}32\+U\mbox{]},  }\item[{double}]{ref\+Out\mbox{[}4\+U\mbox{]},  }\item[{char $\ast$}]{temp\+Path }\end{DoxyParamCaption})}
+

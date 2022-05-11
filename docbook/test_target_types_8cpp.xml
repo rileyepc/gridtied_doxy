@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_test_target_types_8cpp" xml:lang="en-US">
+<title>sil/emu/test/testTargetTypes.cpp File Reference</title>
+<indexterm><primary>sil/emu/test/testTargetTypes.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;CppUTest/TestHarness.h&quot;
+#include &lt;limits.h&gt;
+#include &lt;stdint.h&gt;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_test_target_types_8cpp_1af83f4fb65b4546178bf4a8bd9830eb9e">TYPE_BITS</link>(x)   (sizeof(x) * CHAR_BIT)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_test_target_types_8cpp_1a11e2adda84be90741d9dffc672f7e718">TEST_GROUP</link> (targetTypes)</para>
+</listitem>
+            <listitem><para><link linkend="_test_target_types_8cpp_1aa9c04988ccd775ec5161ab97058f324a">TEST</link> (targetTypes, signType)</para>
+</listitem>
+            <listitem><para><link linkend="_test_target_types_8cpp_1aee6d0d5f77305b0a42e8292fb553272c">TEST</link> (targetTypes, lengths)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_test_target_types_8cpp_1af83f4fb65b4546178bf4a8bd9830eb9e"/><section>
+    <title>TYPE_BITS</title>
+<indexterm><primary>TYPE_BITS</primary><secondary>testTargetTypes.cpp</secondary></indexterm>
+<indexterm><primary>testTargetTypes.cpp</primary><secondary>TYPE_BITS</secondary></indexterm>
+<para><computeroutput>#define TYPE_BITS( x)   (sizeof(x) * CHAR_BIT)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_test_target_types_8cpp_1aee6d0d5f77305b0a42e8292fb553272c"/><section>
+    <title>TEST()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>TEST</primary><secondary>testTargetTypes.cpp</secondary></indexterm>
+<indexterm><primary>testTargetTypes.cpp</primary><secondary>TEST</secondary></indexterm>
+<para><computeroutput>TEST (targetTypes , lengths )</computeroutput></para><para>
+
+<para>check that host bitlengths are normal for a modern PC </para>
+</para>
+</section>
+<anchor xml:id="_test_target_types_8cpp_1aa9c04988ccd775ec5161ab97058f324a"/><section>
+    <title>TEST()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>TEST</primary><secondary>testTargetTypes.cpp</secondary></indexterm>
+<indexterm><primary>testTargetTypes.cpp</primary><secondary>TEST</secondary></indexterm>
+<para><computeroutput>TEST (targetTypes , signType )</computeroutput></para><para>
+
+<para>ensure host platform uses twos complement </para>
+</para>
+</section>
+<anchor xml:id="_test_target_types_8cpp_1a11e2adda84be90741d9dffc672f7e718"/><section>
+    <title>TEST_GROUP()</title>
+<indexterm><primary>TEST_GROUP</primary><secondary>testTargetTypes.cpp</secondary></indexterm>
+<indexterm><primary>testTargetTypes.cpp</primary><secondary>TEST_GROUP</secondary></indexterm>
+<para><computeroutput>TEST_GROUP (targetTypes )</computeroutput></para></section>
+</section>
+</section>

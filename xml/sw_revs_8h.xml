@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="sw_revs_8h" kind="file" language="C++">
+    <compoundname>swRevs.h</compoundname>
+    <includedby refid="interface_accessors_8c" local="yes">interface/interfaceAccessors.c</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>interface/interfaceAccessors.c</label>
+        <link refid="interface_accessors_8c"/>
+      </node>
+      <node id="1">
+        <label>interface/swRevs.h</label>
+        <link refid="sw_revs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="sw_revs_8h_1a275d231829446ca4cfcf3ce5a83f2e67" prot="public" static="no">
+        <name>CONTROL_SW_MAJ</name>
+        <initializer>42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/swRevs.h" line="4" column="9" bodyfile="interface/swRevs.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sw_revs_8h_1a87699d1e62deba37642c6e1c65785370" prot="public" static="no">
+        <name>CONTROL_SW_MIN</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/swRevs.h" line="5" column="9" bodyfile="interface/swRevs.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sw_revs_8h_1a639157c007cae7e2f87ed84d29a5bee2" prot="public" static="no">
+        <name>CONTROL_SW_PATCH</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/swRevs.h" line="6" column="9" bodyfile="interface/swRevs.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SW_REVS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SW_REVS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="sw_revs_8h_1a275d231829446ca4cfcf3ce5a83f2e67" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONTROL_SW_MAJ<sp/><sp/><sp/>42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="sw_revs_8h_1a87699d1e62deba37642c6e1c65785370" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONTROL_SW_MIN<sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="sw_revs_8h_1a639157c007cae7e2f87ed84d29a5bee2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONTROL_SW_PATCH<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SW_REVS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="interface/swRevs.h"/>
+  </compounddef>
+</doxygen>

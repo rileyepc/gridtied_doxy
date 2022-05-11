@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_s_i_l___ports__s" kind="struct" language="C++" prot="public">
+    <compoundname>SIL_Ports_s</compoundname>
+    <includes refid="lib_epc_control_8h" local="no">libEpcControl.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_i_l___ports__s_1a59d3b5a45df34ec671bb2e672714591e" prot="public" static="no" mutable="no">
+        <type><ref refid="lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d" kindref="member">SIL_sPortSpec_t</ref></type>
+        <definition>SIL_sPortSpec_t SIL_Ports_s::inpPort[SIL_INP_CNT]</definition>
+        <argsstring>[SIL_INP_CNT]</argsstring>
+        <name>inpPort</name>
+        <qualifiedname>SIL_Ports_s::inpPort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControl.h" line="420" column="33" bodyfile="sil/libEpcControl.h" bodystart="420" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_i_l___ports__s_1aaf3477f1b1edd8dcc8ca4751760b849b" prot="public" static="no" mutable="no">
+        <type><ref refid="lib_epc_control_8h_1a302c7e02d47e546ec9c93203cfc0313d" kindref="member">SIL_sPortSpec_t</ref></type>
+        <definition>SIL_sPortSpec_t SIL_Ports_s::outPort[SIL_OUT_CNT]</definition>
+        <argsstring>[SIL_OUT_CNT]</argsstring>
+        <name>outPort</name>
+        <qualifiedname>SIL_Ports_s::outPort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/libEpcControl.h" line="421" column="33" bodyfile="sil/libEpcControl.h" bodystart="421" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>SIL_PortSpec_s</label>
+        <link refid="struct_s_i_l___port_spec__s"/>
+      </node>
+      <node id="1">
+        <label>SIL_Ports_s</label>
+        <link refid="struct_s_i_l___ports__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>inpPort</edgelabel>
+          <edgelabel>outPort</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/libEpcControl.h" line="419" column="1" bodyfile="sil/libEpcControl.h" bodystart="419" bodyend="422"/>
+    <listofallmembers>
+      <member refid="struct_s_i_l___ports__s_1a59d3b5a45df34ec671bb2e672714591e" prot="public" virt="non-virtual"><scope>SIL_Ports_s</scope><name>inpPort</name></member>
+      <member refid="struct_s_i_l___ports__s_1aaf3477f1b1edd8dcc8ca4751760b849b" prot="public" virt="non-virtual"><scope>SIL_Ports_s</scope><name>outPort</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

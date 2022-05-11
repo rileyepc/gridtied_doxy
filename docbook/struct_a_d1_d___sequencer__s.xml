@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_a_d1_d___sequencer__s" xml:lang="en-US">
+<title>AD1D_Sequencer_s Struct Reference</title>
+<indexterm><primary>AD1D_Sequencer_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_ad1d__emu_8c_1abb77a940fc8e53a100f83be6f9cec42d">AD1D_MeasChannel_t</link> <link linkend="_struct_a_d1_d___sequencer__s_1a5db798e69a531b289693ee2a1876885f">measChannels</link> [<link linkend="_ad1d__emu_8c_1a87afe8e338dfe452c8f3402c7d3de3e5">AD1D_SEQUENCER_CHANNELS</link>]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_struct_a_d1_d___sequencer__s_1a57dbca22389fdaf9145c712524b96b04">channelCount</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_a_d1_d___sequencer__s_1a57dbca22389fdaf9145c712524b96b04"/><section>
+    <title>channelCount</title>
+<indexterm><primary>channelCount</primary><secondary>AD1D_Sequencer_s</secondary></indexterm>
+<indexterm><primary>AD1D_Sequencer_s</primary><secondary>channelCount</secondary></indexterm>
+<para><computeroutput>uint16_t AD1D_Sequencer_s::channelCount</computeroutput></para></section>
+<anchor xml:id="_struct_a_d1_d___sequencer__s_1a5db798e69a531b289693ee2a1876885f"/><section>
+    <title>measChannels</title>
+<indexterm><primary>measChannels</primary><secondary>AD1D_Sequencer_s</secondary></indexterm>
+<indexterm><primary>AD1D_Sequencer_s</primary><secondary>measChannels</secondary></indexterm>
+<para><computeroutput><link linkend="_ad1d__emu_8c_1abb77a940fc8e53a100f83be6f9cec42d">AD1D_MeasChannel_t</link> AD1D_Sequencer_s::measChannels[<link linkend="_ad1d__emu_8c_1a87afe8e338dfe452c8f3402c7d3de3e5">AD1D_SEQUENCER_CHANNELS</link>]</computeroutput></para></section>
+</section>
+</section>

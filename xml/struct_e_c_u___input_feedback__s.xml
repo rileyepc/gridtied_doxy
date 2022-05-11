@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___input_feedback__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_InputFeedback_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___input_feedback__s_1a6ad89ef8c33c3adc97cf20d46f8f7201" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputFeedback_s::dcV[2U]</definition>
+        <argsstring>[2U]</argsstring>
+        <name>dcV</name>
+        <qualifiedname>ECU_InputFeedback_s::dcV</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="109" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input_feedback__s_1a59d54c8fc746415466047bb0cc8bee5d" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputFeedback_s::pIc[6U]</definition>
+        <argsstring>[6U]</argsstring>
+        <name>pIc</name>
+        <qualifiedname>ECU_InputFeedback_s::pIc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="110" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___input_feedback__s_1ad5b9ee2857ef88d289f6f158f62aa267" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_InputFeedback_s::pVl[3U]</definition>
+        <argsstring>[3U]</argsstring>
+        <name>pVl</name>
+        <qualifiedname>ECU_InputFeedback_s::pVl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="111" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="108" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="108" bodyend="112"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___input_feedback__s_1a6ad89ef8c33c3adc97cf20d46f8f7201" prot="public" virt="non-virtual"><scope>ECU_InputFeedback_s</scope><name>dcV</name></member>
+      <member refid="struct_e_c_u___input_feedback__s_1a59d54c8fc746415466047bb0cc8bee5d" prot="public" virt="non-virtual"><scope>ECU_InputFeedback_s</scope><name>pIc</name></member>
+      <member refid="struct_e_c_u___input_feedback__s_1ad5b9ee2857ef88d289f6f158f62aa267" prot="public" virt="non-virtual"><scope>ECU_InputFeedback_s</scope><name>pVl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

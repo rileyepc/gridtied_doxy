@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_interface_accessors_8h_source" xml:lang="en-US">
+<title>interfaceAccessors.h</title>
+<indexterm><primary>interface/interfaceAccessors.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">__INTERFACEACCESSORS_H__</emphasis>
+2 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">__INTERFACEACCESSORS_H__</emphasis>
+3 
+4 <emphasis role="comment">//&#32;TODO:&#32;now&#32;that&#32;the&#32;accessor&#32;references&#32;are&#32;becoming&#32;isolated&#32;to&#32;just&#32;a&#32;couple&#32;files</emphasis>
+5 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;let&apos;s&#32;just&#32;put&#32;them&#32;all&#32;here&#32;instead&#32;of&#32;spreading&#32;them&#32;around.</emphasis>
+6 
+7 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;adaptiveHarmonicControlI.h&quot;</emphasis>
+8 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;authorization_generated.h&quot;</emphasis>
+9 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;filterObserverI.h&quot;</emphasis>
+10 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;gridMonitor.h&quot;</emphasis>
+11 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;hardware.h&quot;</emphasis>
+12 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;islandControlI.h&quot;</emphasis>
+13 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;modulatorI.h&quot;</emphasis>
+14 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;powerConversionControl.h&quot;</emphasis>
+15 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;phaseControlI.h&quot;</emphasis>
+16 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;phaseConfigDetectI.h&quot;</emphasis>
+17 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;phaseCurrentControlI.h&quot;</emphasis>
+18 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;phasePllI.h&quot;</emphasis>
+19 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;auxiliaryPllI.h&quot;</emphasis>
+20 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;syntheticInertiaI.h&quot;</emphasis>
+21 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;ABB_libPrimaryControl.h&quot;</emphasis>
+22 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;dcdcControlI.h&quot;</emphasis>
+23 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;deviceThermalModel.h&quot;</emphasis>
+24 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;measurementdI.h&quot;</emphasis>
+25 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;protectionsI.h&quot;</emphasis>
+26 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;humiditySensor.h&quot;</emphasis>
+27 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;mppt.h&quot;</emphasis>
+28 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;system.h&quot;</emphasis>
+29 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;loader.h&quot;</emphasis>
+30 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;fanControl.h&quot;</emphasis>
+31 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;environmentControl.h&quot;</emphasis>
+32 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<link linkend="_application_8h">&quot;application.h&quot;</link>
+33 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;topLevelControl.h&quot;</emphasis>
+34 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;engDebug.h&quot;</emphasis>
+35 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;afe.h&quot;</emphasis>
+36 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;gridSupport.h&quot;</emphasis>
+37 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;referenceHandler.h&quot;</emphasis>
+38 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;sunspecRefs.h&quot;</emphasis>
+39 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<link linkend="_interface_8h">&quot;interface.h&quot;</link>
+40 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;supervisor.h&quot;</emphasis>
+41 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;eepromHandler.h&quot;</emphasis>
+42 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;modbusHandler.h&quot;</emphasis>
+43 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;fpgaRegs.h&quot;</emphasis>
+44 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;externalInhibit.h&quot;</emphasis>
+45 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;simulateFeedbackI.h&quot;</emphasis>
+46 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;interfaceAccessors_generated.h&quot;</emphasis>
+47 
+48 <emphasis role="comment">/**</emphasis>
+49 <emphasis role="comment">&#32;*&#32;@brief&#32;Volatile&#32;Process&#32;Data&#32;flags</emphasis>
+50 <emphasis role="comment">&#32;*/</emphasis>
+51 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_i_n_t_f___command_flags">INTF_CommandFlags</link>&#32;{
+52 &#32;&#32;&#32;&#32;<link linkend="_struct_i_n_t_f___command_flags_1a061f5a9482d5eac586d05fbbc5278515">uint16_t</link>&#32;<link linkend="_struct_i_n_t_f___command_flags_1a061f5a9482d5eac586d05fbbc5278515">enable</link>;&#32;<emphasis role="comment">///&lt;&#32;run&#32;enable&#32;request,&#32;uint16_t&#32;to&#32;allow&#32;the&#32;out&#32;of&#32;range&#32;values&#32;of&#32;2&#32;and&#32;3</emphasis>
+53 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_i_n_t_f___command_flags_1a726f8801e06bf917e43d95c4c1a976d8">clearFaults</link>;&#32;<emphasis role="comment">///&lt;&#32;clear&#32;fault&#32;reuquest</emphasis>
+54 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_i_n_t_f___command_flags_1a7a3579235e0e2a5efece0fbc2c1aba55">clearWarnings</link>;&#32;<emphasis role="comment">///&lt;&#32;clear&#32;warnings</emphasis>
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_i_n_t_f___command_flags_1a0704ebf6a2d9622d12dd3713aacca9ac">islandReconnect</link>;
+56 &#32;&#32;&#32;&#32;<link linkend="_struct_i_n_t_f___command_flags_1aa61fde7144c23f119a393104c9c81df1">PBC_ConnectSequence_t</link>&#32;<link linkend="_struct_i_n_t_f___command_flags_1aa61fde7144c23f119a393104c9c81df1">protBusSeq</link>;
+57 }&#32;INTF_CommandFlags;
+58 
+59 
+60 <link linkend="_interface_accessors_8c_1a1228c2eaf73fb7eca186e9e293102d53">uint32_t</link>&#32;<link linkend="_interface_accessors_8c_1a1228c2eaf73fb7eca186e9e293102d53">INTF_zero_getter</link>(<emphasis role="keywordtype">void</emphasis>);
+61 
+62 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a029dd9afdde2d1bff394065deaa065be">INTF_updateHardwareRatings</link>(<emphasis role="keywordtype">float</emphasis>&#32;unused);
+63 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1ad48f6ff174bd5fdf8d3379d3311badf7">INTF_updateCommercialRatings</link>(<emphasis role="keywordtype">float</emphasis>&#32;unused);
+64 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1acdc3e47f8f199fb330ef5dd50cf70002">INTF_updateUserLimits</link>(<emphasis role="keywordtype">float</emphasis>&#32;unused);
+65 
+66 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1ac4d66ced4eb860621975532e4c355fbc">INTF_getSunspecScaledGridPositiveP</link>(<emphasis role="keywordtype">void</emphasis>);
+67 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1ac855468bdc131df6467def4be0436589">INTF_setSunspecScaledGridPositiveP</link>(<emphasis role="keywordtype">float</emphasis>&#32;value);
+68 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1aa4c881ac0a915733b4f4f8a7bb712003">INTF_getSunspecScaledApparentPower</link>(<emphasis role="keywordtype">void</emphasis>);
+69 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a368e3ab89e146aa5d551f2f809f15618">INTF_setSunspecScaledApparentPower</link>(<emphasis role="keywordtype">float</emphasis>&#32;value);
+70 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1abac3ae5fd4e68e0ae5bf12e171e0a02a">INTF_getSunspecScaledRealPowerLimitsMax</link>(<emphasis role="keywordtype">void</emphasis>);
+71 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a0ce166744dff63c46e0f51b639bc4ea8">INTF_setSunspecScaledRealPowerLimitsMax</link>(<emphasis role="keywordtype">float</emphasis>&#32;value);
+72 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a757d38299417604ee511c1653683d3eb">INTF_getSunspecScaledApparentPowerLimit</link>(<emphasis role="keywordtype">void</emphasis>);
+73 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a58b6b2294b9b81ec20427b64a8ebfff2">INTF_setSunspecScaledApparentPowerLimit</link>(<emphasis role="keywordtype">float</emphasis>&#32;value);
+74 
+75 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a006eb78c3747a3132acf3fbfffd8c90e">INTF_setNomV</link>(<emphasis role="keywordtype">float</emphasis>&#32;vNom);
+76 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1af6d7a32e10af877759ff1750646693ad">INTF_setNomF</link>(<emphasis role="keywordtype">float</emphasis>&#32;fNom);
+77 
+78 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1ac119e5cc4490d32a5df4b0ed858b1148">INTF_setGridVoltageOffset</link>(<emphasis role="keywordtype">float</emphasis>&#32;offset);
+79 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a2f7aff32e5d90cb76b50bfafef0cc8eb">INTF_getGridVoltageOffset</link>(<emphasis role="keywordtype">void</emphasis>);
+80 
+81 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a6f387f6273f8a34065a9004b831fbc41">INTF_setAllowForming</link>(<emphasis role="keywordtype">bool</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;allowForming);
+82 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a2fc814a80f10d21457a59c2cd1d1cadc">INTF_setAllowFollowing</link>(<emphasis role="keywordtype">bool</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;allowFollowing);
+83 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a56d9ef27c5907a892b1ec678cbd77b25">INTF_setIslandResponse</link>(uint16_t&#32;<emphasis role="keyword">const</emphasis>&#32;islandResponse);
+84 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1ad9bf92610fb7c66ea1757fba181b75f7">INTF_setIslandDetector</link>(uint16_t&#32;<emphasis role="keyword">const</emphasis>&#32;islandDetector);
+85 
+86 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_interface_accessors_8c_1aa4b4b022baea21dd2bbe7d384e658fb4">INTF_getAllowForming</link>(<emphasis role="keywordtype">void</emphasis>);
+87 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_interface_accessors_8c_1ac887a74446bcbffadcb1c01169c59fc6">INTF_getAllowFollowing</link>(<emphasis role="keywordtype">void</emphasis>);
+88 <link linkend="_interface_accessors_8c_1a4ef6eb3f5734e746da42d0be15db9319">uint16_t</link>&#32;<link linkend="_interface_accessors_8c_1a4ef6eb3f5734e746da42d0be15db9319">INTF_getIslandResponse</link>(<emphasis role="keywordtype">void</emphasis>);
+89 <link linkend="_interface_accessors_8c_1a213da2d6b3a814f1bf2d91036b1cd982">uint16_t</link>&#32;<link linkend="_interface_accessors_8c_1a213da2d6b3a814f1bf2d91036b1cd982">INTF_getIslandDetector</link>(<emphasis role="keywordtype">void</emphasis>);
+90 
+91 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8h_1ac1be592dbab02f670ce3c02c1ae5038c">INTF_setConfigRateLimitPgRef_pDelta</link>(<emphasis role="keywordtype">float</emphasis>&#32;pDelta);
+92 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8h_1af40ee9c95a6bb01af3d27e527eee27da">INTF_setConfigRateLimitPgRef_tDelta</link>(<emphasis role="keywordtype">float</emphasis>&#32;tDelta);
+93 
+94 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_interface_accessors_8c_1a1cdd34e87e38eafe4bccb1db4f8dd63e">getBridgeAVoltageOk</link>(<emphasis role="keywordtype">void</emphasis>);
+95 <link linkend="_interface_accessors_8c_1a8604f381346ef74eeec9ba0e871bdccb">uint16_t</link>&#32;<link linkend="_interface_accessors_8c_1a8604f381346ef74eeec9ba0e871bdccb">getBridgeBridgeAFault</link>(<emphasis role="keywordtype">void</emphasis>);
+96 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_interface_accessors_8c_1ae6afb52e9d3f938c2716a35aae0dc67a">getBridgeBVoltageOk</link>(<emphasis role="keywordtype">void</emphasis>);
+97 <link linkend="_interface_accessors_8c_1a9de3c2162c7d8d5c5edaf1c53e9164a9">uint16_t</link>&#32;<link linkend="_interface_accessors_8c_1a9de3c2162c7d8d5c5edaf1c53e9164a9">getBridgeBridgeBFault</link>(<emphasis role="keywordtype">void</emphasis>);
+98 
+99 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a33e147c35fdb72a43ca93b641fc31ce6">INTF_setAccessLevel</link>(uint16_t&#32;level);
+100 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a46b0d089a19f2ed60c19f39bb019cb64">INTF_setAccessPassword</link>(uint16_t&#32;password);
+101 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1af6b9c83d41c21522601ebca742053813">INTF_setAccessCheckLimits</link>(<emphasis role="keywordtype">bool</emphasis>&#32;checkLimits);
+102 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a4b5476da70ea4532e90764241f9eeea0">INTF_submitAccessLevelRequest</link>(<emphasis role="keywordtype">bool</emphasis>&#32;request);
+103 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a749c4bd4cdd167d1f1c0fd27c0e7aa3b">INTF_accessLevel_onWrite</link>(
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Meta_Enum&#32;meta_index,
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;items,
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;items_count
+107 );
+108 
+109 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a4772b8e3b012a7ecdf4427ec04c5f043">INTF_loggerChunk_onWrite</link>(
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Meta_Enum&#32;meta_index,
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_interface_8h_1a2d58cf9316da363273ac00d4455ab5f7">InterfaceItem_void</link>&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;items,
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;items_count
+113 );
+114 
+115 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a66e723cc746cb0571e5fd38ef3fb5503">INTF_setControlSource</link>(uint16_t&#32;src);
+116 
+117 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a508f2224dc87e11a6b54ddd6fb7ecd87">INTF_setEnable</link>(uint16_t&#32;en);
+118 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a75bf088a5b5b4f7f90d8c6e143388f02">INTF_enableRejected</link>(uint16_t&#32;value,&#32;<link linkend="_struct_rejection_reasons">RejectionReasons</link>&#32;reasons);
+119 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a687afa24dcc6c8ac947a0a601d45b2b3">INTF_clearFaults</link>(<emphasis role="keywordtype">bool</emphasis>&#32;clearFaults);
+120 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a90c974d866763bf6850e4fc591971805">INTF_clearWarnings</link>(<emphasis role="keywordtype">bool</emphasis>&#32;clearWarnings);
+121 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1ab4d95922580fc39df11a9c72b913bf7a">INTF_setIslandStateRequest</link>(<emphasis role="keywordtype">bool</emphasis>&#32;req);
+122 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a5760cc69fac51973d303af38b37de7db">INTF_powerRejected</link>(<emphasis role="keywordtype">float</emphasis>&#32;value,&#32;<link linkend="_struct_rejection_reasons">RejectionReasons</link>&#32;reasons);
+123 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a874fe2cfea71a6d06db81ef27cc574d9">INTF_currentRejected</link>(<emphasis role="keywordtype">float</emphasis>&#32;value,&#32;<link linkend="_struct_rejection_reasons">RejectionReasons</link>&#32;reasons);
+124 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_interface_accessors_8c_1a17fe067e29ab8eb2bdc1f06e051a9cd3">INTF_dcRefRejected</link>(<emphasis role="keywordtype">float</emphasis>&#32;value,&#32;<link linkend="_struct_rejection_reasons">RejectionReasons</link>&#32;reasons);
+125 
+126 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_interface_accessors_8c_1af6c75b31ca6f45cd628a479eacca434e">INTF_bool_table_false_getter</link>(
+127 &#32;&#32;&#32;&#32;IEEE1547_MonCurveType&#32;zone,
+128 &#32;&#32;&#32;&#32;size_t&#32;curve,
+129 &#32;&#32;&#32;&#32;size_t&#32;index,
+130 &#32;&#32;&#32;&#32;uint16_t&#32;value
+131 );
+132 
+133 <link linkend="_interface_accessors_8c_1a05b8955eb1ddf10a8e5a669af82afbba">uint16_t</link>&#32;<link linkend="_interface_accessors_8c_1a05b8955eb1ddf10a8e5a669af82afbba">INTF_getVersMajor</link>(<emphasis role="keywordtype">void</emphasis>);
+134 <link linkend="_interface_accessors_8c_1a1485b9c8a1c1f215edfd99a11a25012c">uint16_t</link>&#32;<link linkend="_interface_accessors_8c_1a1485b9c8a1c1f215edfd99a11a25012c">INTF_getVersMinor</link>(<emphasis role="keywordtype">void</emphasis>);
+135 <link linkend="_interface_accessors_8c_1aa27b07ddc231a81562ab7d3d19578848">uint16_t</link>&#32;<link linkend="_interface_accessors_8c_1aa27b07ddc231a81562ab7d3d19578848">INTF_getVersPatch</link>(<emphasis role="keywordtype">void</emphasis>);
+136 
+137 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a725db5a0fea72547846006b348a8f2e0">INTF_getPos24V</link>(<emphasis role="keywordtype">void</emphasis>);
+138 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a744a180aace820f7a870be5a57455362">INTF_getPos15V</link>(<emphasis role="keywordtype">void</emphasis>);
+139 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a689c81667a2b236dacbee1dbd7e806ac">INTF_getNeg15V</link>(<emphasis role="keywordtype">void</emphasis>);
+140 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a9e62ad9479ba4a7620c31ac22fc4ec6f">INTF_getPos5V</link>(<emphasis role="keywordtype">void</emphasis>);
+141 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a7e78a1bdfad85f233e54739ba8683927">INTF_getPos3V</link>(<emphasis role="keywordtype">void</emphasis>);
+142 
+143 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1af141bf9cc0d9d10b9c1ac60f90f914e3">INTF_getHarmCurrentCh0PhA</link>(<emphasis role="keywordtype">void</emphasis>);
+144 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a2ea93777f0f8d8785276ea38dcf1b8af">INTF_getHarmCurrentCh0PhB</link>(<emphasis role="keywordtype">void</emphasis>);
+145 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1ab82de2b81f7895b19768db41b81932c6">INTF_getHarmCurrentCh1PhA</link>(<emphasis role="keywordtype">void</emphasis>);
+146 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a420f1d1047ca0c73fb4e3be469502cab">INTF_getHarmCurrentCh1PhB</link>(<emphasis role="keywordtype">void</emphasis>);
+147 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a8268b411345496f59b756787bb0323a5">INTF_getHarmCurrentCh2PhA</link>(<emphasis role="keywordtype">void</emphasis>);
+148 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a42cdd58dab6e3558113b81df6e16839c">INTF_getHarmCurrentCh2PhB</link>(<emphasis role="keywordtype">void</emphasis>);
+149 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a958f82000278c76d992da150a55b0a18">INTF_getHarmCurrentCh3PhA</link>(<emphasis role="keywordtype">void</emphasis>);
+150 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a7946fac2f11a44eff7c700907c189bc6">INTF_getHarmCurrentCh3PhB</link>(<emphasis role="keywordtype">void</emphasis>);
+151 
+152 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">if</emphasis>&#32;<emphasis role="preprocessor">defined</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="preprocessor">SIL_WRAPPER</emphasis><emphasis role="preprocessor">)</emphasis>
+153 <emphasis role="keywordtype">void</emphasis>&#32;INTF_SIL_writeSnapshot(FILE*&#32;snapshotFile);
+154 <emphasis role="keywordtype">void</emphasis>&#32;INTF_SIL_readSnapshot(FILE*&#32;snapshotFile);
+155 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+156 
+157 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_struct_i_n_t_f___command_flags">INTF_CommandFlags</link>&#32;<link linkend="_interface_accessors_8c_1a88f562c1031cccffe74fb20b4ca06060">INTF_commandFlags</link>;
+158 
+159 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a3f54617f49f9242541779331eb124182">INTF_cmdRealPwr</link>;
+160 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a79e31bef5a37336542c4f6361506fa02">INTF_cmdReactivePwr</link>;
+161 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a4c8db66e9aff805c09de8ef33a33388c">INTF_cmdRealCurrent</link>;
+162 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a4b95211c26a962044ea4690e06eb87b3">INTF_cmdReactiveCurrent</link>;
+163 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a5538df13b1da6a0aefd3bde487b9a4cb">INTF_cmdInputCurrent</link>;
+164 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1aafe89f987c23c36dd842e3a95c4fa2e5">INTF_cmdDcVLim</link>;
+165 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1aa28bf8dd3bf1d36d1aecb7c754e0383b">INTF_cmdRealPwrNs</link>;
+166 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1aba3e765c9fe3dfe3040ad741ded00f77">INTF_cmdReactivePwrNs</link>;
+167 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a27a2166f2c156045cf525468d2f313b9">INTF_cmdRealCurrentNs</link>;
+168 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1af9d9bcbabff6b55ae0b251ce94d7ef44">INTF_cmdReactiveCurrentNs</link>;
+169 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a6ace3b5f1a80d2fed688ebc10a7765f9">INTF_cmdMpptPwrDcdc</link>;
+170 
+171 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1ad60b78557c3eb0a494afc3da4bc211b1">INTF_cmdPhAHarmCh0Id</link>;
+172 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a257409e80c6c6c3948950bee7bac7468">INTF_cmdPhAHarmCh0Iq</link>;
+173 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1ad4d0e1e55f52f153f8ddf02fcdb53127">INTF_cmdPhBHarmCh0Id</link>;
+174 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a8627ea41577512343ccd97df985cf8e8">INTF_cmdPhBHarmCh0Iq</link>;
+175 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a11c24207ef9ae315b743906a04699725">INTF_cmdPhAHarmCh1Id</link>;
+176 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1aa1d4c43a43d0db93a916869e4cd8c6bb">INTF_cmdPhAHarmCh1Iq</link>;
+177 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1ae06b06f088104b223512e5b52c139ee1">INTF_cmdPhBHarmCh1Id</link>;
+178 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1ac16d5d125f14e01708e4b4136ee62697">INTF_cmdPhBHarmCh1Iq</link>;
+179 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a27c2f062b9e1ed74ff613c2718b90980">INTF_cmdPhAHarmCh2Id</link>;
+180 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1abb23731cbb6e0ca066fefb7ca8a0e71f">INTF_cmdPhAHarmCh2Iq</link>;
+181 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a89baaacf4a6c79627efa601eacd004a1">INTF_cmdPhBHarmCh2Id</link>;
+182 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1af10fd01df5b4f8ce44b25e8d9bd0e706">INTF_cmdPhBHarmCh2Iq</link>;
+183 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a1017f9aea6d8265abce63ec31eb56db6">INTF_cmdPhAHarmCh3Id</link>;
+184 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a5e5100c627d6e798db9361cad6a52c7b">INTF_cmdPhAHarmCh3Iq</link>;
+185 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1a0029c5f594b19e6799580e1ece9f87c9">INTF_cmdPhBHarmCh3Id</link>;
+186 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_interface_accessors_8c_1ae2d788832709698a110e292aa4e046b3">INTF_cmdPhBHarmCh3Iq</link>;
+187 
+188 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>
+</programlisting></section>

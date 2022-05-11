@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_interface_specifics_static_modbus" kind="struct" language="C++" prot="public">
+    <compoundname>InterfaceSpecificsStaticModbus</compoundname>
+    <includes refid="interface_8h" local="no">interface.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_interface_specifics_static_modbus_1a933c5a85248f20322118b90b485168ae" prot="public" static="no" mutable="no">
+        <type><ref refid="interface_8h_1abd123dcb703c202a5cb3e6d04fd03328" kindref="member">ItemGetterStaticModbus</ref> const</type>
+        <definition>ItemGetterStaticModbus const InterfaceSpecificsStaticModbus::getter</definition>
+        <argsstring></argsstring>
+        <name>getter</name>
+        <qualifiedname>InterfaceSpecificsStaticModbus::getter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="86" column="34" bodyfile="interface/interface.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_interface_specifics_static_modbus_1adfff6484b1d46a41ddcde98c3cfb7e8d" prot="public" static="no" mutable="no">
+        <type><ref refid="interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3" kindref="member">ItemSetterStaticModbus</ref> const</type>
+        <definition>ItemSetterStaticModbus const InterfaceSpecificsStaticModbus::setter</definition>
+        <argsstring></argsstring>
+        <name>setter</name>
+        <qualifiedname>InterfaceSpecificsStaticModbus::setter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="87" column="34" bodyfile="interface/interface.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/interface.h" line="85" column="1" bodyfile="interface/interface.h" bodystart="85" bodyend="88"/>
+    <listofallmembers>
+      <member refid="struct_interface_specifics_static_modbus_1a933c5a85248f20322118b90b485168ae" prot="public" virt="non-virtual"><scope>InterfaceSpecificsStaticModbus</scope><name>getter</name></member>
+      <member refid="struct_interface_specifics_static_modbus_1adfff6484b1d46a41ddcde98c3cfb7e8d" prot="public" virt="non-virtual"><scope>InterfaceSpecificsStaticModbus</scope><name>setter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

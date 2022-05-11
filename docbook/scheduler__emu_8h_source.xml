@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_scheduler__emu_8h_source" xml:lang="en-US">
+<title>scheduler_emu.h</title>
+<indexterm><primary>sil/emu/scheduler_emu.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">ifndef</emphasis>&#32;<emphasis role="preprocessor">_SCHEDULER_EMU_H_</emphasis>
+2 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">define</emphasis>&#32;<emphasis role="preprocessor">_SCHEDULER_EMU_H_</emphasis>
+3 <emphasis role="comment">/********************************************************************************************************</emphasis>
+4 <emphasis role="comment">*</emphasis>
+5 <emphasis role="comment">*&#32;&#32;&#32;#########&#32;&#32;&#32;&#32;#########&#32;&#32;&#32;&#32;#########&#32;&#32;&#32;########&#32;&#32;&#32;&#32;&#32;&#32;#######&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;#########&#32;&#32;&#32;#######</emphasis>
+6 <emphasis role="comment">*&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;##</emphasis>
+7 <emphasis role="comment">*&#32;&#32;#&#32;########&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##########&#32;&#32;##</emphasis>
+8 <emphasis role="comment">*&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;&#32;&#32;&#32;##&#32;&#32;##&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##</emphasis>
+9 <emphasis role="comment">*&#32;&#32;&#32;#########&#32;&#32;&#32;#&#32;########&#32;&#32;&#32;&#32;#########&#32;&#32;##&#32;######&#32;&#32;&#32;&#32;&#32;&#32;#######&#32;&#32;&#32;&#32;&#32;######&#32;&#32;######&#32;&#32;&#32;&#32;#########&#32;&#32;##</emphasis>
+10 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;##</emphasis>
+11 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#</emphasis>
+12 <emphasis role="comment">*</emphasis>
+13 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;COMPANY&#32;CONFIDENTIAL</emphasis>
+14 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;document&#32;contains&#32;information&#32;proprietary&#32;to&#32;EPC&#32;Power.</emphasis>
+15 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;is&#32;an&#32;unpublished&#32;work&#32;subject&#32;to&#32;trade&#32;secret&#32;and&#32;copyright&#32;protection.</emphasis>
+16 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;In&#32;addition,&#32;the&#32;information&#32;may&#32;be&#32;the&#32;subject&#32;of&#32;patent&#32;applications</emphasis>
+17 <emphasis role="comment">*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;in&#32;the&#32;United&#32;States&#32;and&#32;foreign&#32;countries.</emphasis>
+18 <emphasis role="comment">*</emphasis>
+19 <emphasis role="comment">*********************************************************************************************************/</emphasis>
+20 
+21 <emphasis role="comment">/********************************************************************************************************</emphasis>
+22 <emphasis role="comment">&#32;*&#32;M&#32;O&#32;D&#32;U&#32;L&#32;E&#32;&#32;&#32;&#32;D&#32;E&#32;S&#32;C&#32;R&#32;I&#32;P&#32;T&#32;I&#32;O&#32;N</emphasis>
+23 <emphasis role="comment">&#32;*</emphasis>
+24 <emphasis role="comment">&#32;*&#32;Filename&#32;&#32;&#32;&#32;&#32;:&#32;template.h</emphasis>
+25 <emphasis role="comment">&#32;*&#32;Full&#32;Name&#32;&#32;&#32;&#32;:&#32;Package::SubPackage::..::Class</emphasis>
+26 <emphasis role="comment">&#32;*&#32;Prefix&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;</emphasis>
+27 <emphasis role="comment">&#32;*&#32;Description&#32;&#32;:&#32;</emphasis>
+28 <emphasis role="comment">&#32;*&#32;Author&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;</emphasis>
+29 <emphasis role="comment">&#32;*</emphasis>
+30 <emphasis role="comment">&#32;*&#32;History&#32;&#32;&#32;&#32;&#32;&#32;:</emphasis>
+31 <emphasis role="comment">&#32;*&#32;Date&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Name&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Description</emphasis>
+32 <emphasis role="comment">&#32;*&#32;30.05.2017&#32;&#32;&#32;&lt;F.&#32;Last&gt;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Initial&#32;Version</emphasis>
+33 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+34 
+35 <emphasis role="comment">/********************************************************************************************************</emphasis>
+36 <emphasis role="comment">&#32;*&#32;Include&#32;Files</emphasis>
+37 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+38 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;scheduler.h&quot;</emphasis>
+39 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;system.h&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;For&#32;SYSTEM_FREQUENCY_HZ&#32;*/</emphasis>
+40 
+41 
+42 <emphasis role="comment">/********************************************************************************************************</emphasis>
+43 <emphasis role="comment">&#32;*&#32;Constant&#32;Defines</emphasis>
+44 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+45 
+46 <emphasis role="comment">/********************************************************************************************************</emphasis>
+47 <emphasis role="comment">&#32;*&#32;Macro&#32;Defines</emphasis>
+48 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+49 
+50 <emphasis role="comment">/********************************************************************************************************</emphasis>
+51 <emphasis role="comment">&#32;*&#32;Type&#32;Definitions</emphasis>
+52 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+53 
+54 <emphasis role="comment">/********************************************************************************************************</emphasis>
+55 <emphasis role="comment">&#32;*&#32;Exported&#32;Variable&#32;Declarations</emphasis>
+56 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+57 
+58 <emphasis role="comment">/********************************************************************************************************</emphasis>
+59 <emphasis role="comment">&#32;*&#32;Exported&#32;Function&#32;Prototypes</emphasis>
+60 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+61 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scheduler__emu_8h_1a75735a8b34406af1b36b905d29a7751c">SCH_taskHandler_100US</link>(<emphasis role="keywordtype">void</emphasis>);
+62 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scheduler__emu_8h_1ae3c130b06490b98e2f20da59d82c6a8f">SCH_taskHandler_1MS</link>(<emphasis role="keywordtype">void</emphasis>);
+63 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scheduler__emu_8h_1aed8460784a0722c2a3593b652cd272e3">SCH_taskHandler_10MS</link>(<emphasis role="keywordtype">void</emphasis>);
+64 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scheduler__emu_8h_1a05d0fd0ce14a0b0cb0ac9b264c1e9dad">SCH_taskHandler_100MS</link>(<emphasis role="keywordtype">void</emphasis>);
+65 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scheduler__emu_8h_1a2b79db065e89e443594b9d71fdf9fcf3">SCH_taskHandler_1S</link>(<emphasis role="keywordtype">void</emphasis>);
+66 
+67 
+68 <emphasis role="comment">/********************************************************************************************************</emphasis>
+69 <emphasis role="comment">&#32;*&#32;Inline&#32;Function&#32;Definitions&#32;:-(</emphasis>
+70 <emphasis role="comment">&#32;********************************************************************************************************/</emphasis>
+71 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;SCH_silFakeoutProfilerTimer(<emphasis role="keywordtype">double</emphasis>&#32;tNow)&#32;{
+72 &#32;&#32;&#32;&#32;SCH_TASK_CLOCK&#32;=&#32;(uint32_t)((<emphasis role="keywordtype">double</emphasis>)SYSTEM_FREQUENCY_HZ&#32;*&#32;tNow);
+73 }
+74 
+75 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">endif</emphasis>&#32;<emphasis role="comment">//_SCHEDULER_EMU_H_</emphasis>
+</programlisting></section>

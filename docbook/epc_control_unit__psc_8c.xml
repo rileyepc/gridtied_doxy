@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_epc_control_unit__psc_8c" xml:lang="en-US">
+<title>sil/psc/libEpcControlDev/epcControlUnit_psc.c File Reference</title>
+<indexterm><primary>sil/psc/libEpcControlDev/epcControlUnit_psc.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdint.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;windows.h&gt;
+#include &quot;libEpcControl.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_e_c_u___input_tlc_pdi__s">ECU_InputTlcPdi_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___output_tlc_pdo__s">ECU_OutputTlcPdo_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___input_control__s">ECU_InputControl_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___input_reference__s">ECU_InputReference_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___input_feedback__s">ECU_InputFeedback_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___input__s">ECU_Input_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___output_status__s">ECU_OutputStatus_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___output_monitor__s">ECU_OutputMonitor_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___output_control__s">ECU_OutputControl_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___output_reference__s">ECU_OutputReference_s</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_e_c_u___output__s">ECU_Output_s</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a44d86f63e1aea9eb93b0c6966167f65b">ECU_SCALE_FROM_PSC_V</link>   ( 1.0e3 )</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a35fb0e0c9c3c695d27f8f8dcfa4a711c">ECU_SCALE_FROM_PSC_I</link>   ( 1.0e3 )</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a5b3287e95c8ab5de4e15670efccce003">ECU_SCALE_FROM_PSC_P</link>   ( <link linkend="_epc_control_unit__psc_8c_1a44d86f63e1aea9eb93b0c6966167f65b">ECU_SCALE_FROM_PSC_V</link> * <link linkend="_epc_control_unit__psc_8c_1a35fb0e0c9c3c695d27f8f8dcfa4a711c">ECU_SCALE_FROM_PSC_I</link> )</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a8a87ace1ff44a908fa1c947428ebebf2">ECU_SCALE_TO_PSC_V</link>   ( 1.0 / <link linkend="_epc_control_unit__psc_8c_1a44d86f63e1aea9eb93b0c6966167f65b">ECU_SCALE_FROM_PSC_V</link> )</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a0a55c9c8b8b81c912f11d45e256aec5b">ECU_SCALE_TO_PSC_I</link>   ( 1.0 / <link linkend="_epc_control_unit__psc_8c_1a35fb0e0c9c3c695d27f8f8dcfa4a711c">ECU_SCALE_FROM_PSC_I</link> )</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a702c18336033286b02b95866383fec06">ECU_SCALE_TO_PSC_P</link>   ( 1.0 / <link linkend="_epc_control_unit__psc_8c_1a5b3287e95c8ab5de4e15670efccce003">ECU_SCALE_FROM_PSC_P</link> )</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a73c7870ad0714f77bbe77f7f621b3bb5">ECU_DLL_TARGET_FILENAME</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a4a872ccbd01bb8c26c9b67fe13895528">ECU_DLL_FILE_EXTENSION</link>   &quot;.dll&quot;                                      /* Dll file extension */</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1ab053dfe85edff1ce89eff223a924bc18">ECU_MAX_INSTANCES</link>   10                                          /* Maximum amount of supported instances */</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a24947579c3880186891cbb5b9e76756d">DLL_SIL_PORT_INP_P</link>(instIdx,  mPort)   (*SIL_PortsDll[instIdx])-&gt;inpPort[mPort].portPointer</para>
+</listitem>
+            <listitem><para>#define <link linkend="_epc_control_unit__psc_8c_1a427c304e0fec00170d64d0e993dfdeed">DLL_SIL_PORT_OUT_P</link>(instIdx,  mPort)   (*SIL_PortsDll[instIdx])-&gt;outPort[mPort].portPointer</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___input_tlc_pdi__s">ECU_InputTlcPdi_s</link> <link linkend="_epc_control_unit__psc_8c_1aada87f8a06d3f3a98324a837a3693f4d">ECU_InputTlcPdi_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___output_tlc_pdo__s">ECU_OutputTlcPdo_s</link> <link linkend="_epc_control_unit__psc_8c_1aa3e8d51ab0e8cc8105dffab2220088a2">ECU_sOutputTlcPdo_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___input_control__s">ECU_InputControl_s</link> <link linkend="_epc_control_unit__psc_8c_1aa73356b11bf03ec92bc735a85bca55fc">ECU_sInputControl_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___input_reference__s">ECU_InputReference_s</link> <link linkend="_epc_control_unit__psc_8c_1a2145616628bd68522f127ea3158a3b31">ECU_sInputReference_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___input_feedback__s">ECU_InputFeedback_s</link> <link linkend="_epc_control_unit__psc_8c_1a8bac538c25083c913ab05a3ce721dd5c">ECU_sInputFeedback_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___input__s">ECU_Input_s</link> <link linkend="_epc_control_unit__psc_8c_1af7cea98c7de75d62b7a61a4506a56080">ECU_sInput_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___output_status__s">ECU_OutputStatus_s</link> <link linkend="_epc_control_unit__psc_8c_1a91ca8f855368d75a84ea6d715bc48154">ECU_sOutputStatus_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___output_monitor__s">ECU_OutputMonitor_s</link> <link linkend="_epc_control_unit__psc_8c_1abf35ce5a3f7497508d37cd9a7b17ceab">ECU_sOutputMonitor_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___output_control__s">ECU_OutputControl_s</link> <link linkend="_epc_control_unit__psc_8c_1a69eb3a659497728991a036c60b6ab1f1">ECU_sOutputControl_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___output_reference__s">ECU_OutputReference_s</link> <link linkend="_epc_control_unit__psc_8c_1a23fb932f4364ed64971bf5b39f30cd52">ECU_sOutputReference_t</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_e_c_u___output__s">ECU_Output_s</link> <link linkend="_epc_control_unit__psc_8c_1a4f4448763d930df3386a8e88e20831d3">ECU_sOutput_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4">ECU_InitStatus_e</link> <link linkend="_epc_control_unit__psc_8c_1a3b4aa6fcbff75c8e7c5de86b40020ae2">ECU_InitStatus_t</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61d">ECU_DllLoadStatus_e</link> <link linkend="_epc_control_unit__psc_8c_1a1b64e2cee159f7602749caf581e386e4">ECU_DllLoadStatus_t</link></para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_epc_control_unit__psc_8c_1aa87a00c8e7be1d6aafd8773a8baf8faf">SIL_initializeLibraryDll_t</link>) (double, <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link>, <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link>, char *)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_epc_control_unit__psc_8c_1a544495a6a6fa5738f6ba2b7887561256">SIL_updateOutputDll_t</link>) (double)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_epc_control_unit__psc_8c_1aeec649cafc11e4c145d9a1943e292f2a">SIL_updateStateDll_t</link>) (double)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_epc_control_unit__psc_8c_1acd0a43da0d2862d66ca1a1cf4482d828">SIL_writeSnapshotDll_t</link>) (double, uint16_t, char *)</para>
+</listitem>
+            <listitem><para>typedef void(* <link linkend="_epc_control_unit__psc_8c_1a6aafa2e0d4a767e704ff64d2909888e8">SIL_readSnapshotDll_t</link>) (uint16_t, char *)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4">ECU_InitStatus_e</link> { <link linkend="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4a498565ca366416aa65e1e213e96c9f2e">ECU_INIT_SUCCESSFUL</link>
+, <link linkend="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4a3f28c6a6430de80bc4a9b2c57be96f29">ECU_INIT_FAILED</link>
+, <link linkend="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4a31fb1edc9a91a1218197760213962b67">ECU_INIT_CNT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61d">ECU_DllLoadStatus_e</link> { <link linkend="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61daa0e615cfe4098aaeea7707edc64c5ce4">ECU_DLL_LOAD_SUCCESSFUL</link>
+, <link linkend="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61daf06e5804ec030586b102fd55a3c18135">ECU_DLL_LOAD_FAILED</link>
+, <link linkend="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61da6152b693943c2c9460a31303799c022e">ECU_DLL_LOAD_CNT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_epc_control_unit__psc_8c_1a3b4aa6fcbff75c8e7c5de86b40020ae2">ECU_InitStatus_t</link> <link linkend="_epc_control_unit__psc_8c_1ac1f960a87a4a6a3b5ab4040ad6269eca">ECU_controlInitialize</link> (int *instanceNumber, int *readSnapshot, int *multipleRun, double dtSim, char *dllPath, char *tempPath, char *pmvsPath)</para>
+</listitem>
+            <listitem><para>void <link linkend="_epc_control_unit__psc_8c_1a7a67c50669c6ba2f0d027951e720e848">ECU_controlTerminate</link> (int *instanceNumber)</para>
+</listitem>
+            <listitem><para>void <link linkend="_epc_control_unit__psc_8c_1a84f39360200a5121adfaa47c0a966413">ECU_controlUpdate</link> (int *instanceNumber, int *writeSnapshot, double tSim, double tlcIn[6U], int ctl[1U], double ref[6U], double fbk[11U], int rly[4U], double mod[6U], int stat[6U], double mon[17U], double tlcOut[21U], double dbg[32U], double refOut[4U], char *tempPath)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_epc_control_unit__psc_8c_1a24947579c3880186891cbb5b9e76756d"/><section>
+    <title>DLL_SIL_PORT_INP_P</title>
+<indexterm><primary>DLL_SIL_PORT_INP_P</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>DLL_SIL_PORT_INP_P</secondary></indexterm>
+<para><computeroutput>#define DLL_SIL_PORT_INP_P( instIdx,  mPort)   (*SIL_PortsDll[instIdx])-&gt;inpPort[mPort].portPointer</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a427c304e0fec00170d64d0e993dfdeed"/><section>
+    <title>DLL_SIL_PORT_OUT_P</title>
+<indexterm><primary>DLL_SIL_PORT_OUT_P</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>DLL_SIL_PORT_OUT_P</secondary></indexterm>
+<para><computeroutput>#define DLL_SIL_PORT_OUT_P( instIdx,  mPort)   (*SIL_PortsDll[instIdx])-&gt;outPort[mPort].portPointer</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a4a872ccbd01bb8c26c9b67fe13895528"/><section>
+    <title>ECU_DLL_FILE_EXTENSION</title>
+<indexterm><primary>ECU_DLL_FILE_EXTENSION</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_DLL_FILE_EXTENSION</secondary></indexterm>
+<para><computeroutput>#define ECU_DLL_FILE_EXTENSION   &quot;.dll&quot;                                      /* Dll file extension */</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a73c7870ad0714f77bbe77f7f621b3bb5"/><section>
+    <title>ECU_DLL_TARGET_FILENAME</title>
+<indexterm><primary>ECU_DLL_TARGET_FILENAME</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_DLL_TARGET_FILENAME</secondary></indexterm>
+<para><computeroutput>#define ECU_DLL_TARGET_FILENAME</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;converterControl&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Dll&#32;target&#32;file&#32;name&#32;without&#32;file&#32;extension.&#32;The&#32;file</emphasis>
+<emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;will&#32;be&#32;written&#32;to&#32;the&#32;PSCAD&#32;temporary&#32;folder.&#32;*/</emphasis>
+</programlisting></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1ab053dfe85edff1ce89eff223a924bc18"/><section>
+    <title>ECU_MAX_INSTANCES</title>
+<indexterm><primary>ECU_MAX_INSTANCES</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_MAX_INSTANCES</secondary></indexterm>
+<para><computeroutput>#define ECU_MAX_INSTANCES   10                                          /* Maximum amount of supported instances */</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a35fb0e0c9c3c695d27f8f8dcfa4a711c"/><section>
+    <title>ECU_SCALE_FROM_PSC_I</title>
+<indexterm><primary>ECU_SCALE_FROM_PSC_I</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_SCALE_FROM_PSC_I</secondary></indexterm>
+<para><computeroutput>#define ECU_SCALE_FROM_PSC_I   ( 1.0e3 )</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a5b3287e95c8ab5de4e15670efccce003"/><section>
+    <title>ECU_SCALE_FROM_PSC_P</title>
+<indexterm><primary>ECU_SCALE_FROM_PSC_P</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_SCALE_FROM_PSC_P</secondary></indexterm>
+<para><computeroutput>#define ECU_SCALE_FROM_PSC_P   ( <link linkend="_epc_control_unit__psc_8c_1a44d86f63e1aea9eb93b0c6966167f65b">ECU_SCALE_FROM_PSC_V</link> * <link linkend="_epc_control_unit__psc_8c_1a35fb0e0c9c3c695d27f8f8dcfa4a711c">ECU_SCALE_FROM_PSC_I</link> )</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a44d86f63e1aea9eb93b0c6966167f65b"/><section>
+    <title>ECU_SCALE_FROM_PSC_V</title>
+<indexterm><primary>ECU_SCALE_FROM_PSC_V</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_SCALE_FROM_PSC_V</secondary></indexterm>
+<para><computeroutput>#define ECU_SCALE_FROM_PSC_V   ( 1.0e3 )</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a0a55c9c8b8b81c912f11d45e256aec5b"/><section>
+    <title>ECU_SCALE_TO_PSC_I</title>
+<indexterm><primary>ECU_SCALE_TO_PSC_I</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_SCALE_TO_PSC_I</secondary></indexterm>
+<para><computeroutput>#define ECU_SCALE_TO_PSC_I   ( 1.0 / <link linkend="_epc_control_unit__psc_8c_1a35fb0e0c9c3c695d27f8f8dcfa4a711c">ECU_SCALE_FROM_PSC_I</link> )</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a702c18336033286b02b95866383fec06"/><section>
+    <title>ECU_SCALE_TO_PSC_P</title>
+<indexterm><primary>ECU_SCALE_TO_PSC_P</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_SCALE_TO_PSC_P</secondary></indexterm>
+<para><computeroutput>#define ECU_SCALE_TO_PSC_P   ( 1.0 / <link linkend="_epc_control_unit__psc_8c_1a5b3287e95c8ab5de4e15670efccce003">ECU_SCALE_FROM_PSC_P</link> )</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a8a87ace1ff44a908fa1c947428ebebf2"/><section>
+    <title>ECU_SCALE_TO_PSC_V</title>
+<indexterm><primary>ECU_SCALE_TO_PSC_V</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_SCALE_TO_PSC_V</secondary></indexterm>
+<para><computeroutput>#define ECU_SCALE_TO_PSC_V   ( 1.0 / <link linkend="_epc_control_unit__psc_8c_1a44d86f63e1aea9eb93b0c6966167f65b">ECU_SCALE_FROM_PSC_V</link> )</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_epc_control_unit__psc_8c_1a1b64e2cee159f7602749caf581e386e4"/><section>
+    <title>ECU_DllLoadStatus_t</title>
+<indexterm><primary>ECU_DllLoadStatus_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_DllLoadStatus_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61d">ECU_DllLoadStatus_e</link> <link linkend="_epc_control_unit__psc_8c_1a1b64e2cee159f7602749caf581e386e4">ECU_DllLoadStatus_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a3b4aa6fcbff75c8e7c5de86b40020ae2"/><section>
+    <title>ECU_InitStatus_t</title>
+<indexterm><primary>ECU_InitStatus_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_InitStatus_t</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4">ECU_InitStatus_e</link> <link linkend="_epc_control_unit__psc_8c_1a3b4aa6fcbff75c8e7c5de86b40020ae2">ECU_InitStatus_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1aada87f8a06d3f3a98324a837a3693f4d"/><section>
+    <title>ECU_InputTlcPdi_t</title>
+<indexterm><primary>ECU_InputTlcPdi_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_InputTlcPdi_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___input_tlc_pdi__s">ECU_InputTlcPdi_s</link> <link linkend="_epc_control_unit__psc_8c_1aada87f8a06d3f3a98324a837a3693f4d">ECU_InputTlcPdi_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1af7cea98c7de75d62b7a61a4506a56080"/><section>
+    <title>ECU_sInput_t</title>
+<indexterm><primary>ECU_sInput_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sInput_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___input__s">ECU_Input_s</link> <link linkend="_epc_control_unit__psc_8c_1af7cea98c7de75d62b7a61a4506a56080">ECU_sInput_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1aa73356b11bf03ec92bc735a85bca55fc"/><section>
+    <title>ECU_sInputControl_t</title>
+<indexterm><primary>ECU_sInputControl_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sInputControl_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___input_control__s">ECU_InputControl_s</link> <link linkend="_epc_control_unit__psc_8c_1aa73356b11bf03ec92bc735a85bca55fc">ECU_sInputControl_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a8bac538c25083c913ab05a3ce721dd5c"/><section>
+    <title>ECU_sInputFeedback_t</title>
+<indexterm><primary>ECU_sInputFeedback_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sInputFeedback_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___input_feedback__s">ECU_InputFeedback_s</link> <link linkend="_epc_control_unit__psc_8c_1a8bac538c25083c913ab05a3ce721dd5c">ECU_sInputFeedback_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a2145616628bd68522f127ea3158a3b31"/><section>
+    <title>ECU_sInputReference_t</title>
+<indexterm><primary>ECU_sInputReference_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sInputReference_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___input_reference__s">ECU_InputReference_s</link> <link linkend="_epc_control_unit__psc_8c_1a2145616628bd68522f127ea3158a3b31">ECU_sInputReference_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a4f4448763d930df3386a8e88e20831d3"/><section>
+    <title>ECU_sOutput_t</title>
+<indexterm><primary>ECU_sOutput_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sOutput_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___output__s">ECU_Output_s</link> <link linkend="_epc_control_unit__psc_8c_1a4f4448763d930df3386a8e88e20831d3">ECU_sOutput_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a69eb3a659497728991a036c60b6ab1f1"/><section>
+    <title>ECU_sOutputControl_t</title>
+<indexterm><primary>ECU_sOutputControl_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sOutputControl_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___output_control__s">ECU_OutputControl_s</link> <link linkend="_epc_control_unit__psc_8c_1a69eb3a659497728991a036c60b6ab1f1">ECU_sOutputControl_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1abf35ce5a3f7497508d37cd9a7b17ceab"/><section>
+    <title>ECU_sOutputMonitor_t</title>
+<indexterm><primary>ECU_sOutputMonitor_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sOutputMonitor_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___output_monitor__s">ECU_OutputMonitor_s</link> <link linkend="_epc_control_unit__psc_8c_1abf35ce5a3f7497508d37cd9a7b17ceab">ECU_sOutputMonitor_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a23fb932f4364ed64971bf5b39f30cd52"/><section>
+    <title>ECU_sOutputReference_t</title>
+<indexterm><primary>ECU_sOutputReference_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sOutputReference_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___output_reference__s">ECU_OutputReference_s</link> <link linkend="_epc_control_unit__psc_8c_1a23fb932f4364ed64971bf5b39f30cd52">ECU_sOutputReference_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a91ca8f855368d75a84ea6d715bc48154"/><section>
+    <title>ECU_sOutputStatus_t</title>
+<indexterm><primary>ECU_sOutputStatus_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sOutputStatus_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___output_status__s">ECU_OutputStatus_s</link> <link linkend="_epc_control_unit__psc_8c_1a91ca8f855368d75a84ea6d715bc48154">ECU_sOutputStatus_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1aa3e8d51ab0e8cc8105dffab2220088a2"/><section>
+    <title>ECU_sOutputTlcPdo_t</title>
+<indexterm><primary>ECU_sOutputTlcPdo_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_sOutputTlcPdo_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_e_c_u___output_tlc_pdo__s">ECU_OutputTlcPdo_s</link> <link linkend="_epc_control_unit__psc_8c_1aa3e8d51ab0e8cc8105dffab2220088a2">ECU_sOutputTlcPdo_t</link></computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1aa87a00c8e7be1d6aafd8773a8baf8faf"/><section>
+    <title>SIL_initializeLibraryDll_t</title>
+<indexterm><primary>SIL_initializeLibraryDll_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>SIL_initializeLibraryDll_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SIL_initializeLibraryDll_t) (double, <link linkend="_lib_epc_control_8h_1a3dd3ad23a360da9c6163594f679ab08b">SIL_eSolverType_t</link>, <link linkend="_lib_epc_control_8h_1a2fb84a2675f90cb1a951ff0ae4772f01">SIL_eModelIntent_t</link>, char *)</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a6aafa2e0d4a767e704ff64d2909888e8"/><section>
+    <title>SIL_readSnapshotDll_t</title>
+<indexterm><primary>SIL_readSnapshotDll_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>SIL_readSnapshotDll_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SIL_readSnapshotDll_t) (uint16_t, char *)</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a544495a6a6fa5738f6ba2b7887561256"/><section>
+    <title>SIL_updateOutputDll_t</title>
+<indexterm><primary>SIL_updateOutputDll_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>SIL_updateOutputDll_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SIL_updateOutputDll_t) (double)</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1aeec649cafc11e4c145d9a1943e292f2a"/><section>
+    <title>SIL_updateStateDll_t</title>
+<indexterm><primary>SIL_updateStateDll_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>SIL_updateStateDll_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SIL_updateStateDll_t) (double)</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1acd0a43da0d2862d66ca1a1cf4482d828"/><section>
+    <title>SIL_writeSnapshotDll_t</title>
+<indexterm><primary>SIL_writeSnapshotDll_t</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>SIL_writeSnapshotDll_t</secondary></indexterm>
+<para><computeroutput>typedef void(* SIL_writeSnapshotDll_t) (double, uint16_t, char *)</computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61d"/><section>
+    <title>ECU_DllLoadStatus_e</title>
+<indexterm><primary>ECU_DllLoadStatus_e</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_DllLoadStatus_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61d">ECU_DllLoadStatus_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>ECU_DLL_LOAD_SUCCESSFUL</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_DLL_LOAD_SUCCESSFUL</secondary></indexterm>
+<anchor xml:id="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61daa0e615cfe4098aaeea7707edc64c5ce4"/>ECU_DLL_LOAD_SUCCESSFUL</entry><entry></entry></row><row><entry><indexterm><primary>ECU_DLL_LOAD_FAILED</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_DLL_LOAD_FAILED</secondary></indexterm>
+<anchor xml:id="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61daf06e5804ec030586b102fd55a3c18135"/>ECU_DLL_LOAD_FAILED</entry><entry></entry></row><row><entry><indexterm><primary>ECU_DLL_LOAD_CNT</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_DLL_LOAD_CNT</secondary></indexterm>
+<anchor xml:id="_epc_control_unit__psc_8c_1a1296192a8d6b24fc4a4d13b0ef7bb61da6152b693943c2c9460a31303799c022e"/>ECU_DLL_LOAD_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4"/><section>
+    <title>ECU_InitStatus_e</title>
+<indexterm><primary>ECU_InitStatus_e</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_InitStatus_e</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4">ECU_InitStatus_e</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>ECU_INIT_SUCCESSFUL</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_INIT_SUCCESSFUL</secondary></indexterm>
+<anchor xml:id="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4a498565ca366416aa65e1e213e96c9f2e"/>ECU_INIT_SUCCESSFUL</entry><entry></entry></row><row><entry><indexterm><primary>ECU_INIT_FAILED</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_INIT_FAILED</secondary></indexterm>
+<anchor xml:id="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4a3f28c6a6430de80bc4a9b2c57be96f29"/>ECU_INIT_FAILED</entry><entry></entry></row><row><entry><indexterm><primary>ECU_INIT_CNT</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_INIT_CNT</secondary></indexterm>
+<anchor xml:id="_epc_control_unit__psc_8c_1ad50078ba9a1e1342e798d42c24c25ab4a31fb1edc9a91a1218197760213962b67"/>ECU_INIT_CNT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_epc_control_unit__psc_8c_1ac1f960a87a4a6a3b5ab4040ad6269eca"/><section>
+    <title>ECU_controlInitialize()</title>
+<indexterm><primary>ECU_controlInitialize</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_controlInitialize</secondary></indexterm>
+<para><computeroutput><link linkend="_epc_control_unit__psc_8c_1a3b4aa6fcbff75c8e7c5de86b40020ae2">ECU_InitStatus_t</link> ECU_controlInitialize (int * instanceNumber, int * readSnapshot, int * multipleRun, double dtSim, char * dllPath, char * tempPath, char * pmvsPath)</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a7a67c50669c6ba2f0d027951e720e848"/><section>
+    <title>ECU_controlTerminate()</title>
+<indexterm><primary>ECU_controlTerminate</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_controlTerminate</secondary></indexterm>
+<para><computeroutput>void ECU_controlTerminate (int * instanceNumber)</computeroutput></para></section>
+<anchor xml:id="_epc_control_unit__psc_8c_1a84f39360200a5121adfaa47c0a966413"/><section>
+    <title>ECU_controlUpdate()</title>
+<indexterm><primary>ECU_controlUpdate</primary><secondary>epcControlUnit_psc.c</secondary></indexterm>
+<indexterm><primary>epcControlUnit_psc.c</primary><secondary>ECU_controlUpdate</secondary></indexterm>
+<para><computeroutput>void ECU_controlUpdate (int * instanceNumber, int * writeSnapshot, double tSim, double tlcIn[6U], int ctl[1U], double ref[6U], double fbk[11U], int rly[4U], double mod[6U], int stat[6U], double mon[17U], double tlcOut[21U], double dbg[32U], double refOut[4U], char * tempPath)</computeroutput></para></section>
+</section>
+</section>

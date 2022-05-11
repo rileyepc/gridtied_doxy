@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_6bdbf4829a0c166757c4b2ed3e31cc1f" kind="dir">
+    <compoundname>src/gridtied/tests/hil</compoundname>
+    <innerfile refid="tests_2hil_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="hil_2conftest_8py">conftest.py</innerfile>
+    <innerfile refid="pytest__plugin_8py">pytest_plugin.py</innerfile>
+    <innerfile refid="test__auth_8py">test_auth.py</innerfile>
+    <innerfile refid="test__datalogger_8py">test_datalogger.py</innerfile>
+    <innerfile refid="test__example_8py">test_example.py</innerfile>
+    <innerfile refid="test__following_8py">test_following.py</innerfile>
+    <innerfile refid="test__interface_8py">test_interface.py</innerfile>
+    <innerfile refid="test__tlcvariant_8py">test_tlcvariant.py</innerfile>
+    <innerfile refid="test__watt__power__factor_8py">test_watt_power_factor.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gridtied/tests/hil/"/>
+  </compounddef>
+</doxygen>

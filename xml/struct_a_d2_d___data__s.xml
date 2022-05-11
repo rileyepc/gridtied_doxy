@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_a_d2_d___data__s" kind="struct" language="C++" prot="public">
+    <compoundname>AD2D_Data_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d2_d___data__s_1a416a9ec8e1dff9bc6ed2e06c580e35f7" prot="public" static="no" mutable="no">
+        <type><ref refid="ad2d__emu_8c_1ac6c98544c59d6e06532cbbde0e2a9157" kindref="member">AD2D_MeasChannel_t</ref></type>
+        <definition>AD2D_MeasChannel_t AD2D_Data_s::measChannels[AD2D_SEQUENCER_CHANNELS]</definition>
+        <argsstring>[AD2D_SEQUENCER_CHANNELS]</argsstring>
+        <name>measChannels</name>
+        <qualifiedname>AD2D_Data_s::measChannels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="109" column="33" bodyfile="sil/emu/ad2d_emu.c" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t AD2D_Data_s::channelCount</definition>
+        <argsstring></argsstring>
+        <name>channelCount</name>
+        <qualifiedname>AD2D_Data_s::channelCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/ad2d_emu.c" line="110" column="33" bodyfile="sil/emu/ad2d_emu.c" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>AD2D_Data_s</label>
+        <link refid="struct_a_d2_d___data__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>measChannels</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AD2D_MeasChannel_s</label>
+        <link refid="struct_a_d2_d___meas_channel__s"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>adcResult</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>AD2D_SgnExtend_s</label>
+        <link refid="struct_a_d2_d___sgn_extend__s"/>
+      </node>
+      <node id="3">
+        <label>AD2D_SgnExtend_u</label>
+        <link refid="struct_a_d2_d___sgn_extend__u"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>bits</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sil/emu/ad2d_emu.c" line="108" column="1" bodyfile="sil/emu/ad2d_emu.c" bodystart="108" bodyend="111"/>
+    <listofallmembers>
+      <member refid="struct_a_d2_d___data__s_1a4185ecdd2d89e9337932b46481fc6ea7" prot="public" virt="non-virtual"><scope>AD2D_Data_s</scope><name>channelCount</name></member>
+      <member refid="struct_a_d2_d___data__s_1a416a9ec8e1dff9bc6ed2e06c580e35f7" prot="public" virt="non-virtual"><scope>AD2D_Data_s</scope><name>measChannels</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,183 @@
+\hypertarget{epwm__emu_8h_source}{}\doxysection{epwm\+\_\+emu.\+h}
+\label{epwm__emu_8h_source}\index{sil/emu/epwm\_emu.h@{sil/emu/epwm\_emu.h}}
+\mbox{\hyperlink{epwm__emu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{ifndef} \textcolor{preprocessor}{\_\_EPWM\_EMULATOR\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{\_\_EPWM\_EMULATOR\_H\_}}
+\DoxyCodeLine{3 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{4 \textcolor{comment}{*}}
+\DoxyCodeLine{5 \textcolor{comment}{*   \#\#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#   \#\#\#\#\#\#\#\#      \#\#\#\#\#\#\#    \#\#     \#\#     \#\#   \#\#\#\#\#\#\#\#\#   \#\#\#\#\#\#\#}}
+\DoxyCodeLine{6 \textcolor{comment}{*  \#         \#  \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#       \#\# \#\#}}
+\DoxyCodeLine{7 \textcolor{comment}{*  \# \#\#\#\#\#\#\#\#   \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#\#\#\#\#\#\#\#\#  \#\#}}
+\DoxyCodeLine{8 \textcolor{comment}{*  \#            \#         \#  \#           \#\#       \#\#  \#\#       \#\#  \#\#     \#\#     \#\#  \#\#          \#\#}}
+\DoxyCodeLine{9 \textcolor{comment}{*   \#\#\#\#\#\#\#\#\#   \# \#\#\#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#  \#\# \#\#\#\#\#\#      \#\#\#\#\#\#\#     \#\#\#\#\#\#  \#\#\#\#\#\#    \#\#\#\#\#\#\#\#\#  \#\#}}
+\DoxyCodeLine{10 \textcolor{comment}{*               \#                        \#\#}}
+\DoxyCodeLine{11 \textcolor{comment}{*               \#                         \#}}
+\DoxyCodeLine{12 \textcolor{comment}{*}}
+\DoxyCodeLine{13 \textcolor{comment}{*                                         COMPANY CONFIDENTIAL}}
+\DoxyCodeLine{14 \textcolor{comment}{*                         This document contains information proprietary to EPC Power.}}
+\DoxyCodeLine{15 \textcolor{comment}{*             This is an unpublished work subject to trade secret and copyright protection.}}
+\DoxyCodeLine{16 \textcolor{comment}{*                   In addition, the information may be the subject of patent applications}}
+\DoxyCodeLine{17 \textcolor{comment}{*                           in the United States and foreign countries.}}
+\DoxyCodeLine{18 \textcolor{comment}{*}}
+\DoxyCodeLine{19 \textcolor{comment}{*********************************************************************************************************/}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{22 \textcolor{comment}{ * M O D U L E    D E S C R I P T I O N}}
+\DoxyCodeLine{23 \textcolor{comment}{ *}}
+\DoxyCodeLine{24 \textcolor{comment}{ * Filename     : epwm\_emu.h}}
+\DoxyCodeLine{25 \textcolor{comment}{ * Full Name    : Package::SubPackage::..::Class}}
+\DoxyCodeLine{26 \textcolor{comment}{ * Prefix       : }}
+\DoxyCodeLine{27 \textcolor{comment}{ * Description  : }}
+\DoxyCodeLine{28 \textcolor{comment}{ * Author       : D. Michaud}}
+\DoxyCodeLine{29 \textcolor{comment}{ *}}
+\DoxyCodeLine{30 \textcolor{comment}{ * History      :}}
+\DoxyCodeLine{31 \textcolor{comment}{ * Date         Name            Description}}
+\DoxyCodeLine{32 \textcolor{comment}{ * 24.02.2018   D. Michaud      Initial Version}}
+\DoxyCodeLine{33 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{36 \textcolor{comment}{ * Include Files}}
+\DoxyCodeLine{37 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{40 \textcolor{comment}{ * Constant Defines}}
+\DoxyCodeLine{41 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_NR\_CHANNELS\_MAX}                    6U}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_TB\_COUNTING\_UP}                     \textcolor{keyword}{true}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_TB\_COUNTING\_DN}                     \textcolor{keyword}{false}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_AQ\_HIT\_TOLERANCE}                   1e-\/12L}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_DIAG\_TOLERANCE}                     128.0L \textcolor{preprocessor}{*} \textcolor{preprocessor}{DBL\_EPSILON}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_THP\_MIN}                            100}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_THP\_INI}                            65000}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_DEFAULT\_FCLOCK}                     150e6}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_DISA\_HALFPERIOD}                    1.0e-\/3}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{58 \textcolor{comment}{ * Macro Defines}}
+\DoxyCodeLine{59 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{60 \textcolor{comment}{/* -\/-\/ Pair-\/o-\/Metres -\/-\/ */}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AVERAGE\_MODE}                   \textcolor{keyword}{false}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_DTY\_UPPER}                      1.0}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_DTY\_LOWER}                     \textcolor{preprocessor}{-\/}1.0}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_RLD\_HALF\_PERIOD}                \textcolor{preprocessor}{EPWM\_SHADOW\_RELOAD\_BOT}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_RLD\_ENTRY\_UPPER}                \textcolor{preprocessor}{EPWM\_SHADOW\_RELOAD\_BOTH}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_RLD\_ENTRY\_LOWER}                \textcolor{preprocessor}{EPWM\_SHADOW\_RELOAD\_BOTH}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_RLD\_UNSAT}                      \textcolor{preprocessor}{EPWM\_SHADOW\_RELOAD\_BOTH}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_RLD\_EXIT\_UPPER}                 \textcolor{preprocessor}{EPWM\_SHADOW\_RELOAD\_BOTH}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_RLD\_EXIT\_LOWER}                 \textcolor{preprocessor}{EPWM\_SHADOW\_RELOAD\_BOTH}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_SAT\_UPPER}                      0}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_SAT\_LOWER}                      0}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_ENTRY\_UPPER\_BOT}            2}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_ENTRY\_UPPER\_TOP}            2}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_ENTRY\_UPPER\_CUP}            2}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_ENTRY\_UPPER\_CDN}            2}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_ENTRY\_LOWER\_BOT}            1}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_ENTRY\_LOWER\_TOP}            1}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_ENTRY\_LOWER\_CUP}            1}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_ENTRY\_LOWER\_CDN}            1}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_UNSAT\_BOT}                  0}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_UNSAT\_TOP}                  0}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_UNSAT\_CUP}                  1}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_UNSAT\_CDN}                  2}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_EXIT\_UPPER\_BOT}             0}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_EXIT\_UPPER\_TOP}             1}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_EXIT\_UPPER\_CUP}             1}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_EXIT\_UPPER\_CDN}             2}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_EXIT\_LOWER\_BOT}             2}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_EXIT\_LOWER\_TOP}             0}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_EXIT\_LOWER\_CUP}             1}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_AQC\_EXIT\_LOWER\_CDN}             2}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_DIAG\_TON\_MIN}                   4.0e-\/6}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_DIAG\_TOFF\_MIN}                  4.0e-\/6}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_DIAG\_TADJ\_MIN}                  2.0e-\/6}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_DIAG\_TADJ\_CHANS\_SZ}             0}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_PAR\_DIAG\_TADJ\_CHANS}\textcolor{preprocessor}{(}\textcolor{preprocessor}{j}\textcolor{preprocessor}{)}             1}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{comment}{/* -\/-\/ Inputs -\/-\/ */}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_INP\_HALF\_PERIOD}                    \textcolor{preprocessor}{SIL\_PORT\_INP}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_INP\_REF\_THP}\textcolor{preprocessor}{,} 0\textcolor{preprocessor}{)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_INP\_SWITCH\_TIME}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                \textcolor{preprocessor}{SIL\_PORT\_INP}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_INP\_REF\_TSW}\textcolor{preprocessor}{,} \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{/* -\/-\/ Outputs -\/-\/ */}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_GATE\_STATE}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                 \textcolor{preprocessor}{SIL\_PORT\_OUT}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_OUT\_CTL\_GATE}\textcolor{preprocessor}{,} \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_VIOL\_TON}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                   \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}1\textcolor{preprocessor}{,}  \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_VIOL\_TOFF}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                  \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}2\textcolor{preprocessor}{,}  \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_VIOL\_TADJ}                      \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}3\textcolor{preprocessor}{,}  0\textcolor{preprocessor}{)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_NVIOL\_TON}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                  \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}4\textcolor{preprocessor}{,}  \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_NVIOL\_TOFF}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                 \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}5\textcolor{preprocessor}{,}  \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_NVIOL\_TADJ}                     \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}6\textcolor{preprocessor}{,}  0\textcolor{preprocessor}{)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_TON}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                        \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}7\textcolor{preprocessor}{,}  \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_TOFF}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                       \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}8\textcolor{preprocessor}{,}  \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_TADJ}                           \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}9\textcolor{preprocessor}{,}  0\textcolor{preprocessor}{)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_TSW}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                        \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}10\textcolor{preprocessor}{,} \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_THP}                            \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}11\textcolor{preprocessor}{,} 0\textcolor{preprocessor}{)}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_TSW\_SDW}\textcolor{preprocessor}{(}\textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}                    \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}12\textcolor{preprocessor}{,} \textcolor{preprocessor}{ch}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_DEBUG}\textcolor{preprocessor}{(}\textcolor{preprocessor}{i}\textcolor{preprocessor}{)}                       \textcolor{preprocessor}{OutputSignal}\textcolor{preprocessor}{(}13\textcolor{preprocessor}{,} \textcolor{preprocessor}{i}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{define} \textcolor{preprocessor}{EPWM\_OUT\_COUNT\_DIR}                      \textcolor{preprocessor}{SIL\_PORT\_OUT}\textcolor{preprocessor}{(}\textcolor{preprocessor}{SIL\_OUT\_CTL\_CDIR}\textcolor{preprocessor}{,} 0\textcolor{preprocessor}{)}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{130 \textcolor{comment}{ * Type Definitions}}
+\DoxyCodeLine{131 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{134 \textcolor{comment}{ * Exported Variable Declarations}}
+\DoxyCodeLine{135 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{138 \textcolor{comment}{ * Exported Function Prototypes}}
+\DoxyCodeLine{139 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{140 \textcolor{keywordtype}{void}    \mbox{\hyperlink{epwm__emu_8c_a5c7955b8e45b9f13c3f3193d51c47126}{EPWM\_Initialize}}(\textcolor{keywordtype}{double} tInit, \textcolor{keywordtype}{bool} isFixedRate);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{keywordtype}{double}  \mbox{\hyperlink{epwm__emu_8c_a177a27247999a85001e98fda816cef2e}{EPWM\_GetNextSolverHit}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{143 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_affefd814056482f0d96b74e4e906230e}{EPWM\_Output}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{144 \textcolor{keywordtype}{void}    \mbox{\hyperlink{epwm__emu_8c_ad6d064f34ac3f3621d40e69739eec80c}{EPWM\_Update}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{keywordtype}{void}    \mbox{\hyperlink{epwm__emu_8c_ae4484d7085296d45e76ee9bb0b246c71}{EPWM\_Terminate}}(\textcolor{keywordtype}{double} tNow);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a4b5f8b57993a11edcc3f8cffa01c4a11}{EPWM\_SetParamNumberOfChannels}}(uint16\_t nCh);}
+\DoxyCodeLine{149 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a2e9f18815e66057fa0590b9fc71fda16}{EPWM\_SetParamSystemClock}}(\textcolor{keywordtype}{double} fClock);}
+\DoxyCodeLine{150 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a70dfae6e93d6fa3e008f7996e7edff37}{EPWM\_SetParamDutyCycleLimits}}(\textcolor{keywordtype}{double} dUpper, \textcolor{keywordtype}{double} dLower);}
+\DoxyCodeLine{151 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a964710b8943a3d01a336335682c5ee37}{EPWM\_SetParamDeadTime}}(\textcolor{keywordtype}{double} tDead);}
+\DoxyCodeLine{152 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a11810bd5f480bad68ba870b93a312f22}{EPWM\_SetParamDiagTOnMin}}(\textcolor{keywordtype}{double} tOnMin);}
+\DoxyCodeLine{153 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a3a346956ee46c1c0b958d8255fb9dbc5}{EPWM\_SetParamDiagTOffMin}}(\textcolor{keywordtype}{double} tOffMin);}
+\DoxyCodeLine{154 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_ab2c6885979c35ac0daf9ec4a272f4724}{EPWM\_SetParamDiagTAdjMin}}(\textcolor{keywordtype}{double} tAdjMin);}
+\DoxyCodeLine{155 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a73a9cf1875fa5ec2f8b69e4928803b87}{EPWM\_SetParamShadowReloadBehaviourHalfPeriod}}(\textcolor{keywordtype}{int} rldBehaviour);}
+\DoxyCodeLine{156 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a22e226ea489716e5fd0540b5f8eadbd4}{EPWM\_SetParamShadowReloadBehaviourEntryUpper}}(\textcolor{keywordtype}{int} rldBehaviour);}
+\DoxyCodeLine{157 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a4e7373fac98c4cdf695a3c24180be67c}{EPWM\_SetParamShadowReloadBehaviourEntryLower}}(\textcolor{keywordtype}{int} rldBehaviour);}
+\DoxyCodeLine{158 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_af4766dc6b350308996eb9f8d55f9ae86}{EPWM\_SetParamShadowReloadBehaviourUnsat}}(\textcolor{keywordtype}{int} rldBehaviour);}
+\DoxyCodeLine{159 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a45d803b1d987d8dee73c012f963fe1b5}{EPWM\_SetParamShadowReloadBehaviourExitUpper}}(\textcolor{keywordtype}{int} rldBehaviour);}
+\DoxyCodeLine{160 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_aa1c9aab58f198332effa7422252dfc44}{EPWM\_SetParamShadowReloadBehaviourExitLower}}(\textcolor{keywordtype}{int} rldBehaviour);}
+\DoxyCodeLine{161 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a71e10cf731cbbf8cc6f8bc219cad49de}{EPWM\_SetParamSaturationThreshold}}(\textcolor{keywordtype}{int} satUpper, \textcolor{keywordtype}{int} satLower);}
+\DoxyCodeLine{162 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a8d3e6fdb2fdc3f2aae24a8eafd7191b5}{EPWM\_SetParamAqOutputActionsEntryUpper}}(\textcolor{keywordtype}{int} iBot, \textcolor{keywordtype}{int} iTop, \textcolor{keywordtype}{int} iCup, \textcolor{keywordtype}{int} iCdn);}
+\DoxyCodeLine{163 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a4b1d7ad5e8f9049fdc09e9917609cd3a}{EPWM\_SetParamAqOutputActionsEntryLower}}(\textcolor{keywordtype}{int} iBot, \textcolor{keywordtype}{int} iTop, \textcolor{keywordtype}{int} iCup, \textcolor{keywordtype}{int} iCdn);}
+\DoxyCodeLine{164 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_adaf4b1e98a6f5dd301101e5c066774cb}{EPWM\_SetParamAqOutputActionsUnsat}}(\textcolor{keywordtype}{int} iBot, \textcolor{keywordtype}{int} iTop, \textcolor{keywordtype}{int} iCup, \textcolor{keywordtype}{int} iCdn);}
+\DoxyCodeLine{165 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_af3371b648dcd7273cb1e51516a82f6c0}{EPWM\_SetParamAqOutputActionsExitUpper}}(\textcolor{keywordtype}{int} iBot, \textcolor{keywordtype}{int} iTop, \textcolor{keywordtype}{int} iCup, \textcolor{keywordtype}{int} iCdn);}
+\DoxyCodeLine{166 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a676a8174ab16d206dde2c7515c2dbb3c}{EPWM\_SetParamAqOutputActionsExitLower}}(\textcolor{keywordtype}{int} iBot, \textcolor{keywordtype}{int} iTop, \textcolor{keywordtype}{int} iCup, \textcolor{keywordtype}{int} iCdn);}
+\DoxyCodeLine{167 \textcolor{keywordtype}{bool}    \mbox{\hyperlink{epwm__emu_8c_a4d6d96ea4ff3517fec41d53226ba465f}{EPWM\_SetParamAverageMode}}(\textcolor{keywordtype}{bool} beAverage);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{keywordtype}{void}    \mbox{\hyperlink{epwm__emu_8c_a33638d842654de8348be285b3dcdb9fd}{EPWM\_SIL\_writeSnapshot}}(FILE* snapshotFile);}
+\DoxyCodeLine{170 \textcolor{keywordtype}{void}    \mbox{\hyperlink{epwm__emu_8c_af274c8f8e3de1793cfca8b82dac0c036}{EPWM\_SIL\_readSnapshot}}(FILE* snapshotFile);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{comment}{/********************************************************************************************************}}
+\DoxyCodeLine{174 \textcolor{comment}{ * Inline Function Definitions :-\/(}}
+\DoxyCodeLine{175 \textcolor{comment}{ ********************************************************************************************************/}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#}\textcolor{preprocessor}{endif} \textcolor{comment}{//\_EPWM\_EMULATOR\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_p_w_m___aq_action_zones__s" kind="struct" language="C++" prot="public">
+    <compoundname>EPWM_AqActionZones_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_p_w_m___aq_action_zones__s_1a37c789e449f7724dec8c513accb2615a" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1af5665a9cb9ae25c32d428572226d8650" kindref="member">EPWM_AqOutputAction_t</ref></type>
+        <definition>EPWM_AqOutputAction_t EPWM_AqActionZones_s::unsat[EPWM_AQ_SOURCE_CNT]</definition>
+        <argsstring>[EPWM_AQ_SOURCE_CNT]</argsstring>
+        <name>unsat</name>
+        <qualifiedname>EPWM_AqActionZones_s::unsat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="140" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___aq_action_zones__s_1a484597f2fafe96ed56371436ba968cc9" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1af5665a9cb9ae25c32d428572226d8650" kindref="member">EPWM_AqOutputAction_t</ref></type>
+        <definition>EPWM_AqOutputAction_t EPWM_AqActionZones_s::upper[2U][EPWM_AQ_SOURCE_CNT]</definition>
+        <argsstring>[2U][EPWM_AQ_SOURCE_CNT]</argsstring>
+        <name>upper</name>
+        <qualifiedname>EPWM_AqActionZones_s::upper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="141" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_p_w_m___aq_action_zones__s_1a5881b191ca118249973ae09482f6fbc5" prot="public" static="no" mutable="no">
+        <type><ref refid="epwm__emu_8c_1af5665a9cb9ae25c32d428572226d8650" kindref="member">EPWM_AqOutputAction_t</ref></type>
+        <definition>EPWM_AqOutputAction_t EPWM_AqActionZones_s::lower[2U][EPWM_AQ_SOURCE_CNT]</definition>
+        <argsstring>[2U][EPWM_AQ_SOURCE_CNT]</argsstring>
+        <name>lower</name>
+        <qualifiedname>EPWM_AqActionZones_s::lower</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/emu/epwm_emu.c" line="142" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/emu/epwm_emu.c" line="139" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="139" bodyend="143"/>
+    <listofallmembers>
+      <member refid="struct_e_p_w_m___aq_action_zones__s_1a5881b191ca118249973ae09482f6fbc5" prot="public" virt="non-virtual"><scope>EPWM_AqActionZones_s</scope><name>lower</name></member>
+      <member refid="struct_e_p_w_m___aq_action_zones__s_1a37c789e449f7724dec8c513accb2615a" prot="public" virt="non-virtual"><scope>EPWM_AqActionZones_s</scope><name>unsat</name></member>
+      <member refid="struct_e_p_w_m___aq_action_zones__s_1a484597f2fafe96ed56371436ba968cc9" prot="public" virt="non-virtual"><scope>EPWM_AqActionZones_s</scope><name>upper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

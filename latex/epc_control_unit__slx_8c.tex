@@ -1,0 +1,81 @@
+\hypertarget{epc_control_unit__slx_8c}{}\doxysection{sil/mdl/epc\+Control\+Unit\+\_\+slx.c File Reference}
+\label{epc_control_unit__slx_8c}\index{sil/mdl/epcControlUnit\_slx.c@{sil/mdl/epcControlUnit\_slx.c}}
+{\ttfamily \#include \char`\"{}../lib\+Epc\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simstruc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cg\+\_\+sfun.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__slx_8c_a9a4ab27953070e39249f3fad28e93749}{S\+\_\+\+FUNCTION\+\_\+\+LEVEL}}~2
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__slx_8c_ac032abbf580c891fb0c11e63e9bc668a}{MDL\+\_\+\+START}}
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__slx_8c_a7556dbbf5cb7f9946d3e39bcda40c63b}{MDL\+\_\+\+UPDATE}}
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__slx_8c_ace86915cd55a1175c697f892b700f5e5}{ECU\+\_\+\+SOLVER\+\_\+\+TYPE}}~\mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80}{SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+VARIABLE\+\_\+\+MULTIRATE}}
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__slx_8c_a844b7814640ba5021d1fa675cd9b5566}{MDL\+\_\+\+GET\+\_\+\+TIME\+\_\+\+OF\+\_\+\+NEXT\+\_\+\+VAR\+\_\+\+HIT}}
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__slx_8c_a04067f7644df808c71fccf928ced31cb}{ECU\+\_\+\+SET\+\_\+\+SAMPLE\+\_\+\+TIME}}(m\+Idx,  m\+Tim,  m\+Off)
+\item 
+\#define \mbox{\hyperlink{epc_control_unit__slx_8c_ac36e0adc260e344e79ef85ab7278ee78}{ECU\+\_\+\+UPDATE\+\_\+\+TASK}}(m\+Task,  m\+Context)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{epc_control_unit__slx_8c_a04067f7644df808c71fccf928ced31cb}\label{epc_control_unit__slx_8c_a04067f7644df808c71fccf928ced31cb}} 
+\index{epcControlUnit\_slx.c@{epcControlUnit\_slx.c}!ECU\_SET\_SAMPLE\_TIME@{ECU\_SET\_SAMPLE\_TIME}}
+\index{ECU\_SET\_SAMPLE\_TIME@{ECU\_SET\_SAMPLE\_TIME}!epcControlUnit\_slx.c@{epcControlUnit\_slx.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_SET\_SAMPLE\_TIME}{ECU\_SET\_SAMPLE\_TIME}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+SET\+\_\+\+SAMPLE\+\_\+\+TIME(\begin{DoxyParamCaption}\item[{}]{m\+Idx,  }\item[{}]{m\+Tim,  }\item[{}]{m\+Off }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ssSetSampleTime(S, mIdx, mTim);                                 \(\backslash\)}
+\DoxyCodeLine{    ssSetOffsetTime(S, mIdx, mOff)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epc_control_unit__slx_8c_ace86915cd55a1175c697f892b700f5e5}\label{epc_control_unit__slx_8c_ace86915cd55a1175c697f892b700f5e5}} 
+\index{epcControlUnit\_slx.c@{epcControlUnit\_slx.c}!ECU\_SOLVER\_TYPE@{ECU\_SOLVER\_TYPE}}
+\index{ECU\_SOLVER\_TYPE@{ECU\_SOLVER\_TYPE}!epcControlUnit\_slx.c@{epcControlUnit\_slx.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_SOLVER\_TYPE}{ECU\_SOLVER\_TYPE}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+SOLVER\+\_\+\+TYPE~\mbox{\hyperlink{lib_epc_control_8h_a7c690e2e7f450fe5e100746ad4f59aa6a1c7298d6f6016b614baa0a180ef77e80}{SIL\+\_\+\+SOLVER\+\_\+\+TYPE\+\_\+\+VARIABLE\+\_\+\+MULTIRATE}}}
+
+\mbox{\Hypertarget{epc_control_unit__slx_8c_ac36e0adc260e344e79ef85ab7278ee78}\label{epc_control_unit__slx_8c_ac36e0adc260e344e79ef85ab7278ee78}} 
+\index{epcControlUnit\_slx.c@{epcControlUnit\_slx.c}!ECU\_UPDATE\_TASK@{ECU\_UPDATE\_TASK}}
+\index{ECU\_UPDATE\_TASK@{ECU\_UPDATE\_TASK}!epcControlUnit\_slx.c@{epcControlUnit\_slx.c}}
+\doxysubsubsection{\texorpdfstring{ECU\_UPDATE\_TASK}{ECU\_UPDATE\_TASK}}
+{\footnotesize\ttfamily \#define ECU\+\_\+\+UPDATE\+\_\+\+TASK(\begin{DoxyParamCaption}\item[{}]{m\+Task,  }\item[{}]{m\+Context }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (ssIsSampleHit(S, SIL\_TASK\_GROUP\_\#\#mTask, tid) == \textcolor{keyword}{true}) \{    \(\backslash\)}
+\DoxyCodeLine{        double tNow = ssGetTaskTime(S, SIL\_TASK\_GROUP\_\#\#mTask);     \(\backslash\)}
+\DoxyCodeLine{        SIL\_update\#\#mContext\#\#\_\#\#mTask(tNow);                       \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epc_control_unit__slx_8c_a844b7814640ba5021d1fa675cd9b5566}\label{epc_control_unit__slx_8c_a844b7814640ba5021d1fa675cd9b5566}} 
+\index{epcControlUnit\_slx.c@{epcControlUnit\_slx.c}!MDL\_GET\_TIME\_OF\_NEXT\_VAR\_HIT@{MDL\_GET\_TIME\_OF\_NEXT\_VAR\_HIT}}
+\index{MDL\_GET\_TIME\_OF\_NEXT\_VAR\_HIT@{MDL\_GET\_TIME\_OF\_NEXT\_VAR\_HIT}!epcControlUnit\_slx.c@{epcControlUnit\_slx.c}}
+\doxysubsubsection{\texorpdfstring{MDL\_GET\_TIME\_OF\_NEXT\_VAR\_HIT}{MDL\_GET\_TIME\_OF\_NEXT\_VAR\_HIT}}
+{\footnotesize\ttfamily \#define MDL\+\_\+\+GET\+\_\+\+TIME\+\_\+\+OF\+\_\+\+NEXT\+\_\+\+VAR\+\_\+\+HIT}
+
+\mbox{\Hypertarget{epc_control_unit__slx_8c_ac032abbf580c891fb0c11e63e9bc668a}\label{epc_control_unit__slx_8c_ac032abbf580c891fb0c11e63e9bc668a}} 
+\index{epcControlUnit\_slx.c@{epcControlUnit\_slx.c}!MDL\_START@{MDL\_START}}
+\index{MDL\_START@{MDL\_START}!epcControlUnit\_slx.c@{epcControlUnit\_slx.c}}
+\doxysubsubsection{\texorpdfstring{MDL\_START}{MDL\_START}}
+{\footnotesize\ttfamily \#define MDL\+\_\+\+START}
+
+\mbox{\Hypertarget{epc_control_unit__slx_8c_a7556dbbf5cb7f9946d3e39bcda40c63b}\label{epc_control_unit__slx_8c_a7556dbbf5cb7f9946d3e39bcda40c63b}} 
+\index{epcControlUnit\_slx.c@{epcControlUnit\_slx.c}!MDL\_UPDATE@{MDL\_UPDATE}}
+\index{MDL\_UPDATE@{MDL\_UPDATE}!epcControlUnit\_slx.c@{epcControlUnit\_slx.c}}
+\doxysubsubsection{\texorpdfstring{MDL\_UPDATE}{MDL\_UPDATE}}
+{\footnotesize\ttfamily \#define MDL\+\_\+\+UPDATE}
+
+\mbox{\Hypertarget{epc_control_unit__slx_8c_a9a4ab27953070e39249f3fad28e93749}\label{epc_control_unit__slx_8c_a9a4ab27953070e39249f3fad28e93749}} 
+\index{epcControlUnit\_slx.c@{epcControlUnit\_slx.c}!S\_FUNCTION\_LEVEL@{S\_FUNCTION\_LEVEL}}
+\index{S\_FUNCTION\_LEVEL@{S\_FUNCTION\_LEVEL}!epcControlUnit\_slx.c@{epcControlUnit\_slx.c}}
+\doxysubsubsection{\texorpdfstring{S\_FUNCTION\_LEVEL}{S\_FUNCTION\_LEVEL}}
+{\footnotesize\ttfamily \#define S\+\_\+\+FUNCTION\+\_\+\+LEVEL~2}
+

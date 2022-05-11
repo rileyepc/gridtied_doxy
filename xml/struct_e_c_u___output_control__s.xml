@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_e_c_u___output_control__s" kind="struct" language="C++" prot="public">
+    <compoundname>ECU_OutputControl_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_u___output_control__s_1a72d1c37c3cb91ffb220b3e64dc72fccf" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputControl_s::relay[4U]</definition>
+        <argsstring>[4U]</argsstring>
+        <name>relay</name>
+        <qualifiedname>ECU_OutputControl_s::relay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="136" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_u___output_control__s_1a4c3c8b620a94dedf1fbcc260014861eb" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ECU_OutputControl_s::mod[6U]</definition>
+        <argsstring>[6U]</argsstring>
+        <name>mod</name>
+        <qualifiedname>ECU_OutputControl_s::mod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="137" column="33" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sil/psc/libEpcControlDev/epcControlUnit_psc.c" line="135" column="1" bodyfile="sil/psc/libEpcControlDev/epcControlUnit_psc.c" bodystart="135" bodyend="138"/>
+    <listofallmembers>
+      <member refid="struct_e_c_u___output_control__s_1a4c3c8b620a94dedf1fbcc260014861eb" prot="public" virt="non-virtual"><scope>ECU_OutputControl_s</scope><name>mod</name></member>
+      <member refid="struct_e_c_u___output_control__s_1a72d1c37c3cb91ffb220b3e64dc72fccf" prot="public" virt="non-virtual"><scope>ECU_OutputControl_s</scope><name>relay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

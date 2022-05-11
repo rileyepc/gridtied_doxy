@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="interface_8h" kind="file" language="C++">
+    <compoundname>interface.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="yes">canInterfaceEnums.h</includes>
+    <includes local="yes">sunspec.h</includes>
+    <includes local="yes">meta.h</includes>
+    <includes local="yes">IEEE1547.h</includes>
+    <includes local="yes">authorization.h</includes>
+    <includedby refid="can_interface_8c" local="yes">interface/canInterface.c</includedby>
+    <includedby refid="can_interface_8h" local="yes">interface/canInterface.h</includedby>
+    <includedby refid="interface_8c" local="yes">interface/interface.c</includedby>
+    <includedby refid="interface_accessors_8h" local="yes">interface/interfaceAccessors.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>interface/interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>IEEE1547.h</label>
+      </node>
+      <node id="7">
+        <label>authorization.h</label>
+      </node>
+      <node id="3">
+        <label>canInterfaceEnums.h</label>
+      </node>
+      <node id="5">
+        <label>meta.h</label>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>sunspec.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>application.c</label>
+        <link refid="application_8c"/>
+      </node>
+      <node id="2">
+        <label>interface/canInterface.c</label>
+        <link refid="can_interface_8c"/>
+      </node>
+      <node id="3">
+        <label>interface/canInterface.h</label>
+        <link refid="can_interface_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>interface/interface.c</label>
+        <link refid="interface_8c"/>
+      </node>
+      <node id="1">
+        <label>interface/interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>interface/interfaceAccessors.c</label>
+        <link refid="interface_accessors_8c"/>
+      </node>
+      <node id="6">
+        <label>interface/interfaceAccessors.h</label>
+        <link refid="interface_accessors_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>sil/libEpcControl.c</label>
+        <link refid="lib_epc_control_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_rejection_reasons" prot="public">RejectionReasons</innerclass>
+    <innerclass refid="struct_interface_specifics" prot="public">InterfaceSpecifics</innerclass>
+    <innerclass refid="struct_interface_specifics_sun_spec" prot="public">InterfaceSpecificsSunSpec</innerclass>
+    <innerclass refid="struct_interface_specifics_static_modbus" prot="public">InterfaceSpecificsStaticModbus</innerclass>
+    <innerclass refid="struct_interface_item_common" prot="public">InterfaceItemCommon</innerclass>
+    <innerclass refid="struct_interface_item___bitfield_member" prot="public">InterfaceItem_BitfieldMember</innerclass>
+    <innerclass refid="struct_interface_item___bitfield" prot="public">InterfaceItem_Bitfield</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="interface_8h_1aa983482eaaf4b98c2e967c60c13ebb42" prot="public" static="no">
+        <name>REJECTIONREASONS_DEFAULTS</name>
+        <param><defname>metaIndex_</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>{ \
+    .outOfRange = false, \
+    .meta = false, \
+    .metaIndex = metaIndex_, \
+    .auth = false, \
+    .setter = false, \
+    .inactiveInterface = false, \
+    ##__VA_ARGS__ \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="28" column="9" bodyfile="interface/interface.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="interface_8h_1a61fa532cd4060e9b2d2d701c6c4d1b30" prot="public" static="no">
+        <name>REJECTIONREASONS_ANY</name>
+        <param><defname>reasons</defname></param>
+        <initializer>( \
+    (reasons).outOfRange \
+    || (reasons).meta \
+    || (reasons).auth \
+    || (reasons).setter \
+    || (reasons).inactiveInterface \
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="39" column="9" bodyfile="interface/interface.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="interface_8h_1a365fa67bab8eb8daf2e6351ef4d52d6e" prot="public" static="no">
+        <name>REJECTIONREASONS_NONE</name>
+        <param><defname>reasons</defname></param>
+        <initializer>(!<ref refid="interface_8h_1a61fa532cd4060e9b2d2d701c6c4d1b30" kindref="member">REJECTIONREASONS_ANY</ref>(reasons))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="48" column="9" bodyfile="interface/interface.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="interface_8h_1ac0aecb85217a8c58bcbbe0add3e9fa06" prot="public" static="no">
+        <name>REJECTIONREASONS_ONLY</name>
+        <param><defname>reasons</defname></param>
+        <param><defname>name</defname></param>
+        <initializer>( \
+    ((reasons).name) \
+    &amp;&amp; ( \
+        ( \
+            ((reasons).outOfRange ? 1 : 0) \
+            + ((reasons).meta ? 1 : 0) \
+            + ((reasons).auth ? 1 : 0) \
+            + ((reasons).setter ? 1 : 0) \
+            + ((reasons).inactiveInterface ? 1 : 0) \
+        ) \
+        == 1 \
+    ) \
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="51" column="9" bodyfile="interface/interface.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" prot="public" static="no">
+        <type>void</type>
+        <definition>typedef void InterfaceItem_void</definition>
+        <argsstring></argsstring>
+        <name>InterfaceItem_void</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="17" column="14" bodyfile="interface/interface.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1aeb8e6c70056e982823417048cc8b0b10" prot="public" static="no">
+        <type>struct <ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref></type>
+        <definition>typedef struct RejectionReasons RejectionReasons</definition>
+        <argsstring></argsstring>
+        <name>RejectionReasons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="26" column="18"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* ItemGetter) (void const *const item, Meta_Enum meta)</definition>
+        <argsstring>)(void const *const item, Meta_Enum meta)</argsstring>
+        <name>ItemGetter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="66" column="9" bodyfile="interface/interface.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1abd123dcb703c202a5cb3e6d04fd03328" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* ItemGetterStaticModbus) (void const *const item, Meta_Enum meta, int16_t *getterVariable)</definition>
+        <argsstring>)(void const *const item, Meta_Enum meta, int16_t *getterVariable)</argsstring>
+        <name>ItemGetterStaticModbus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="67" column="9" bodyfile="interface/interface.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1a4123a77c6016d61b0b1026ec0541d735" prot="public" static="no">
+        <type>bool(*</type>
+        <definition>typedef bool(* ItemSetter) (void const *const item, bool check_limits, Meta_Enum meta)</definition>
+        <argsstring>)(void const *const item, bool check_limits, Meta_Enum meta)</argsstring>
+        <name>ItemSetter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="68" column="9" bodyfile="interface/interface.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3" prot="public" static="no">
+        <type>bool(*</type>
+        <definition>typedef bool(* ItemSetterStaticModbus) (void const *const item, bool check_limits, Meta_Enum meta, int16_t *setterVariable)</definition>
+        <argsstring>)(void const *const item, bool check_limits, Meta_Enum meta, int16_t *setterVariable)</argsstring>
+        <name>ItemSetterStaticModbus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="69" column="9" bodyfile="interface/interface.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1ace168ec393881d3c5f5ecf94e417e33b" prot="public" static="no">
+        <type>struct <ref refid="struct_interface_specifics" kindref="compound">InterfaceSpecifics</ref></type>
+        <definition>typedef struct InterfaceSpecifics InterfaceSpecifics</definition>
+        <argsstring></argsstring>
+        <name>InterfaceSpecifics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="75" column="20"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1a541093f34997b86155bc05413d9831c2" prot="public" static="no">
+        <type>struct <ref refid="struct_interface_specifics_sun_spec" kindref="compound">InterfaceSpecificsSunSpec</ref></type>
+        <definition>typedef struct InterfaceSpecificsSunSpec InterfaceSpecificsSunSpec</definition>
+        <argsstring></argsstring>
+        <name>InterfaceSpecificsSunSpec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="83" column="27"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1aec201b9ad26c19f3cc25668fe2ead5c6" prot="public" static="no">
+        <type>struct <ref refid="struct_interface_specifics_static_modbus" kindref="compound">InterfaceSpecificsStaticModbus</ref></type>
+        <definition>typedef struct InterfaceSpecificsStaticModbus InterfaceSpecificsStaticModbus</definition>
+        <argsstring></argsstring>
+        <name>InterfaceSpecificsStaticModbus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="88" column="32"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1acb1d82380be5c0d254dfb501eb3d5e97" prot="public" static="no">
+        <type>struct <ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref></type>
+        <definition>typedef struct InterfaceItemCommon InterfaceItemCommon</definition>
+        <argsstring></argsstring>
+        <name>InterfaceItemCommon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="103" column="21"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1a3dadbb90a5406c1176a12b289bc1d49d" prot="public" static="no">
+        <type>struct <ref refid="struct_interface_item___bitfield_member" kindref="compound">InterfaceItem_BitfieldMember</ref></type>
+        <definition>typedef struct InterfaceItem_BitfieldMember InterfaceItem_BitfieldMember</definition>
+        <argsstring></argsstring>
+        <name>InterfaceItem_BitfieldMember</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="109" column="30"/>
+      </memberdef>
+      <memberdef kind="typedef" id="interface_8h_1ad4788ffbec9d53108170995250840db7" prot="public" static="no">
+        <type>struct <ref refid="struct_interface_item___bitfield" kindref="compound">InterfaceItem_Bitfield</ref></type>
+        <definition>typedef struct InterfaceItem_Bitfield InterfaceItem_Bitfield</definition>
+        <argsstring></argsstring>
+        <name>InterfaceItem_Bitfield</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="118" column="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="interface_8h_1a4b4d547f1291c2b0839837d1263cecd8" prot="public" static="no" mutable="no">
+        <type>CAN_Enum_AccessLevel</type>
+        <definition>CAN_Enum_AccessLevel metaMinimumAccessLevel[Meta_Count]</definition>
+        <argsstring>[Meta_Count]</argsstring>
+        <name>metaMinimumAccessLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="14" column="29" bodyfile="interface/interface.c" bodystart="6" bodyend="-1" declfile="interface/interface.h" declline="14" declcolumn="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="interface_8h_1a1456a3e6d18b4b338ca7d542de34ed6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sunssf</type>
+        <definition>sunssf itemNetScaleFactor</definition>
+        <argsstring>(InterfaceItemCommon const *const item)</argsstring>
+        <name>itemNetScaleFactor</name>
+        <param>
+          <type><ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref> const *const</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="120" column="8" bodyfile="interface/interface.c" bodystart="16" bodyend="30" declfile="interface/interface.h" declline="120" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_8h_1a6aadaf337d1caee0a760aa9ae127360d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void items_getMeta</definition>
+        <argsstring>(Meta_Enum meta_index, InterfaceItem_void const *const *const items, uint16_t items_count)</argsstring>
+        <name>items_getMeta</name>
+        <param>
+          <type>Meta_Enum</type>
+          <declname>meta_index</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref> const *const *const</type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>items_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="122" column="6" bodyfile="interface/canInterface.c" bodystart="905" bodyend="912" declfile="interface/interface.h" declline="122" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_8h_1ad509994a37bdba87b40e6407e5523b20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void items_setMeta</definition>
+        <argsstring>(Meta_Enum meta_index, InterfaceItem_void const *const *const items, uint16_t items_count)</argsstring>
+        <name>items_setMeta</name>
+        <param>
+          <type>Meta_Enum</type>
+          <declname>meta_index</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref> const *const *const</type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>items_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="123" column="6" bodyfile="interface/canInterface.c" bodystart="914" bodyend="920" declfile="interface/interface.h" declline="123" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_8h_1a00ca1b7737ba8d9bf03aa228a2186171" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void table_items_getMeta</definition>
+        <argsstring>(Meta_Enum meta_index, InterfaceItem_void const *const *const items, uint16_t items_count)</argsstring>
+        <name>table_items_getMeta</name>
+        <param>
+          <type>Meta_Enum</type>
+          <declname>meta_index</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref> const *const *const</type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>items_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="124" column="6" bodyfile="interface/canInterface.c" bodystart="922" bodyend="926" declfile="interface/interface.h" declline="124" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_8h_1a176414fba733ccb522284cdd7fbe31ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void table_items_setMeta</definition>
+        <argsstring>(Meta_Enum meta_index, InterfaceItem_void const *const *const items, uint16_t items_count)</argsstring>
+        <name>table_items_setMeta</name>
+        <param>
+          <type>Meta_Enum</type>
+          <declname>meta_index</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref> const *const *const</type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>items_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/interface.h" line="125" column="6" bodyfile="interface/canInterface.c" bodystart="928" bodyend="934" declfile="interface/interface.h" declline="125" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__INTERFACE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__INTERFACE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;canInterfaceEnums.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sunspec.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;meta.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IEEE1547.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;authorization.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>CAN_Enum_AccessLevel<sp/><ref refid="interface_8h_1a4b4d547f1291c2b0839837d1263cecd8" kindref="member">metaMinimumAccessLevel</ref>[Meta_Count];</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="struct_rejection_reasons" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_rejection_reasons" kindref="compound">RejectionReasons</ref><sp/>{</highlight></codeline>
+<codeline lineno="20" refid="struct_rejection_reasons_1a911393d8abc75cf1c1f8405417ffe29b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_rejection_reasons_1a911393d8abc75cf1c1f8405417ffe29b" kindref="member">outOfRange</ref>;</highlight></codeline>
+<codeline lineno="21" refid="struct_rejection_reasons_1ae907285d9dc38682c7c64783f0df434c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_rejection_reasons_1ae907285d9dc38682c7c64783f0df434c" kindref="member">meta</ref>;</highlight></codeline>
+<codeline lineno="22" refid="struct_rejection_reasons_1aa448f4a38ecb557ece1ff629c0bf4adc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Meta_Enum<sp/><ref refid="struct_rejection_reasons_1aa448f4a38ecb557ece1ff629c0bf4adc" kindref="member">metaIndex</ref>;</highlight></codeline>
+<codeline lineno="23" refid="struct_rejection_reasons_1af2dace2b8e813fcc0a84a34856128d91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_rejection_reasons_1af2dace2b8e813fcc0a84a34856128d91" kindref="member">auth</ref>;</highlight></codeline>
+<codeline lineno="24" refid="struct_rejection_reasons_1ac24f1b14617c40866ec7ef3590d4b6cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_rejection_reasons_1ac24f1b14617c40866ec7ef3590d4b6cd" kindref="member">setter</ref>;</highlight></codeline>
+<codeline lineno="25" refid="struct_rejection_reasons_1a52ad669d9d01fece70b55cbee88458f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_rejection_reasons_1a52ad669d9d01fece70b55cbee88458f5" kindref="member">inactiveInterface</ref>;</highlight></codeline>
+<codeline lineno="26" refid="interface_8h_1aeb8e6c70056e982823417048cc8b0b10" refkind="member"><highlight class="normal">}<sp/><ref refid="interface_8h_1aeb8e6c70056e982823417048cc8b0b10" kindref="member">RejectionReasons</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="interface_8h_1aa983482eaaf4b98c2e967c60c13ebb42" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REJECTIONREASONS_DEFAULTS(metaIndex_,<sp/>...)<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.outOfRange<sp/>=<sp/>false,<sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.meta<sp/>=<sp/>false,<sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.metaIndex<sp/>=<sp/>metaIndex_,<sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.auth<sp/>=<sp/>false,<sp/>\</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.setter<sp/>=<sp/>false,<sp/>\</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.inactiveInterface<sp/>=<sp/>false,<sp/>\</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>##__VA_ARGS__<sp/>\</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="interface_8h_1a61fa532cd4060e9b2d2d701c6c4d1b30" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REJECTIONREASONS_ANY(reasons)<sp/>\</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor">(<sp/>\</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(reasons).outOfRange<sp/>\</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>||<sp/>(reasons).meta<sp/>\</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>||<sp/>(reasons).auth<sp/>\</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>||<sp/>(reasons).setter<sp/>\</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>||<sp/>(reasons).inactiveInterface<sp/>\</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor">)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="interface_8h_1a365fa67bab8eb8daf2e6351ef4d52d6e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REJECTIONREASONS_NONE(reasons)<sp/>\</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor">(!REJECTIONREASONS_ANY(reasons))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="interface_8h_1ac0aecb85217a8c58bcbbe0add3e9fa06" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REJECTIONREASONS_ONLY(reasons,<sp/>name)<sp/>\</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor">(<sp/>\</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((reasons).name)<sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(<sp/>\</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((reasons).outOfRange<sp/>?<sp/>1<sp/>:<sp/>0)<sp/>\</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>((reasons).meta<sp/>?<sp/>1<sp/>:<sp/>0)<sp/>\</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>((reasons).auth<sp/>?<sp/>1<sp/>:<sp/>0)<sp/>\</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>((reasons).setter<sp/>?<sp/>1<sp/>:<sp/>0)<sp/>\</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>((reasons).inactiveInterface<sp/>?<sp/>1<sp/>:<sp/>0)<sp/>\</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>1<sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor">)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8" kindref="member">ItemGetter</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>item,<sp/>Meta_Enum<sp/>meta);</highlight></codeline>
+<codeline lineno="67" refid="interface_8h_1abd123dcb703c202a5cb3e6d04fd03328" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="interface_8h_1abd123dcb703c202a5cb3e6d04fd03328" kindref="member">ItemGetterStaticModbus</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>item,<sp/>Meta_Enum<sp/>meta,<sp/>int16_t<sp/>*<sp/>getterVariable);</highlight></codeline>
+<codeline lineno="68" refid="interface_8h_1a4123a77c6016d61b0b1026ec0541d735" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>bool<sp/>(*<ref refid="interface_8h_1a4123a77c6016d61b0b1026ec0541d735" kindref="member">ItemSetter</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>item,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>check_limits,<sp/>Meta_Enum<sp/>meta);</highlight></codeline>
+<codeline lineno="69" refid="interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>bool<sp/>(*<ref refid="interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3" kindref="member">ItemSetterStaticModbus</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>item,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>check_limits,<sp/>Meta_Enum<sp/>meta,<sp/>int16_t<sp/>*<sp/>setterVariable);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="struct_interface_specifics" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_interface_specifics" kindref="compound">InterfaceSpecifics</ref><sp/>{</highlight></codeline>
+<codeline lineno="72" refid="struct_interface_specifics_1a56f1405fd60db1747248198db2008844" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_1a56f1405fd60db1747248198db2008844" kindref="member">variable</ref>;</highlight></codeline>
+<codeline lineno="73" refid="struct_interface_specifics_1a86486d526f67088fd03b92a83d79814e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8" kindref="member">ItemGetter</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_1a86486d526f67088fd03b92a83d79814e" kindref="member">getter</ref>;</highlight></codeline>
+<codeline lineno="74" refid="struct_interface_specifics_1a2435920ae82f0e0a682e26ef8ac53532" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8h_1a4123a77c6016d61b0b1026ec0541d735" kindref="member">ItemSetter</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_1a2435920ae82f0e0a682e26ef8ac53532" kindref="member">setter</ref>;</highlight></codeline>
+<codeline lineno="75" refid="interface_8h_1ace168ec393881d3c5f5ecf94e417e33b" refkind="member"><highlight class="normal">}<sp/><ref refid="interface_8h_1ace168ec393881d3c5f5ecf94e417e33b" kindref="member">InterfaceSpecifics</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="struct_interface_specifics_sun_spec" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_interface_specifics_sun_spec" kindref="compound">InterfaceSpecificsSunSpec</ref><sp/>{</highlight></codeline>
+<codeline lineno="78" refid="struct_interface_specifics_sun_spec_1a16f69c37689000160fba47201a909df8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_sun_spec_1a16f69c37689000160fba47201a909df8" kindref="member">variable</ref>;</highlight></codeline>
+<codeline lineno="79" refid="struct_interface_specifics_sun_spec_1a95dacc00bd87e7eba8223b3bb02b864f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8h_1a7e4c5ca9fb6c453361a231c31799f2b8" kindref="member">ItemGetter</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_sun_spec_1a95dacc00bd87e7eba8223b3bb02b864f" kindref="member">getter</ref>;</highlight></codeline>
+<codeline lineno="80" refid="struct_interface_specifics_sun_spec_1a8357c39aaac3550b89eafad7ad1c7b80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8h_1a4123a77c6016d61b0b1026ec0541d735" kindref="member">ItemSetter</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_sun_spec_1a8357c39aaac3550b89eafad7ad1c7b80" kindref="member">setter</ref>;</highlight></codeline>
+<codeline lineno="81" refid="struct_interface_specifics_sun_spec_1af44e5fdd606523d36c3910ced6c7c0ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_sun_spec_1af44e5fdd606523d36c3910ced6c7c0ab" kindref="member">handGetter</ref>)(void);</highlight></codeline>
+<codeline lineno="82" refid="struct_interface_specifics_sun_spec_1ab059cca9505f61c274a772e3a7bf6399" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_sun_spec_1ab059cca9505f61c274a772e3a7bf6399" kindref="member">handSetter</ref>)(void);</highlight></codeline>
+<codeline lineno="83" refid="interface_8h_1a541093f34997b86155bc05413d9831c2" refkind="member"><highlight class="normal">}<sp/><ref refid="interface_8h_1a541093f34997b86155bc05413d9831c2" kindref="member">InterfaceSpecificsSunSpec</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="struct_interface_specifics_static_modbus" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_interface_specifics_static_modbus" kindref="compound">InterfaceSpecificsStaticModbus</ref><sp/>{</highlight></codeline>
+<codeline lineno="86" refid="struct_interface_specifics_static_modbus_1a933c5a85248f20322118b90b485168ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8h_1abd123dcb703c202a5cb3e6d04fd03328" kindref="member">ItemGetterStaticModbus</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_static_modbus_1a933c5a85248f20322118b90b485168ae" kindref="member">getter</ref>;</highlight></codeline>
+<codeline lineno="87" refid="struct_interface_specifics_static_modbus_1adfff6484b1d46a41ddcde98c3cfb7e8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8h_1ae88346ef2671fe02f5968bb747aeb9c3" kindref="member">ItemSetterStaticModbus</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_specifics_static_modbus_1adfff6484b1d46a41ddcde98c3cfb7e8d" kindref="member">setter</ref>;</highlight></codeline>
+<codeline lineno="88" refid="interface_8h_1aec201b9ad26c19f3cc25668fe2ead5c6" refkind="member"><highlight class="normal">}<sp/><ref refid="interface_8h_1aec201b9ad26c19f3cc25668fe2ead5c6" kindref="member">InterfaceSpecificsStaticModbus</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="struct_interface_item_common" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref><sp/>{</highlight></codeline>
+<codeline lineno="91" refid="struct_interface_item_common_1a64a25e3785726ebedc4a2e92af71e49f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>sunssf<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1a64a25e3785726ebedc4a2e92af71e49f" kindref="member">sunspecScaleFactor</ref>;</highlight></codeline>
+<codeline lineno="92" refid="struct_interface_item_common_1a53c4a11e0a7621d69cfcaec3dc221463" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1a53c4a11e0a7621d69cfcaec3dc221463" kindref="member">canScaleFactor</ref>;</highlight></codeline>
+<codeline lineno="93" refid="struct_interface_item_common_1a25f5a5b30d8acd1d952b77b38e0e7634" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1a25f5a5b30d8acd1d952b77b38e0e7634" kindref="member">scaleFactorUpdater</ref>)(void);</highlight></codeline>
+<codeline lineno="94" refid="struct_interface_item_common_1a0d2e5de29b3efe5a2acee7258c9c8e55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>sunssf<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1a0d2e5de29b3efe5a2acee7258c9c8e55" kindref="member">internalScaleFactor</ref>;</highlight></codeline>
+<codeline lineno="95" refid="struct_interface_item_common_1a6770636c0c91bb40ecdc2acca7727ed8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_interface_specifics_sun_spec" kindref="compound">InterfaceSpecificsSunSpec</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1a6770636c0c91bb40ecdc2acca7727ed8" kindref="member">sunspec</ref>;</highlight></codeline>
+<codeline lineno="96" refid="struct_interface_item_common_1ae76ad2e0524b612b51ace6763a9240f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_interface_specifics" kindref="compound">InterfaceSpecifics</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1ae76ad2e0524b612b51ace6763a9240f6" kindref="member">can</ref>;</highlight></codeline>
+<codeline lineno="97" refid="struct_interface_item_common_1a87dfb090938bdf37a82e7de9b0a5663d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_interface_specifics_static_modbus" kindref="compound">InterfaceSpecificsStaticModbus</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1a87dfb090938bdf37a82e7de9b0a5663d" kindref="member">staticmodbus</ref>;</highlight></codeline>
+<codeline lineno="98" refid="struct_interface_item_common_1a43285809ff757f9243fde502b1b48efe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>CAN_Enum_AccessLevel<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1a43285809ff757f9243fde502b1b48efe" kindref="member">access_level</ref>;</highlight></codeline>
+<codeline lineno="99" refid="struct_interface_item_common_1a97ec1d7a217b9066358c0ec075d9f6eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item_common_1a97ec1d7a217b9066358c0ec075d9f6eb" kindref="member">rejectFromInactiveInterface</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AUTH_UUID_AVAILABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>AUTH_Uuid<sp/>uuid;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="interface_8h_1acb1d82380be5c0d254dfb501eb3d5e97" refkind="member"><highlight class="normal">}<sp/><ref refid="interface_8h_1acb1d82380be5c0d254dfb501eb3d5e97" kindref="member">InterfaceItemCommon</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="struct_interface_item___bitfield_member" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_interface_item___bitfield_member" kindref="compound">InterfaceItem_BitfieldMember</ref><sp/>{</highlight></codeline>
+<codeline lineno="106" refid="struct_interface_item___bitfield_member_1a517f9dc2c6a6b3fc06f5b427fbd27bbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item___bitfield_member_1a517f9dc2c6a6b3fc06f5b427fbd27bbd" kindref="member">offset</ref>;</highlight></codeline>
+<codeline lineno="107" refid="struct_interface_item___bitfield_member_1a2727d3c32afd1f8ba70feb86e2ce7b4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item___bitfield_member_1a2727d3c32afd1f8ba70feb86e2ce7b4c" kindref="member">length</ref>;</highlight></codeline>
+<codeline lineno="108" refid="struct_interface_item___bitfield_member_1a5e311b0ab3fb93ed2e6a836dbcb88a03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item___bitfield_member_1a5e311b0ab3fb93ed2e6a836dbcb88a03" kindref="member">item</ref>;</highlight></codeline>
+<codeline lineno="109" refid="interface_8h_1a3dadbb90a5406c1176a12b289bc1d49d" refkind="member"><highlight class="normal">}<sp/><ref refid="interface_8h_1a3dadbb90a5406c1176a12b289bc1d49d" kindref="member">InterfaceItem_BitfieldMember</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="struct_interface_item___bitfield" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_interface_item___bitfield" kindref="compound">InterfaceItem_Bitfield</ref><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>keep<sp/>common<sp/>first,<sp/>some<sp/>pointer<sp/>casting<sp/>depends<sp/>on<sp/>it<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="struct_interface_item___bitfield_1aa9447ffb0df96c9921c490fd5558a392" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item___bitfield_1aa9447ffb0df96c9921c490fd5558a392" kindref="member">common</ref>;</highlight></codeline>
+<codeline lineno="114" refid="struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_interface_item___bitfield_member" kindref="compound">InterfaceItem_BitfieldMember</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b" kindref="member">staticmodbusMembers</ref>;</highlight></codeline>
+<codeline lineno="115" refid="struct_interface_item___bitfield_1a7163300b7ddf96affbb40cf0eed35093" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item___bitfield_1a7163300b7ddf96affbb40cf0eed35093" kindref="member">staticmodbusMembersCount</ref>;</highlight></codeline>
+<codeline lineno="116" refid="struct_interface_item___bitfield_1a02709814798eb783b5ac36c6b4521a0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_interface_item___bitfield_member" kindref="compound">InterfaceItem_BitfieldMember</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item___bitfield_1a02709814798eb783b5ac36c6b4521a0b" kindref="member">sunspecMembers</ref>;</highlight></codeline>
+<codeline lineno="117" refid="struct_interface_item___bitfield_1a99e2439251dfe801a7ca8659f20da309" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_interface_item___bitfield_1a99e2439251dfe801a7ca8659f20da309" kindref="member">sunspecMembersCount</ref>;</highlight></codeline>
+<codeline lineno="118" refid="interface_8h_1ad4788ffbec9d53108170995250840db7" refkind="member"><highlight class="normal">}<sp/><ref refid="interface_8h_1ad4788ffbec9d53108170995250840db7" kindref="member">InterfaceItem_Bitfield</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">sunssf<sp/><ref refid="interface_8h_1a1456a3e6d18b4b338ca7d542de34ed6c" kindref="member">itemNetScaleFactor</ref>(<ref refid="struct_interface_item_common" kindref="compound">InterfaceItemCommon</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>item);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8h_1a6aadaf337d1caee0a760aa9ae127360d" kindref="member">items_getMeta</ref>(Meta_Enum<sp/>meta_index,<sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>items,<sp/>uint16_t<sp/>items_count);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8h_1ad509994a37bdba87b40e6407e5523b20" kindref="member">items_setMeta</ref>(Meta_Enum<sp/>meta_index,<sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>items,<sp/>uint16_t<sp/>items_count);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8h_1a00ca1b7737ba8d9bf03aa228a2186171" kindref="member">table_items_getMeta</ref>(Meta_Enum<sp/>meta_index,<sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>items,<sp/>uint16_t<sp/>items_count);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8h_1a176414fba733ccb522284cdd7fbe31ce" kindref="member">table_items_setMeta</ref>(Meta_Enum<sp/>meta_index,<sp/><ref refid="interface_8h_1a2d58cf9316da363273ac00d4455ab5f7" kindref="member">InterfaceItem_void</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>items,<sp/>uint16_t<sp/>items_count);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="interface/interface.h"/>
+  </compounddef>
+</doxygen>

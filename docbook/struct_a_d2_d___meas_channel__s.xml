@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_a_d2_d___meas_channel__s" xml:lang="en-US">
+<title>AD2D_MeasChannel_s Struct Reference</title>
+<indexterm><primary>AD2D_MeasChannel_s</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1">AD2D_uSgnExtend_t</link> volatile * <link linkend="_struct_a_d2_d___meas_channel__s_1aec3365d72c9f6d8f0eb802471291a830">adcResult</link></para>
+</listitem>
+            <listitem><para>int32_t * <link linkend="_struct_a_d2_d___meas_channel__s_1a09c43551818e64fdb74d134f60795a06">mesdDest</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_a_d2_d___meas_channel__s_1aec3365d72c9f6d8f0eb802471291a830"/><section>
+    <title>adcResult</title>
+<indexterm><primary>adcResult</primary><secondary>AD2D_MeasChannel_s</secondary></indexterm>
+<indexterm><primary>AD2D_MeasChannel_s</primary><secondary>adcResult</secondary></indexterm>
+<para><computeroutput><link linkend="_ad2d__emu_8c_1a0fb417f2240e96794c0ccdcf0f0509f1">AD2D_uSgnExtend_t</link> volatile* AD2D_MeasChannel_s::adcResult</computeroutput></para></section>
+<anchor xml:id="_struct_a_d2_d___meas_channel__s_1a09c43551818e64fdb74d134f60795a06"/><section>
+    <title>mesdDest</title>
+<indexterm><primary>mesdDest</primary><secondary>AD2D_MeasChannel_s</secondary></indexterm>
+<indexterm><primary>AD2D_MeasChannel_s</primary><secondary>mesdDest</secondary></indexterm>
+<para><computeroutput>int32_t* AD2D_MeasChannel_s::mesdDest</computeroutput></para></section>
+</section>
+</section>
