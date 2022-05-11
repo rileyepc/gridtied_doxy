@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_0106f6597679b46df48b1b345dfb8ec1" kind="dir">
+    <compoundname>C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu</compoundname>
+    <innerfile refid="ad1d__emu_8c">ad1d_emu.c</innerfile>
+    <innerfile refid="ad2d__emu_8c">ad2d_emu.c</innerfile>
+    <innerfile refid="_dsp_intr__emu_8c">DspIntr_emu.c</innerfile>
+    <innerfile refid="epwm__emu_8c">epwm_emu.c</innerfile>
+    <innerfile refid="epwm__emu_8h">epwm_emu.h</innerfile>
+    <innerfile refid="_i_qmath_lib_8h">IQmathLib.h</innerfile>
+    <innerfile refid="_i_q_math_lib__emu_8h">IQMathLib_emu.h</innerfile>
+    <innerfile refid="scheduler__emu_8h">scheduler_emu.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/"/>
+  </compounddef>
+</doxygen>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_interface_accessors_8h" xml:lang="en-US">
-<title>interface/interfaceAccessors.h File Reference</title>
-<indexterm><primary>interface/interfaceAccessors.h</primary></indexterm>
+<title>C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h File Reference</title>
+<indexterm><primary>C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h</primary></indexterm>
 <programlisting linenumbering="unnumbered">#include &quot;adaptiveHarmonicControlI.h&quot;
 #include &quot;authorization_generated.h&quot;
 #include &quot;filterObserverI.h&quot;

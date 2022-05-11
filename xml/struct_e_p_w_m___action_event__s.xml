@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/epwm_emu.c" line="182" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="182" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" line="182" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" bodystart="182" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_e_p_w_m___action_event__s_1ac721d7014c04a283a3408867a27a410e" prot="public" static="no" mutable="no">
         <type><ref refid="epwm__emu_8c_1a5ca83038074430b3815c96c95ed0b3bc" kindref="member">EPWM_AqEventSource_t</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/epwm_emu.c" line="183" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="183" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" line="183" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" bodystart="183" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_e_p_w_m___action_event__s_1a7aaecc45da2bb7e844d7212ec41b0c40" prot="public" static="no" mutable="no">
         <type><ref refid="epwm__emu_8c_1af5665a9cb9ae25c32d428572226d8650" kindref="member">EPWM_AqOutputAction_t</ref></type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/epwm_emu.c" line="184" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="184" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" line="184" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" bodystart="184" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_e_p_w_m___action_event__s_1a4c911c50fe306886de9a44ce2bb9784b" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -57,14 +57,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/epwm_emu.c" line="185" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="185" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" line="185" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" bodystart="185" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="sil/emu/epwm_emu.c" line="181" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="181" bodyend="186"/>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" line="181" column="1" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" bodystart="181" bodyend="186"/>
     <listofallmembers>
       <member refid="struct_e_p_w_m___action_event__s_1a7aaecc45da2bb7e844d7212ec41b0c40" prot="public" virt="non-virtual"><scope>EPWM_ActionEvent_s</scope><name>aqAction</name></member>
       <member refid="struct_e_p_w_m___action_event__s_1a46e43c8bf3d0c5e9d127f60fad7ced67" prot="public" virt="non-virtual"><scope>EPWM_ActionEvent_s</scope><name>aqChannel</name></member>

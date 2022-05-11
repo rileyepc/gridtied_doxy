@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_70273767f71d4725a1adc3e3b47fc8d2" kind="dir">
+    <compoundname>C:/Users/RileyTurner/Desktop/gridtied copy/sil</compoundname>
+    <innerdir refid="dir_0106f6597679b46df48b1b345dfb8ec1">C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu</innerdir>
+    <innerdir refid="dir_3bd77ab5e6e4623174e8a6177f8c0150">C:/Users/RileyTurner/Desktop/gridtied copy/sil/mdl</innerdir>
+    <innerdir refid="dir_9d11fd8963cdd71f2c8784727c7123f7">C:/Users/RileyTurner/Desktop/gridtied copy/sil/psc</innerdir>
+    <innerfile refid="debug_8c">debug.c</innerfile>
+    <innerfile refid="lib_epc_control_8c">libEpcControl.c</innerfile>
+    <innerfile refid="lib_epc_control_8h">libEpcControl.h</innerfile>
+    <innerfile refid="lib_epc_control_interface_8c">libEpcControlInterface.c</innerfile>
+    <innerfile refid="lib_epc_control_interface_8h">libEpcControlInterface.h</innerfile>
+    <innerfile refid="sil_wrapper_8h">silWrapper.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/"/>
+  </compounddef>
+</doxygen>

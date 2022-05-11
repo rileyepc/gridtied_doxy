@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_2c32a63bce1d810292a7d2fc92f40616" kind="dir">
+    <compoundname>C:/Users/RileyTurner/Desktop/gridtied copy/interface</compoundname>
+    <innerfile refid="can_interface_8c">canInterface.c</innerfile>
+    <innerfile refid="can_interface_8h">canInterface.h</innerfile>
+    <innerfile refid="interface_8c">interface.c</innerfile>
+    <innerfile refid="interface_8h">interface.h</innerfile>
+    <innerfile refid="interface_accessors_8c">interfaceAccessors.c</innerfile>
+    <innerfile refid="interface_accessors_8h">interfaceAccessors.h</innerfile>
+    <innerfile refid="revision_info_8h">revisionInfo.h</innerfile>
+    <innerfile refid="sw_revs_8h">swRevs.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/"/>
+  </compounddef>
+</doxygen>

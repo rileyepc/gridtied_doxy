@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interfaceAccessors.h" line="52" column="14" bodyfile="interface/interfaceAccessors.h" bodystart="52" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" line="52" column="14" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1a726f8801e06bf917e43d95c4c1a976d8" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interfaceAccessors.h" line="53" column="10" bodyfile="interface/interfaceAccessors.h" bodystart="53" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" line="53" column="10" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1a7a3579235e0e2a5efece0fbc2c1aba55" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interfaceAccessors.h" line="54" column="10" bodyfile="interface/interfaceAccessors.h" bodystart="54" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" line="54" column="10" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1a0704ebf6a2d9622d12dd3713aacca9ac" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interfaceAccessors.h" line="55" column="10" bodyfile="interface/interfaceAccessors.h" bodystart="55" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" line="55" column="10" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_i_n_t_f___command_flags_1aa61fde7144c23f119a393104c9c81df1" prot="public" static="no" mutable="no">
         <type>PBC_ConnectSequence_t</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interfaceAccessors.h" line="56" column="27" bodyfile="interface/interfaceAccessors.h" bodystart="56" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" line="56" column="27" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" bodystart="56" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -83,7 +83,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="interface/interfaceAccessors.h" line="51" column="1" bodyfile="interface/interfaceAccessors.h" bodystart="51" bodyend="57"/>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" line="51" column="1" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interfaceAccessors.h" bodystart="51" bodyend="57"/>
     <listofallmembers>
       <member refid="struct_i_n_t_f___command_flags_1a726f8801e06bf917e43d95c4c1a976d8" prot="public" virt="non-virtual"><scope>INTF_CommandFlags</scope><name>clearFaults</name></member>
       <member refid="struct_i_n_t_f___command_flags_1a7a3579235e0e2a5efece0fbc2c1aba55" prot="public" virt="non-virtual"><scope>INTF_CommandFlags</scope><name>clearWarnings</name></member>

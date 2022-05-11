@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/ad1d_emu.c" line="171" column="33" bodyfile="sil/emu/ad1d_emu.c" bodystart="171" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" line="171" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" bodystart="171" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_a_d1_d___hw_resources__s_1ac7187da67cf2d711830afa87a5e555ec" prot="public" static="no" mutable="no">
         <type><ref refid="ad1d__emu_8c_1a065fd175027eba57c1b5c72581f67e19" kindref="member">AD1D_MuxSelectName_t</ref></type>
@@ -29,14 +29,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/ad1d_emu.c" line="172" column="33" bodyfile="sil/emu/ad1d_emu.c" bodystart="172" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" line="172" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" bodystart="172" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="sil/emu/ad1d_emu.c" line="170" column="1" bodyfile="sil/emu/ad1d_emu.c" bodystart="170" bodyend="173"/>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" line="170" column="1" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" bodystart="170" bodyend="173"/>
     <listofallmembers>
       <member refid="struct_a_d1_d___hw_resources__s_1ad2f7bd4edbd50be2af53b182986504c9" prot="public" virt="non-virtual"><scope>AD1D_HwResources_s</scope><name>adcInput</name></member>
       <member refid="struct_a_d1_d___hw_resources__s_1ac7187da67cf2d711830afa87a5e555ec" prot="public" virt="non-virtual"><scope>AD1D_HwResources_s</scope><name>muxSelect</name></member>

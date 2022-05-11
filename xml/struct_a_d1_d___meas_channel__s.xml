@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/ad1d_emu.c" line="176" column="33" bodyfile="sil/emu/ad1d_emu.c" bodystart="176" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" line="176" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" bodystart="176" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_a_d1_d___meas_channel__s_1ac170039b83ce7fa83b05c862c4f93009" prot="public" static="no" mutable="no">
         <type><ref refid="_i_qmath_lib_8h_1a3a40eb7e42ca749c68ee683060ff050d" kindref="member">_iq31</ref> *</type>
@@ -29,14 +29,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/ad1d_emu.c" line="177" column="32" bodyfile="sil/emu/ad1d_emu.c" bodystart="177" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" line="177" column="32" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" bodystart="177" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="sil/emu/ad1d_emu.c" line="175" column="1" bodyfile="sil/emu/ad1d_emu.c" bodystart="175" bodyend="178"/>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" line="175" column="1" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/ad1d_emu.c" bodystart="175" bodyend="178"/>
     <listofallmembers>
       <member refid="struct_a_d1_d___meas_channel__s_1a2b96b12864cbbbb444876b3d4573ecb7" prot="public" virt="non-virtual"><scope>AD1D_MeasChannel_s</scope><name>adcInput</name></member>
       <member refid="struct_a_d1_d___meas_channel__s_1ac170039b83ce7fa83b05c862c4f93009" prot="public" virt="non-virtual"><scope>AD1D_MeasChannel_s</scope><name>mesdDest</name></member>

@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/libEpcControlInterface.h" line="43" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="43" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="43" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="union_setter__u_1ac9472e2c38a5464dbcd46712e31db594" prot="public" static="no" mutable="no">
         <type><ref refid="lib_epc_control_interface_8h_1a596cd4e31ef9726668d1dc4e8a97cb4f" kindref="member">SetterPointer_uint64_t</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/libEpcControlInterface.h" line="44" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="44" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="union_setter__u_1ae9903ac35a7a373a9d636f365596ce59" prot="public" static="no" mutable="no">
         <type><ref refid="lib_epc_control_interface_8h_1a1570b2c494bfb5466026274977d6f6f6" kindref="member">SetterPointer_uint32_t</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/libEpcControlInterface.h" line="45" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="45" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="45" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="union_setter__u_1a6a570917051ccf1d79c62de78e1b4427" prot="public" static="no" mutable="no">
         <type><ref refid="lib_epc_control_interface_8h_1a7097888a0ca042480a9b1e720ed6baae" kindref="member">SetterPointer_uint16_t</ref></type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/libEpcControlInterface.h" line="46" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="46" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="46" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="union_setter__u_1a54a9e3a267854a1b766e818d842df907" prot="public" static="no" mutable="no">
         <type><ref refid="lib_epc_control_interface_8h_1aa3c4127315fb090a7562837dc1777fcc" kindref="member">SetterPointer_int32_t</ref></type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/libEpcControlInterface.h" line="47" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="47" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="47" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="union_setter__u_1a16e518308f6e5fde1605d7cb0f19c20a" prot="public" static="no" mutable="no">
         <type><ref refid="lib_epc_control_interface_8h_1a7dbae0918f1a8ce9c4c62eca4dccdbcf" kindref="member">SetterPointer_int16_t</ref></type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/libEpcControlInterface.h" line="48" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="48" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="48" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="union_setter__u_1ab6cfce32cd0b0aba29e8f8eee1e4348b" prot="public" static="no" mutable="no">
         <type><ref refid="lib_epc_control_interface_8h_1aed09fe87badac6697aeb78de5f8af381" kindref="member">SetterPointer_size_t</ref></type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/libEpcControlInterface.h" line="49" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="49" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="49" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="union_setter__u_1a269a30ca16afb2a1e9363b7a04cc0ae5" prot="public" static="no" mutable="no">
         <type><ref refid="lib_epc_control_interface_8h_1a0bc6b4f4fbd030b047b4851745cf599a" kindref="member">SetterPointer_bool_t</ref></type>
@@ -114,14 +114,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/libEpcControlInterface.h" line="50" column="33" bodyfile="sil/libEpcControlInterface.h" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="50" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="50" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="sil/libEpcControlInterface.h" line="42" column="1" bodyfile="sil/libEpcControlInterface.h" bodystart="42" bodyend="51"/>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" line="42" column="1" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/libEpcControlInterface.h" bodystart="42" bodyend="51"/>
     <listofallmembers>
       <member refid="union_setter__u_1a269a30ca16afb2a1e9363b7a04cc0ae5" prot="public" virt="non-virtual"><scope>Setter_u</scope><name>bool_</name></member>
       <member refid="union_setter__u_1a0f4031b29e64dc28ef278af23519221c" prot="public" virt="non-virtual"><scope>Setter_u</scope><name>float_</name></member>

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/epwm_emu.c" line="146" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="146" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" line="146" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" bodystart="146" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_e_p_w_m___duty_limits__s_1a6a0c7b87f93b78a54f7693dbb1937d5b" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -29,14 +29,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="sil/emu/epwm_emu.c" line="147" column="33" bodyfile="sil/emu/epwm_emu.c" bodystart="147" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" line="147" column="33" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" bodystart="147" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="sil/emu/epwm_emu.c" line="145" column="1" bodyfile="sil/emu/epwm_emu.c" bodystart="145" bodyend="148"/>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" line="145" column="1" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/sil/emu/epwm_emu.c" bodystart="145" bodyend="148"/>
     <listofallmembers>
       <member refid="struct_e_p_w_m___duty_limits__s_1a6a0c7b87f93b78a54f7693dbb1937d5b" prot="public" virt="non-virtual"><scope>EPWM_DutyLimits_s</scope><name>lower</name></member>
       <member refid="struct_e_p_w_m___duty_limits__s_1a5379c177deb30d5c19616d5607fbb92a" prot="public" virt="non-virtual"><scope>EPWM_DutyLimits_s</scope><name>upper</name></member>

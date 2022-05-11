@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interface.h" line="113" column="31" bodyfile="interface/interface.h" bodystart="113" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" line="113" column="31" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b" prot="public" static="no" mutable="no">
         <type><ref refid="struct_interface_item___bitfield_member" kindref="compound">InterfaceItem_BitfieldMember</ref> const  *const</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interface.h" line="114" column="47" bodyfile="interface/interface.h" bodystart="114" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" line="114" column="47" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" bodystart="114" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_interface_item___bitfield_1a7163300b7ddf96affbb40cf0eed35093" prot="public" static="no" mutable="no">
         <type>size_t const</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interface.h" line="115" column="18" bodyfile="interface/interface.h" bodystart="115" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" line="115" column="18" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" bodystart="115" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_interface_item___bitfield_1a02709814798eb783b5ac36c6b4521a0b" prot="public" static="no" mutable="no">
         <type><ref refid="struct_interface_item___bitfield_member" kindref="compound">InterfaceItem_BitfieldMember</ref> const  *const</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interface.h" line="116" column="47" bodyfile="interface/interface.h" bodystart="116" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" line="116" column="47" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_interface_item___bitfield_1a99e2439251dfe801a7ca8659f20da309" prot="public" static="no" mutable="no">
         <type>size_t const</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/interface.h" line="117" column="18" bodyfile="interface/interface.h" bodystart="117" bodyend="-1"/>
+        <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" line="117" column="18" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" bodystart="117" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -121,7 +121,7 @@
         <link refid="struct_interface_specifics_sun_spec"/>
       </node>
     </collaborationgraph>
-    <location file="interface/interface.h" line="111" column="1" bodyfile="interface/interface.h" bodystart="111" bodyend="118"/>
+    <location file="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" line="111" column="1" bodyfile="C:/Users/RileyTurner/Desktop/gridtied copy/interface/interface.h" bodystart="111" bodyend="118"/>
     <listofallmembers>
       <member refid="struct_interface_item___bitfield_1aa9447ffb0df96c9921c490fd5558a392" prot="public" virt="non-virtual"><scope>InterfaceItem_Bitfield</scope><name>common</name></member>
       <member refid="struct_interface_item___bitfield_1a127adfa5734c0774df7c6f4bfdcc8c0b" prot="public" virt="non-virtual"><scope>InterfaceItem_Bitfield</scope><name>staticmodbusMembers</name></member>
